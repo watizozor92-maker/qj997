@@ -1,0 +1,6 @@
+﻿int#c#s,string#c#s,intListList#c#s,intListList#c#s,int#c#s,intList#c#s,int#c#s,int#c#s,int#c#s,stringList#c#s
+id,taskName,rewardItem,rewardSpecial,taskType,taskContent,taskRefreshes,sorting,hour,panel
+1,全员消灭5只野外BOSS,10010002#125000,10090001#4000,2,40006#50012#60008#70007#80006#80007#11010#90008#14012#5,3,1,3,openUIPanel#dev/outui/ChallengeBoss/Panel/KLChallengeBoss/KLChallengeBossPanel#1#monsterType=2
+2,全员通关40次恶魔广场,10010002#125000,10090001#4000,3,10001#40,3,2,3,transferNPC#100406
+3,全员通关40次血色城堡,10010002#125000,10090001#4000,3,11001#40,3,3,3,transferNPC#100306
+4,全员消灭100名敌方玩家,10010002#125000,10090001#3000,4,100,3,4,3,openUIPanel#dev/ui/Map/Panel/KLBigMap/KLBigMapPanel

@@ -1,0 +1,6 @@
+<uipanel id="KLUISkillPageItemKml" name="技能页签模板" width="360" height="580" a="11" zindex="-1">
+  <gridview id="skillItemList" a="11" y="-34" width="360" height="580" cellwidth="120" cellheight="110" spacey="26">
+    <datalist id="skillItemGrid">
+    </datalist>
+  </gridview>
+</uipanel>

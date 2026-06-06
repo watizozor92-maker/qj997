@@ -1,0 +1,59 @@
+﻿int#c#s,string#c#s,string#c#s,string#c#s
+id,path,name,talkImage
+1,Model/Npc/npc001,仓库使者塞弗特,NPChead0001
+2,Model/Npc/npc002,铁匠汉斯,NPChead0002
+3,Model/Npc/npc003,魔导士 帕希,NPChead0003
+4,Model/Npc/npc004,驯兽师,
+5,Model/Npc/npc005,多普瑞恩家族管家,
+6,Model/Npc/npc006,市场传送师 朱丽亚,NPChead0006
+7,Model/Npc/npc007,流浪商人海罗德,
+8,Model/Npc/npc008,流浪商人马丁,
+9,Model/Npc/npc010,老板娘 莉雅,
+10,Model/Npc/npc010,老板娘 莉雅,
+11,Model/Npc/NPC011,老板娘莉娜,
+12,Model/Npc/npc012,幻影导师,NPChead0012
+13,Model/Npc/npc013,玛雅使者,NPChead0013
+14,Model/Npc/NPC014,守卫,NPChead0014
+15,Model/Npc/NPC015,少女安娜,
+16,Model/Npc/NPC016,,
+17,Model/Npc/NPC017,赤色要塞指挥官,
+18,Model/Npc/NPC020,流浪商人阿莱斯,
+19,Model/Npc/NPC021,卡隆,
+20,Model/Npc/NPC022,弟子黛彬,
+21,Model/Npc/NPC023,工匠尤达,
+22,Model/Npc/NPC025,精灵安吉拉,
+23,Model/Npc/NPC026,艾尔菲丝,
+24,Model/Npc/NPC027,荧之石管理员/符纹师如尼,
+25,Model/Npc/NPC028,魔炼接引人弗萨克,
+26,Model/Npc/NPC029,杰瑞敦,
+27,Model/Npc/NPC030,雷拉,
+28,Model/Npc/NPC031,摩尔塞,
+29,Model/Npc/NPC032,战盟使者罗兰斯,NPChead0032
+30,Model/Npc/NPC033,弥拉丘,
+31,Model/Npc/NPC034,玛雅哥布林,NPChead0034
+32,Model/Npc/NPC035,攻城投石车,
+33,Model/Npc/NPC036,攻城投石车,
+34,Model/Npc/NPC037,塞尔维斯,
+35,Model/Npc/NPC038,攻城卫兵,
+36,Model/Npc/NPC040,物资管理员 帕糜拉,
+37,Model/Npc/NPC041,物资管理员 安吉拉,
+38,Model/Npc/NPC043,长老,
+39,Model/Npc/NPC044,奥斯本（半裸）,
+40,Model/Npc/NPC045,奥斯本,
+41,Model/Npc/NPC046,雷亚,
+42,Model/Npc/NPC047,荧之石研究员/坐骑装备 蒙特,
+43,Model/Npc/NPC048,圣导士塞维娜,
+44,Model/Npc/NPC049,塞尔维亚,
+45,Model/Npc/NPC051,武器商人苏菲,
+46,Model/Npc/NPC052,魔导士露茜,
+47,Model/Npc/NPC053,竞技场卫兵,
+48,Model/Npc/NPC054,爆竹商人 罗嗒莎,
+49,Model/Npc/NPC055,暗黑血狼人扩雷,
+50,Model/Npc/NPC057,倒地的大天使使者,NPChead0057
+51,Model/Npc/NPC058,大天使的使者,
+52,Model/Npc/NPC059,樱花精灵,
+53,Model/Npc/NPC060,陆迦德,
+54,Model/Npc/Npc061,地下城幻影导师,
+55,Model/Npc/Npc062,,
+56,Model/Npc/Npc063,勇者大陆幻影导师,
+57,Model/Npc/NPc064,警卫队长摩伦,

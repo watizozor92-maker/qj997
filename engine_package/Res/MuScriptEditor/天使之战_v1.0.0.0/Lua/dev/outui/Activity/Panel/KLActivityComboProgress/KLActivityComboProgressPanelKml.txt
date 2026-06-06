@@ -1,0 +1,50 @@
+<uipanel id="KLActivityComboProgressPanel" name="连击试炼副本界面" x="-24" y="0" zindex="0" width="320" height="192" ap="0#1#0#1#0#1" a="11">
+  <panel id="kml_combotask_root" moveduration="0.7">
+    <img id="img_12" atlas="Atlas/UITask.spriteatlas" src="bg_mainTaskBg" x="24" width="320" height="192" a="00">
+    </img>
+    <text id="title_task" outlinesize="1" outlinecolor="#000000FF" fontsize="18" fonttype="微软雅黑" width="160" height="40" x="10" y="78" ta="11" text="卡利玛神庙第99层" color="#E6E600" horwrap="1" outline="1">
+    </text>
+    <panel id="panel_start">
+      <text id="stageName_task" outlinesize="1" outlinecolor="#000000FF" fontsize="18" fonttype="微软雅黑" text="击杀任务" width="72" height="25" ta="11" x="-93" y="42" horwrap="1" outline="1">
+      </text>
+      <text id="rewardTxt_task" outlinesize="1" outlinecolor="#000000FF" fontsize="18" fonttype="微软雅黑" text="副本奖励" width="72" height="25" ta="11" x="-93" y="-10" horwrap="1" outline="1" active="0">
+      </text>
+      <text id="taskName_task" outlinesize="1" outlinecolor="#000000FF" fontsize="18" fonttype="微软雅黑" width="180" height="25" ta="01" x="-40" y="16" horwrap="1" outline="1">
+      </text>
+      <text id="taskProgress_task" outlinesize="1" outlinecolor="#000000FF" fontsize="18" fonttype="微软雅黑" width="60" height="25" x="105" y="16" ta="21" horwrap="1" outline="1">
+      </text>
+    </panel>
+    <img id="img_13" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" y="77" x="-106" width="60" height="7">
+    </img>
+    <button id="exitBtn_task" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="exitIcon" onclick="1" x="193" y="-49" width="65" height="70">
+      <countdown id="countDown_in_copy" fonttype="微软雅黑" fontsize="18" width="91" height="25" ta="11" x="0" y="-27" outlinesize="1" outlinecolor="#000000FF" color="#ED2E2EFF" active="0" a="02">
+      </countdown>
+    </button>
+    <layout id="rewardItem_layout" width="200" height="70" y="-60" x="-27" vertical="0" cella="11" space="5" active="0">
+      <datalist id="rewardItem_List">
+        <item id="control_item" itemid="" itemcount="" width="60" height="60" bgtype="1" tips="1">
+          <text id="countTxt" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" width="67" height="25" x="-2" y="-25" z="0" a="00" rotate="0,0,0" ta="21" horwrap="1" fonttype="微软雅黑">
+          </text>
+        </item>
+      </datalist>
+    </layout>
+    <img id="img_14" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" rotate="0,180,0" x="126" y="77" width="60" height="7">
+    </img>
+    <layout id="rewardItem_finish_layout" width="200" height="70" y="-24" x="-2" vertical="0" cella="00" space="5" active="0">
+      <datalist id="rewardItem_finish_List">
+        <item id="control_finish_item" itemid="" itemcount="" width="60" height="60" bgtype="1" tips="1">
+          <text id="countFinishTxt" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" width="67" height="25" x="-2" y="-25" z="0" a="00" rotate="0,0,0" ta="21">
+          </text>
+        </item>
+      </datalist>
+    </layout>
+    <text id="txt_countDown" a="00" text="副本将在30秒后结束\n请尽快拾取战利品" fontsize="18" height="80" width="500" ta="11" outline="1" horwrap="1" x="495" y="-225" color="#D9001CFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <panel id="panel_finish" active="0">
+      <text id="text_30" text="恭喜你已通关当前关卡" fontsize="18" outlinesize="1" outlinecolor="#000000FF" fonttype="微软雅黑" height="25" ta="11" y="42" x="4" horwrap="1">
+      </text>
+      <button id="btn_reward" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" text="领取奖励" y="-87" width="95" height="34" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#DCE1E5" onclick="1" fonttype="微软雅黑">
+      </button>
+    </panel>
+  </panel>
+</uipanel>

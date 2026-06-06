@@ -1,0 +1,52 @@
+<uipanel id="KLUITeamMainPanel" name="组队主界面" zindex="10" width="1334" height="750" raycast="1" z="400" x="2" y="0" active="1">
+  <img id="mask" a="00" src="Texture/img_interface_main138.jpg" width="3000" height="2000" raycast="1" x="0" y="0" color="#FFFFFF00">
+  </img>
+  <img src="Texture/img_interface_main138.jpg" y="0" width="1033" height="578" id="img_75" x="0">
+  </img>
+  <img atlas="" src="Texture/FG_dankuangdi2.png" x="-2" y="8" width="1046" height="606" scale9b="79" scale9l="211" scale9r="211" scale9t="92" id="img_76">
+    <img id="img1" a="01" width="161" height="27" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="-8">
+    </img>
+    <button id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" x="-17" y="-22" raycast="1" h5x="-502" h5y="255" color="#FFFFFFff" width="34" height="34" mimg="" pimg="" dimg="" a="21">
+    </button>
+  </img>
+  <img atlas="Atlas/Common.spriteatlas" src="img_interface_main009" height="507" width="1003" x="0" y="-30" scale9b="20" scale9l="20" scale9r="20" scale9t="20" id="img_77">
+  </img>
+  <img atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="img_title" y="250" id="img_78" active="0" x="0" width="90" height="52">
+  </img>
+  <togglegroup id="toggle_team" width="150" height="400" x="-409" y="5">
+    <layout id="layout1" control_height="0" contentsizefitter="0" vertical="1" height="500" width="162" a="01" raycast="1" cella="01" space="6">
+      <toggle id="my_team" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="1" width="150" height="45" scale9l="25" scale9b="17" scale9r="31" scale9t="18" pimg_scale9l="18" pimg_scale9b="15" pimg_scale9r="22" pimg_scale9t="18">
+        <text text="我的队伍" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text_82" horwrap="1" fontstyle="0" ta="11" active="1" fonttype="" width="150" height="43" y="0" outline="0">
+        </text>
+      </toggle>
+      <toggle id="near_team" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="0" width="150" height="45" y="-50" a="11" scale9l="23" scale9b="17" scale9r="21" scale9t="19">
+        <text text="附近队伍" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text_84" horwrap="1" fonttype="" width="150" height="43" ta="11" outline="0">
+        </text>
+      </toggle>
+      <toggle id="near_player" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="0" width="150" height="45" scale9l="26" scale9b="15" scale9r="31" scale9t="16" pimg_scale9l="20" pimg_scale9b="16" pimg_scale9r="17" pimg_scale9t="17">
+        <text text="附近玩家" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text_86" horwrap="1" fonttype="" color="" ta="11" width="150" height="43" outline="0">
+        </text>
+      </toggle>
+      <toggle id="my_friend" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="0" width="150" height="45" y="-150" a="11" scale9l="19" scale9b="19" scale9r="17" scale9t="17" pimg_scale9l="18" pimg_scale9b="15" pimg_scale9r="17" pimg_scale9t="17">
+        <text text="我的好友" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text2" horwrap="1" fonttype="" width="150" height="43" ta="11" y="0" outline="0">
+        </text>
+      </toggle>
+      <toggle id="my_union" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="0" width="150" height="45" y="-200" a="11" scale9l="22" scale9b="15" scale9r="26" scale9t="18" pimg_scale9l="17" pimg_scale9b="14" pimg_scale9r="22" pimg_scale9t="19">
+        <text text="我的战盟" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text4" horwrap="1" fonttype="" width="150" height="43" ta="11" y="0" outline="0">
+        </text>
+      </toggle>
+      <toggle id="request_list" togglegroup_id="toggle_team" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" default="0" width="150" height="45" y="-250" a="11" scale9l="17" scale9b="16" scale9r="22" scale9t="19" pimg_scale9l="19" pimg_scale9b="15" pimg_scale9r="23" pimg_scale9t="19">
+        <text text="请求列表" togglecolor="#FFFFFF|#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF" id="text_88" horwrap="1" width="150" height="43" ta="11" fonttype="" outline="0">
+        </text>
+      </toggle>
+    </layout>
+  </togglegroup>
+  <img id="FG_line" a="00" src="Texture/FG_line.png" width="9" height="499" raycast="1" x="-320" y="-27">
+  </img>
+  <button id="HelpButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="60" y="250" active="0">
+  </button>
+  <text id="text1" a="00" text="组 队" fontsize="20" height="40" width="200" ta="11" outline="0" horwrap="1" y="265" outlinesize="1" outlinecolor="#000000FF" x="0">
+  </text>
+  <text id="TipsTxt" a="00" text="默认内容" fontsize="20" height="450" width="830" ta="11" outline="1" horwrap="1" x="77" y="-48" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+</uipanel>

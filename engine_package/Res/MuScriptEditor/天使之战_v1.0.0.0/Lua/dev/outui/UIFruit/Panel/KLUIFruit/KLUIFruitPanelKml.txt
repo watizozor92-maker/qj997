@@ -1,0 +1,112 @@
+<uipanel id="KLUIFruitPanelKml" name="果实界面" a="20" adapter="1" width="10" height="10" x="2" y="0" zindex="202">
+  <panel id="BG_Templete" a="00" width="416" height="750" x="-205" y="0">
+    <panel id="ReMask" a="00" width="404" height="735" y="-7" rectmask="1">
+      <img id="img1231" a="00" width="680" height="750" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="img1" a="00" width="161" height="27" raycast="0" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="363">
+      </img>
+    </img>
+  </panel>
+  <img id="bg" a="20" atlas="" src="Texture/FG_bg_2ColumnsTanKuang.png" width="406" height="662" raycast="1" x="0" y="44" color="#ffffff00">
+    <button id="closeButton" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="176" y="300" h5y="348" h5x="-180" mimg="" pimg="" dimg="">
+    </button>
+    <button id="HelpButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="177" y="-396" active="0">
+    </button>
+    <text id="text1" a="00" text="果实" fontsize="20" height="38" width="357" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="295" x="-7" color="#ffffff">
+    </text>
+    <img id="title" a="01" atlas="Atlas/UIFruitPanel.spriteatlas" src="fruits" width="100" height="55" raycast="1" x="0" y="-1" active="0">
+    </img>
+    <panel id="Fruit" a="00" width="414" height="601" x="0" y="-25">
+      <img id="FruitBG" a="00" atlas="Atlas/FG_Fruit.spriteatlas" src="bg" width="401" height="512" raycast="1" x="-7" y="36">
+        <text id="TextPintInfo" a="00" text="已用点数:999/1000" fontsize="18" height="22" width="151" ta="21" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#00ff00FF" x="105" y="238" outline="0" fontstyle="0" underline="0">
+        </text>
+        <panel id="FruitAtt" a="00" width="414" height="452">
+          <datalist id="FruitAttDataList">
+            <panel id="FruitAttItem" a="00" width="107" height="96" x="-146" y="163">
+              <img id="FruitAttItem_Icon" a="00" atlas="Atlas/UIFruitPanel.spriteatlas" src="strength" width="107" height="96" raycast="1">
+              </img>
+              <img id="FruitAttItem_TextBG" a="00" atlas="Atlas/UIFruitPanel.spriteatlas" src="ty_new_blackGradient" width="120" height="26" raycast="1" x="0" y="-48">
+                <text id="FruitAttItem_Text" a="00" text="体力值<color=#00ff00>+999</color>" fontsize="16" height="30" width="160" ta="11" horwrap="1" fonttype="" y="0" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFF">
+                </text>
+              </img>
+            </panel>
+          </datalist>
+        </panel>
+        <button id="BtnReset" a="00" atlas="Atlas/FG_AttrPanel.spriteatlas" src="btn_xi" width="34" height="34" onclick="" text="" raycast="1" x="156" y="-223" mimg="" pimg="" dimg="">
+        </button>
+      </img>
+      <panel id="Bag" a="00" width="412" height="113" x="2" y="-244">
+        <img id="IconTitle" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="107" height="29" raycast="1" x="-142" y="-3" color="#FFFFFFFF">
+          <text id="TextTitle" a="00" text="背包果实" fontsize="18" height="25" width="90" ta="01" horwrap="1" x="18" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFF">
+          </text>
+        </img>
+        <scrollview id="FruitList" a="00" x="1" y="-70" width="347" height="83" vertical="0" raycast="1" movementtype="2">
+          <gridview id="gridview16" cellwidth="70" cellheight="70" raycast="1" constraint="2" constraintcount="1" contentsizefitter="0" spacex="20">
+            <datalist id="FruitDataList" active="1">
+            </datalist>
+          </gridview>
+        </scrollview>
+      </panel>
+    </panel>
+    <panel id="ResetPanel" a="00" width="414" height="663" x="-471" y="-111" active="0" z="-1000">
+      <button id="ClickMask" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="3000" height="1200" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="0">
+      </button>
+      <img id="ResetPanel_BG" a="00" atlas="" src="Texture/FG_chise2.png" width="534" height="554" raycast="1" x="0" y="67" color="#FFFFFFFF" scale9l="12" scale9b="12" scale9r="16" scale9t="12" active="1">
+      </img>
+      <button id="CloseResetPanelBtn" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" raycast="1" mimg="" pimg="" dimg="" x="235" y="302" width="34" height="34" h5x="-407" h5y="7" color="#FFFFFFFF">
+      </button>
+      <text id="ResetPanel_TextTitle1" a="00" text="重置点数" fontsize="20" height="25" width="350" ta="11" horwrap="1" x="0" y="293" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFF">
+      </text>
+      <text id="ResetPanel_TextTip" a="00" text="将所有点数分配完毕后才可进行确认" fontsize="16" height="46" width="366" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="0" y="-12" linespace="1.2" outline="0" color="#FF2323">
+      </text>
+      <text id="ResetPanel_TextTitle2" a="00" text="将所有果实提升的属性点进行重新分配" fontsize="18" height="25" width="350" ta="11" horwrap="1" x="0" y="231" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFF">
+      </text>
+      <text id="ResetPanel_TextTip" a="00" text="点击绿色属性分配数字可弹出快捷键盘" fontsize="16" height="30" width="366" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="0" y="-165" linespace="1.2" outline="0" color="#8A8A8A">
+      </text>
+      <text id="ResetPanel_TextPoint" a="00" text="可分配点数：9999" fontsize="18" height="25" width="178" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#FF8A00" x="0" y="204" outline="0">
+      </text>
+      <panel id="ResetPanel_Consum" a="00" width="183" height="40" x="-37" y="-57">
+        <text id="text30" a="00" text="消耗" fontsize="18" height="25" width="58" ta="01" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="-60" y="1" outline="0" color="#FFFFFF">
+        </text>
+        <img id="img31" a="00" atlas="Atlas/Common.spriteatlas" src="inputBg" width="205" height="35" raycast="1" x="61" y="0" scale9l="11" scale9b="8" scale9r="10" scale9t="7">
+        </img>
+        <panel id="Model" a="00" width="35" height="35" x="-23" y="0">
+        </panel>
+        <text id="ConsumCount" a="00" text="100" fontsize="18" height="25" width="165" ta="11" horwrap="1" fonttype="" x="82" y="0" outlinesize="1" outlinecolor="#000000FF" outline="0">
+        </text>
+      </panel>
+      <button id="ResetPanel_BtnCancel" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" width="91" height="33" onclick="" text="取消" raycast="1" x="-60" y="-109" ta="11" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" fontsize="18" mimg="" pimg="btn_common_2" dimg="">
+      </button>
+      <button id="ResetPanel_BtnReset" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" width="91" height="33" onclick="" text="确认" raycast="1" x="60" y="-109" ta="11" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" fontsize="18" color="#FFFFFF" mimg="" pimg="btn_common_2_select" dimg="">
+      </button>
+      <text id="ResetPanel_TextResetTimes" a="00" text="第 2 次重置" fontsize="16" height="25" width="112" ta="11" horwrap="1" x="60" y="-134" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFF">
+      </text>
+      <scrollview id="ResetPanel_AttScrollview" a="00" width="500" height="183" vertical="1" y="99" raycast="1" movementtype="1" x="0">
+        <layout id="layout2" width="500" height="230" a="01" vertical="1" contentsizefitter="1" raycast="0">
+          <datalist id="AttDataList" a="11">
+            <panel id="AttItem" width="500" height="45">
+              <text id="AttItem_Name" a="00" text="力量" fontsize="18" height="25" width="80" ta="01" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#E6E600FF" x="-170" y="0" outline="0">
+              </text>
+              <button id="AttItem_BtnMinus" a="00" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_minus" width="34" height="34" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-121" y="0">
+              </button>
+              <button id="AttItem_BtnAdd" a="00" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_add" width="34" height="34" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="171" y="0">
+              </button>
+              <img id="AttItem_TextBG" a="00" atlas="Atlas/Common.spriteatlas" src="bg_setting_xuanzekuang" width="232" height="34" raycast="1" x="25" scale9l="2" scale9b="3" scale9r="2" scale9t="2" y="0">
+              </img>
+              <text id="AttItem_Text" a="00" text="0" fontsize="18" height="34" width="232" ta="11" horwrap="1" x="25" outlinesize="1" outlinecolor="#000000FF" color="#00ff00" outline="0">
+              </text>
+              <button id="AttItem_InputButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="232" height="34" onclick="" text="" raycast="1" color="#FFFFFF00" x="25" y="0">
+              </button>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="IsOpenCalcUI" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" width="2000" height="2000" raycast="1" x="-750" y="3" color="#FFFFFF00" active="0">
+      </img>
+    </panel>
+  </img>
+  <img id="FeedBackImg" a="00" atlas="Atlas/FG_Fruit.spriteatlas" src="qianghuachenggong" width="206" height="54" raycast="1" x="-197" y="117" active="0">
+  </img>
+</uipanel>

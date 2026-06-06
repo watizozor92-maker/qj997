@@ -1,0 +1,18 @@
+<uipanel id="KLUILoadingPanelPanel" name="加载界面" x="0" y="0" zindex="10000" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" z="-1000">
+  <prefab id="UILoadingPanel" path="UI/UILoadingPanel.prefab" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
+    <panel id="UILoadingPanel_Root" bind="UILoadingPanel" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
+    </panel>
+    <img id="img1" a="00" width="1334" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" height="750" raycast="1" siblingindex="0" atlas="" src="Texture/bg_loadingWait.jpg" active="1">
+    </img>
+    <img id="img2" a="00" width="1334" height="750" raycast="1" siblingindex="1" atlas="" src="Texture/bg_loading_2.jpg" active="0">
+    </img>
+    <panel id="RawImage_Background" bind="RawImage_Background" active="0" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
+    </panel>
+    <img id="Image_ProgressBG" bind="Image_ProgressBG" active="1" y="65" z="-1000" ap="0.5#0#0.5#0#0.5#0.5">
+      <img id="Image_Progress" bind="Image_Progress" active="1">
+      </img>
+    </img>
+    <text id="Text_Message" bind="Text_Message" active="1" y="99" z="-1000" ap="0.5#0#0.5#0#0.5#0.5">
+    </text>
+  </prefab>
+</uipanel>

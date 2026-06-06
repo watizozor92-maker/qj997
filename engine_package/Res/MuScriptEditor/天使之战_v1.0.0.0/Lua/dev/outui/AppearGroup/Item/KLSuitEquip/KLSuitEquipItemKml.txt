@@ -1,0 +1,18 @@
+<uipanel id="KLSuitEquipItem" name="外观套装装备模板" width="300" height="300" zindex="-1">
+  <button id="BtnEquip" width="72" height="72" atlas="Atlas/Common.spriteatlas" onclick="" src="cdTime_2" raycast="1">
+  </button>
+  <item id="EquipItem" src="20020001" width="72" height="72" mscale="40,40,40" mfixsize="72,72">
+  </item>
+  <img id="img_quality" a="11" atlas="Atlas/UIBagPanel.spriteatlas" src="img_icon_excellent" z="-100">
+  </img>
+  <panel id="topPanel" width="72" height="72" a="00" z="-300" zindex="202">
+    <img id="SpMask" width="72" height="72" a="00" atlas="Atlas/AppearGroup.spriteatlas" src="SpMask" raycast="0" active="0">
+    </img>
+    <img id="SpLock" a="21" atlas="Atlas/UITradePanel.spriteatlas" src="img_skill_lock" width="26" height="32" raycast="0" x="0" y="0" z="-100">
+    </img>
+    <img id="SpState" a="00" width="72" height="72" raycast="0" src="img_item_select" atlas="Atlas/FG_Common.spriteatlas" y="0" x="0" z="-100" active="0">
+      <img id="SpState2" a="22" x="0" y="0" z="-100" atlas="Atlas/FG_Common.spriteatlas" src="ty_gou" raycast="0" active="1" width="22" height="19">
+      </img>
+    </img>
+  </panel>
+</uipanel>

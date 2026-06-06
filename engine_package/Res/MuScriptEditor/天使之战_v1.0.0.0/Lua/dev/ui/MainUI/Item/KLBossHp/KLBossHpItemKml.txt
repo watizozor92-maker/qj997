@@ -1,0 +1,6 @@
+<uipanel id="KLBossHpItem" width="40" height="40" zindex="-1">
+  <item id="equip_item" tips="" width="40" height="40" z="-200" atlas="Atlas/Common.spriteatlas" bgtype="1" bgimg="img_email_choose" itemid="" uniqueid="" selfrotation="" strengthlevel="" mfixsize="30,30">
+  </item>
+  <button id="btn" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="40" height="40" color="#00000000" raycast="1">
+  </button>
+</uipanel>

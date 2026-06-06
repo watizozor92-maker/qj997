@@ -1,0 +1,4 @@
+<uipanel id="KLFriendEnemyLogTextItemKml" name="好友留言模板" a="11" width="650" height="25" zindex="-1" x="0" y="0">
+  <text id="textContent" a="11" text="默认内容" fontsize="18" color="#FFFFFF" outlineSize="1" outlineColor="#000000" height="25" width="650" ta="01" x="0" y="0" horwrap="1" fonttype="">
+  </text>
+</uipanel>

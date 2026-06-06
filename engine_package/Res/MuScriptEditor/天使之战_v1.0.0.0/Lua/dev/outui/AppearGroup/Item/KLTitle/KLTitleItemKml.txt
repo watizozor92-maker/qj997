@@ -1,0 +1,14 @@
+<uipanel id="KLTitleItem" name="外观道具标题模板" width="345" height="81" rotate="0,0,0" x="0" y="0" zindex="-1">
+  <button id="Bg" a="00" atlas="Atlas/AppearGroup.spriteatlas" src="bg_title_item" width="345" height="78" raycast="1" color="#FFFFFFFF" x="0" y="0">
+    <model id="TitleModel" x="-89" y="0" z="0" a="00" src="" mscale="100,100,100" width="160" height="60" active="1">
+    </model>
+    <img id="SpState" a="20" atlas="Atlas/AppearGroup.spriteatlas" src="tab_title_selected" width="44" height="44" raycast="0" x="-10" y="0">
+    </img>
+    <text id="TxtTime" a="20" text="永久有效" fontsize="18" color="#FFFFFFFF" height="22" width="150" ta="21" horwrap="1" x="-54" y="10" outline="1" fontstyle="0" underline="0">
+    </text>
+    <text id="TxtType" a="20" text="角色有效" fontsize="14" color="#01AD1FFF" height="18" width="100" ta="21" horwrap="1" x="-54" y="-10" outline="1" fontstyle="0" underline="0">
+    </text>
+    <countdown id="TimeDown" a="20" width="137" height="22" ta="11" formattype="2" color="#FF2323FF" updateinterval="1" time="0" fonttype="" x="-54" y="10" text="" fontsize="18" fontstyle="0" underline="0">
+    </countdown>
+  </button>
+</uipanel>

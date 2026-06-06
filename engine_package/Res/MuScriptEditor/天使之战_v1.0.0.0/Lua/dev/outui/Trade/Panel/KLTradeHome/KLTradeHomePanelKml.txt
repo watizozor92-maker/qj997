@@ -1,0 +1,74 @@
+<uipanel id="KLTradeHomePanel" name="交易行首界面" width="1039" height="578" zindex="303" x="0" y="0">
+  <osascrollview id="scrollview_catalogue" width="148" height="388" defaultitemsize="46" vertical="1" a="11" x="34" y="-125">
+    <datalist width="160" id="datalist_138">
+      <panel id="panel_139" width="148" height="46" x="74" y="-23">
+        <button id="btn_content" width="148" height="41" src="btn_cebian2" atlas="Atlas/FG_Common.spriteatlas" raycast="1" mimg="" pimg="" dimg="">
+          <text id="txt_name" text="全部" fontsize="16" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
+          </text>
+        </button>
+      </panel>
+    </datalist>
+  </osascrollview>
+  <layout width="492" expand_width="1" cella="02" a="22" x="-24" y="17" id="layout_143" space="14" height="32">
+    <panel width="110" height="426" zindex="306" z="-100" id="panel_154">
+      <img id="dropdown_list_level" src="bg1" atlas="Atlas/Common.spriteatlas" scale9b="12" scale9l="45" scale9r="50" scale9t="12" width="120" height="242" a="02" active="0" y="36" x="0">
+        <scrollview width="120" height="242" vertical="1" scrollpos="1" id="scrollview_156" a="02">
+          <layout id="layout_level" width="120" height="684" vertical="1" expand_height="1" expand_width="1" control_height="1" control_width="1">
+          </layout>
+        </scrollview>
+      </img>
+      <button id="btn_filter_level" raycast="1" text="" a="02" textcolor="#1ADE1FFF" outlinesize="1" outlinecolor="#000000" src="textbg_di" atlas="Atlas/FG_TradePanel.spriteatlas" fontsize="18" width="125" height="34" scale9b="12" scale9l="45" scale9r="50" scale9t="12" x="0" y="0" mimg="" pimg="" dimg="">
+        <layout id="layout2" control_height="0" contentsizefitter="0" vertical="0" height="37" width="120" a="00" raycast="1" control_width="1" x="-1" y="0">
+          <img src="btn_icon_up" atlas="Atlas/FG_Common.spriteatlas" id="img_158" width="22" height="18">
+          </img>
+          <text id="btn_filter_level_txt" color="#1ADE1FFF" text="卓越词条" fontsize="18" height="25" width="61" ta="11" outline="1" horwrap="0" contentsizefitter="2" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </layout>
+      </button>
+    </panel>
+    <panel width="110" height="186" zindex="306" z="-100" id="panel_144">
+      <img id="dropdown_list_quality" src="bg1" atlas="Atlas/Common.spriteatlas" scale9b="12" scale9l="45" scale9r="50" scale9t="12" width="120" height="120" y="-29" a="01" active="0">
+        <layout width="120" height="120" vertical="1" expand_height="1" expand_width="1" control_height="1" control_width="1" id="layout_146" x="0" y="0">
+        </layout>
+      </img>
+      <button id="btn_filter_quality" raycast="1" text="" a="02" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" src="textbg_di" atlas="Atlas/FG_TradePanel.spriteatlas" fontsize="18" width="125" height="34" scale9b="12" scale9l="45" scale9r="50" scale9t="12" x="0" y="0" mimg="" pimg="" dimg="">
+        <layout id="layout3" control_height="0" contentsizefitter="0" vertical="0" height="37" width="120" a="00" raycast="1" control_width="1" x="-1">
+          <img src="btn_icon_up" atlas="Atlas/FG_Common.spriteatlas" width="22" height="18" id="img_153">
+          </img>
+          <text id="btn_filter_quality_txt" color="#1ADE1FFF" text="品质" fontsize="18" height="25" width="61" ta="11" outline="1" horwrap="0" contentsizefitter="2">
+          </text>
+        </layout>
+      </button>
+    </panel>
+    <panel width="110" height="156" zindex="306" z="-100" id="panel_169">
+      <img id="dropdown_list_career" src="bg1" atlas="Atlas/Common.spriteatlas" scale9b="12" scale9l="45" scale9r="50" scale9t="12" width="120" height="240" a="01" y="121" active="0">
+        <layout width="120" height="240" vertical="1" id="layout_171" expand_height="1" expand_width="1" control_width="1">
+        </layout>
+      </img>
+      <button id="btn_filter_career" raycast="1" text="" a="02" outlinesize="1" outlinecolor="#000000" src="textbg_di" atlas="Atlas/FG_TradePanel.spriteatlas" fontsize="18" width="125" height="34" scale9b="12" scale9l="45" scale9r="50" scale9t="12" mimg="" pimg="" dimg="" x="0" y="0">
+        <layout id="layout4" control_height="0" contentsizefitter="0" vertical="0" height="37" width="120" a="00" raycast="1" control_width="1" x="-1">
+          <img src="btn_icon_up" atlas="Atlas/FG_Common.spriteatlas" width="22" height="18" id="img_177">
+          </img>
+          <text id="btn_filter_career_txt" text="职业" fontsize="18" height="25" width="61" ta="11" outline="1" horwrap="0" contentsizefitter="2" color="#1ADE1FFF">
+          </text>
+        </layout>
+      </button>
+    </panel>
+    <panel width="110" height="186" zindex="306" z="-100" id="panel_159">
+      <img id="dropdown_list_order" src="bg1" atlas="Atlas/Common.spriteatlas" scale9b="12" scale9l="45" scale9r="50" scale9t="12" width="120" height="150" a="01" active="0">
+        <layout width="120" height="150" vertical="1" expand_height="1" expand_width="1" control_height="1" control_width="1" id="layout_161">
+        </layout>
+      </img>
+      <button id="btn_sort" raycast="1" text="" a="02" outlinesize="1" outlinecolor="#000000" src="textbg_di" atlas="Atlas/FG_TradePanel.spriteatlas" fontsize="18" width="125" height="34" scale9b="12" scale9l="45" scale9r="50" scale9t="12" mimg="" pimg="" dimg="" x="0" y="0">
+        <layout id="layout5" control_height="0" contentsizefitter="0" vertical="0" height="37" width="120" a="00" raycast="1" control_width="1" x="-1" y="0">
+          <img src="btn_icon_up" atlas="Atlas/FG_Common.spriteatlas" width="22" height="18" id="img_168">
+          </img>
+          <text id="btn_sort_txt" text="排序" fontsize="18" height="25" width="61" ta="11" outline="1" horwrap="0" contentsizefitter="2" color="#1ADE1FFF">
+          </text>
+        </layout>
+      </button>
+    </panel>
+  </layout>
+  <button id="btn_dropdown_mask" width="2000" height="1200" raycast="1" color="#00000000" active="0" x="0" y="0">
+  </button>
+</uipanel>

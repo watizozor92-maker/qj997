@@ -1,0 +1,8 @@
+<uipanel id="KLCodePanel" name="兑换界面" zindex="200" a="20" adapter="1" x="-265" y="0" z="0" width="10" height="10" rotate="0,0,0" raycast="0" color="#00000000">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlSettingUI/KmlExchangeSettingUI.prefab" a="12" id="prefab_765">
+    <input id="CodeInput" bind="CodeInput" onchange="KmlSettingUI/@输入兑换码">
+    </input>
+    <button id="exchangeBtn" bind="exchangeBtn" onclick="KmlSettingUI/@兑换">
+    </button>
+  </prefab>
+</uipanel>

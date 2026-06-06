@@ -1,0 +1,12 @@
+<uipanel id="KLMountInfoItem" name="坐骑属性模板" zindex="-1" width="250" height="45">
+  <img id="bg" atlas="Atlas/UIMount.spriteatlas" src="attbg" a="11" width="250" height="39" x="0" y="0" z="0" rotate="0,0,0" raycast="0">
+    <text id="name" a="10" text="" fontsize="18" height="25" width="155" ta="01" x="15" y="0" outlinesize="1" outlinecolor="#000000FF" outline="0" horwrap="1" color="#CCCCCCFF">
+    </text>
+    <text id="num" a="20" text="" fontsize="18" height="25" width="113" ta="21" x="-15" y="0" outlinesize="1" outlinecolor="#000000FF" outline="0" horwrap="1" color="#CCCCCCFF">
+    </text>
+    <img id="arrow" a="00" width="19" height="26" raycast="1" src="tips_yellow2" atlas="Atlas/Common.spriteatlas" rotate="0,0,-90" x="62" y="0" color="#FFFFFFFF">
+    </img>
+    <text id="preNum" a="00" text="0" fontsize="18" height="25" width="107" ta="01" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="38" color="#CCCCCCFF">
+    </text>
+  </img>
+</uipanel>

@@ -1,0 +1,22 @@
+<uipanel id="KLSelfSelectBoxItem" name="宝箱模板" width="150" height="180" zindex="-1" >
+<img id="SelfBoxItemTemplate" src="Texture/Instance_RankBg2.png" width="150" height="180" >
+  <item id="itemicon" width = "100" height = "100" bgtype ="0" mfixsize="100,100" y="20"  raycast="1" />
+  <button id="decbtn" atlas="Atlas/Common.spriteatlas" src="button_interface_minus3" x="-56" y="-55" raycast="1"  />
+  <button id="addbtn" atlas="Atlas/Common.spriteatlas" src="button_interface_plus6" x="57" y="-55" raycast="1" />
+    <input id="numbertext" text="1" y="-55"  width="78" height="34" ta="11" fontsize="18" outlinecolor="#000000" outlinesize="1" type="1" src="bg_partnerStar_select" atlas="Atlas/Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" />
+</img>
+  ; <prefab path="UI/Template/Template/SelfSelectBox/SelfBoxItemTemplate.prefab" width="178" height="200" id="prefab_333">
+  ;   <text id="numbertext" bind="numbertext">
+  ;   </text>
+  ;   <panel id="itemicon" bind="itemicon">
+  ;   </panel>
+  ;   <button id="decbtn" bind="decbtn">
+  ;   </button>
+  ;   <button id="addbtn" bind="addbtn">
+  ;   </button>
+  ;   <img id="img2" bind="SelfBoxItemTemplate">
+  ;   </img>
+  ;   <img id="img3" bind="numbg">
+  ;   </img>
+  ; </prefab>
+</uipanel>

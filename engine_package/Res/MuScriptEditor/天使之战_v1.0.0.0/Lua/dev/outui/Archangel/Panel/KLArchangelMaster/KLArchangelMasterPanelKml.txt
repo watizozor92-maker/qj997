@@ -1,0 +1,30 @@
+<uipanel id="KLArchangelMasterPanelKml" name="大天使天赋大师界面" a="00" width="1334" height="750" zindex="400" h5y="0" h5x="0">
+  <img id="mask" a="00" width="2000" height="2000" raycast="1" color="#FFFFFF00">
+  </img>
+  <img id="bg" a="00" atlas="" src="Texture/three_tips.png" width="632" height="418" raycast="1" rotate="0,0,0" scale9l="39" scale9b="41" scale9r="39" scale9t="70">
+    <scrollview id="scrollview4" a="00" width="600" height="326" vertical="1" y="-13" raycast="1" x="0" movementtype="1">
+      <layout id="layout5" width="600" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" space="10">
+        <datalist id="suit_datalist">
+          <img id="img8" atlas="Atlas/TS_Common.spriteatlas" src="monsterlist1" width="600" height="80" raycast="1">
+            <text id="att_text" a="10" text="属性点+888" fontsize="18" height="40" width="150" ta="11" horwrap="1" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+            <text id="info_text" a="00" text="穿戴全套1阶天使套装装备（10/10）" fontsize="18" height="70" width="169" ta="01" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" x="-65">
+            </text>
+            <button id="ok_btn" a="20" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="可激活" raycast="1" x="-30" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+            </button>
+            <button id="no_btn" a="20" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" width="113" height="40" onclick="" text="未激活" raycast="1" x="-30" fontsize="18" textcolor="#FF2424FF" outlinesize="1" outlinecolor="#000000FF" active="0" mcolor="#FFFFFFFF">
+            </button>
+            <img id="done" a="20" atlas="Atlas/TS_Common.spriteatlas" src="btn_activate" width="128" height="65" raycast="1" x="-30" active="0">
+            </img>
+            <text id="wearcount_text" a="00" text="默认内容" fontsize="16" height="70" width="100" ta="11" horwrap="1" x="87" y="0">
+            </text>
+          </img>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="close" a="21" width="75" height="69" raycast="1" color="#FFFFFFFF" x="8" src="button_interface_close5" atlas="Atlas/Common.spriteatlas" h5x="-570" h5y="10" y="-4">
+    </img>
+    <img id="title" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="talent_master_title" raycast="1" y="183">
+    </img>
+  </img>
+</uipanel>

@@ -1,0 +1,6 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,1000010,卡利玛-金币,112#168,0#5000,,
+2,2,6000090,卡利玛-祝福,1#1,0#200,,
+3,2,6000100,卡利玛-灵魂,1#1,0#100,,
+4,2,6000250,卡利玛——碎角片,1#1,0#400,,

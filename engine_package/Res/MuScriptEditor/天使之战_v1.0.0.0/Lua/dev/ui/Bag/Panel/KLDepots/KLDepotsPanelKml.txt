@@ -1,0 +1,72 @@
+<uipanel id="KLDepotsPanel" name="仓库界面" adapter="1" zindex="200" a="21" height="660" width="344" x="-403" y="0" z="-1000">
+  <prefab id="cut_area_up" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="317">
+  </prefab>
+  <panel id="BG_Templete" a="00" width="416" height="750" x="-48" y="-45">
+    <panel id="ReMask" a="00" width="408" height="727" y="-5" rectmask="1" x="0">
+      <img id="img1" a="00" width="680" height="738" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="3">
+      </img>
+    </panel>
+    <img id="Frame" a="01" width="418" height="752" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="140" scale9b="81" scale9r="144" scale9t="109" x="0" y="0">
+      <img id="img4" a="01" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png">
+      </img>
+      <img id="img1" a="01" atlas="Atlas/FG_cangku.spriteatlas" src="bg_1" width="230" height="41" raycast="1" x="0" y="-108" color="#FFFFFFFF">
+        <text id="storeText" width="191" height="18" x="-5" y="2" type="0" ta="11" horwrap="1" fontsize="16" outline="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" text="仓库名称七个字" fontstyle="0" underline="0">
+        </text>
+        <button id="edit_btn" src="btn_xiugai" atlas="Atlas/FG_Union.spriteatlas" a="20" width="28" height="28" x="-3" y="2" raycast="1">
+        </button>
+      </img>
+      <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-12" y="-19" h5x="-355" h5y="10" raycast="1" width="34" height="34">
+      </img>
+      <img id="sv_frame" atlas="Atlas/UILoginPanel.spriteatlas" src="bg_black_grid_N" width="345" height="512" scale9b="26" scale9r="26" scale9l="26" scale9t="26" a="01" y="-165" x="-1">
+      </img>
+      <img id="title" atlas="Atlas/UIBagPanel.spriteatlas" src="storge" y="-19" x="-1" a="01" active="0" width="81" height="24" text="仓 库" fontsize="20" fontstyle="0" underline="0" color="#FFFFFFFF">
+      </img>
+      <text id="text1" a="01" text="仓 库" fontsize="20" height="24" width="108" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-25" color="#FFFFFFFF" fontstyle="0" underline="0" x="0">
+      </text>
+    </img>
+  </panel>
+  <prefab id="cut_area_down" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="-316">
+  </prefab>
+  <button id="storage_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="button_interface_storage" a="02" x="47" y="36" active="0" raycast="1">
+  </button>
+  <scrollview id="PageScrollView" height="27" width="390" x="-46" y="-55" movementtype="2" a="02">
+    <layout id="ItemContent" height="40" width="390" x="0" y="0" space="5">
+    </layout>
+  </scrollview>
+  <panel id="edit_panel" zindex="500" z="-1500" active="1" x="-92" y="-46" deltay="1" width="1334" height="750">
+    <img id="bgImg" src="Texture/FG_dankuangdi.png" width="345" height="272" raycast="1" x="0" y="0" atlas="">
+      <text id="old_Store_Name" text="仓库1" height="22" x="0" y="-93" ta="11" horwrap="1" width="48" outline="0" fontsize="18" outlinesize="1" outlinecolor="#000000FF" a="01" contentsizefitter="2" fontstyle="0" underline="0" color="#FFFFFFFF" rotate="0,0,0">
+      </text>
+      <text id="edit_oldName" text="修改仓库名称" y="105" horwrap="1" raycast="1" active="0" outline="0" color="#FFFFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <button id="edit_CloseBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-8" y="-15" z="-10" raycast="1" mimg="" pimg="" dimg="" width="34" height="34">
+      </button>
+      <input id="store_Name_Input" width="198" height="28" x="0" y="0" type="0" ta="11" src="tip_text_bg" atlas="Atlas/FG_Common.spriteatlas" textcolor="#FFFFFF" color="#FFFFFFFF" a="00" placecolor="#8A8A8AFF" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+        <text id="Text_attach" bind="Text_attach" width="188" height="25" a="00" x="0" y="1" text="" raycast="1" active="1" outline="0" color="#FFFFFF" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1">
+        </text>
+      </input>
+      <button id="edit_Enter" atlas="Atlas/FG_Common.spriteatlas" text="确定" src="btn_common_1_select" x="-50" y="26" raycast="1" textcolor="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" ta="11" mimg="" pimg="" dimg="" fontsize="18" width="113" height="41" a="22">
+      </button>
+      <button id="edit_Cancel" atlas="Atlas/FG_Common.spriteatlas" text="取消" src="btn_common_1" x="49" y="26" raycast="1" outlinesize="1" outlinecolor="#000000FF" ta="11" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="" fontsize="18" a="12" width="113" height="41">
+      </button>
+      <img id="img2" a="00" atlas="Atlas/TS_Common.spriteatlas" src="modify_title" width="180" height="55" raycast="1" x="-5" y="113" active="0">
+      </img>
+      <text id="text2" a="00" text="仓库名称修改" fontsize="20" height="30" width="350" ta="11" outline="0" horwrap="1" y="103" outlinesize="1" outlinecolor="#000000FF" x="0">
+      </text>
+    </img>
+  </panel>
+  <button id="pageLeft_btn" atlas="Atlas/TS_Common.spriteatlas" src="first_task_jian" a="02" width="24" height="45" x="-171" y="366" rotate="0,0,0" mimg="" pimg="" dimg="" raycast="1" active="0">
+  </button>
+  <button id="pageRight_btn" atlas="Atlas/TS_Common.spriteatlas" src="right_arrow" a="02" width="24" height="45" x="171" y="366" rotate="0,0,0" mimg="" pimg="" dimg="" raycast="1" active="0">
+  </button>
+  <button id="add_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="btn_add_store" width="88" height="58" a="02" x="36" y="15" raycast="1" active="0">
+  </button>
+  <button id="tidy_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" width="74" height="26" a="21" x="-40" y="-74" raycast="1" mimg="" pimg="" dimg="" text="整理" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFF">
+  </button>
+  <button id="priv_btn" a="02" atlas="Atlas/KLUIPrivilegePanel.spriteatlas" src="btn_privilege_depot" width="125" height="58" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-80" y="15" active="0">
+  </button>
+  <panel id="forbid_red_panel" zindex="400" x="3" y="-9" z="-200">
+    <img id="img3" atlas="Atlas/KLUIPrivilegePanel.spriteatlas" src="bag_grid_red" width="365" height="500" scale9b="20" scale9r="20" scale9l="20" scale9t="20" color="#FFFFFFB2" active="1" x="0" y="0">
+    </img>
+  </panel>
+</uipanel>

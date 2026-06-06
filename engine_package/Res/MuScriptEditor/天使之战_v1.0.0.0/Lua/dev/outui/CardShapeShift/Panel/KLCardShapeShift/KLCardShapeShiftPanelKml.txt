@@ -1,0 +1,28 @@
+<uipanel id="KLCardShapeShiftPanel" name="拍脸图通用界面" width="300" height="300" x="0" y="0" zindex="600">
+  <img id="img_close" raycast="1" color="#FFFFFF00" width="5000" height="5000">
+  </img>
+  <img a="00" atlas="" src="Texture/bg_interface_window_1.png" width="1049" height="565" raycast="1" x="4" y="4" id="img_13">
+    <img id="title" atlas="Atlas/KmlPreviewUI.spriteatlas" src="PreviewTitle" a="01" x="-5" y="5">
+    </img>
+    <img id="img_bg" a="00" src="Texture/card_shape_ttwz.png" width="990" height="494" raycast="1" x="-3" y="-15">
+    </img>
+    <toggle id="today_show_toggle" width="38" height="38" default="0" a="11" togglegroup_id="" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="bg_setting_gou" raycast="1" x="36" y="-60">
+      <text a="00" text="今日不再提示" fontsize="22" height="25" width="140" ta="00" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="90" y="-1" id="text_17">
+      </text>
+    </toggle>
+    <button id="btn_left" a="00" atlas="Atlas/KLCardShapeShiftPanel.spriteatlas" src="btn_img" width="216" height="60" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-243" y="-215">
+      <img id="img7" a="00" atlas="Atlas/KLCardShapeShiftPanel.spriteatlas" src="btn_qwtz" width="83" height="22" raycast="1" y="-4">
+      </img>
+    </button>
+    <text id="btn_left_tips" a="00" x="-243" y="-220" text="" fontsize="20" ta="00" color="#FF2323" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="btn_right" a="00" atlas="Atlas/KLCardShapeShiftPanel.spriteatlas" src="btn_img" width="216" height="60" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" y="-215" x="248">
+      <img id="img9" a="00" atlas="Atlas/KLCardShapeShiftPanel.spriteatlas" src="btn_qwyc" width="83" height="22" raycast="1" y="-4">
+      </img>
+    </button>
+    <text id="btn_right_tips" a="00" x="248" y="-220" text="" fontsize="20" ta="00" color="#FF2323" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="btn_close" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="13" y="6" h5y="6" h5x="-990">
+    </button>
+  </img>
+</uipanel>

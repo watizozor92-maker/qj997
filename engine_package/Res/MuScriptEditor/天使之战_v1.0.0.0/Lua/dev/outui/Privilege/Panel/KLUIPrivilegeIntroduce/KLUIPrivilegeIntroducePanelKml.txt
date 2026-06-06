@@ -1,0 +1,17 @@
+<uipanel id="KLUIPrivilegeIntroducePanel" name="特权活动说明界面" width="300" height="300" zindex="205" z="-100" maskonclick="1" >
+  <img id="img_bg" a="00" atlas="" src="Texture/login_bg_2.png" width="464" height="470" raycast="1" x="0" y="-16" scale9l="33" scale9b="50" scale9r="33" scale9t="48" active="1">
+    ;<img id="img_title" a="00" atlas="Atlas/Common.spriteatlas" src="img_tip_title" width="81" height="56" raycast="1" y="208" x="0">
+    ;</img>
+    <text id="text_title" horwrap="1" text="特权卡解释" fontsize="18" ta="00" active="1" color="#DBC64F" y="208" />
+    <button id="button_close" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="207" y="207">
+    </button>
+    <scrollview id="scrollview_introduce" a="00" width="430" height="350" vertical="1" y="-5" raycast="1" x="1" active="1">
+      <layout id="layout2" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" expand_height="0" expand_width="0" control_height="1" control_width="0" space="11">
+        <datalist id="datalist_introduce">
+          <text id="text_introduce" horwrap="1" text="1122" fontsize="18" height="25" width="430" ta="00" active="1">
+          </text>
+        </datalist>
+      </layout>
+    </scrollview>
+  </img>
+</uipanel>

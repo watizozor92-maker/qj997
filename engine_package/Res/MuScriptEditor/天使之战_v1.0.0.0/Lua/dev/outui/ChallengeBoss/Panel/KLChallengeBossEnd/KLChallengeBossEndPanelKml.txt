@@ -1,0 +1,3 @@
+<uipanel id="KLChallengeBossEndPanel" name="挑战boss结束界面" x="0" y="100" width="300" height="200" zindex="101" onload="">
+    <countdown id="end_time" text="{0}后将自动退出副本" time=""  formattype="3" fontSize="22" color="#FF2323" outlineSize="1" outlineColor="0" active="1"/>
+</uipanel>

@@ -1,0 +1,14 @@
+<uipanel id="KLCardShapeArchangelPanelKml" name="大天使拍脸图" a="00" width="920" height="630" mask="1" zindex="600">
+  <img id="img_bg" a="00" atlas="" src="Texture/card_shape_dts.png" width="917" height="628" raycast="1">
+  </img>
+  <model id="item_model" src="" mscale="70,70,70" width="150" height="200" z="-200" x="-200" y="140">
+  </model>
+  <toggle id="today_show_toggle" width="38" height="38" default="0" a="22" togglegroup_id="" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="bg_setting_gou" raycast="1" x="-170" y="100">
+    <text a="00" text="今日不再提示" fontsize="22" height="25" width="140" ta="00" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="90" y="-1" id="text_15">
+    </text>
+  </toggle>
+  <button id="btn_go" a="00" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window38" width="177" height="51" onclick="" text="立即前往" raycast="1" x="213" y="-101" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+  </button>
+  <button id="btn_close" a="00" atlas="Atlas/TS_Common.spriteatlas" src="icon_close" onclick="" text="" raycast="1" x="424" y="167" h5y="167" h5x="-424">
+  </button>
+</uipanel>

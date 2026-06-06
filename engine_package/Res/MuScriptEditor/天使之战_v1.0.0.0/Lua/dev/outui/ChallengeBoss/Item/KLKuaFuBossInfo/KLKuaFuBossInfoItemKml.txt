@@ -1,0 +1,44 @@
+<uipanel id="KLKuaFuBossInfoItemKml" name="跨服boss关卡信息模板" a="00" width="1049" height="565" zindex="-1">
+  <panel id="panel1" width="1030" height="560">
+    <img src="Texture/bg_challenge_boss_bg_area.png" width="719" height="440" x="128" y="-38" id="img_90">
+    </img>
+    <loopscrollview id="privilege_boss_select" width="267" height="420" a="11" x="26" y="-110" vertical="1" cellwidth="249" cellheight="79">
+        <datalist id="privilege_boss_level_data_list" databind="">
+        </datalist>
+    </loopscrollview>
+    <panel id="tequan_boss_right_panel" width="700" height="400" x="130" y="-43">
+      <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="-148" y="180" id="img_94">
+      </img>
+      <text id="privilege_boss_name" text="" x="-150" y="180" z="-300" ta="11" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+      </text>
+      <panel id="boss_root" a="00" width="100" height="100" x="-151" y="-85">
+        <model id="privilege_boss_path" src="" mscale="40,40,40" mfixsize="0,0" mrotate="0,180,0" x="0" y="0" z="0" mpos="0,0,-100" width="0" height="0">
+        </model>
+      </panel>
+      <img atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="-288" y="-2" a="21" id="img_97">
+      </img>
+      <text id="dropTitleText" text="掉落奖励" x="102" y="186" height="20" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+      </text>
+      <loopscrollview id="tequan_boss_select" width="302" height="137" x="218" y="88" vertical="1" cellwidth="67" cellheight="67">
+          <datalist id="privilege_boss_reward_data_list" databind="">
+          </datalist>
+      </loopscrollview>
+      <text id="tipText" text="每天固定时间在神之国度内随机位置刷新\n击杀后可掉落珍贵道具" width="300" height="100" a="11" ta="00" x="400" y="-200" fontsize="18" mline="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+      </text>
+      <text id="reviveText" text="复活倒计时" width="100" height="25" a="11" ta="01" x="460" y="-280" fontsize="18" mline="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+      </text>
+      <text id="txt_countDown" text="01:02:03" width="100" height="25" a="11" ta="01" x="564" y="-280" fontsize="18" mline="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+      </text>
+      <button id="btn_goNow" onclickmasktime="0.5" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window37" a="11" x="460" y="-315" text="前往挑战" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="" raycast="1" dimg="" mimg="" pimg="" width="177">
+      </button>
+      <img id="img_tip" a="11" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window37_gery" width="177" height="51" raycast="1" x="460" y="-315">
+        <text id="text2" a="00" text="boss已死亡" fontsize="18" height="51" width="177" ta="11" x="0" y="0" horwrap="1" color="#FFFFFFFF">
+        </text>
+      </img>
+      <img id="Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="80" height="76" raycast="1" x="-303" y="174" z="-500">
+        <text id="Integral_Text" a="00" text="9999" fontsize="16" height="83" width="100" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font">
+        </text>
+      </img>
+    </panel>
+  </panel>
+</uipanel>

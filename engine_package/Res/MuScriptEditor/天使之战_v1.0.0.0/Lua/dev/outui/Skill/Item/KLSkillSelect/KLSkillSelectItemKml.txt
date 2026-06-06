@@ -1,0 +1,10 @@
+<uipanel id="KLSkillSelectItemKml" name="技能选择模板" a="00" width="75" height="75" zindex="-1">
+  <button id="button1" a="00" atlas="Atlas/PCPlatform_UI.spriteatlas" src="Main_SkillItemBg" width="75" height="75" onclick="" text="" raycast="1" mimg="" pimg="" dimg="">
+  </button>
+  <img id="img1" a="00" x="-1" y="-1" atlas="Atlas/PCPlatform_UI.spriteatlas" src="Main_CustomSkillBg" width="79" height="79" raycast="0" active="0">
+  </img>
+  <img id="img2" a="00" atlas="Atlas/SkillOut_Icon.spriteatlas" src="12160100" width="68" height="68" raycast="0" active="0">
+  </img>
+  <img id="img3" a="00" atlas="Atlas/Common.spriteatlas" src="icon_Check2" width="47" height="47" raycast="0" active="1" x="17" y="-21">
+  </img>
+</uipanel>

@@ -1,0 +1,6 @@
+<uipanel id="KLMapTransferAnimPanelPanel" name="地图传送动画界面" width="160" height="180">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlBigMapUI/KLMapTransferAnimPanelPanel.prefab" id="prefab_457">
+    <img id="img_trans_anim" bind="transImg">
+    </img>
+  </prefab>
+</uipanel>

@@ -1,0 +1,52 @@
+
+<uipanel id="KLQuestionnairePanel" name="问卷界面" zindex="204" width="1049" height="565" z="-500">
+    <panel id="root_panel" width="545" height="550">
+        <img id="btn_mask" src="Texture/login_bg_2.png" width="3000" height="2000" color="#00000000" raycast="1"/>
+        <img id="img_interface" src="Texture/BG_Bulletbox.png" width="545" height="550" raycast="1" scale9l="40" scale9r="40" scale9t="60" scale9b="40"/>
+        <img id="title" atlas="Atlas/DailyRaffle.spriteatlas" src="img_title_wenjuan" a="01" onclick="" raycast = "1" x="0" y="0" />
+        <img id="btn_close" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" onclick="" raycast = "1" x="10" y="5" />
+        ;<scrollview id="scroll"  width="500" height="400" x="0" y="10" vertical="1"> 
+            <img id="scroll_root"  src="Texture/login_bg_2.png" width="500" height="400" color="#00000000" a="01" y="-60" raycast="1">
+                <text id="text1" text="性别：" fontSize="18" color="#DEDEDE"  outlineSize="1" outlineColor="0" x="17" y="-20" a="11">
+                        
+                        <toggle id="nanBtn" width="36" height="36" a="10" default="0"  atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="20" y="-33">
+                            <text id="nanBtn1" a="00" text="男" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                        <toggle id="nvBtn" width="36" height="36" a="10" default="0"  atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="140" y="-33">
+                            <text id="nvBtn1" a="00" text="女" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                </text>
+                <text id="text2" text="出生年份：" fontSize="18" color="#DEDEDE"  outlineSize="1" outlineColor="0" x="17" y="-90" a="11"></text>
+                <text id="text3" text="以前是否接触过奇迹类型的游戏：" fontSize="18" color="#DEDEDE"  outlineSize="1" outlineColor="0" x="17" y="-160" a="11">
+
+                        <toggle id="jiechu1Btn" width="36" height="36" a="10" default="0" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="20" y="-33">
+                            <text id="jiechu1Btn1" a="00" text="是" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                        <toggle id="jiechu2Btn" width="36" height="36" a="10" default="0" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="140" y="-33">
+                            <text id="jiechu2Btn1" a="00" text="否" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                </text>
+                <text id="text4" text="对这类游戏是否喜欢：" fontSize="18" color="#DEDEDE"  outlineSize="1" outlineColor="0" x="17" y="-230" a="11">
+                        <toggle id="xihuan1Btn" width="36" height="36" a="10" default="0" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="20" y="-33">
+                            <text id="xihuan1Btn1" a="00" text="是" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                        <toggle id="xihuan2Btn" width="36" height="36" a="10" default="0" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="140" y="-33">
+                            <text id="xihuan2Btn2" a="00" text="否" fontsize="16" height="36" width="36" ta="11" horwrap="1" x="35" y="0" outlinesize="1" outlinecolor="#000000FF">
+                            </text>
+                        </toggle>
+                </text>
+                <text id="text5" text="手机号码：" fontSize="18" color="#DEDEDE"  outlineSize="1" outlineColor="0" x="17" y="-300" a="11"></text>
+
+                <input id="pnone_number_input" type="1" text="" place="" fontSize="20" atlas="Atlas/KLChatPanel.spriteatlas" src="img_chat_input" width="200" height="40" x="35" y="-325" textcolor="#DEDEDE" placecolor="#DEDEDE"  ta ="01" horwrap="1" mline="0"  outlineSize="1" outlineColor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8" a="11"></input>
+                <input id="year_input" text="" place="" fontSize="20" atlas="Atlas/KLChatPanel.spriteatlas" src="img_chat_input" width="200" height="40" x="35" y="-115" textcolor="#DEDEDE" placecolor="#DEDEDE"  ta ="01" horwrap="1" mline="0"  outlineSize="1" outlineColor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8" a="11"></input>
+            </img>
+        ;</scrollview>
+        <button id="btnStart" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" onclick="" raycast="1" x="0" y="-205" text="确定" fontsize="20" active="1" outlinesize="1" outlinecolor="0">
+        </button>
+    </panel>
+</uipanel>

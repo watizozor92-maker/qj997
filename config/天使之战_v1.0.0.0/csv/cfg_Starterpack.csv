@@ -1,0 +1,7 @@
+﻿int#c#s,string#c#s,int,int#c#s,string#c#s,intListList#c#s,int#c
+id,Packagename,Packagetype,Price,condition,Rewards,rebate
+9001,免费,1,0,900#1,10040001#3,
+9002,经验药水,1,18,900#1,10040001#6,900
+9003,幸运宝石礼包,1,128,900#1,10040001#9,600
+9004,守护叠加礼包,1,128,900#1,10040001#12,400
+9005,大天使礼包,1,328,900#1,10040001#15,340

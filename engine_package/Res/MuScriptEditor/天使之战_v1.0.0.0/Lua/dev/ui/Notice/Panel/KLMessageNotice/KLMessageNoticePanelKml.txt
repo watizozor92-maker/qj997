@@ -1,0 +1,44 @@
+<uipanel id="KLMessageNoticePanel" name="通用消息提示界面" width="1334" height="750">
+  <layout vertical="1" width="284" height="80" a="12" y="366" id="layout_55" control_width="0" control_height="0" cella="10" space="2">
+    <panel id="item_ld1" width="284" height="18" offsetmax="284#18" offsetmin="0#0">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_57" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+      </img>
+    </panel>
+    <panel id="item_ld2" width="284" height="18">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_60" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parent2addwidth="0" parent2addheight="0" parentaddheight="0">
+        </richtext>
+      </img>
+    </panel>
+    <panel id="item_ld3" width="284" height="18">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_63" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+      </img>
+    </panel>
+    <panel id="item_ld4" width="284" height="18">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_66" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+      </img>
+    </panel>
+    <panel id="item_ld5" width="284" height="18">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_69" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+      </img>
+    </panel>
+    <panel id="item_ld6" width="284" height="18">
+      <img src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" a="10" id="img_72" width="140" height="16">
+        <richtext id="text_message" fontsize="15" outlinecolor="#000000" outlinesize="1" ta="00" a="10" outline="1" horwrap="1" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+      </img>
+    </panel>
+  </layout>
+  <panel a="02" y="80" zindex="500" width="420" height="30" id="panel_74">
+    <text id="text_mid_message" width="420" height="30" ta="11">
+    </text>
+  </panel>
+</uipanel>

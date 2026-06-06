@@ -1,0 +1,40 @@
+<uipanel id="KLRookieGuidePanelKml" name="引导界面" a="00" width="1334" height="750" rotate="0,0,0" zindex="999" z="-800">
+  <panel id="MaskContainer" a="00" width="1334" height="750">
+    <prefab path="Kml/KmlPrefab/Cookbook/Common/CircleMask.prefab" id="CircleMask" active="0">
+    </prefab>
+    <prefab path="Kml/KmlPrefab/Cookbook/Common/RectMask.prefab" id="RectMask" active="0" width="2000" height="750">
+      <panel id="RectMask_Real" bind="RectMask" active="1" width="2000" height="750">
+      </panel>
+    </prefab>
+  </panel>
+  <button id="MaskGo" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="1334" height="750" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="0" active="0">
+  </button>
+  <button id="CloneGo" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="1334" height="750" onclick="" text="" raycast="1" active="0" color="#FFFFFF00">
+  </button>
+  <panel id="TipsGo" a="00" width="1334" height="750" x="0" y="1" active="0">
+    <img id="GuideBG" a="00" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_bg" width="260" height="68" raycast="1" x="0" y="0" rotate="0,0,0">
+      <text id="Desc" a="00" contentsizefitter="2" text="默认内容" fontsize="16" height="86" width="100" ta="11" horwrap="1" rotate="0,0,0" outlinesize="1" outlinecolor="#000000FF" linespace="0" y="3">
+      </text>
+      <img id="TopArrow" a="01" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_arrow" width="33" height="37" raycast="1" y="0" rotate="0,0,-90" x="15">
+      </img>
+      <img id="RightArrow" a="20" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_arrow" width="33" height="37" raycast="1" y="0" rotate="0,0,-180" x="-15">
+      </img>
+      <img id="DownArrow" a="02" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_arrow" width="33" height="37" raycast="1" y="3" rotate="0,0,90" x="15">
+      </img>
+      <img id="LeftArrow" a="10" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_arrow" width="33" height="37" raycast="1" y="0" rotate="0,0,0" x="-16">
+      </img>
+      <img id="Left_People" a="10" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_iconnew" width="210" height="122" raycast="1" rotate="0,0,0" x="112" y="7">
+      </img>
+      <img id="Right_People" a="20" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_iconnew" width="210" height="122" raycast="1" rotate="0,0,0" x="-112" y="7">
+      </img>
+    </img>
+  </panel>
+  <prefab path="Kml/KmlPrefab/Cookbook/Common/HighlightGo.prefab" id="HighlightGo" active="0">
+    <panel id="RawImage" bind="RawImage">
+    </panel>
+    <panel id="Effect" bind="Effect">
+    </panel>
+  </prefab>
+  <img id="CircleGo" a="00" atlas="Atlas/KLRookieGuidePanel.spriteatlas" src="guide_circle" width="78" height="79" raycast="1" active="0">
+  </img>
+</uipanel>

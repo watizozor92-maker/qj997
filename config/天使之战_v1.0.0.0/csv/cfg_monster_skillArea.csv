@@ -1,0 +1,17 @@
+﻿int#c#s,int#c#s,int#c#s,string#c#s,int#c#s,string#c#s
+id,monster,skill,model,color,notes
+1,1024,2020002,Eff_yuan_hong,24,冰后暴风雪红色显示区域
+2,1052,2020004,Eff_fang_hong,5,海魔希特拉紫色显示区域
+3,1059,2020009,Eff_yuan_hong,24,炽焰魔毁灭火焰
+4,1075,2020012,Eff_yuan_hong,24,天魔菲尼克斯火海
+5,1088,2020016,Eff_fang_hong,5,咒怨魔王脉动冲击
+6,1095,2020018,Eff_yuan_hong,24,冰霜巨蛛冰天雪地
+7,1009,2020023,Eff_yuan_hong,24,火龙王火海
+8,1009,2020027,Eff_fang_hong,5,火龙王龙王怒火
+9,1066,2020029,Eff_fang_hong,5,丛林召唤者脉动冲击
+10,1060,2020034,Eff_yuan_hong,24,魔王扎坎碎石降临
+11,1060,2020037,Eff_yuan_hong,24,炼狱魔王炼狱降临
+12,1060,2020038,Eff_yuan_hong,24,炼狱魔王碎石降临
+13,1047,2020042,Eff_yuan_hong,24,美杜莎魅惑
+14,1129,2020045,Eff_fang_hong,5,魔王昆顿脉冲攻击
+15,1044,2020049,Eff_yuan_hong,24,魔王巴洛克地狱召唤

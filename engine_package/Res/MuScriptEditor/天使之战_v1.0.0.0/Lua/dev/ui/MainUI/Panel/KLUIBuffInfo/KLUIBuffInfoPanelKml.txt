@@ -1,0 +1,8 @@
+<uipanel id="KLUIBuffInfoPanel" name="增益信息界面" zindex="650" width="222" height="90" x="320" y="-118" a="02" onload="KmlMainUI/@buff信息初始化 " onclick="KmlMainUI/@关闭Buff信息" z="0" rotate="0,0,0" raycast="1" color="#00000000" ap="0#1#0#1#0#1">
+  <img id="maskBtn" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="buffBg" color="#00000000" width="3000" height="2000" raycast="1" x="0" y="0">
+  </img>
+  <img id="buffBg" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="buffBg" width="222" height="90" x="0" y="0" z="0" a="12" rotate="0,0,0" raycast="0">
+    <richtext id="des" text="" time="" fontsize="16" width="210" height="0" x="5" y="-5" color="#cccccc" a="11" ta="00" z="0" rotate="0,0,0" outlinesize="1" outlinecolor="#000000" mline="1" linespace="1" horwrap="1" maxwidth="210" parentaddwidth="4" parentaddheight="10" parent2addwidth="-1" parent2addheight="2" outline="1">
+    </richtext>
+  </img>
+</uipanel>

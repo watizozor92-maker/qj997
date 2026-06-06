@@ -1,0 +1,14 @@
+<uipanel id="KLHookPointMapItemKml" name="挂机点地图模板" a="11" width="180" height="44" zindex="-1" x="0" y="0">
+  <button id="btnItem" a="00" atlas="Atlas/FG_Common.spriteatlas" src="toggle_side_3" width="180" height="44" onclick="" text="" raycast="1" x="0" y="0" scale9l="20" scale9b="20" scale9r="20" scale9t="20" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <button id="btnItem2" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" width="180" height="44" onclick="" text="" raycast="1" x="0" y="0" scale9l="20" scale9b="20" scale9r="20" scale9t="20" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <button id="noClick" a="00" atlas="Atlas/FG_Common.spriteatlas" src="toggle_side_3" width="180" height="44" color="#ffffff00" onclick="" text="" raycast="1" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <img id="imgRecommend" a="11" atlas="Atlas/FG_Common.spriteatlas" src="icon_advice" width="43" height="35" raycast="1" active="0" x="3" y="-4" z="0">
+  </img>
+  <text id="txtMapName" a="10" text="11111111" fontsize="16" height="25" width="150" ta="01" x="15" y="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+  </text>
+  <text id="txtLevel" a="20" text="30级" fontsize="16" height="25" width="80" ta="21" x="-13" y="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+  </text>
+</uipanel>

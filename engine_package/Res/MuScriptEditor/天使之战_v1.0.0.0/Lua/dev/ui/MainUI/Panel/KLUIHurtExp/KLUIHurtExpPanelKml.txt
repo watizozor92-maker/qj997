@@ -1,0 +1,32 @@
+<uipanel id="KLUIHurtExpPanel" name="经验秒伤提示界面" width="196" height="125" zindex="0" y="-160" movecanvas="0#0#0" a="21" x="-2" adapter="1">
+  <panel id="move_root" x="0" y="0" width="196" height="125">
+    <button id="button" a="00" width="220" height="30" onclick="" text="战斗日志" raycast="1" src="bg_emptyBorder" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" y="99" active="0">
+      <img id="img_arrow" a="00" width="24" height="34" raycast="1" src="left_arrow" atlas="Atlas/FG_Common.spriteatlas" x="88" binddragid="" rotate="0,0,90">
+      </img>
+    </button>
+    <img id="infos" a="00" width="196" height="125" raycast="1" src="bg_fightLog" atlas="Atlas/UIMainPanel_Out.spriteatlas" color="#000000FF" x="0" y="0" scale9l="16" scale9b="22" scale9r="22" scale9t="15">
+      <layout id="layout1" control_height="0" contentsizefitter="1" vertical="1" height="105" width="208" a="11" raycast="1" cella="11" y="-3" x="3" space="4">
+        <text id="time" text="经验 00/分" fontsize="16" width="188" height="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="21" outline="0" horwrap="1">
+          <text id="pre_time" text="战斗时间：" fontsize="16" width="164" height="21" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" y="0" a="10" x="0">
+          </text>
+        </text>
+        <text id="hurt" text="伤害 00/秒" fontsize="16" width="188" height="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="21" outline="0" horwrap="1">
+          <text id="pre_hurt" text="每秒伤害：" fontsize="16" width="164" height="21" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" a="10">
+          </text>
+        </text>
+        <text id="perKill" text="伤害 00/秒" fontsize="16" width="188" height="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="21" outline="0" horwrap="1">
+          <text id="pre_perKill" text="每秒怪物击杀：" fontsize="16" width="164" height="21" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" a="10">
+          </text>
+        </text>
+        <text id="totalKill" text="伤害 00/秒" fontsize="16" width="188" height="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="21" outline="0" horwrap="1">
+          <text id="text4" text="击杀怪物总量：" fontsize="16" width="164" height="21" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" a="10">
+          </text>
+        </text>
+        <text id="exp" text="伤害 00/秒" fontsize="16" width="188" height="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="21" outline="0" horwrap="1">
+          <text id="pre_exp" text="每秒获得经验：" fontsize="16" width="164" height="21" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" a="10">
+          </text>
+        </text>
+      </layout>
+    </img>
+  </panel>
+</uipanel>

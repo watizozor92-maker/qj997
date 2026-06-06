@@ -1,0 +1,14 @@
+<uipanel id="KLTurnTableGetAwardItemKml" name="幸运转盘获取奖励模板" a="00" width="110" height="120" zindex="-1">
+  <img id="img1" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="icon_bottom_rarity1" width="82" height="82" raycast="1" y="20">
+    <text id="CountText" a="00" text="" fontsize="14" height="28" width="163" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="-59">
+    </text>
+    <img id="Icon" a="00" atlas="Atlas/Common.spriteatlas" src="Knob_1" width="84" height="84" raycast="1" x="0" y="-5" color="#FFFFFF00">
+    </img>
+    <img id="HaveGet" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_Get" width="69" height="61" raycast="1" x="0" y="-5" active="0" z="-1500">
+    </img>
+    <button id="GetButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="112" height="38" onclick="" text="领取" raycast="1" x="-1" y="-64" active="0">
+      <img id="RedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="49" y="13" active="0">
+      </img>
+    </button>
+  </img>
+</uipanel>

@@ -1,0 +1,32 @@
+<uipanel id="KLFastItem" width="60" height="64" zindex="-1" x="0" y="0">
+  <img id="bg" width="62" height="62" atlas="Atlas/NewMainPanel.spriteatlas" src="bg_item_di">
+  </img>
+  <item id="shortcut_item" textcolor="#fbd994" fontsize="16" itemcount="0" atlas="" bgtype="0" width="60" height="64" bgimg="" onclick="" textpos="-5,5">
+    <text id="count_attach1" bind="count_attach" outline="0" horwrap="1" active="1" ta="12" x="0" y="0" width="60" height="60">
+    </text>
+    <text id="noItem" a="00" text="0" fontsize="16" height="60" width="60" ta="12" horwrap="1" x="0" y="0" z="-200" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      <panel id="fastItemTip" a="00" width="80" height="50" x="0" y="0" active="1">
+        <img id="img2" a="00" src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" width="205" height="28" x="0" y="-55" color="#ffffffff">
+          <img id="img3" a="00" src="heidi" atlas="Atlas/FG_MainPanel.spriteatlas" width="16" height="10" y="-23" rotate="0,0,0" color="#ffffffff" x="0" active="0">
+          </img>
+          <text id="text4" a="00" text="药品不足，点击购买" fontsize="22" height="25" width="200" ta="11" horwrap="1" x="0" y="0" color="#FF2323" outline="1" fontstyle="1">
+            <button id="btnTips" a="00" width="200" height="26" onclick="" text="" raycast="1" ap="0#0#1#1#0.5#0.5" color="#FFFFFF00" offsetmin="0#0" offsetmax="0#0" x="0" y="0">
+            </button>
+          </text>
+        </img>
+      </panel>
+    </text>
+  </item>
+  <button id="useBtn" x="0" y="0" active="1" z="-200" atlas="Atlas/Common.spriteatlas" src="cdTime_2" color="#00000000" raycast="1">
+  </button>
+  <panel id="panel1" a="00" width="60" height="64">
+    <img id="add_img_0" width="60" height="60" x="-1" y="0" active="1" z="-200" atlas="Atlas/NewMainPanel.spriteatlas" src="icon_jinengkuang" color="#FFFFFF00">
+      <img id="light1" atlas="Atlas/KLMainPanelIcon.spriteatlas" src="icon_add2" x="0" deltax="0" width="34" height="34" y="0" deltay="0" siblingindex="0" scale9l="0" scale9b="0" scale9r="0" scale9t="0">
+      </img>
+      <img id="add_img" x="0" y="0" atlas="Atlas/KLMainPanelIcon.spriteatlas" src="icon_add" width="20" height="20">
+      </img>
+    </img>
+  </panel>
+  <circlebar id="control_circlebar" atlas="Atlas/NewMainPanel.spriteatlas" src="" loadingbar="bg_item_mask" width="62" height="62" z="-200" time="1" startper="0" endper="0" direction="1" toend="1" active="1" x="0" y="0">
+  </circlebar>
+</uipanel>

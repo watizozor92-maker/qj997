@@ -1,0 +1,4 @@
+﻿int#c#s,int#c#s,int#c#s,int#c#s,intlistlist#c#s,int#c#s,int#c#s,intlistlist#c#s,intlistlist#c#s,string#c#s
+id,type,map,maxSpot,position,level,serverday,cost,model,name
+1,1,1001,40,160#144#120#104,1,,4#10010002#5000|8#10010002#10000|12#10010002#15000,1#1|2#2|3#3,摊位
+2,1,1004,40,196#136#156#116,1,,4#10010002#5000|8#10010002#10000|12#10010002#15000,1#1|2#2|3#3,摊位

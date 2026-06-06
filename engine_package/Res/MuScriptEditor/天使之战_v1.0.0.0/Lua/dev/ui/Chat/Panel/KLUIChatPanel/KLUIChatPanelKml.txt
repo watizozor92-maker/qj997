@@ -1,0 +1,186 @@
+<uipanel id="KLUIChatPanelKml" name="聊天界面" zindex="200" width="1334" adapter="1" height="750" a="10" z="-400" onload="KmlChatUI/@打开聊天信息" x="0" y="0">
+  <button id="background_close" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" color="#00000000" width="5000" height="5000" a="10" x="-1100" onclick="" raycast="1" y="0">
+  </button>
+  <panel id="root_panel" width="1334" height="750" a="10" x="-1" y="0">
+    <img id="bg1" src="Texture/bg_chat.png" width="413" height="748" x="70" a="10" raycast="1" y="0" atlas="">
+      <button id="btn_close" atlas="Atlas/UIChatPanel.spriteatlas" src="img_btn_exit" x="16" a="20" raycast="1">
+      </button>
+    </img>
+    <img id="root" atlas="Atlas/UIEquipFeedPanel.spriteatlas" src="" width="70" height="800" a="10" raycast="1" y="-54">
+      <togglegroup id="ToggleGroupChat" y="10">
+        <layout id="toggle_layout" width="70" height="670" vertical="1" cella="01" space="0" y="0">
+          <panel id="综合_toggle_panel" width="668" height="60">
+            <toggle id="zonghe_toggle" default="1" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_zonghe2" pimg="btn_zonghe" width="67" height="59" togglegroup_id="ToggleGroupChat">
+            </toggle>
+          </panel>
+          <panel id="corss_server_chat_toggle_panel" width="668" height="60" active="0">
+            <toggle id="corss_server_chat_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_kuafu2" pimg="btn_kuafu" width="67" height="59" togglegroup_id="ToggleGroupChat">
+            </toggle>
+          </panel>
+          <panel id="世界_toggle_panel" width="668" height="60">
+            <toggle id="shijie_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_shijie2" pimg="btn_shijie" width="67" height="59" togglegroup_id="ToggleGroupChat">
+            </toggle>
+          </panel>
+          <panel id="附近_toggle_panel" width="668" height="60">
+            <toggle id="fujin_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_fujin2" pimg="btn_fujin" width="67" height="59" togglegroup_id="ToggleGroupChat" onclick="" oncancel="">
+            </toggle>
+          </panel>
+          <panel id="战盟_toggle_panel" width="668" height="60">
+            <toggle id="zhanmeng_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_zhanmeng2" pimg="btn_zhanmeng" width="67" height="59" togglegroup_id="ToggleGroupChat" onclick="" oncancel="">
+            </toggle>
+          </panel>
+          <panel id="队伍_toggle_panel" width="668" height="60">
+            <toggle id="duiwu_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_duiwu2" pimg="btn_duiwu" width="67" height="59" togglegroup_id="ToggleGroupChat" onclick="" oncancel="">
+            </toggle>
+          </panel>
+          <panel id="私聊_toggle_panel" width="668" height="60">
+            <toggle id="siliao_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_siliao2" pimg="btn_siliao" width="67" height="59" togglegroup_id="ToggleGroupChat" onclick="" oncancel="">
+            </toggle>
+          </panel>
+          <panel id="系统_toggle_panel" width="668" height="60">
+            <toggle id="xitong_toggle" default="0" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_xitong2" pimg="btn_xitong" width="67" height="59" togglegroup_id="ToggleGroupChat" onclick="" oncancel="">
+            </toggle>
+          </panel>
+        </layout>
+      </togglegroup>
+    </img>
+  </panel>
+  <panel id="view" width="495" height="750" a="10" x="1" y="0">
+    <panel id="bg" width="413" height="750" x="70" a="10" raycast="1" y="0">
+      <panel id="chat_panel" width="413" height="750" active="1" a="10" x="0" y="0">
+        <panel id="panel_root" width="413" height="750" active="1" a="10" x="0" y="0">
+        </panel>
+        <text id="chat_time" text="" x="-52" y="-75" fontsize="16" color="#9c978d" a="01" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+        </text>
+        <text id="player_name" text="" x="-52" y="-22" fontsize="18" color="#efebe5" a="01" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+        </text>
+        <img id="img_line" x="0" y="152" atlas="Atlas/UIChatPanel.spriteatlas" src="img_line" onclick="" width="394" height="4" a="02">
+        </img>
+        <panel id="all_type_panel" width="413" height="152" a="02" y="0" active="0" x="0">
+          <button id="selectTyptbtn" atlas="Atlas/UIChatPanelOut.spriteatlas" src="texebg_input_m" width="178" height="38" fontsize="18" x="20" y="98" onclick="" raycast="1" color="#FFFFFFFF" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="" scale9l="11" scale9b="9" scale9r="16" scale9t="10" a="12">
+            <img id="img_chat_shang" atlas="Atlas/UIChatPanelOut.spriteatlas" src="arrow_1" a="10" x="3" active="1" width="32" height="22">
+            </img>
+            <img id="img_chat_xia" atlas="Atlas/UIChatPanelOut.spriteatlas" src="arrow_2" a="10" x="3" active="0" width="32" height="22">
+            </img>
+            <text id="zonghe_text" text="私聊" fontsize="18" color="#FFFFFFFF" outlinesize="1" outlinecolor="0" x="1" outline="1" horwrap="1" width="54" height="22" fontstyle="0" underline="0" y="1" ta="11">
+            </text>
+          </button>
+          <img id="zong_panel" width="142" height="130" x="-119" y="135" atlas="Atlas/UIChatPanelOut.spriteatlas" src="bg_select_no" scale9l="8" scale9r="11" scale9t="7" scale9b="10" active="0">
+            <button id="zong_panel_close" atlas="Atlas/Common.spriteatlas" src="img_email_choose" color="#00000000" width="3000" height="3000" a="10" x="-500" onclick="" raycast="1" y="0">
+            </button>
+            <scrollview id="zong_content" width="142" height="120" y="3" vertical="1">
+              <layout id="zong_list_layout" width="142" height="100" a="01" cella="01" vertical="1" contentsizefitter="1">
+                <datalist id="zong_data_list" databind="@all_type_select_data">
+                </datalist>
+              </layout>
+            </scrollview>
+          </img>
+        </panel>
+        <panel id="no_union_panel" width="413" height="152" a="02" y="0" active="0" x="0" deltay="0">
+          <button id="create_union_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="创建战盟" fontsize="18" x="-95" onclick="" outlinesize="1" outlinecolor="#000000FF" raycast="1" width="160" height="41" y="3" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF">
+          </button>
+          <button id="join_union_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="加入战盟" fontsize="18" x="95" onclick="" outlinesize="1" outlinecolor="#000000FF" raycast="1" width="160" height="41" y="3" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+          </button>
+          <img id="无战盟img" x="0" y="155" src="Texture/bg_chat2.png" atlas="" width="387" height="571" a="02">
+            <img id="无战盟img2" width="180" height="65" x="44" y="118" atlas="Atlas/UIChatPanel.spriteatlas" src="img_chat_pao" scale9l="18" scale9r="15" scale9t="24" scale9b="6" a="00">
+              <text id="无战盟text1" a="10" x="19" y="12" text="你不在战盟中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              </text>
+              <text id="无战盟text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              </text>
+            </img>
+          </img>
+        </panel>
+        <panel id="di_panel" width="413" height="152" a="02" y="0" active="1" x="0">
+          <button id="pos_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_pos" width="45" height="45" x="20" y="30" onclick="" raycast="1" mimg="" pimg="" dimg="" a="12">
+          </button>
+          <img id="bag_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_bag" width="45" height="45" x="80" y="30" onclick="" raycast="1" a="12">
+          </img>
+          <img id="biaoqing_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_emoij" width="45" height="45" x="140" y="30" onclick="" raycast="1" a="12">
+          </img>
+          <input id="text_input" text="" place="" fontsize="18" atlas="Atlas/FG_Common.spriteatlas" src="bg_text" width="382" height="38" x="-20" y="98" a="22" textcolor="#DEDEDE" placecolor="#FFFFFFFF" ta="01" horwrap="1" mline="0" outlinesize="1" outlinecolor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8" onchange="KmlChatUI/@ChangeByInput" alphaall="1">
+            <text id="text_input_place" a="00" text="点击输入内容" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </input>
+          <img id="fasong" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="236" y="32" onclick="KmlChatUI/@聊天发送消息" width="160" height="41" a="12">
+            <text id="sendMessageBtnTxt" text="发送" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" y="-1">
+            </text>
+          </img>
+        </panel>
+        <panel id="no_team_panel" width="413" height="152" a="02" y="0" active="0">
+          <button id="create_team_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="创建队伍" fontsize="18" x="-95" onclick="" outlinesize="1" outlinecolor="#000000FF" raycast="1" width="160" height="41" y="3" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF">
+          </button>
+          <button id="join_team_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="加入队伍" fontsize="18" x="95" onclick="" outlinesize="1" outlinecolor="#000000FF" raycast="1" width="160" height="41" y="3" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+          </button>
+          <img id="无队伍img" x="0" y="155" src="Texture/bg_chat2.png" atlas="" width="387" height="571" a="02">
+            <img id="无无队伍img2" width="180" height="65" x="44" y="118" atlas="Atlas/UIChatPanel.spriteatlas" src="img_chat_pao" scale9l="18" scale9r="15" scale9t="24" scale9b="6">
+              <text id="无队伍text1" a="10" x="19" y="12" text="你不在队伍中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              </text>
+              <text id="无队伍text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              </text>
+            </img>
+          </img>
+        </panel>
+        <panel id="private_panel" width="413" height="152" a="02" y="0" active="0">
+          <button id="private_panel_btn" atlas="Atlas/UIChatPanelOut.spriteatlas" src="btn_list" width="38" height="38" fontsize="18" x="187" y="98" onclick="" raycast="1" mimg="" pimg="" dimg="" a="12">
+          </button>
+          <input id="private_input" text="" place="" fontsize="18" atlas="Atlas/UIChatPanelOut.spriteatlas" src="texebg_input_m" width="167" height="38" x="20" y="98" textcolor="#DEDEDE" placecolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8" onchange="" a="12">
+            <text id="private_input_place" a="00" text="请输入昵称" fontsize="18" height="25" width="252" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </input>
+          <img id="private_select_panel" width="142" height="192" x="5" y="165" atlas="Atlas/UIChatPanelOut.spriteatlas" src="bg_select_no" scale9l="8" scale9r="8" scale9t="8" scale9b="8" active="0" color="#FFFFFFFF">
+            <button id="private_panel_close_btn" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" a="10" x="-500" onclick="" color="#00000000" raycast="1">
+            </button>
+            <scrollview id="content" width="142" height="192" vertical="1">
+              <layout id="all_name_list_layout" width="142" height="100" a="01" cella="01" vertical="1" contentsizefitter="1">
+                <datalist id="all_name_data_list" databind="@all_name">
+                </datalist>
+              </layout>
+            </scrollview>
+          </img>
+        </panel>
+        <panel id="system_panel" width="413" height="152" a="02" y="0" active="0">
+          <text id="tujingnum22" text="系统频道，无法发言" fontsize="20" color="#FF1414" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+          </text>
+        </panel>
+      </panel>
+      <panel id="emoji_panel" width="410" height="194" x="0" y="-207" active="0">
+        <img id="emoji_mask" width="2500" height="1500" x="400" y="150" atlas="Atlas/Common.spriteatlas" src="img_email_choose" color="#00000000" onclick="" raycast="1">
+        </img>
+        <img id="emoji_bg" width="363" height="194" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" a="11" scale9l="10" scale9r="10" scale9t="10" scale9b="15">
+        </img>
+        <scrollview id="emoji" width="363" height="180" vertical="1" x="15" y="-4" a="11">
+          <gridview id="all_emoji_layout" width="455" height="180" a="01" cella="11" contentsizefitter="1" cellwidth="38" cellheight="38" spacex="21" spacey="15">
+            <datalist id="emoji_data_list">
+            </datalist>
+          </gridview>
+        </scrollview>
+      </panel>
+      <panel id="item_panel" width="410" height="194" x="0" y="-224" active="0">
+        <img id="item_mask" width="2500" height="1500" x="400" y="150" atlas="Atlas/Common.spriteatlas" src="img_email_choose" color="#00000000" onclick="" raycast="1">
+        </img>
+        <img id="item_bg" width="346" height="183" y="3" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" a="11" scale9l="10" scale9r="10" scale9t="10" scale9b="15">
+        </img>
+        <layout id="layout1" control_height="0" contentsizefitter="0" vertical="0" height="38" width="346" a="11" raycast="1" y="40" cella="10" x="-1">
+          <img id="btn_bag" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" raycast="1">
+            <img id="btn_bag_select" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
+            </img>
+            <text id="背包" text="背 包" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-3" outline="1" horwrap="1">
+            </text>
+          </img>
+          <img id="btn_equip" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" a="11" x="120" y="38" raycast="1">
+            <img id="btn_equip_select" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
+            </img>
+            <text id="穿戴" text="穿 戴" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-3" outline="1" horwrap="1">
+            </text>
+          </img>
+          <img id="btn_datianshi" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" active="0" raycast="1">
+            <img id="btn_datianshi_select" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
+            </img>
+            <text id="大天使" text="大天使" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-2">
+            </text>
+          </img>
+        </layout>
+      </panel>
+    </panel>
+  </panel>
+</uipanel>

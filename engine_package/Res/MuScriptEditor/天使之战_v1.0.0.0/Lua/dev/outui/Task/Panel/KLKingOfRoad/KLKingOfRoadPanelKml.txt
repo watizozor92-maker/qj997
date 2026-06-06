@@ -1,0 +1,68 @@
+<uipanel id="KLKingOfRoadPanelKml" name="时装任务界面" a="00" width="1044" height="666" rotate="0,0,0" x="0" y="0">
+  <img id="Image" a="00" atlas="" src="Texture/img_interface_main138.jpg" width="1034" height="528" raycast="1" active="1" x="-2" y="-36">
+    <img id="Bg" a="00" atlas="Atlas/Common.spriteatlas" src="img_interface_main123" width="1054" height="584" raycast="1" x="2" y="26" scale9l="89" scale9b="84" scale9r="82" scale9t="78" color="#FFFFFFFF">
+      <img id="title_bg" a="01" src="ty_bg_threeFrame_N2" atlas="Atlas/TS_Common.spriteatlas" y="-14">
+      </img>
+      <img id="title" a="01" atlas="Atlas/KLKingOfRoad.spriteatlas" src="title" width="118" height="55" raycast="1" y="-5">
+      </img>
+    </img>
+  </img>
+  <img id="Btn_Close" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="76" height="72" raycast="1" x="19" y="-39" h5x="-989" h5y="-39">
+  </img>
+  <img id="BodyBg" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="bg" width="1024" height="505" raycast="1" y="-31" x="7">
+    <scrollview id="TaskList" a="01" width="456" height="464" vertical="1" y="-16" raycast="1" x="312">
+      <layout id="layout4" width="452" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="10">
+        <datalist id="taskDataList">
+          <panel id="UIRoadOfKingTaskTemplete" width="450" height="80">
+            <item id="item6" src="20020001" width="80" height="80" x="-185" tips="1" textcolor="#fbd994" fontsize="15">
+              <img id="circle" atlas="Atlas/KLKingOfRoad.spriteatlas" src="item_circle" width="80" height="80">
+              </img>
+            </item>
+            <panel id="TaskContent" a="00" width="320" height="80" x="26">
+              <img id="frame" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="normalFrame" raycast="1" x="-6" y="0" width="324" height="84">
+              </img>
+              <text id="TaskName" a="00" text="强化装备累计8次" fontsize="19" height="30" width="210" ta="00" horwrap="1" x="-56" y="8" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+              <text id="TaskCount" a="00" text="<color=#00ff00>8</color>/8" fontsize="18" height="30" width="160" ta="00" horwrap="1" x="-80" y="-22" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+              <button id="BtnGet" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="100" height="40" onclick="" text="领取" raycast="1" x="95" outlinesize="1" outlinecolor="#000000FF" fonttype="" fontsize="22">
+                <img id="highLight" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="highLight" width="136" height="78" raycast="1" rotate="0,0,0">
+                </img>
+              </button>
+              <img id="Img_Received" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="ty_pic_finished" width="128" height="76" raycast="1" x="90" active="0">
+              </img>
+            </panel>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <scrollview id="GroupList" a="01" width="260" height="538" vertical="1" y="16" raycast="1" x="-380">
+      <layout id="layout5" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" space="-12" paddingtop="20">
+        <datalist id="groupDataList">
+          <panel id="UIRoadOfKingGroupTemplete" width="196" height="110">
+            <button id="selectToggle" width="196" height="110" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" onclick="" src="item_frame" raycast="1" x="0" y="0">
+              <img id="selectBg" width="196" height="110" src="item_frame_select" atlas="Atlas/KLKingOfRoad.spriteatlas" active="0">
+              </img>
+            </button>
+            <item id="AwardObj" src="20020001" width="60" height="60" x="-47" bgtype="0">
+            </item>
+            <img id="Lock" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_skill_lock" width="52" height="64" raycast="1" binddragid="" x="-47" y="-2" z="-100">
+            </img>
+            <img id="chapteraName" a="20" atlas="Atlas/KLKingOfRoad.spriteatlas" src="UIRoadOfking_Text_1" width="79" height="26" raycast="0" x="-22">
+            </img>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <panel id="itemIcon" a="00" width="300" height="400" x="-42" y="-119">
+      <item id="ObjPos" x="2" bgtype="0" y="68" mscale="150,150,150" width="150" height="180" tips="1">
+      </item>
+      <button id="BtnGet1" a="00" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" width="176" height="50" onclick="" text="领 取" raycast="1" binddragid="" x="7" y="-104" outlinesize="1" outlinecolor="#000000FF" fontsize="24">
+      </button>
+      <img id="Img_Received_1" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="ty_finished" width="128" height="76" raycast="1" x="1" y="-5" z="-200">
+      </img>
+    </panel>
+    <img id="bg_title" a="00" atlas="Atlas/KLKingOfRoad.spriteatlas" src="bg_txt" width="456" height="98" raycast="1" x="-102" y="170">
+    </img>
+  </img>
+</uipanel>

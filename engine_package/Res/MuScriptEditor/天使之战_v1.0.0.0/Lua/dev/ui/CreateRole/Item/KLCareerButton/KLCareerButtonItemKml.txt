@@ -1,0 +1,6 @@
+<uipanel id="KLCareerButtonItem" name="创角职业按钮模板" width="148" height="41" zindex="256">
+  <toggle id="toggle_createrole" togglegroup_id="createrole_togglegroup" atlas="Atlas/FG_SelectRole.spriteatlas" src="btn_changgui" pimg="btn_xuanzhong" width="148" height="41" raycast="1">
+    <text id="text_toggle_createrole" text="" widith="100" ta="11" fontsize="18" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" color="#FFFFFFFF">
+    </text>
+  </toggle>
+</uipanel>

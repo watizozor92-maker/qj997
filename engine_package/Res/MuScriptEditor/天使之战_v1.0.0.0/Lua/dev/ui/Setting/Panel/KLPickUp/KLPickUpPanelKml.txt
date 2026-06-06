@@ -1,0 +1,14 @@
+<uipanel id="KLPickUpPanel" name="拾取设置界面" zindex="200" a="20" adapter="1" onload="KmlSettingUI/@初始化拾取设置界面" x="-265" y="0" z="0" rotate="0,0,0" raycast="0" color="#00000000" width="10" height="10">
+  <img id="titleBg" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="ty_bg_heidi" width="121" height="35" x="-119" y="271" z="0" a="00" rotate="0,0,0" raycast="1">
+  </img>
+  <img id="point" atlas="Atlas/UISettingPanel.spriteatlas" src="img_uiicon_43" width="12" height="13" x="-164" y="272" z="0" a="00" rotate="0,0,0" raycast="1">
+  </img>
+  <text id="titleTxt" text="自动拾取" fontsize="18" outlinesize="1" outlinecolor="#000" color="#ccc" width="120" height="22" ta="11" x="-117" y="273" z="0" a="00" rotate="0,0,0">
+  </text>
+  <gridview id="pickItemList" cellwidth="172" cellheight="24" height="530" width="364" x="3" y="-30" z="0" a="00" rotate="0,0,0" spacex="10" spacey="40" cella="11" constraint="0" startcorner="0" paddingtop="0" paddingbutttom="0" paddingleft="0" paddingright="0" raycast="0">
+  </gridview>
+  <img id="BtnReDefault" raycast="1" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" onclick="KmlSettingUI/@恢复默认拾取" x="1" y="-295" z="0" width="113" height="40" a="00" rotate="0,0,0" color="#FFFFFFFF">
+  </img>
+  <text id="BtnReDefaultTxt" text="恢复默认" fontsize="18" outlinesize="1" outlinecolor="#000000" width="120" height="22" ta="11" x="0" y="-296" z="0" a="00" rotate="0,0,0" horwrap="1">
+  </text>
+</uipanel>

@@ -1,0 +1,6 @@
+<uipanel id="KLEquipDecomposeItemItemKml" name="装备分解道具模板" a="00" width="300" height="300" zindex="-1">
+  <item id="EquipItem" src="20020001" width="80" height="80" bgscale="80,80" qualityiconname="img_icon_excellent" tips="1" qualityscale="0" bgtype="1" mfixsize="80,80" x="0" y="0" a="00">
+  </item>
+  <img id="EquipItem_Quality" x="0" y="0" z="-300" width="80" height="80" color="#FFFFFF00">
+  </img>
+</uipanel>

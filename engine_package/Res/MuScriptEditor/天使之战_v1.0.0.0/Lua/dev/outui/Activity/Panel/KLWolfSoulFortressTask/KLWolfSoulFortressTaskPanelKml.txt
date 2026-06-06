@@ -1,0 +1,50 @@
+<uipanel id="KLWolfSoulFortressTaskPanelKml" name="狼魂副本界面" a="11" width="300" height="300" x="-20" y="37">
+  <panel id="root" a="00" width="300" height="300" x="0" y="0">
+    <img id="img4" a="00" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="277" height="187" raycast="1" x="1" y="15" color="#FFFFFF99">
+    </img>
+    <text id="text1" a="00" text="狼魂要塞" fontsize="20" height="25" width="292" ta="11" horwrap="1" x="0" y="85" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF" rotate="0,0,0" outline="0">
+    </text>
+    <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="99" y="85" rotate="0,0,180">
+    </img>
+    <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-98" y="85">
+    </img>
+    <button id="btnHelp" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="115" y="88">
+    </button>
+    <text id="timerTitle" a="00" text="准备倒计时:" fontsize="18" height="25" width="250" ta="01" horwrap="1" x="0" y="-64" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <text id="timeText" a="00" text="" fontsize="18" height="22" width="250" ta="21" horwrap="1" x="0" y="0" rotate="0,0,0" color="#FF0000FF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </text>
+    <panel id="textRoot" a="00" width="250" height="214" x="0" y="0" active="0">
+      <text id="text_1" a="00" text="准备阶段" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="0" y="67" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="text_2" a="00" text="盟主/副盟主可以召唤" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="0" y="34" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textSummonCount" a="00" text="(0/5)" fontsize="18" height="30" width="250" ta="21" horwrap="1" x="0" y="34" color="#00FF00FF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <button id="btnSummon" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_3" width="109" height="32" onclick="" text="前往召唤" raycast="1" mimg="" pimg="" dimg="" x="2" y="-39" active="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+      </button>
+    </panel>
+    <panel id="textRoot_2" a="00" width="250" height="214" x="1" y="0" active="0">
+      <text id="textKey_1" a="00" text="守卫狼魂雕像" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="0" y="68" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textWolfHp" a="00" text="77.29%" fontsize="18" height="30" width="250" ta="21" horwrap="1" x="0" y="68" color="#00FF00FF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textKey_2" a="00" text="击杀积分" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="0" y="34" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textScore" a="00" text="4504" fontsize="18" height="30" width="250" ta="21" horwrap="1" x="0" y="34" color="#EDD194FF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textKey_3" a="00" text="个人排名" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="0" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textRank" a="00" text="1" fontsize="18" height="30" width="250" ta="21" horwrap="1" x="0" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textKey_4" a="00" text="剩余波数" fontsize="18" height="30" width="250" ta="01" horwrap="1" x="" y="-34" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="textFightCount" a="00" text="1" fontsize="18" height="30" width="250" ta="21" horwrap="1" x="1" y="-34" color="#FF0000FF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+    </panel>
+    <button id="btnExit" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="btn_exit" width="40" height="48" onclick="" text="" raycast="1" x="162" y="-55" mimg="" pimg="" dimg="" binddragid="">
+      <text id="timeText_2" a="02" text="00:00:00" fontsize="16" height="25" width="132" ta="11" horwrap="1" x="0" y="-24" color="#FF0000FF" binddragid="" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+    </button>
+  </panel>
+</uipanel>

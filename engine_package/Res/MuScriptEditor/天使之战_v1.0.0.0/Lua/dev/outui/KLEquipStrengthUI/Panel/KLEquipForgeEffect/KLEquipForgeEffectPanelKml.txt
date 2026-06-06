@@ -1,0 +1,20 @@
+<uipanel id="KLEquipForgeEffectPanelKml" a="00" width="300" height="300" zindex="250">
+  <model id="strength_ok" src="Effect/UI/Eff_UI_shengjichenggong" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="strength_fail" src="Effect/UI/Eff_UI_shengjishibai" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="xilian_ok" src="Effect/UI/Eff_UI_xilianchenggong" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="xilian_fail" src="Effect/UI/Eff_UI_xilianshibai" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="huanyuan" src="Effect/UI/Eff_UI_huanyuanchenggong" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="zaisheng_ok" src="Effect/UI/Eff_UI_zaishengchenggong" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="zaisheng_fail" src="Effect/UI/Eff_UI_zaishengshibai" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="jinhua_ok" src="Effect/UI/Eff_UI_jinhuachenggong" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+  <model id="jinhua_fail" src="Effect/UI/Eff_UI_jinhuashibai" width="100" height="100" x="0" y="0" mscale="30,30,30" active="0">
+  </model>
+</uipanel>

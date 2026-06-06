@@ -1,0 +1,36 @@
+<uipanel id="KLUIMasterTalentWashUpPanelKml" name="天赋洗点界面" a="00" width="300" height="300" zindex="203">
+  <button id="MaskCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="2000" height="2000" onclick="" text="" raycast="1" x="0" y="0" color="#FFFFFF00">
+  </button>
+  <img id="BG" a="00" atlas="" src="Texture/sanjitanchuang_bg.png" width="467" height="293" raycast="1" scale9l="40" scale9b="35" scale9r="43" scale9t="59" x="0" y="-24">
+  </img>
+  <img id="title" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="title_3" width="132" height="58" raycast="1" x="0" y="97">
+  </img>
+  <button id="CloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="208" y="95" h5y="95" h5x="-208">
+  </button>
+  <panel id="Info" a="00" width="100" height="100" x="0" y="-20">
+    <img id="img2" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-200" y="55">
+    </img>
+    <text id="Text" a="00" text="将把全部职业天赋重置为0级。\n并重新获得已消耗的所有职业天赋点。" fontsize="18" height="46" width="386" ta="00" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="7" y="42" linespace="1.2">
+    </text>
+    <img id="img4" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-200" y="4">
+    </img>
+    <text id="Text2" a="00" text="职业天赋等级不受影响。" fontsize="18" height="25" width="386" ta="01" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="7" y="2" linespace="1.2">
+    </text>
+    <button id="CancelButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="取消" raycast="1" outlinesize="1" outlinecolor="#000000FF" textcolor="#D9001CFF" fonttype="" x="-93" y="-100" fontsize="18">
+    </button>
+    <button id="OkButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="确定" raycast="1" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" fonttype="" x="93" y="-100" fontsize="18">
+    </button>
+    <panel id="Cost" a="00" width="452" height="35" x="0" y="-41">
+      <img id="CostBG" a="00" atlas="Atlas/Common.spriteatlas" src="img_interface_main112" width="159" height="34" raycast="1" x="-18" y="0" scale9l="15" scale9b="7" scale9r="13" scale9t="8" active="1" color="#FFFFFFFF">
+        <item id="CostItem" mfixsize="30,30" bgtype="0" src="20020001" width="30" height="30" x="10" y="0" mpos="0,0,0" tips="1" a="10" raycast="1">
+        </item>
+        <text id="textCost" a="10" text="100" fontsize="16" height="30" width="114" ta="11" x="36" y="0" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </img>
+      <text id="text14" a="00" text="消耗道具" fontsize="18" height="30" width="90" ta="01" x="-140" y="0" horwrap="1" rotate="0,0,0" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <img id="img1" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-200" y="0">
+      </img>
+    </panel>
+  </panel>
+</uipanel>

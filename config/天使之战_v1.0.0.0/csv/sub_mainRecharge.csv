@@ -1,0 +1,14 @@
+﻿int#c#s,string#c#s,string#c#s,string#c#s,string#c#s,int#c#s,string#c#s,string#s
+id,showTogName,mainUIPanel,subUIRoute,togName,sortId,showCondition,inshowCondition
+1,每日礼包,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLDailyPackRecharge/KLDailyPackRechargePanel,tog_DailyPack,1,101#9999,
+2,月卡,KLMainRechargePanel,dev/outui/RechargeMonthlycard/Panel/KLUIRechargeMonthlycard/KLUIRechargeMonthlycardPanel,tog_RechargeMonthlycard,2,101#10&901#1,
+3,投资基金,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLInvestmentFund/KLInvestmentFundPanel,tog_Nvestment,3,101#70&901#1,
+4,每周礼包,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLWeekDailyPackRecharge/KLWeekDailyPackRechargePanel,tog_WeekDailyPack,4,101#9999,
+5,终生礼包,KLMainRechargePanel,dev/outui/LifetimeGift/Panel/KLUILifetimeGift/KLUILifetimeGiftPanel,tog_GiftPanel,5,101#9999,
+6,每日馈赠,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLEveryDayGiftRecharge/KLEveryDayGiftRechargePanel,tog_3,6,101#9999,101#9999
+7,每日累充,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLDailyAddRecharge/KLDailyAddRechargePanel,tog_DailyAddRecharge,7,101#9999,
+8,每日抽奖,KLMainRechargePanel,dev/outui/DailyRaffle/Panel/KLDailyRaffle/KLDailyRafflePanel,tog_6,8,101#50&903#10,
+9,开服连充,KLMainRechargePanel,dev/outui/Recharge/Panel/KLRechargeLink/KLRechargeLinkPanel,tog_NewServerRecharge,9,903#7&101#60,
+10,新手礼包,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLNoobPlayerPack/KLNoobPlayerPackPanel,tog_NoobPlayer,100,101#9999,
+12,超值连领,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLRechargeSevenDayGift/KLRechargeSevenDayGiftPanel,tog_rechargeSevenDayGift,12,101#9999,
+13,钻石礼包,KLMainRechargePanel,dev/outui/MainRecharge/Panel/KLDailyDiamondRecharge/KLDailyDiamondRechargePanel,tog_DailyDiamond,13,101#100&901#1,

@@ -1,0 +1,6 @@
+<uipanel id="KLMapOtherPointItemKml" a="00" width="14" height="24" zindex="-1" rotate="0,0,45" z="">
+  <img id="icon" a="00" width="24" height="24" raycast="1" src="icon_head" atlas="Atlas/FG_Common.spriteatlas" rotatevector="0,0,0" rotate="0,0,0" x="0">
+  </img>
+  <text id="txt_name" a="00" text="默认内容" fontsize="16" height="25" width="141" ta="11" outline="1" horwrap="1" x="0" y="-27" color="#E6E600FF" outlinesize="0" outlinecolor="#000000FF" rotate="0,0,0">
+  </text>
+</uipanel>

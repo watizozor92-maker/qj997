@@ -1,0 +1,6 @@
+﻿int#c#s,string#c#s,string#c#s,intlist#c#s,int#c#s
+id,systemName,icon,position,show
+1,背包-商店,button_interface_person_buy,-137#36#0,1
+2,背包-仓库,button_interface_storage,-45#36#0,1
+3,背包-回收,button_interface_sell,47#36#0,1
+4,背包-整理,button_interface_sort,138#36#0,1

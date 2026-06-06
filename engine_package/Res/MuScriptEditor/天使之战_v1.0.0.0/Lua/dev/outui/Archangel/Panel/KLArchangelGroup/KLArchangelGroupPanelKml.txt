@@ -1,0 +1,16 @@
+<uipanel id="KLArchangelGroupPanelKml" name="大天使右侧页签切换界面" adapter="1" a="20" width="300" height="300" x="115" zindex="200">
+  <button id="MaskCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="5000" height="5000" onclick="" text="" raycast="1" x="0" y="0" color="#FFFFFF00">
+  </button>
+  <img id="bg" a="00" atlas="" src="Texture/img_interface_main138.jpg" width="80" height="460" active="0" raycast="1" x="0" y="80">
+  </img>
+  <togglegroup id="toggleGroup" a="00" width="82" height="710" onload="" raycast="1" x="2" y="-52">
+  </togglegroup>
+  <layout id="toggleLayout" x="2" y="-52" width="82" height="710" vertical="1" cella="01" >
+    <toggle id="breakthroughToggle" width="67" height="76" togglegroup_id="toggleGroup" atlas="Atlas/UIArchangelGroup.spriteatlas" onclick="" src="Breakthrough" pimg="Breakthrough2" raycast="1">
+    </toggle>
+     <toggle id="grailToggle" width="67" height="76" togglegroup_id="toggleGroup" atlas="Atlas/UIArchangelGroup.spriteatlas" onclick="" src="Grail" pimg="Grail2" raycast="1" y="-76">
+    </toggle>
+         <toggle id="decomposeToggle" width="67" height="76" togglegroup_id="toggleGroup" atlas="Atlas/UIArchangelGroup.spriteatlas" onclick="" src="decompose" pimg="decompose2" raycast="1" y="-152">
+        </toggle>
+  </layout>
+</uipanel>

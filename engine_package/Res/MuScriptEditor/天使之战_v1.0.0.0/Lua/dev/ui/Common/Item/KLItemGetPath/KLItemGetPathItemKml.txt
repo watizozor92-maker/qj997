@@ -1,0 +1,22 @@
+<uipanel id="KLItemGetPathItem" width="242" height="65" zindex="-1" x="0" y="-121">
+  <panel id="item" width="221" height="30" x="0" y="0">
+    <img id="itemBg" atlas="Atlas/Common.spriteatlas" src="bg1" scale9l="4" scale9r="4" scale9t="4" scale9b="4" width="339" height="65" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="0" active="0">
+    </img>
+    <panel id="buyContainer" active="1" width="242" height="46" x="13" y="-1">
+      <panel id="itemModel" x="-139" y="1" z="-100" width="60" height="60" a="00" rotate="0,0,0" active="0">
+      </panel>
+      <panel id="costModel" x="-80" y="-14" z="-100" width="50" height="50" a="00" rotate="0,0,0">
+      </panel>
+      <text id="costItemName" text="" fontsize="16" outlinesize="1" outlinecolor="#000000" width="128" height="40" x="-35" y="16" z="0" a="00" rotate="0,0,0" ta="01" horwrap="1" fonttype="" color="#FFFFFFFF" outline="0">
+      </text>
+      <text id="costCount" text="" fontsize="16" outlinesize="1" outlinecolor="#000000" width="138" height="40" x="14" y="-14" z="0" a="00" rotate="0,0,0" ta="01" horwrap="1" fonttype="" color="#FFFFFFFF" outline="0" h5x="14">
+      </text>
+    </panel>
+    <text id="gainTxt" text="商城" fontsize="16" outlinesize="1" outlinecolor="#000000" width="97" height="22" x="27" y="1" z="0" a="10" rotate="0,0,0" ta="01" horwrap="1" fonttype="" color="#FFFFFFFF" active="1" outline="0" fontstyle="0" underline="0">
+    </text>
+    <button id="buyBtn" active="1" atlas="Atlas/FG_Common.spriteatlas" text="前往" src="btn_common_2_select" width="83" height="28" fontsize="16" outlinesize="1" outlinecolor="#000000" x="0" y="1" z="0" a="20" rotate="0,0,0" raycast="1" fonttype="" dcolor="#FFFFFFFF" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" ta="11">
+    </button>
+    <img id="img1" a="10" width="24" height="24" raycast="1" src="icon_head" atlas="Atlas/FG_Common.spriteatlas" x="0" y="0">
+    </img>
+  </panel>
+</uipanel>

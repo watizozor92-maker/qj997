@@ -1,0 +1,14 @@
+<uipanel id="KLRecoverTypeItemKml" name="回收类型模板" width="36" height="36" zindex="-1">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlRecoverUI/KmlRecycleTypeItemTemplate.prefab" id="prefab_11" width="36" height="36">
+    <toggle id="KmlRecycleTypeItemTemplate" bind="KmlRecycleTypeItemTemplate">
+    </toggle>
+    <img id="TypeCheck" bind="TypeCheck">
+    </img>
+    <text id="TypeText" bind="TypeText" horwrap="1" outlinesize="1" outlinecolor="#000000FF" fonttype="" text="白装" fontsize="18" active="0" outline="0" width="251" height="22" x="7" y="0">
+    </text>
+    <text id="xiangxi" x="63" y="-10" color="#E6E600FF" horwrap="1" outlinesize="1" outlinecolor="#000000FF" fonttype="" text="(详细设置)" fontsize="16" active="1" siblingindex="2" outline="1">
+      <img id="xiangxi_btn" a="10" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" raycast="1" x="89" y="10" siblingindex="0" width="34" height="34">
+      </img>
+    </text>
+  </prefab>
+</uipanel>

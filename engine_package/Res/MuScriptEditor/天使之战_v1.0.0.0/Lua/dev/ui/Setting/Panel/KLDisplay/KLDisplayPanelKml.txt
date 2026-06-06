@@ -1,0 +1,152 @@
+<uipanel id="KLDisplayPanel" name="显示设置界面" a="20" zindex="200" x="0" adapter="1" onload="KmlSettingUI/@显示设置初始化" y="0" z="0" width="416" height="750" rotate="0,0,0" raycast="0" color="#00000000">
+  <img id="Content" a="00" width="387" height="483" raycast="1" atlas="" src="Texture/FG_bg_setting.png" x="0" y="46" color="#FFFFFF00">
+    <scrollview id="scrollview28" a="01" width="370" height="519" vertical="1" y="-16" raycast="1" x="-2">
+      <layout id="layout29" width="370" height="482" a="01" vertical="1" contentsizefitter="0" raycast="1" cella="01">
+        <panel id="panel31" width="387" height="482">
+          <toggle id="tog_limitPlayeNum" width="36" height="36" a="11" default="1" togglegroup_id="" onclick="" raycast="1" x="34" y="-36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou">
+            <text id="text1" a="10" text="限制数量" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" outlinesize="1" underline="0" color="#FFFFFFFF" x="45" y="1" deltax="0.5" deltay="0.1" outlinecolor="#000000FF">
+            </text>
+            <img id="img1" a="00" width="169" height="17" raycast="1" src="img_bg_progress" atlas="Atlas/FG_Common.spriteatlas" x="194" y="-1" scale9l="146" scale9b="0" scale9r="172" scale9t="0">
+            </img>
+            <slider id="slider_playerNum" a="00" width="162" height="6" raycast="1" x="194" y="0" src="img_bg_progress" atlas="Atlas/FG_Common.spriteatlas" himg="" mimg="" pimg="" fimg="bg_slider2_v" maxvalue="100" fimg_scale9l="11" fimg_scale9b="6" fimg_scale9r="8" fimg_scale9t="6" scale9l="6" scale9b="5" scale9r="6" scale9t="6" color="#FFFFFF00" curvalue="0">
+              <text id="playerCount" a="10" text="10" fontsize="18" height="25" width="40" ta="01" outline="1" horwrap="1" x="172" y="0">
+              </text>
+              <img id="barPointer" a="00" width="31" height="37" raycast="0" src="pointer" atlas="Atlas/FG_Common.spriteatlas" y="-3" x="-81">
+              </img>
+            </slider>
+          </toggle>
+          <img id="AutoSettingTitle" a="11" width="123" height="37" raycast="1" color="#FFFFFF" x="6" y="-145" src="bg_title" atlas="Atlas/FG_Common.spriteatlas">
+            <img id="img4" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="12" y="0">
+            </img>
+            <text id="text6" a="10" text="自动配置" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" outlinesize="1" underline="0" color="#FFFFFFFF" x="38" y="1" deltax="0.5" deltay="0.1" outlinecolor="#000000FF">
+            </text>
+          </img>
+          <togglegroup id="AutoSetting1" a="11" width="300" height="36" onload="" raycast="1" x="34" y="-180">
+            <layout id="layout" control_height="0" contentsizefitter="0" vertical="0" height="36" width="300" a="11" raycast="1" cella="11" x="0" y="0" space="86">
+              <toggle id="tog_powerSaving1" width="36" height="36" default="1" togglegroup_id="AutoSetting1" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou">
+                <text id="text9" a="10" text="省电" fontsize="18" height="25" width="50" ta="01" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="40" deltax="0.5" deltay="0.5">
+                </text>
+              </toggle>
+              <toggle id="tog_powerSaving2" width="36" height="36" default="0" togglegroup_id="AutoSetting1" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou">
+                <text id="text11" a="10" text="均衡" fontsize="18" height="25" width="50" ta="01" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="40" deltax="0.5" deltay="0.5">
+                </text>
+              </toggle>
+              <toggle id="tog_powerSaving3" width="36" height="36" default="0" togglegroup_id="AutoSetting1" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou">
+                <text id="text13" a="10" text="最强" fontsize="18" height="25" width="50" ta="01" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="40" deltax="0.5" deltay="0.5">
+                </text>
+              </toggle>
+            </layout>
+          </togglegroup>
+          <layout id="SceneAudio" control_height="0" contentsizefitter="0" vertical="1" height="38" width="324" a="11" raycast="1" x="36" deltax="0.5" deltay="0.5" y="-262" cella="21" space="3">
+            <panel id="panel19" width="324" height="38">
+              <text id="text4" a="10" text="隐藏玩家类型" fontsize="18" height="25" width="150" ta="01" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="0" x="0" fontstyle="0" underline="0">
+              </text>
+              <toggle id="hidePlayerModelToggle" default="0" y="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" pimg="btn_up" width="30" height="30" x="141">
+              </toggle>
+              <img id="img5" a="00" width="122" height="31" raycast="1" src="img_setting_window" atlas="Atlas/Common.spriteatlas" scale9l="10" scale9b="7" scale9r="11" scale9t="7" x="61" y="0">
+                <text id="hidePlayerModelTxt" a="00" text="不隐藏" fontsize="18" height="31" width="122" ta="11" outline="0" horwrap="1" y="0" x="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </panel>
+            <panel id="panel20" width="324" height="38">
+              <text id="text8" a="10" text="隐藏玩家技能特效" fontsize="18" height="30" width="150" ta="01" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="0" x="0">
+              </text>
+              <toggle id="hidePlayerSkillEffectToggle" default="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" pimg="btn_up" width="30" height="30" y="0" x="141">
+              </toggle>
+              <img id="img9" a="00" width="122" height="31" raycast="1" src="img_setting_window" atlas="Atlas/Common.spriteatlas" scale9l="10" scale9b="7" scale9r="11" scale9t="7" x="61" y="0">
+                <text id="hidePlayerSkillEffectTxt" a="00" text="不隐藏" fontsize="18" height="31" width="122" ta="11" outline="0" horwrap="1" y="0" x="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </panel>
+            <panel id="panel21" width="324" height="38">
+              <text id="text12" a="10" text="隐藏玩家翅膀" fontsize="18" height="30" width="200" ta="01" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="0" x="0">
+              </text>
+              <toggle id="hidePlayerWingToggle" default="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" pimg="btn_up" width="30" height="30" y="0" x="141">
+              </toggle>
+              <img id="img13" a="00" width="122" height="31" raycast="1" src="img_setting_window" atlas="Atlas/Common.spriteatlas" scale9l="10" scale9b="7" scale9r="11" scale9t="7" x="61" y="0">
+                <text id="hidePlayerWingTxt" a="00" text="不隐藏" fontsize="18" height="31" width="122" ta="11" outline="0" horwrap="1" y="0" x="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </panel>
+            <panel id="panel26" width="324" height="38" active="0">
+              <text id="text3" text="隐藏怪物技能特效" color="#FFFFFF" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000" x="0" outline="0" horwrap="1" ta="01" width="161" height="25" a="10">
+              </text>
+              <toggle id="hideMonsterSkillEffect" active="0" default="0" x="141" atlas="Atlas/FG_Common.spriteatlas" src="bg_togg" pimg="ty_btn_gou" width="36" height="36" y="0">
+              </toggle>
+            </panel>
+            <panel id="panel22" width="324" height="38">
+              <text id="text16" a="10" text="隐藏我的翅膀" fontsize="18" height="30" width="200" ta="01" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="0" x="0">
+              </text>
+              <toggle id="hideMeWingToggle" default="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" pimg="btn_up" width="30" height="30" y="0" x="141">
+              </toggle>
+              <img id="img17" a="00" width="122" height="31" raycast="1" src="img_setting_window" atlas="Atlas/Common.spriteatlas" scale9l="10" scale9b="7" scale9r="11" scale9t="7" x="61" y="0">
+                <text id="hideMeWingTxt" a="00" text="不隐藏" fontsize="18" height="31" width="122" ta="11" outline="0" horwrap="1" y="0" x="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </panel>
+            <panel id="panel23" width="324" height="38">
+              <text id="text20" a="10" text="隐藏玩家足迹" fontsize="18" height="30" width="200" ta="01" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="0" x="0">
+              </text>
+              <toggle id="hidePlayerFootprintToggle" default="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_down" pimg="btn_up" width="30" height="30" y="0" x="141">
+              </toggle>
+              <img id="img21" a="00" width="122" height="31" raycast="1" src="img_setting_window" atlas="Atlas/Common.spriteatlas" scale9l="10" scale9b="7" scale9r="11" scale9t="7" x="61" y="0">
+                <text id="hidePlayerFootprintTxt" a="00" text="不隐藏" fontsize="18" height="31" width="122" ta="11" outline="0" horwrap="1" y="0" x="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </panel>
+            <panel id="panel24" width="324" height="38">
+              <text id="text2" text="隐藏召唤兽" color="#FFFFFFFF" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000" x="0" outline="0" horwrap="1" width="161" height="25" ta="01" a="10">
+              </text>
+              <toggle id="hidePetModel" default="0" x="141" atlas="Atlas/FG_Common.spriteatlas" src="bg_togg" pimg="ty_btn_gou" width="36" height="36" y="0">
+              </toggle>
+            </panel>
+            <panel id="panel25" width="324" height="38">
+              <text id="text3" text="隐藏怪物模型" color="#FFFFFFFF" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000" x="0" outline="0" horwrap="1" ta="01" width="161" height="25" a="10">
+              </text>
+              <toggle id="hideMonsterModel" default="0" x="141" atlas="Atlas/FG_Common.spriteatlas" src="bg_togg" pimg="ty_btn_gou" width="36" height="36" y="0">
+              </toggle>
+            </panel>
+          </layout>
+          <img id="SceneAudioTitle" a="11" width="123" height="37" raycast="1" color="#FFFFFF" x="6" y="-227" src="bg_title" atlas="Atlas/FG_Common.spriteatlas">
+            <img id="img15" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="12" y="0">
+            </img>
+            <text id="text17" a="10" text="场景声音" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="38" deltax="0.5" deltay="0.1" y="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </img>
+          <img id="PlayerShowTitle" a="11" width="123" height="37" raycast="1" color="#FFFFFF" y="0" x="6" src="bg_title" atlas="Atlas/FG_Common.spriteatlas">
+            <img id="img3" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="12" y="0">
+            </img>
+            <text id="text5" a="10" text="玩家显示" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" outlinesize="1" underline="0" color="#FFFFFFFF" x="38" deltax="0.5" deltay="0.1" y="1" outlinecolor="#000000FF">
+            </text>
+          </img>
+          <img id="selectMenu" active="0" a="01" width="122" height="150" raycast="1" src="bg_drop" atlas="Atlas/FG_Setting.spriteatlas" scale9l="56" scale9b="37" scale9r="62" scale9t="56" x="0" color="#FFFFFFFF" y="0" h5x="62" h5y="130">
+            <layout id="layout4" control_height="0" contentsizefitter="1" vertical="1" height="500" width="122" a="11" raycast="1" cella="01" x="0" y="0">
+              <button id="noHideBtn" src="setting_noChoose" width="122" height="32" onclick="" text="不隐藏" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF00">
+              </button>
+              <button id="hideAllBtn" src="setting_noChoose" width="122" height="32" onclick="" text="全部玩家" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF00">
+              </button>
+              <button id="hideUnioBtn" src="setting_noChoose" width="122" height="32" onclick="" text="同盟玩家" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF00">
+              </button>
+              <button id="hideEnemyBtn" src="setting_noChoose" width="122" height="32" onclick="" text="敌对玩家" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF00">
+              </button>
+            </layout>
+          </img>
+          <panel id="panel1" a="00" width="350" height="50" x="1" y="133">
+            <text id="text7" a="10" text="视野距离" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" outlinesize="1" underline="0" color="#FFFFFFFF" x="60" y="1" deltax="0.5" deltay="0.1" outlinecolor="#000000FF">
+            </text>
+            <img id="img7" a="00" width="169" height="17" raycast="1" src="img_bg_progress" atlas="Atlas/FG_Common.spriteatlas" x="53" y="-1" scale9l="146" scale9b="0" scale9r="172" scale9t="0">
+            </img>
+            <slider id="slider_camera" a="00" width="162" height="6" raycast="1" x="53" y="0" src="img_bg_progress" atlas="Atlas/FG_Common.spriteatlas" himg="" mimg="" pimg="" fimg="bg_slider2_v" maxvalue="40" fimg_scale9l="11" fimg_scale9b="6" fimg_scale9r="8" fimg_scale9t="6" scale9l="6" scale9b="5" scale9r="6" scale9t="6" color="#FFFFFF00" curvalue="1" minvalue="1">
+              <text id="txtCamera" a="10" text="1" fontsize="18" height="25" width="40" ta="01" outline="1" horwrap="1" x="172" y="0" enable="1" active="1">
+              </text>
+              <img id="barCamera" a="00" width="31" height="37" raycast="0" src="pointer" atlas="Atlas/FG_Common.spriteatlas" y="-3" x="-81">
+              </img>
+            </slider>
+          </panel>
+        </panel>
+      </layout>
+    </scrollview>
+    <button id="BtnReDefaultDispaly" a="02" width="103" height="36" onclick="" text="恢复默认" raycast="1" x="0" deltay="0.5" y="-154" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fonttype="">
+    </button>
+  </img>
+</uipanel>

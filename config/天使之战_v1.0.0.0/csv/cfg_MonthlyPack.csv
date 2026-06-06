@@ -1,0 +1,5 @@
+﻿int#c#s,string#c#s,int#c#s,intList#c#s,string#c#s,intListList#c#s,intListList#c#s,string#c#s,int#c#s
+id,Packagename,monthlytype,Price,condition,oneRewards,Rewards,Graphpath,sortId
+7001,畅享月卡,1,30#98,,,10020001#5000|10050001#368|50030002#10|50030003#3,img_monthlywihte,1
+7002,尊享月卡,1,98#198,,,10020001#30000|10050001#1188|50030002#15|50030003#6,img_monthlygold,2
+7003,双买,2,,,,,,

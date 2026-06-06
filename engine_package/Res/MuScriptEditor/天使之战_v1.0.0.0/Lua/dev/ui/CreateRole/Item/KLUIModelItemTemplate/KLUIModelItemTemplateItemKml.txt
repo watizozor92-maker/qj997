@@ -1,0 +1,16 @@
+<uipanel id="KLUIModelItemTemplateItem" name="选角角色模板" width="300" height="300" x="0" y="0">
+  <prefab id="UIModelItemTemplate" path="UI/Template/Template/CreateRole/UIModelItemTemplate.prefab">
+    <img id="Image" bind="Image" active="1">
+    </img>
+    <img id="ImageCareer" bind="ImageCareer" active="0">
+    </img>
+    <button id="DeleteBtn" bind="DeleteBtn" active="1">
+    </button>
+    <text id="Name" bind="Name" active="1">
+    </text>
+    <text id="Level" bind="Level" active="1">
+    </text>
+    <button id="ModelBtn" bind="ModelBtn" active="1">
+    </button>
+  </prefab>
+</uipanel>

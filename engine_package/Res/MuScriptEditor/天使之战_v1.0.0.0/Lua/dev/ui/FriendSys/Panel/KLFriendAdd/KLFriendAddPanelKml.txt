@@ -1,0 +1,28 @@
+<uipanel id="KLFriendAddPanel" name="添加好友界面" width="550" height="470" zindex="400">
+  <prefab id="FriendAdd_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlAddFriendUI.prefab">
+    <img id="add_friend_bg" bind="add_friend_bg" active="1" x="15" y="29" width="637" height="555" src="Texture/ty_bg_ditu.jpg" color="#FFFFFFFF">
+    </img>
+    <img id="add_friend_kuang" bind="add_friend_kuang" atlas="" src="Texture/FG_dankuangdi2.png" scale9l="189" scale9b="89" scale9r="177" scale9t="162" width="660" height="578" x="12" y="28">
+      <img id="img1" a="00" width="619" height="447" raycast="1" siblingindex="0" src="Texture/bg_black_grid.png" atlas="" y="-45" x="4" scale9l="16" scale9b="27" scale9r="21" scale9t="20">
+      </img>
+      <img id="img3" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" siblingindex="1">
+      </img>
+    </img>
+    <button id="BtnClose" bind="BtnClose" x="52" y="57" width="34" height="34" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" mimg="" pimg="" dimg="">
+    </button>
+    <layout id="add_friend_head_layout" bind="add_friend_head_layout" x="-174" y="14" width="222" height="52">
+    </layout>
+    <toggle id="add_friend_butten" bind="add_friend_butten" src="toggle_top_1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select" scale9l="39" scale9b="15" scale9r="31" scale9t="18" pimg_scale9l="26" pimg_scale9b="15" pimg_scale9r="27" pimg_scale9t="21" x="74" width="120" height="36" y="23">
+    </toggle>
+    <text id="TextAddFriend" bind="TextAddFriend" togglecolor="#FFFFFF|#FFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" y="0" width="85" height="22" text="添加好友" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" ta="11">
+    </text>
+    <toggle id="friend_applay_butten" bind="friend_applay_butten" src="toggle_top_1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select" scale9l="28" scale9b="15" scale9r="38" scale9t="19" pimg_scale9l="34" pimg_scale9b="17" pimg_scale9r="27" pimg_scale9t="18" x="176" width="120" height="36" y="-26">
+    </toggle>
+    <text id="TextFriendApply" bind="TextFriendApply" togglecolor="#FFFFFF|#FFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" width="85" height="22" text="好友申请" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="0" ta="11">
+    </text>
+    <panel id="SubRoot" bind="SubRoot" x="14" y="12" width="618" height="462">
+    </panel>
+    <text id="text1" a="00" text="提示" fontsize="20" height="24" width="87" ta="11" siblingindex="5" outline="0" horwrap="1" x="12" y="267" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" color="#FFFFFFFF">
+    </text>
+  </prefab>
+</uipanel>

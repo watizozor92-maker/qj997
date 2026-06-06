@@ -1,0 +1,52 @@
+<uipanel id="KLUILeftUpPanel" name="主界面左侧玩家数据界面" adapter="1" zindex="108" movecanvas="0" width="150" height="150" x="0" y="-107" onload="KmlLeftUpUI/@初始化数据" onunload="" z="0" a="11" rotate="0,0,0" raycast="0" color="#00000000" active="1">
+  <panel id="move_root" x="0" y="0">
+    <panel id="activityRoot" moveduration="0.7" active="1" x="0" y="0" z="0" width="150" height="150" a="00" rotate="0,0,0">
+      <img id="img2" a="11" width="297" height="223" atlas="" src="Texture/bg_task.png" x="23" y="171" alphaall="0" raycast="0">
+      </img>
+      <panel id="palyerInfo" x="48" y="146" z="0" width="10" height="10" a="00" rotate="0,0,0" active="0">
+        <img id="combat_powerBg" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="atkBg" width="314" height="34" x="91" y="51" z="0" a="00" rotate="0,0,0" raycast="0">
+          <img id="combat_powerIcon" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="atkIcon" width="38" height="21" x="-99" y="0" z="0" a="00" rotate="0,0,0" raycast="1">
+          </img>
+          <text id="combat_power" text="0" fontsize="14" fonttype="atPlFont" outlinesize="1" outlinecolor="#000000" width="105" height="20" ta="01" x="-24" y="0" z="0" a="00" rotate="0,0,0" horwrap="1" outline="0">
+          </text>
+          <img id="defenseIcon" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="defenseIcon" width="37" height="20" x="1" y="0" z="0" a="00" rotate="0,0,0" raycast="1">
+          </img>
+          <text id="defense" text="0" fontsize="14" fonttype="atPlFont" outlinesize="1" outlinecolor="#000000" width="105" height="20" ta="01" x="76" y="0" z="0" a="00" rotate="0,0,0">
+          </text>
+        </img>
+      </panel>
+      <togglegroup id="toggleGroupTop" x="0" y="0" z="0" width="10" height="10" a="00" rotate="0,0,0">
+      </togglegroup>
+      <toggle id="taskToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/NewMainPanel.spriteatlas" src="btn_renwu2" pimg="btn_renwu" default="1" width="40" height="96" onclick="KmlLeftUpUI/@切换任务界面" oncancel="KmlLeftUpUI/@切换组队界面" x="-1" y="-3" z="0" a="11" rotate="0,0,0">
+      </toggle>
+      <toggle id="teamToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/NewMainPanel.spriteatlas" src="btn_zudui2" pimg="btn_zudui" default="0" width="40" height="96" onclick="KmlLeftUpUI/@切换组队界面" oncancel="KmlLeftUpUI/@切换任务界面" x="-1" y="-98" z="0" a="11" rotate="0,0,0" raycast="1">
+      </toggle>
+    </panel>
+    <panel id="tabObjRoot" moveduration="0.7" active="1" x="41" y="0" z="0" width="150" height="150" a="11" rotate="0,0,0">
+      <button id="kingOfRoadIcon" atlas="Atlas/TS_Common.spriteatlas" src="icon_task_bg" x="-303" y="313" raycast="1" active="0">
+        <prefab id="effect_tishi" path="Effect/UI/Eff_UI_anniutishi05.prefab">
+        </prefab>
+        <item id="kingOfRoadItem" width="60" height="60" mfixsize="60,60" itemid="" bgtype="0">
+        </item>
+        <text id="count" text="1/5" color="#C3B000" fontsize="18" y="-52">
+        </text>
+        <img id="shi_zhuang_ren_wu" atlas="Atlas/KLKingOfRoad.spriteatlas" src="shi_zhuang_ren_wu" y="-27" z="-500">
+        </img>
+      </button>
+    </panel>
+    <panel id="topRoot" a="21" width="150" height="150" x="0" y="0" active="1">
+      <button id="Btn_OnHook" a="21" width="70" height="42" onclick="" text="" raycast="1" x="-74" y="-198" src="btn_setting" atlas="Atlas/UIMainPanel_Out.spriteatlas" mimg="" pimg="" dimg="" active="0">
+      </button>
+      <button id="Btn_AutoFight" a="21" width="70" height="42" onclick="" text="" raycast="1" x="-2" y="-198" src="btn_autoFight" atlas="Atlas/UIMainPanel_Out.spriteatlas" mimg="" pimg="" dimg="" active="0">
+        <model id="Model_AutoFightEff" width="100" height="100" src="Effect/UI/eff_ui_anniubiankuang_01" mscale="0.96,1.21,1" active="0" y="1">
+        </model>
+      </button>
+      <img id="expanfBg" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_zhankaishouqidi" active="0" x="-101" y="-40" width="36" height="36">
+        <img id="expandBtn" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_zhankaishouqi2" active="0" x="0" y="-1" onclick="KmlMainUI/@点击折叠按钮" rotate="0,0,0" z="0" a="00" raycast="1" width="36" height="36">
+        </img>
+        <img id="foldBtn" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_zhankaishouqi1" active="1" x="0" y="-1" onclick="KmlMainUI/@点击折叠按钮" rotate="0,0,0" z="0" a="00" raycast="1">
+        </img>
+      </img>
+    </panel>
+  </panel>
+</uipanel>

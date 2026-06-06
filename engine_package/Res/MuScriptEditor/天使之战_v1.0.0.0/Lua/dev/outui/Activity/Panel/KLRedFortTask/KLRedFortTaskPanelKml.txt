@@ -1,0 +1,44 @@
+<uipanel id="KLRedFortTaskPanelKml" name="赤色要塞副本界面" a="11" width="300" height="300" x="-20" y="37" mask="0">
+  <panel id="root" a="00" width="1334" height="750" x="1" y="1">
+    <img id="bg" a="00" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="277" height="187" raycast="1" x="0" y="14" color="#FFFFFF99">
+    </img>
+    <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-98" y="85" rotate="0,0,0">
+    </img>
+    <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="99" y="85" rotate="0,0,180">
+    </img>
+    <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="btn_exit" width="40" height="48" raycast="1" x="162" y="-55" active="1">
+      <text id="textFightTime" horwrap="1" text="" fontsize="16" height="25" width="91" ta="11" x="0" y="-24" active="1" color="#FF0000FF" outline="1" a="02">
+      </text>
+    </img>
+    <text id="title" a="00" text="赤色要塞" fontsize="18" height="25" width="292" ta="11" horwrap="1" x="0" y="85" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="textSetout" horwrap="1" text="准备阶段" fontsize="16" height="25" width="200" ta="01" x="-10" y="48" active="0" outline="1">
+    </text>
+    <panel id="textSetoutTime" width="262" height="29" x="0" y="-56" active="0">
+      <text id="text30" a="10" text="准备倒计时" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="18" y="0">
+      </text>
+      <text id="textTime" a="00" text="00:00:00" fontsize="16" height="25" width="232" ta="21" horwrap="1" x="3" y="0" binddragid="" color="#FF0000FF">
+      </text>
+    </panel>
+    <panel id="textJoin" width="262" height="29" binddragid="" x="0" y="20" active="1">
+      <text id="text6" a="10" text="当前参与人数" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="18" y="0" rotate="0,0,0" binddragid="">
+      </text>
+      <text id="textJoinCoun" a="00" text="3" fontsize="16" height="25" width="232" ta="21" horwrap="1" color="#00FF00FF" x="0" y="0" active="1">
+      </text>
+    </panel>
+    <text id="textTarget" horwrap="1" text="目标：<color=#00FF00>击杀其他玩家，存活到最后</color>" fontsize="16" height="29" width="244" ta="01" x="7" y="30" active="0">
+    </text>
+    <panel id="textPlayer" width="262" height="29" binddragid="" x="0" y="0" active="0">
+      <text id="text11" a="10" text="剩余人数" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="17" y="0" rotate="0,0,0" binddragid="">
+      </text>
+      <text id="textPlayerCount" a="00" text="3" fontsize="16" height="25" width="232" ta="21" horwrap="1" color="#FF0000FF" x="0" y="0" active="1">
+      </text>
+    </panel>
+    <panel id="textRevive" width="262" height="29" x="0" y="-30" active="0">
+      <text id="text15" a="10" text="剩余复活次数" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="17" y="0">
+      </text>
+      <text id="textReviveCount" a="00" text="2" fontsize="16" height="25" width="232" ta="21" horwrap="1" x="0" y="0" binddragid="" color="#00FF00FF">
+      </text>
+    </panel>
+  </panel>
+</uipanel>

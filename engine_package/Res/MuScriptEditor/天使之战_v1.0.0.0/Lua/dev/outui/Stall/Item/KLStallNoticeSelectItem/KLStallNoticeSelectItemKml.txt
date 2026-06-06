@@ -1,0 +1,14 @@
+<uipanel id="KLStallNoticeSelectItem" name="摆摊通知模板" width="114" height="47" zindex="-1">
+  <img id="no_select" atlas="Atlas/UIStall.spriteatlas" src="img_button_no" width="114" height="47" a="22" active="1" raycast="1">
+  </img>
+  <img id="select" atlas="Atlas/UIStall.spriteatlas" src="img_button_yes" width="114" height="47" a="22" active="0" raycast="1">
+  </img>
+  <img id="toggle" atlas="Atlas/UIStall.spriteatlas" src="toggle" x="-35" active="0">
+    <img id="toggle_select" atlas="Atlas/UIStall.spriteatlas" src="select_green" active="1">
+    </img>
+  </img>
+  <text id="one_notice_select" text="00000" fontsize="16" x="0" active="0">
+  </text>
+  <text id="one_notice" text="00000" fontsize="16" x="10" active="0">
+  </text>
+</uipanel>

@@ -1,0 +1,7 @@
+﻿int#c#s,intList#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s
+id,interval,each,quotaLimit,decayTime,decayGears,activationRecharge
+1,1#1000,1,100,1,1,6
+2,1001#2000,1,150,1,1,6
+3,2001#3000,1,200,1,2,12
+4,3001#4000,2,500,1,3,64
+5,4001#5000,5,1500,2,4,128

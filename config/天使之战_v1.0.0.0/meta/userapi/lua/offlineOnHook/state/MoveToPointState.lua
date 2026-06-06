@@ -1,0 +1,37 @@
+-- -- 离线挂机移动到点状态模块
+-- MoveToPointState = {}
+
+-- -- 处理移动到点状态
+-- function MoveToPointState.handle(actor, sx, sy)
+--     lg("移动到挂机物点状态")
+--     local x, y = StateManager.getTargetPoint(actor)
+--     sx = sx or getbaseinfo(actor, "x")
+--     sy = sy or getbaseinfo(actor, "y")
+
+--     if x == nil then
+--         StateManager.transformState(actor, StateManager.STATE_FIND_POINT)
+--     else
+--         local dis = HookCommonUtils.distance(x, y, sx, sy)
+--         if dis <= 1 then
+--             --转移到攻击的状态
+--             lg("到达挂机物点", x, y, "切换到攻击怪物状态")
+--             StateManager.setMoveFailCount(actor, 0) -- 重置移动失败计数
+--             StateManager.transformState(actor, StateManager.STATE_ATTACK_MONSTER)
+--         else
+--             local ok = movetopoint(actor, x, y)
+--             if not ok then
+--                 local failCount = StateManager.getMoveFailCount(actor) + 1
+--                 StateManager.setMoveFailCount(actor, failCount)
+--                 lg("无法移动到该坐标，失败次数", failCount, x, y, sx, sy)
+--                 -- 连续失败3次则放弃当前点，加入历史记录
+--                 if failCount >= 3 then
+--                     StateManager.addPointHistory(actor, x, y)
+--                     StateManager.setMoveFailCount(actor, 0)
+--                     StateManager.transformState(actor, StateManager.STATE_FIND_POINT)
+--                 end
+--             else
+--                 StateManager.setMoveFailCount(actor, 0) -- 移动成功，重置计数
+--             end
+--         end
+--     end
+-- end

@@ -1,0 +1,23 @@
+<uipanel id="KLGrailItemKml" name="大天使圣杯模板" a="00" width="190" height="40" zindex="-1">
+  <panel id="panel1" a="00" width="190" height="40">
+    <img id="xie_btn" a="20" atlas="Atlas/UIArchangelGrail.spriteatlas" src="icon_xie" width="38" height="36" raycast="1" x="0">
+    </img>
+    <img id="bg" a="10" atlas="Atlas/UIArchangelGrail.spriteatlas" src="grail_groove" width="150" height="40" raycast="1">
+      <prefab id="scroll_text_template" path="Kml/KmlPrefab/Cookbook/Common/KmlScrollTextTemplate.prefab" a="01" width="150" y="0" height="40">
+        <panel id="KmlScrollTextTemplate" bind="KmlScrollTextTemplate" width="150" height="30">
+        </panel>
+        <text id="txt_item_name" bind="Text" color="#F36055" width="170" text="超级大圣杯八个字" fontsize="18" outlinesize="1" outlinecolor="#000000" horwrap="1">
+        </text>
+      </prefab>
+      <text id="add" color="#FFFFFF" ta="11" width="170" text="超级大圣杯八个字" fontsize="18" outlinesize="1" outlinecolor="#000000" horwrap="1">
+      </text>
+      <img id="select" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="icon_select" width="160" height="50" scale9l="38" scale9b="33" scale9r="32" scale9t="33" active="0">
+      </img>
+      <img id="gray" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="grail_groove_mask" width="150" height="40"  x="0" y="0">
+        <img id="img_lock" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="icon_lock" width="25" height="31" >
+        </img>
+      </img>
+      <img id="img_red" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" active="0" x="72" y="15" />
+    </img>
+  </panel>
+</uipanel>

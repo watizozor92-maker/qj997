@@ -1,0 +1,56 @@
+<uipanel id="KLSpecialNPCShopPanel" name="npc商店界面" zindex="204" a="20" adapter="1" x="0" y="0" z="0" rotate="0,0,0" raycast="0" onload="KmlXWNpcShopUI/@初始化" width="0" height="0" color="#00000000">
+  <img id="Background" src="Texture/bg_bottomBg.png" raycast="1" x="0" y="0" z="0" a="20" rotate="0,0,0" width="416" height="750">
+    <img id="title" atlas="Atlas/Common.spriteatlas" src="npcshop_title" x="-5" y="345" z="0" a="00" rotate="0,0,0" raycast="0">
+    </img>
+    <img id="scrollerBg" atlas="" src="Texture/npcshop_sc_bg_1.png" x="-5" y="36" z="0" width="367" height="520" a="00" rotate="0,0,0" raycast="0">
+      <scrollview id="ItemList" vertical="1" x="0" y="0" z="0" width="367" height="497" a="00" rotate="0,0,0">
+        <layout id="ItemLayout" vertical="1" cella="11" a="11" x="0" y="0" z="0" width="367" space="4" rotate="0,0,0" control_width="0" control_height="0" expand_width="0" paddingtop="12" paddingbutttom="0" paddingleft="12" paddingright="0" contentsizefitter="1" height="5">
+          <datalist id="goods">
+            <img id="goods_backGround_" atlas="Atlas/Common.spriteatlas" src="npcshop_node_1" z="0" rotate="0,0,0" raycast="0">
+              <item id="showItem_" width="65" height="65" itemid="" itemcount="" bgtype="1" mfixsize="65,65" textcolor="#fbd994" tips="1" x="-129" y="2" z="0" a="00" rotate="0,0,0">
+                <img id="itemclick" width="65" height="65" color="#00000000" raycast="1">
+                </img>
+              </item>
+              <text id="title_" mline="1" text="" x="83" y="26" z="0" a="10" rotate="0,0,0" ta="00" fontsize="20" fonttype="" outlinesize="1" outlinecolor="#000000">
+              </text>
+              <item id="coinitem" itemid="" bgtype="0" width="25" height="25" mfixsize="25,25" x="-76" y="-20">
+                <img id="coinClick" width="25" height="25" raycast="1" color="#00000000">
+                </img>
+              </item>
+              <text id="coinnum" mline="1" text="" x="110" y="-22" z="0" a="10" color="#fbd994" rotate="0,0,0" ta="00" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000">
+              </text>
+              <button id="buy" text="购买" src="Texture/button_interface_window7_LauncherUI.png" raycast="1" a="00" rotate="0,0,0" z="0" fontsize="20" textcolor="#FFFFFFFF" x="104" y="-13" mline="1" fonttype="" outlinesize="1" outlinecolor="#000000" width="113" height="40">
+              </button>
+            </img>
+          </datalist>
+        </layout>
+      </scrollview>
+    </img>
+    <button id="desButton" atlas="Atlas/Common.spriteatlas" src="btn_description" x="-162" y="-248" z="0" a="00" rotate="0,0,0" raycast="1" fontsize="16" text="" textcolor="#FFFFFFFF">
+    </button>
+    <button id="CloseButton" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" x="180" y="350" z="0" width="75" height="69" a="00" rotate="0,0,0" raycast="1" fontsize="16" text="" textcolor="#FFFFFFFF" h5x="-180" h5y="350">
+    </button>
+    <prefab id="MoneyList" path="Kml/KmlPrefab/Cookbook/KmlNpcShopUI/MoneyList.prefab" x="-233" y="-344" z="0" width="10" height="10" a="00" rotate="0,0,0">
+      <panel id="MoneyList" bind="MoneyList" active="1">
+      </panel>
+      <button id="moneyBackground" bind="moneyBackground" onclick="KmlXWEquipUI/@OnClickTipMoney">
+      </button>
+      <text id="moneyText" bind="moneyText" text="">
+      </text>
+      <button id="MUCoinBackground" bind="MUCoinBackground" onclick="KmlXWEquipUI/@OnClickTipMuMoney">
+      </button>
+      <text id="muCoinText" bind="muCoinText" text="">
+      </text>
+      <button id="MUBindCoinBackground" bind="MUBindCoinBackground" onclick="KmlXWEquipUI/@OnClickTipBindMuMoney" active="0">
+      </button>
+      <text id="muBindCoinText" bind="muBindCoinText" text="">
+      </text>
+      <button id="diamondBackground" bind="diamondBackground" onclick="KmlXWEquipUI/@OnClickTipDiamond" active="0">
+      </button>
+      <text id="diamondText" bind="diamondText" text="">
+      </text>
+    </prefab>
+  </img>
+  <text id="noItem" active="0" a="00" text="70级后宝箱商人开放\n可消耗奇迹币获取宝箱，抽取神秘大礼包" fontsize="18" height="375" width="353" ta="11" horwrap="1" x="-213" y="43">
+  </text>
+</uipanel>

@@ -1,0 +1,10 @@
+<uipanel id="KLUIBuffInfoListPanel" name="增益信息列表界面" zindex="600" width="164" height="75" onload="KmlMainUI/@buff菜单栏初始化" a="11" raycast="1" x="320" y="-43">
+  <img id="closeBtn" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="buffBg" color="#ffffff00" width="5000" height="5000" x="0" y="0" raycast="1">
+  </img>
+  <img id="buffBg" atlas="Atlas/NewMainPanel.spriteatlas" src="bg_buffBg" scale9l="2" scale9r="2" scale9t="2" scale9b="2" width="164" height="75" databind="height=@buffBgHeight" x="0" y="0" a="22">
+    <scrollview id="buffInfo_list1" width="164" height="75" vertical="1" y="0" raycast="1" x="0" autoadjust="0">
+      <gridview id="buffInfo_list" x="0" y="-5" contentsizefitter="1" cellwidth="30" cellheight="30" cella="11" spacex="2" spacey="2" width="178" a="01">
+      </gridview>
+    </scrollview>
+  </img>
+</uipanel>

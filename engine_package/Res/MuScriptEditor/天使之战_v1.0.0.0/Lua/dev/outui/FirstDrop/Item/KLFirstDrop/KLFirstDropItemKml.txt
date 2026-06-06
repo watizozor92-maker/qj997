@@ -1,0 +1,12 @@
+<uipanel id="KLFirstDropItemKml" a="00" width="989" height="32" zindex="-1">
+  <panel id="panel1" a="00" width="989" height="32">
+    <text id="name" a="10" text="默认内容" fontsize="16" height="25" width="350" ta="01" outline="1" horwrap="1" color="#6CC34E" siblingindex="1" x="65" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="reward" a="00" text="默认内容" fontsize="16" height="25" width="180" ta="11" outline="1" horwrap="1" x="20" color="#C9C036" contentsizefitter="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="num" a="00" text="1" fontsize="16" height="25" width="160" ta="11" outline="1" horwrap="1" x="198" color="#FB6262" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="player" a="20" text="默认内容" fontsize="16" height="25" width="160" ta="11" outline="1" horwrap="1" color="#C9C036" x="-53" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </panel>
+</uipanel>

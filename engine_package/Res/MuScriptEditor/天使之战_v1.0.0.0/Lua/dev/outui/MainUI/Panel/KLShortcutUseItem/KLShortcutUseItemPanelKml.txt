@@ -1,0 +1,6 @@
+<uipanel id="KLShortcutUseItemPanelKml" a="00" width="1334" height="750">
+  <gridview id="fast_grid" cellwidth="60" cellheight="60" cella="20" x="-5" deltax="0" y="-294" width="325" height="64" spacex="5" spacey="1" active="1" a="21" constraint="1" constraintcount="5">
+    <datalist id="fast_data_list">
+    </datalist>
+  </gridview>
+</uipanel>

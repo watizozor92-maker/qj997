@@ -1,0 +1,36 @@
+<uipanel id="KLUIArchangelRewardItem" name="开服大天使奖励模板" width="160" height="140" x="0" y="0" zindex ="-1">
+ <prefab id="UIArchangelRewardTemplate" path="DIY/QJ5/UI/Template/Template/Recharge/UIArchangelRewardTemplate.prefab" width="160" height="140">
+  <img id="UIArchangelRewardTemplateBg" bind="UIArchangelRewardTemplate" active="1" width="160" height="140">
+ </img>
+ <img id="Image" bind="Image" active="0">
+</img>
+ <img id="icon" bind="icon" active="1">
+ <img id="bg" bind="bg" active="1">
+</img>
+ <text id="numtext" bind="numtext" active="1">
+</text>
+</img>
+ <text id="TextTime" bind="TextTime" active="0">
+</text>
+ <img id="itemReward" bind="itemReward" active="1">
+ <text id="ClaimedText" bind="ClaimedText" active="0">
+</text>
+ <img id="ClaimedIcon" bind="ClaimedIcon" active="1" z="-300">
+</img>
+ <img id="bg_1" bind="bg_1" active="1">
+</img>
+      <model id="effect_model" width="60" height="60" src="" mscale="42,42,42" mrotate="0,0,0" x="0" y="0">
+      </model>
+</img>
+ <text id="Textcur" bind="Textcur" active="1">
+</text>
+ <text id="remainCount" bind="remainCount" active="0">
+</text>
+ <button id="getButton" bind="getButton" active="0" raycast="1">
+ <img id="redpoint" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="15" height="15" raycast="1" x="40" y="13">
+ </img>
+</button>
+ <button id="buyButton" bind="buyButton" active="0" raycast="1">
+</button>
+</prefab>
+</uipanel>

@@ -1,0 +1,26 @@
+<uipanel id="KLAppearCostPanel" name="外观激活界面" a="00" width="355" height="264" z="-300" zindex="400" x="34" y="46" mask="0">
+  <img id="WndTitle" a="01" atlas="Atlas/AppearGroup.spriteatlas" src="title_appear" y="0" active="0">
+  </img>
+  <img id="img2" a="00" width="334" height="256" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="-5">
+  </img>
+  <img id="WndBg" a="00" atlas="" src="Texture/FG_dankuangdi3.png" width="345" height="272" raycast="1" x="0" y="0">
+    <img id="img1" a="01" width="88" height="21" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi.png">
+    </img>
+    <button id="BtnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" raycast="1" x="0" y="-16" mimg="" pimg="" dimg="">
+    </button>
+    <gridview id="CostGrid" width="325" height="135" a="00" cella="00" cellwidth="72" cellheight="72" spacex="5" spacey="5" raycast="1" y="13" x="0">
+      <datalist id="datalist1">
+        <panel id="panel2" width="72" height="72">
+          <item id="Item" src="20020001" width="72" height="72" mfixsize="64,64" tips="1" raycast="1">
+          </item>
+          <text id="TxtCount" x="-2" a="22" text="1" fontsize="16" height="25" width="88" ta="22" horwrap="1" outline="1" color="#FAD994FF" outlinesize="1" outlinecolor="#000000FF" y="2">
+          </text>
+        </panel>
+      </datalist>
+    </gridview>
+    <button id="BtnActive" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" text="激活" raycast="1" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" y="26" x="0" mimg="" pimg="" dimg="">
+    </button>
+    <text id="WndTitle" a="01" atlas="Atlas/AppearGroup.spriteatlas" src="title_appear" y="-26" outline="1" horwrap="1" width="200" height="24" text="解锁" fontsize="20" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" ta="11">
+    </text>
+  </img>
+</uipanel>

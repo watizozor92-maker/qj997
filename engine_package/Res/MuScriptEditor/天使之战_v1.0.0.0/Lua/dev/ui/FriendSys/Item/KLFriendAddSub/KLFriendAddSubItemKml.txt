@@ -1,0 +1,40 @@
+<uipanel id="KLFriendAddSubItem" width="530" height="418" a="00" y="0" zindex="-1">
+  <prefab id="FriendAdd_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlAddFriendSubUI.prefab">
+    <panel bind="add_friend_info" id="panel_56" width="618" height="462">
+      <img id="img1" a="00" width="618" height="462" raycast="1" siblingindex="0" src="img_interface_main115" atlas="Atlas/Common.spriteatlas" scale9l="29" scale9b="28" scale9r="32" scale9t="30" active="0">
+      </img>
+      <panel id="head_panel" bind="head_panel" y="-12">
+        <button id="shua_xin_img" bind="shua_xin_img" src="btn_1" atlas="Atlas/FG_FriendPanel.spriteatlas" mimg="" pimg="" dimg="" y="-10" width="34" height="34" x="499">
+        </button>
+        <text id="TxtCdCountdown" bind="TxtCdCountdown" fonttype="" fontsize="18" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" y="-10" width="137" height="25" text="换一批" fontstyle="0" underline="0" x="349" ta="21" rotate="0,0,0">
+        </text>
+        <text id="tui_jian_text" bind="tui_jian_text" fonttype="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" width="267" height="35" x="-10" y="-10">
+        </text>
+        <text id="shua_xin_text" bind="shua_xin_text" fonttype="" fontsize="18" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" y="-10" x="-11" width="108" height="25" ta="21" text="换一批" fontstyle="0" underline="0">
+        </text>
+        <img id="tu_jian_icon" bind="tui_jian_img" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="107" height="29" y="-10" x="-37">
+        </img>
+      </panel>
+    </panel>
+    <scrollview id="add_friend_scrollview" bind="add_friend_scrollview" y="-18" width="583" height="351" x="0">
+      <layout id="ListContent" bind="ListContent">
+      </layout>
+    </scrollview>
+    <panel bind="Bottom" id="panel_63" x="-23" y="-13">
+      <input id="IptSearch" bind="IptSearch" fonttype="" fontsize="18" textcolor="#747474" placecolor="#747474" outlinesize="1" outlinecolor="#000000" width="469" height="34" x="-36" color="#FFFFFFFF" y="2" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" scale9l="30" scale9b="14" scale9r="26" scale9t="6" place="">
+        <text id="text2" a="00" text="请输入查询玩家的名字" fontsize="18" height="22" width="200" ta="01" siblingindex="3" outline="1" horwrap="1" fontstyle="0" underline="0" color="#747474FF" x="-125" y="1" h5y="0">
+        </text>
+      </input>
+      <button id="BtnSearch" bind="BtnSearch" fonttype="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" height="41" width="113" x="266" y="2" text="">
+        <text id="text3" a="00" text="查找" fontsize="18" height="25" width="110" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="0">
+        </text>
+      </button>
+    </panel>
+    <scrollview id="scrollview1" a="00" width="583" height="338" vertical="1" y="-25" raycast="1" siblingindex="3" x="0">
+      <layout id="layout2" width="583" height="338" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="14">
+        <datalist id="datalist3">
+        </datalist>
+      </layout>
+    </scrollview>
+  </prefab>
+</uipanel>

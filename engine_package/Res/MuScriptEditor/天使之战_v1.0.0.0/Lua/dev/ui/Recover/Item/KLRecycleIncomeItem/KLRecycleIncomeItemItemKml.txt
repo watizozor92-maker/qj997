@@ -1,0 +1,8 @@
+<uipanel id="KLRecycleIncomeItemItemKml" name="回收道具模板" width="350" height="34" zindex="-1">
+  <button id="KmlRecycleIncomeItemTemplate" src="ty_info_bar" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" scale9l="60" scale9b="10" scale9r="129" scale9t="14" width="350" height="34">
+  </button>
+  <text id="IncomeCount" horwrap="1" outlinesize="1" outlinecolor="#000000FF" fonttype="" a="10" x="55" fontsize="18" text="9999" width="260" height="30" ta="01" y="0" color="#E0B873FF" outline="1">
+  </text>
+  <panel id="IncomeIcon" a="10" width="30" height="30" x="10">
+  </panel>
+</uipanel>

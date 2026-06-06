@@ -1,0 +1,12 @@
+<uipanel id="KLDescribeDetailPanel" name="血色城堡说明界面" zindex="400" x="0" y="-225" z="-2000" rotate="0,0,0" color="#00000000" width="10" height="10" a="00" raycast="0">
+  <img id="bg1" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="2000" height="1500" raycast="1" x="-6" y="123" color="#FFFFFF00">
+  </img>
+  <img id="bg" a="00" atlas="" src="Texture/FG_tankuangdi.png" raycast="1" x="0" y="198" width="631" height="419" scale9l="129" scale9b="135" scale9r="122" scale9t="129">
+  </img>
+  <text id="title" linespace="0.6" text="血色城堡" color="#FFFFFFFF" fontsize="20" outlinesize="0" outlinecolor="#000000" width="380" height="40" x="0" y="380" z="0" a="00" rotate="0,0,0" ta="11" outline="1" horwrap="1">
+  </text>
+  <text id="ContentTxt" linespace="1.2" horwrap="1" text="1 使用指定道具可以激活对应的坐骑。\n2 激活坐骑可获得大量属性。\n3 不同坐骑属性可叠加生效。" fontsize="18" outlinesize="0" outlinecolor="#000000" width="585" height="301" x="0" y="195" z="0" a="00" rotate="0,0,0" ta="00" color="#FFFFFFFF" outline="1">
+  </text>
+  <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" color="#FFFFFFFF" width="46" height="46" z="0" a="00" rotate="0,0,0" raycast="1" x="290" y="382">
+  </img>
+</uipanel>

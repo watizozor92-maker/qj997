@@ -1,0 +1,24 @@
+<uipanel id="KLUIMasterTalentColumnItem" width="120" height="314" zindex="-1">
+  <scrollview id="SkillScrollview" width="120" height="314" vertical="1" raycast="0" movementtype="2">
+    <layout id="layout5" width="360" height="230" a="00" vertical="1" contentsizefitter="3" raycast="1" space="20">
+      <datalist id="SkillDataList">
+        <panel id="SkillItem" active="1" width="80" height="80">
+          <img id="SkillBG" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="img_skill_bg3" width="100" height="100" raycast="1" x="0" y="2" active="1">
+            <img id="SkillBG_Light" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="img_skill_bg_light" width="100" height="100" raycast="1" active="0" fadeintime="0" fadeouttime="0">
+            </img>
+          </img>
+          <img id="SkillIcon" a="00" atlas="Atlas/UIOutSkillIcon.spriteatlas" src="1001" width="70" height="70" raycast="1" active="1">
+          </img>
+          <img id="SkillSign" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon-3" width="20" height="16" raycast="1" x="-25" y="27">
+          </img>
+          <img id="SkillMask" a="00" atlas="Atlas/Common.spriteatlas" src="bg_tips" width="70" height="70" raycast="1" color="#000000FF" active="1">
+          </img>
+          <text id="SkillLv" a="00" text="10/10" fontsize="18" height="25" width="70" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" x="0" y="-27" active="1">
+          </text>
+          <button id="SkillButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="80" height="80" onclick="" text="" raycast="1" color="#FFFFFF00">
+          </button>
+        </panel>
+      </datalist>
+    </layout>
+  </scrollview>
+</uipanel>

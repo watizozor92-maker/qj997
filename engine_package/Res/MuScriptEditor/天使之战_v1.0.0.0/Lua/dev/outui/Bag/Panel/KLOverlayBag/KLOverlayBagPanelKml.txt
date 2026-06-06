@@ -1,0 +1,22 @@
+<uipanel id="KLOverlayBagPanel" name="叠加背包界面" adapter="1" zindex="200" a="20" height="750" width="422" h5x="-">
+  <prefab id="cut_area_up" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="360">
+  </prefab>
+  <prefab id="cut_area_down" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="-316">
+  </prefab>
+  <img src="Texture/bg_bottomBg.png" a="20" raycast="1" id="img_14" scale9l="52" scale9b="62" scale9r="47" scale9t="99" width="416" height="750">
+    <img id="title" atlas="Atlas/UIBagPanel.spriteatlas" src="bag" y="-2" x="-3" a="01">
+    </img>
+    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" x="7" y="10" z="-10" onclick="KmlXWBagUI/@ClosePanel" h5x="-356" h5y="10">
+    </img>
+    <img id="sv_frame" atlas="Atlas/UILoginPanel.spriteatlas" src="bg_black_grid_N" width="365" height="539" scale9b="26" scale9r="26" scale9l="26" scale9t="26" a="01" y="-89" x="2">
+    </img>
+    <button id="person_shop_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="button_interface_person_buy" a="02" x="-137" y="36" raycast="1">
+    </button>
+    <button id="storage_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="button_interface_storage" a="02" x="-45" y="36" raycast="1">
+    </button>
+    <button id="recycle_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="button_interface_sell" a="02" x="47" y="36" raycast="1">
+    </button>
+    <button id="tidy_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="button_interface_sort" a="02" x="138" y="36" raycast="1">
+    </button>
+  </img>
+</uipanel>

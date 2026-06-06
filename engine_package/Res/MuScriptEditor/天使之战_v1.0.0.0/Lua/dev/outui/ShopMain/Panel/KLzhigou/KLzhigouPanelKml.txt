@@ -1,0 +1,54 @@
+<uipanel id="KLzhigouPanel" a="00" width="300" height="300" zindex="205" y="40" name="直购界面">
+  <panel id="Panel" a="00" width="1008" height="490" x="0" y="-25" active="0">
+    <img id="BG" width="778" height="664" y="0" x="0" z="0" src="bg_tankuangzuo" a="00" rotate="0,0,0" raycast="1" active="0" atlas="Atlas/FG_ShopMallPanel.spriteatlas" color="#FFFFFF00">
+      <text id="text1" a="01" text="充值" fontsize="20" height="30" width="150" ta="11" outline="0" horwrap="1" y="-20" color="#ffffffFF" active="0">
+      </text>
+      <img id="closeBtn" x="-2" y="-17" color="#FFFFFFFF" width="46" height="46" a="21" raycast="1" active="0" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" h5x="-985" h5y="5">
+      </img>
+    </img>
+  </panel>
+  <scrollview id="scrollview" a="00" x="-50" y="-70" width="950" height="380" vertical="1" raycast="1" movementtype="1" active="1">
+    <gridview id="gridview11" cellwidth="212" cellheight="218" raycast="1" contentsizefitter="3" cella="11" a="01" spacex="31" spacey="28" constraint="1" constraintcount="4" paddingtop="0" paddingbottom="0" paddingleft="0" width="4" height="1">
+      <datalist id="RechargeGoodsList">
+        <panel id="GoodItem" width="212" height="218">
+          <item id="item2" src="" width="100" height="100" x="0" y="21" tips="0" raycast="0" mscalefac="1.5,1.5,1.5">
+          </item>
+          <img id="img_bg" a="00" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="bg_dianshuchongzhi2" width="212" height="218" raycast="1" x="1" y="0">
+          </img>
+          <button id="btn_buy" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" onclick="" text="购买" raycast="1" x="0" y="-82" mimg="" pimg="" dimg="" ta="11" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF">
+          </button>
+          <panel id="FirstReward" a="00" width="186" height="58" x="1" y="62" active="0">
+            <img id="img_First" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="img_firstBuy" width="190" height="40" raycast="1" x="1" y="4" color="#FFFFFFFF">
+            </img>
+            <layout id="showItems" control_height="0" contentsizefitter="0" vertical="0" height="34" width="170" a="00" raycast="1" space="0" control_width="0" x="33" y="4" binddragid="">
+              <item id="item1" src="20020001" width="50" height="50" active="0">
+              </item>
+            </layout>
+          </panel>
+          <img id="img_icon" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="recharge01" raycast="0" color="#FFFFFFFF" x="2" y="26" width="169" height="103" active="0" enable="0">
+          </img>
+          <panel id="img_mask" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="bg_count" width="190" height="33" raycast="1" x="0" y="-43">
+            <img id="img_reward" a="00" active="0" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="icon_zuanshi" width="22" height="19" raycast="1" x="-13" y="1" color="#FFFFFFFF">
+            </img>
+            <text id="txt_reward" a="00" text="600" fontsize="18" height="25" width="190" ta="11" horwrap="1" x="2" y="-1" color="#F5C75EFF" active="1" outline="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </panel>
+          <text id="priceCount" a="00" text="￥1" fontsize="18" height="25" width="200" ta="11" outline="1" horwrap="1" x="0" y="-44" color="#F5C75EFF" active="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <button id="item_Tisp" a="00" width="125" height="116" onclick="" text="" raycast="1" x="1" y="22" active="1" atlas="" src="" color="#FFFFFF00" mcolor="#FFFFFF00" pcolor="#FFFFFF00" dcolor="#FFFFFF00" textcolor="#FFFFFF00" alphaall="1">
+          </button>
+        </panel>
+      </datalist>
+    </gridview>
+  </scrollview>
+  <img id="countDownRoot" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="countDownIcon" raycast="0" x="384" y="287" width="179" height="75" active="0">
+    <text id="refreshTime" a="00" text="00：00：00" fontsize="16" height="25" width="140" ta="11" horwrap="1" x="0" y="-24" color="#D9001CFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+  </img>
+  <img id="bottom" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian1" raycast="0" x="0" y="-290" active="0" width="100" height="44">
+    <text id="text2" a="00" text="返回商城" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" x="0" y="0">
+    </text>
+    <button id="BtnReturn" a="00" width="50" height="50" onclick="" text="" raycast="1" src="fanhui" atlas="Atlas/FG_chongzhi.spriteatlas" mimg="" pimg="" dimg="" x="-72" y="0">
+    </button>
+  </img>
+</uipanel>

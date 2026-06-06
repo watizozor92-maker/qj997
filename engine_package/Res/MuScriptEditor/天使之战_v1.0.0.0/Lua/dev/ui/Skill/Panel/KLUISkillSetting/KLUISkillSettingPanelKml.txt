@@ -1,0 +1,158 @@
+<uipanel id="KLUISkillSettingPanel" adapter="1" a="21" width="416" height="662" zindex="202" x="7" y="-2">
+  <panel id="BG_Templete" a="00" width="416" height="750" x="-6" y="-43">
+    <panel id="ReMask" a="00" width="404" height="735" y="-7" rectmask="1">
+      <img id="img1231" a="00" width="680" height="750" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="img2" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="363">
+      </img>
+    </img>
+  </panel>
+  <img id="KmlXWFastSkillUI" src="Texture/FG_bg_2ColumnsTanKuang.png" x="0" raycast="1" width="404" height="662" scale9l="42" scale9b="89" scale9r="68" scale9t="94" a="21" color="#ffffff00">
+    <button id="closeBtn" a="21" width="34" height="34" onclick="" text="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" mimg="" pimg="" dimg="" x="-20" y="-15">
+    </button>
+  </img>
+  <text id="Title_Str" a="01" color="#ffffff" text="技能设置" fontsize="20" height="27" width="350" ta="11" outline="0" horwrap="1" outlinecolor="#000000FF" linespace="0" space="0" y="-23" x="-5">
+  </text>
+  <togglegroup id="ShowTypes" allowswitchoff="0" width="262" height="34" y="255" h5y="296" h5x="-65" x="20">
+    <togglegroup id="togShowGroup" a="00" width="150" height="225" onload="" raycast="1" allowswitchoff="1">
+    </togglegroup>
+    <toggle id="togPattern" width="238" height="33" a="00" default="0" togglegroup_id="togShowGroup" onclick="" raycast="1" src="btn_all" atlas="Atlas/FG_SkillPanel.spriteatlas" pimg="btn_turn" x="-20" y="-3">
+      <text id="BtnAllTxt" color="#FFFFFF" x="-43" y="2" width="90" height="30" fontsize="18" ta="11" text="全显模式" outline="0" horwrap="1">
+      </text>
+      <text id="BtnTurnTxt" color="#FFFFFF" x="43" y="2" width="90" height="30" fontsize="18" ta="11" text="转盘模式" outline="0" horwrap="1">
+      </text>
+    </toggle>
+  </togglegroup>
+  <img id="btnAllMask" a="00" width="195" height="34" raycast="1" x="-98" y="256" color="#FFFFFF00">
+  </img>
+  <img id="btnTurnMask" a="00" width="197" height="34" raycast="1" x="99" y="256" color="#FFFFFF00">
+  </img>
+  <togglegroup id="toggroup_skill_bagItem" allowswitchoff="0" width="53" height="130" x="-167" y="170">
+    <toggle id="SkillBtnSetting" togglegroup_id="toggroup_skill_bagItem" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bg_skillSelect" pimg="bg_selectNoSelct" width="53" default="1" height="56" y="38" x="-5">
+      <img id="SkillBtnA" a="00" width="24" height="40" raycast="1" src="btn_henxiangjiantou" atlas="Atlas/FG_SkillPanel.spriteatlas" x="-39">
+      </img>
+    </toggle>
+    <toggle id="BagItemBtnSetting" togglegroup_id="toggroup_skill_bagItem" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bg_noSelect" pimg="bg_select" width="53" height="56" y="-30" x="-5">
+      <img id="SkillBtnB" a="00" width="24" height="40" raycast="1" src="btn_henxiangjiantou" atlas="Atlas/FG_SkillPanel.spriteatlas" x="-39">
+      </img>
+    </toggle>
+  </togglegroup>
+  <img id="BtnReset" x="151" y="-224" atlas="Atlas/FG_SkillPanel.spriteatlas" src="btn_refresh" raycast="1" width="34" height="34">
+  </img>
+  <gridview id="FastItemList" a="10" x="18" y="-355" width="455" cellwidth="72">
+    <datalist id="FastItemDataList">
+      <panel id="panel_1039">
+        <toggle id="bagItemBg_" width="70" height="70" atlas="Atlas/FG_SkillPanel.spriteatlas" src="tog_bagItem_bg" pimg="tog_bagItem_check">
+        </toggle>
+        <item id="bagItem" width="50" height="50" bgtype="0" mfixsize="50,50" itemid="" itemcount="">
+        </item>
+      </panel>
+    </datalist>
+  </gridview>
+  <togglegroup id="groupAll" allowswitchoff="1">
+  </togglegroup>
+  <img id="BodyAllSkill" y="-40" src="Texture/bg_allShow.png" active="1" x="20" width="372" height="337" atlas="">
+    <panel id="panel_atk" x="-71" y="96">
+      <button id="AttackButton" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_attack" width="111" height="111" raycast="1" x="80" y="-110" mimg="" pimg="" dimg="">
+        <img id="img1" a="00" width="88" height="82" raycast="1" src="icon_attack" atlas="Atlas/UIMainPanel_Out.spriteatlas" x="0" y="0">
+        </img>
+      </button>
+      <button id="BtnKillMonster" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_monster_sw" raycast="1" x="44" y="-170" mimg="" pimg="" dimg="" width="86" height="68">
+      </button>
+      <button id="BtnKillPerson" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_role_sw" raycast="1" x="140" y="-71" mimg="" pimg="" dimg="" width="70" height="85">
+      </button>
+    </panel>
+    <toggle id="TogAllSkill1" togglegroup_id="groupAll" width="70" height="70" x="63" y="116" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon1" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon1" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill2" togglegroup_id="groupAll" width="70" height="70" x="-16" y="119" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon2" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon2" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill3" togglegroup_id="groupAll" width="70" height="70" x="-85" y="81" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon3" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon3" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill4" togglegroup_id="groupAll" width="70" height="70" x="-124" y="13" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon4" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon4" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill5" togglegroup_id="groupAll" width="70" height="70" x="-122" y="-66" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon5" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon5" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill6" active="0" togglegroup_id="groupAll" width="70" height="70" x="-112" y="97" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon6" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon6" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <toggle id="TogAllSkill7" active="0" togglegroup_id="groupAll" width="70" height="70" x="-147" y="-73" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="AllSkillIcon7" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+      <img id="addIcon7" width="38" height="38" src="icon_skill_add" atlas="Atlas/FG_SkillPanel.spriteatlas">
+      </img>
+    </toggle>
+    <img id="BgMain" width="142" height="133" x="79" y="-34" atlas="Atlas/UIMainAttackPanel.spriteatlas" src="BgMainAttack" active="0">
+    </img>
+    <img id="MainSkill" width="125" height="126" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_attack" x="80" y="-30" active="0">
+    </img>
+  </img>
+  <togglegroup id="groupTurn" allowswitchoff="1">
+  </togglegroup>
+  <img id="img3" a="00" width="198" height="35" raycast="1" src="ty_bg_txt" atlas="Atlas/TS_Common.spriteatlas" x="-82" y="-293">
+  </img>
+  <img id="SpTag" x="-170" y="-293" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21">
+  </img>
+  <text id="TxtTitle" x="-74" y="-293" width="160" height="26" fontsize="18" ta="01" text="物品快捷键栏设置" outline="0" horwrap="1">
+  </text>
+  <img id="BodyTurnSkill" src="Texture/bg_turn.png" active="0" atlas="" x="0" y="-25" width="344" height="346">
+    <toggle id="TogTurnSkill1" togglegroup_id="groupTurn" width="70" height="70" x="0" y="123" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon1" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill2" togglegroup_id="groupTurn" width="70" height="70" x="-88" y="86" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon2" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100" x="0" y="0">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill3" togglegroup_id="groupTurn" width="70" height="70" x="-125" y="-2" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon3" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill4" togglegroup_id="groupTurn" width="70" height="68" x="-89" y="-88" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon4" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill5" togglegroup_id="groupTurn" width="70" height="68" x="1" y="-124" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon5" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill6" togglegroup_id="groupTurn" width="70" height="68" x="88" y="-86" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon6" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill7" togglegroup_id="groupTurn" width="70" height="68" x="123" y="0" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon7" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <toggle id="TogTurnSkill8" togglegroup_id="groupTurn" width="70" height="68" x="87" y="88" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_function_21" color="#ffffff01" pimg="img_function_13">
+      <img id="TurnSkillIcon8" width="70" height="70" atlas="Atlas/UISkillPanel.spriteatlas" src="11010100">
+      </img>
+    </toggle>
+    <img id="MainSkill" width="125" height="126" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_attack">
+    </img>
+  </img>
+</uipanel>

@@ -1,0 +1,92 @@
+<uipanel id="KLUnionMemberListPanel" name="战盟成员列表界面" adapter="1" a="20" height="750" width="416" x="-56" raycast="1" zindex="12">
+  <img src="Texture/FG_bg_2ColumnsTanKuang.png" a="21" x="-2" id="img_12" atlas="" width="416" height="750" y="0" color="#FFFFFF00">
+    <panel id="BG_Templete" a="00" width="416" height="750">
+      <panel id="ReMask" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="text1" a="01" text="战盟成员" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="WarAlliance_Member" y="-2" x="8" a="01" active="0">
+    </img>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-10" y="-20" z="-10" onclick="KmlXWUnionMemberUI/@CloseMainPanel" h5x="-355" h5y="7" width="34" height="34">
+    </img>
+    <img id="table_title_bg" atlas="Atlas/FG_Union.spriteatlas" src="bg_list_short" x="0" y="-83" width="374" height="37" a="01">
+      <button id="title_name" text="玩家昵称" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" width="80" height="22" x="16" onclick="KmlXWUnionMemberUI/@SortByType 1" color="#FFFFFF00" y="2" fontstyle="0" underline="0" textcolor="#DCE1E5" a="10">
+      </button>
+      <button id="title_level" width="70" height="30" onclick="KmlXWUnionMemberUI/@SortByType 2" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_btn_xinxi2" x="147" color="#FFFFFF00" a="10" y="1">
+        <text text="等级" x="-10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_18" outline="1" horwrap="1" color="#DCE1E5" y="-1">
+        </text>
+        <img id="level_sort_up" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_black">
+        </img>
+        <img id="level_sort_up_black" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_light" active="0">
+        </img>
+        <img id="level_sort_down" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_black">
+        </img>
+        <img id="level_sort_down_black" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_light" active="0">
+        </img>
+      </button>
+      <button id="title_position" width="70" height="30" x="218" onclick="KmlXWUnionMemberUI/@SortByType 3" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_btn_xinxi2" color="#FFFFFF00" a="10" y="1">
+        <text text="职位" x="-10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_24" outline="1" horwrap="1" color="#DCE1E5" y="-1">
+        </text>
+        <img id="position_sort_up" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_black">
+        </img>
+        <img id="position_sort_up_black" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_light" active="0">
+        </img>
+        <img id="position_sort_down" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_black">
+        </img>
+        <img id="position_sort_down_black" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_light" active="0">
+        </img>
+      </button>
+      <button id="title_state" width="70" height="30" x="303" onclick="KmlXWUnionMemberUI/@SortByType 4" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_btn_xinxi2" y="1" color="#FFFFFF00" a="10">
+        <text text="状态" x="-10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_30" outline="1" horwrap="1" color="#DCE1E5" y="-1">
+        </text>
+        <img id="state_sort_up" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_black">
+        </img>
+        <img id="state_sort_up_black" width="12" height="8" x="20" y="5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_up_light" active="0">
+        </img>
+        <img id="state_sort_down" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_black">
+        </img>
+        <img id="state_sort_down_black" width="12" height="8" x="20" y="-5" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="img_down_light" active="0">
+        </img>
+      </button>
+    </img>
+    <panel id="table_panel" y="-118" width="376" height="503" a="01" x="1" color="#000000FF">
+      <scrollview id="table_list" width="376" height="510" a="01" vertical="1" x="0" y="0">
+        <gridview id="union_list_view" width="368" height="540" cellwidth="368" cellheight="40" contentsizefitter="1" a="01" spacey="2">
+          <datalist id="union_data_list" databind="@member_data_list">
+            <panel id="datalist_panel_" width="376" height="40">
+              <img id="table_bg" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="black" width="375" height="40" x="0" color="#FFFFFF80">
+              </img>
+              <button id="datalist_panel_btn_" width="368" height="40" color="#00000000" onclick="KmlXWUnionMemberUI/@OpenMemberInfoPanel ">
+              </button>
+              <img id="union_choice_bg_" width="370" height="40" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="bg_choose1" active="0">
+              </img>
+              <text id="name" text="#CCCCCC" x="-108" color="#CCCCCCFF" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" ta="01" outline="0" horwrap="1" width="128" height="22">
+              </text>
+              <text id="level" text="#CCCCCC" x="-15" color="#CCCCCCFF" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" ta="11" outline="0" horwrap="1">
+              </text>
+              <text id="position" text="#CCCCCC" x="60" color="#CCCCCCFF" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" ta="11" outline="0" horwrap="1">
+              </text>
+              <text id="state" text="#CCCCCC" x="145" color="" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" ta="11" outline="0" horwrap="1">
+              </text>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+    <button id="shen_he" a="02" y="71" onclick="KmlXWUnionMemberUI/UIUnionMemberApply" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" databind="active=@is_admin" active="" mimg="" pimg="" dimg="" width="103" height="36" x="0">
+      <text id="btn_text" text="审核信息" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1" horwrap="1" width="127" height="45" ta="11" active="1">
+      </text>
+    </button>
+    <panel id="shen_heTip" width="306" height="40" a="02" x="0" y="24" text="连续" fontsize="16" fontstyle="0" underline="0" color="#FFFFFFFF">
+      <text id="tips" ta="11" y="10" height="30" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" color="#DCE1E5">
+      </text>
+      <text id="on_line_tips" ta="11" y="-14" height="30" fonttype="" fontsize="16" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" color="#DCE1E5">
+      </text>
+    </panel>
+  </img>
+</uipanel>

@@ -1,0 +1,16 @@
+<uipanel id="KLAppearEquipItem" name="外观装备道具模板" width="72" height="72" zindex="-1">
+  <button id="BtnEquip" width="72" height="72" atlas="Atlas/Common.spriteatlas" onclick="" src="cdTime_2" raycast="1">
+  </button>
+  <item id="EquipItem" src="20020001" width="72" height="72" mscale="40,40,40" mfixsize="72,72" bgimg="img_item_cover" atlas="Atlas/FG_Common.spriteatlas">
+  </item>
+  <img id="img_quality" a="11" atlas="Atlas/UIBagPanel.spriteatlas" src="img_icon_excellent" z="-100">
+  </img>
+  <text id="strengthLevel" fonttype="real_real_font_strength" a="21" y="-5" z="-100" outline="1" horwrap="1">
+  </text>
+  <text id="appendLevel" fonttype="real_font_append" horwrap="1" a="21" y="-20" z="-100" outline="1">
+  </text>
+  <img id="SpState" a="00" width="72" height="72" raycast="0" src="img_item_select" atlas="Atlas/FG_Common.spriteatlas" y="0" x="0" z="-100" active="0">
+    <img id="SpState2" a="22" x="0" y="0" z="-100" atlas="Atlas/FG_Common.spriteatlas" src="ty_gou" raycast="0" active="1" width="22" height="19">
+    </img>
+  </img>
+</uipanel>

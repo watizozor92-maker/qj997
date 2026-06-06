@@ -1,0 +1,4 @@
+<uipanel id="KLItemItem" name="道具模板" width="50" height="50" zindex="-1">
+  <item id="control_item" ta="12" scale9l="4" scale9r="4" scale9t="4" scale9b="4" atlas="Atlas/UIActivityDetailPanel.spriteatlas" bgimg="ty_bg_chatBubbleFrame" width="50" height="50" itemcount="0" mpos="0,0,-100" mfixsize="70,70" tips="1" textpos="0,0,-1200">
+  </item>
+</uipanel>

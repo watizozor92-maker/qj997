@@ -1,0 +1,184 @@
+<uipanel id="KLBigMapPanel" name="地图界面" zindex="200" width="1174" height="670" z="0" a="00" x="0" y="0">
+  <img id="img7" a="00" width="1334" height="750" raycast="1" atlas="" src="Texture/img_tp_bg.png" x="0" y="0">
+  </img>
+  <img id="img6" a="00" width="1023" height="540" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="-6">
+  </img>
+  <img src="Texture/FG_dankuangdi2.png" width="1039" height="578" y="0" raycast="1" id="img_21" atlas="" x="0" scale9l="189" scale9b="173" scale9r="204" scale9t="166">
+    <text id="text6" a="00" text="地图" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="242" outlinesize="1" outlinecolor="#000000FF" space="0" linespace="0">
+    </text>
+    <img src="img_interface_main009" width="1000" height="480" y="-29" scale9b="19" scale9l="11" scale9r="18" scale9t="15" raycast="1" id="img8" x="0" atlas="Atlas/Common.spriteatlas" active="1">
+    </img>
+    <img id="img9" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="0" scale9b="0" scale9r="0" scale9t="0" siblingindex="2">
+    </img>
+  </img>
+  <img src="bg_map" atlas="Atlas/FG_MapPanel.spriteatlas" y="-32" width="989" height="469" id="bg_map" active="1">
+  </img>
+  <img id="img_drag" raycast="1" color="#00000000" x="5" y="-48" width="645" height="567">
+  </img>
+  <button id="btn_close" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" a="21" x="-80" y="-70" raycast="1" mimg="" pimg="" dimg="" width="34" height="34">
+  </button>
+  <img src="bg_chuansongbiaotidi" atlas="Atlas/FG_MapPanel.spriteatlas" a="11" x="48" y="-108" width="219" height="44" id="img_24" active="0">
+    <img id="img3" a="00" width="220" height="494" raycast="1" atlas="" src="Texture/FG_MapKuang.png" y="-275">
+    </img>
+    <img id="img1" a="00" width="211" height="23" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" y="-43" x="0" color="#000000FF">
+      <text id="text2" a="00" text="名称" fontsize="16" height="23" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-72" y="0" color="#4AA1E3FF" fonttype="">
+      </text>
+      <text id="text3" a="00" text="等级" fontsize="16" height="23" width="53" ta="01" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="26" y="0" color="#4AA1E3FF" fonttype="">
+      </text>
+      <text id="text4" a="00" text="金币" fontsize="16" height="23" width="66" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="79" y="0" color="#4AA1E3FF" fonttype="">
+      </text>
+    </img>
+  </img>
+  <osascrollview id="TransferScrollView" width="211" height="461" defaultitemsize="43" vertical="1" a="11" x="54" y="-187" active="0">
+    <datalist id="TransferList">
+    </datalist>
+  </osascrollview>
+  <img src="bg_ditudaohangdi" atlas="Atlas/FG_MapPanel.spriteatlas" a="11" x="907" y="-108" width="219" height="44" id="img_17" active="0">
+    <img id="img4" a="00" width="220" height="494" raycast="1" atlas="" src="Texture/FG_MapKuang.png" y="-275">
+    </img>
+    <img id="img16" a="00" width="211" height="23" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" y="-43" x="0">
+      <text id="text17" a="00" text="名称" fontsize="16" height="25" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-70" y="0" color="#4AA1E3FF" fonttype="">
+      </text>
+      <text id="text19" a="00" text="类型" fontsize="16" height="25" width="66" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="68" y="0" color="#4AA1E3FF" fonttype="">
+      </text>
+    </img>
+  </img>
+  <layout vertical="1" a="11" x="910" y="-189" width="211" height="465" space="4" id="layout_28" cella="11" active="0">
+    <button id="btn_npc_transfer1" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_transfer1" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="167" height="44" horwrap="1" a="10" x="4" text="玛雅哥布林" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_transfer1" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="3" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_transfer1" a="00" text="[合成]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_shop1" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_shop1" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="老板娘莉亚" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_shop1" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_shop1" a="00" text="[药品]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_buff" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_buff" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="167" height="44" horwrap="1" a="10" x="4" text="幻影导师" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_buff" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="3" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_buff" a="00" text="[BUFF]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_activity1" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_activity1" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="恶魔广场" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_activity1" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_activity1" a="00" text="[经验]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_activity2" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_activity2" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="血色城堡" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_activity2" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_activity2" a="00" text="[经验]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_cangku1" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_cangku1" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="勇者仓库" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_cangku1" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_cangku1" a="00" text="[仓库]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_cangku2" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_cangku2" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="仙踪林仓库" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_cangku2" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_cangku2" a="00" text="[仓库]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_cangku3" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_cangku3" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="幻术园仓库" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_cangku3" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_cangku3" a="00" text="[仓库]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+    <button id="btn_npc_cangku4" width="211" height="43" raycast="1" src="btn_c1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <text id="label_npc_cangku4" fontsize="16" outlinecolor="#000000" outlinesize="1" ta="01" width="87" height="44" horwrap="1" a="10" x="4" text="冰风谷仓库" outline="0" color="#FFFFFFFF" y="1">
+      </text>
+      <text id="Level_npc_cangku4" a="00" text="1" fontsize="16" height="43" width="232" ta="11" outline="0" horwrap="1" x="4" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" active="0">
+      </text>
+      <text id="cost_npc_cangku4" a="00" text="[仓库]" fontsize="16" height="43" width="114" ta="11" outline="0" horwrap="1" x="70" deltax="0.5" y="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </button>
+  </layout>
+  <img id="img5" a="00" width="626" height="544" raycast="1" atlas="" src="Texture/FG_Mapditudi.png" y="-45" active="0">
+  </img>
+  <panel id="right_area" width="920" height="448" x="-19" y="-25" rectmask="1">
+    <img id="panel_scene" width="700" height="700" rotate="0,0,-45" raycast="0" color="#00000000" active="1">
+      <img id="img_scene" src="Texture/scene_1001.png" width="700" height="700" raycast="1" color="#FFFFFFFF">
+      </img>
+      <panel id="icon_parent" width="700" height="700" x="0" y="0" rotate="0,0,0" enable="1">
+      </panel>
+      <panel id="monsterCircelIcon_parent" width="700" height="700" x="0" y="0" rotate="0,0,0" enable="1">
+      </panel>
+      <img id="img_player_icon" src="img_minimap__arrow" atlas="Atlas/UIMapPanel.spriteatlas">
+      </img>
+      <img id="img_player_icon_1" src="Team" atlas="Atlas/FG_MapPanel.spriteatlas" active="0">
+        <text id="img_player_icon_Name_1" a="00" text="224, 58" fontsize="18" height="20" width="120" ta="11" outline="1" horwrap="1" x="0" y="-23" outlinesize="1" outlinecolor="#4aa0e4FF">
+        </text>
+      </img>
+      <img id="img_player_icon_2" src="Team" atlas="Atlas/FG_MapPanel.spriteatlas" active="0">
+        <text id="img_player_icon_Name_2" a="00" text="224, 58" fontsize="18" height="20" width="120" ta="11" outline="1" horwrap="1" x="0" y="-23" outlinesize="1" outlinecolor="#4aa0e4FF">
+        </text>
+      </img>
+      <img id="img_player_icon_3" src="Team" atlas="Atlas/FG_MapPanel.spriteatlas" active="0">
+        <text id="img_player_icon_Name_3" a="00" text="224, 58" fontsize="18" height="20" width="120" ta="11" outline="1" horwrap="1" x="0" y="-23" outlinesize="1" outlinecolor="#4aa0e4FF">
+        </text>
+      </img>
+      <img id="img_player_icon_4" src="Team" atlas="Atlas/FG_MapPanel.spriteatlas" active="0">
+        <text id="img_player_icon_Name_4" a="00" text="224, 58" fontsize="18" height="20" width="120" ta="11" outline="1" horwrap="1" x="0" y="-23" outlinesize="1" outlinecolor="#4aa0e4FF">
+        </text>
+      </img>
+      <img id="img_player_icon_5" src="Team" atlas="Atlas/FG_MapPanel.spriteatlas" active="0">
+        <text id="img_player_icon_Name_5" a="00" text="224, 58" fontsize="18" height="20" width="120" ta="11" outline="1" horwrap="1" x="0" y="-23" outlinesize="1" outlinecolor="#4aa0e4FF">
+        </text>
+      </img>
+    </img>
+  </panel>
+  <text id="txt_pos" a="00" text="224, 58" fontsize="18" height="30" width="127" ta="01" outline="1" horwrap="1" x="268" y="-294" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <img id="img2" a="00" width="280" height="28" raycast="1" src="bg_ditubiaotidi" atlas="Atlas/FG_MapPanel.spriteatlas" y="198">
+    <text id="text_map_name" text="地图名称" fonttype="" a="11" x="0" y="0" fontsize="16" outlinecolor="#000000" outlinesize="1" outline="0" horwrap="1" color="#DBE0E6FF" width="280" height="28" ta="11">
+    </text>
+  </img>
+  <button id="btn_map_zoom_out" src="btn_5" atlas="Atlas/FG_MapPanel.spriteatlas" x="-100" y="170" a="20" raycast="1" mimg="" pimg="" dimg="" width="27" height="27">
+  </button>
+  <button id="btn_map_zoom_in" src="btn_4" atlas="Atlas/FG_MapPanel.spriteatlas" x="-100" y="-170" a="20" raycast="1" mimg="" pimg="" dimg="" width="27" height="27">
+  </button>
+  <slider id="slider_map_size" width="25" height="276" atlas="Atlas/FG_MapPanel.spriteatlas" src="bg_slider_v" himg="zb3" fimg="bg_slider2_v" direction="3" scale9l="6" scale9r="7" scale9t="13" scale9b="12" scale9l2="0" scale9r2="0" scale9t2="9" scale9b2="9" slidefillarealrtb="9,9,3,3" handlewidthtb="0,0,0,0" slidehandlearealrtb="0,0,136,133" minvalue="1" maxvalue="2" curvalue="0" rotate="0,0,0" mimg="" pimg="" fimg_scale9l="2" fimg_scale9b="7" fimg_scale9r="2" fimg_scale9t="7" a="00" x="470">
+    <panel bind="handleSlideArea_attach" id="handleSlideArea_attach" x="0" width="0" height="276">
+      <img bind="handle_attach" id="handle_attach" x="0" width="27" height="27" y="1">
+      </img>
+    </panel>
+  </slider>
+  <item id="Delivery_Item" src="" width="60" height="60" x="515" y="-266" raycast="1" itemid="60010001" itemcount="0" active="0">
+  </item>
+  <text id="Delivery_Item_Tips" a="00" text="随机传送" fontsize="16" height="25" width="86" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#999999FF" x="515" y="-311" active="0" outline="0">
+  </text>
+  <panel id="FixedPoint" a="00" width="281" height="36" x="-137" y="190" active="0">
+    <item id="FixedPointItem" src="" width="40" height="40" a="10" bgtype="0" raycast="1">
+    </item>
+    <text id="FixedPointText" a="00" text="定点传送开启" fontsize="18" height="25" width="127" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" x="-31" y="0" outline="0">
+    </text>
+    <toggle id="FixedPointToggle" width="30" height="30" a="00" default="1" togglegroup_id="" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window54" pimg="ty_btn_gou" raycast="1" x="33">
+    </toggle>
+    <text id="FixedPointItemCount" a="00" text="99" fontsize="16" height="25" width="55" ta="21" horwrap="1" x="-122" y="-24" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" z="-200" outline="0">
+    </text>
+  </panel>
+</uipanel>

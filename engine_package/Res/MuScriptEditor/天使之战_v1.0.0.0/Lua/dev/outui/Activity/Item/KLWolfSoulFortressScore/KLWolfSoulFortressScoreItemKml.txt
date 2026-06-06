@@ -1,0 +1,24 @@
+<uipanel id="KLWolfSoulFortressScoreItemKml" name="狼魂积分模板" a="00" width="979" height="80" zindex="-1">
+  <panel id="root" a="00" width="979" height="80" rotate="0,0,0">
+    <img id="rankBg" a="00" atlas="Atlas/UIWolfSoulFortress.spriteatlas" src="rankBg_1" width="979" height="80" raycast="1" binddragid="">
+    </img>
+    <img id="rankImg" a="00" atlas="Atlas/UIWolfSoulFortress.spriteatlas" src="rank_1" width="33" height="30" raycast="1" x="-443" y="0" binddragid="">
+    </img>
+    <text id="myRank" a="00" text="1" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="-443" y="0" rotate="0,0,0" outlinesize="0" outlinecolor="#000000FF" fonttype="Font/simsun.ttf">
+    </text>
+    <text id="myName" a="00" text="阿姆斯特朗" fontsize="18" height="25" width="200" ta="11" horwrap="1" x="-289" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="myCareer" a="00" text="战士" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="-139" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="myLevel" a="00" text="400" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="-39" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="myScore" a="00" text="100" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="62" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <panel id="itemList" a="00" width="294" height="80" binddragid="" x="260" y="0">
+      <layout id="layout1" control_height="0" contentsizefitter="1" vertical="0" height="500" width="265" a="00" raycast="1" cella="00" space="5">
+        <datalist id="itemDataList" databind="" a="11">
+        </datalist>
+      </layout>
+    </panel>
+  </panel>
+</uipanel>

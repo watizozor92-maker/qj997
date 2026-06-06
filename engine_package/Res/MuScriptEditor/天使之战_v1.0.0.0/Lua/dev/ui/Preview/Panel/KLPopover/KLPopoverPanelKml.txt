@@ -1,0 +1,14 @@
+<uipanel id="KLPopoverPanel" name="气泡界面" zindex="10" x="0" y="0" width="1334" height="750" ap="0#0#1#1#0.5#0.5" adapter="1">
+  <panel id="Bg" width="360" height="42" y="-527" x="-6" z="0" rotate="0,0,0" raycast="1" a="01" alphaall="1">
+    <scrollview id="ScrollView" width="360" height="52" vertical="0" a="11">
+      <layout vertical="0" control_width="0" contentsizefitter="0" width="330" a="21" cella="10" space="6" height="52">
+        <datalist id="leftdatalist">
+          <button id="iconitem" atlas="Atlas/UITradePanel.spriteatlas" src="common" raycast="1" width="52" height="52">
+            <text id="txt_time" a="02" text="00:00" fontsize="16" height="25" width="50" ta="12" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" active="0">
+            </text>
+          </button>
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

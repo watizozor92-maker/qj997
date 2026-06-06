@@ -1,0 +1,28 @@
+<uipanel id="KLUITeamHeadItem" name="队伍玩家头像模板" width="282" height="40" zindex="-1">
+  <panel id="Content" a="00" width="282" height="40" x="0" y="0">
+    <img id="Bg" a="00" width="282" height="40" raycast="1" src="bg_teamment" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas">
+    </img>
+    <img id="img_selectionEffect" atlas="Atlas/UITeamMainInfoPanel.spriteatlas" scale9b="9" scale9l="17" scale9r="18" scale9t="17" width="282" height="40" src="ty_btn_boss9" active="0" a="12">
+    </img>
+    <img atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="img_teamHeadBg2" x="10" a="10" width="46" height="46" id="img_56" active="0">
+      <img id="sp_careerIcon" width="46" height="46">
+      </img>
+    </img>
+    <text id="lab_name" fontsize="16" outlinesize="1" outlinecolor="#000000FF" x="17" y="-7" width="118" height="20" ta="01" horwrap="1" fonttype="" text="玩家名称六字" outline="0" color="#3C7FD9FF" fontstyle="0" underline="0" a="11">
+    </text>
+    <text id="lab_level" fontsize="16" outlinesize="1" outlinecolor="#000000FF" x="-28" y="-7" width="68" height="20" ta="21" horwrap="1" text="LV.999" fonttype="" outline="0" color="#E6E600FF" a="21" fontstyle="0" underline="0">
+    </text>
+    <img id="sp_captain" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" src="icon_captain" x="2" y="4" width="23" height="20">
+    </img>
+    <img id="img_far" atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="team_yuanLi" x="108" y="6" width="48" height="20" active="0">
+    </img>
+    <loadingbar id="sl_hp" hidetext="1" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" width="238" height="5" vertical="0" x="-6" y="-9" fontsize="16" src="bg_hp" loadingbar="hp" startper="0" ta="11" raycast="0" outlinesize="1" outlinecolor="#000000">
+    </loadingbar>
+    <img id="img_offLineBg" atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="ty_black" color="#FFFFFF72" x="0" y="0" width="270" height="55" active="0">
+      <img atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="team_liXian" x="108" y="13" width="47" height="21" id="img_64">
+      </img>
+    </img>
+    <button id="KLUITeamHeadButton" color="#FFFFFF00" width="270" height="55" raycast="1" x="0" y="0">
+    </button>
+  </panel>
+</uipanel>

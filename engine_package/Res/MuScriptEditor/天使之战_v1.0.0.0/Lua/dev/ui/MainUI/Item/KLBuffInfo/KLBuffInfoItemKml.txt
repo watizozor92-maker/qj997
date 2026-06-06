@@ -1,0 +1,6 @@
+<uipanel id="KLBuffInfoItem" zindex="-1">
+  <circlebar id="control_circlebar" atlas="Atlas/Buff_iconOut.spriteatlas" src="" loadingbar="information_bg" width="30" height="30" raycast="1" endper="0" direction="1" toend="1">
+  </circlebar>
+  <text id="text_layer" a="22" outlinesize="1" outlinecolor="#000000FF" ta="22" color="#FFFFFF" y="-2">
+  </text>
+</uipanel>

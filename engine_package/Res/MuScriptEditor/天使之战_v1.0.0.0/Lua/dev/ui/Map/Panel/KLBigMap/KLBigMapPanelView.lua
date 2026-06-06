@@ -1,0 +1,104 @@
+---@class KLBigMapPanelView:UIKmlLuaViewBase
+---@field img7 UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field img_21 UIKmlLuaControlHandler
+---@field text6 UIKmlLuaControlHandler
+---@field img8 UIKmlLuaControlHandler
+---@field img9 UIKmlLuaControlHandler
+---@field bg_map UIKmlLuaControlHandler
+---@field img_drag UIKmlLuaControlHandler
+---@field btn_close UIKmlLuaControlHandler
+---@field img_24 UIKmlLuaControlHandler
+---@field img3 UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field text2 UIKmlLuaControlHandler
+---@field text3 UIKmlLuaControlHandler
+---@field text4 UIKmlLuaControlHandler
+---@field TransferScrollView UIKmlLuaControlHandler
+---@field TransferList UIKmlLuaControlHandler
+---@field img_17 UIKmlLuaControlHandler
+---@field img4 UIKmlLuaControlHandler
+---@field img16 UIKmlLuaControlHandler
+---@field text17 UIKmlLuaControlHandler
+---@field text19 UIKmlLuaControlHandler
+---@field layout_28 UIKmlLuaControlHandler
+---@field btn_npc_transfer1 UIKmlLuaControlHandler
+---@field label_npc_transfer1 UIKmlLuaControlHandler
+---@field Level_npc_transfer1 UIKmlLuaControlHandler
+---@field cost_npc_transfer1 UIKmlLuaControlHandler
+---@field btn_npc_shop1 UIKmlLuaControlHandler
+---@field label_npc_shop1 UIKmlLuaControlHandler
+---@field Level_npc_shop1 UIKmlLuaControlHandler
+---@field cost_npc_shop1 UIKmlLuaControlHandler
+---@field btn_npc_buff UIKmlLuaControlHandler
+---@field label_npc_buff UIKmlLuaControlHandler
+---@field Level_npc_buff UIKmlLuaControlHandler
+---@field cost_npc_buff UIKmlLuaControlHandler
+---@field btn_npc_activity1 UIKmlLuaControlHandler
+---@field label_npc_activity1 UIKmlLuaControlHandler
+---@field Level_npc_activity1 UIKmlLuaControlHandler
+---@field cost_npc_activity1 UIKmlLuaControlHandler
+---@field btn_npc_activity2 UIKmlLuaControlHandler
+---@field label_npc_activity2 UIKmlLuaControlHandler
+---@field Level_npc_activity2 UIKmlLuaControlHandler
+---@field cost_npc_activity2 UIKmlLuaControlHandler
+---@field btn_npc_cangku1 UIKmlLuaControlHandler
+---@field label_npc_cangku1 UIKmlLuaControlHandler
+---@field Level_npc_cangku1 UIKmlLuaControlHandler
+---@field cost_npc_cangku1 UIKmlLuaControlHandler
+---@field btn_npc_cangku2 UIKmlLuaControlHandler
+---@field label_npc_cangku2 UIKmlLuaControlHandler
+---@field Level_npc_cangku2 UIKmlLuaControlHandler
+---@field cost_npc_cangku2 UIKmlLuaControlHandler
+---@field btn_npc_cangku3 UIKmlLuaControlHandler
+---@field label_npc_cangku3 UIKmlLuaControlHandler
+---@field Level_npc_cangku3 UIKmlLuaControlHandler
+---@field cost_npc_cangku3 UIKmlLuaControlHandler
+---@field btn_npc_cangku4 UIKmlLuaControlHandler
+---@field label_npc_cangku4 UIKmlLuaControlHandler
+---@field Level_npc_cangku4 UIKmlLuaControlHandler
+---@field cost_npc_cangku4 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field right_area UIKmlLuaControlHandler
+---@field panel_scene UIKmlLuaControlHandler
+---@field img_scene UIKmlLuaControlHandler
+---@field icon_parent UIKmlLuaControlHandler
+---@field monsterCircelIcon_parent UIKmlLuaControlHandler
+---@field img_player_icon UIKmlLuaControlHandler
+---@field img_player_icon_1 UIKmlLuaControlHandler
+---@field img_player_icon_Name_1 UIKmlLuaControlHandler
+---@field img_player_icon_2 UIKmlLuaControlHandler
+---@field img_player_icon_Name_2 UIKmlLuaControlHandler
+---@field img_player_icon_3 UIKmlLuaControlHandler
+---@field img_player_icon_Name_3 UIKmlLuaControlHandler
+---@field img_player_icon_4 UIKmlLuaControlHandler
+---@field img_player_icon_Name_4 UIKmlLuaControlHandler
+---@field img_player_icon_5 UIKmlLuaControlHandler
+---@field img_player_icon_Name_5 UIKmlLuaControlHandler
+---@field txt_pos UIKmlLuaControlHandler
+---@field img2 UIKmlLuaControlHandler
+---@field text_map_name UIKmlLuaControlHandler
+---@field btn_map_zoom_out UIKmlLuaControlHandler
+---@field btn_map_zoom_in UIKmlLuaControlHandler
+---@field slider_map_size UIKmlLuaControlHandler
+---@field handleSlideArea_attach UIKmlLuaControlHandler
+---@field handle_attach UIKmlLuaControlHandler
+---@field Delivery_Item UIKmlLuaControlHandler
+---@field Delivery_Item_Tips UIKmlLuaControlHandler
+---@field FixedPoint UIKmlLuaControlHandler
+---@field FixedPointItem UIKmlLuaControlHandler
+---@field FixedPointText UIKmlLuaControlHandler
+---@field FixedPointToggle UIKmlLuaControlHandler
+---@field FixedPointItemCount UIKmlLuaControlHandler
+local KLBigMapPanelView = {}
+setmetatable(KLBigMapPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Map/Panel/KLBigMap/KLBigMapPanelKml'
+---@param parent UIKmlLuaControlHandler
+function KLBigMapPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+---@type KLBigMapPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Map/Panel/KLBigMap/KLBigMapPanel']
+
+return KLBigMapPanelView

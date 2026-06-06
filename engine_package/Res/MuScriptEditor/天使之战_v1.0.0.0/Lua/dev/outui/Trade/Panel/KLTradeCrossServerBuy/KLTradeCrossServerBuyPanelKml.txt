@@ -1,0 +1,18 @@
+<uipanel id="KLTradeCrossServerBuyPanel" name="交易行战盟购买界面" width="194" height="140" zindex="800" x="296" scale="1.2">
+  <button id="btn_close" width="2000" height="1000" color="#00000000" raycast="1">
+  </button>
+  <img width="194" height="140" src="img_interface_main122" atlas="Atlas/Common.spriteatlas" scale9b="25" scale9l="25" scale9r="25" scale9t="25" raycast="1" id="img_103">
+  </img>
+  <panel width="194" height="40" y="10" id="panel_104">
+    <text text="价格" a="10" x="10" id="text_105">
+    </text>
+    <img a="10" x="48" width="134" height="38" src="bg_partnerStar_select" atlas="Atlas/Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" id="img_106">
+      <img id="img_coin_icon" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="30" height="30">
+      </img>
+      <text id="txt_price" text="99" a="10" x="36" width="86" height="30" ta="11" fontsize="18" color="#FBD994" outlinecolor="#000000" outlinesize="1">
+      </text>
+    </img>
+  </panel>
+  <button id="btn_buy" src="button_interface_window11" atlas="Atlas/Common.spriteatlas" text="竞价" a="02" y="14" raycast="1" outlinecolor="#000000" outlinesize="1">
+  </button>
+</uipanel>

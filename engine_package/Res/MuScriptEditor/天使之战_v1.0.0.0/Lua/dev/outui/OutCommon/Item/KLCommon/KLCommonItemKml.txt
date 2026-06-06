@@ -1,0 +1,14 @@
+<uipanel id="KLCommonItem" width="300" height="300" zindex="-1">
+  <item id="item" src="20020001" width="70" height="70" mfixsize="70,70" tips="1">
+    <panel id="outNode" a="00" width="70" height="70">
+      <text id="txt_rank" a="21" text="1D" fontsize="16" height="25" width="40" ta="21" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-3" y="2" color="#D99638FF" z="-200">
+      </text>
+      <img id="img_arrow" a="00" width="26" height="27" raycast="1" src="ty_icon_arrow_small" atlas="Atlas/TS_Common.spriteatlas" x="19" y="-24" z="-200">
+      </img>
+      <img id="img_leftTop" a="11" width="24" height="29" raycast="1" x="0" y="0" src="ty_ico_pet" atlas="Atlas/XH_Pet.spriteatlas" z="-200">
+      </img>
+    </panel>
+    <text id="count_attach" bind="count_attach" ta ="12">
+    </text>
+  </item>
+</uipanel>

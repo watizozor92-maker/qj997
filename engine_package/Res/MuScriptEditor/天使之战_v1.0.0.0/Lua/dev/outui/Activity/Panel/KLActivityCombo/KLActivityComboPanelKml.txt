@@ -1,0 +1,120 @@
+<uipanel id="KLActivityComboPanel" name="连击试炼活动界面" width="1334" height="750" x="16" y="-21" raycast="1">
+  <img id="bgClose" a="00" color="#ffffff00" width="1334" height="750" raycast="1" x="0" y="0">
+  </img>
+  <img id="img1" a="00" width="643" height="521" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="1" y="-5">
+  </img>
+  <img id="bg" a="00" atlas="" src="Texture/FG_dankuangdi2.png" width="654" height="554" raycast="1" x="0" y="0" scale9l="204" scale9b="96" scale9r="166" scale9t="181">
+    <img id="img3" a="00" width="617" height="455" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="12" scale9b="19" scale9r="26" scale9t="22" x="5" y="-32">
+    </img>
+    <text id="title" a="01" text="卡利玛神庙" fontsize="16" height="24" width="75" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="-37" contentsizefitter="2" x="0">
+    </text>
+    <img id="closeBtn" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" raycast="1" x="-14" y="-22" h5y="303" h5x="-294">
+    </img>
+    <img id="comboTitleicon" a="11" atlas="" src="Texture/img_lizhan.png" width="420" height="97" raycast="1" x="199" y="-107">
+    </img>
+    <scrollview id="levelContent" a="11" width="148" height="395" vertical="1" y="-108" raycast="1" x="32">
+      <layout id="levelLayout" width="165" height="48" a="01" vertical="1" raycast="1" cella="01" expand_width="0" expand_height="0" space="6">
+        <datalist id="levelList">
+          <toggle id="KLLevel" width="148" height="41" binddragid="" default="0" togglegroup_id="togglegroup" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" raycast="1">
+            <img id="noClick" active="0" width="160" height="48" atlas="Atlas/TS_Common.spriteatlas" src="lockBg" raycast="1">
+            </img>
+            <text id="levelName" a="00" text="" fontsize="16" height="35" width="160" ta="11" horwrap="1" x="1" y="2" color="#ABABABFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+            </text>
+          </toggle>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img45" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-230">
+      <text id="text46" a="00" text="推荐等级：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="level" a="00" text="" fontsize="16" height="25" width="272" ta="01" horwrap="1" x="229" y="0" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img54" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-121" y="147" active="0">
+      <text id="text55" a="00" text="推荐龙魂连击等级：" fontsize="16" height="25" width="150" ta="01" horwrap="1" x="83" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="defense" a="00" text="" fontsize="16" height="25" width="272" ta="01" horwrap="1" x="291" y="0" color="#FF2424FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img57" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-121" y="122" active="0">
+      <text id="text58" a="00" text="开启时间：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="openTime" a="00" text="永久开启" fontsize="16" height="40" width="352" ta="01" horwrap="1" x="269" y="-1" color="#29E629" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img63" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-262">
+      <text id="text64" a="00" text="副本奖励：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <scrollview id="sv_rewardList" a="11" x="305" y="-261" width="322" height="142" vertical="1" raycast="1" movementtype="2">
+      <gridview id="gridview2" cellwidth="65" cellheight="65" raycast="1" cella="11" constraint="1" constraintcount="4" spacex="5" spacey="3">
+        <datalist id="datalist_reward">
+          <item id="pass_reward" tips="" width="60" height="60" z="-200" atlas="Atlas/Common.spriteatlas" bgtype="1" bgimg="bg_setting_xuanzekuang" itemid="" uniqueid="" selfrotation="" strengthlevel="" mfixsize="55,55" scale9l="5" scale9r="5" scale9t="5" scale9b="5">
+            <img id="img_pass_reward_click" a="00" width="60" height="60" raycast="1" src="img_receive" atlas="Atlas/KLBraveTrialsUI.spriteatlas" active="1">
+            </img>
+            <img id="img_quality" a="11" atlas="Atlas/UIBagPanel.spriteatlas" src="" z="-500">
+            </img>
+            <img id="img_arrow" atlas="Atlas/Common.spriteatlas" src="ty_icon_arrow_small" a="22" x="-3" y="3">
+            </img>
+          </item>
+        </datalist>
+      </gridview>
+    </scrollview>
+    <img id="img7" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-417">
+      <text id="text8" a="00" text="消耗门票：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outline="1">
+      </text>
+      <img id="ticketBtn" a="10" atlas="Atlas/FG_Common.spriteatlas" src="bg_emptyBorder_2" width="230" height="34" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="94" y="0">
+      </img>
+      <text id="ticketCount" a="10" text="" fontsize="16" height="30" width="230" ta="11" horwrap="1" x="94" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <button id="btn_buyTicket" a="10" width="34" height="34" onclick="" text="" raycast="1" src="btn_add1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="330" y="0" active="0">
+      </button>
+      <item id="ticketItem" src="20020001" width="20" height="20" a="10" x="104" y="0" raycast="0">
+      </item>
+    </img>
+    <img id="img60" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-453" active="1">
+      <text id="text61" a="00" text="剩余次数：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="countTxt" active="1" a="00" text="" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="145" y="0" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <img id="addCountBtn" a="20" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="common_add" width="38" height="38" raycast="1" x="190" y="0" active="0">
+      </img>
+    </img>
+    <img id="desBtn" a="22" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" x="-25" y="28">
+    </img>
+    <button id="enterBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" onclick="" text="进入副本" raycast="1" color="#FFFFFFFF" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" mimg="" pimg="" dimg="" a="11" y="-477" x="304">
+    </button>
+    <button id="sweepBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_commonh_3_select" width="113" height="41" onclick="" text="" raycast="0" color="#FFFFFF00" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="0" mimg="" pimg="" dimg="" y="-477" x="439" a="11" enable="0">
+    </button>
+    <img id="img2" a="01" width="161" height="27" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="-8">
+    </img>
+  </img>
+  <togglegroup id="togglegroup" width="150" height="225" onload="" raycast="1" x="1" y="1">
+  </togglegroup>
+  <text id="text_btnTips" a="00" width="150" height="22" ta="11" text="通关前置关卡开放" fontsize="18" horwrap="1" x="80" y="-93" color="#FF2323" outlinesize="1" outlinecolor="#000000FF" active="0" outline="1">
+  </text>
+  <panel id="sweep_panel" y="85" z="-100" zindex="10" active="0">
+    <prefab path="Kml/KmlPrefab/Cookbook/KmlShopMallUI/KmlShopMallBuyUI.prefab" width="220" height="156" id="sweep_prefab">
+      <button bind="ClickMask" id="ClickMask" x="0" y="0" width="2000" height="1200">
+      </button>
+      <input bind="InputFieldLevel" id="InputFieldLevel">
+        <text id="Text" bind="Text" color="#dce1e5" horwrap="1" outline="1">
+        </text>
+      </input>
+      <text bind="TextTotalCount" id="TextTotalPrice" horwrap="1" outline="1">
+      </text>
+      <panel bind="TotalPrice" id="TotalPrice">
+      </panel>
+      <button bind="BtnBuy" id="BtnBuy" width="93" height="31">
+        <text id="BtnText" bind="BtnText" color="#dce1e5" horwrap="1" outline="1">
+        </text>
+      </button>
+      <button bind="BtnLevelMinus" id="BtnLevelMinus">
+      </button>
+      <button bind="BtnLevelAdd" id="BtnLevelAdd">
+      </button>
+    </prefab>
+    <text id="sweepCount" a="00" text="剩余次数：5" fontsize="16" height="25" width="153" ta="11" horwrap="1" y="-8" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+  </panel>
+</uipanel>

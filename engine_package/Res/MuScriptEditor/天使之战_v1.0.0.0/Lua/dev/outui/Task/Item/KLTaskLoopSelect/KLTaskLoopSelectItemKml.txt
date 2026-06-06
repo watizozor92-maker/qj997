@@ -1,0 +1,18 @@
+<uipanel id="KLTaskLoopSelectItem" width="78" height="74" zindex="-1">
+  <item id="item" src="20020001" width="58" height="58" bgtype="1" bgimg="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" a="11">
+    <panel id="equipInfo" z="-500" x="0" y="0" width="58" height="58">
+      <img id="xinyun" atlas="Atlas/FG_Common.spriteatlas" src="icon_xingyun" x="0" y="0" width="12" height="15" a="12" active="0" siblingindex="5">
+      </img>
+      <text id="strengthLevel" horwrap="1" x="30" y="0" width="43" height="24" outline="1" a="11" fonttype="real_real_font_strength" text="+15" ta="01">
+      </text>
+      <text id="appendLevel" horwrap="1" height="24" fonttype="FG_Equip_Append" outline="1" a="11" y="-15" ta="01" text="z15" fontsize="10" x="30" deltay="0">
+      </text>
+      <panel id="quality" a="00" width="58" height="58">
+      </panel>
+    </panel>
+    <img id="select" a="00" width="58" height="58" raycast="0" src="bg_item_select" atlas="Atlas/FG_Common.spriteatlas" active="0">
+    </img>
+    <button id="item_click" a="00" width="58" height="58" onclick="" text="" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFF00">
+    </button>
+  </item>
+</uipanel>

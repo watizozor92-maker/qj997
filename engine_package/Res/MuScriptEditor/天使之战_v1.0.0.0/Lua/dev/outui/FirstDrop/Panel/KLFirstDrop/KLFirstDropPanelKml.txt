@@ -1,0 +1,66 @@
+<uipanel id="KLFirstDropPanel" a="00" width="300" height="300" x="23" y="5" adapter="1">
+  <img id="img1" a="00" width="1043" height="576" raycast="1" atlas="" src="Texture/FG_bg_yijitanchuan2.png" x="-24" y="19" scale9l="0" scale9b="0" scale9r="0" scale9t="0" color="#FFFFFF00">
+    <img id="img3" a="00" width="1043" height="576" raycast="1" atlas="" src="Texture/FG_bg_yijitanchuan.png" scale9l="127" scale9b="101" scale9r="128" scale9t="96" y="-20" color="#FFFFFFFF">
+    </img>
+    <img id="img7" a="00" width="1003" height="482" raycast="1" atlas="" src="Texture/FG_ShouBao2.png" y="-61" x="0">
+    </img>
+    <text id="text1" a="01" text="装备首爆" fontsize="20" height="30" width="350" ta="11" outline="1" horwrap="1" y="-24" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" x="0">
+    </text>
+    <text id="txt_desc" a="00" text="" fontsize="18" height="127" width="1003" ta="10" outline="0" horwrap="1" x="1" y="-230" outlinesize="1" outlinecolor="#000000FF">
+      <img id="img10" a="00" width="993" height="9" raycast="1" x="-3" y="60" color="#FFFFFFFF" atlas="" src="Texture/FG_shoubaofenge.png" active="1">
+      </img>
+      <scrollview id="content_scroll2" x="-3" y="-3" z="0" width="964" height="117" vertical="1" a="01">
+        <layout id="content_layout_scroll2" vertical="1" x="0" y="0" width="661" a="00" cella="01" space="7" contentsizefitter="1" control_height="1" height="19">
+          <datalist id="contentlist2">
+            <layout id="preview_tittle_layout2" width="661" height="10" paddingleft="0" cella="00" control_height="1">
+              <text id="preview_tittle2" text="开启时间" ta="11" fontsize="16" color="#E8B76A" fonttype="" outlinecolor="#000000FF" width="661" outline="1" horwrap="0" height="19" contentsizefitter="2" outlinesize="1">
+                <text id="leftTxt" text="————————————————————————————————————   " ta="21" fontsize="16" color="#E8B76A" fonttype="" outlinecolor="#000000FF" width="161" outline="1" horwrap="0" height="24" contentsizefitter="0" a="00" x="0" y="2" ap="0#0.5#0#0.5#1#0.5" outlinesize="1">
+                </text>
+                <text id="rightTxt" text="   ————————————————————————————————————" ta="01" fontsize="16" color="#E8B76A" fonttype="" outlinecolor="#000000" width="161" outline="1" horwrap="0" height="24" contentsizefitter="0" a="00" x="0" y="2" ap="1#0.5#1#0.5#0#0.5" outlinesize="1">
+                </text>
+              </text>
+            </layout>
+          </datalist>
+        </layout>
+      </scrollview>
+    </text>
+    <img id="img2" a="02" width="1003" height="336" raycast="1" src="Texture/FG_ShouBao2.png" atlas="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" x="1" y="125" color="#FFFFFF00">
+      <img id="img6" a="00" width="993" height="37" raycast="1" atlas="" src="Texture/FG_shoubaobiaotou.png" y="152" x="-3">
+      </img>
+      <togglegroup id="togglegroup4" x="-1" width="651" height="59" onload="" raycast="1" y="50" a="11" deltax="0.5">
+        <layout id="layout3" control_height="0" contentsizefitter="0" vertical="0" height="44" width="500" a="10" raycast="1" y="0" cella="11" x="0">
+          <toggle id="toggle1" width="120" height="36" src="toggle_top_1" default="1" togglegroup_id="togglegroup4" onclick="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select">
+            <text id="text6" a="00" text="装备首爆" fontsize="18" height="44" width="116" ta="11" outline="1" horwrap="1" y="-4" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </toggle>
+          <toggle id="toggle2" width="120" height="36" src="toggle_top_1" default="0" togglegroup_id="togglegroup4" onclick="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select">
+            <text id="text7" a="00" text="装备次爆" fontsize="18" height="44" width="116" ta="11" outline="1" horwrap="1" y="-4" color="#FFFFFFFF" x="0" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </toggle>
+          <toggle id="toggle3" width="120" height="36" src="toggle_top_1" default="0" togglegroup_id="togglegroup4" onclick="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select">
+            <text id="text8" a="00" text="装备三爆" fontsize="18" height="44" width="116" ta="11" outline="1" horwrap="1" y="-4" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </toggle>
+        </layout>
+      </togglegroup>
+      <img src="Texture/ty_btn_xinxi.png" x="-15" y="7" width="989" height="44" id="img4" scale9l="16" scale9b="13" scale9r="18" scale9t="9" a="01" color="#FFFFFF00">
+        <text id="text5" a="10" text="装备名称" fontsize="18" height="22" width="80" ta="11" outline="1" horwrap="1" y="2" x="158" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="text2" a="10" text="奖励" fontsize="18" height="22" width="55" ta="11" outline="1" horwrap="1" y="2" x="503" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="text3" a="10" text="名额" fontsize="18" height="22" width="56" ta="11" outline="1" horwrap="1" y="2" x="676" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="text4" a="10" text="获奖玩家" fontsize="18" height="22" width="80" ta="11" outline="1" horwrap="1" y="2" x="828" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <img id="img5" a="00" width="4" height="990" raycast="1" src="img_fengexian" atlas="Atlas/FG_MainPanel.spriteatlas" binddragid="" rotate="0,0,90" y="-18" deltax="0" active="0">
+        </img>
+      </img>
+      <loopscrollview id="loopscrollview2" a="00" width="986" height="305" vertical="1" y="-16" raycast="1" cellwidth="989" cellheight="32" x="-4">
+        <datalist id="datalist">
+        </datalist>
+      </loopscrollview>
+    </img>
+    <button id="close_btn" a="21" width="46" height="46" onclick="" text="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" mimg="" pimg="" dimg="" x="0" y="-17" color="#FFFFFFFF">
+    </button>
+  </img>
+</uipanel>

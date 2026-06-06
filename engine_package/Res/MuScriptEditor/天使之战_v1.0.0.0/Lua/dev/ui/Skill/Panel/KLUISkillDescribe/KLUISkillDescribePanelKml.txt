@@ -1,0 +1,158 @@
+<uipanel id="KLUISkillDescribePanel" adapter="1" a="21" width="416" height="662" zindex="200" x="7" y="-2">
+  <panel id="BG_Templete" a="00" width="416" height="750" x="-6" y="-43">
+    <panel id="ReMask" a="00" width="404" height="735" y="-7" rectmask="1">
+      <img id="img1231" a="00" width="680" height="750" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109" x="0" y="0">
+      <img id="img1" a="00" width="161" height="27" raycast="0" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="363">
+      </img>
+    </img>
+  </panel>
+  <img id="BgWnd" src="Texture/FG_bg_2ColumnsTanKuang.png" raycast="1" width="404" height="662" a="21" color="#ffffff00">
+    <button id="closeBtn" a="21" width="34" height="34" onclick="" text="" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" mimg="" pimg="" dimg="" x="-20" y="-15">
+    </button>
+  </img>
+  <img id="beijing1" atlas="" src="Texture/bg_skill.png" x="-8" y="130" width="373" height="249" color="#FFFFFFEB">
+    <img id="BgSkill" atlas="Atlas/FG_SkillPanel.spriteatlas" src="skill_frame2" y="-10" width="108" height="104" x="2">
+      <img id="skillIcon" atlas="Atlas/Skill_icon.spriteatlas" src="" y="0" width="70" height="70" x="0">
+      </img>
+    </img>
+    <img id="left" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_1" x="-120" y="108" scale9l="50" scale9r="20" scale9t="0" scale9b="0" width="80" height="10" rotate="0,0,0">
+    </img>
+    <img id="right" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_1" x="120" y="108" scale9l="50" scale9r="20" scale9t="0" scale9b="0" rotate="0,0,-180" width="80" height="10">
+    </img>
+  </img>
+  <text id="title_str" color="#ffffff" a="01" text="技能描述" fontsize="20" height="27" width="350" ta="11" outline="0" horwrap="1" space="0" outlinesize="1" outlinecolor="#000000FF" y="-23" rotate="0,0,0" x="-5">
+  </text>
+  <text id="SkillName" color="#FFFFFFFF" text="霹雳回旋斩 1级" fontsize="18" ta="11" y="232" width="160" height="22" outline="0" horwrap="1" fontstyle="0" underline="0" x="-8">
+  </text>
+  <img id="showCondition" a="00" width="121" height="35" raycast="1" src="ty_bg_txt" atlas="Atlas/TS_Common.spriteatlas" x="-127" y="-26">
+    <img id="SpTag1" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" x="3" y="0" a="10" width="25" height="27">
+    </img>
+    <text id="TxtTitle1" color="#FFFFFFFF" text="开启条件" fontsize="18" x="4" y="2" outline="0" horwrap="1" width="83" height="22" fontstyle="0" underline="0" ta="11">
+    </text>
+  </img>
+  <img id="skilldesNode" a="00" width="121" height="35" raycast="1" src="ty_bg_txt" atlas="Atlas/TS_Common.spriteatlas" x="-127" y="-108">
+    <img id="SpTag2" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" x="3" y="0" a="10">
+    </img>
+    <text id="TxtTitle2" color="#FFFFFF" text="技能说明" fontsize="18" x="4" y="2" outline="0" horwrap="1" ta="01">
+    </text>
+  </img>
+  <img id="tips" a="01" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bg_skill_desc" scale9l="8" scale9r="8" scale9t="8" scale9b="8" width="365" height="132" x="-8" y="-458" color="#FFFFFFFF">
+  </img>
+  <scrollview id="scrollview1" a="01" width="330" height="117" vertical="1" y="-474" raycast="1" x="-9" active="1">
+    <layout id="layout2" width="360" height="230" a="00" vertical="1" contentsizefitter="1" raycast="1" space="2">
+      <panel id="desc1" width="345" height="85" active="0">
+        <img id="Unlearned" atlas="Atlas/FG_SkillPanel.spriteatlas" src="txt_noskill" y="0" active="0">
+        </img>
+        <panel id="SpTag5" a="00" width="207" height="22" y="31" x="-70">
+          <img id="SpTag7" a="11" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_43" x="3" y="-5" width="12" height="13">
+            <text id="levelTxt1" color="#FFFFFF" a="10" fontsize="18" text="" x="16" y="0" active="1" outline="0" horwrap="1">
+            </text>
+          </img>
+        </panel>
+        <text id="skillDes1" color="#FFFFFF" a="11" fontsize="18" horwrap="1" width="320" x="18" y="-22" contentsizefitter="1" active="1" outline="0">
+        </text>
+      </panel>
+      <img id="nextLevel" atlas="Atlas/FG_SkillPanel.spriteatlas" src="img_interface_main087" active="0">
+      </img>
+      <panel id="desc2" width="345" height="85" active="0">
+        <img id="maxLevelTips" atlas="Atlas/FG_SkillPanel.spriteatlas" src="skilll_maxlevel" y="0" active="0">
+        </img>
+        <img id="SpTag6" a="11" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_43" x="3" y="0">
+          <text id="levelTxt2" color="#FFFFFF" a="10" fontsize="18" text="" x="16" y="0" active="1" outline="0" horwrap="1">
+          </text>
+        </img>
+        <text id="skillDes2" color="#FFFFFF" a="11" fontsize="18" horwrap="1" width="320" x="16" y="-17" contentsizefitter="1" active="1" outline="0">
+        </text>
+      </panel>
+    </layout>
+  </scrollview>
+  <img id="CostShow" y="-310" width="226" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bgCondition" active="1" height="33" x="-8">
+    <img id="CostTips" x="138" atlas="Atlas/FG_Common.spriteatlas" src="btn_add1" raycast="1" width="34" height="34" y="0">
+    </img>
+    <text id="TxtPrefix" color="#FFFFFFFF" fontsize="18" ta="1" text="消耗" x="-136" width="37" height="22" y="-1" fontstyle="0" underline="0">
+    </text>
+    <text id="costCount" color="#FFFFFF" fontsize="20" text="0/1" ta="21" x="60" width="86" height="35" outline="0" horwrap="1">
+    </text>
+    <item id="costItem" a="10" x="0" width="30" height="30" itemid="0" mfixsize="50,50" raycast="1">
+    </item>
+  </img>
+  <button id="BtnLearn" a="00" width="103" height="36" onclick="" text="学习" raycast="1" y="-363" src="btn_common_1_select" mimg="" pimg="" dimg="" atlas="Atlas/FG_Common.spriteatlas" x="-6" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <img id="bgCondition" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bgCondition" scale9l="8" scale9r="8" scale9t="8" scale9b="8" width="365" height="33" x="-7" y="-62" color="#FFFFFFFF">
+    <layout id="conditionList" width="356" height="31" a="00" cella="00" vertical="0" expand_width="0" paddingleft="0" paddingright="0" space="34" y="0" control_width="1">
+      <layout id="ConditionLayout_1" width="50" height="31" cella="10" vertical="0" expand_width="0" control_width="1">
+        <img id="bingo1" a="10" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_04" x="-23">
+        </img>
+        <text id="Condition_1" outline="1" text="" horwrap="1" ta="01">
+        </text>
+      </layout>
+      <layout id="ConditionLayout_2" control_height="0" contentsizefitter="0" vertical="0" height="31" width="500" deltay="0" raycast="1" deltax="" control_width="1">
+        <img id="bingo2" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_04">
+        </img>
+        <text id="Condition_2" outline="1" text="" horwrap="1" ta="01">
+        </text>
+      </layout>
+      <layout id="ConditionLayout_3" control_height="0" contentsizefitter="0" vertical="0" height="31" width="500" deltay="0" raycast="1" deltax="" control_width="1">
+        <img id="bingo3" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_04">
+        </img>
+        <text id="Condition_3" outline="1" text="" horwrap="1">
+        </text>
+      </layout>
+      <layout id="ConditionLayout_4" control_height="0" contentsizefitter="0" vertical="0" height="31" width="500" deltay="0" raycast="1" deltax="" control_width="1">
+        <img id="btnArrow" src="ty_down" atlas="Atlas/TS_Common.spriteatlas" width="30" height="30" raycast="1" active="0">
+          <img id="bgAttr" a="21" atlas="Atlas/UISkillPanel.spriteatlas" src="img_interface_main023" scale9l="8" scale9r="8" scale9t="8" scale9b="8" width="200" height="150" y="-30" active="0" x="9">
+            <layout id="attrList" width="150" height="25" a="01" cella="01" vertical="1" expand_width="1">
+              <datalist id="attrData">
+                <text id="attrStr" outline="1" height="25" ta="11" horwrap="1">
+                </text>
+              </datalist>
+            </layout>
+          </img>
+        </img>
+        <img id="bingo4" atlas="Atlas/UISkillPanel.spriteatlas" src="img_uiicon_04">
+        </img>
+        <text id="Condition_4" outline="1" text="" horwrap="1" ta="01">
+        </text>
+      </layout>
+    </layout>
+  </img>
+  <scrollview id="scrollview2" a="01" width="330" height="196" vertical="1" y="-474" raycast="1" x="-9">
+    <layout id="layout3" width="330" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" control_height="1" space="10">
+      <text id="newDesc" text="121213" fontsize="18" height="176" width="330" ta="00" outline="1" horwrap="1" contentsizefitter="0">
+      </text>
+      <layout id="layout6" control_height="1" contentsizefitter="0" vertical="1" height="500" width="330" cella="11" raycast="1" space="5">
+        <text id="text7" outline="1" text="技能效果" fontsize="18" height="22" width="330" ta="01" horwrap="1">
+        </text>
+        <gridview id="gridview1" constraint="1" cellwidth="190" cellheight="20" raycast="1" constraintcount="2" width="340" height="10">
+          <layout id="layout9" control_height="0" contentsizefitter="0" vertical="0" height="30" width="190" cella="10" raycast="1" control_width="1" space="0">
+            <text id="text8" text="技能攻击力：" fontsize="18" height="25" width="109" ta="01" outline="1" horwrap="1">
+            </text>
+            <text id="Text_SkillAtk" outline="1" text="111" fontsize="18" height="25" width="350" ta="01" horwrap="1">
+            </text>
+          </layout>
+          <layout id="layout11" control_height="0" contentsizefitter="0" vertical="0" height="30" width="190" cella="10" raycast="1" control_width="1" space="0">
+            <text id="text12" text="有效距离：" fontsize="18" height="25" width="109" ta="01" outline="1" horwrap="1">
+            </text>
+            <text id="Text_RangeValue" outline="1" text="111" fontsize="18" height="25" width="350" ta="01" horwrap="1">
+            </text>
+          </layout>
+          <layout id="layout14" control_height="0" contentsizefitter="0" vertical="0" height="30" width="190" cella="10" raycast="1" control_width="1" space="0">
+            <text id="text15" text="魔法值：" fontsize="18" height="25" width="109" ta="01" outline="1" horwrap="1">
+            </text>
+            <text id="Text_MpValue" outline="1" text="111" fontsize="18" height="25" width="350" ta="01" horwrap="1">
+            </text>
+          </layout>
+          <layout id="layout17" control_height="0" contentsizefitter="0" vertical="0" height="30" width="190" cella="10" raycast="1" control_width="1" space="0">
+            <text id="text18" text="AG值：" fontsize="18" height="25" width="109" ta="01" outline="1" horwrap="1">
+            </text>
+            <text id="Text_AGValue" outline="1" text="111" fontsize="18" height="25" width="350" ta="01" horwrap="1">
+            </text>
+          </layout>
+        </gridview>
+      </layout>
+    </layout>
+  </scrollview>
+</uipanel>

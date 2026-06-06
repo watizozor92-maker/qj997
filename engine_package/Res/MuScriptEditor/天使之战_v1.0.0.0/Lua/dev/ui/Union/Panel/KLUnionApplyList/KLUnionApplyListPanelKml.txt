@@ -1,0 +1,84 @@
+<uipanel id="KLUnionApplyListPanel" name="战盟申请界面" zindex="13" width="1042" height="574" x="0" y="0">
+  <prefab path="UI/UIUnionMemberApply.prefab" width="1042" height="574" id="prefab_55" x="0" y="1">
+    <panel id="panel2" a="00" width="1019" height="546" moveto="0,0,0" y="-7" rectmask="1" siblingindex="0" x="0">
+      <img id="img3" a="00" width="1025" height="1025" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" siblingindex="0" x="0" y="0">
+      </img>
+    </panel>
+    <img id="img_bgBg" bind="img_bgBg" active="0" x="0" y="-23" width="1020" height="512">
+    </img>
+    <img id="applylist_title" bind="applylist_title" active="0" width="78" height="24" text="申请列表" fontsize="20" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="253">
+    </img>
+    <img id="AutoPassCheckmark" bind="img_Bg/AutoPass/Background/Checkmark" width="25" height="25" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas">
+    </img>
+    <img id="AutoPassBackground" bind="img_Bg/AutoPass/Background" width="23" height="23" x="-53" y="-9" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas">
+    </img>
+    <toggle id="AutoPass" bind="AutoPass" default="0" databind="default=@auto_accept" onclick="KmlXWUnionMemberUI/@自动申请通过按钮点击 1" oncancel="KmlXWUnionMemberUI/@自动申请通过按钮点击 0" width="23" height="23" fontsize="14" fontstyle="0" underline="0" color="#FFFFFFFF" x="-410" y="-243">
+      <text id="AutoLabel" bind="Label" a="00" outline="1" horwrap="1" width="95" height="18" text="自动接受申请" fontsize="16" fontstyle="0" underline="0" color="#DCE1E5" x="0" y="2" ta="01" outlinesize="1" outlinecolor="#000000FF" contentsizefitter="2">
+      </text>
+    </toggle>
+    <text id="lab_levelEquire" bind="lab_levelEquire" outline="1" horwrap="1" width="80" height="22" text="等级要求" fontsize="16" fontstyle="0" underline="0" color="#FFFFFFFF" x="-233" y="-241" ta="11" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <input id="InputField_level" bind="InputField_level" databind="@need_level" onchange="KmlXWUnionMemberUI/@LevelChange" width="106" height="30" color="#FFFFFFFF" x="103" y="-1" src="bg_input1" atlas="Atlas/FG_Union.spriteatlas" scale9l="37" scale9b="13" scale9r="41" scale9t="16">
+    </input>
+    <img id="img_list" bind="img_list" color="#FFFFFF00">
+    </img>
+    <img id="img_bg" bind="img_bg" src="Texture/FG_dankuangdi2.png" scale9l="251" scale9b="158" scale9r="251" scale9t="362" width="1042" height="574" x="0" y="0" atlas="">
+      <img id="img1" a="00" width="1005" height="475" raycast="0" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="33" scale9b="37" scale9r="43" scale9t="38" y="-33" siblingindex="0" x="3">
+      </img>
+    </img>
+    <img id="img_title" bind="img_title" color="#FFFFFFFF" width="973" height="37" x="2" y="198" src="bg_list_long" atlas="Atlas/FG_Union.spriteatlas">
+    </img>
+    <text id="lab_occupation" bind="lab_occupation" outline="1" horwrap="1" width="45" height="24" text="职业" fontsize="20" fontstyle="0" underline="0" color="#DCE1E5" x="331" y="2" ta="11" a="10" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="lab_operation" bind="lab_operation" outline="1" horwrap="1" width="45" height="24" text="操作" fontsize="20" fontstyle="0" underline="0" color="#DCE1E5" x="802" y="2" ta="11" a="10" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <panel id="table_list" bind="table_list" width="970" y="-2" x="0" a="" height="360">
+      <scrollview id="table_list" width="971" height="374" y="0" a="01" vertical="1" x="1" siblingindex="0">
+        <gridview id="union_list_view" width="971" height="374" cellwidth="971" cellheight="40">
+          <datalist id="union_data_list" databind="@global_union_apply_member">
+            <panel id="datalist_panel_" width="971" height="40" siblingindex="0">
+              <img id="table_bg" atlas="Atlas/FG_Union.spriteatlas" src="bg_content_long" width="971" height="40" siblingindex="0">
+              </img>
+              <text id="name" text="" x="-372" outline="1" horwrap="1" fontsize="18" color="#DCE1E5" ta="11" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+              </text>
+              <text id="career" text="" x="-133" outline="1" horwrap="1" color="#DCE1E5" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" siblingindex="2">
+              </text>
+              <text id="level" text="" x="60" outline="1" horwrap="1" fontsize="18" ta="11" color="#DCE1E5" outlinesize="1" outlinecolor="#000000FF" siblingindex="3">
+              </text>
+              <button id="refuse_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" x="-155" a="20" text="" onclick="KmlXWUnionMemberUI/@拒绝玩家战盟申请 " textcolor="#9b1818" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="4">
+                <text id="text_refuse" ta="11" width="100" height="40" y="0" text="拒绝" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+                </text>
+              </button>
+              <button id="agree_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="-35" a="20" text="" onclick="KmlXWUnionMemberUI/@同意玩家战盟申请 " textcolor="#F6E5C9" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="5">
+                <text id="text_agree" ta="11" width="100" height="40" y="0" text="同意" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+                </text>
+              </button>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+    <button id="btn_close" bind="btn_close" onclick="KmlXWUnionMemberUI/@CloseApplyPanel" h5y="-29" h5x="-1009" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="34" height="34" x="-10" y="-20" a="21">
+    </button>
+    <button id="btn_allRefuse" bind="btn_allRefuse" onclick="KmlXWUnionMemberUI/@AllRefuse" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="311" y="-234">
+      <text id="text_allRefuse" ta="11" width="103" height="36" y="0" text="全部拒绝" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+      </text>
+    </button>
+    <button id="btn_allAgree" bind="btn_allAgree" onclick="KmlXWUnionMemberUI/@AllAgree" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="434" y="-234">
+      <text id="text_allAgree" ta="11" width="103" height="36" y="0" text="全部同意" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+      </text>
+    </button>
+    <button id="mask" bind="mask" x="0" y="0" width="3000" height="3000">
+    </button>
+    <text id="lab_level" bind="lab_level" outline="1" horwrap="1" width="45" height="24" text="等级" fontsize="20" fontstyle="0" underline="0" color="#DCE1E5" x="526" y="2" ta="11" a="10" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="lab_name" bind="lab_name" outline="1" horwrap="1" width="85" height="24" text="玩家名称" fontsize="20" fontstyle="0" underline="0" color="#DCE1E5" x="71" y="2" ta="11" a="10" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="img4" a="00" width="161" height="27" raycast="1" siblingindex="5" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="265">
+    </img>
+    <text id="text1" a="01" text="申请队列" fontsize="20" height="24" width="100" ta="11" outline="0" horwrap="1" y="540" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="Text_NoApplyTips" a="00" text="暂无申请" fontsize="22" height="50" width="350" ta="11" outline="1" horwrap="1" y="0" active="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </prefab>
+</uipanel>

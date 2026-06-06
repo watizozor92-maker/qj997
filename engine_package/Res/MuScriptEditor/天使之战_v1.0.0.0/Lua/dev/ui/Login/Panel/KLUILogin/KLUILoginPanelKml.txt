@@ -1,0 +1,25 @@
+<uipanel id="KLUILoginPanel" width="1334" height="750" ap="0#0#1#1#0.5#0.5">
+<prefab id="LoginPanel" path="UI/Function/Login/UILoginPanel/UILoginPanel.prefab" ap="0#0#1#1#0.5#0.5" width="1334" height="750" >
+<panel id="loginPanelPrefab" bind="UILoginPanel" ap="0#0#1#1#0.5#0.5" width="1334" height="750"></panel>
+<img id="BackGround" bind="BackGround"></img>
+<button id="btn_back" bind="btn_back" y="-200"></button>
+<button id="btn_notice" bind="btn_notice" y="-60" h5y="-255"></button>
+<button id="btn_agreement" bind="btn_agreement" y="-130" h5y="-312"></button>
+<text id="tip2" bind="gameTip/tip2"></text>
+<panel id="Panel_Text" bind="Panel_Text"></panel>
+<button id="Button_Text" bind="Panel_Text/Button_Text"></button>
+<panel id="go_ConnectServer" bind="go_ConnectServer"></panel>
+<button id="btn_select" bind="go_ConnectServer/btn_select"></button>
+<text id="lab_connectServerName" bind="go_ConnectServer/go_serverInfo/lab_connectServerName"></text>
+<img id="img_connectServerState" bind="go_ConnectServer/go_serverInfo/img_connectServerState"></img>
+<button id="btn_enter" bind="btn_enter"></button>
+<text id="lab_enter" bind="go_ConnectServer/lab_enter"> </text>
+<text id="lab_version" bind="lab_version"></text>
+<img id="UIWelcomeTemplate" bind="UIWelcomeTemplate"></img>
+<text id="WelcomeText" bind="WelcomeText"></text>
+<button id="btn_AgeTip" bind="btn_AgeTip"></button>
+<button id="OpenGM" bind="OpenGM"></button>
+<button id="BtnLogin" bind="BtnLogin"></button>
+<button id="btn_enterGame" bind="go_ConnectServer/btn_enterGame"></button>
+</prefab>
+</uipanel>

@@ -1,0 +1,20 @@
+<uipanel id="KLUIGoldBossItem" name="黄金boss挑战界面" width="1030" height="560" zindex="201">
+    <panel id="gold_boss_panel" width="1030" height="560">
+      <img id="bg_prop" src="Texture/bg_prop.png" width="814" height="67" x="188" y="-112" a="11">
+      </img>
+      <loopscrollview id="gold_boss_select" width="154" height="420" x="30" y="-113" a="11" vertical="1" spacey="1" cellwidth="154" cellheight="50">
+          <datalist id="gold_boss_level" >
+          </datalist>
+      </loopscrollview>
+      <loopscrollview id="gold_boss_view" width="810" height="364" x="188" y="-180" a="11" vertical="0" cellwidth="272" cellheight="360">
+        <datalist id="gold_boss_data_list">
+        </datalist>
+      </loopscrollview>
+      <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="tip_low_probability" width="82" height="22" a="21" x="-48" y="-132" id="img_39">
+      </img>
+      <loopscrollview id="gold_boss_reward_view" width="635" height="70" x="36" y="136" vertical="0" spacey="0" cellwidth="60" cellheight="60">
+          <datalist id="gold_boss_reward" >
+          </datalist>
+      </loopscrollview>
+    </panel>
+</uipanel>

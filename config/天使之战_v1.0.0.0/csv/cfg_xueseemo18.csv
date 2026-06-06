@@ -1,0 +1,6 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,10010001,金币,1805#1805,0#2000,,
+2,2,50030002,祝福宝石,1#1,0#52,,
+3,2,50030003,灵魂宝石,1#1,0#11,,
+4,2,50030001,玛雅之石,1#1,0#18,,

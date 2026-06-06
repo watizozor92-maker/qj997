@@ -1,0 +1,86 @@
+<uipanel id="KLUnionModifyFlagPanel" name="战盟臂章修改界面" adapter="1" a="20" height="750" width="416" x="-63" raycast="1" zindex="12">
+  <img src="Texture/FG_bg_2ColumnsTanKuang.png" a="21" x="0" id="img_12" atlas="" width="416" height="662">
+    <img id="title" atlas="Atlas/TS_Union.spriteatlas" src="waralliance_changarmband" y="-2" x="8" a="01" active="0">
+    </img>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-5" y="0" z="-10" onclick="KmlXWUnionCreateUI/@CloseMainPanel" h5y="10" h5x="-356" width="46" height="46">
+    </img>
+    <panel id="info_panel" y="-78" width="356" height="590" a="01" x="0">
+      <img id="img4" a="00" width="401" height="381" raycast="1" src="bag_info" atlas="Atlas/FG_Union.spriteatlas" y="49">
+      </img>
+      <panel width="356" height="30" a="01" id="panel_16" x="30" y="-7">
+        <text text="战盟名称" fontsize="20" outlinesize="1" outlinecolor="#000000" a="10" id="text_17" outline="0" horwrap="1" width="94" height="24" x="0" y="0" color="#FFFFFFFF">
+        </text>
+        <img id="img3" a="00" width="225" height="40" raycast="1" src="textbg_text" atlas="Atlas/FG_Union.spriteatlas" x="23" y="2">
+          <text id="input_union_name" text="飞飞飞" width="200" height="30" ta="11" horwrap="1" outline="0" x="0" y="0" fontsize="20" color="#FFFFFFFF">
+          </text>
+        </img>
+      </panel>
+      <panel id="log_panel" width="356" height="462" y="-40" a="01">
+        <text text="战盟图标" a="11" fontsize="20" outlinesize="1" outlinecolor="#000000" id="text_20" outline="0" horwrap="1" x="32" y="-24" width="91" height="24" color="#FFFFFFFF">
+        </text>
+        <img id="union_log_bg" a="01" y="-53" width="214" height="248" atlas="Atlas/FG_Union.spriteatlas" src="Flag_2" active="1" x="-2">
+        </img>
+        <img id="union_log" a="01" y="-98" width="90" height="90" src="unionIcon1" x="-1" atlas="Atlas/FG_Union.spriteatlas">
+        </img>
+      </panel>
+      <text id="desc_text" y="-165" text="可在以下臂章中选择一款:" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" active="0">
+      </text>
+      <text id="desc_text" y="-135" text="因政策原因，暂时无法创作战盟臂章。" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" active="0">
+      </text>
+      <layout id="log_list_panel" y="-94" width="373" height="40" expand_width="1" space="13">
+        <img id="log_list_bg1" width="64" height="64" atlas="Atlas/FG_Union.spriteatlas" src="icon_unselect" onclick="KmlXWUnionCreateUI/@ChoiceLog 1">
+          <img id="union_log1" width="40" height="40" atlas="Atlas/FG_Union.spriteatlas" src="unionIcon1">
+          </img>
+          <img id="union_log1_select" atlas="Atlas/FG_Union.spriteatlas" src="icon_select" active="0">
+          </img>
+        </img>
+        <img id="log_list_bg2" width="64" height="64" atlas="Atlas/FG_Union.spriteatlas" src="icon_unselect" onclick="KmlXWUnionCreateUI/@ChoiceLog 2">
+          <img id="union_log2" width="40" height="40" atlas="Atlas/FG_Union.spriteatlas" src="unionIcon2">
+          </img>
+          <img id="union_log2_select" atlas="Atlas/FG_Union.spriteatlas" src="icon_select" active="0">
+          </img>
+        </img>
+        <img id="log_list_bg3" width="64" height="64" atlas="Atlas/FG_Union.spriteatlas" src="icon_unselect" onclick="KmlXWUnionCreateUI/@ChoiceLog 3">
+          <img id="union_log3" width="40" height="40" atlas="Atlas/FG_Union.spriteatlas" src="unionIcon3">
+          </img>
+          <img id="union_log3_select" atlas="Atlas/FG_Union.spriteatlas" src="icon_select" active="0">
+          </img>
+        </img>
+        <img id="log_list_bg4" width="64" height="64" atlas="Atlas/FG_Union.spriteatlas" src="icon_unselect" onclick="KmlXWUnionCreateUI/@ChoiceLog 4">
+          <img id="union_log4" width="40" height="40" atlas="Atlas/FG_Union.spriteatlas" src="unionIcon4">
+          </img>
+          <img id="union_log4_select" atlas="Atlas/FG_Union.spriteatlas" src="icon_select" active="0">
+          </img>
+        </img>
+        <img id="log_list_bg5" width="64" height="64" atlas="Atlas/FG_Union.spriteatlas" src="icon_unselect" onclick="KmlXWUnionCreateUI/@ChoiceLog 5">
+          <img id="union_log5" width="40" height="40" atlas="Atlas/FG_Union.spriteatlas" src="unionIcon5">
+          </img>
+          <img id="union_log5_select" atlas="Atlas/FG_Union.spriteatlas" src="icon_select" active="0">
+          </img>
+        </img>
+      </layout>
+      <panel width="200" height="30" a="22" id="panel_31" x="-74" y="93">
+        <text text="消耗" a="10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_32" outline="0" horwrap="1" active="1" x="-48" y="-4" color="#FFFFFFFF">
+        </text>
+        <img id="cost_bg" width="203" atlas="Atlas/Common.spriteatlas" src="img_interface_main112" a="20" scale9l="12" scale9b="13" scale9r="13" scale9t="17" height="35" x="0" y="0">
+          <item id="cost_item_id" x="5" width="30" height="30" itemid="10040001" a="10" mfixsize="30,30" tips="1" bgtype="0">
+          </item>
+          <text id="cost_item_count" x="0" text="500" fonttype="" a="00" color="#00FF00" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" y="-2" width="126" height="20" ta="11" fontsize="18">
+          </text>
+        </img>
+      </panel>
+    </panel>
+    <panel id="panel_btn" width="280" height="40" y="30" a="02">
+      <button id="cancle_btn" width="112" height="40" a="10" onclick="KmlXWUnionCreateUI/@closeMainPanel" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" active="0">
+        <text id="btn_text" text="取消" ta="11" height="20" color="#D9001CFF" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1">
+        </text>
+      </button>
+      <button id="enter_btn" width="127" height="45" a="20" onclick="KmlXWUnionCreateUI/@CreateUnion" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian1" x="-76" y="4" mimg="" pimg="" dimg="">
+        <text id="btn_text" text="确认" ta="11" height="20" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" outline="0" color="#FFFFFFFF">
+        </text>
+      </button>
+    </panel>
+    <text id="text2" a="01" text="臂 章 修 改" fontsize="20" height="30" width="200" ta="11" outline="0" horwrap="1" y="-18" color="#ffffff">
+    </text>
+  </img>
+</uipanel>

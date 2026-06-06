@@ -1,0 +1,5 @@
+﻿int#c#s,intList#c#s,string#c#s,int#c#s,int#c#s,intListList#c#s,string#c#s
+id,stage,name,minimum,maximums,count,logo
+1,0#99,白装,0,0,0#100,
+2,100#299,卓越,1,2,1#50|2#50,img_icon_excellent
+3,300#399,套装,1,4,1#50|2#50,img_icon_suit

@@ -1,0 +1,212 @@
+<uipanel id="KLUIEquipTipsComparsionPanel" name="道具比较界面" zindex="1002" width="370" height="650" z="-3000" x="-365" onload="" y="0">
+  <button id="background_close" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" color="#00000000" raycast="1" onclick="" active="1" x="47" y="66" fontsize="16">
+  </button>
+  <img id="panel_bg" width="300" height="650" atlas="" src="Texture/bg_tips.png" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" active="1" x="0" y="0">
+    <text id="tem_info" text="" active="1" width="325" linespace="1" fontsize="16" x="0" horwrap="1" mline="1" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" outline="0" ta="11">
+    </text>
+    <panel id="equippaneltop" width="360" height="190" y="0" raycast="1" x="0" a="01">
+      <img id="equip_name_bg" x="0" y="-14" width="272" ta="11" height="18" raycast="1" src="bg_red" atlas="Atlas/FG_Common.spriteatlas" horwrap="1" color="#FFFFFF" a="01">
+      </img>
+      <text id="equip_name" text="" fontsize="16" color="" outlinecolor="0" outlinesize="0" x="0" y="-13" width="300" ta="11" outline="0" horwrap="1" height="20" a="01" fontstyle="0">
+      </text>
+      <layout id="jichu_layout" width="361" x="0" y="-44" a="01" vertical="1" cella="01" space="0" height="405" contentsizefitter="1">
+        <panel id="text_MU_node" width="1334" height="19">
+          <text id="text_MU" linespace="0" text="『 奇迹MU 』" fontsize="16" height="20" width="350" ta="11" outline="0" horwrap="1" color="#CC80CCFF" y="0" x="0">
+          </text>
+        </panel>
+        <panel id="text_deal_node" width="1334" height="19">
+          <text id="text_deal" linespace="0" text="耐久度 ： [99/149]" fontsize="16" height="18" width="350" ta="11" outline="0" horwrap="1" active="1" y="0" x="0">
+          </text>
+        </panel>
+        <layout id="base_list_layout" vertical="1" width="356" height="20" cella="01" space="0" active="1" contentsizefitter="1">
+          <datalist id="base_info_data">
+            <panel id="root" width="350" height="19">
+              <item id="item" mfixsize="30,30" width="25" height="16" a="10" bgtype="0">
+              </item>
+              <text id="loading_name" a="00" text="等级lv888" fontsize="16" height="20" width="100" ta="01" horwrap="1" x="-115" y="-1" active="1" outline="0">
+              </text>
+              <text id="value" text="" active="1" width="441" height="16" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" ta="11">
+              </text>
+              <loadingbar id="info_loadingbar" a="00" width="240" height="23" hidetext="1" x="0" y="0" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" loadingbar="tip_loading" active="1">
+                <text id="loadingbar_text" a="00" text="9999999/999999" fontsize="16" height="16" width="240" ta="11" horwrap="1" outlinecolor="#000000" outlinesize="1" outline="0">
+                </text>
+              </loadingbar>
+              <text id="itemname" a="00" text="默认内容" fontsize="16" height="20" width="309" ta="01" horwrap="1" x="0" y="0" outline="0">
+              </text>
+              <text id="more_info" height="20" text="" active="1" width="325" linespace="1" fontsize="16" x="0" horwrap="1" mline="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0">
+              </text>
+              <img id="title" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="" a="00" x="0" active="1" width="316">
+              </img>
+              <text id="desc" text="" active="1" width="325" height="20" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" ta="11" outlinecolor="0" outlinesize="1" outline="0">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+        <panel id="equip_time_node" width="1334" height="19">
+          <text id="equip_time" linespace="0" text="耐久度 ： [99/149]" fontsize="16" height="18" width="350" ta="11" outline="0" horwrap="1" y="0" x="0">
+          </text>
+        </panel>
+        <panel id="equip_need_level_titlt_node" width="250" height="20">
+          <text id="equip_need_level_titlt" text="所需等级: " fontsize="16" height="18" width="250" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
+            <text id="equip_need_level" text="" fontsize="16" x="85" y="0" a="10" color="" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" width="0" height="18">
+            </text>
+          </text>
+        </panel>
+        <panel id="red_equip_need_level_titlt_node" width="250" height="18">
+          <text id="red_equip_need_level_titlt" text="所需等级:" height="22" fontsize="16" width="250" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
+          </text>
+        </panel>
+        <panel id="timeShow_text_node" width="1334" height="19">
+          <text id="timeShow_text" linespace="0" text="人物物品" fontsize="16" height="18" width="350" ta="11" outline="0" horwrap="1" active="1" color="#FF1AFFFF">
+          </text>
+        </panel>
+        <panel id="node_career_top_1" width="300" height="2" active="1">
+        </panel>
+        <layout id="need_layout" width="262" height="80" vertical="1" cella="00" space="0" contentsizefitter="1">
+          <datalist id="equipNeedData">
+            <panel width="150" height="19" id="panel_1427">
+              <text id="name" text=":" height="20" fontsize="16" x="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="313">
+              </text>
+              <text id="value" text="" height="20" fontsize="16" x="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="307">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+        <text id="att_level_titlt" text="所需属性点预计等级:" height="18" fontsize="16" width="360" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="0" ta="11">
+          <text id="att_need_level" text="" fontsize="16" height="22" x="0" y="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="360">
+          </text>
+        </text>
+        <panel id="node_career_bottom" width="300" height="11" active="1">
+        </panel>
+        <layout id="career_layout" width="361" vertical="1" cella="01" space="3" contentsizefitter="1">
+          <datalist id="equipzhiyeNeedData">
+            <panel id="careerNode" width="300" height="18">
+              <img id="jobBg" width="272" height="18" raycast="1" src="bg_equip" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFF" x="0" y="0">
+              </img>
+              <text id="title" text="" fontsize="16" horwrap="1" height="16" outline="0" color="#FFFFFF" outlinecolor="0" outlinesize="1" active="1" ta="11" width="198">
+                <text id="name" text="" fontsize="16" x="0" y="1" a="00" color="#FFFFFF" horwrap="1" outline="0" width="360" ta="11" height="20">
+                </text>
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+        <panel id="node_moveSpeed" width="308" height="11">
+        </panel>
+        <text id="txt_moveSpeed" text="" fontsize="16" horwrap="1" color="#80B2FFFF" height="20" outlinecolor="0" outlinesize="1" active="0" outline="0" width="308" ta="11">
+        </text>
+        <text id="guardHp" text="" fontsize="16" horwrap="1" color="#FFFFFF" height="20" outlinecolor="0" outlinesize="1" active="1" outline="0" width="308" ta="11">
+        </text>
+        <text id="exprience_txt" text="" fontsize="16" horwrap="1" height="20" outline="0" color="#FFFFFF" outlinecolor="0" outlinesize="1" active="1" width="304" ta="11">
+        </text>
+        <text id="品质_titlt" text="荧石品质:" fontsize="16" color="#FFFFFF" height="20" outlinesize="1" outlinecolor="#000000FF" active="0" outline="0" horwrap="1" width="300" ta="11">
+          <text id="品质" text="" fontsize="16" x="189" y="0" a="10" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" active="1" horwrap="1" outline="0" ta="00" width="62" height="22">
+          </text>
+        </text>
+        <text id="equip_type_titlt" text="" fontsize="16" width="309" height="22" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
+          <text id="equip_type" text="" color="#FFFFFF" fontsize="16" x="0" y="0" a="10" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" width="305" ta="11" height="22">
+          </text>
+        </text>
+        <text id="equip_jie_root" text="装备阶数:" height="20" fontsize="16" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1">
+          <text id="equip_jie" text="" fontsize="16" x="85" y="0" a="10" color="#FFFFFF" outlinecolor="0" outlinesize="1" active="1" outline="0" horwrap="1">
+          </text>
+        </text>
+        <text id="level_txt" text="" fontsize="16" height="20" width="307" horwrap="1" outline="0" color="#FFFFFF" outlinecolor="0" outlinesize="1" active="1" ta="11">
+        </text>
+        <layout id="all_list_layout" vertical="1" width="356" height="20" cella="01" space="3" active="1" contentsizefitter="1">
+          <datalist id="all_info_data">
+            <panel id="root" width="350" height="16">
+              <item id="item" mfixsize="30,30" width="25" height="16" a="10" bgtype="0">
+              </item>
+              <text id="value" text="" active="1" height="20" width="441" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" ta="11">
+              </text>
+              <loadingbar id="info_loadingbar" a="00" width="240" height="20" hidetext="1" x="0" y="0" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" loadingbar="tip_loading" active="1">
+                <text id="loadingbar_text" a="00" text="9999999/999999" fontsize="16" height="20" width="240" ta="11" horwrap="1" outlinecolor="#000000" outlinesize="1" outline="0">
+                </text>
+              </loadingbar>
+              <text id="itemname" a="00" text="默认内容" fontsize="16" height="20" width="309" ta="01" horwrap="1" x="0" y="0" outline="0">
+              </text>
+              <text id="loading_name" a="00" text="等级lv888" fontsize="16" height="30" width="100" ta="01" horwrap="1" x="-115" y="-1" active="1" outline="0">
+              </text>
+              <text id="more_info" text="" active="1" width="325" linespace="1" fontsize="16" x="0" horwrap="1" mline="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0">
+              </text>
+              <img id="title" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="" a="00" x="0" active="1" width="316">
+              </img>
+              <text id="desc" text="" active="1" width="325" height="20" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" ta="11" outlinecolor="0" outlinesize="1" outline="0">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+        <layout id="view_info" control_height="1" contentsizefitter="1" vertical="1" height="10" width="500" cella="01" raycast="1" space="10" paddingtop="7" paddingbottom="3">
+          <text id="top_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11">
+          </text>
+          <text id="mid_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11" height="18">
+          </text>
+          <text id="bottom_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11" height="18">
+          </text>
+        </layout>
+        <layout id="origin_list_layout" vertical="1" width="356" height="20" cella="01" space="3" active="1" contentsizefitter="1">
+          <datalist id="origin_info_data">
+            <panel id="origin_root" width="350" height="16">
+              <text id="origin_text" text="" active="1" height="20" width="441" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" ta="11">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </layout>
+    </panel>
+    <panel id="equippaneltop_bottom" width="360" height="26" y="16" active="1" a="02">
+      <button id="put_or_out" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" onclick="KmlEquipTipsUI/@put_or_out_method" active="0" mimg="" pimg="" dimg="">
+        <text id="put_or_out_t" text="" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1">
+        </text>
+      </button>
+      <layout id="bag_root" vertical="0" width="356" height="26" cella="01" y="0" active="1" space="24" x="0">
+        <button id="left_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+          <scrollview id="left_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1">
+            <layout id="属性_left_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
+              <datalist id="left_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+        <button id="right_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@take_off_equip" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+          <scrollview id="right_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1" h5y="45">
+            <layout id="属性_right_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
+              <datalist id="right_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+      </layout>
+      <button id="mail_attachment" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@插入邮件附件" mimg="" pimg="" dimg="">
+        <text id="text_1451" text="插入附件" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" width="82" height="28" ta="11">
+        </text>
+      </button>
+      <button id="叠加_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@装备叠加放置" mimg="" pimg="" dimg="">
+        <text id="text_1457" text="放置" fontsize="18" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" ta="11" width="111" height="16">
+        </text>
+      </button>
+      <layout id="equip_root" vertical="0" width="356" height="26" cella="01" y="0" active="1" space="24">
+        <button id="duanzaobtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" text="锻造" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        </button>
+        <button id="breakbtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" onclick="" raycast="1" active="1" text="突破" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        </button>
+        <button id="tuoxiabtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" mimg="" onclick="KmlEquipTipsUI/@take_off_equip" active="1" text="脱下" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
+        </button>
+        <button id="shengjibtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" mimg="" onclick="" raycast="1" active="1" text="升级" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
+        </button>
+      </layout>
+      <button id="镶嵌_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@镶嵌荧石" mimg="" pimg="" dimg="">
+        <text id="text_1453" text="镶嵌" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1" width="111" height="16" ta="11">
+        </text>
+      </button>
+      <button id="镶嵌卸下_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@卸下镶嵌荧石" mimg="" pimg="" dimg="" fontsize="18">
+        <text id="text_1455" text="卸下" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1" width="111" height="16" ta="11">
+        </text>
+      </button>
+    </panel>
+  </img>
+  <panel id="equippaneltop_middle" width="360" height="360" y="-50" x="0">
+  </panel>
+  <panel id="model1" width="10" height="10" x="0" y="-190">
+  </panel>
+</uipanel>

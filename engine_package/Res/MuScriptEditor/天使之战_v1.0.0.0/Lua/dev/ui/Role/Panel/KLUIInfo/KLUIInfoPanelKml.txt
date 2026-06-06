@@ -1,0 +1,6 @@
+<uipanel id="KLUIInfoPanel" name="玩家属性变化提示界面" width="1334" height="750" zindex="300" z="-200">
+  <layout id="attr_layout" width="300" x="-150" vertical="1" cella="11" space="3" contentsizefitter="1">
+    <datalist id="attr_datalist">
+    </datalist>
+  </layout>
+</uipanel>

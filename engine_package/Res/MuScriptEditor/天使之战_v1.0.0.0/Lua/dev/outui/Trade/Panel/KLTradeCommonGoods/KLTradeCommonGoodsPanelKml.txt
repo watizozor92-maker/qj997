@@ -1,0 +1,6 @@
+<uipanel id="KLTradeCommonGoodsPanel" name="交易行商品界面" x="82" y="-35" width="820" height="368" zindex="305">
+  <loopscrollview cellwidth="203" cellheight="245" width="820" height="385" vertical="1" id="loopscrollview_50" y="-374" x="1" a="01" ap="0.5#1#0.5#1#0.5#0">
+    <datalist id="datalist_goods">
+    </datalist>
+  </loopscrollview>
+</uipanel>

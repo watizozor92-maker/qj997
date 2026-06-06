@@ -1,0 +1,72 @@
+<uipanel id="KLCalcPanel" name="通用计算器界面" width="0" height="0" zindex="400" y="0" z="-5000">
+  <img id="img1" a="00" width="2500" height="2500" raycast="1" siblingindex="1" x="214" y="-204" color="#FFFFFF00">
+  </img>
+  <prefab id="UICalcPanel" path="Kml/KmlPrefab/Cookbook/Common/UICalcPanel.prefab" a="20">
+    <gridview id="gridLayout" bind="gridLayout" cellwidth="132" cellheight="64" raycast="1" x="13" y="-365" spacex="11" spacey="14">
+    </gridview>
+    <button id="firstButton" bind="firstButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" width="128" height="52" fontsize="28" text="">
+      <text id="text12" a="00" text="1" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="twoButton" bind="twoButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text11" a="00" text="2" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="threeButton" bind="threeButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text10" a="00" text="3" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="fourButton" bind="fourButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text9" a="00" text="4" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="fiveButton" bind="fiveButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text8" a="00" text="5" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="sixButton" bind="sixButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text7" a="00" text="6" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="sevenButton" bind="sevenButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text6" a="00" text="7" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="nineButton" bind="nineButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text5" a="00" text="9" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="eightButton" bind="eightButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text13" a="00" text="8" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <img id="img3" bind="Title" active="0">
+    </img>
+    <button id="undoButton" bind="undoButton" src="textbg2" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="26" textcolor="" outlinesize="1" outlinecolor="#000000FF" text="">
+      <text id="text3" a="00" text="撤销" fontsize="26" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="sureButton" bind="sureButton" src="textbg3" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="26" outlinesize="1" outlinecolor="#000000FF" text="">
+      <text id="text2" a="00" text="确认" fontsize="26" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <text id="intro" bind="intro" outline="1" horwrap="1" x="60" y="-140" fontsize="20" ta="01" width="80" height="24" text="增加点数" fontstyle="0" underline="0" color="#FFFFFFFF">
+    </text>
+    <text id="num" bind="num" outline="1" horwrap="1" width="326" height="27" x="23" y="0" ta="01" fontsize="20" active="1">
+    </text>
+    <img id="numBg" bind="numBg" src="textbg1" atlas="Atlas/FG_AttrPanel.spriteatlas" width="322" height="32" x="47" y="-152" color="#FFFFFFFF" scale9l="21" scale9b="14" scale9r="47" scale9t="13">
+    </img>
+    <panel id="panel1" bind="UICalcPanel">
+    </panel>
+    <img id="img2" bind="Bg" src="Texture/FG_chise2.png" atlas="" scale9l="143" scale9b="89" scale9r="114" scale9t="98" width="534" height="554" x="0" y="0">
+    </img>
+    <button id="CloseBtn" bind="CloseBtn" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-15" y="-25" width="34" height="34" h5x="-407" h5y="7" color="#FFFFFFFF">
+    </button>
+    <button id="zeroButton" bind="zeroButton" src="textbg4" atlas="Atlas/FG_AttrPanel.spriteatlas" mimg="" pimg="" dimg="" fontsize="28" text="">
+      <text id="text4" a="00" text="0" fontsize="28" height="50" width="126" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <text id="text1" a="00" text="调整点数" fontsize="22" height="24" width="139" ta="11" siblingindex="1" horwrap="1" y="230" x="-5" color="#FFFFFFFF" outline="1" fontstyle="0" underline="0">
+    </text>
+  </prefab>
+</uipanel>

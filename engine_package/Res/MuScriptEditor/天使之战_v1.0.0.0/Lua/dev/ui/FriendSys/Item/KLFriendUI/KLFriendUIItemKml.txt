@@ -1,0 +1,42 @@
+<uipanel id="KLFriendUIItemKml" width="1000" height="450" y="-50" zindex="-1">
+  <img id="friendimg1" a="00" width="985" height="444" raycast="1" siblingindex="0" src="haoyou2" atlas="Atlas/FG_FriendPanel.spriteatlas" active="0">
+  </img>
+  <img id="friendimg2" a="00" width="985" height="444" raycast="1" siblingindex="1" src="haoyou4" atlas="Atlas/FG_FriendPanel.spriteatlas" active="0">
+  </img>
+  <img id="friendimg3" a="00" width="985" height="444" raycast="1" siblingindex="2" src="haoyou3" atlas="Atlas/FG_FriendPanel.spriteatlas" active="0">
+  </img>
+  <img id="friendimg" a="00" width="985" height="444" raycast="1" siblingindex="8" src="ditu1" atlas="Atlas/FG_FriendPanel.spriteatlas" x="0" y="4" active="0">
+  </img>
+  <prefab id="FriendUI" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlFriendUI.prefab">
+    <panel id="FriendUI_Root" bind="KmlFriendUI">
+      <loopscrollview id="EnemyContent" width="650" height="420" a="11" x="327" y="-12" cellwidth="674" cellheight="30" siblingindex="9">
+        <datalist id="enemy_log_data_list" databind="">
+        </datalist>
+      </loopscrollview>
+    </panel>
+    <img id="BgCount" bind="BgCount" x="70" y="14" height="30" active="0">
+    </img>
+    <text id="friend_count" bind="friend_count" x="87" y="15" height="25" fonttype="" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" fontsize="18" color="#FFFFFFFF" width="146" ta="11" text="人数:7/10" fontstyle="0" underline="0">
+    </text>
+    <scrollview id="friend_scrollview" bind="friend_scrollview" width="313" height="400">
+      <togglegroup id="friend_layout" bind="friend_layout" width="300">
+      </togglegroup>
+    </scrollview>
+    <img id="friend_line" bind="friend_line" height="445" y="2" width="4" x="-185">
+    </img>
+    <button id="BtnAdd" bind="BtnAdd" text="" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" x="1" y="-143" width="113" height="41" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF">
+      <text id="text1" a="00" text="添加好友" fontsize="18" height="22" width="80" ta="11" siblingindex="1" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <panel id="ChatContent" bind="ChatContent" x="327">
+    </panel>
+    <panel id="BlackListContent" bind="BlackListContent" x="327">
+      <text id="TextBlackInfo" bind="TextBlackInfo" outline="0" horwrap="1" fontsize="18" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <button id="BtnCancelForbid" bind="BtnCancelForbid" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" text="" pimg="" dimg="" width="103" height="36" mimg="" x="-20" y="22" outlinesize="1" outlinecolor="#000000FF">
+        <text id="text2" a="00" text="取消拉黑" fontsize="18" height="22" width="80" ta="01" siblingindex="2" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="1" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </button>
+    </panel>
+  </prefab>
+</uipanel>

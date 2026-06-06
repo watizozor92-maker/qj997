@@ -1,0 +1,22 @@
+<uipanel id="KLGodDescentItemKml" name="诸神降临玩法说明模板" a="00" width="1050" height="566" zindex="-1" x="0" y="0">
+  <panel id="panel1" a="00" width="1050" height="566" x="0" y="0">
+    <img id="Bg" src="img_interface_main122" raycast="1" x="81" y="-30" atlas="Atlas/Common.spriteatlas" width="822" height="459" scale9l="21" scale9b="21" scale9r="19" scale9t="20">
+    </img>
+    <img id="TitleImg" a="00" atlas="Atlas/KLCrossServer.spriteatlas" src="img_title_godDescent" width="261" height="89" raycast="1" x="-208" y="165">
+    </img>
+    <text id="TextDesc" a="00" text="每天10：30~24：30每隔2小时开启\nBOSS为个人归属只有击杀者及其队友可拾取掉落道具" fontsize="18" height="80" width="500" ta="01" x="125" y="165" horwrap="1" linespace="1" space="0">
+    </text>
+    <button id="btn_Go" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" x="396" y="162" text="前往" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="" raycast="1" width="173" height="50">
+    </button>
+    <scrollview id="scroll_Reward" width="302" height="65" x="-164" y="105" vertical="1">
+      <gridview id="privilege_reward_list" width="300" height="200" a="01" cellwidth="67" cellheight="67" vertical="0" contentsizefitter="1">
+        <datalist id="dateList_reward" databind="">
+        </datalist>
+      </gridview>
+    </scrollview>
+    <scrollview id="scroll_Monster" x="80" width="800" height="340" vertical="0" y="-80" raycast="1" a="00" movementtype="2">
+      <layout id="layout2" width="360" height="340" a="11" vertical="0" contentsizefitter="2" raycast="1" cella="11" space="0">
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

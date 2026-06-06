@@ -1,0 +1,26 @@
+<uipanel id="KLUIModelItemPanel" name="选角角色界面" width="300" height="300" x="0" y="0">
+  <prefab id="UIModelItemTemplate" path="UI/Template/Template/CreateRole/UIModelItemTemplate.prefab" z="-700">
+    <img id="Image" bind="Image" active="1" width="160" height="90" src="bg_black_grid" atlas="Atlas/FG_SelectRole.spriteatlas" scale9l="19" scale9b="37" scale9r="34" scale9t="32" z="">
+      <img id="ImageSelect" active="0" width="154" height="83" src="bg_black_gridSelect" atlas="Atlas/FG_SelectRole.spriteatlas" z="" siblingindex="1">
+      </img>
+      <layout id="layout1" control_height="0" contentsizefitter="0" vertical="1" height="75" width="148" a="00" raycast="1" siblingindex="0" x="-2" deltax="0.5" y="0" space="0">
+        <text id="NameNew" text="默认内容" fontsize="16" height="25" width="200" ta="11" outline="1" horwrap="1" siblingindex="0">
+        </text>
+        <text id="UnionPos" text="默认内容" fontsize="16" height="25" width="200" ta="11" outline="1" horwrap="1" siblingindex="2" active="1">
+        </text>
+        <text id="LevelNew" text="默认内容" fontsize="16" height="25" width="200" ta="11" outline="1" horwrap="1" siblingindex="1" color="#E6E600FF">
+        </text>
+      </layout>
+    </img>
+    <img id="ImageCareer" bind="ImageCareer" active="0">
+    </img>
+    <button id="DeleteBtn" bind="DeleteBtn" active="1">
+    </button>
+    <text id="Name" bind="Name" active="0" outline="1" horwrap="1" fontsize="16" enable="0">
+    </text>
+    <text id="Level" bind="Level" active="0" outline="1" horwrap="1" color="#E6E600FF" fontsize="16" enable="0">
+    </text>
+    <button id="ModelBtn" bind="ModelBtn" active="1">
+    </button>
+  </prefab>
+</uipanel>

@@ -1,0 +1,4 @@
+﻿int#c#s,int#s,string,string,int#s
+id,itemid,name,desc,transform
+1,50030002,祝福宝石,,
+2,50039992,祝福宝石,绑定的,50030002

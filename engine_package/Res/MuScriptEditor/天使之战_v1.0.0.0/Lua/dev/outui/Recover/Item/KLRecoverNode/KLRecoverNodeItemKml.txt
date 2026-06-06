@@ -1,0 +1,20 @@
+<uipanel id="KLRecoverNodeItemKml" a="00" width="375" height="300" zindex="-1">
+  <layout id="layout2" control_height="0" contentsizefitter="1" vertical="1" height="500" width="375" a="01" raycast="1" cella="11">
+    <togglegroup id="togglegroup" width="0" height="0" onload="" raycast="1" allowswitchoff="1">
+    </togglegroup>
+    <panel id="panel1" width="121" height="35">
+      <img id="bg" a="00" width="121" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="0" y="-1">
+      </img>
+      <img id="titleBg" src="img_title_di" atlas="Atlas/TS_Common.spriteatlas" x="0" y="0" a="00" active="0">
+      </img>
+      <text id="titleTxt" text="词条数设置" fontsize="18" x="19" y="0" color="#FFFFFFFF" avtive="0" outlinesize="1" outlinecolor="#000000FF" outline="0" horwrap="1" ta="01" loop="0" width="108">
+      </text>
+      <img id="img2" a="00" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="-50">
+      </img>
+    </panel>
+    <img id="bg_content" src="recover_frame" width="375" height="79" raycast="1" atlas="Atlas/FG_BagPanel.spriteatlas" scale9l="51" scale9b="28" scale9r="30" scale9t="31">
+      <gridview id="content" z="0" width="375" height="750" cellwidth="100" cellheight="60" spacex="5" spacey="-15" cella="11" contentsizefitter="1" constraint="1" constraintcount="3" paddingleft="-4" y="0" x="0">
+      </gridview>
+    </img>
+  </layout>
+</uipanel>

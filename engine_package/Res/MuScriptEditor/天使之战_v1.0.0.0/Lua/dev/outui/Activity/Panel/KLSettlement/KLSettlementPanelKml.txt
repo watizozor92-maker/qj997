@@ -1,0 +1,56 @@
+<uipanel id="KLSettlementPanel" name="副本结算界面" zindex="200" x="5" y="-90" z="-100" rotate="0,0,0" color="#00000000" onload="KmlBloodActivityUI/@结算界面初始化 " width="10" height="10" a="00" raycast="0">
+  <img id="bgClose" width="2000" height="2000" raycast="1" color="#FFFFFF00" onclick="KmlBloodActivityUI/@普通领取 " x="2" y="1" z="0" a="00" rotate="0,0,0">
+  </img>
+  <img id="bg" src="Texture/FG_chise2.png" scale9l="0" scale9r="0" scale9t="0" scale9b="0" width="536" height="540" z="0" a="01" rotate="0,0,0" raycast="1" x="1" y="383" atlas="">
+  </img>
+  <img id="bg1" scale9l="4" scale9r="4" scale9t="4" scale9b="4" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="bg" width="480" height="300" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="140">
+  </img>
+  <text id="text2" a="00" text="活动结束" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="340">
+  </text>
+  <img id="title" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="endTitle" width="132" height="58" z="0" a="00" rotate="0,0,0" raycast="1" x="-7" y="359" active="0">
+  </img>
+  <img id="gainExprienceBg" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="bg_1" width="191" height="251" z="0" a="00" rotate="0,0,0" raycast="1" x="122" y="150">
+    <img id="img1" a="01" width="104" height="124" raycast="1" src="img_rank" atlas="Atlas/UIActivityDetailPanel.spriteatlas" y="-30">
+    </img>
+  </img>
+  <img id="killMonsterCountBg" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="bg_2" width="191" height="252" z="0" a="00" rotate="0,0,0" raycast="1" x="-124" y="150">
+    <img id="img3" a="01" width="119" height="129" raycast="1" src="img_killNum" atlas="Atlas/UIActivityDetailPanel.spriteatlas" y="-30">
+    </img>
+  </img>
+  <img id="gainExprienceBg1" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="icon1" width="76" height="21" z="0" a="00" rotate="0,0,0" raycast="1" x="124" y="135">
+  </img>
+  <img id="killMonsterCountBg1" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="icon2" width="77" height="21" z="0" a="00" rotate="0,0,0" raycast="1" x="-124" y="135">
+  </img>
+  <togglegroup id="togglegroup">
+  </togglegroup>
+  <scrollview id="scrollviewList" x="0" y="-11" z="0" width="495" height="45" a="00" rotate="0,0,0" vertical="0" active="0">
+    <layout id="select_layout" width="495" x="-232" y="8" contentsizefitter="2" vertical="0" cella="00" space="80" z="0" height="45" rotate="0,0,0" control_width="0" control_height="0" expand_width="0" expand_height="0" paddingtop="0" paddingbottom="0" paddingleft="0" paddingright="0">
+      <datalist id="select_item_list">
+      </datalist>
+    </layout>
+  </scrollview>
+  <text id="gainExprience" text="范德萨" color="#E6E600FF" fontsize="18" outlinesize="1" outlinecolor="#000000FF" width="136" height="30" x="120" y="110" z="0" a="00" rotate="0,0,0" ta="11" horwrap="1" outline="1">
+  </text>
+  <text id="killMonsterCount" text="" color="#E6E600FF" fontsize="18" outlinesize="1" outlinecolor="#000000FF" width="162" height="30" x="-124" y="110" z="0" a="00" rotate="0,0,0" ta="11" horwrap="1" outline="1">
+  </text>
+  <text id="costContainer" text="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" width="136" height="21" x="-133" y="-53" z="0" a="00" rotate="0,0,0" ta="11" active="0" horwrap="1" outline="1">
+    <img id="itemBg" scale9l="8" scale9r="7" scale9t="8" scale9b="7" atlas="Atlas/FG_Fuben.spriteatlas" src="text_input" width="245" height="38" z="0" a="00" rotate="0,0,0" raycast="1" x="171" y="0">
+    </img>
+    <item id="costItem" bgtype="0" width="35" height="35" itemcount="0" bgscale="45,45" mpos="0,0,-100" mfixsize="45,45" tips="1" textpos="0,0,-1200" x="65" y="0" z="0" a="00" rotate="0,0,0">
+    </item>
+    <text id="costItemCountTxt" color="#FFFFFF" fontsize="18" outlinesize="1" outlinecolor="#000000" width="186" height="25" x="194" y="0" z="0" a="00" rotate="0,0,0" ta="21" text="0/1" horwrap="1" outline="1">
+    </text>
+    <img id="addbtn" active="1" atlas="Atlas/FG_Common.spriteatlas" src="btn_add" onclick="KmlBloodActivityUI/@获取道具" width="38" height="38" z="0" a="00" rotate="0,0,0" raycast="1" x="315" y="0">
+    </img>
+    <text id="text1" a="00" text="消耗门票：" fontsize="18" height="25" width="124" ta="01" horwrap="1" x="23" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <img id="img2" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" color="#FFFFFFFF" x="-74">
+      </img>
+    </text>
+  </text>
+  <text id="costEnterCountTxt" color="#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000" width="412" height="35" x="42" y="-100" z="0" a="00" rotate="0,0,0" ta="01" active="0" text="消耗血色城堡/恶魔广场活动次数：" horwrap="1" outline="1">
+  </text>
+  <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@普通领取 " src="btn_guanbi" width="34" height="34" z="0" a="00" rotate="0,0,0" raycast="1" x="240" y="347">
+  </img>
+  <button id="okBtn" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@领取奖励 " fontsize="18" src="btn_common_1_select" outlinesize="1" outlinecolor="#000000FF" text="领取奖励" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="-70" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+  </button>
+</uipanel>

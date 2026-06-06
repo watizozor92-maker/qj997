@@ -1,0 +1,6 @@
+<uipanel id="KLStallCitySelectItem" name="摆摊选择道具模板" width="335" height="29" zindex="-1">
+  <img id="select" atlas="Atlas/KLHookHepler.spriteatlas" src="img_select" width="353" height="29" active="0" raycast="1">
+  </img>
+  <text id="name" text="00000" width="335" height="42" fontsize="18" x="7" ta="01" active="1" raycast="1" outline="1" horwrap="1" color="#FFFFFFFF">
+  </text>
+</uipanel>

@@ -1,0 +1,37 @@
+﻿int#c#s,string#c#s,string#c#s
+id,tipInfo,command
+1,进入游戏按Tab键，开启GM输入面板,输入GM指令
+2,掉落道具,@make cfg_item的id 1
+3,怪物,@createMonster 怪物名称或id
+4,添加技能，需要登录生效,@addskill skillId skillLv
+5,创建邮件,@mail 标题 内容 物品 物品数量
+6,增加经验,@addexp 经验值
+7,学习所有技能，需要登录生效,@allskill
+8,设置行会容纳人数， 需要登录生效,@setUnionMemberCount 数量
+9,颁发称号,@addTitle itemId
+10,清空背包,@cleanBag
+11,道具入包,@makeItemToBag cfg_item的id 数量 
+12,魔法值和血量值加满,@restore 百分比HP 百分比MP(1-100数字不加%)
+13,领取任务,@getTask cfg_task的id 
+14,完成任务,@完成任务 cfg_task的id 
+15,传送,@tp x y 地图名称 例：@tp 200 160 比奇城你 (只输入坐标默认在当前地图传送)
+16,填满背包,@fullBag cfg_item的id(只能是道具占一格的非叠加道具id默认可以不写) 
+17,填满仓库,@fullStore cfg_item的id(只能是道具占一格的非叠加道具id默认可以不写) 
+18,清空仓库,@cleanStore
+19,删除道具,@deleteItem cfg_item的id 数量
+20,杀死坐标点怪物,@killPerformer x y
+21,设置活跃度,@setActivityValue 100   （1-100数字）
+22,完成活动任务,@finishActivityTask 1 1（cfg_activity_rule中的ID、需要完成的次数）
+23,重置活动任务,@reseatDailyActivityTask
+24,开启限时活动入口,@openActivityTimingTask 8
+25,关闭限时活动入口,@closeActivityTimingTask 8
+26,修改属性值,@addAttr 属性名称 增量
+27,设置系统时间,@setTime 日期 时间(例：@setTime 2022-03-15 20:30)
+28,设置属性,@setAttr 生命值 1000
+29,修改技能参数,@skillConfig xxx 值
+30,丢弃道具(背包),@giveUpItem index 数量(index=10000+行数*100+列数)
+31,召唤宠物,@petMonsterFight 1 1 (参数1:宠物ID;参数2:操作类型[1:召唤，2:取消])
+32,生成自定义属性装备,@makeCustomizeEquipToBag 装备id 品阶id 卓越属性id 卓越属性值 （卓越属性要几个配几个)
+33,清空所有伙伴,@clearPartner
+34,导出线上角色,@useRole 角色名称
+35,转职,@transferCareer 职业id

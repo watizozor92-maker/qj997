@@ -1,0 +1,88 @@
+<uipanel id="KLArchangelBreakthroughPanel" name="大天使突破界面" width="1334" height="750" adapter="1" x="0" y="0" a="20" zindex="200">
+  <panel id="panel1" a="20" width="1334" height="750" x="-66" y="0">
+    <img id="BG" a="20" atlas="" src="Texture/bg_bottomBg.png" width="416" height="750" raycast="1" x="0" y="0">
+      <panel id="noselect" a="00" width="416" height="750" active="1">
+        <scrollview id="StrengthCustomScrollView" a="00" x="3" y="-209" width="390" height="116" vertical="1" raycast="1" active="1" rotate="0,0,0">
+          <gridview id="gridview15" cellwidth="390" cellheight="35" raycast="1" spacey="2" constraint="1" constraintcount="1" contentsizefitter="3">
+            <datalist id="cost_list">
+              <panel id="cost_info">
+                <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+                </img>
+                <item id="cost_item" width="30" height="30" mfixsize="30,30" a="10" x="18" itemid="" bgtype="0" tips="1">
+                </item>
+                <text id="cost_name" a="10" x="50" text="" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0" ta="01" color="#FFFFFFFF">
+                </text>
+                <text id="cost_num" a="20" text="" x="-63" ta="21" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0">
+                </text>
+                <button id="costAddBtn" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="50" height="50" onclick="" raycast="1" active="1" a="20" x="-12">
+                </button>
+              </panel>
+            </datalist>
+          </gridview>
+        </scrollview>
+        <button id="BreakthroughBtn" a="11" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" onclick="" text="突破" raycast="1" x="125" y="-665" fontsize="20" active="1" outlinesize="1" outlinecolor="0">
+          <text id="failTips" a="00" text="" fontsize="18" height="20" width="300" ta="11" horwrap="1" y="-36" x="0" color="#F22121FF" outlinesize="1" outlinecolor="0">
+          </text>
+        </button>
+        <img id="strengthIcon_1" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-130" y="-128" active="1">
+          <text id="text11" a="00" text="所需材料" fontsize="18" height="25" width="160" ta="01" horwrap="1" x="54" y="1" outlinesize="1" outlinecolor="0">
+          </text>
+        </img>
+        <panel id="hidepanel" a="00" width="416" height="750">
+          <panel id="top_level" x="0" width="360" height="35" y="-40">
+            <img id="bg" width="360" height="35" atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" x="0" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+            </img>
+            <text id="attrName" a="10" width="97" height="30" ta="01" text="等级上限" fontsize="18" outlinesize="1" outlinecolor="#000000FF" x="30" horwrap="1" y="0">
+            </text>
+            <text id="preValue" a="20" width="104" height="30" x="-178" ta="11" text="" fontsize="18" outlinesize="1" outlinecolor="0" horwrap="1" y="0">
+            </text>
+            <text id="nextValue" a="20" x="-35" width="84" height="30" color="#00ff00" ta="11" text="" fontsize="18" outlinesize="1" outlinecolor="0" horwrap="1">
+            </text>
+            <img id="arrow1" width="57" height="44" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow2" x="39">
+            </img>
+          </panel>
+          <img id="strengthIcon" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-130" y="-1" active="1">
+            <text id="equipAttribute" a="00" text="等级突破" fontsize="18" height="25" width="160" ta="01" horwrap="1" x="52" y="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </img>
+        </panel>
+        <img id="BGInner_2" a="01" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="equip_strength_bg" width="401" height="295" raycast="1" x="0" y="-64">
+        </img>
+        <img id="strengthLevelBg" a="00" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_03" width="295" height="48" raycast="1" y="36" x="0" active="1">
+          <text id="strengthIntro" a="10" text="装备等阶" fontsize="18" height="30" width="80" ta="01" horwrap="1" x="28" y="2" color="#DED17AFF" outlinesize="1" outlinecolor="0">
+          </text>
+          <text id="preLevel" a="00" text="" fontsize="16" height="30" width="64" ta="21" horwrap="1" x="-32" y="2" fonttype="font_strength_yellow" space="-5">
+          </text>
+          <img id="arrow" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow1" width="56" height="45" raycast="1" x="33" y="2">
+          </img>
+          <text id="nextLevel" a="00" text="" fontsize="16" height="30" width="64" ta="01" horwrap="1" x="95" y="2" fonttype="font_strength_yellow" space="-5">
+          </text>
+        </img>
+        <img id="maxLevelTips" a="02" atlas="Atlas/UIArchangel.spriteatlas" src="breakthrough_max" width="239" height="58" raycast="1" y="104" active="0">
+        </img>
+        <text id="equipName" a="01" text="卓越的龙王之铠+11" fontsize="20" height="24" width="300" ta="11" horwrap="1" y="-85" x="0" color="#5CE366FF" active="1" contentsizefitter="0" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <item id="item_model" itemid="" uniqueid="" a="01" y="-137" z="-60" width="100" height="150" mfixsize="100,150" bgtype="0" tips="1" itemtype="9" selfrotation="">
+        </item>
+        <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="15" y="280">
+        </img>
+        <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="-15" y="280">
+        </img>
+      </panel>
+      <img id="Title" a="01" atlas="Atlas/UIArchangel.spriteatlas" src="title" raycast="1" y="-2" x="0">
+      </img>
+      <text id="noticeText" a="00" text="当前装备大天使等级不足，无法突破" fontsize="20" height="30" width="420" ta="11" horwrap="1" color="#D9001CFF" x="1" y="-50" active="0" outlinesize="1" outlinecolor="0">
+      </text>
+      <button id="CloseButton" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="6" y="10" active="1" h5y="10" h5x="-345">
+      </button>
+      <effect id="effectfail" effectid="9002" effecttype="1" mscale="100,100,100" width="200" height="200" active="0" x="0" y="160" z="-300">
+      </effect>
+      <effect id="effectSucceed" effectid="9001" effecttype="1" mscale="100,100,100" width="200" height="200" active="0" x="0" y="160" z="-300">
+      </effect>
+      <img id="noselect_img" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="noselect_text" width="325" height="40" raycast="1" active="0">
+      </img>
+      <button id="btn_tips" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="35" height="35" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="175" y="-340">
+      </button>
+    </img>
+  </panel>
+</uipanel>

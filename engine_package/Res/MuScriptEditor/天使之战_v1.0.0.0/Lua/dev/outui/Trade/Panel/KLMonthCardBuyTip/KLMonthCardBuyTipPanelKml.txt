@@ -1,0 +1,8 @@
+<uipanel id="KLMonthCardBuyTipPanel" name="月卡购买提示界面" width="194" height="160" zindex="805" x="298" scale="1.2" z="-500">
+  <button id="btn_close" width="3000" height="1500" color="#00000000" raycast="1">
+  </button>
+  <img width="194" height="160" src="img_interface_main122" atlas="Atlas/Common.spriteatlas" scale9b="12" scale9l="45" scale9r="45" scale9t="12" raycast="1" id="img_232">
+  </img>
+  <text id="txt_title" width="154" height="130" text="该道具仅限购买最低价" color="#FFFFFF" fontsize="20" horwrap="1" ta="11">
+  </text>
+</uipanel>

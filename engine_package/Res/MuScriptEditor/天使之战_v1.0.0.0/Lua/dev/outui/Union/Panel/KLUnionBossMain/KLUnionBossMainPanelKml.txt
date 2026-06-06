@@ -1,0 +1,66 @@
+<uipanel id="KLUnionBossPanelKml" name="战盟boss主界面" a="20" adapter="1" width="416" height="750" x="-67" zindex="201">
+  <img id="BackGround" a="21" atlas="" src="Texture/bg_tankuangduan2.png" width="416" height="750" raycast="1" x="2" y="0" color="#FFFFFF00">
+    <panel id="panel1" a="00" width="416" height="750">
+      <panel id="panel3" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img5" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="img6" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="text1" a="01" text="战盟Boss" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-18" color="#FFFFFF">
+    </text>
+    <img src="title_union_boss" atlas="Atlas/KLUnionBoss.spriteatlas" a="01" id="img_57" active="0">
+    </img>
+    <button id="btn_close" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" onclick="" text="" raycast="1" x="-3" y="0" mimg="" pimg="" dimg="" h5x="-363" h5y="10">
+    </button>
+    <img id="img1" a="00" width="150" height="30" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-115" y="286">
+    </img>
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="11" x="24" y="-77" id="img_59">
+      <text text="本次挑战首领" outlinecolor="#000000" outlinesize="0" deltax="0.5" fontsize="18" x="78" y="0" id="text_60" outline="0" horwrap="1" color="#FFFFFF" width="133" height="23" h5x="77">
+      </text>
+    </img>
+    <img src="bg_union_boss_info" atlas="Atlas/KLUnionBoss.spriteatlas" a="01" y="-100" id="img_61" active="0">
+    </img>
+    <osascrollview id="osa_boss" a="01" y="-111" width="376" height="400" defaultitemsize="92" vertical="1" x="0">
+      <datalist id="datalist_63">
+        <panel width="366" height="92" id="panel_64">
+          <img src="bg_union_boss_item_n" atlas="Atlas/KLUnionBoss.spriteatlas" raycast="1" scale9l="30" scale9r="30" scale9t="20" scale9b="20" id="img_65" width="366" height="84">
+          </img>
+          <img src="bg_bossInfo" atlas="Atlas/FG_Union.spriteatlas" raycast="1" scale9l="0" scale9r="0" scale9t="0" scale9b="0" id="img_66" width="368" height="92" x="1" y="1" active="1">
+          </img>
+          <img src="img_head_icon_bg" atlas="Atlas/TS_Common.spriteatlas" a="10" x="20" width="70" height="70" id="img_67">
+          </img>
+          <img id="img_icon_monster" src="Monster01_1" atlas="Atlas/Monster_icon.spriteatlas" a="10" x="30">
+          </img>
+          <text id="text_name" text="怪物名称" fontsize="18" color="#E6E600FF" a="10" x="100" outlinecolor="#000000" outlinesize="0" outline="1" horwrap="1" height="27" width="121" ta="01">
+          </text>
+          <text id="text_lv" text="350级" fontsize="18" outlinecolor="#000000" outlinesize="0" a="20" x="-72" outline="1" horwrap="1" ta="11" width="68">
+          </text>
+          <img id="img_icon_kill" src="icon_kill" atlas="Atlas/TS_Common.spriteatlas" a="20" x="-6">
+          </img>
+        </panel>
+      </datalist>
+    </osascrollview>
+    <img id="img2" a="00" width="326" height="38" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-45" y="-162">
+    </img>
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="11" x="24" y="-525" id="img_72">
+      <text id="txt_pass_tip" text="前5个通关的战盟将获得拍卖奖" outlinecolor="#000000" outlinesize="1" fontsize="18" x="24" y="2" a="10" outline="0" horwrap="1" color="#FFFFFF" ta="11">
+      </text>
+    </img>
+    <osascrollview id="osa_reward" a="02" y="132" width="380" height="60" defaultitemsize="58">
+      <datalist id="datalist_75">
+        <panel width="54" height="54" id="panel_76">
+          <item id="item" width="54" height="54" mfixsize="54,54" bgscale="54,54">
+          </item>
+          <button id="btn_item" width="54" height="54" color="#000000" raycast="1">
+          </button>
+        </panel>
+      </datalist>
+    </osascrollview>
+    <text text="活动开启时间：11:30-12:00" a="02" fontsize="16" y="88" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_79" outline="0" horwrap="1" width="226" height="25" ta="01">
+    </text>
+    <button id="btn_enter" text="进入战场" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" a="02" y="40" raycast="1" fontsize="18" outlinecolor="#000000" outlinesize="1" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFFFFFFF">
+    </button>
+  </img>
+</uipanel>

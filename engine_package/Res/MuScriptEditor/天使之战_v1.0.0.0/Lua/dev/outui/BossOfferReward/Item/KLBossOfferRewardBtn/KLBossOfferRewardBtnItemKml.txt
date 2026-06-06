@@ -1,0 +1,10 @@
+<uipanel id="KLBossOfferRewardBtnItemKml" name="首领悬赏奖励按钮模板" a="00" width="154" height="50" zindex="-1">
+  <img id="btn" atlas="Atlas/UIChallengeBoss.spriteatlas" src="one_button_bg" width="154" height="50" active="1" onclick="" dragscroll="1" raycast="1">
+    <img id="level_select" atlas="Atlas/UIChallengeBoss.spriteatlas" src="one_button_select_bg" width="154" height="50" active="0">
+    </img>
+    <text id="type_name" text="" color="#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="0" horwrap="0" x="0">
+    </text>
+    <img id="img_completed_flag" a="11" atlas="Atlas/KLBossOfferReward.spriteatlas" src="img_completed_flag" width="64" height="28" raycast="1" x="0" y="-1" active="0">
+    </img>
+  </img>
+</uipanel>

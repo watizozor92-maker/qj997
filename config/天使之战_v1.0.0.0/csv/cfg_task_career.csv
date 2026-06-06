@@ -1,0 +1,10 @@
+﻿int#s#c,int#s#c,string#s#c,int#s,int#s#c,int#s#c,string#c,int#s,int#s#c,int#s#c,stringListList#s#c,intList#s#c,intListList#s#c
+order,id,title,taskType,uiTitleType,npcGet,diaLogGet,autoFinish,levelMin,levelMax,preTask,postTask,careerLimit
+1,666601,一转任务1接取,1,4,100307,是否接取一转任务1，开始完成一转转职之旅,1,150,,checkBagItem[10010001]>=1000000,666602,0
+2,666603,一转任务2接取,1,4,100307,是否接取一转任务2，开始完成一转转职之旅,1,150,,checkFinishTask[666602],6666041#6666042#6666043,0
+3,666605,二转任务1接取,1,4,100114,是否接取二转任务1，开始完成二转转职之旅,1,220,,(checkFinishTask[6666041]&checkBagItem[10010001]>=3000000)|(checkFinishTask[6666042]&checkBagItem[10010001]>=3000000)|(checkFinishTask[6666043]&checkBagItem[10010001]>=3000000),666606,0
+4,666607,二转任务2接取,1,4,100114,是否接取二转任务2，开始完成二转转职之旅,1,220,,checkFinishTask[666606],666608,1#1
+5,666609,三转任务1接取,1,4,100902,是否接取三转任务1，开始完成三转转职之旅,1,380,,checkFinishTask[666608]&checkBagItem[10010001]>=5000000,666610,1#2
+6,6666091,三转任务1接取,1,4,100902,是否接取三转任务1，开始完成三转转职之旅,1,380,,checkFinishTask[666606]&checkBagItem[10010001]>=5000000,666610,2#2|3#2
+7,666611,三转任务2接取,1,4,100902,是否接取三转任务2，开始完成三转转职之旅,1,400,,checkFinishTask[666610]&checkBagItem[10010001]>=7000000,666612#60666121#60666122,0
+8,666613,三转任务3接取,1,4,100902,是否接取三转任务3，开始完成三转转职之旅,1,400,,checkFinishTask[666612]&checkBagItem[10010001]>=10000000,666614,0

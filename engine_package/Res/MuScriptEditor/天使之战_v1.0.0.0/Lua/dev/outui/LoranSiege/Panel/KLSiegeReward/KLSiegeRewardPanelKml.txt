@@ -1,0 +1,152 @@
+<uipanel id="KLSiegeRewardPanel" name="攻城战奖励界面" a="00" width="1039" height="560" zindex="200" z="-250">
+  <img src="Texture/bg_one_wnd1.png" width="1040" height="560" raycast="1" id="img_33" atlas="">
+    <text id="title_txt" a="00" text="攻城奖励" fontsize="20" height="24" width="83" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="-1" y="261">
+    </text>
+  </img>
+  <button id="btn_close" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" a="21" raycast="1" x="2" y="1" h5x="-960" h5y="0" width="50" height="50" mimg="" pimg="" dimg="">
+  </button>
+  <img src="img_interface_main009" atlas="Atlas/Common.spriteatlas" x="2" width="1003" height="498" y="-21" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img_36">
+  </img>
+  <img src="bg" atlas="Atlas/KLSiegePanel.spriteatlas" width="1003" height="486" y="-21" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img_36" x="2">
+    <img src="img_pick_mid" atlas="Atlas/KLHookHepler.spriteatlas" a="00" x="-166" y="2" height="486" id="line1" width="6" scale9l="0" scale9b="217" scale9r="0" scale9t="187">
+    </img>
+    <img src="img_pick_mid" atlas="Atlas/KLHookHepler.spriteatlas" a="00" x="164" y="2" height="486" id="line2" width="6">
+    </img>
+  </img>
+  <panel id="left" a="00" width="300" height="456" x="-350" y="-26">
+    <scrollview id="scrollview1" a="00" width="320" height="413" vertical="1" y="-14" raycast="1" x="11" barareax="0">
+      <layout id="layout2" width="360" height="261" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="5">
+        <panel id="title1" width="300" height="30">
+          <img id="img1" x="24" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="10" y="3">
+            <text id="text2" a="00" text="参与方式" fontsize="18" height="22" width="83" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="53" y="-1" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="LeftInfo1" control_height="0" contentsizefitter="1" paddingleft="35" vertical="0" height="500" width="320" space="5" raycast="1" cella="01">
+          <text id="LeftInfoText1" text="" contentsizefitter="1" fontsize="18" height="25" width="275" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#CCCCCCFF" linespace="1">
+          </text>
+        </layout>
+        <panel id="title2" width="300" height="30">
+          <img id="img7" y="3" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="10" x="24">
+            <text id="text8" a="00" text="开启时间" fontsize="18" height="22" width="89" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="51" y="0" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="LeftInfo2" control_height="0" contentsizefitter="1" paddingleft="35" vertical="0" height="500" width="320" space="5" raycast="1" cella="01">
+          <text id="LeftInfoText2" text="" contentsizefitter="1" fontsize="18" height="25" width="275" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#1ADE1FFF">
+          </text>
+        </layout>
+        <panel id="title3" width="300" height="30">
+          <img id="img12" y="0" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="10" x="24">
+            <text id="text13" a="00" text="胜利条件" fontsize="18" height="22" width="92" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="53" y="1" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="LeftInfo3" control_height="0" contentsizefitter="1" paddingleft="35" vertical="0" height="500" width="320" space="5" raycast="1" cella="01">
+          <text id="LeftInfoText3" text="" contentsizefitter="1" fontsize="18" height="25" width="275" ta="01" horwrap="1" outlinesize="1" color="#CCCCCCFF" outlinecolor="#000000FF" outline="1">
+          </text>
+        </layout>
+        <panel id="title4" width="300" height="30">
+          <img id="img8" y="0" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" x="24" a="10">
+            <text id="text9" a="00" text="注意事项" fontsize="18" height="25" width="92" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="53" y="1" rotate="0,0,0" outline="1" color="#DBE0E6FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="LeftInfo4" control_height="0" contentsizefitter="1" paddingleft="35" vertical="0" height="500" width="320" space="5" raycast="1" cella="01">
+          <text id="LeftInfoText4" text="" contentsizefitter="1" fontsize="18" height="25" width="275" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#CCCCCCFF" outline="1" linespace="1">
+          </text>
+        </layout>
+      </layout>
+    </scrollview>
+    <img id="title_bg_1" a="00" width="121" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" color="#000000CC" x="-73" y="220">
+      <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="LeftTitleIcon" x="-44" y="0" width="25" height="27">
+        <text id="LeftTitleText" a="00" text="攻城规则" fontsize="18" height="22" width="78" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="52" y="2" outline="1" fontstyle="0" underline="0" color="#FFFFFFFF">
+        </text>
+      </img>
+    </img>
+  </panel>
+  <panel id="mid" a="00" width="300" height="456" x="333" y="-22">
+    <img id="title_bg_mid" a="00" width="121" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" color="#000000CC" x="-90" y="220">
+      <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="MidTitleIcon" x="-44" y="0" width="25" height="27">
+        <text id="text3" a="00" text="战盟奖励" fontsize="18" height="22" width="78" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="52" y="2" outline="1" fontstyle="0" underline="0" color="#FFFFFFFF">
+        </text>
+      </img>
+    </img>
+    <scrollview id="scrollview4" a="00" width="343" height="397" vertical="1" y="6" raycast="1" x="-1" barareax="0" movementtype="2">
+      <layout id="layout5" width="360" height="230" a="11" vertical="1" contentsizefitter="0" raycast="1" cella="11" space="5">
+        <panel id="panel1" width="300" height="40">
+          <img id="img2" x="29" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="11" y="-13">
+            <text id="text4" a="00" text="战盟胜利方" fontsize="18" height="22" width="90" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="62" y="-1" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="layout7" control_height="0" contentsizefitter="1" paddingleft="118" vertical="0" height="500" width="244" space="24" raycast="1" cella="11" control_width="1" dirty="0">
+          <text id="text10" text="战盟盟主奖励<size=16><color=#FF2323>(只有占领王座获得)</color></size>" contentsizefitter="2" fontsize="18" height="17" width="348" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" fontstyle="0" underline="0" color="#CCCCCCFF">
+          </text>
+        </layout>
+        <panel id="Reward1" width="350" height="65">
+          <scrollview id="Reward1Scrollview" y="0" width="285" height="60" vertical="0" x="23" raycast="1" movementtype="2" rotatevector="0,0,0">
+            <layout id="layout21" width="360" height="230" a="10" vertical="0" contentsizefitter="3" raycast="1" cella="00" space="10">
+              <datalist id="Reward1DataList">
+                <item id="Reward1_Item" src="20020001" width="58" height="58" raycast="1">
+                </item>
+              </datalist>
+            </layout>
+          </scrollview>
+        </panel>
+        <layout id="layout36" control_height="0" contentsizefitter="1" paddingleft="55" vertical="0" height="492" width="281" space="82" raycast="0" cella="11" control_width="1" active="0" enable="0">
+          <text id="text37" text="战盟成员奖励" contentsizefitter="2" fontsize="18" height="31" width="171" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" fontstyle="0" underline="0" color="#CCCCCCFF" active="0" enable="0">
+          </text>
+        </layout>
+        <panel id="Reward2" width="350" height="65" active="0" enable="0">
+          <scrollview id="Reward2Scrollview" y="0" width="285" height="60" vertical="0" x="23" raycast="1" movementtype="2">
+            <layout id="layout40" width="360" height="230" a="10" vertical="0" contentsizefitter="3" raycast="1" cella="00" space="10">
+              <datalist id="Reward2DataList">
+                <item id="Reward2_Item" src="20020001" width="58" height="58" raycast="1" bgscale="58,58">
+                </item>
+              </datalist>
+            </layout>
+          </scrollview>
+        </panel>
+        <panel id="panel11" width="300" height="45" active="0" enable="0">
+          <img id="img14" x="29" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="10" y="-5">
+            <text id="text15" a="00" text="战盟失败方" fontsize="18" height="22" width="90" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="62" y="0" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="layout18" control_height="0" contentsizefitter="1" paddingleft="55" vertical="0" height="500" width="281" space="5" raycast="1" cella="11" offsetmax="320#-274" active="0" enable="0">
+          <text id="text19" text="战盟成员奖励" contentsizefitter="1" fontsize="18" height="22" width="108" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" fontstyle="0" underline="0" color="#CCCCCCFF">
+          </text>
+        </layout>
+        <panel id="Reward3" width="350" height="65" active="0" enable="0">
+          <scrollview id="Reward3Scrollview" y="0" width="285" height="60" vertical="0" x="23" raycast="1" movementtype="2">
+            <layout id="layout46" width="360" height="230" a="10" vertical="0" contentsizefitter="3" raycast="1" cella="00" space="10">
+              <datalist id="Reward3DataList">
+                <item id="Reward3_Item" src="20020001" width="60" height="60" raycast="1" bgscale="58,58">
+                </item>
+              </datalist>
+            </layout>
+          </scrollview>
+        </panel>
+      </layout>
+    </scrollview>
+  </panel>
+  <panel id="right" a="00" width="300" height="456" x="350" y="-26" active="0" enable="0">
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="img3" x="-153" y="220" width="25" height="27">
+      <text id="text5" a="00" text="个人积分奖励" fontsize="18" height="22" width="109" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="70" y="2" outline="1" fontstyle="0" underline="0" color="#FFFFFFFF">
+      </text>
+    </img>
+    <panel id="panel9" width="300" height="40" y="181" x="-33">
+      <img id="img10" x="20" atlas="Atlas/FG_Common.spriteatlas" src="point1" width="19" height="19" raycast="1" a="11" y="-11">
+        <text id="text11" a="00" text="个人奖励预览" fontsize="18" height="22" width="108" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="71" y="-1" outline="1" fontstyle="0" underline="0" color="#DCE1E5FF">
+        </text>
+      </img>
+    </panel>
+    <scrollview id="Reward4Scrollview" y="-32" width="319" height="391" vertical="1" x="-11" raycast="1" movementtype="1">
+      <layout id="layout41" width="360" height="230" a="01" vertical="1" contentsizefitter="3" raycast="1" cella="00" space="-1">
+        <datalist id="Reward4DataList">
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

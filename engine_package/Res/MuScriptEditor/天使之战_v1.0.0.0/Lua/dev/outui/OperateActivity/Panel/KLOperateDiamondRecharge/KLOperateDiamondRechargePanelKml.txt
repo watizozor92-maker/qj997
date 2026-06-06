@@ -1,0 +1,62 @@
+<uipanel id="KLOperateDiamondRechargePanelKml" name="钻石礼包活动界面" a="00" width="300" height="300" x="-25" y="-45" zindex="200">
+  <panel id="panel1" a="00" width="844" height="496" x="107" y="1">
+    <img id="DailyPackMainBG" a="00" atlas="Atlas/Common.spriteatlas" src="img_bottom_black" width="844" height="496" raycast="1" x="0" y="1">
+    </img>
+    <img id="DailyPackTitleImg" a="00" atlas="Atlas/KLDailyPackRechargePanel.spriteatlas" src="dailyDiamond" width="837" height="143" raycast="1" x="0" y="164">
+      <img id="DailyPackInfo" a="00" atlas="Atlas/KLDailyPackRechargePanel.spriteatlas" src="bg_dayGift1" width="838" height="334" raycast="1" y="-241" x="0" scale9l="16" scale9b="26" scale9r="26" scale9t="19">
+        <scrollview id="DailyPackInfoScrollView" a="00" x="0" y="0" width="799" height="326" vertical="0" raycast="1" scrollbar="0" autoadjust="0">
+          <gridview id="gridview2" cellwidth="262" cellheight="326" raycast="1" a="00" constraint="2" constraintcount="1" contentsizefitter="2" cella="11" startcorner="0" spacex="10" width="494" paddingtop="0">
+            <datalist id="DailyPackItemList">
+              <panel id="panel2" raycast="0" width="262" height="326">
+                <img id="itemBG" a="00" atlas="Atlas/KLDailyPackRechargePanel.spriteatlas" src="bg_dayGift_buy" width="262" height="326" raycast="1" x="0" y="-3">
+                </img>
+                <img id="discountImage" a="11" atlas="Atlas/KLDailyPackRechargePanel.spriteatlas" src="bg_recharge_discount" width="68" height="68" raycast="1" y="0">
+                  <img id="discountTextImage" a="00" atlas="Atlas/KLDailyPackRechargePanel.spriteatlas" src="text_recharge_discount" width="44" height="25" raycast="1" y="8">
+                  </img>
+                  <text id="discountText" a="00" text="550%" fontsize="16" height="26" width="74" ta="11" horwrap="1" y="-11" color="#F5EB8CFF" outlinesize="1" outlinecolor="#6E000DFF">
+                  </text>
+                </img>
+                <text id="limitBuyCount" a="01" text="今日限购次数:1" fontsize="18" height="30" width="160" ta="11" horwrap="1" y="-56" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+                <text id="ItemPriceShowText" a="01" text="18钻石" fontsize="20" height="28" width="104" ta="01" horwrap="1" y="-7" x="29" color="#D1BF9CFF" outlinesize="1" outlinecolor="#7A4C12FF">
+                </text>
+                <img id="DiamondImg" a="00" atlas="Atlas/TS_Common.spriteatlas" src="10040001" width="28" height="28" raycast="1" x="-41" y="144">
+                </img>
+                <button id="daliyPackItemBuyBtn" a="00" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="monthCard_btn" width="104" height="32" onclick="" text="购买" raycast="1" x="0" y="-98" fonttype="" fontsize="16" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF">
+                  <img id="redpoint" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="15" height="15" raycast="1" x="40" y="13">
+                  </img>
+                </button>
+                <gridview id="ItemInfoGridView" a="00" cellwidth="48" cellheight="48" raycast="1" constraint="1" constraintcount="2" cella="00" contentsizefitter="3" width="106" height="48" x="0" y="0" spacex="10" spacey="">
+                  <datalist id="ItemInfoList" a="11">
+                    <panel id="panel3" width="48" height="48">
+                      <item id="ItemInfoSlotModel" src="20020001" width="48" height="48" mpos="-2.753471,0.934942,0" mfixsize="48,48">
+                      </item>
+                      <text id="ItemInfoSlotCount" a="22" text="24" fontsize="16" height="24" width="65" ta="22" horwrap="1" linespace="0" z="-300" x="0" y="0">
+                      </text>
+                      <button id="itemInfoTips" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="48" height="48" onclick="" text="" raycast="1" color="#FFFFFF05">
+                      </button>
+                    </panel>
+                  </datalist>
+                </gridview>
+              </panel>
+            </datalist>
+          </gridview>
+        </scrollview>
+      </img>
+    </img>
+    <button id="buyAllGift_btn" a="00" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="monthCard_btn" width="162" height="50" onclick="" text="888钻石" raycast="1" x="306" y="175" fonttype="" fontsize="22" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" textcolor="#F2F2F2FF">
+      <text id="originalPrice" a="00" text="原价:" fontsize="16" height="25" width="122" ta="01" horwrap="1" x="1" y="38" linespace="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="originalPriceNum" a="00" text="200" fontsize="22" height="32" width="86" ta="11" horwrap="1" x="20" y="38" outlinesize="1" outlinecolor="#000000FF" color="#D9001CFF">
+        <img id="img1" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window6" width="60" height="3" raycast="1" x="0" y="0" color="#FFFFFFFF">
+        </img>
+      </text>
+      <text id="allBuyText" a="00" text="一键购买" fontsize="16" height="25" width="112" ta="11" horwrap="1" x="-5" y="-37" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="allBuyTextTips" a="00" text="一键购买" fontsize="16" height="25" ta="21" horwrap="1" x="-25" y="-60" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <countdown id="refreshTime" width="218" height="43" ta="11" x="-245" color="#00ff00FF" y="215" fontsize="20">
+    </countdown>
+  </panel>
+</uipanel>

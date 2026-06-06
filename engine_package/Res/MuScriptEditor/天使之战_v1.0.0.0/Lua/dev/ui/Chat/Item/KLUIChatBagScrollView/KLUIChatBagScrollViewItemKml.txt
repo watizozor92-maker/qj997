@@ -1,0 +1,28 @@
+<uipanel id="KLUIChatBagScrollViewItem" name="聊天背包模板" width="400" height="190" a="11" zindex="204">
+  <prefab id="BagTileScrollViewPrefab" path="Kml/KmlPrefab/Cookbook/Common/BagTileScrollView.prefab" x="0" y="0" z="0" a="11" cella="11" onload="KmlBagTileScrollView/@LoadData">
+    <panel id="prefabBagTileScrollView_" bind="BagTileScrollView" x="0" y="0">
+    </panel>
+    <img id="BagTileContent" bind="BagTileContent" src="item_frame32" atlas="Atlas/FG_BagPanel.spriteatlas" width="">
+      <datalist id="item_list_">
+      </datalist>
+      <datalist id="forbid_list_">
+        <prefab id="forbid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIBagForbidButton.prefab" x="" cella="11" a="11" width="45" height="45" enddragrelatepos="kml_xw_bag#BagTileContent|kml_storage_panel#BagTileContent">
+          <button id="UIBagForbidButton" bind="UIBagForbidButton" onclick="">
+          </button>
+        </prefab>
+      </datalist>
+      <datalist id="red_grid_">
+        <prefab id="red_grid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIRedGridImg.prefab" x="" cella="11" a="11" width="32" height="32">
+        </prefab>
+      </datalist>
+      <datalist id="green_grid_">
+        <prefab id="green_grid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIGreenGridImg.prefab" x="" cella="11" a="11" width="32" height="32">
+        </prefab>
+      </datalist>
+    </img>
+    <panel id="CheckAreaUp" bind="CheckAreaUp" x="0" y="45" active="1">
+    </panel>
+    <panel id="CheckAreaBottom" bind="CheckAreaBottom" x="0" y="-48" active="1">
+    </panel>
+  </prefab>
+</uipanel>

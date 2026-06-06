@@ -1,0 +1,4 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,10010001,金币,910#910,0#2000,,
+2,2,50010012,连击试炼门票,1#1,0#1000,,

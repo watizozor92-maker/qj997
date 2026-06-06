@@ -1,0 +1,92 @@
+<uipanel id="KLArchangelGrailTipsPanelKml" name="大天使圣杯提示界面" zindex="1002" width="370" height="650" z="-1500" x="" onload="">
+  <button id="background_close" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" color="#00000000" raycast="1" onclick="">
+  </button>
+  <img id="panel_bg" width="370" height="635" atlas="Atlas/Common.spriteatlas" src="img_interface_main122" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" x="0">
+    <panel id="top" a="01" width="360" height="190" x="0" y="-5">
+      <text id="item_name" a="01" text="这里是圣杯的名字" fontsize="20" height="25" width="350" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+      <item id="item5" src="20020001" width="150" height="150" y="-14" x="0" a="10" bgimg="" atlas="" bgtype="0">
+      </item>
+      <layout id="layout6" control_height="0" contentsizefitter="0" vertical="1" height="182" width="208" a="20" raycast="1" x="0" y="-29" cella="00" space="2">
+        <text id="bing_text" horwrap="1" text="可交易" fontsize="20" height="25" width="200" ta="01" outlinesize="1" outlinecolor="#000000FF" color="#1ADE1FFF">
+        </text>
+        <text id="score_text" horwrap="1" text="圣杯评分：一百阶" fontsize="20" height="25" width="200" ta="01" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="rant_text" horwrap="1" text="圣杯阶数：一百阶" fontsize="20" height="25" width="200" ta="01" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="quality_text" horwrap="1" text="圣杯品质：黑色" fontsize="20" height="25" width="200" ta="01" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="fusion_pos" horwrap="1" text="可融合位置：黑色、黑色、黑色、黑色、黑色、黑色、黑色" fontsize="20" height="75" width="200" ta="00" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </layout>
+    </panel>
+    <panel id="middle" a="01" width="360" height="330" y="-200" x="0">
+      <scrollview id="info_view" a="01" width="360" height="330" vertical="1" x="0" y="3">
+        <layout id="all_list_layout" vertical="1" width="356" height="20" a="01" cella="01" space="10" contentsizefitter="1" active="1">
+          <datalist id="all_info_data">
+            <panel id="root" width="350" height="25">
+              <img id="di" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="img_tips_shuxing_di" a="10" x="0" active="0">
+              </img>
+              <img id="title" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="" a="10" x="10" active="0">
+              </img>
+              <img id="bg" atlas="Atlas/UIArchangelGrail.spriteatlas" src="" a="10" x="6" active="0">
+              </img>
+              <text id="value" text="" active="0" width="325" height="16" linespace="0.6" fontsize="16" x="10" contentsizefitter="1" a="10" horwrap="1" color="#C9C9C9" outlinecolor="0" outlinesize="1">
+              </text>
+              <text id="desc" text="" active="0" width="325" height="16" linespace="0.6" fontsize="16" x="10" contentsizefitter="1" a="10" horwrap="1" color="#C9C9C9" ta="21" outlinecolor="0" outlinesize="1">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+    </panel>
+    <panel id="equippaneltop_bottom" a="02" width="360" height="90" y="5" active="1">
+      <button id="put_or_out" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" onclick="KmlEquipTipsUI/@put_or_out_method" active="0">
+        <text id="put_or_out_t" text="" fontsize="18" active="1" color="#D3CAC3" outlinesize="1" outlinecolor="0" horwrap="1">
+        </text>
+      </button>
+      <layout id="bag_root" vertical="2" width="356" height="60" cella="01" y="0" active="1" space="20">
+        <button id="left_btn" atlas="Atlas/Common.spriteatlas" text="" src="button_interface_window7" width="134" height="44" y="0" onclick="KmlEquipTipsUI/@打开锻造" active="1" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="20">
+          <scrollview id="left_btn_content" width="135" height="150" y="45" a="02" vertical="1" active="0">
+            <layout id="属性_left_layout" width="355" height="160" vertical="1" a="02" contentsizefitter="1" space="0">
+              <datalist id="left_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+        <button id="right_btn" atlas="Atlas/Common.spriteatlas" text="" src="button_interface_window7" width="134" height="44" y="0" onclick="KmlEquipTipsUI/@take_off_equip" active="1" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="20">
+          <scrollview id="right_btn_content" width="135" height="150" y="45" a="02" vertical="1" active="0">
+            <layout id="属性_right_layout" width="355" height="160" vertical="1" a="02" contentsizefitter="1" space="0">
+              <datalist id="right_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+      </layout>
+      <layout id="equip_root" vertical="2" width="356" height="60" cella="01" y="0" active="1" space="20">
+        <button id="duanzaobtn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" onclick="KmlEquipTipsUI/@打开锻造" active="1" text="锻造" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="20">
+        </button>
+        <button id="tuoxiabtn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" onclick="KmlEquipTipsUI/@take_off_equip" active="1" text="脱下" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="20">
+        </button>
+        <button id="shengjibtn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" onclick="" raycast="1" active="0" text="升级" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="20">
+        </button>
+      </layout>
+      <button id="mail_attachment" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" active="0" onclick="KmlEquipTipsUI/@插入邮件附件">
+        <text id="text_1451" text="插入附件" fontsize="20" active="1" color="#D3CAC3" outlinesize="1" outlinecolor="0">
+        </text>
+      </button>
+      <button id="镶嵌_btn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" active="0" onclick="KmlEquipTipsUI/@镶嵌荧石">
+        <text id="text_1453" text="镶嵌" fontsize="20" active="1" color="#D3CAC3" outlinesize="1" outlinecolor="0">
+        </text>
+      </button>
+      <button id="镶嵌卸下_btn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" active="0" onclick="KmlEquipTipsUI/@卸下镶嵌荧石">
+        <text id="text_1455" text="卸下" fontsize="20" active="1" color="#D3CAC3" outlinesize="1" outlinecolor="0">
+        </text>
+      </button>
+      <button id="叠加_btn" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" y="0" active="0" onclick="KmlEquipTipsUI/@装备叠加放置">
+        <text id="text_1457" text="放置" fontsize="20" active="1" color="#D3CAC3" outlinesize="1" outlinecolor="0">
+        </text>
+      </button>
+    </panel>
+  </img>
+</uipanel>

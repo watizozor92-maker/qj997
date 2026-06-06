@@ -1,0 +1,14 @@
+<uipanel id="KLGodDescentMonsterItemKml" name="诸神降临boss模板" a="00" width="160" height="340" zindex="-1">
+  <panel id="panel1" a="00" width="160" height="330" x="0" y="0">
+    <img id="img_info" a="00" atlas="Atlas/TS_Common.spriteatlas" src="alphaBg3" width="172" height="364" raycast="1" x="0" y="20">
+    </img>
+    <img id="img_kill" a="00" atlas="Atlas/KLCrossServer.spriteatlas" src="icon_kill" width="102" height="72" raycast="1" x="0" y="-48">
+    </img>
+    <text id="txt_Name" a="00" text="天使·米迦勒" fontsize="20" height="25" width="160" ta="11" x="0" y="-100" horwrap="1">
+    </text>
+    <text id="txt_Status" a="00" text="未刷新" fontsize="20" height="25" width="160" ta="11" x="0" y="-130" horwrap="1">
+    </text>
+    <text id="txt_Status2" a="00" text="未刷新" fontsize="20" height="25" width="160" ta="11" x="0" y="-160" horwrap="1">
+    </text>
+  </panel>
+</uipanel>

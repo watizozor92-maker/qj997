@@ -1,0 +1,30 @@
+<uipanel id="KLUIMasterTalentCareerSwitchPanelKml" name="天赋职业切换界面" a="00" width="300" height="300" zindex="203">
+  <button id="MaskCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="2000" height="2000" onclick="" text="" raycast="1" x="0" y="0" color="#FFFFFF00">
+  </button>
+  <img id="BG" a="00" atlas="" src="Texture/sanjitanchuang_bg.png" width="650" height="402" raycast="1" scale9l="40" scale9b="35" scale9r="43" scale9t="59" x="0" y="-8">
+    <img id="Left" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="selectBG" width="233" height="293" raycast="1" x="-134" y="-21" scale9l="122" scale9b="114" scale9r="124" scale9t="112">
+      <img id="img6" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="text_1" width="116" height="41" raycast="1" x="0" y="0">
+      </img>
+      <text id="LeftText" a="00" text="首次免费" fontsize="18" height="25" width="80" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="0" y="-68">
+      </text>
+      <panel id="LeftConsume" a="00" width="99" height="34" x="-20" y="-68">
+        <item id="ConsumeItem" src="20020001" width="35" height="35" bgtype="0" mfixsize="35,35" raycast="1">
+        </item>
+        <text id="ConsumeText" a="00" text="150" fontsize="18" height="25" width="92" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="35" y="0">
+        </text>
+      </panel>
+      <button id="LeftButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="确定" raycast="1" x="0" y="-101" fonttype="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+      </button>
+    </img>
+    <img id="Right" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="selectBG" width="233" height="293" raycast="1" x="140" y="-21">
+      <img id="img7" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="text_2" width="116" height="41" raycast="1" y="0">
+      </img>
+      <button id="RightButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="前往购买" raycast="1" x="0" y="-101" fonttype="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+      </button>
+    </img>
+    <button id="CloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="295" y="175" h5y="175" h5x="-295">
+    </button>
+    <img id="Title" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="title_4" width="132" height="58" raycast="1" x="0" y="175">
+    </img>
+  </img>
+</uipanel>

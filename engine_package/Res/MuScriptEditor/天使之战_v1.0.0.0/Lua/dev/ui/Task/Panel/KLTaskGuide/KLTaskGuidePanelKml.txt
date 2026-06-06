@@ -1,0 +1,16 @@
+<uipanel id="KLTaskGuidePanel" name="任务引导界面" width="100" height="100" zindex="222" a="21" mask="0">
+  <button id="closeMask" width="3000" height="3000" color="#00000001" onclick="111">
+  </button>
+  <img id="Content" a="21" width="123" height="94" raycast="1" color="#FFFFFFFF" x="-351" y="-143" src="bg_noTeam" atlas="Atlas/UIMainPanel_Out.spriteatlas" scale9l="40" scale9b="43" scale9r="36" scale9t="31">
+    <gridview id="task_guide_layout" width="123" height="220" constraint="1" constraintcount="1" spacey="7" cellwidth="104" cellheight="38" a="11" x="7" y="-6" z="-100">
+      <datalist id="task_guide_list" databind="@left_top_task_list">
+        <button id="guide_button" atlas="Atlas/FG_Common.spriteatlas" src="btn_common" mimg="" onclick="222" pimg="" dimg="" width="104" height="38">
+          <text id="guide_text" text="" fontsize="18" ta="11" color="" outlinesize="1" outlinecolor="0" bestfit="1" maxbestfit="18" width="110" horwrap="1">
+          </text>
+        </button>
+      </datalist>
+    </gridview>
+    <img id="Arrow" atlas="Atlas/FG_Common.spriteatlas" src="arrow_right" x="23" y="-10" width="15" height="29" color="#FFFFFFFF" a="21">
+    </img>
+  </img>
+</uipanel>

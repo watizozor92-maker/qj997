@@ -1,0 +1,52 @@
+-- function sdandagchange(actor, name, value)
+--     -- 重置护盾和技能值为零
+--     if tonumber(value) == 0 then
+--         return
+--     end
+--     restSdAndAgToZero(actor)
+-- end
+
+-- function revival(actor)
+--     -- 重置护盾和技能值为零
+--     restSdAndAgToZero(actor)
+-- end
+
+-- -- 角色升级事件触发
+-- function levelup(actor)
+--     -- 重置护盾和技能值为零
+--     restSdAndAgToZero(actor)
+-- end
+
+-- function performerbasicfieldchange(actor,fieldType, value)
+--     if tonumber(fieldType) == 1 or tonumber(fieldType) == 2 then
+--         local level = getbaseinfo(actor, "level")
+--         if level == nil or level <= 0 then
+--             return 0
+--         end
+--         local levelLimit = ConfigDataManager.getTableValue("cfg_global", "value", "id", 10000)
+--         -- logInfo(21, "mainui", "levelLimit", levelLimit)
+--         if levelLimit == "" or levelLimit == nil or tonumber(levelLimit) <= 0 then
+--             return value
+--         end
+--         if tonumber(level) < tonumber(levelLimit) then
+--             return 0
+--         end
+--     end
+--    return value
+-- end
+
+
+-- function restSdAndAgToZero(actor)
+--     local level = getbaseinfo(actor, "level")
+--     local levelLimit = ConfigDataManager.getTableValue("cfg_global", "value", "id", 10000)
+--     logInfo(21, "mainui", "levelLimit", levelLimit)
+--     -- if levelLimit == "" or levelLimit == nil or levelLimit <= 0 then
+--     --     return
+--     -- end
+--     if level < 300 then
+--         updateattr(actor, "shield", 0, "agSto", 0)
+--     end
+--     -- if level < levelLimit then
+--     --     updateattr(actor, "shield", 0, "agSto", 0)
+--     -- end
+-- end

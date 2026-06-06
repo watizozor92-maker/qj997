@@ -1,0 +1,72 @@
+<uipanel id="KLShopMallPanel" name="商城界面" width="1100" height="624" zindex="200" x="-49" y="0" z="-500">
+  <img id="img1" a="00" width="363" height="664" raycast="1" siblingindex="6" x="442" y="0" src="bg_tankuangyou" atlas="Atlas/FG_ShopMallPanel.spriteatlas" scale9l="92" scale9b="175" scale9r="69" scale9t="245" active="0">
+    <img id="img2" a="00" width="328" height="236" raycast="1" src="bg_role" atlas="Atlas/FG_ShopMallPanel.spriteatlas" y="189" x="3" alphaall="1" siblingindex="0" active="1" color="#FFFFFF00">
+    </img>
+    <img id="sv_frame" atlas="Atlas/UILoginPanel.spriteatlas" src="bg_black_grid_N" width="345" height="344" scale9b="26" scale9r="26" scale9l="26" scale9t="26" a="01" y="-260" x="1" siblingindex="1">
+    </img>
+  </img>
+  <img id="img10" a="00" width="1018" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
+  </img>
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlShopMallUI/KmlShopMallUI.prefab" width="1100" height="624" id="prefab_863">
+    <togglegroup id="TopHomeToggleGroup" bind="TopHomeTab" x="-149" y="-100" width="667" height="36">
+    </togglegroup>
+    <togglegroup id="LeftSubToggleGroup" bind="LeftSubTab" x="70" y="-145" width="150" height="380">
+    </togglegroup>
+    <button id="CloseBtn" bind="CloseBtn" x="-15" y="-15" h5x="7" h5y="60" width="34" height="34" active="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" a="21">
+    </button>
+    <loopscrollview bind="ShopMallItems" id="ShopMallItems" width="780" height="380" x="-65" deltax="0.5" y="-145" cellwidth="194" cellheight="218" rotate="0,0,0">
+      <datalist id="ShopMallGoodsList">
+      </datalist>
+    </loopscrollview>
+    <panel bind="Money" y="44" width="980" id="panel_18" active="1">
+      <scrollview id="scrollview10" a="22" width="980" height="37" vertical="0" y="0" raycast="1" siblingindex="0" x="0">
+        <layout id="layout11" width="980" height="41" a="20" vertical="0" contentsizefitter="2" raycast="1" cella="20" space="5">
+          <datalist id="money_list" a="11">
+            <button id="btn_money_tip" width="175" height="40" onclick="" text="" raycast="1" siblingindex="0" src="img_bag_10" atlas="Atlas/UIBagPanel_Out.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0">
+              <img id="img_money_icon" a="10" width="25" height="25" raycast="1" siblingindex="1" src="jifen" atlas="Atlas/QJ5_ItemLooksIcon.spriteatlas" x="8" y="2">
+              </img>
+              <text id="text_money_count" a="00" text="0" fontsize="18" height="25" width="106" ta="21" siblingindex="2" outline="0" horwrap="1" x="15" y="2" color="#1ADE1FFF">
+              </text>
+            </button>
+          </datalist>
+        </layout>
+      </scrollview>
+    </panel>
+    <panel id="panel1" bind="KmlShopMallUI" active="1">
+    </panel>
+    <panel id="panel2" bind="WinBg_ImgTitle_Tab" active="1">
+    </panel>
+    <img id="img3" bind="ImgMask" active="0" x="0" y="0" width="2400" height="1080">
+    </img>
+    <img id="img4" bind="Bg" raycast="1" active="1" src="Texture/FG_dankuangdi2.png" width="1039" height="578" x="0" y="0" scale9l="189" scale9b="89" scale9r="192" scale9t="162">
+      <toggle id="dianshuchongzhi_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" siblingindex="0" y="-71" a="11" x="233">
+        <text id="Label" text="积分充值" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" horwrap="1" ta="11" outline="1" height="51" width="120" x="0" siblingindex="2" h5y="0">
+        </text>
+      </toggle>
+      <img id="img13" a="00" width="990" height="400" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="29" scale9b="38" scale9r="37" scale9t="28" x="3" y="-29" siblingindex="1">
+        <img id="line" a="10" width="4" height="390" raycast="1" src="line" atlas="Atlas/FG_ShopMallPanel.spriteatlas" siblingindex="0" x="180" y="2">
+        </img>
+      </img>
+      <img id="img12" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="0" scale9b="0" scale9r="0" scale9t="0" siblingindex="2">
+      </img>
+      <toggle id="zhigou_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" siblingindex="3" y="-72" a="11" x="356">
+        <text id="text5" text="直购" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" horwrap="1" ta="11" outline="1" height="51" width="120" x="0" siblingindex="2" h5y="0">
+        </text>
+      </toggle>
+    </img>
+    <img id="img5" bind="ImgTitle" active="0" x="0" y="-5" width="90" height="53">
+    </img>
+    <img id="img6" bind="BgList" active="0" x="2" y="-22" width="1000" height="410">
+    </img>
+  </prefab>
+  <img id="img9" a="00" width="43" height="33" raycast="1" x="-39" y="-272" src="fanye" atlas="Atlas/FG_ShopMallPanel.spriteatlas" active="0">
+    <text id="pageCount" a="00" text="1" fontsize="16" height="25" width="48" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="reduceBtn" a="00" width="34" height="34" onclick="" text="" raycast="1" x="-43" y="0" src="icon_add1" atlas="Atlas/FG_ShopMallPanel.spriteatlas" mimg="" pimg="" dimg="" active="1">
+    </button>
+    <button id="addBtn" a="00" width="34" height="34" onclick="" text="" raycast="1" x="42" y="0" src="icon_add2" atlas="Atlas/FG_ShopMallPanel.spriteatlas" mimg="" pimg="" dimg="" active="1">
+    </button>
+  </img>
+  <text id="text1" a="01" text="商城" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="-61" x="1">
+  </text>
+</uipanel>

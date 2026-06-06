@@ -1,0 +1,90 @@
+<uipanel id="KLSalesTipsPanel" name="交易行上架提示界面" width="264" height="234" zindex="1010" x="318" z="-200" y="0">
+  <togglegroup id="togglegroup13" a="00" width="150" height="225" onload="" raycast="1">
+  </togglegroup>
+  <button id="btn_close" width="2000" height="2000" color="#00000000" raycast="1" x="0" y="1">
+  </button>
+  <panel id="sales_panel" width="264" height="314" x="0" color="#000000FF" y="0">
+    <img width="264" height="314" src="Texture/bg_tips.png" raycast="1" id="img_16" y="0" color="#000000FF" x="0">
+      <panel width="264" height="314" y="0" id="panel_17" x="0" a="01" color="#000000FF">
+        <layout id="layout1" control_height="0" contentsizefitter="1" vertical="1" height="500" width="280" a="01" raycast="1" space="14" y="-18" x="10">
+          <panel id="costNode" width="264" height="38">
+            <text text="数量" a="10" x="19" id="text_18" horwrap="1" y="0" fontsize="14" fonttype="" outlinecolor="#000000" outlinesize="1" ta="01" outline="1" width="39" height="18" fontstyle="0" underline="0" color="#E6E600FF">
+            </text>
+            <input id="txt_number" text="1" a="10" x="56" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" outlinesize="1" textcolor="#00ff00FF" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" y="0" color="#FFFFFFFF">
+              <img id="number_minus" src="button_interface_minus3" atlas="Atlas/Common.spriteatlas" x="-70" raycast="1">
+              </img>
+              <img id="number_add" src="button_interface_plus6" atlas="Atlas/Common.spriteatlas" x="70" raycast="1">
+              </img>
+            </input>
+          </panel>
+          <panel id="priceNode_1" width="264" height="38" active="0">
+            <toggle id="toggle_1" width="36" height="36" a="00" default="1" togglegroup_id="togglegroup13" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou" x="-105" y="0">
+            </toggle>
+            <input id="txt_price_unit_1" text="1" a="10" x="57" y="0" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" textcolor="#fbd994" outlinesize="1" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFFFF">
+              <img id="img_coin_unit_1" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="26" height="26" y="0">
+              </img>
+            </input>
+          </panel>
+          <panel id="priceNode_2" width="264" height="38" active="0">
+            <toggle id="toggle_2" width="36" height="36" a="00" default="1" togglegroup_id="togglegroup13" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou" x="-105" y="0">
+            </toggle>
+            <input id="txt_price_unit_2" text="1" a="10" x="57" y="0" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" textcolor="#fbd994" outlinesize="1" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFFFF">
+              <img id="img_coin_unit_2" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="26" height="26">
+              </img>
+            </input>
+          </panel>
+          <panel id="priceNode_3" width="264" height="38" active="0">
+            <toggle id="toggle_3" width="36" height="36" a="00" default="1" togglegroup_id="togglegroup13" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou" x="-105" y="0">
+            </toggle>
+            <input id="txt_price_unit_3" text="1" a="10" x="57" y="0" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" textcolor="#fbd994" outlinesize="1" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFFFF">
+              <img id="img_coin_unit_3" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="26" height="26">
+              </img>
+            </input>
+          </panel>
+          <panel id="priceNode_4" width="264" height="38" active="0">
+            <toggle id="toggle_4" width="36" height="36" a="00" default="1" togglegroup_id="togglegroup13" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou" x="-105" y="0">
+            </toggle>
+            <input id="txt_price_unit_4" text="1" a="10" x="57" y="0" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" textcolor="#fbd994" outlinesize="1" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFFFF">
+              <img id="img_coin_unit_4" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="26" height="26">
+              </img>
+            </input>
+          </panel>
+          <panel id="priceNode_5" width="264" height="38" active="0">
+            <toggle id="toggle_5" width="36" height="36" a="00" default="1" togglegroup_id="togglegroup13" onclick="" raycast="1" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_btn_gou" x="-105" y="0">
+            </toggle>
+            <input id="txt_price_unit_5" text="1" a="10" x="57" y="0" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" textcolor="#fbd994" outlinesize="1" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFFFF">
+              <img id="img_coin_unit_5" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="6" width="26" height="26">
+              </img>
+            </input>
+          </panel>
+          <panel id="allNode" width="264" height="38">
+            <text text="总价" a="10" x="18" id="text_25" horwrap="1" y="0" fontsize="14" fonttype="" outlinecolor="#000000" outlinesize="1" ta="01" outline="1" width="56" height="18" fontstyle="0" underline="0" color="#E6E600FF">
+            </text>
+            <img a="10" x="55" width="180" height="33" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" id="img_26" y="0" color="#FFFFFFFF">
+              <img id="img_coin_total" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" a="10" x="7" width="26" height="26">
+              </img>
+              <text id="txt_price_total" text="99" a="10" x="0" width="180" height="30" ta="11" fontsize="18" fonttype="" color="#fbd994ff" outlinecolor="#000000" outlinesize="1" horwrap="1" y="0" outline="1">
+              </text>
+            </img>
+          </panel>
+          <panel id="panel1" width="264" height="40">
+            <slider id="price_slider" atlas="Atlas/KLTradePanel.spriteatlas" src="img_slider_bg" fimg="img_slider" himg="btn_slider" width="226" height="35" minvalue="0" maxvalue="100" curvalue="0" wholenum="1" updateinterval="0.1" slidefillarealrtb="5,-5,0,0" slidehandlearealrtb="0,2,0,0" handlewidthtb="120,-27,-30" mimg="" pimg="" x="-6" y="10">
+              <panel bind="fillArea_attach" id="fillArea_attach" a="00" x="0" width="218" height="18">
+                <img bind="fill_attach" id="fill_attach" x="0">
+                </img>
+              </panel>
+              <panel bind="handleSlideArea_attach" id="fillArea_attach" x="0">
+                <img bind="handle_attach" id="handle_attach" x="-1" width="18" height="19">
+                </img>
+              </panel>
+            </slider>
+          </panel>
+          <panel id="btnNode" width="264" height="59">
+            <button id="btn" src="btn_common_2_select" atlas="Atlas/FG_Common.spriteatlas" text="上架" a="02" y="36" raycast="1" fontsize="16" outlinesize="1" outlinecolor="#000000" textcolor="#FFFFFF" width="82" height="28" mimg="" pimg="" dimg="">
+            </button>
+          </panel>
+        </layout>
+      </panel>
+    </img>
+  </panel>
+</uipanel>

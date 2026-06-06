@@ -1,0 +1,10 @@
+﻿int#c#s,string#c#s,string#c#s,int#c#s,int#c#s,int#c#s
+id,name,EquipName,CareerID,Equip,careerRec
+1,剑士,A,1,101,1
+2,魔法师,B,2,201,1
+3,弓箭手（敏弓）,C,3,301,1
+4,弓箭手（智弓）,D,3,302,2
+5,魔剑士（力魔）,E,4,401,2
+6,魔剑士（法魔）,F,4,402,1
+7,圣导师,G,5,501,1
+8,召唤师,H,6,601,1

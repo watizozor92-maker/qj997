@@ -1,0 +1,48 @@
+<uipanel id="KLUIEquipQuickTransferPanelKml" name="装备快捷转移界面" adapter="1" zindex="400" width="1334" height="750" z="-700" raycast="1">
+  <panel id="bg" width="420" height="250">
+    <img id="bgImg" src="Texture/sanjitanchuang_bg.png" atlas="" width="467" height="437" scale9l="0" scale9b="16" scale9r="0" scale9t="50">
+      <img atlas="Atlas/KLEquipTransferUI.spriteatlas" src="title_equipoverlay" y="194" id="img_78">
+      </img>
+    </img>
+    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" x="210" y="190" onclick="@关闭快捷转移" h5y="190" h5x="-208">
+    </img>
+    <button id="btn_source_item" atlas="Atlas/Common.spriteatlas" src="ty_equipicon" x="-98" y="120" width="60" height="60" raycast="1">
+    </button>
+    <panel id="panel_equip_source" width="60" height="60" x="-98" y="120">
+    </panel>
+    <img id="img_82" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow1" x="-4" y="119">
+    </img>
+    <button id="btn_target_item" atlas="Atlas/Common.spriteatlas" src="ty_equipicon" x="86" y="120" width="60" height="60" raycast="1">
+    </button>
+    <panel id="panel_equip_target" width="60" height="60" x="86" y="120">
+    </panel>
+    <img id="img_85" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" x="-197" y="51">
+    </img>
+    <text id="tipContent" text="当前装备可以继承[]" a="10" fontsize="18" x="25" y="51" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <layout vertical="1" y="-95" x="-129" width="116" height="600" a="01" cella="11" contentsizefitter="1" space="10" id="layout_87">
+      <text id="tips1" text="强化等级：" a="10" fontsize="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="tips2" text="追加等级：" a="10" fontsize="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="tips3" text="再生词条：" a="10" fontsize="20" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" active="0">
+      </text>
+    </layout>
+    <text id="text_91" text="是否一键转移" fontsize="18" a="10" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" x="23" y="-70">
+    </text>
+    <img id="img_92" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" x="-197" y="-107">
+    </img>
+    <item id="item_cost" itemid="" x="-70" y="-106" bgtype="0" width="30" height="30" tips="1">
+    </item>
+    <text id="text_transfer_cost_name" text="消耗金币" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" y="-106" x="-150">
+    </text>
+    <img atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" width="260" y="-107" x="39" scale9l="10" scale9t="10" scale9r="10" scale9b="10" id="img_95">
+      <text id="text_transfer_cost" text="" fontsize="20" a="20" x="-15" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+    <button id="btn_cancel" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" y="-167" onclick="@关闭快捷转移" textcolor="#9B1818" fontsize="18" text="取消" outlinesize="1" outlinecolor="#000000" x="-95">
+    </button>
+    <button id="btn_transfer" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" y="-167" onclick="@一键转移" textcolor="#FFF5C6" fontsize="18" text="一键转移" outlinesize="1" outlinecolor="#000000" x="88">
+    </button>
+  </panel>
+</uipanel>

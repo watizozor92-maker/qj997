@@ -1,0 +1,9 @@
+﻿int#c#s,int#c#s,intListList#c#s,stringListList#c#s,intlistlist#c#s,intlistlist#c#s,stringlistlist#c#s,stringListList#c#s,int#c#s,stringlist#c#s
+id,needRecharge,reward,showModel,modelCondition,modelRevolve,modelBehavior,previewVedio,mail,Jump
+1,100,0#10040001#1080,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+2,100,0#50010010#150,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+3,100,0#40030002#50,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+4,100,0#10040001#1280,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+5,100,0#50040097#40,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+6,100,0#10040001#1680,,,,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2
+7,100,0#21400009#1,0#Model/Pet/superpandaPlus,0#-50#0#50#1|0#-50#0#50#2|0#-50#0#50#3,20#-90#90#1|20#-90#90#2|20#-90#90#3,,,800004,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2

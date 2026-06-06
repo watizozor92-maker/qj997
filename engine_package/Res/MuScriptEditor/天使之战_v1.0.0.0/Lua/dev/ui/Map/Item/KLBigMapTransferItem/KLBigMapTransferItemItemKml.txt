@@ -1,0 +1,12 @@
+<uipanel id="KLBigMapTransferItemItem" name="地图传送通用模板" width="230" height="43" zindex="-1">
+  <button id="ButtonCommon" width="293" height="43" raycast="1" src="btn_cs1" atlas="Atlas/FG_MapPanel.spriteatlas" mimg="" pimg="" dimg="" x="0" y="0">
+    <text id="Label" fonttype="" fontsize="14" outlinecolor="#000000" outlinesize="1" ta="01" width="94" height="44" horwrap="1" a="10" x="5" outline="0" y="0" text="地图名称最有多十一个字">
+    </text>
+    <text id="TextLevel" fonttype="" fontsize="16" outlinecolor="#000000" outlinesize="1" color="#FF2323" x="0" y="0" width="128" height="30" ta="11" horwrap="1" a="00" outline="0" text="111">
+    </text>
+    <img id="ImgVip" atlas="Atlas/KLMapPanel.spriteatlas" src="icon_vip_card" width="37" height="26" raycast="1" x="-4" y="0" a="20">
+    </img>
+    <text id="TextCost" a="00" text="1111" fontsize="16" height="42" width="66" ta="11" outline="0" horwrap="1" x="88" deltax="0.5" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </button>
+</uipanel>

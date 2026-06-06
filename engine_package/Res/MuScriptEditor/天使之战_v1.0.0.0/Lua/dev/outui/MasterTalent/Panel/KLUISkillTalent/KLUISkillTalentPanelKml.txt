@@ -1,0 +1,64 @@
+<uipanel id="KLUISkillTalentPanelKml" name="技能天赋加点界面" a="00" width="300" height="300" zindex="202">
+  <img id="LvTitle" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="skillTalentLvText" width="145" height="26" raycast="1" x="-408" y="-249">
+    <text id="Lv" a="00" text="99" fontsize="16" height="25" width="55" ta="01" horwrap="1" fonttype="MasterTalent_Font1" x="110" y="0">
+    </text>
+    <loadingbar id="loadingbar" a="00" width="669" height="24" src="lodingbg" atlas="Atlas/UIMasterTalent.spriteatlas" loadingbar="loading" x="456" y="0" hidetext="1">
+      <text id="ExpText" a="00" text="100/100" fontsize="18" height="27" width="637" ta="11" horwrap="1" x="0" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </loadingbar>
+    <button id="ExchangeExpButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="93" height="31" onclick="" text="兑换经验" raycast="1" x="841" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" active="0" fontsize="18">
+      <img id="ExchangeExpRedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="43" y="12" active="0">
+      </img>
+    </button>
+  </img>
+  <text id="PointTitle" a="00" text="技能天赋点" fontsize="18" height="25" width="96" ta="11" horwrap="1" x="343" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <text id="PointText" a="00" text="0" fontsize="18" height="25" width="65" ta="21" horwrap="1" x="411" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <button id="ResetButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window65" width="38" height="38" onclick="" text="" raycast="1" x="468" y="152">
+  </button>
+  <button id="LeftButton1" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="D_noselect" width="176" height="198" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-407" y="73">
+    <img id="LeftButton1_Title" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="text_XJblue" width="67" height="41" raycast="1" x="0" y="73">
+    </img>
+    <img id="LeftButton1_Icon" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon_SHjs" width="96" height="88" raycast="1" x="0" y="12">
+    </img>
+    <button id="LeftButton1_Enable" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="113" height="40" onclick="" text="启用" raycast="1" x="0" y="-65" fonttype="" outlinesize="1" outlinecolor="#000000FF" active="0" fontsize="18">
+    </button>
+    <text id="LeftButton1_EnableText" a="00" text="已启用" fontsize="18" height="25" width="162" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#94F205FF" x="0" y="-65" active="0">
+    </text>
+  </button>
+  <button id="LeftButton2" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="D_noselect" width="176" height="198" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-407" y="-120">
+    <img id="LeftButton2_Title" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="text_SHgreen" width="67" height="41" raycast="1" x="0" y="73">
+    </img>
+    <img id="LeftButton2_Icon" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon_ZHgs" width="104" height="88" raycast="1" x="0" y="12">
+    </img>
+    <button id="LeftButton2_Enable" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="113" height="40" onclick="" text="启用" raycast="1" x="0" y="-65" fonttype="" outlinesize="1" outlinecolor="#000000FF" active="0" fontsize="18">
+    </button>
+    <text id="LeftButton2_EnableText" a="00" text="已启用" fontsize="18" height="25" width="162" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#94F205FF" x="0" y="-65" active="0">
+    </text>
+  </button>
+  <panel id="LineList" a="00" width="1334" height="750" active="0">
+    <img id="Line" x="80" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon_loading_2" width="453" height="7" raycast="1" y="40">
+    </img>
+    <img id="Line2" x="80" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon_loading_2" width="453" height="7" raycast="1" y="-60">
+    </img>
+    <img id="Line3" x="80" atlas="Atlas/UIMasterTalent.spriteatlas" src="icon_loading_2" width="453" height="7" raycast="1" y="-160">
+    </img>
+  </panel>
+  <scrollview id="SkillScrollview" a="00" width="728" height="320" vertical="1" y="-58" raycast="0" x="79" movementtype="2">
+    <layout id="layout3" width="360" height="230" a="00" vertical="0" contentsizefitter="3" raycast="1" cella="11" space="60">
+      <datalist id="SkillDataList">
+      </datalist>
+    </layout>
+  </scrollview>
+  <scrollview id="scrollview2" a="00" width="694" height="33" vertical="1" y="110" raycast="0" x="62" movementtype="2">
+    <layout id="layout4" width="360" height="230" a="20" vertical="0" contentsizefitter="3" raycast="1" cella="11" space="60">
+      <text id="text6" horwrap="1" text="d1j" fontsize="16" height="25" width="120" ta="11" fonttype="MasterTalent_Font2">
+      </text>
+      <text id="text7" horwrap="1" text="d2j" fontsize="16" height="25" width="120" ta="11" fonttype="MasterTalent_Font2">
+      </text>
+      <text id="text8" horwrap="1" text="d3j" fontsize="16" height="25" width="120" ta="11" fonttype="MasterTalent_Font2">
+      </text>
+    </layout>
+  </scrollview>
+</uipanel>

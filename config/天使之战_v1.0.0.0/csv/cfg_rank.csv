@@ -1,0 +1,17 @@
+﻿int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,string#c#s,string#c#s,intList#c#s,intListList#c#s,string#c#s,int#c#s,string#c#s,string#c#s
+id,roottype,oneId,type,career,name,careerName,rewardRule,reward,rewardText,effective,condition,rankCondition
+1,1,1,1,0,等级榜,综合,1#2#3,,,1,checkLevel>=1,50
+2,1,2,1,1,等级榜,剑士,1#2#3,,,1,checkLevel>=1,50
+3,1,3,1,2,等级榜,魔法师,1#2#3,,,1,checkLevel>=1,50
+4,1,4,1,3,等级榜,弓箭手,1#2#3,,,1,checkLevel>=1,50
+5,1,5,1,4,等级榜,魔剑士,1#2#3,,,1,checkLevel>=1,50
+6,1,6,1,5,等级榜,圣导师,1#2#3,,,1,checkLevel>=1,50
+7,1,7,1,6,等级榜,召唤师,1#2#3,,,1,checkLevel>=1,50
+8,1,8,1,7,等级榜,光明法师,1#2#3,,,1,checkLevel>=1,50
+22,2,1,1,0,等级榜,综合,1#2#3,,,1,checkLevel>=999999,50
+23,2,2,1,1,等级榜,剑士,1#2#3,,,1,checkLevel>=999999,50
+24,2,3,1,2,等级榜,魔法师,1#2#3,,,1,checkLevel>=999999,50
+25,2,4,1,3,等级榜,弓箭手,1#2#3,,,1,checkLevel>=999999,50
+26,2,5,1,4,等级榜,魔剑士,1#2#3,,,1,checkLevel>=999999,50
+27,2,6,1,5,等级榜,圣导师,1#2#3,,,1,checkLevel>=999999,50
+28,2,7,1,6,等级榜,召唤师,1#2#3,,,1,checkLevel>=999999,50

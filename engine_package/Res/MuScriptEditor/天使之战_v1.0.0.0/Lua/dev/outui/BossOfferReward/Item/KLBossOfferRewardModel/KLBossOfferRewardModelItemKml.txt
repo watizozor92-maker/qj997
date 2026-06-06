@@ -1,0 +1,20 @@
+<uipanel id="KLBossOfferRewardModelItemKml" name="首领悬赏前往击杀模板" a="00" width="230" height="360" zindex="-1" x="0" y="2">
+  <img src="Texture/bg_challenge_boss.png" width="272" height="63" id="modelExp" color="#FFFFFF00" x="0" y="-71">
+  </img>
+  <img src="Texture/bg_boss_offer_reward.png" width="160" height="371" id="img_6" x="0" y="-18" atlas="" color="#FFFFFFFF">
+  </img>
+  <text id="name" text="" fontsize="18" y="-20" z="-300" a="01" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+  </text>
+  <panel id="panel1" a="00" width="230" height="360" zindex="205">
+    <img id="img_receive" a="00" atlas="Atlas/KLBossOfferReward.spriteatlas" src="img_completed" width="129" height="77" raycast="1" x="0" y="12" z="-500" active="0">
+    </img>
+  </panel>
+  <button id="btn_go_get" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="112" height="36" onclick="" text="前往击杀" raycast="1" x="0" y="-128" fonttype="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <text id="node" text="" fontsize="18" x="0" y="51" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+  <model id="monster2" src="" mscale="22,22,22"  mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,-87,0">
+    </model>
+    <model id="monster" src="" mscale="22,22,22" mfixsize="150,150" mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,3,0" >
+    </model>
+  </text>
+</uipanel>

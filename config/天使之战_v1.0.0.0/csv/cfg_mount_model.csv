@@ -1,0 +1,33 @@
+﻿int#c#s,string#c#s,string#c#s,string#c#s,string#c#s,int#c#s,int#c#s,int#c#s,int#c#s
+id,name,bone,path,hang,walkSound,runSound,trackSound,fastTrack
+1,兽角,1,Model/Mount/Rider01,Bip01,20,21,20,21
+2,彩云兽,2,Model/Mount/Rider02,Bip01 Spine1,20,21,20,21
+3,红狼,3,Model/Mount/Fenrilred,Bip01 Spine1,20,21,20,21
+4,蓝狼,3,Model/Mount/Fenrilblue_03,Bip01 Spine1,20,21,20,21
+5,黑狼,3,Model/Mount/Fenrilblack_03,Bip01 Spine1,20,21,20,21
+6,金狼,3,Model/Mount/Fenrilgold_03,Bip01 Spine1,20,21,20,21
+7,黑王马,4,Model/Mount/DarkHorse,Bip01 Spine1,20,21,20,21
+8,幽灵马,4,Model/Mount/DarkHorse_02,Bip01 Spine1,20,21,20,21
+9,黄金马,4,Model/Mount/DarkHorse_03,Bip01 Spine1,20,21,20,21
+10,白焰马,4,Model/Mount/DarkHorse_03,Bip01 Spine1,20,21,20,21
+11,西方龙,5,Model/Mount/Xifanglong,Bip001 Spine1,20,21,20,21
+12,白虎,3,Model/Mount/Baihu_05,Bip001 Spine1,20,21,20,21
+13,熊猫,3,Model/Mount/Panda,Bip01 Spine,20,21,20,21
+14,星冥龙,5,Model/Mount/51Long_04,Bip001 Spine,20,21,20,21
+15,雪鹿,1,Model/Mount/Xianlu,Bip001 Spine1,20,21,20,21
+16,白毛狮王,3,Model/Mount/Shiwang,Bip001 Spine1,20,21,20,21
+17,冥焰马,4,Model/Mount/Lanma,Bip01 Spine1,20,21,20,21
+18,草泥马,3,Model/Mount/Conima02,Bip001 Spine1,20,21,20,21
+19,大蝎子,3,Model/Mount/HeisemoxieRed_02,Bip001 Spine,20,21,20,21
+20,黄金天马,3,Model/Mount/Tianma_221614,Bip001 Spine1,20,21,20,21
+21,狮鹫,3,Model/Mount/Chengseshijiu_01,Bip001 Spine1,20,21,20,21
+22,水乌龟,3,Model/Mount/Xuangui_02,Bip001 Spine,20,21,20,21
+23,午夜,3,Model/Mount/DarkHorse,Bip01 Spine1,20,21,20,21
+24,绿林狂蝎,3,Model/Mount/Kuangxie_01,Bip001 Spine,20,21,20,21
+25,冻土冰狼,3,Model/Mount/Binglang,Bip001 Spine,20,21,20,21
+26,星穹泽风,4,Model/Monster/Tianma_luo,Bip001 Spine1,20,21,20,21
+27,灵珀蜗天,5,Model/Monster/Woniumanman,Bone001,20,21,20,21
+28,碧霄瑶光,5,Model/Monster/Jinyu,Bone002,20,21,20,21
+29,红狼,3,Model/Mount/Fenrilred_02,Bip01 Spine1,20,21,20,21
+30,红狼,3,Model/Mount/Fenrilred_03,Bip01 Spine1,20,21,20,21
+31,红狼,3,Model/Mount/Fenrilred,Bip01 Spine1,20,21,20,21

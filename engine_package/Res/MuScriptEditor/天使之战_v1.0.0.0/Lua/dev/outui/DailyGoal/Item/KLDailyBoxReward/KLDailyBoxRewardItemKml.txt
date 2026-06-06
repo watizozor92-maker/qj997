@@ -1,0 +1,5 @@
+<uipanel id="KLDailyBoxRewardItem" name="每日目标奖励模板" width="80" height="120" zindex="-1">
+    <item id="item" width="80" height="80" mfixsize="80,80" outlinecolor="#000000" outlinesize="1" fontsize="18" />
+    <button id="btn_item" width="80" height="80" color="#00000000" raycast="1" />
+    <text id="txt_count" color="#FFFFFF" fontsize="18" text="" y="-55" outlinecolor="#000000" outlinesize="1" />
+</uipanel>

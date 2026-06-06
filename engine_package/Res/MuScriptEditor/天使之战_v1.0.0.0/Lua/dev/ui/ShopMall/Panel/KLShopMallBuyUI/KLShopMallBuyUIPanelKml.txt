@@ -1,0 +1,20 @@
+<uipanel id="KLShopMallBuyUIPanel" name="商城购买界面" width="220" height="156" zindex="400" z="-200" x="290" y="120">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlShopMallUI/KmlShopMallBuyUI.prefab" width="220" height="156" id="prefab_80">
+    <button bind="ClickMask" id="ClickMask">
+    </button>
+    <input bind="InputFieldLevel" id="InputFieldLevel">
+      <text id="Text" bind="Text" color="#FFFFFF">
+      </text>
+    </input>
+    <text bind="TextTotalPrice" id="TextTotalPrice">
+    </text>
+    <button bind="BtnBuy" id="BtnBuy" width="93" height="31" src="btn_goumai" atlas="Atlas/FG_ShopMallPanel.spriteatlas" mimg="" pimg="" dimg="">
+    </button>
+    <button bind="BtnLevelMinus" id="BtnLevelMinus">
+    </button>
+    <button bind="BtnLevelAdd" id="BtnLevelAdd">
+    </button>
+  </prefab>
+  <img id="icon_money" a="10" x="52" y="-3" width="30" height="30">
+  </img>
+</uipanel>

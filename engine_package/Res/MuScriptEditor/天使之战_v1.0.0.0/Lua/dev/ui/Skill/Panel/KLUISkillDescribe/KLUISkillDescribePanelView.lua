@@ -1,0 +1,87 @@
+---@class KLUISkillDescribePanelView:UIKmlLuaViewBase
+---@field BG_Templete UIKmlLuaControl
+---@field ReMask UIKmlLuaControl
+---@field img1231 UIKmlLuaControl
+---@field Frame UIKmlLuaControl
+---@field img1 UIKmlLuaControl
+---@field BgWnd UIKmlLuaControl
+---@field closeBtn UIKmlLuaControl
+---@field beijing1 UIKmlLuaControl
+---@field BgSkill UIKmlLuaControl
+---@field skillIcon UIKmlLuaControl
+---@field left UIKmlLuaControl
+---@field right UIKmlLuaControl
+---@field title_str UIKmlLuaControl
+---@field SkillName UIKmlLuaControl
+---@field showCondition UIKmlLuaControl
+---@field SpTag1 UIKmlLuaControl
+---@field TxtTitle1 UIKmlLuaControl
+---@field skilldesNode UIKmlLuaControl
+---@field SpTag2 UIKmlLuaControl
+---@field TxtTitle2 UIKmlLuaControl
+---@field tips UIKmlLuaControl
+---@field scrollview1 UIKmlLuaControl
+---@field layout2 UIKmlLuaControl
+---@field desc1 UIKmlLuaControl
+---@field Unlearned UIKmlLuaControl
+---@field SpTag5 UIKmlLuaControl
+---@field SpTag7 UIKmlLuaControl
+---@field levelTxt1 UIKmlLuaControl
+---@field skillDes1 UIKmlLuaControl
+---@field nextLevel UIKmlLuaControl
+---@field desc2 UIKmlLuaControl
+---@field maxLevelTips UIKmlLuaControl
+---@field SpTag6 UIKmlLuaControl
+---@field levelTxt2 UIKmlLuaControl
+---@field skillDes2 UIKmlLuaControl
+---@field CostShow UIKmlLuaControl
+---@field CostTips UIKmlLuaControl
+---@field TxtPrefix UIKmlLuaControl
+---@field costCount UIKmlLuaControl
+---@field costItem UIKmlLuaControl
+---@field BtnLearn UIKmlLuaControl
+---@field bgCondition UIKmlLuaControl
+---@field conditionList UIKmlLuaControl
+---@field ConditionLayout_1 UIKmlLuaControl
+---@field bingo1 UIKmlLuaControl
+---@field Condition_1 UIKmlLuaControl
+---@field ConditionLayout_2 UIKmlLuaControl
+---@field bingo2 UIKmlLuaControl
+---@field Condition_2 UIKmlLuaControl
+---@field ConditionLayout_3 UIKmlLuaControl
+---@field bingo3 UIKmlLuaControl
+---@field Condition_3 UIKmlLuaControl
+---@field ConditionLayout_4 UIKmlLuaControl
+---@field btnArrow UIKmlLuaControl
+---@field bgAttr UIKmlLuaControl
+---@field attrList UIKmlLuaControl
+---@field attrData UIKmlLuaControl
+---@field bingo4 UIKmlLuaControl
+---@field Condition_4 UIKmlLuaControl
+---@field scrollview2 UIKmlLuaControl
+---@field layout3 UIKmlLuaControl
+---@field newDesc UIKmlLuaControl
+---@field layout6 UIKmlLuaControl
+---@field text7 UIKmlLuaControl
+---@field gridview1 UIKmlLuaControl
+---@field layout9 UIKmlLuaControl
+---@field text8 UIKmlLuaControl
+---@field Text_SkillAtk UIKmlLuaControl
+---@field layout11 UIKmlLuaControl
+---@field text12 UIKmlLuaControl
+---@field Text_RangeValue UIKmlLuaControl
+---@field layout14 UIKmlLuaControl
+---@field text15 UIKmlLuaControl
+---@field Text_MpValue UIKmlLuaControl
+---@field layout17 UIKmlLuaControl
+---@field text18 UIKmlLuaControl
+---@field Text_AGValue UIKmlLuaControl
+local KLUISkillDescribePanelView = {}
+setmetatable(KLUISkillDescribePanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanelKml'
+---@param parent UIKmlLuaControl
+function KLUISkillDescribePanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+return KLUISkillDescribePanelView

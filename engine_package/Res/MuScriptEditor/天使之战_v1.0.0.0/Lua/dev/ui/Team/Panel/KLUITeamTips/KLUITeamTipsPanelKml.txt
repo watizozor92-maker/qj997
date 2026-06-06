@@ -1,0 +1,64 @@
+<uipanel id="KLUITeamTipsPanel" name="队伍提示界面" zindex="400" width="1334" height="750" raycast="1" z="-350">
+  <button id="closeButton" width="1334" height="750" raycast="1" color="#FFFFFF00">
+  </button>
+  <panel color="#FFFFFF00" id="panel_97">
+    <img src="Texture/img_interface_main138.jpg" width="600" height="277" raycast="1" id="img_98">
+    </img>
+    <img atlas="Atlas/Common.spriteatlas" src="img_interface_main009" height="240" width="600" x="2" y="-13" scale9b="20" scale9l="20" scale9r="20" scale9t="20" id="img_99">
+    </img>
+    <img atlas="Atlas/Common.spriteatlas" src="img_interface_main123" x="0" y="15" width="621" height="307" scale9b="79" scale9l="88" scale9r="88" scale9t="92" id="img_100">
+      <img atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="img_teamHeadBg2" x="-230" y="34" width="80" height="80" id="img_101">
+        <img id="sp_careerIcon" width="80" height="80">
+        </img>
+      </img>
+      <text id="lab_name" fontsize="20" outlinesize="1" outlinecolor="0" x="-112" y="58" width="145" height="30" ta="01">
+      </text>
+      <text id="lab_level" fontsize="18" outlinesize="1" outlinecolor="0" x="-112" y="13" width="145" height="30" ta="01">
+      </text>
+      <text id="lab_career" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="13" width="145" height="30" ta="01">
+      </text>
+      <text id="lab_union" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="58" width="145" height="30" ta="01">
+      </text>
+      <gridview id="btGridView" y="-76" raycast="0" cellwidth="230" cellheight="50" spacex="50" spacey="10" cella="12" width="542" height="300" constraint="1" constraintcount="2" contentsizefitter="3">
+        <button id="lockButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="查看玩家" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_109">
+          </text>
+        </button>
+        <button id="chatButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="私聊" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_111">
+          </text>
+        </button>
+        <button id="joinButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="加入队伍" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_113">
+          </text>
+        </button>
+        <button id="invitationButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="邀请入队" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_115">
+          </text>
+        </button>
+        <button id="reqPointButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="发送位置" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_117">
+          </text>
+        </button>
+        <button id="leaveButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="离开队伍" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_119">
+          </text>
+        </button>
+        <button id="kickButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="踢出队伍" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_121">
+          </text>
+        </button>
+        <button id="upCaptainButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="升为队长" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_123">
+          </text>
+        </button>
+        <button id="selectPlayerButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">
+          <text text="选中玩家" fontsize="18" active="1" color="#F5EFE4" outlinesize="1" outlinecolor="0" id="text_125">
+          </text>
+        </button>
+      </gridview>
+    </img>
+    <text text="人物信息" x="0" y="138" fontsize="20" outlinesize="1" outlinecolor="0" id="text_126">
+    </text>
+  </panel>
+</uipanel>

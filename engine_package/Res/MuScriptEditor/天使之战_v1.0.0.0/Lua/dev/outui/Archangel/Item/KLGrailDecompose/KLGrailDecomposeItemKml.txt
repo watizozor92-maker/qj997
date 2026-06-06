@@ -1,0 +1,6 @@
+<uipanel id="KLGrailDecomposeItemKml" name="大天使圣杯分解道具模板" a="00" width="300" height="300" zindex="-1">
+  <item id="grail_item" src="20020001" width="80" height="80" bgtype="1" raycast="1">
+    <text id="strengthLevel" horwrap="1" text="+86" ta="21" a="01" width="75" height="25" fontsize="20" fonttype="real_real_font_strength">
+    </text>
+  </item>
+</uipanel>

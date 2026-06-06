@@ -1,0 +1,14 @@
+<uipanel id="KLPreviewEntrancePanel" name="系统预告提示按钮" movecanvas="0#-300#150" zindex="200" width="71" height="76" x="0" y="0" raycast="0" z="-1" a="00" rotate="0,0,0" color="#00000000">
+  <panel id="PreviewUI" width="71" height="76" y="0" x="0" z="0" a="00" rotate="0,0,0">
+    <effect id="effect" effectid="20001" ,mpos="0,0,0" mscale="1,1,1" mrotate="0,0,0" />
+    <img id="PreviewUIclick" width="71" height="76" atlas="Atlas/Common.spriteatlas" src="Background_1" color="#FFFFFF00" raycast="1">
+    <img id="icon_bottom" atlas="Atlas/KmlPreviewUI.spriteatlas" src="icon_bottom" >
+      <img id="icon" x="0" y="5" z="0" width="71" height="76" a="00" rotate="0,0,0" raycast="0" atlas="Atlas/KmlPreviewUI.spriteatlas" src="">
+      </img>
+      <text id="name" text="" fontsize="18" x="0" y="-30" a="00" ta="11" color="#FFE36D" outlinecolor="0" outlinesize="1" active="1">
+      </text>
+      </img>
+    </img>
+    
+  </panel>
+</uipanel>

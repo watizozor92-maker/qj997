@@ -1,0 +1,82 @@
+<uipanel id="KLDragonSoulComboPanelKml" name="龙魂连击界面" width="300" height="300" maskonclick="1" zindex="200">
+  <img atlas="" src="Texture/bg_interface_window_1.png" width="1049" height="565" raycast="1" x="0" y="0" id="img_11">
+    <img atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="img_title" width="109" height="54" raycast="1" y="258" x="-2" id="img_13">
+    </img>
+    <button id="btn_close" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="13" y="6" h5y="6" h5x="-992">
+    </button>
+    <img id="panel_upgrade" atlas="" src="Texture/dragon_soul_bg_1.png" width="991" height="498" raycast="1" x="-4" y="-15" active="0">
+      <panel width="10" height="10" id="panel_15" y="14" x="3">
+        <img id="img_left_unActive" atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="level_0" x="-348" y="160" active="0">
+        </img>
+        <img id="img_left_active" atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="level_text" width="75" height="41" raycast="1" x="-348" y="160">
+          <text id="text_left_lv" text="" fontsize="18" height="32" width="137" ta="01" horwrap="1" fonttype="DragonSoul_Font" x="101" y="0" outline="0">
+          </text>
+        </img>
+        <img atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" scale9l="31" scale9b="0" scale9r="0" scale9t="0" x="-417" y="85" id="img_18">
+          <text text="技能" fontsize="18" height="20" width="36" horwrap="1" x="-10" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" id="text_19" outline="0">
+          </text>
+        </img>
+        <text id="text_left_detail" a="01" text="" fontsize="20" width="277" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-332" y="50" height="300" linespace="1.2" outline="0">
+        </text>
+      </panel>
+      <panel width="10" height="10" id="panel_21" y="14" x="3">
+        <img atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="level_text" width="75" height="41" raycast="1" x="334" y="160" id="img_22">
+          <text id="text_right_lv" text="" fontsize="18" height="32" width="137" ta="01" horwrap="1" fonttype="DragonSoul_Font" x="101" y="0" outline="0">
+          </text>
+        </img>
+        <img atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" scale9l="31" scale9b="0" scale9r="0" scale9t="0" x="265" y="85" id="img_24">
+          <text text="技能" fontsize="18" height="20" width="36" horwrap="1" x="-10" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" id="text_25">
+          </text>
+        </img>
+        <text id="text_right_detail" a="01" text="" fontsize="20" width="277" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="350" y="50" height="300" linespace="1.2">
+        </text>
+      </panel>
+      <panel width="10" height="10" id="panel_27" y="25">
+        <img id="img_soul_type" atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="soul_fire" width="147" height="47" raycast="1" y="191" x="0">
+        </img>
+        <img atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="arrow" width="290" height="30" raycast="1" x="0" y="191" id="img_29">
+        </img>
+        <layout id="layout" vertical="1" x="4" y="-155" z="0" width="100" height="100" cella="01">
+          <datalist id="datalist_cost">
+            <img id="img7" atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" width="304" scale9l="10" scale9b="10" scale9r="10" scale9t="10">
+              <item id="item_cost" itemid="" mfixsize="25,25" width="50" height="50" x="-125" y="0" bgtype="0" raycast="1">
+              </item>
+              <text id="text_cost" text="7000" fontsize="18" height="25" width="180" ta="21" a="20" horwrap="1" x="-30" y="-1">
+              </text>
+              <button id="btn_add" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_plus6" width="21" height="21" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="137" y="0" active="1">
+              </button>
+              <text id="text_name" text="项链升级" fontsize="18" height="20" a="10" horwrap="1" y="-1" x="45">
+              </text>
+            </img>
+          </datalist>
+        </layout>
+        <role id="role" active="" model_list="" mscale="40,40,40" mrotate="0,180,0" y="-80" ani="">
+        </role>
+        <effect id="role_effect" effectid="" mscale="100,100,100" z="-200" y="-80">
+        </effect>
+        <button id="btn_upgrade" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" width="177" height="51" onclick="" text="升级" raycast="1" y="-230" x="0" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+        </button>
+        <button id="btn_max" a="00" atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="icon_max" width="44" height="45" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="125" y="115" active="0">
+        </button>
+        <button id="btn_back" a="00" atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="icon_level" width="44" height="45" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="125" y="115" active="0">
+        </button>
+      </panel>
+    </img>
+    <img id="panel_max" atlas="" src="Texture/dragon_soul_bg_2.png" width="991" height="498" raycast="1" x="-1" y="-18" active="0">
+      <img atlas="Atlas/KLDragonSoulComboPanel.spriteatlas" src="level_max" width="111" height="46" raycast="1" x="230" y="175" id="img_37">
+      </img>
+      <img atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" scale9l="31" scale9b="0" scale9r="0" scale9t="0" x="78" y="100" id="img2">
+        <text text="技能" fontsize="18" height="20" width="36" horwrap="1" x="-10" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" id="text3">
+        </text>
+      </img>
+      <text id="text_max_detail" a="01" text="" fontsize="20" width="437" horwrap="1" x="243" y="-175" height="300" outlinesize="1" outlinecolor="#000000FF" linespace="1.2">
+      </text>
+      <role id="role_max" active="" model_list="" mscale="60,60,60" mrotate="0,180,0" x="-280" y="-145">
+      </role>
+      <effect id="role_effect_max" effectid="" mscale="150,150,150" z="-200" x="-280" y="-145">
+      </effect>
+    </img>
+    <prefab id="strength_ok" path="Effect/UI/Eff_UI_qianghuachenggong.prefab" active="0" z="-500">
+    </prefab>
+  </img>
+</uipanel>

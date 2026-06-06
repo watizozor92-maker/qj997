@@ -1,0 +1,78 @@
+<uipanel id="KLTeamCopyStatusPanel" name="组队进副本界面" zindex="0" width="420" height="250" z="500" x="0" y="3" raycast="1" mask="1">
+  <panel id="bg" width="356" height="265" x="0" y="56">
+    <img src="Texture/FG_tankuangdi.png" width="536" height="450" y="-15" scale9b="170" scale9l="197" scale9r="168" scale9t="110" raycast="1" id="img_522" x="2" atlas="">
+      <img id="img_title" atlas="Atlas/Common.spriteatlas" src="img_tip_title" y="106" active="0">
+      </img>
+      <text id="title" y="-17" ta="11" height="24" fontsize="20" active="1" horwrap="1" outlinesize="0" outlinecolor="#000000FF" outline="0" a="01" width="500" color="#FFFFFF" space="0" text="提 示" fontstyle="0" underline="0" x="0">
+      </text>
+    </img>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" x="-5" y="-1" raycast="1" h5x="-180" h5y="106" a="21" active="0">
+    </img>
+    <text id="tipsContent" text="是否准备进入副本？" y="120" fontsize="20" height="40" width="500" x="0" ta="11" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" horwrap="1" active="1" a="00" rotate="0,0,0" outline="0">
+    </text>
+    <button id="btn_sure" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="准备中" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    </button>
+    <button id="btn_Join" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="进入" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    </button>
+    <button id="btn_cancel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" y="-150" zindex="1003" textcolor="#FFFFFFFF" fontsize="18" text="取消" outlinesize="1" outlinecolor="#000000FF" x="-80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    </button>
+    <input id="input" width="300" height="100" active="0">
+    </input>
+    <toggle id="toggle" atlas="Atlas/Common.spriteatlas" src="bg_bottom_popupMain" pimg="bg_setting_gou" width="100" height="100" active="0" default="0">
+    </toggle>
+    <text id="tip_text" a="00" text="正在等待副本开启中" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" moveto="0,0,0" y="-150" color="#FF2323">
+    </text>
+    <scrollview id="scrollview_playerlist" a="00" width="450" height="210" vertical="1" y="-10" raycast="1">
+      <layout id="layout3" width="450" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1">
+        <datalist id="all_player_dl">
+          <panel width="450" height="40" x="0" id="panel_448">
+            <img id="bg" width="430" height="36" atlas="Atlas/FG_Forge.spriteatlas" src="bg_att" x="0" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+            </img>
+            <text id="name" a="10" ta="01" text="" fontsize="18" outlinesize="1" outlinecolor="0" x="25" outline="1" horwrap="1" y="0" color="#FFFFFF">
+              <img id="leaderIcon" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" src="icon_captain" a="21" x="20" y="0" width="23" height="20">
+              </img>
+            </text>
+            <text id="status" a="20" x="-25" ta="21" text="" fontsize="18" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" color="#FFFFFF">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="cost_1" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-195" y="-120">
+      <text id="text4" a="00" text="通用门票：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outline="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <img id="ticketBtn3" a="00" atlas="Atlas/FG_Fuben.spriteatlas" src="text_input" width="245" height="38" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="220" y="0">
+      </img>
+      <text id="ticketCount3" a="00" text="（0/1）" fontsize="18" height="25" width="242" ta="21" horwrap="1" x="220" y="0" outlinesize="0" outlinecolor="#000000FF" outline="1">
+      </text>
+      <model id="ticketModel3" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="118" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35" active="0">
+      </model>
+      <button id="addCountBtn2" a="00" width="38" height="38" onclick="" text="" raycast="1" src="btn_add" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="371">
+      </button>
+      <item id="ticketItem" src="20020001" width="35" height="35" x="115" bgtype="0">
+      </item>
+    </img>
+    <img id="cost_2" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-195" y="-190">
+      <text id="text8" a="00" text="专属门票：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outline="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <img id="ticketBtn" a="00" atlas="Atlas/FG_Fuben.spriteatlas" src="text_input" width="245" height="38" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="220" y="0">
+      </img>
+      <text id="ticketCount" a="00" text="（0/1）" fontsize="18" height="25" width="242" ta="21" horwrap="1" x="220" y="0" outlinesize="0" outlinecolor="#000000FF" outline="1">
+      </text>
+      <model id="ticketModel" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="118" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35">
+      </model>
+      <button id="changeTicketButton" x="227" atlas="Atlas/FG_Common.spriteatlas" raycast="1" src="btn_arrow_down" active="0">
+      </button>
+      <panel id="changeRoot" width="0" height="0" x="0" y="-40" active="0">
+        <button id="ticketBtn2" a="00" src="Texture/bg_empty_one.png" width="160" height="40" raycast="1" x="167" y="0">
+        </button>
+        <text id="ticketCount2" a="00" text="0/1" fontsize="16" height="25" width="153" ta="11" horwrap="1" x="166" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+        </text>
+        <model id="ticketModel2" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="105" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35">
+        </model>
+      </panel>
+      <button id="addCountBtn" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_add" width="38" height="38" raycast="1" x="370" y="0">
+      </button>
+    </img>
+  </panel>
+</uipanel>

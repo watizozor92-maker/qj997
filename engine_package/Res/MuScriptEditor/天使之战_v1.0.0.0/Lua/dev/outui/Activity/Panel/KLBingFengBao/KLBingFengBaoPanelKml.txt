@@ -1,0 +1,68 @@
+<uipanel id="KLBingFengBaoPanelKml" a="00" width="849" height="494" zindex="1" x="0" y="0">
+  <panel id="panel1" a="00" width="660" height="578" x="0" y="0">
+    <img id="bgImg" a="00" width="660" height="578" raycast="1" atlas="" src="Texture/FG_enmo.png" x="0" y="0" active="1">
+    </img>
+    <img id="img3" a="11" width="582" height="163" raycast="1" src="Texture/banner_bingfenbao.png" atlas="" x="39" y="-71">
+    </img>
+    <img id="img1" a="20" width="294" height="402" raycast="1" x="-15" y="-23" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFF00">
+      <text id="text4" a="00" text="3天9时51分20秒" fontsize="16" height="25" width="241" ta="11" outline="1" horwrap="1" x="1" y="-109" color="#F59924FF" active="0">
+      </text>
+    </img>
+    <button id="button38" a="00" width="103" height="36" onclick="" text="点击前往" raycast="1" x="1" y="-215" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+    </button>
+    <text id="text39" a="00" text="冰风堡攻城战" fontsize="20" height="24" width="301" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="1" y="262">
+    </text>
+    <button id="btn_des" a="00" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="267" y="192">
+    </button>
+    <button id="closeBtn" a="00" width="50" height="50" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="305" y="265">
+    </button>
+  </panel>
+  <layout id="layout37" control_height="0" contentsizefitter="0" vertical="1" height="285" width="500" a="00" raycast="1" x="-81" y="-57" deltax="-2" space="17">
+    <panel id="reward_node" width="398" height="67">
+      <text id="text8" a="10" text="副本奖励：" fontsize="18" height="22" width="92" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="23" y="15">
+      </text>
+      <scrollview id="scrollview2" a="10" width="425" height="50" vertical="0" y="0" raycast="1" x="115" z="0">
+        <layout id="layout3" width="360" height="230" a="10" vertical="0" contentsizefitter="0" raycast="1" space="20" cella="10">
+          <datalist id="itemDataList">
+            <item id="item1" src="20020001" width="50" height="50" itemid="10010001" tips="1" bgtype="1">
+            </item>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="img15" a="00" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-190" y="15">
+      </img>
+    </panel>
+    <panel id="last_win_node" width="398" height="17">
+      <text id="text5" a="10" text="暂无" fontsize="18" height="22" width="218" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#E6E600FF" x="112" y="0">
+      </text>
+      <text id="text24" a="10" text="上期优胜：" fontsize="18" height="22" width="94" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="23" y="0">
+      </text>
+      <img id="img23" a="00" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-190" y="0">
+      </img>
+    </panel>
+    <panel id="panel29" deltay="27" width="398" height="17">
+      <img id="img30" a="00" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-190" y="0">
+      </img>
+      <text id="text31" a="10" text="活动状态：" fontsize="18" height="22" width="94" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="23" y="0">
+      </text>
+      <text id="text3" a="10" text="行活动，活动结束时最终占领王座的战盟即为胜者！" fontsize="18" height="22" width="350" ta="01" outline="1" horwrap="1" x="112" y="0" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF" h5x="254">
+      </text>
+    </panel>
+    <panel id="state_node" width="398" height="17">
+      <img id="img27" a="00" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-190" y="0">
+      </img>
+      <text id="text28" a="10" text="开放时间：" fontsize="18" height="22" width="94" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="23" y="0">
+      </text>
+      <text id="text7" a="10" text="每周五晚 20:00-21:00 举行活动" fontsize="20" height="24" width="281" ta="01" outline="1" horwrap="1" x="111" y="0" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF" h5x="254" fontstyle="0" underline="0">
+      </text>
+    </panel>
+    <panel id="rule_node" width="398" height="17">
+      <img id="img34" a="00" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-190" y="0">
+      </img>
+      <text id="text35" a="10" text="活动规则：" fontsize="18" height="22" width="94" ta="01" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="23" y="0">
+      </text>
+      <text id="text36" a="10" text="活动结束时最终占领王座的战盟即为胜者" fontsize="20" height="24" width="366" ta="01" outline="1" horwrap="1" x="111" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" h5x="254" fontstyle="0" underline="0">
+      </text>
+    </panel>
+  </layout>
+</uipanel>

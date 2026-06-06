@@ -1,0 +1,28 @@
+<uipanel id="KLBloodTipPanel" name="血色副本内部提示界面" zindex="102" x="10" y="-245" z="-2000" rotate="0,0,0" color="#00000000" width="10" height="10" a="00" raycast="0">
+  <panel id="root1" active="0">
+    <img id="bg1" width="2000" height="2000" raycast="1" color="#FFFFFF00" onclick="KmlBloodActivityUI/@取消" x="0" y="0" z="0" a="00" rotate="0,0,0">
+    </img>
+    <img id="bg" src="Texture/login_bg_2.png" width="405" height="285" z="0" a="00" rotate="0,0,0" raycast="1" x="-6" y="232">
+    </img>
+    <img id="title" atlas="Atlas/Common.spriteatlas" src="img_tip_title" z="0" a="00" rotate="0,0,0" x="-5" y="357" width="81" height="56" raycast="0">
+    </img>
+    <text id="ContentTxt" text="伟大的勇士，谢谢你帮我取回了武器! " fontsize="18" outlinesize="1" outlinecolor="#000000" width="360" height="141" x="-6" y="246" z="0" a="00" rotate="0,0,0" ta="11">
+    </text>
+    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" onclick="KmlBloodActivityUI/@取消" src="button_interface_close5" width="60" height="54" z="0" a="00" rotate="0,0,0" raycast="1" x="182" y="352">
+    </img>
+    <button id="okBtn" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" onclick="" src="btn_common_1_select" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="79" y="155" fontsize="18" text="确定" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+    </button>
+    <button id="cancelBtn" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@取消" src="btn_common_2" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="-87" y="154" fontsize="18" text="取消" textcolor="#ED2E2EFF" mimg="" pimg="" dimg="">
+    </button>
+  </panel>
+  <panel id="root2" y="-238" a="02">
+    <img id="bg1" width="2000" height="2000" raycast="1" color="#FFFFFF00" onclick="KmlBloodActivityUI/@关闭Npc对话" x="0" y="0" z="0" a="00" rotate="0,0,0">
+    </img>
+    <img id="bg" width="2000" height="212" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="210" color="#000000FF">
+    </img>
+    <text id="ContentTxt1" linespace="0.6" text="勇士，请帮我拿回我的武器" fontsize="20" outlinesize="1" outlinecolor="#000000" width="720" height="141" x="-184" y="217" z="0" a="00" rotate="0,0,0" ta="11" outline="1" horwrap="1">
+    </text>
+    <button id="cancelBtn1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="KmlBloodActivityUI/@关闭Npc对话" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="466" y="217" fontsize="20" text="关闭" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="" offsetmax="521#239">
+    </button>
+  </panel>
+</uipanel>

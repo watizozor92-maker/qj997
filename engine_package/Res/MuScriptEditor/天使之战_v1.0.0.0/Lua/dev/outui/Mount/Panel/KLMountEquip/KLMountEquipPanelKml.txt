@@ -1,0 +1,76 @@
+<uipanel id="KLMountEquipPanel" name="坐骑装备界面" a="20" adapter="1" width="1334" zindex="101" height="750" x="0" y="0" z="0" rotate="0,0,0" color="#00000000">
+  <img id="bg" a="00" src="Texture/bg_bottomBg.png" width="416" height="750" raycast="1" x="460" y="0" color="#FFFFFFFF" z="0" rotate="0,0,0" atlas="">
+    <img id="title" atlas="Atlas/XHQJ_Mount.spriteatlas" y="345" src="_mount_bag" width="133" height="59">
+    </img>
+    <img id="closeBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" raycast="1" x="183" y="351" z="0" rotate="0,0,0" active="0">
+    </img>
+    <panel id="ownerMountRoot" a="00" width="0" height="0" active="1" x="0" y="0" z="0" rotate="0,0,0">
+      <img id="img7" a="00" width="75" height="75" raycast="1" src="img_long" atlas="Atlas/XHQJ_Mount.spriteatlas" x="-151" y="-167">
+      </img>
+      <img id="img6" a="00" width="75" height="75" raycast="1" src="img_long" atlas="Atlas/XHQJ_Mount.spriteatlas" x="-151" y="-2">
+      </img>
+      <img id="img5" a="00" width="75" height="75" raycast="1" src="img_long" atlas="Atlas/XHQJ_Mount.spriteatlas" x="-151" y="163">
+      </img>
+      <panel id="bagItemRoot" active="1" x="45" y="8" width="300" height="575">
+        <scrollview id="bagScroll" a="00" width="300" height="575" vertical="1" y="0" raycast="1" x="0" active="0">
+          <layout id="layout4" width="300" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11">
+            <img id="bagRoot" src="img_bag_07" width="360" height="1329" raycast="1" atlas="Atlas/UIBagPanel.spriteatlas">
+              <datalist id="datalist9">
+                <panel id="itemRoot" a="11" width="0" height="0">
+                </panel>
+              </datalist>
+            </img>
+          </layout>
+        </scrollview>
+      </panel>
+      <button id="oneKeyTakeOff" a="00" width="140" height="40" onclick="" text="一键卸下" raycast="1" x="-118" y="-330" src="button_interface_window37" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" ta="11" outlinesize="1" outlinecolor="#000000FF">
+      </button>
+      <button id="oneKeyPutOn" a="00" width="140" height="40" onclick="" text="一键穿戴" raycast="1" src="button_interface_window37" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="5" y="-330" outlinesize="1" outlinecolor="#000000FF">
+      </button>
+      <button id="btn_recycle" a="00" width="140" height="40" onclick="" text="回收" raycast="1" src="button_interface_window37" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="128" y="-330" outlinesize="1" outlinecolor="#000000FF">
+      </button>
+      <button id="btn_helment" a="00" width="87" height="80" onclick="" text="" raycast="1" x="-152" y="255" src="mount_helm" atlas="Atlas/XHQJ_Mount.spriteatlas" mimg="" pimg="" dimg="">
+        <img id="selectPic" a="00" width="74" height="69" raycast="1" src="bg_select_frame" atlas="Atlas/XHQJ_Mount.spriteatlas" scale9l="13" scale9b="13" scale9r="13" scale9t="13" y="4" x="0">
+        </img>
+        <img id="img1" a="00" width="44" height="23" raycast="1" active="1" src="title_helm" atlas="Atlas/XHQJ_Mount.spriteatlas" y="-48">
+        </img>
+        <item id="item_helment" src="20020001" width="80" height="80" bgtype="0" tips="1">
+        </item>
+        <img id="red_helment" a="21" width="24" height="24" raycast="1" src="bg_gemred" atlas="Atlas/Common.spriteatlas" x="-5">
+        </img>
+      </button>
+      <button id="btn_foot" a="00" width="87" height="80" onclick="" text="" raycast="1" x="-152" y="85" src="mount_foot" atlas="Atlas/XHQJ_Mount.spriteatlas" mimg="" pimg="" dimg="">
+        <img id="img2" a="00" width="46" height="24" raycast="1" active="1" src="title_foot" atlas="Atlas/XHQJ_Mount.spriteatlas" y="-48">
+        </img>
+        <item id="item_foot" src="20020001" width="80" height="80" bgtype="0" tips="1">
+        </item>
+        <img id="red_foot" a="21" width="24" height="24" raycast="1" src="bg_gemred" atlas="Atlas/Common.spriteatlas" x="-5">
+        </img>
+      </button>
+      <button id="btn_saddle" a="00" width="87" height="80" onclick="" text="" raycast="1" x="-152" y="-80" src="mount_saddle" atlas="Atlas/XHQJ_Mount.spriteatlas" mimg="" pimg="" dimg="">
+        <img id="img3" a="00" width="45" height="24" raycast="1" active="1" src="title_saddle" atlas="Atlas/XHQJ_Mount.spriteatlas" y="-48">
+        </img>
+        <item id="item_saddle" src="20020001" width="80" height="80" bgtype="0" tips="1">
+        </item>
+        <img id="red_saddle" a="21" width="24" height="24" raycast="1" src="bg_gemred" atlas="Atlas/Common.spriteatlas" x="-5">
+        </img>
+      </button>
+      <button id="btn_rein" a="00" width="87" height="80" onclick="" text="" raycast="1" x="-152" y="-245" src="mount_rein" atlas="Atlas/XHQJ_Mount.spriteatlas" mimg="" pimg="" dimg="">
+        <img id="img4" a="00" width="46" height="23" raycast="1" active="1" src="title_rein" atlas="Atlas/XHQJ_Mount.spriteatlas" y="-48">
+        </img>
+        <item id="item_rein" src="20020001" width="80" height="80" bgtype="0" tips="1">
+        </item>
+        <img id="red_rein" a="21" width="24" height="24" raycast="1" src="bg_gemred" atlas="Atlas/Common.spriteatlas" x="-5">
+        </img>
+      </button>
+    </panel>
+    <img id="notActive" a="00" width="300" height="328" raycast="1" src="img_long" atlas="Atlas/XHQJ_Mount.spriteatlas">
+      <img id="img9" a="00" width="281" height="40" raycast="1" src="mount_no_action" atlas="Atlas/XHQJ_Mount.spriteatlas">
+      </img>
+    </img>
+    <img id="img_notForever" a="00" width="300" height="328" raycast="1" src="img_long" atlas="Atlas/XHQJ_Mount.spriteatlas">
+      <img id="img11" a="00" width="300" height="60" raycast="1" src="_mount_lock" atlas="Atlas/XHQJ_Mount.spriteatlas">
+      </img>
+    </img>
+  </img>
+</uipanel>

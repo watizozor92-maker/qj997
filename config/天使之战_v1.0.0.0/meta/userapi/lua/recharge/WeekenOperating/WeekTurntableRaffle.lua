@@ -1,0 +1,514 @@
+
+WeekTurntableRaffle = {}
+
+local this = {}
+this.freeCanUseRedId = 110
+this.canReceiveRewardRedId = 111
+
+--- 获取轮盘抽奖面板信息
+--- @param actor table 玩家对象
+--- @param mainGroup number 主分组
+--- @return table 轮盘抽奖面板信息
+function WeekTurntableRaffle.getPanelInfo(actor, mainGroup)
+    local WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    local tableValue = ConfigDataManager.getTable("cfg_turntable", "mainGroup", mainGroup)
+    local res = {}
+    if not table.isNullOrEmpty(tableValue) then
+        for _, v in pairs(tableValue) do
+            if table.isNullOrEmpty(WeekTurntableRaffleInfo) or not table.hasKey(WeekTurntableRaffleInfo, tonumber(v["id"])) then
+                WeekTurntableRaffleInfo = {
+                    [tonumber(v["id"])] = {
+                        ["skipAnimation"] = 0,
+                        ["canFree"] = true,
+                        ["freeTime"] = 0,
+                        ["received"] = {},
+                        ["total"] = 0,
+                    }
+                }
+            end
+            res[tonumber(v["id"])] = WeekTurntableRaffleInfo[tonumber(v["id"])]
+        end
+    end
+    setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffleInfo)
+    return res
+end
+
+--- 改变是否跳过动画
+--- @param actor table 玩家对象
+--- @param msgData table 消息数据
+function WeekTurntableRaffle.changeSkipAnimation(actor, msgData)
+    local id = msgData["id"]
+    local skipAnimation = msgData["skipAnimation"]
+    local WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    local raffleInfo = WeekTurntableRaffleInfo[tonumber(id)]
+    raffleInfo["skipAnimation"] = tonumber(skipAnimation)
+    setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffleInfo)
+end
+
+--- 抽奖
+--- @param actor table 玩家对象
+--- @param msgData table 消息数据
+function WeekTurntableRaffle.drawing(actor, msgData)
+    -- 抽奖id
+    local id = msgData["id"]
+    -- 抽奖次数
+    local times = msgData["times"]
+    -- 是否免费抽奖
+    local isFree = msgData["isFree"]
+    -- 抽奖id
+    local tableValue = ConfigDataManager.getTable("cfg_turntable", "id", id)
+    if table.isNullOrEmpty(tableValue) then
+        error("cfg_turntable is null id:", id)
+        return
+    end
+    local rewardGroup = tableValue[1]["reward"]
+    local WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    if table.isNullOrEmpty(WeekTurntableRaffleInfo) then
+        gameDebug.print("WeekTurntableRaffleInfo is null actor:", getbaseinfo(actor, "rolename"))
+        return
+    end
+    local raffleInfo = WeekTurntableRaffleInfo[tonumber(id)]
+    if table.isNullOrEmpty(raffleInfo) then
+        gameDebug.print("WeekTurntableRaffleInfo is null actor:", getbaseinfo(actor, "rolename"))
+        return
+    end
+    local costMap = {}
+    -- 免费抽奖逻辑
+    if isFree then
+        -- 判断是否可以免费抽奖
+        local canFree = raffleInfo["canFree"]
+        local freeTime = raffleInfo["freeTime"]
+        if not canFree then
+            -- 免费时间未到达，未开启免费抽奖，响应客户端下一次免费抽奖开启时间
+            sendluamsg(actor, LuaMessageIdToClient.RES_WEEK_TURNTABLE_RAFFLE_FREE_TIME, {
+                isFree = canFree,
+                nextFreeTime = freeTime
+            })
+            return
+        end
+        raffleInfo["canFree"] = false
+        local now = getbaseinfo(actor, "now")
+        if freeTime == 0 or freeTime < now then
+            freeTime = now
+        end
+        raffleInfo["freeTime"] = freeTime + tableValue[1]["free"] * TimeUnit.MINUTE * TimeUnit.MILLISECOND
+        setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffleInfo)
+        this.refreshFreeTime(actor, id)
+        RedPoint.sendOneRedPoint(actor, this.freeCanUseRedId, false)
+    else
+        -- 判断消耗是否充足
+        if times > 1 then
+            local manyCost = tableValue[1]["manycost"]
+            local costSplit = string.split(manyCost, "#")
+            costMap = { [costSplit[2]] = costSplit[3] }
+        else
+            local oneCost = tableValue[1]["onecost"]
+            local costSplit = string.split(oneCost, "#")
+            costMap = { [costSplit[1]] = costSplit[2] }
+        end
+    end
+    if not table.isNullOrEmpty(costMap) then
+        for cfgId, count in pairs(costMap) do
+            local result = removeitemfrombag(actor, cfgId, count, 1, 9999, ItemAction.TURNTABLE_RAFFLE_COST)
+            if not result then
+                noticeTip.noticeinfo(actor, StringIdConst.TEXT379)
+                return
+            end
+        end
+    end
+    WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    raffleInfo = WeekTurntableRaffleInfo[tonumber(id)]
+    -- 可抽取次数处理
+    local rewardInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_REWARD)
+    if table.isNullOrEmpty(rewardInfo) then
+        rewardInfo = {}
+    end
+    local rewardInfoById = rewardInfo[id]
+    if table.isNullOrEmpty(rewardInfoById) then
+        rewardInfoById = {}
+    end
+    -- 循环保底处理
+    local rewardCount = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_REWARD_COUNT)
+    if table.isNullOrEmpty(rewardCount) then
+        rewardCount = {}
+    end
+    local rewardCountInfo = rewardCount[id]
+    if table.isNullOrEmpty(rewardCountInfo) then
+        rewardCountInfo = {}
+    end
+    -- 获取奖励列表
+    local rewardTable = this.getReward(actor, rewardGroup, times, raffleInfo, rewardInfoById, rewardCountInfo)
+    rewardCount[id] = rewardCountInfo
+    setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_REWARD_COUNT, rewardCount)
+    local rewards = {}
+    local rewardMap = {}
+    local career = getbaseinfo(actor, "getbasecareer")
+    for _, v in pairs(rewardTable) do
+        local rewardId = tonumber(v["id"])
+        table.insert(rewards, {
+            [rewardId] = rewardInfoById[rewardId]
+        })
+        local item = v["item"]
+        local itemCfgId
+        if not string.isNullOrEmpty(item) then
+            local data = string.split(item, "|")
+            for _, temp in ipairs(data) do
+                local data2 = string.split(temp, "#")
+                local cfgCareer = tonumber(data2[1])
+                if cfgCareer == 0 or cfgCareer == tonumber(career) then
+                    itemCfgId = tonumber(data2[2])
+                    rewardMap[itemCfgId] = tonumber(rewardMap[itemCfgId] or 0) + tonumber(data2[3])
+                end
+            end
+        end
+        local type = v["type"]
+        if not string.isNullOrEmpty(type) and tonumber(type) == 1 then
+            local itemName = ConfigDataManager.getTableValue("cfg_item", "name", "id", itemCfgId)
+            noticeTip.noticeinfo(actor, StringIdConst.TEXT601, getbaseinfo(actor, "rolename"), itemName)
+        end
+    end
+    -- 保存奖励数量信息
+    rewardInfo[id] = rewardInfoById
+    setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_REWARD, rewardInfo)
+    -- 将奖励添加到背包中
+    additemmaptobag(actor, rewardMap, 0, 9999, ItemActionProxy.TURNTABLE_RAFFLE_REWARDS)
+    -- 通知客户端奖励id列表
+    sendluamsg(actor, LuaMessageIdToClient.RES_WEEK_TURNTABLE_RAFFLE_REWARD_IDS, rewards)
+    setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffleInfo)
+    WeekActives.openSubActive(actor, { ["subType"] = ACTIVE_TYPE.PRIZE_DRAW })
+    -- 红点
+    local ids = this.checkCanReceiveAccumulateReward(raffleInfo)
+    if not table.isNullOrEmpty(ids) then
+        RedPoint.sendOneRedPoint(actor, this.canReceiveRewardRedId, ids)
+    end
+end
+
+--- 领取转盘抽奖累积奖励
+--- @param actor table 玩家对象
+--- @param msgData table 消息数据
+function WeekTurntableRaffle.receiveAccumulateReward(actor, msgData)
+    local id = msgData["id"]
+    local turntableExtId = msgData["turntableExtId"]
+    local WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    if table.isNullOrEmpty(WeekTurntableRaffleInfo) then
+        gameDebug.print("WeekTurntableRaffleInfo is null")
+        return
+    end
+    local raffleInfo = WeekTurntableRaffleInfo[id]
+    local received = raffleInfo["received"]
+    local reward = this.checkCanReceiveAccumulateReward(raffleInfo, turntableExtId)
+    if not string.isNullOrEmpty(reward) then
+        table.insert(received, turntableExtId)
+        setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffleInfo)
+        Bag.sendRewards4CareerString(actor, reward, ItemActionProxy.TURNTABLE_RAFFLE_ACCUMULATE_REWARDS)
+        WeekActives.openSubActive(actor, { ["subType"] = ACTIVE_TYPE.PRIZE_DRAW })
+        local ids = this.checkCanReceiveAccumulateReward(raffleInfo)
+        if not table.isNullOrEmpty(ids) then
+            RedPoint.sendOneRedPoint(actor, this.canReceiveRewardRedId, ids)
+        end
+    end
+end
+
+--- 获取转盘抽奖奖励数量信息
+--- @param actor table 玩家对象
+--- @param msgData table 消息数据
+function WeekTurntableRaffle.getRewardCountInfo(actor, msgData)
+    local id = msgData["id"]
+    local rewardInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_REWARD)
+    if table.isNullOrEmpty(rewardInfo) then
+        rewardInfo = {}
+    end
+    local rewardInfoById = rewardInfo[id]
+    sendluamsg(actor, LuaMessageIdToClient.RES_WEEK_TURNTABLE_RAFFLE_REWARD_COUNT_INFO, rewardInfoById)
+end
+
+--- 发送未领取的抽奖奖励
+--- @param mainGroup number 主活动组
+function WeekTurntableRaffle.sendUnReceiveRewards(mainGroup)
+    local tableValue = ConfigDataManager.getTable("cfg_turntable", "mainGroup", mainGroup)
+    if not table.isNullOrEmpty(tableValue) then
+        local allRole = getallrolesummaryinfos()
+        for _, v in pairs(allRole) do
+            local actor = v["actor"]
+            local raffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+            local rewardMap = {}
+            for _, value in pairs(tableValue) do
+                local id = tonumber(value["id"])
+                if not table.isNullOrEmpty(raffleInfo) then
+                    local info = raffleInfo[id]
+                    if not table.isNullOrEmpty(info) then
+                        local received = info["received"]
+                        if table.isNullOrEmpty(received) then
+                            received = {}
+                        end
+                        local accumulateReward = ConfigDataManager.getTable("cfg_turntable_extra", "relevance", id)
+                        for _, reward in pairs(accumulateReward) do
+                            local turntableExtId = tonumber(reward["id"])
+                            local career = getbaseinfo(actor, "getbasecareer")
+                            if not table.contains(received, turntableExtId) and this.checkCanReceiveAccumulateReward(info, turntableExtId) then
+                                rewardMap = string.putIntIntMap4Career(rewardMap, career, reward["reward"], "#", "|")
+                            end
+                        end
+                    end
+                end
+            end
+            -- 合并奖励邮件发放
+            if not table.isNullOrEmpty(rewardMap) then
+                sendconfigmailbyrid(actor, getbaseinfo(actor, "rid"), MailConfig.TURNTABLE_RAFFLE_ACCUMULATE_REWARDS, rewardMap)
+            end
+            -- 红点
+            RedPoint.sendOneRedPoint(actor, this.canReceiveRewardRedId, {})
+            setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, {})
+        end
+    end
+end
+
+--- 登录发送红点信息
+--- @param actor table 玩家对象
+function WeekTurntableRaffle.login(actor)
+    -- 免费抽奖时间红点
+    this.refreshFreeTime(actor)
+    -- 可领取累积奖励红点
+    local currentActive = getsysvar(actor, CURRENT_WEEKEN_ACTIVE)
+    if not table.isNullOrEmpty(currentActive) then
+        local mainGroup = currentActive.mainActive.mainGroup
+        local tableValue = ConfigDataManager.getTable("cfg_turntable", "mainGroup", mainGroup)
+        if table.isNullOrEmpty(tableValue) then
+            return
+        end
+
+        local WeekTurntableRaffleInfo = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+        if not table.isNullOrEmpty(WeekTurntableRaffleInfo) then
+            for _, v in pairs(tableValue) do
+                local raffleInfo = WeekTurntableRaffleInfo[tonumber(v["id"])]
+                local ids = this.checkCanReceiveAccumulateReward(raffleInfo)
+                if not table.isNullOrEmpty(ids) then
+                    RedPoint.sendOneRedPoint(actor, this.canReceiveRewardRedId, ids)
+                end
+            end
+        end
+    end
+end
+
+--- 刷新免费抽奖时间
+--- @param actor table 玩家对象
+--- @param id number 抽奖id
+function this.refreshFreeTime(actor, id)
+    if string.isNullOrEmpty(id) then
+        local currentActive = getsysvar(actor, CURRENT_WEEKEN_ACTIVE)
+        if not table.isNullOrEmpty(currentActive) then
+            local mainGroup = currentActive.mainActive.mainGroup
+            local tableValue = ConfigDataManager.getTable("cfg_turntable", "mainGroup", mainGroup)
+            if table.isNullOrEmpty(tableValue) then
+                return
+            end
+            for _, v in pairs(tableValue) do
+                this.refreshHandle(actor, v["id"])
+            end
+        end
+    else
+        this.refreshHandle(actor, id)
+    end
+end
+
+--- 刷新免费抽奖时间
+--- @param actor table 玩家对象
+function refreshweekturntablerafflefreetime(actor)
+    local logText = string.format("WeekTurntableRaffle refreshweekturntablerafflefreetime actor:%s now:%s", getbaseinfo(actor, "rolename"), TimeUtil.timeFormat(getbaseinfo(actor, "nowsec")))
+    gameDebug.print(logText)
+    local WeekTurntableRaffle = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    if table.isNullOrEmpty(WeekTurntableRaffle) then
+        gameDebug.print("WeekTurntableRaffle is null actor:", getbaseinfo(actor, "rolename"))
+        return
+    end
+    local currentActive = getsysvar(actor, CURRENT_WEEKEN_ACTIVE)
+    if not table.isNullOrEmpty(currentActive) then
+        local mainGroup = currentActive.mainActive.mainGroup
+        local tableValue = ConfigDataManager.getTable("cfg_turntable", "mainGroup", mainGroup)
+        if table.isNullOrEmpty(tableValue) then
+            return
+        end
+        for _, v in pairs(tableValue) do
+            local raffleInfo = WeekTurntableRaffle[tonumber(v["id"])]
+            if not table.isNullOrEmpty(raffleInfo) then
+                raffleInfo["canFree"] = true
+                setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffle)
+                sendluamsg(actor, LuaMessageIdToClient.RES_WEEK_TURNTABLE_RAFFLE_FREE_TIME, {
+                    isFree = true,
+                    nextFreeTime = raffleInfo["freeTime"]
+                })
+                RedPoint.sendOneRedPoint(actor, this.freeCanUseRedId, true)
+            end
+        end
+    end
+end
+
+--- 获取奖励
+--- @param actor table 玩家对象
+--- @param rewardGroup number 奖励组
+--- @param times number 抽奖次数
+--- @param raffleInfo table 抽奖次数信息
+--- @param rewardCountInfo table 抽奖奖励次数信息，可抽取次数处理
+--- @param rewardCount number 抽奖奖励次数，循环保底处理
+function this.getReward(actor, rewardGroup, times, raffleInfo, rewardCountInfo, rewardCount)
+    local total = raffleInfo["total"] and raffleInfo["total"] or 0
+    local rewardTable = ConfigDataManager.getTable("cfg_turntable_reward", "group", rewardGroup)
+    if table.isNullOrEmpty(rewardTable) then
+        error("cfg_turntable_reward is null group:", rewardGroup)
+        return
+    end
+    -- 构建权重map
+    local weightMap = {}
+    local resReward = {}
+    for _, reward in ipairs(rewardTable) do
+        -- 初始化所有奖励的抽取次数
+        if not string.isNullOrEmpty(reward["guarantees"]) and not table.hasKey(rewardCount, tonumber(reward["id"])) then
+            rewardCount[tonumber(reward["id"])] = {
+                ["count"] = 0,
+                ["guarantees"] = tonumber(reward["guarantees"]),
+            }
+        end
+        if not table.hasKey(rewardCountInfo, tonumber(reward["id"])) then
+            rewardCountInfo[tonumber(reward["id"])] = 0
+        end
+        if not string.isNullOrEmpty(reward["condition"]) then
+            local conditionSplit = string.split(reward["condition"], "#")
+            if ConditionHandler:triggerCheck(conditionSplit[1], actor, conditionSplit[2]) then
+                weightMap[reward] = tonumber(reward["weight"])
+            end
+        else
+            weightMap[reward] = tonumber(reward["weight"])
+        end
+    end
+    for i = 1, times do
+        local reward = randombyweight(weightMap)
+        local num = reward[1]["num"]
+        local rewardId = tonumber(reward[1]["id"])
+        if not string.isNullOrEmpty(num) and tonumber(num) ~= 999999 and not table.isNullOrEmpty(rewardCountInfo) then
+            while tonumber(num) <= rewardCountInfo[rewardId] do
+                reward = randombyweight(weightMap)
+                rewardId = tonumber(reward[1]["id"])
+                num = reward[1]["num"]
+            end
+        end
+        local limit = reward[1]["limit"]
+        if not string.isNullOrEmpty(limit) then
+            while tonumber(limit) > total do
+                reward = randombyweight(weightMap)
+                rewardId = tonumber(reward[1]["id"])
+                limit = string.isNullOrEmpty(reward[1]["limit"]) and 0 or tonumber(reward[1]["limit"])
+            end
+        end
+        -- 判断次数是否达到保底次数，如果达到保底次数直接添加保底的道具到奖励列表中
+        for id, v in pairs(rewardCount) do
+            -- 此前出现该奖励，次数重置
+            if rewardId == id then
+                v["count"] = 0
+            end
+            v["count"] = v["count"] + 1
+            if v["count"] == v["guarantees"] then
+                local tableValue = ConfigDataManager.getTable("cfg_turntable_reward", "id", id)
+                num = tonumber(tableValue[1]["num"])
+                if not string.isNullOrEmpty(num) and tonumber(num) ~= 999999 and not table.isNullOrEmpty(rewardCountInfo) and num > rewardCountInfo[id] then
+                    reward = tableValue
+                    rewardId = id
+                    v["count"] = 0
+                end
+            end
+        end
+        table.insert(resReward, reward[1])
+        total = total + 1
+        rewardCountInfo[rewardId] = rewardCountInfo[rewardId] + 1
+    end
+    raffleInfo["total"] = total
+    return resReward
+end
+
+--- 检查是否可以领取转盘抽奖累积奖励
+--- @param raffleInfo table 抽奖次数信息
+--- @param turntableExtId number 奖励id
+function this.checkCanReceiveAccumulateReward(raffleInfo, turntableExtId)
+    if string.isNullOrEmpty(turntableExtId) then
+        local resIds = {}
+        local turntableExtra = ConfigDataManager.getTable("cfg_turntable_extra")
+        if table.isNullOrEmpty(turntableExtra) then
+            error("cfg_turntable_extra is null")
+            return resIds
+        end
+        local total = raffleInfo["total"]
+        local received = raffleInfo["received"]
+        if table.isNullOrEmpty(received) then
+            received = {}
+        end
+        for _, v in pairs(turntableExtra) do
+            local num = tonumber(v["num"])
+            local id = v["id"]
+            if not table.contains(received, id) and num <= total then
+                table.insert(resIds, id)
+            end
+        end
+        return resIds
+    else
+        local turntableExtra = ConfigDataManager.getTable("cfg_turntable_extra", "id", turntableExtId)
+        if table.isNullOrEmpty(turntableExtra) then
+            error("cfg_turntable_extra is null id:", turntableExtId)
+            return nil
+        end
+        local num = tonumber(turntableExtra[1]["num"])
+        local total = raffleInfo["total"]
+        if not total then
+            return nil
+        end
+        local received = raffleInfo["received"]
+        if not table.isNullOrEmpty(received) then
+            if table.contains(received, turntableExtId) then
+                gameDebug.print("WeekTurntableRaffle already received id:", turntableExtId)
+                return nil
+            end
+        end
+        if num <= total then
+            return turntableExtra[1]["reward"]
+        else
+            return nil
+        end
+    end
+end
+
+--- 刷新免费抽奖处理
+--- @param actor table 玩家对象
+--- @param id number 抽奖id
+function this.refreshHandle(actor, id)
+    local WeekTurntableRaffle = getplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO)
+    if table.isNullOrEmpty(WeekTurntableRaffle) then
+        gameDebug.print("WeekTurntableRaffle is null actor:", getbaseinfo(actor, "rolename"))
+        return
+    end
+    local raffleInfo = WeekTurntableRaffle[tonumber(id)]
+    if not table.isNullOrEmpty(raffleInfo) then
+        local freeTime = raffleInfo["freeTime"]
+        local now = getbaseinfo(actor, "now")
+        if freeTime > now then
+            raffleInfo["canFree"] = false
+            RedPoint.sendOneRedPoint(actor, this.freeCanUseRedId, false)
+            setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffle)
+            intervalcalldelay(actor, 1000, freeTime - now, 1, "refreshweekturntablerafflefreetime")
+        else
+            if not raffleInfo["canFree"] then
+                local free = ConfigDataManager.getTableValue("cfg_turntable", "free", "id", id)
+                if string.isNullOrEmpty(free) then
+                    error("cfg_turntable free is null id:", id)
+                    return
+                end
+                local diff = free * TimeUnit.MINUTE * TimeUnit.MILLISECOND
+                raffleInfo["freeTime"] = now + diff
+                raffleInfo["canFree"] = true
+                RedPoint.sendOneRedPoint(actor, this.freeCanUseRedId, true)
+                setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffle)
+                intervalcalldelay(actor, 1000, diff, 1, "refreshweekturntablerafflefreetime")
+            end
+        end
+        setplaydef(actor, PlayerDefKey.WeekTurntableRaffle.RAFFLE_INFO, WeekTurntableRaffle)
+    end
+end
+
+LoginEventListerTable:eventLister("0", "幸运周末轮盘抽奖", WeekTurntableRaffle.login)

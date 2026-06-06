@@ -1,0 +1,6 @@
+<uipanel id="KLFriendChatViewItem" width="650" height="360" x="0" y="34" zindex="-1">
+  <loopscrollview id="chat_view" width="650" height="360" vertical="1" scrollpos="0" cellwidth="677" cellheight="80">
+    <datalist id="chat_data_list" databind="">
+    </datalist>
+  </loopscrollview>
+</uipanel>

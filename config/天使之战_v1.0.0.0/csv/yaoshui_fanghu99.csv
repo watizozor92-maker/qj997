@@ -1,0 +1,3 @@
+﻿int#s,int#s,string#s,int#s#c,string#s#c,string#s,string#s,string#s,intList#c#s,intListList#c#s,int#c#s,intListList#c#s
+id,type,beizhu,item,num,probability,career,level,skillbaoxiang,strengthenbaoxiang,luckbaoxiang,appendsbaoxiang
+1,2,大型防护药水,1015036,99#99,0#10000,,,,,,

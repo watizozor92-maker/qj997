@@ -1,0 +1,14 @@
+<uipanel id="KLTradeCrossServerGoodsPanel" name="交易行跨服道具界面" x="82" y="-12" width="820" height="368" zindex="200">
+  <img src="bg_title_top" atlas="Atlas/KLTradePanel.spriteatlas" a="01" x="-3" y="7" width="822" height="36" id="img_125">
+    <text text="竞拍道具" x="-290" y="4" fontsize="18" id="text_126">
+    </text>
+    <text text="剩余时间" x="-50" y="4" fontsize="18" id="text_127">
+    </text>
+    <text text="当前价格" x="126" y="4" fontsize="18" id="text_128">
+    </text>
+    <text text="一口价" x="314" y="4" fontsize="18" id="text_129">
+    </text>
+  </img>
+  <osascrollview id="osa_scrollview_crossServer_goods" width="820" height="360" vertical="1" defaultitemsize="110" x="-4" y="-22">
+  </osascrollview>
+</uipanel>

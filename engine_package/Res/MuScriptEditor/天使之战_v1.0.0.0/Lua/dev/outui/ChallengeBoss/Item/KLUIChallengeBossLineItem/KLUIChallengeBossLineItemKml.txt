@@ -1,0 +1,12 @@
+<uipanel id="KLUIChallengeBossLineItem" name="挑战boss线路模板" width="230" height="51" zindex="-1">
+  <img id="btn" a="11" atlas="Atlas/FG_ChallgeBoss.spriteatlas" src="btn_2" width="213" height="42" onclick="" raycast="1">
+    <text id="name" text="" x="10" a="10" fontsize="16" color="#00ff00" outlinesize="0" outlinecolor="0" ta="01" outline="1" horwrap="1">
+    </text>
+    <text id="level" text="" x="-10" a="20" fontsize="16" color="#00ff00" outlinesize="0" outlinecolor="0" ta="01" active="" outline="1" horwrap="1">
+    </text>
+    <text id="num" text="" x="-10" a="20" fontsize="16" color="#00ff00" outlinesize="0" outlinecolor="0" ta="01" active="" outline="1" horwrap="1">
+    </text>
+    <countdown id="end_time" text="" time="" formattype="6" x="-10" a="20" ta="21" fontsize="16" color="#ff2323" outlinesize="0" outlinecolor="0" active="0">
+    </countdown>
+  </img>
+</uipanel>

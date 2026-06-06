@@ -1,0 +1,8 @@
+<uipanel id="KLPushGiftBtnItemKml" name="特惠礼包模板" a="00" width="300" height="300" zindex="-1">
+  <button id="GiftBtn" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="button_unchoosen" width="145" height="53" onclick="" text="" raycast="1" mimg="" pimg="" dimg="">
+  </button>
+  <text id="Time" a="00" text="" fontsize="16" height="24" width="139" ta="11" horwrap="1" x="-1" y="-9" outlinesize="1" outlinecolor="#000000FF" color="#00FF00FF">
+  </text>
+  <text id="BtnText" a="00" text="" fontsize="16" height="24" width="139" ta="11" horwrap="1" x="1" y="4" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+</uipanel>

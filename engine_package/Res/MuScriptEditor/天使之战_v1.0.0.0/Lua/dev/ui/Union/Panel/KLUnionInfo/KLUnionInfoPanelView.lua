@@ -1,0 +1,95 @@
+---@class KLUnionInfoPanelView:UIKmlLuaViewBase
+---@field Bg_Template UIKmlLuaControlHandler
+---@field panel2 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field prefab_13 UIKmlLuaControlHandler
+---@field UIUnionInfoPanel UIKmlLuaControlHandler
+---@field panel_report UIKmlLuaControlHandler
+---@field bg_report UIKmlLuaControlHandler
+---@field btn_panel_report_no UIKmlLuaControlHandler
+---@field text3 UIKmlLuaControlHandler
+---@field btn_panel_report_yes UIKmlLuaControlHandler
+---@field text4 UIKmlLuaControlHandler
+---@field noticeInput UIKmlLuaControlHandler
+---@field title_report UIKmlLuaControlHandler
+---@field report_border_left UIKmlLuaControlHandler
+---@field report_border_right UIKmlLuaControlHandler
+---@field Btn_ReportClose UIKmlLuaControlHandler
+---@field text6 UIKmlLuaControlHandler
+---@field changeFlagBtn UIKmlLuaControlHandler
+---@field btn_panel_name_yes UIKmlLuaControlHandler
+---@field CloseButton UIKmlLuaControlHandler
+---@field changeAnnoyBtn UIKmlLuaControlHandler
+---@field peopleCountValue2 UIKmlLuaControlHandler
+---@field changeUnionNameBtn UIKmlLuaControlHandler
+---@field btn_Election UIKmlLuaControlHandler
+---@field nameDeco UIKmlLuaControlHandler
+---@field btn_cancel UIKmlLuaControlHandler
+---@field btn_panel_name_no UIKmlLuaControlHandler
+---@field info_panel UIKmlLuaControlHandler
+---@field top UIKmlLuaControlHandler
+---@field panel6 UIKmlLuaControlHandler
+---@field text1 UIKmlLuaControlHandler
+---@field levelValue UIKmlLuaControlHandler
+---@field panel10 UIKmlLuaControlHandler
+---@field peopleCountValue UIKmlLuaControlHandler
+---@field text12 UIKmlLuaControlHandler
+---@field panel3 UIKmlLuaControlHandler
+---@field inexpValue UIKmlLuaControlHandler
+---@field inexpAddButton UIKmlLuaControlHandler
+---@field text5 UIKmlLuaControlHandler
+---@field panel14 UIKmlLuaControlHandler
+---@field text16 UIKmlLuaControlHandler
+---@field inMoneyValue UIKmlLuaControlHandler
+---@field inMoneyAddButton UIKmlLuaControlHandler
+---@field panel20 UIKmlLuaControlHandler
+---@field text22 UIKmlLuaControlHandler
+---@field bossValue UIKmlLuaControlHandler
+---@field BGInner UIKmlLuaControlHandler
+---@field cost_txt_count UIKmlLuaControlHandler
+---@field warAllianceNameInput UIKmlLuaControlHandler
+---@field panel_fund UIKmlLuaControlHandler
+---@field inAnnoyScrollView UIKmlLuaControlHandler
+---@field flagImage UIKmlLuaControlHandler
+---@field btn_Impeach UIKmlLuaControlHandler
+---@field inUnionMemberStateScrollView UIKmlLuaControlHandler
+---@field inexpAddButton2 UIKmlLuaControlHandler
+---@field btn_Replace UIKmlLuaControlHandler
+---@field TitleImg UIKmlLuaControlHandler
+---@field unionName UIKmlLuaControlHandler
+---@field reportMask UIKmlLuaControlHandler
+---@field inexpValue2 UIKmlLuaControlHandler
+---@field fundInput UIKmlLuaControlHandler
+---@field inGrade UIKmlLuaControlHandler
+---@field levelValue2 UIKmlLuaControlHandler
+---@field bgtxt UIKmlLuaControlHandler
+---@field intro UIKmlLuaControlHandler
+---@field intro_rename UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field bossValue2 UIKmlLuaControlHandler
+---@field img_bgBg UIKmlLuaControlHandler
+---@field btn_3DItem UIKmlLuaControlHandler
+---@field inMemberState UIKmlLuaControlHandler
+---@field unionNameModify UIKmlLuaControlHandler
+---@field bg2 UIKmlLuaControlHandler
+---@field result_fund UIKmlLuaControlHandler
+---@field btn_donate UIKmlLuaControlHandler
+---@field inMoneyValue2 UIKmlLuaControlHandler
+---@field exitButton UIKmlLuaControlHandler
+---@field text2 UIKmlLuaControlHandler
+---@field inMoneyAddButton2 UIKmlLuaControlHandler
+---@field inUnionAnnoy UIKmlLuaControlHandler
+---@field nameMask UIKmlLuaControlHandler
+---@field cost_item UIKmlLuaControlHandler
+---@field flag_img UIKmlLuaControlHandler
+---@field title UIKmlLuaControlHandler
+local KLUnionInfoPanelView = {}
+setmetatable(KLUnionInfoPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Union/Panel/KLUnionInfo/KLUnionInfoPanelKml'
+---@param parent UIKmlLuaControlHandler
+function KLUnionInfoPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+return KLUnionInfoPanelView

@@ -1,0 +1,5 @@
+﻿int#s#c,string,string#c,int#s#c,intList#s#c,intList#c#s
+id,cehua,text,type,att,attNumber
+1,小怪血量增加,今日秘境挑战：小怪血量+%s,1,207011,2000#3000
+2,BOSS攻击增加,今日秘境挑战：BOSS攻击+%s,2,201011#201021,2000#3000
+3,怪物属性增加,今日秘境挑战：所有怪物属性+%s,3,201011#201021#207011,1000#2000

@@ -1,0 +1,105 @@
+---@class KLUIChatPanelView:UIKmlLuaViewBase
+---@field background_close UIKmlLuaControlHandler
+---@field root_panel UIKmlLuaControlHandler
+---@field bg1 UIKmlLuaControlHandler
+---@field btn_close UIKmlLuaControlHandler
+---@field root UIKmlLuaControlHandler
+---@field ToggleGroupChat UIKmlLuaControlHandler
+---@field toggle_layout UIKmlLuaControlHandler
+---@field 综合_toggle_panel UIKmlLuaControlHandler
+---@field zonghe_toggle UIKmlLuaControlHandler
+---@field corss_server_chat_toggle_panel UIKmlLuaControlHandler
+---@field corss_server_chat_toggle UIKmlLuaControlHandler
+---@field 世界_toggle_panel UIKmlLuaControlHandler
+---@field shijie_toggle UIKmlLuaControlHandler
+---@field 附近_toggle_panel UIKmlLuaControlHandler
+---@field fujin_toggle UIKmlLuaControlHandler
+---@field 战盟_toggle_panel UIKmlLuaControlHandler
+---@field zhanmeng_toggle UIKmlLuaControlHandler
+---@field 队伍_toggle_panel UIKmlLuaControlHandler
+---@field duiwu_toggle UIKmlLuaControlHandler
+---@field 私聊_toggle_panel UIKmlLuaControlHandler
+---@field siliao_toggle UIKmlLuaControlHandler
+---@field 系统_toggle_panel UIKmlLuaControlHandler
+---@field xitong_toggle UIKmlLuaControlHandler
+---@field view UIKmlLuaControlHandler
+---@field bg UIKmlLuaControlHandler
+---@field chat_panel UIKmlLuaControlHandler
+---@field panel_root UIKmlLuaControlHandler
+---@field chat_time UIKmlLuaControlHandler
+---@field player_name UIKmlLuaControlHandler
+---@field img_line UIKmlLuaControlHandler
+---@field all_type_panel UIKmlLuaControlHandler
+---@field selectTyptbtn UIKmlLuaControlHandler
+---@field img_chat_shang UIKmlLuaControlHandler
+---@field img_chat_xia UIKmlLuaControlHandler
+---@field zonghe_text UIKmlLuaControlHandler
+---@field zong_panel UIKmlLuaControlHandler
+---@field zong_panel_close UIKmlLuaControlHandler
+---@field zong_content UIKmlLuaControlHandler
+---@field zong_list_layout UIKmlLuaControlHandler
+---@field zong_data_list UIKmlLuaControlHandler
+---@field no_union_panel UIKmlLuaControlHandler
+---@field create_union_btn UIKmlLuaControlHandler
+---@field join_union_btn UIKmlLuaControlHandler
+---@field 无战盟img UIKmlLuaControlHandler
+---@field 无战盟img2 UIKmlLuaControlHandler
+---@field 无战盟text1 UIKmlLuaControlHandler
+---@field 无战盟text2 UIKmlLuaControlHandler
+---@field di_panel UIKmlLuaControlHandler
+---@field pos_btn UIKmlLuaControlHandler
+---@field bag_btn UIKmlLuaControlHandler
+---@field biaoqing_btn UIKmlLuaControlHandler
+---@field text_input UIKmlLuaControlHandler
+---@field text_input_place UIKmlLuaControlHandler
+---@field fasong UIKmlLuaControlHandler
+---@field sendMessageBtnTxt UIKmlLuaControlHandler
+---@field no_team_panel UIKmlLuaControlHandler
+---@field create_team_btn UIKmlLuaControlHandler
+---@field join_team_btn UIKmlLuaControlHandler
+---@field 无队伍img UIKmlLuaControlHandler
+---@field 无无队伍img2 UIKmlLuaControlHandler
+---@field 无队伍text1 UIKmlLuaControlHandler
+---@field 无队伍text2 UIKmlLuaControlHandler
+---@field private_panel UIKmlLuaControlHandler
+---@field private_panel_btn UIKmlLuaControlHandler
+---@field private_input UIKmlLuaControlHandler
+---@field private_input_place UIKmlLuaControlHandler
+---@field private_select_panel UIKmlLuaControlHandler
+---@field private_panel_close_btn UIKmlLuaControlHandler
+---@field content UIKmlLuaControlHandler
+---@field all_name_list_layout UIKmlLuaControlHandler
+---@field all_name_data_list UIKmlLuaControlHandler
+---@field system_panel UIKmlLuaControlHandler
+---@field tujingnum22 UIKmlLuaControlHandler
+---@field emoji_panel UIKmlLuaControlHandler
+---@field emoji_mask UIKmlLuaControlHandler
+---@field emoji_bg UIKmlLuaControlHandler
+---@field emoji UIKmlLuaControlHandler
+---@field all_emoji_layout UIKmlLuaControlHandler
+---@field emoji_data_list UIKmlLuaControlHandler
+---@field item_panel UIKmlLuaControlHandler
+---@field item_mask UIKmlLuaControlHandler
+---@field item_bg UIKmlLuaControlHandler
+---@field layout1 UIKmlLuaControlHandler
+---@field btn_bag UIKmlLuaControlHandler
+---@field btn_bag_select UIKmlLuaControlHandler
+---@field 背包 UIKmlLuaControlHandler
+---@field btn_equip UIKmlLuaControlHandler
+---@field btn_equip_select UIKmlLuaControlHandler
+---@field 穿戴 UIKmlLuaControlHandler
+---@field btn_datianshi UIKmlLuaControlHandler
+---@field btn_datianshi_select UIKmlLuaControlHandler
+---@field 大天使 UIKmlLuaControlHandler
+local KLUIChatPanelView = {}
+setmetatable(KLUIChatPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Chat/Panel/KLUIChatPanel/KLUIChatPanelKml'
+---@param parent UIKmlLuaControlHandler
+function KLUIChatPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+---@type KLUIChatPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Chat/Panel/KLUIChatPanel/KLUIChatPanel']
+
+return KLUIChatPanelView

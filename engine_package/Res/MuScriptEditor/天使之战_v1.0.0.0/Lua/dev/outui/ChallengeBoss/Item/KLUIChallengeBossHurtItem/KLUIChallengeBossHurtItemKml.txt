@@ -1,0 +1,8 @@
+<uipanel id="KLUIChallengeBossHurtItem" name="挑战boss伤害模板" active="1" width="298" height="40" zindex="-1">
+   <panel id="hurt_panel" width="298" height="40" >
+        <img id="rank_img" atlas="Atlas/UIChallengeBoss.spriteatlas" width="37" height="33" src="" x="20" y="0" a="10" active="1"/>
+        ;<text id="ranking" text="" x="20" y="0" a="10" fontSize="18" color="#00ff00" outlineSize="1" outlineColor="0"/>
+        <text id="name" text="" x="55" y="0" a="10" fontSize="18" color="#00ff00" outlineSize="1" outlineColor="0"/>
+        <text id="value" text="" x="-25" y="0" a="20" fontSize="18" color="#00ff00" outlineSize="1" outlineColor="0"/>
+    </panel> 
+</uipanel> 

@@ -1,0 +1,8 @@
+<uipanel id="KLFriendTipsPanel" name="好友提示界面" width="444" height="562" zindex="400">
+  <prefab id="FriendAdd_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlFriendTipsUI.prefab">
+    <button id="BtnClose" bind="BtnClose">
+    </button>
+    <text id="TextContent" bind="TextContent">
+    </text>
+  </prefab>
+</uipanel>

@@ -1,0 +1,24 @@
+<uipanel id="KLShowStallPanel" name="摆摊界面" zindex="400" width="300" height="300" z="-500" y="2">
+  <img id="mask" a="00" src="Texture/bg_window_3.png" width="5000" height="3000" color="#00000000" raycast="1" x="-1260" y="692">
+  </img>
+  <img id="img1" a="00" width="638" height="522" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" scale9l="185" scale9b="123" scale9r="162" scale9t="150" x="0" y="-8">
+  </img>
+  <img id="bg" a="00" src="Texture/FG_dankuangdi2.png" width="654" height="554" raycast="1" z="200" atlas="" x="0" y="0" scale9l="204" scale9b="162" scale9r="158" scale9t="251">
+    <img id="img2" a="00" width="615" height="448" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="24" scale9b="29" scale9r="25" scale9t="29" x="3" y="-31">
+    </img>
+    <button id="btn_close" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="-14" y="-22" active="1" h5y="6" h5x="-466" mimg="" pimg="" dimg="">
+    </button>
+    <text id="title" a="01" ta="11" width="117" height="24" fontsize="20" active="1" outlinesize="1" outlinecolor="#000000FF" raycast="1" y="-35" outline="1" horwrap="1" text="摊 位" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" deltay="0">
+    </text>
+    <button id="stop_stall" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="102" height="36" onclick="" text="收摊" raycast="1" x="-73" y="-226" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="0" mimg="" pimg="" dimg="" ta="11">
+    </button>
+    <button id="add_stall" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="102" height="36" onclick="" text="上架" raycast="1" x="73" y="-226" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="0" mimg="" pimg="" dimg="" h5x="103" h5y="36">
+    </button>
+    <scrollview id="sales_scroll" width="593" height="424" vertical="1" x="0" y="-92" ap="0.5#1#0.5#1#0.5#1">
+      <gridview id="sales_grid" width="500" height="320" cellwidth="185" cellheight="216" spacex="11" spacey="14" cella="11" contentsizefitter="1" paddingtop="0" paddingleft="7">
+      </gridview>
+    </scrollview>
+    <img id="zanwushanping" a="00" width="107" height="28" raycast="1" src="zanwushangping" atlas="Atlas/KLTradePanel.spriteatlas" active="0">
+    </img>
+  </img>
+</uipanel>

@@ -1,0 +1,9 @@
+<uipanel id="KLUISystemItem" zindex="101">
+  <img id="sysIcon" atlas="Atlas/UIMainPanel.spriteatlas" raycast="1">
+  </img>
+
+  <img id="red" atlas="Atlas/Common.spriteatlas" active="0" src="bg_gemred" width="20" height="20" x="15" y="-15">
+  </img>
+  <text id="TimeText" a="00" text="" fontsize="16" height="25" width="122" ta="11" horwrap="1" color="#00ff00ff" outlinesize="1" outlinecolor="#000000FF" x="0" y="-41" active="0">
+  </text>
+</uipanel>

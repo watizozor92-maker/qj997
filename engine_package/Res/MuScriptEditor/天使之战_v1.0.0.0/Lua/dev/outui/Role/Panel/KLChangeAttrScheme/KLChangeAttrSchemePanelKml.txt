@@ -1,0 +1,33 @@
+<uipanel id="KLChangeAttrSchemePanel" name="角色加点方案切换界面" width="300" height="300" zindex="210" maskonclick="1" >
+    <img a="00" atlas="" src="Texture/login_bg_2.png" width="526" height="384" raycast="1">
+        <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" x="10" y="10" z="-10" raycast="1">
+        </img>
+        <button id="edit_btn" atlas="Atlas/UIBagPanel.spriteatlas" src="modify_storage_name" onclick="KLDepotsPanel/@修改仓库名称" x="130" y="50">
+        </button>
+        <img id="img_name_bg" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" src="bg_tips_bg_new9" width="200" height="43" x="0" y="50" type="0" scale9l="8" scale9b="6" scale9r="11" scale9t="12" ta="11" text="加点方案1">
+            <text id="name_input" text="加点方案1" width="200" ta="11" />
+            <button id="btn_choice_scheme_show" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_down" width="32" height="32" raycast="1" x="0" y="0" />
+        </img>
+        <panel id="layout_scheme" y="-15" active="0">
+            <button id="btn_first_scheme" text="加点方案1" width="192" height="35" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" src="img_mainRBbg" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" y="25" />
+            <button id="btn_second_scheme" text="加点方案2" width="192" height="35" atlas="Atlas/UITeamMainInfoPanel_Out.spriteatlas" src="img_mainRBbg" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" y="-12" />
+        </panel>
+        <button id="btn_exchange_point" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window11" text="加点切换" outlinesize="1" outlinecolor="#000000" raycast="1" active="1" y="-100" />
+    </img>
+    <panel id="edit_panel" zindex="500" z="-1500" active="0" >
+        <img id="bgImg" src="Texture/login_bg_2.png" width="406" height="260" raycast="1">
+            <text id="edit_oldName" text="修改方案名称" y="110">
+            </text>
+            <button id="edit_CloseBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" x="10" y="10" z="-10" raycast="1">
+            </button>
+            <text id="old_Store_Name" text="方案名称" height="25" x="-133" y="0" ta="11">
+            </text>
+            <input id="attr_Name_Input" width="150" height="25" x="0" y="0" type="0" ta="11">
+            </input>
+            <button id="edit_Cancel" atlas="Atlas/Common.spriteatlas" text="取消" src="button_interface_window8" x="-109" y="-64" raycast="1">
+            </button>
+            <button id="edit_Enter" atlas="Atlas/Common.spriteatlas" text="确认" src="button_interface_window7" x="111" y="-64" raycast="1">
+            </button>
+        </img>
+    </panel>
+</uipanel>

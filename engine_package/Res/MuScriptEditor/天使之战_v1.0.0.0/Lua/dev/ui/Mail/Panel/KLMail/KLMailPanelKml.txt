@@ -1,0 +1,86 @@
+<uipanel id="KLMailPanel" name="邮件界面" zindex="200" width="3000" height="3000" raycast="1" mask="0">
+  <panel id="bg" width="1116" height="580">
+    <img id="img2" a="00" width="1018" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
+    </img>
+    <img src="Texture/FG_dankuangdi2.png" width="1039" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+      <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
+      </img>
+      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35">
+      </img>
+    </img>
+    <text id="title" a="00" text="邮件" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1">
+    </text>
+    <img id="closeBtn" color="#DCE1E5ff" width="34" height="34" x="485" y="250" clientclose="1" z="0" a="00" rotate="0,0,0" raycast="1" h5y="255" h5x="-500" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas">
+    </img>
+    <panel id="left_panel" width="1024" height="558" y="-39" scale9l="20" scale9r="20" scale9t="20" scale9b="20" active="1" x="2">
+      <panel id="received_mail_list_panel" active="1" x="0" y="0" z="0" width="10" height="10" a="00" rotate="0,0,0">
+        <osascrollview width="248" height="395" x="-365" y="32" vertical="1" z="0" a="00" rotate="0,0,0" id="scrollview_373" keepsorted="1">
+          <datalist id="mail_data_list">
+            <button id="mail_btn_" active="1" width="248" height="78" x="-150" y="-26" atlas="Atlas/FG_EmailPanel.spriteatlas" src="letter_bg" raycast="1">
+              <img id="selected" atlas="Atlas/FG_EmailPanel.spriteatlas" src="select_mail" active="0">
+              </img>
+              <img id="mail_icon_" width="73" height="64" atlas="Atlas/FG_EmailPanel.spriteatlas" src="icon_unread" y="0" x="-83">
+              </img>
+              <text id="mail_title_" outlinesize="1" outlinecolor="#000000" text="" x="40" y="12" z="0" width="156" height="25" fontsize="18" color="#DCE1E5" ta="01" horwrap="1" outline="1">
+              </text>
+              <text id="mail_time_" text="" x="40" outlinesize="1" outlinecolor="#000000" y="-12" z="0" width="156" height="25" fontsize="16" color="#cccccc" ta="01" outline="1" horwrap="1">
+              </text>
+            </button>
+          </datalist>
+        </osascrollview>
+        <button id="get_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1_select" outlinesize="1" outlinecolor="#000000" x="-302" y="-195" text="全部领取" fontsize="18" textcolor="#DCE1E5" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
+        </button>
+        <button id="del_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1" outlinesize="1" outlinecolor="#000000" x="-427" y="-195" text="全部删除" fontsize="18" textcolor="#DCE1E5FF" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
+        </button>
+      </panel>
+      <img id="mail_content_rt" src="Texture/mail_content_bg.png" width="728" height="466" x="128" y="2">
+        <text id="content_time" text="有效期:88天88小时后" width="237" outlinesize="1" outlinecolor="#000000" color="#00ff00" fontsize="16" y="-32" a="21" rotate="0,0,0" ta="11" outline="1" horwrap="1">
+        </text>
+        <panel id="received_mail_detail_panel" active="1">
+          <img id="content_title_bg" atlas="Atlas/FG_EmailPanel.spriteatlas" src="title_bg" x="11" y="192">
+            <text id="content_title" text="标题" outlinesize="1" outlinecolor="#000000" color="#DCE1E5" fontsize="18" a="00" rotate="0,0,0" ta="11" outline="1" horwrap="1">
+            </text>
+          </img>
+          <text id="content_small_title" outlinesize="1" outlinecolor="#000000" text="内容:" color="#DCE1E5" x="11" fontsize="18" width="600" y="160" mline="1" a="01" outline="1" horwrap="1">
+          </text>
+          <scrollview id="detail_desc_scroll" width="600" height="180" x="11" y="53" scrollpos="0" vertical="1">
+            <layout id="detail_desc_layout" control_height="1" contentsizefitter="1" vertical="1" width="600" a="11" cella="01" paddingtop="4">
+              <text id="content_text" outlinesize="1" outlinecolor="#000000" text="" horwrap="1" color="#DCE1E5" fontsize="18" width="600" mline="1" outline="1" contentsizefitter="1">
+              </text>
+            </layout>
+          </scrollview>
+          <img id="received_attachment" active="1" atlas="Atlas/FG_EmailPanel.spriteatlas" src="title_bg_2" width="260" height="25" x="-159" y="-68">
+            <text text="附件" x="-101" y="0" z="0" width="56" outlinesize="1" outlinecolor="#000000" color="#DCE1E5" height="25" a="00" rotate="0,0,0" fontsize="18" ta="01" id="text_391" outline="1" horwrap="1">
+            </text>
+          </img>
+          <scrollview width="600" height="90" x="10" y="-124" scrollpos="0" vertical="0" id="scrollview_392">
+            <layout width="100" height="100" space="5" vertical="0" cella="10" contentsizefitter="2" a="10" x="0" y="0" z="0" rotate="0,0,0" control_width="0" control_height="0" expand_width="0" expand_height="0" paddingleft="0">
+              <datalist id="items_list">
+                <panel width="56" height="56" id="panel_394">
+                  <item id="item2" itemcount="" width="56" height="56" x="0" y="0" itemid="" itemtype="24" mfixsize="56,56" textpos="-5,5">
+                    <img id="click_item" active="1" width="56" height="56" color="#00000000" rotate="0, 0, 0" raycast="1">
+                    </img>
+                    <panel id="item_received" zindex="204">
+                      <img id="received_img" atlas="Atlas/FG_EmailPanel.spriteatlas" src="ty_finished" z="-200">
+                      </img>
+                    </panel>
+                    <text id="itemcount" fontsize="16" outlinecolor="#000000" outlinesize="1" color="#fbd994" z="-200" x="-5" y="0" a="22" ta="21">
+                    </text>
+                  </item>
+                </panel>
+              </datalist>
+            </layout>
+          </scrollview>
+          <button id="detail_btn" text="领取" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1_select" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
+          </button>
+          <button id="del_btn" text="删除" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
+          </button>
+        </panel>
+      </img>
+    </panel>
+    <img id="null_bg" src="Texture/mail_nill_bg.png" x="5" y="-32" width="985" height="472" active="1">
+    </img>
+    <img id="des_btn" atlas="Atlas/Common.spriteatlas" src="btn_description" x="450" y="-230" raycast="1">
+    </img>
+  </panel>
+</uipanel>

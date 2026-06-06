@@ -1,0 +1,8 @@
+<uipanel id="KLGoldChallengeRewardItemKml" name="黄金挑战奖励模板" a="00" width="50" height="50" zindex="-1">
+  <panel id="root" a="00" width="1334" height="750">
+    <item id="RewardItem" src="20020001" width="50" height="50" itemid="" textcolor="#EDD9ADFF" tips="0" itemcount="0" textpos="0,0,0" itemcustomcount="0" mpos="-0.67,1.28,0" zindex="231">
+    </item>
+    <button id="btnTips" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="50" height="50" onclick="" text="" raycast="1" color="#FFFFFF03" binddragid="">
+    </button>
+  </panel>
+</uipanel>

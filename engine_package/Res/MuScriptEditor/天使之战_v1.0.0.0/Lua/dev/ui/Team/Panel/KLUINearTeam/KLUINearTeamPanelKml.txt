@@ -1,0 +1,34 @@
+<uipanel id="KLUINearTeamPanel" name="附近队伍界面" zindex="200" width="770" height="360" x="91" y="-13" raycast="1" z="-100" onload="KmlTeamMainUI/@附近队伍初始化">
+  <panel y="200" id="panel_116">
+    <img src="Texture/ty_biaotou.png" x="-1" y="4" width="790" height="37" id="img_117">
+    </img>
+    <text text="队伍名称" x="-330" y="6" fontsize="16" height="20" outlinesize="1" outlinecolor="#000000FF" ta="11" id="text_118" horwrap="1" fonttype="" outline="0" color="#FFFFFFFF">
+    </text>
+    <text text="人数" x="-30" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" ta="11" id="text_119" horwrap="1" fonttype="" outline="0">
+    </text>
+    <text text="操作" x="281" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" ta="11" id="text_120" horwrap="1" fonttype="" width="36" height="20" outline="0">
+    </text>
+  </panel>
+  ; <img id="img1" a="00" width="812" height="435" raycast="1" src="no_select" atlas="Atlas/FG_Team.spriteatlas" x="-1" y="-31">
+  ; </img>
+  <scrollview id="near_team_scrollview" width="790" height="435" x="-1" y="-30" vertical="1">
+    <gridview id="near_team_gridview" cellwidth="790" cellheight="70" spacey="0" contentsizefitter="1">
+      <datalist id="near_team_datalist">
+        <panel id="panel_123">
+          <img atlas="Atlas/FG_Team.spriteatlas" src="no_select" width="790" height="70" id="img_124" x="0" active="1">
+          </img>
+          <text id="team_name" text="名字六个字" ta="11" x="-330" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="100" height="20" fonttype="" outline="0">
+          </text>
+          <text id="team_num" text="20" ta="11" x="-30" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="100" height="20" fonttype="" outline="0">
+          </text>
+          <button id="apply_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" textcolor="#FFFFFF" x="282" text="申请" outlinesize="1" outlinecolor="#000000FF" onclick="KmlTeamMainUI/@申请队伍" width="103" height="36" fonttype="" ta="11" fontsize="18" mimg="" pimg="" dimg="">
+          </button>
+          <button id="had_apply_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" textcolor="#FFFFFFFF" x="282" text="已申请" outlinesize="1" outlinecolor="#000000FF" onclick="KmlTeamMainUI/@已申请队伍" width="103" height="36" fonttype="" fontsize="18" ta="11" mimg="" pimg="" dimg="">
+          </button>
+          <button id="in_team_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" textcolor="#FFFFFFFF" x="282" text="已加入" outlinesize="1" outlinecolor="#000000FF" width="103" height="36" fonttype="" fontsize="18" ta="11" mimg="" pimg="" dimg="">
+          </button>
+        </panel>
+      </datalist>
+    </gridview>
+  </scrollview>
+</uipanel>

@@ -1,0 +1,38 @@
+<uipanel id="KLUnionLeaderOperatePanelKml" name="战盟竞选盟主确认界面" a="00" width="1334" height="750" x="0" y="0" zindex="400">
+  <button id="BtnMask" a="00" atlas="" src="" width="3000" height="3000" onclick="" text="" raycast="1" x="1" y="1" mimg="" pimg="" dimg="" color="#FFFFFF00" active="">
+  </button>
+  <img id="Bg" a="00" atlas="Atlas/FG_Union.spriteatlas" src="bg_tips2" width="322" height="315" raycast="1" x="-8" y="-2" scale9l="20" scale9b="19" scale9r="15" scale9t="20">
+    <text id="txtTitle" a="01" text="默认内容" fonttype="" fontsize="20" height="30" width="200" ta="11" x="0" y="-15" horwrap="1" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <img id="ImgTitle_left" a="00" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-95" active="1">
+      </img>
+      <img id="ImgTitle_right" a="00" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="95" active="1">
+      </img>
+    </text>
+    <button id="btnConfirm" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" width="82" height="28" onclick="" text="同意" fonttype="" raycast="1" x="-66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000" mimg="" pimg="" dimg="">
+    </button>
+    <button id="btnCancel" a="12" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" width="82" height="28" onclick="" text="取消" fonttype="" raycast="1" x="66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+    </button>
+    <img id="BgCost" a="22" atlas="Atlas/FG_Union.spriteatlas" src="bg_input1" width="80" height="30" raycast="1" x="-61" y="75" scale9l="10" scale9b="9" scale9r="9" scale9t="10">
+      <text id="text14" a="00" text="消耗" fonttype="" fontsize="18" height="22" width="47" ta="01" x="-74" y="0" horwrap="1" rotate="0,0,0" outlinesize="0" outlinecolor="#000000" outline="1" color="#DCE1E5FF" fontstyle="0" underline="0">
+      </text>
+      <text id="textCost" a="00" text="500" fonttype="" fontsize="18" height="22" width="73" ta="01" x="28" y="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#00ff00FF" fontstyle="0" underline="0">
+      </text>
+      <item id="item17" mfixsize="30,30" bgtype="0" src="20020001" width="30" height="30" x="0" y="0" z="-100" mpos="0.55,-0.1481482,90" tips="1" a="10">
+      </item>
+    </img>
+    <text id="txtDesc" a="11" text="是否确定" fonttype="" fontsize="18" height="22" width="248" ta="01" x="45" y="-49" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#DCE1E5FF" fontstyle="0" underline="0">
+    </text>
+    <text id="txtDescNew" a="00" text="（取代失败将返回所有消耗）" fonttype="" fontsize="16" height="30" width="350" ta="11" x="0" y="68" horwrap="1" outlinesize="0" outlinecolor="#000000" outline="1" color="#FFFFFFFF" active="0">
+    </text>
+    <text id="txtCondTitle" a="10" text="竞选条件：" fonttype="" fontsize="18" height="22" width="265" ta="01" x="47" y="32" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#DCE1E5FF" fontstyle="0" underline="0">
+    </text>
+    <text id="txtCond1" a="10" text="等级达到" fonttype="" fontsize="18" height="22" width="269" ta="01" x="47" y="4" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#DCE1E5FF" fontstyle="0" underline="0">
+      <img id="img21" a="10" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ico_tip_title" width="24" height="24" raycast="1" x="-25" y="0" active="0">
+      </img>
+    </text>
+    <text id="txtCond2" a="10" text="加入战盟时间超过" fonttype="" fontsize="18" height="22" width="269" ta="01" x="47" y="-19" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="1" color="#DCE1E5FF" active="0" fontstyle="0" underline="0">
+      <img id="img23" a="10" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ico_tip_title" width="24" height="24" raycast="1" x="-25" y="0" active="0">
+      </img>
+    </text>
+  </img>
+</uipanel>

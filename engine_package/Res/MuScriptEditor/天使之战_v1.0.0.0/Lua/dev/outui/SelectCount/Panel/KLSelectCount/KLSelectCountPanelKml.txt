@@ -1,0 +1,20 @@
+<uipanel id="KLSelectCountPanelKml" name="通用数量选择界面" a="00" width="300" height="300" zindex="2000" z="-300">
+  <img id="Select_Mask" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="3000" height="3000" raycast="1" x="0" color="#FFFFFF00" y="1">
+  </img>
+  <img id="SelcetCount_bg" a="00" atlas="Atlas/TS_Common.spriteatlas" src="bg_selectcount" width="396" height="255" raycast="1" x="0" scale9l="11" scale9b="12" scale9r="12" scale9t="14">
+    <item id="showitem" width="50" height="50" y="40" mfixsize="50,50" bgscale="60,60" tips="1">
+    </item>
+    <input id="Count" a="00" y="-20" text="1" atlas="Atlas/Common.spriteatlas" raycast="1" ta="11" src="bg_setting_xuanzekuang" scale9l="10" scale9r="10" scale9t="10" scale9b="10" textcolor="#FF8A00" outlinecolor="#000000" placecolor="#FFFFFFFF" mincount="0" width="250" height="38" onchange="" fontsize="18">
+    </input>
+    <img id="subtract" y="-20" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_minus3" width="42" height="18" raycast="1" x="-100">
+    </img>
+    <img id="add" a="00" y="-20" atlas="Atlas/Common.spriteatlas" src="button_interface_plus6" width="42" height="42" raycast="1" x="100">
+    </img>
+    <button id="BtnCancel" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" width="103" height="36" text="取消" raycast="1" y="-80" x="-75" outlinecolor="#000000" outlinesize="1" mimg="" pimg="" dimg="" fontsize="18">
+    </button>
+    <button id="BtnSure" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="100" height="35" text="确定" raycast="1" y="-80" x="75" outlinecolor="#000000" outlinesize="1" mimg="" pimg="" dimg="" fontsize="18">
+    </button>
+    <text id="title" a="00" text="选择数量" fontsize="20" y="100" outline="1" horwrap="1">
+    </text>
+  </img>
+</uipanel>

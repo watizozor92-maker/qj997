@@ -1,0 +1,22 @@
+<uipanel id="KLUIChallengeBossItem" name="挑战boss关卡模板" width="272" height="360" zindex="-1">
+  <img src="button_select" width="275" height="353" id="img_select" atlas="Atlas/UITeamMainInfoPanel.spriteatlas" x="0" y="0">
+  </img>
+  <img src="Texture/bg_challenge_boss.png" width="272" height="350" id="img_112">
+  </img>
+  <text id="name" text="" fontsize="18" y="-20" z="-300" a="01" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
+  </text>
+  <panel id="monster_root" x="0" y="50" z="-150" width="150" height="200">
+    <model id="monster" src="" mscale="40,40,40" mrotate="0,180,0" width="150" height="200">
+    </model>
+  </panel>
+  <panel id="line_root" width="222" height="135" y="-95" z="-300">
+    <loopscrollview width="222" height="130" vertical="1" id="scrollview_115" cellwidth="220" cellheight="45" spacey="5">
+      <datalist id="line_data_list">
+      </datalist>
+    </loopscrollview>
+  </panel>
+  <img id="Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="63" height="60" raycast="1" x="-92" y="134" z="-500">
+    <text id="Integral_Text" a="00" text="9999" fontsize="16" height="60" width="63" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font">
+    </text>
+  </img>
+</uipanel>

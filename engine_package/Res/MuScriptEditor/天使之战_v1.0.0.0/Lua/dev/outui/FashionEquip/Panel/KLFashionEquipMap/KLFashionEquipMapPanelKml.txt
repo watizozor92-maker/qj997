@@ -1,0 +1,34 @@
+<uipanel id="KLFashionEquipMapPanelKml" a="21" width="416" height="750" x="-403">
+  <panel id="BG_Templete" a="00" width="416" height="750">
+    <panel id="ReMask" a="00" width="404" height="680" y="-29" rectmask="1">
+      <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+    </img>
+  </panel>
+  <img id="bg" a="21" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" x="-12" y="1" scale9l="87" scale9b="81" scale9r="91" scale9t="109" color="#FFFFFF00">
+    <text id="text2" a="01" text="时 装 图 鉴" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-21" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" color="#FFFFFFFF" x="1">
+    </text>
+    <img id="img2" a="11" width="122" height="35" raycast="1" src="ty_bg_heidi" atlas="Atlas/UIEquipInfoPanel.spriteatlas" x="20" scale9l="36" scale9b="10" scale9r="45" scale9t="15" y="-74">
+      <img id="icon" a="11" width="25" height="27" raycast="1" src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" x="4" y="-7">
+      </img>
+      <text id="txt_name" a="11" text="总揽进度" fontsize="18" height="22" width="143" ta="01" outline="0" horwrap="1" outlinesize="0" outlinecolor="#000000FF" x="34" y="-7" color="#FFFFFFFF" fontstyle="0" underline="0">
+      </text>
+    </img>
+    <button id="btn_close" a="21" width="46" height="46" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-5" y="-3">
+    </button>
+    <img id="img_fillBg" a="00" width="240" height="15" raycast="1" src="bg_setting_slider" atlas="Atlas/FG_Common.spriteatlas" x="-12" y="-47" active="0">
+      <img id="img_fill" a="00" width="240" height="15" raycast="1" src="ty_pic_progress" atlas="Atlas/FG_Common.spriteatlas" x="0">
+      </img>
+      <text id="txt_progress" a="00" text="0/2" fontsize="18" height="25" width="100" ta="01" outline="0" horwrap="1" x="174" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+    <scrollview id="scrollview5" a="11" width="360" height="520" vertical="1" y="-110" raycast="1" x="27" movementtype="2">
+      <layout id="layout6" width="360" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="0">
+        <datalist id="DataList_Attr">
+        </datalist>
+      </layout>
+    </scrollview>
+  </img>
+</uipanel>

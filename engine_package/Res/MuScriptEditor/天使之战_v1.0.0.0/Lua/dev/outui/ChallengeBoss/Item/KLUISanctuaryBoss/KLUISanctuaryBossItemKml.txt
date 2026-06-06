@@ -1,0 +1,60 @@
+<uipanel id="KLUISanctuaryBossItem" name="圣域boss挑战界面" width="1030" height="560" zindex="201">
+    <panel id="sanctuary_boss_panel" width="1030" height="560" x="0" y="0">
+      <img src="Texture/bg_challenge_boss_bg_area.png" width="719" height="435" x="128" y="-41" id="img_98">
+      </img>
+      <loopscrollview id="sanctuary_boss_level_select" width="267" height="420" a="11" x="26" y="-110" vertical="1" cellwidth="267" cellheight="79">
+        ;<layout id="sanctuary_boss_type_layout" width="249" space="4" contentsizefitter="1" y="-20" a="01" vertical="1">
+          <datalist id="sanctuary_boss_level_data_list">
+          </datalist>
+        ;</layout>
+      </loopscrollview>
+      <panel id="sanctuary_boss_right_panel" width="700" height="400" x="130" y="-43">
+        <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="-148" y="180" id="img_102">
+        </img>
+        <text id="sanctuary_boss_name" text="" x="-150" y="180" z="-300" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1" ta="11">
+        </text>
+        <loopscrollview id="sanctuary_boss_line" width="650" height="100" y="-160" vertical="1" z="-500" zindex="205" cellwidth="210" cellheight="40">
+          ;<gridview id="sanctuary_boss_路线_list" width="650" height="98" cellwidth="210" cellheight="40" vertical="2" spacex="5" spacey="5" contentsizefitter="1" constraint="1" constraintcount="3">
+            <datalist id="sanctuary_boss_line_data_list" databind="@outdoor_line">
+            </datalist>
+          ;</gridview>
+        </loopscrollview>
+        <panel id="sanctuary_boss_path_root" width="200" height="200" x="-150" y="20" z="-150">
+          <model id="sanctuary_boss_path" src="" mscale="120,120,120" mrotate="0,180,0" x="0" y="0">
+          </model>
+        </panel>
+        <img id="sanctuary_box_img" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="-278" y="-18" a="21" active="0">
+        </img>
+        <loopscrollview id="sanctuary_boss_box" width="302" height="77" x="218" y="110" vertical="1" active="0" cellwidth="67" cellheight="67">
+          ;<gridview id="sanctuary_boss_box_list" width="300" height="77" a="01" cellwidth="67" cellheight="67" vertical="1" contentsizefitter="1">
+            <datalist id="sanctuary_reward_box_data_list" databind="">
+            </datalist>
+          ;</gridview>
+        </loopscrollview>
+        <img id="img_103" atlas="Atlas/UIChallengeBoss.spriteatlas" src="tip_high_probability" width="82" height="22" x="310" y="0" a="01">
+        </img>
+        <img id="img_104" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="62" y="0" a="01">
+        </img>
+        <text id="sanctuary_title" text="掉落奖励" x="120" y="0" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" horwrap="1" a="01">
+        </text>
+        <text id="last_num" text="88" x="335" y="196" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0">
+        </text>
+        <loopscrollview id="sanctuary_boss_select" width="302" height="140" x="218" y="-35" vertical="1" a="01" cellwidth="70" cellheight="70">
+          ;<gridview id="sanctuary_reward_list" width="300" height="200" a="01" cellwidth="70" cellheight="70" vertical="0" contentsizefitter="1">
+            <datalist id="sanctuary_reward_data_list" databind="@current_mi_level_reward">
+            </datalist>
+          ;</gridview>
+        </loopscrollview>
+        <text id="sanctuary_last_challenge_count_txt" text="剩余挑战次数" x="-30" y="5" a="21" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0" horwrap="1" active="0">
+        </text>
+        <text id="sanctuary_box_text" text="归属奖励" x="121" y="169" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1" active="0">
+        </text>
+        <text id="sanctuary_last_challenge_count" text="88" x="335" y="196" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0" horwrap="1" active="0">
+        </text>
+        <img id="sanctuary_boss_Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="80" height="76" raycast="1" x="-303" y="174" z="-500">
+          <text id="sanctuary_boss_Integral_Text" a="00" text="9999" fontsize="16" height="83" width="100" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font">
+          </text>
+        </img>
+      </panel>
+    </panel>
+</uipanel>

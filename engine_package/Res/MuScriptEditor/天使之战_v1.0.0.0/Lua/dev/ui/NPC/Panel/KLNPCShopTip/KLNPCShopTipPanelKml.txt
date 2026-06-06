@@ -1,0 +1,10 @@
+<uipanel id="KLNPCShopTipPanel" name="npc商店提示界面" zindex="400" width="1334" height="750" z="-200">
+  <img id="bg" width="1334" height="750" color="#00000000" raycast="1">
+    <img id="text_bg" src="Texture/bg_tips_2.png">
+      <img id="close_btn" x="285" y="180" width="50" height="50" raycast="1" color="#00000000">
+      </img>
+      <text id="ContentTxt" text="1、商店是花费金币购买商品的地方。\n2、不同商品有不同的购买次数限制。\n3、不同商品的购买次数刷新时间不同。\n4、每月限购：每月可购买次数，购买完后需下个月才能继续购买。\n5、每周限购：每周可购买次数，购买完后需下周才能继续购买。\n6、今日限购：今日可购买次数，购买完后需明日才能继续购买。" linespace="0.8" x="0" y="0" z="0" width="590" height="300" a="00" rotate="0,0,0" fontsize="20" ta="00">
+      </text>
+    </img>
+  </img>
+</uipanel>

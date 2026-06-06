@@ -1,0 +1,50 @@
+<uipanel id="KLFashionMountTipPanelKml" a="20" width="322" height="750" adapter="1" zindex="103" x="-85" y="32" z="-150">
+  <img id="maskBg" a="00" width="2000" height="1500" raycast="1" x="-6" y="123" color="#FFFFFF00">
+  </img>
+  <img id="Bg" a="00" atlas="Atlas/Common.spriteatlas" src="img_interface_main122" width="322" height="435" raycast="1" x="1" y="1" color="#FFFFFFFF" scale9l="30" scale9b="25" scale9r="30" scale9t="28">
+    <scrollview id="scrollview3" a="00" width="322" height="415" vertical="1" y="0" raycast="1">
+      <layout id="layout4" width="322" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11">
+        <gridview id="gridview5" cella="11" cellwidth="90" cellheight="90" raycast="1" constraint="1" constraintcount="3">
+          <datalist id="datalist_ride">
+            <panel id="root" width="90" height="90">
+              <img id="img15" a="00" width="70" height="70" raycast="1" src="ty_frame_mountHead" atlas="Atlas/XHQJ_Mount.spriteatlas">
+              </img>
+              <img id="mountIcon" a="00" width="70" height="70" raycast="0">
+              </img>
+            </panel>
+          </datalist>
+        </gridview>
+        <panel id="panel1" width="300" height="48">
+          <img id="fashionTitle" width="295" height="48" raycast="1" src="bg__intensify_black_ground" atlas="Atlas/XHQJ_Mount.spriteatlas" a="10" x="15" y="0">
+            <text id="titleText" a="00" text="臻藏系列（1/5）" fontsize="20" height="30" width="350" ta="01" outline="0" horwrap="1" x="65" y="3" outlinesize="1" outlinecolor="#000000FF" color="#F7DE08FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="layout_Name" control_height="0" contentsizefitter="1" vertical="1" height="100" width="322" cella="11" raycast="1" space="5">
+          <datalist id="datalist_Name">
+            <panel id="panel8" width="322" height="30">
+              <text id="rideName" outline="0" text="坐骑名字" fontsize="18" height="25" width="350" ta="01" horwrap="1" x="20" y="0" a="10" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+        <panel id="panel2" width="300" height="48">
+          <img id="fashionInfoTitle" width="295" height="48" raycast="1" src="bg__intensify_black_ground" atlas="Atlas/XHQJ_Mount.spriteatlas" a="10" x="15" y="0" h5x="15" h5y="0">
+            <text id="text4" a="00" text="臻藏属性" fontsize="20" height="30" width="350" ta="01" outline="0" horwrap="1" x="65" y="3" outlinesize="1" outlinecolor="#000000FF" color="#F7DE08FF">
+            </text>
+          </img>
+        </panel>
+        <layout id="layout_Info" control_height="0" contentsizefitter="1" vertical="1" height="100" width="322" cella="11" raycast="1" space="5">
+          <datalist id="datalist_Info">
+            <panel id="panel13" width="322" height="30">
+              <text id="num" outline="0" text="坐骑名字" fontsize="18" height="25" width="350" ta="01" horwrap="1" x="20" y="0" a="10" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+              <text id="value" outline="0" text="坐骑名字" fontsize="18" height="25" width="350" ta="01" horwrap="1" x="115" y="0" a="10" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </layout>
+    </scrollview>
+  </img>
+</uipanel>

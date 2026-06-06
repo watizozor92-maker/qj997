@@ -1,0 +1,6 @@
+﻿int#c#s,string#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,string#c#s,intList#c#s
+id,description,level,successLevel,firstRate,rate,rateClient,failLevel,tips,costTag
+1,生命宝石+1,0,1,0,5000,5000,0,失败退到0级,1253000499#1
+2,生命宝石+2,0,1,0,5000,5000,0,失败退到0级,50030004#1
+5,生命宝石+3,0,1,0,5000,5000,0,本级失败不掉级,1253000499#1
+6,生命宝石+4,0,1,0,5000,5000,0,本级失败不掉级,50030004#1

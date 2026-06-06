@@ -1,0 +1,78 @@
+
+
+option java_package = "com.sh.game.proto";
+option java_outer_classname = "MapInfoProtos";
+
+enum CellType
+{
+    Normal	   = 0;     // 正常
+    Lucency	   = 1;     // 透明
+    Resistance = 2;     // 阻挡
+    Protect	   = 3;     // 保护（安全区）
+    Born	   = 4;     // 人物默认出生点
+    Stallge	   = 5;     // 可摆摊
+    Diggable   = 6;     // 可挖矿
+	Transmit   = 7;     // 传送点
+	Resurgence = 8;     // 复活点
+	SafeEffectPoint =9; //保护区特效点
+	Separate     =10;   //隔断点
+	Special_1    =11;   //辅助特殊类型1
+	Special_2    =12;   //辅助特殊类型2
+	Special_3    =13;   //辅助特殊类型3
+	Special_4    =14;   //辅助特殊类型4
+	Special_5    =15;   //辅助特殊类型5
+	Special_6    =16;   //辅助特殊类型6
+	Special_7    =17;   //辅助特殊类型7
+	Special_8    =18;   //辅助特殊类型8
+	Separate_1   =19;   //可寻路
+	Weather_1 = 20; //天气1
+	Weather_2 = 21; //天气2
+	Weather_3 = 22; //天气3
+	Material_Stone = 23; // 地表材质-石
+    Material_Grass = 24; //地表材质-草
+    Material_Snow = 25; //地表材质-雪
+    Material_Land = 26; //地表材质-土
+    Material_Water = 27; //地表材质-水
+    Material_Wood = 28; //地表材质-木
+    Material_Sand = 29; //地表材质-沙
+    Material_Swamp = 30; //地表材质-沼泽
+	Sit_Up = 31; //坐下
+	Sit_RightUp = 32; //坐下
+	Sit_Right = 33; //坐下
+	Sit_RightDown = 34; //坐下
+	Sit_Down = 35; //坐下
+	Sit_LeftDown = 36; //坐下
+	Sit_Left = 37; //坐下
+	Sit_LeftUp = 38; //坐下
+	Sit_All = 39; //
+	LeanOn_Up = 40; //倚靠
+	LeanOn_RightUp = 41; //倚靠
+	LeanOn_Right = 42; //倚靠
+	LeanOn_RightDown = 43; //倚靠
+	LeanOn_Down = 44; //倚靠
+	LeanOn_LeftDown = 45; //倚靠
+	LeanOn_Left = 46; //倚靠
+	LeanOn_LeftUp = 47; //倚靠
+	LeanOn_All = 48; //倚靠
+	FlyUp = 49; //飞升
+	GuidePoint = 50; //导航点
+	StallScale=51;--摆摊点
+	Material_HighLight = 52; --地表材质-高光
+	Material_Shadow = 53; --地表材质-阴影
+	HollowMap = 54; --挖空图
+	Grassland = 55; 草
+    Wall=56; -- 墙壁 
+    SearchPoint=57; -- 寻路点
+}
+
+message Info {
+	optional int32	Coord = 1;
+	optional int64  Type = 2;
+}
+
+message MapInfoList
+{
+  repeated Info grid = 1; //格子列表
+}
+
+

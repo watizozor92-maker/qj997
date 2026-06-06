@@ -1,0 +1,12 @@
+<uipanel id="KLChallengeBossSanctuaryMapItemKml" name="挑战boss关卡模板" a="00" width="375" height="40" zindex="-1">
+  <panel id="root" a="00" width="375" height="40">
+    <text id="textMapName" a="00" text="圣域" fontsize="18" height="25" width="108" ta="01" horwrap="1" x="-93" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="textLevel" a="00" text="250级开启" fontsize="18" height="25" width="138" ta="01" horwrap="1" x="40" y="0" outlinesize="1" outlinecolor="#000000FF" color="#00FF00FF">
+    </text>
+    <button id="btnSelect" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_gou_N" width="36" height="36" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="3">
+    </button>
+    <img id="select" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_gou" width="42" height="35" raycast="0" active="0">
+    </img>
+  </panel>
+</uipanel>

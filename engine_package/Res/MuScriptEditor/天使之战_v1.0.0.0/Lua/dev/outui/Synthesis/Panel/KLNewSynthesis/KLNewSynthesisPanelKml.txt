@@ -1,0 +1,96 @@
+<uipanel id="KLNewSynthesisPanelKml" a="20" width="416" height="750" x="-415" y="0" adapter="1" mask="0" name="" maskalpha="0" zindex="100">
+  <img id="img4" a="00" width="408" height="730" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+  </img>
+  <img id="Content" a="21" width="413" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" x="0" y="0" scale9l="138" scale9b="62" scale9r="140" scale9t="128">
+    <img id="img4" a="01" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png">
+    </img>
+    <text id="Text_Title" a="01" text="一般合成" fontsize="20" height="20" width="0" ta="11" outline="1" horwrap="1" y="-25" color="#FFFFFFFF" x="0" contentsizefitter="2" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="Btn_Close" a="21" width="34" height="35" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-11" y="-18">
+    </button>
+    <img id="SuccessRate" a="01" width="362" height="34" raycast="1" src="bg_xinxidi2" atlas="Atlas/FG_Synthesis.spriteatlas" y="-68" x="1">
+      <text id="Text1" a="11" text="合成成功率" fontsize="18" height="17" width="0" ta="00" outline="1" horwrap="1" x="15" y="-5" color="#FFFFFFFF" contentsizefitter="2" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="Text_SuccessRate" a="11" text="0%" fontsize="18" height="17" width="210" ta="21" outline="1" horwrap="1" y="-7" x="124" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" offsetmin="124#-28" offsetmax="336#-3">
+      </text>
+    </img>
+    <img id="Cost" a="01" width="362" height="34" raycast="1" src="bg_xinxidi2" atlas="Atlas/FG_Synthesis.spriteatlas" y="-107" x="1">
+      <text id="Text_CostName" a="11" text="消耗金币" fontsize="18" height="25" width="112" ta="00" outline="1" horwrap="1" x="15" y="-5" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="Text_CostValue" a="11" text="0" fontsize="18" height="17" width="210" ta="21" outline="1" horwrap="1" y="-7" x="124" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" offsetmax="336#-6" h5y="-6">
+      </text>
+    </img>
+    <img id="Smelter11" a="01" width="357" height="170" raycast="1" y="-150" src="img_blackBg" atlas="Atlas/TS_Common.spriteatlas" scale9l="21" scale9b="28" scale9r="24" scale9t="26" x="0">
+      <panel id="Smelter" a="00" width="350" height="179" x="1" y="0">
+      </panel>
+    </img>
+    <text id="Text_ResultPreview" a="11" text="合成：" fontsize="18" height="25" width="350" ta="01" outline="1" horwrap="1" x="39" y="-324" contentsizefitter="2" active="1">
+      <button id="Btn_LookPreview" x="65" y="0" width="58" height="26" onclick="" text="【查看】" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFF00" active="0" a="20">
+      </button>
+    </text>
+    <img id="img2" a="01" width="113" height="38" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-114" y="-355" active="1">
+    </img>
+    <img id="img6" a="11" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="39" y="-362" color="#FFFFFFFF">
+      <text id="text7" a="10" text="必选材料" fontsize="18" height="25" width="68" ta="01" outline="1" horwrap="1" x="27" color="#FFFFFFFF" contentsizefitter="2" y="4">
+      </text>
+      <text id="synthesisName" a="10" text="" fontsize="18" height="25" width="273" ta="01" outline="1" horwrap="1" x="101" y="4" color="#FFFFFFFF">
+      </text>
+    </img>
+    <scrollview id="scrollview1" a="11" width="350" height="104" vertical="1" y="-395" raycast="1" x="39" movementtype="2">
+      <layout id="layout2" width="350" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="01" expand_height="1" control_height="1">
+        <text id="Text_Tips" text="默认内容" fontsize="16" height="15" width="350" ta="00" outline="1" horwrap="1" raycast="1" linespace="1.1" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </layout>
+    </scrollview>
+    <img id="img3" a="00" width="113" height="38" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-114" y="-150">
+    </img>
+    <img id="img8" a="11" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="39" y="-513" color="#FFFFFFFF">
+      <text id="text9" a="10" text="可选材料" fontsize="18" height="25" width="350" ta="01" outline="1" horwrap="1" x="27" color="#FFFFFFFF" y="4">
+      </text>
+    </img>
+    <scrollview id="scrollview3" a="11" width="350" height="107" vertical="1" y="-545" raycast="1" x="39" movementtype="2">
+      <layout id="layout4" width="350" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="01" expand_height="1" control_height="1">
+        <text id="Text_Tips2" text="请先确定配方" fontsize="16" height="15" width="350" ta="00" outline="1" horwrap="1" raycast="1" linespace="1.1" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </layout>
+    </scrollview>
+    <button id="Btn_Confirm" a="02" width="113" height="41" onclick="" text="确定" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" y="40" fontsize="18" textcolor="#FFFFFFFF" x="0" ta="11" outlinesize="1" outlinecolor="#000000FF">
+      <text id="tishi" a="01" text="失败后，原先的合成材料会全部消失" fontsize="16" height="25" width="350" ta="10" outline="1" horwrap="1" x="1" y="-47" linespace="0" color="#FF2424FF" outlinesize="1" outlinecolor="#000000FF" fontstyle="0">
+      </text>
+    </button>
+    <img id="TabType" a="10" width="160" height="429" raycast="1" atlas="Atlas/FG_Synthesis.spriteatlas" src="bg_sidebar" x="-156" y="110" color="#FFFFFFFF">
+      <togglegroup id="TogGroup_Tab" a="00" width="155" height="425" onload="" raycast="1">
+        <scrollview id="scrollview2" a="00" width="155" height="425" vertical="1" y="0" raycast="1" x="0" movementtype="2">
+          <layout id="layout3" width="121" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" space="5">
+            <datalist id="DataList_TabType">
+              <panel id="panel5" width="150" height="42">
+                <toggle id="Tog" width="148" height="41" a="00" default="0" togglegroup_id="TogGroup_Tab" onclick="" raycast="1" src="btn_cebian2" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian1">
+                  <text id="Text_TogName" a="00" text="强化装备" fontsize="18" height="44" width="147" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+                  </text>
+                </toggle>
+              </panel>
+            </datalist>
+          </layout>
+        </scrollview>
+      </togglegroup>
+    </img>
+    <panel width="273" height="199" y="3000" id="NumSelect" x="3000" z="-500" zindex="500" active="1" alphaall="1">
+      <img id="NumSelectMask" a="00" width="2000" height="2000" raycast="1" active="1" src="settingBtnUnselected" atlas="Atlas/Common.spriteatlas" color="#FFFFFF00">
+      </img>
+      <img id="img1" a="00" width="273" height="199" raycast="1" src="settingBtnUnselected" atlas="Atlas/Common.spriteatlas" ap="0#0#1#1#0.5#0.5" active="1">
+      </img>
+      <input id="Input_PutNum" text="1" a="11" x="63" width="180" height="38" ta="11" fontsize="18" outlinecolor="#000000" outlinesize="1" type="1" src="bg_partnerStar_select" atlas="Atlas/Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" y="-23">
+        <button id="Btn_NumberMinus" src="button_interface_minus3" atlas="Atlas/Common.spriteatlas" x="-70" raycast="1">
+        </button>
+        <button id="Btn_NumberAdd" src="button_interface_plus6" atlas="Atlas/Common.spriteatlas" x="70" raycast="1">
+        </button>
+        <text text="数量" a="10" x="-52" id="text_18" horwrap="1" y="0" fontsize="18" fonttype="" outlinecolor="#000000" outlinesize="1" ta="11" outline="0">
+        </text>
+      </input>
+      <slider id="Slider_PutNum" atlas="Atlas/UIEquipOverlayPanel.spriteatlas" src="slider_1" fimg="slider_2" himg="btn_slider" x="0" y="-3" scale9l="10" scale9r="10" scale9t="5" scale9b="5" scale9l2="10" scale9r2="0" scale9t2="0" scale9b2="0" width="220" height="30" minvalue="1" maxvalue="100" curvalue="1" wholenum="1" updateinterval="0.1" slidefillarealrtb="5,-5,0,0" slidehandlearealrtb="0,2,0,0" handlewidthtb="120,-27,-30">
+      </slider>
+      <button id="Btn_ConfirmPutNum" src="button_interface_window11" atlas="Atlas/Common.spriteatlas" text="确认" a="02" y="25" raycast="1" fontsize="18" outlinesize="1" outlinecolor="#000000" textcolor="#FFFFFF" width="116" height="32">
+      </button>
+    </panel>
+  </img>
+</uipanel>

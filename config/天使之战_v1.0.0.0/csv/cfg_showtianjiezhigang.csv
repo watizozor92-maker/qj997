@@ -1,0 +1,5 @@
+﻿int#s,int#s,string#s,int#s#c,string#s#c,string#s,string#s,string#s,intList#c#s,intListList#c#s,int#c#s,intListList#c#s
+id,type,beizhu,item,num,probability,career,level,skillbaoxiang,strengthenbaoxiang,luckbaoxiang,appendsbaoxiang
+1,1,钻石,101999,1#1,0#10000,,,,,,
+2,1,金币,109899,1#1,0#10000,,,,,,
+3,1,奇迹点,112499,1#1,0#10000,,,,,,

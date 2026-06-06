@@ -1,0 +1,82 @@
+<uipanel id="KLHorseRaceLampPanel" name="跑马灯界面" zindex="0" z="-99" width="1334" height="750">
+  <img id="HorseRaceLampBG" x="0" y="-230" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg">
+    <scrollview id="scroll" movementtype="0">
+      <layout id="HorseRaceLampLayout">
+        <text id="HorseRaceLamp" text="dsafafdsfgdssdgasfdas" horwrap="1" outline="0" contentsizefitter="1" fontsize="20" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </layout>
+    </scrollview>
+    <img id="HorseRace" x="0" y="0" raycast="1" color="#00000000">
+    </img>
+  </img>
+  <img id="DamageEXPBG" x="0" y="-175" raycast="1" atlas="Atlas/UIMisc.spriteatlas" src="bg_detail" active="0">
+    <text id="DamageEXPText" text="" x="0" y="0" contentsizefitter="1" fontsize="20" ta="11" outline="0" horwrap="1">
+    </text>
+  </img>
+  <panel id="BgNode" x="0" rectmask="1" height="200" width="550" y="-50">
+    <layout id="stationary" vertical="1" height="140" width="1334" y="-27" space="15" x="0">
+      <img id="stationary_img1" active="0" src="sp_white" atlas="Atlas/UITreasure.spriteatlas" color="#00000057">
+        <richtext id="stationary_text1" x="0" y="0" contentsizefitter="2" fontsize="22" outlinecolor="#000000" outline="0" horwrap="1" fontstyle="1" ta="11" text="" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+        <img id="stationary_mask1" a="00" ap="0#0#1#1#0.5#0.5" width="284" height="52" raycast="1" atlas="" src="Texture/bg_tips.png" scale9l="40" scale9b="84" scale9r="59" scale9t="63" x="0" y="0" color="#FFFFFF94" offsetmin="0#-2" offsetmax="0#2">
+        </img>
+        <button id="stationary_imgBtn1" ap="0#0#1#1#0.5#0.5" a="00" width="284" height="22" onclick="" text="" raycast="1" color="#FFFFFF00" offsetmin="0#-2" offsetmax="0#2">
+        </button>
+      </img>
+      <img id="stationary_img2" active="0" src="sp_white" atlas="Atlas/UITreasure.spriteatlas" color="#00000057">
+        <richtext id="stationary_text2" x="0" y="0" contentsizefitter="2" fontsize="22" outlinecolor="#000000" outline="0" horwrap="1" fontstyle="1" ta="11" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+        <img id="stationary_mask2" a="00" ap="0#0#1#1#0.5#0.5" width="284" height="52" raycast="1" atlas="" src="Texture/bg_tips.png" scale9l="40" scale9b="84" scale9r="59" scale9t="63" x="0" y="0" color="#FFFFFF94" offsetmin="0#-2" offsetmax="0#2">
+        </img>
+        <button id="stationary_imgBtn2" ap="0#0#1#1#0.5#0.5" a="00" width="284" height="22" onclick="" text="" raycast="1" color="#FFFFFF00" offsetmin="0#-2" offsetmax="0#2">
+        </button>
+      </img>
+      <img id="stationary_img3" active="0" src="sp_white" atlas="Atlas/UITreasure.spriteatlas" color="#00000057">
+        <richtext id="stationary_text3" x="0" y="0" contentsizefitter="2" fontsize="22" outlinecolor="#000000" outline="0" horwrap="1" fontstyle="1" ta="11" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+        <img id="stationary_mask3" a="00" ap="0#0#1#1#0.5#0.5" width="284" height="52" raycast="1" atlas="" src="Texture/bg_tips.png" scale9l="40" scale9b="84" scale9r="59" scale9t="63" x="0" y="0" color="#FFFFFF94" offsetmin="0#-2" offsetmax="0#2">
+        </img>
+        <button id="stationary_imgBtn3" ap="0#0#1#1#0.5#0.5" a="00" width="284" height="22" onclick="" text="" raycast="1" color="#FFFFFF00" offsetmin="0#-2" offsetmax="0#2">
+        </button>
+      </img>
+      <img id="stationary_img4" active="0" src="sp_white" atlas="Atlas/UITreasure.spriteatlas" color="#00000057">
+        <richtext id="stationary_text4" x="0" y="0" contentsizefitter="2" fontsize="22" outlinecolor="#000000" outline="0" horwrap="1" fontstyle="1" ta="11" parentaddwidth="0" parentaddheight="0" parent2addwidth="0" parent2addheight="0">
+        </richtext>
+        <img id="stationary_mask4" a="00" ap="0#0#1#1#0.5#0.5" width="284" height="52" raycast="1" atlas="" src="Texture/bg_tips.png" scale9l="40" scale9b="84" scale9r="59" scale9t="63" x="0" y="0" color="#FFFFFF94" offsetmin="0#-2" offsetmax="0#2">
+        </img>
+        <button id="stationary_imgBtn4" a="00" ap="0#0#1#1#0.5#0.5" width="284" height="22" onclick="" text="" raycast="1" color="#FFFFFF00" offsetmin="0#-2" offsetmax="0#2">
+        </button>
+      </img>
+    </layout>
+  </panel>
+  <layout id="archangelLayout" control_height="0" contentsizefitter="0" vertical="1" height="210" width="250" raycast="1" x="230" y="90" a="12" cella="02" zindex="1">
+    <img id="archangelExpBG1" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" outlinesize="1" outlinecolor="#000000" horwrap="1" contentsizefitter="2" x="0" outline="1">
+      </text>
+    </img>
+    <img id="archangelExpBG2" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0" outline="1">
+      </text>
+    </img>
+    <img id="archangelExpBG3" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0">
+      </text>
+    </img>
+    <img id="archangelExpBG4" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0" outline="1">
+      </text>
+    </img>
+    <img id="archangelExpBG5" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0" outline="1">
+      </text>
+    </img>
+    <img id="archangelExpBG6" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0">
+      </text>
+    </img>
+    <img id="archangelExpBG7" atlas="Atlas/UIMessagePanel.spriteatlas" src="new_bg" width="300" height="30">
+      <text id="archangelExp" text="88888888x8" fontsize="16" height="30" width="0" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000" contentsizefitter="2" x="0">
+      </text>
+    </img>
+  </layout>
+</uipanel>

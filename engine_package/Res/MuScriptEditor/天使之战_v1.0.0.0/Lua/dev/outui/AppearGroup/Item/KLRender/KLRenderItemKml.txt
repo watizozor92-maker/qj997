@@ -1,0 +1,11 @@
+<uipanel id="KLRenderItem" name="外观部位模板" a="00" width="390" height="300" y="-39" x="0" zindex="-1" mask="0">
+  <img id="SpTag" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" active="1" x="19" y="-16">
+  </img>
+  <text id="Title" a="11" text="头盔" fontsize="16" height="25" width="120" ta="01" horwrap="1" x="41" y="-10">
+  </text>
+  <gridview id="gridview1" a="11" cellwidth="64" cellheight="64" raycast="1" x="28" y="-45" width="350" height="0" cella="11" spacex="5" spacey="5" constraintcount="0" rotate="0,0,0" contentsizefitter="1">
+    <datalist id="datalist11">
+    </datalist>
+  </gridview>
+
+</uipanel>

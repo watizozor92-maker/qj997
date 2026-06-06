@@ -1,0 +1,11 @@
+﻿int#c#s,int#c#s,int#c#s,string#c#s,stringlist#c#s,string#c#s
+id,Career,talentGroup,talentGroupName,talentGroupIcon,talentGroupMenuIcon
+1,1,1,攻速,icon_gongsu#text_gongsu,Texture/img_lizhan.png
+2,1,2,暴击,icon_baoji#text_baoji,Texture/img_zhigong.png
+3,1,3,减伤,icon_jianshang#text_jianshang,Texture/img_fangzhan.png
+4,2,4,攻速,icon_gongsu#text_gongsu,Texture/img_lizhan.png
+5,2,5,暴击,icon_baoji#text_baoji,Texture/img_zhigong.png
+6,2,6,减伤,icon_jianshang#text_jianshang,Texture/img_fangzhan.png
+7,3,7,攻速,icon_gongsu#text_gongsu,Texture/img_lizhan.png
+8,3,8,暴击,icon_baoji#text_baoji,Texture/img_zhigong.png
+9,3,9,减伤,icon_jianshang#text_jianshang,Texture/img_fangzhan.png

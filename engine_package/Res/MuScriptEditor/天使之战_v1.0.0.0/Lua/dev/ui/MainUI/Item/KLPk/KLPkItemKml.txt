@@ -1,0 +1,8 @@
+<uipanel id="KLPkItem" active="1" x="0" y="0" z="0" width="64" height="34" a="00" rotate="0,0,0" zindex="999">
+  <img id="Bg" a="00" width="64" height="34" raycast="1" src="bg_atk_mode" atlas="Atlas/UIMainPanel_Out.spriteatlas">
+  </img>
+  <img id="pkBtn" width="69" height="31" atlas="Atlas/NewMainPanel.spriteatlas" src="btn_quanbu" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1">
+    <text id="pk_name" fontsize="16" outlinesize="1" outlinecolor="#000000" x="0" width="64" height="34" ta="11" color="#FFBD00" y="0" z="0" a="00" rotate="0,0,0" outline="0" horwrap="1" active="0">
+    </text>
+  </img>
+</uipanel>

@@ -1,0 +1,20 @@
+<uipanel id="KLJoinInfoItem" name="加入战盟模板" width="0" height="0" a="01" zindex="-1">
+  <panel id="datalist_panel_" a="01" width="370" height="30">
+    <img id="union_choice_bg_" width="370" height="36" atlas="Atlas/UIUnionInfoPanel.spriteatlas" scale9l="14" scale9r="14" scale9t="15" scale9b="15" src="bg_choose1" active="0">
+    </img>
+    <button id="datalist_panel_btn_" width="370" height="30" color="#00000000" onclick="KmlXWUnionApplyToJoinUI/@选择战盟 ">
+    </button>
+    <text id="union_name" text="" x="-118" ta="11" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
+    </text>
+    <text id="union_level" text="" x="-21" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="11">
+    </text>
+    <text id="union_num" text="" x="45" color="#00FF00" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="11">
+    </text>
+    <button id="apply_to_join" x="133" width="82" height="28" onclick="KmlXWUnionApplyToJoinUI/@发起申请  " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select">
+      <img id="btn_grey_bg" width="82" height="28" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" color="#FFFFFFFF" active="0">
+      </img>
+      <text id="btn_text" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="11" outline="1" horwrap="1" color="#FFFFFFFF">
+      </text>
+    </button>
+  </panel>
+</uipanel>

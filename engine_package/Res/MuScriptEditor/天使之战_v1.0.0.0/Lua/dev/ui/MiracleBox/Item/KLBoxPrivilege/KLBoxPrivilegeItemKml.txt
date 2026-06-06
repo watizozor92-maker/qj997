@@ -1,0 +1,6 @@
+<uipanel id="KLBoxPrivilegeItem" name="盒子特权模板" width="126" height="36" zindex="500">
+    <toggle id="toggle_privilege" default="0" width="126" height="36" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="noselect_btn" pimg="select_btn">
+        <img id="select_toggle" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="select_btnbox" active="0" />
+        <text text="盒子特权" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_privilege"/>
+    </toggle>
+</uipanel>

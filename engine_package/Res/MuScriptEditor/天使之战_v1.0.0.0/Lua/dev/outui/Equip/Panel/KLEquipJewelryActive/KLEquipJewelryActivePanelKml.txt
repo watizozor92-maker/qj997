@@ -1,0 +1,48 @@
+<uipanel id="KLEquipJewelryActivePanelKml" name="首饰激活界面" adapter="1" a="00" width="300" height="300" zindex="400" x="780" y="0">
+  <panel id="panel2" a="00" width="606" height="750" x="-800" y="0">
+    <button id="maskBtn" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="2353" height="1639" onclick="" text="默认内容" raycast="1" x="18" y="-100" color="#FFFFFF00">
+    </button>
+    <img id="img3" a="00" atlas="" src="Texture/BG_Bulletbox.png" width="467" height="437" raycast="1" x="0" y="1" scale9l="38" scale9b="49" scale9r="47" scale9t="64">
+      <scrollview id="scrollview1" a="00" x="1" y="49" width="432" height="215" vertical="1" raycast="1" active="1" rotate="0,0,0">
+        <gridview id="gridview15" cellwidth="432" cellheight="50" raycast="1" spacey="2" constraint="1" constraintcount="1" contentsizefitter="3">
+          <datalist id="cost_list">
+            <panel id="List" width="432" height="50">
+              <img id="ExceBg" width="432" height="50" atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" x="0" scale9l="10" scale9r="10" scale9t="10" scale9b="10" y="0">
+              </img>
+              <text id="ExceAttrName" a="10" width="221" height="50" ta="01" text="" fontsize="20" horwrap="1" x="12" y="0" rotate="0,0,0">
+              </text>
+              <text id="ExceActiveText" a="00" text="20级激活" fontsize="20" height="50" width="122" ta="11" horwrap="1" x="148" y="1" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+      <img id="img1" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-153" y="-90" active="1">
+        <text id="text3" a="00" text="所需等级:" fontsize="20" height="25" width="93" ta="01" horwrap="1" x="15" y="1" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <text id="Level" a="00" text="0/0" fontsize="20" height="24" width="188" ta="01" horwrap="1" x="152" y="0">
+        </text>
+      </img>
+      <img id="img4" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-153" y="-128" active="1">
+        <text id="text5" a="00" text="消耗材料:" fontsize="20" height="25" width="90" ta="01" horwrap="1" x="12" y="1" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <button id="Add" a="00" atlas="Atlas/UIJewelryOutPanel.spriteatlas" src="jiaohao" width="38" height="38" onclick="" text="" raycast="1" x="227" y="1" mimg="" pimg="" dimg="">
+        </button>
+        <img id="img8" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" width="153" height="35" raycast="1" x="130" y="0" scale9l="7" scale9b="6" scale9r="7" scale9t="6">
+          <text id="count" a="00" text="1/2" fontsize="20" height="25" width="118" ta="11" horwrap="1" x="14" y="1">
+          </text>
+        </img>
+        <item id="itemModel" itemid="" uniqueid="" a="01" y="-6" z="-300" width="24" height="23" mfixsize="100,150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="0" x="74" mpos="">
+        </item>
+      </img>
+      <button id="ActiveBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" width="147" height="42" onclick="" text="激活" raycast="1" x="0" y="-176" outlinesize="1" outlinecolor="#000000FF" fontsize="20">
+      </button>
+      <button id="CloseBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="210" y="193" h5y="193" h5x="-210">
+      </button>
+      <img id="img2" a="00" atlas="Atlas/UIJewelryOutPanel.spriteatlas" src="jihuo" width="96" height="55" raycast="1" x="-1" y="192">
+      </img>
+    </img>
+    <img id="activeIcon" a="00" atlas="Atlas/UIJewelryOutPanel.spriteatlas" src="icon_JewelryActive" width="239" height="58" raycast="1" x="0" y="-178">
+    </img>
+  </panel>
+</uipanel>

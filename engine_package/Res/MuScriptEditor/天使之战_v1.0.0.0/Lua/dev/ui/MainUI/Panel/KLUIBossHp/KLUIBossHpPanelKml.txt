@@ -1,0 +1,38 @@
+<uipanel id="KLUIBossHpPanel" name="怪物血条界面" width="244" height="92" zindex="0" a="01" movecanvas="0" y="0" x="0">
+  <panel id="move_root" x="0" y="0" width="244" height="92">
+    <panel id="bg" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" src="bg_boss" y="0" width="244" height="92" x="0" color="#FFFFFF00">
+      <img id="bg33" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" src="bg1" y="6" x="25">
+      </img>
+      <img id="bg44" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" src="bg2" y="-35" x="25">
+      </img>
+      <img id="bg_boss2" a="00" raycast="1" src="bg_boss2" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" x="25" y="-8">
+      </img>
+      <loadingbar id="sliderHp" hidetext="0" atlas="Atlas/NewMainPanel.spriteatlas" width="150" height="16" vertical="0" x="25" y="-8" fontsize="14" src="" loadingbar="bossHp_red" startper="0" ta="11" raycast="0" outlinesize="1" outlinecolor="#000000" deltax="0.7" deltay="0">
+      </loadingbar>
+      <loadingbar id="sliderHp2" hidetext="0" atlas="Atlas/NewMainPanel.spriteatlas" width="150" height="16" vertical="0" x="25" y="-8" fontsize="14" src="" loadingbar="bossHp_green" startper="0" ta="11" raycast="0" outlinesize="1" outlinecolor="#000000" deltax="0.7" deltay="0">
+      </loadingbar>
+      <loadingbar id="sliderHp3" hidetext="0" atlas="Atlas/KLBossHp.spriteatlas" width="150" height="15" vertical="0" x="25" y="-8" fontsize="14" src="" loadingbar="monsterHp3" startper="0" ta="11" raycast="0" outlinesize="1" outlinecolor="#000000" deltax="0.7" deltay="0">
+      </loadingbar>
+      <img id="bg22" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" src="bg_boss" y="0" x="-70">
+      </img>
+      <img id="img2" a="00" width="64" height="62" raycast="1" src="bg_boss_head" atlas="Atlas/FG_UIBossHpPanel.spriteatlas" x="-80" y="1" rectmask="2">
+        <img id="icon" atlas="Atlas/MUIcon.spriteatlas" src="" width="55" height="55" a="00" x="0" y="0">
+        </img>
+      </img>
+      <text id="name" text="[精英]" fontsize="16" width="200" height="20" ta="01" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000" x="85" y="-18" z="0" a="11" outline="1" horwrap="1" fontstyle="0" underline="0">
+      </text>
+      <text id="club_name" text="" fontsize="18" width="120" height="22" ta="01" color="#CA9737" outlinesize="1" outlinecolor="#000000" x="85" y="43" z="0" a="10" outline="1" horwrap="1">
+      </text>
+      <text id="guishu" text="" fontsize="16" width="200" height="20" ta="01" color="#E6E600" outlinesize="1" outlinecolor="#000000" x="85" y="-67" z="0" a="11" outline="1" horwrap="1" fontstyle="0" underline="0">
+      </text>
+      <button id="KLUIBossHpButton" color="#FFFFFF00" width="244" height="92" raycast="1">
+      </button>
+      <layout id="item_layout" width="250" height="50" x="76" y="-56" z="1000" vertical="0" cella="11" space="1">
+        <datalist id="drop_data_list">
+        </datalist>
+      </layout>
+    </panel>
+    <img id="snatchBtn" a="20" atlas="Atlas/TS_Common.spriteatlas" src="snatchIcon" width="97" height="54" raycast="1" x="74" y="-10" active="0">
+    </img>
+  </panel>
+</uipanel>

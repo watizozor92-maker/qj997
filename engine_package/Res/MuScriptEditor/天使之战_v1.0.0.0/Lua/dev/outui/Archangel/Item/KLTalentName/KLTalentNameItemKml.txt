@@ -1,0 +1,10 @@
+<uipanel id="KLTalentNameItemKml" name="大天使天赋标题模板" a="00" width="118" height="106" zindex="-1">
+  <img id="name_bg" atlas="Atlas/UIArchangel.spriteatlas" src="talentname_bg" width="118" height="106" raycast="1">
+    <img id="talent_icon" src="icon_baoji" atlas="Atlas/UIArchangel.spriteatlas" width="60" height="60" x="0" y="15">
+    </img>
+    <img id="talent_name" x="0" y="-30" src="text_baoji" atlas="Atlas/UIArchangel.spriteatlas" width="60" height="60">
+    </img>
+    <img id="select" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="icon_select" width="118" height="106" raycast="1" active="0">
+    </img>
+  </img>
+</uipanel>

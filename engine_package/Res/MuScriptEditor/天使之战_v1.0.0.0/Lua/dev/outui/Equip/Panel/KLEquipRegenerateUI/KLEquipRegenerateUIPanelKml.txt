@@ -1,0 +1,226 @@
+<uipanel id="KLEquipRegenerateUIPanel" name="装备再生界面" adapter="1" zindex="200" a="20" width="416" height="750" x="-67" onload="" maskonclick="">
+  <img id="BG" a="20" atlas="" src="Texture/bg_bottomBg.png" width="416" height="750" raycast="1" x="0" y="0">
+    <img id="Title" a="01" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="img_title" raycast="1" y="-2" x="0">
+    </img>
+  </img>
+  <button id="CloseButton" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="6" y="10" active="1">
+  </button>
+  <panel id="xilian_top" width="402" height="198" active="1" y="215">
+    <img id="xilian_top_bg" src="Texture/img_regenerate_di.png" raycast="1" x="0" y="0">
+    </img>
+    <text id="equipName" text="" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="77" x="0" color="#5CE366FF" active="1" contentsizefitter="2">
+      <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
+      </img>
+      <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
+      </img>
+    </text>
+    <item id="item_model" itemid="" uniqueid="" y="-5" z="-60" width="100" height="150" mfixsize="100,150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="1">
+    </item>
+  </panel>
+  <panel id="jinhua_top" width="402" height="198" active="0" y="200">
+    <img id="jinhua_top_bg" src="Texture/img_regenerate_di2.png" raycast="1" x="0" y="0">
+    </img>
+    <text id="equipName2" text="" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="92" x="0" color="#5CE366FF" active="1" contentsizefitter="2">
+      <img id="2line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
+      </img>
+      <img id="2line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
+      </img>
+    </text>
+    <item id="item_model2" itemid="" uniqueid="" y="10" z="-60" width="100" height="150" mfixsize="100,150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="1">
+    </item>
+  </panel>
+  <button id="btn_xilian" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_xl" onclick="UIEquipRegeneratePanel/@切换洗练" x="173" y="222">
+    <img id="btn_xilian_select" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="ty_bl_bg" rotate="0,180,0" x="" y="0" active="1">
+    </img>
+  </button>
+  <button id="btn_jinhua" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_sj" onclick="UIEquipRegeneratePanel/@切换词条升级" x="173" y="165">
+    <img id="btn_jinhua_select" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="ty_bl_bg" rotate="0,180,0" x="" y="0" active="0">
+    </img>
+  </button>
+  <panel id="xilian_panel" active="1" x="0" y="46">
+    <panel id="zaisheng_title" x="-172" y="51" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di">
+      <img id="初始页展示di" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" x="42" y="2" active="1">
+      </img>
+      <button id="yulan_btn" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_xq" onclick="UIEquipRegeneratePanel/@打开再生词条预览" x="115" y="-2">
+      </button>
+      <text id="zaisheng_title_text" text="再生词条" a="10" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" x="28" y="3">
+      </text>
+    </panel>
+    <img id="lock" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="img_tips" active="0" y="-111">
+      <text id="装备再生等级限制" text="13" fonttype="zbzs_fnt" x="88" y="0">
+      </text>
+    </img>
+    <panel id="info_panel" active="0" y="9">
+      <scrollview id="grid_current" width="370" height="110" vertical="1" y="-42" x="2">
+        <layout id="grid_current_layout" width="364" height="115" vertical="1" contentsizefitter="1" a="01">
+          <datalist id="datalist_current">
+            <panel id="panel_bg1" width="362" height="35">
+              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+              </img>
+              <text id="value" text="" x="16" a="10" color="#CCCCCC" fontsize="18" outlinesize="1" outlinecolor="0">
+              </text>
+              <button id="btn_baoliu" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_ctbl" x="132" onclick="" active="1" raycast="1">
+              </button>
+              <button id="btn_cancel" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_ctjc" x="132" onclick="" active="0" raycast="1">
+              </button>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="27" src="Texture/img_zs_bg_1.png" y="-122">
+      </img>
+      <scrollview id="grid_new" width="370" height="110" vertical="1" x="0" y="-200">
+        <layout id="grid_new_layout" width="364" height="115" vertical="1" contentsizefitter="1" a="01">
+          <datalist id="datalist_new">
+            <panel id="panel_bg" width="362" height="35">
+              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+              </img>
+              <text id="value" text="" x="16" a="10" color="#CCCCCC" fontsize="18" outlinesize="1" outlinecolor="0">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="12" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" y="-275" x="-172" width="24" height="26">
+        <text id="13" text="所需材料" a="10" color="#CCCCCC" fontsize="20" y="2" x="26" outlinesize="1" outlinecolor="0">
+        </text>
+      </img>
+      <scrollview id="need_panel" a="00" x="3" y="-311" width="390" height="40" vertical="1" raycast="1" active="1" rotate="0,0,0">
+        <gridview id="gridview15" cellwidth="390" cellheight="35" raycast="1" spacey="2" constraint="1" constraintcount="1" contentsizefitter="3">
+          <datalist id="cost_list">
+            <panel id="cost_info">
+              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+              </img>
+              <item id="cost_item" width="30" height="30" mfixsize="30,30" a="10" x="18" itemid="" bgtype="0" tips="1">
+              </item>
+              <text id="cost_name" a="10" x="50" text="">
+              </text>
+              <text id="cost_num" a="20" text="" x="-63" ta="20">
+              </text>
+              <button id="costAddBtn" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="50" height="50" onclick="" raycast="1" active="1" a="20" x="-12">
+              </button>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+      <button id="tihuan_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" y="-360" x="-88" text="替换" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="UIEquipRegeneratePanel/@替换二级弹窗">
+      </button>
+      <button id="xilian_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" y="-360" x="72" text="洗练" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="UIEquipRegeneratePanel/@洗练">
+      </button>
+      <text id="15" text="洗练只改变词条类型不改变词条数值" y="-400" x="-9" fontsize="20" color="#FF1A17" outlinesize="1" outlinecolor="0">
+      </text>
+    </panel>
+    <panel id="yulan_panel" zindex="205" active="1" z="-200">
+      <img id="yulan_close_btn" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="ty_bl_bg" width="3000" height="2000" x="-391" y="-46" color="#00000000" raycast="1" onclick="UIEquipRegeneratePanel/@关闭再生词条预览">
+      </img>
+      <img id="img_词条预览" atlas="Atlas/Common.spriteatlas" src="img_interface_main122" width="370" height="550" x="2" y="-46" scale9b="10" scale9l="10" scale9r="10" scale9t="10">
+      </img>
+      <text id="equipName_yulan" a="01" text="" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="213" x="0" color="#5CE366FF" active="1" contentsizefitter="2">
+        <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
+        </img>
+        <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
+        </img>
+      </text>
+      <scrollview id="scroll_词条预览" width="364" height="500" vertical="1" y="-61" x="2">
+        <layout id="grid_词条预览" width="364" height="500" vertical="1" contentsizefitter="1" a="01">
+          <datalist id="datalist_yulan">
+            <panel id="one" width="362" height="35">
+              <img id="bg" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" height="30" src="img_tips_bg" active="0">
+              </img>
+              <text id="value" text="" fontsize="20" color="#CCCCCC" a="10" x="10" outlinesize="1" outlinecolor="0" active="1">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+    </panel>
+  </panel>
+  <panel id="jinhua_panel" active="0" x="0" y="43">
+    <img id="jinhua_lock" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="img_tips" active="0" y="-111">
+      <text id="装备再生等级限制" text="13" fonttype="zbzs_fnt" x="88" y="0">
+      </text>
+    </img>
+    <panel id="jinhua_info_panel" active="0" y="-26">
+      <panel id="level_root" width="296" height="70" x="0" y="72">
+        <img id="level_bg" a="00" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_03" width="295" height="48" raycast="1" y="17" x="0" z="-200" active="1">
+          <text id="jinhua_info" a="10" text="进化等级" fontsize="16" height="30" width="71" ta="01" horwrap="1" x="28" y="2" color="#DED17AFF">
+          </text>
+          <text id="preLevel" a="00" text="+1" fontsize="16" fonttype="font_strength_yellow" height="30" width="64" ta="21" horwrap="1" x="-21" y="2">
+          </text>
+          <img id="jinhua_info_panel_arrow" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow1" width="56" height="45" raycast="1" x="33" y="2">
+          </img>
+          <text id="nextLevel" a="00" text="+1" fontsize="16" fonttype="font_strength_yellow" height="30" width="64" ta="01" horwrap="1" x="87" y="2">
+          </text>
+        </img>
+        <img id="maxLevelTips" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="img_max_level" y="47" z="-200" active="0">
+        </img>
+        <img id="jilv_img" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="success_img" x="-22" y="48" z="-200" active="0">
+          <text id="jilv" a="00" text="" fontsize="16" fonttype="img_efficiency_nub 1" height="30" width="64" ta="01" x="70" y="0">
+          </text>
+        </img>
+        <img id="success_anim" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_13" width="150" height="150" y="125" z="-210" active="0">
+          <text id="successText" a="00" text="进化成功" fontsize="18" height="25" width="100" ta="10" horwrap="1" color="#FFE800FF" y="-3">
+          </text>
+        </img>
+      </panel>
+      <panel id="panel_满级属性" x="2" y="-21" width="345" height="38" active="0">
+        <img id="21" atlas="Atlas/Common.spriteatlas" src="ty_info_bar" width="345" height="38">
+        </img>
+        <text id="满级属性" text="再生属性增加" x="16" a="10" color="#CCCCCCFF" fontsize="18" outlinesize="1" outlinecolor="0" y="1">
+        </text>
+        <text id="满级词条" text="+0.6%" x="260" a="10" color="#00ff00FF" fontsize="18" outlinesize="1" outlinecolor="0" y="1">
+        </text>
+      </panel>
+      <img id="jin_title" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" weight="24" height="26" y="46" x="-172">
+        <text id="20" text="进化后词条提升" a="10" color="#CCCCCC" fontsize="20" y="2" x="26" outlinesize="1" outlinecolor="0">
+        </text>
+      </img>
+      <scrollview id="jinhua_view" width="370" height="250" vertical="1" x="0" y="-104">
+        <layout id="jinhua_view_layout" width="364" height="160" vertical="1" contentsizefitter="1" a="01" space="2">
+          <datalist id="datalist_jinhua">
+            <panel id="jinhua_one" width="362" height="35">
+              <img id="one_bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+              </img>
+              <text id="name" text="再生属性增加" x="16" a="10" color="#CCCCCCFF" fontsize="18" outlinesize="1" outlinecolor="0" y="1">
+              </text>
+              <text id="before" text="+0.3%" x="-128" a="20" ta="21" color="#CCCCCCFF" fontsize="18" outlinesize="1" outlinecolor="0" y="1">
+              </text>
+              <img id="arrow" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow1" x="75" width="56" height="45">
+              </img>
+              <text id="after" text="+0.6%" x="280" a="10" color="#00ff00FF" fontsize="18" outlinesize="1" outlinecolor="0" y="1">
+              </text>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="img_manji" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="img_manji" y="-230" active="0">
+      </img>
+      <panel id="panel_jinhua_cailiao" y="25" active="1">
+        <img id="panel_jinhua_cailiao_title" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" weight="24" height="26" y="-272" x="-172">
+          <text id="23" text="所需材料" a="10" color="#CCCCCC" fontsize="20" y="2" x="26" outlinesize="1" outlinecolor="0">
+          </text>
+        </img>
+        <scrollview id="need_jinhua_panel" a="00" x="3" y="-311" width="390" height="40" vertical="1" raycast="1" active="1" rotate="0,0,0">
+          <gridview id="need_jinhua_panel_gridview" cellwidth="390" cellheight="35" raycast="1" spacey="2" constraint="1" constraintcount="1" contentsizefitter="3">
+            <datalist id="jinhua_cost_list">
+              <panel id="jinhua_cost_info">
+                <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+                </img>
+                <item id="cost_item" width="30" height="30" mfixsize="30,30" a="10" x="18" itemid="" bgtype="0" tips="1">
+                </item>
+                <text id="cost_name" a="10" x="50" text="">
+                </text>
+                <text id="cost_num" a="20" text="" x="-63" ta="20">
+                </text>
+                <button id="costAddBtn" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="50" height="50" onclick="" raycast="1" active="1" a="20" x="-12">
+                </button>
+              </panel>
+            </datalist>
+          </gridview>
+        </scrollview>
+        <button id="jinhua_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" y="-359" x="9" text="进化" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="UIEquipRegeneratePanel/@进化">
+        </button>
+      </panel>
+    </panel>
+  </panel>
+</uipanel>

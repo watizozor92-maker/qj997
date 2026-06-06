@@ -1,0 +1,40 @@
+<uipanel id="KLUINearPlayerPanel" name="附近玩家界面" zindex="200" width="770" height="360" x="91" y="-13" raycast="1" z="-100" onload="KmlTeamMainUI/@附近玩家初始化">
+  <panel y="200" id="panel_1228">
+    <img src="Texture/ty_biaotou.png" x="-1" y="4" width="790" height="37" id="img_1229">
+    </img>
+    <text text="名字" x="-327" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" id="text_1230" horwrap="1" fonttype="" width="50" height="20" ta="11" outline="0" color="#FFFFFFFF">
+    </text>
+    <text text="等级" x="-164" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" id="text_1231" horwrap="1" width="50" height="20" fonttype="" ta="11" outline="0">
+    </text>
+    <text text="职业" x="-1" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" id="text_1232" horwrap="1" width="50" height="20" fonttype="" ta="11" outline="0">
+    </text>
+    <text text="战盟" x="161" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" id="text1" horwrap="1" width="50" height="20" fonttype="" ta="11" outline="0">
+    </text>
+    <text text="操作" x="324" y="6" fontsize="16" outlinesize="1" outlinecolor="#000000FF" id="text_1233" horwrap="1" width="50" height="20" fonttype="" ta="11" outline="0">
+    </text>
+  </panel>
+  ; <img atlas="Atlas/FG_Team.spriteatlas" src="no_select" width="812" height="435" id="img1" color="#FFFFFFFF" scale9l="12" scale9b="19" scale9r="16" scale9t="11" y="-31" x="-1" active="1">
+  ; </img>
+  <scrollview id="near_player_scrollview" width="790" height="435" x="-1" y="-30" vertical="1">
+    <gridview id="near_player_gridview" cellwidth="790" cellheight="70" spacey="0" contentsizefitter="1" width="817" height="50">
+      <datalist id="near_player_datalist">
+        <panel id="panel_1236">
+          <img atlas="Atlas/FG_Team.spriteatlas" src="no_select" width="790" height="70" id="img_1237" y="0" x="0" active="1">
+          </img>
+          <text id="player_name" text="名字固定七个字" ta="11" x="-330" y="0" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="133" height="20" fonttype="" outline="0" color="#FFFFFFFF">
+          </text>
+          <text id="player_level" text="999" ta="11" x="-166" y="-0" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="67" height="20" fonttype="" outline="0">
+          </text>
+          <text id="player_career" text="战士法师" ta="11" x="2" y="-0" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="96" height="25" fonttype="" outline="0">
+          </text>
+          <text id="player_unionName" text="战盟固定七个字" ta="11" x="161" y="-0" fontsize="16" outlinesize="1" outlinecolor="#000000FF" horwrap="1" width="146" height="20" fonttype="" active="1" binddragid="" outline="0">
+          </text>
+          <button id="invite_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" x="324" y="-0" text="邀请" width="103" height="36" onclick="KmlTeamMainUI/@邀请进入队伍" fonttype="" fontsize="18" mimg="" pimg="" dimg="">
+          </button>
+          <button id="had_invite_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" x="324" y="-0" text="已邀请" width="103" height="36" fonttype="" fontsize="18" mimg="" pimg="" dimg="">
+          </button>
+        </panel>
+      </datalist>
+    </gridview>
+  </scrollview>
+</uipanel>

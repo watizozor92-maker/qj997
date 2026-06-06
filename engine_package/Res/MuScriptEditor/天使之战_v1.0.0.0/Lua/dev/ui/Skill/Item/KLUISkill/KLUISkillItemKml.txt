@@ -1,0 +1,22 @@
+<uipanel id="KLUISkillItemKml" name="技能模板" zindex="-1">
+  <toggle id="skillTog" togglegroup_id="SkillTogGroup" src="skill_frame2" atlas="Atlas/FG_SkillPanel.spriteatlas" pimg="img_skill_frame2" width="113" height="111" ison="0">
+  </toggle>
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlXWSkillUI/KmlXWSkillItemTemplate.prefab" id="prefab_55">
+    <panel id="KmlXWSkillItemTemplate" bind="KmlXWSkillItemTemplate">
+    </panel>
+    <toggle id="skillTog1" bind="skillTog" default="" dragscroll="1" src="skill_frame2" atlas="Atlas/FG_SkillPanel.spriteatlas" pimg="img_skill_frame2" active="0" y="0">
+    </toggle>
+    <img id="SkillIcon" bind="SkillIcon" width="70" height="70" atlas="Atlas/Skill_icon.spriteatlas" src="">
+    </img>
+    <img id="SpRed" bind="SpRed" width="17" height="17" atlas="Atlas/UIMisc.spriteatlas" src="img_uiicon_41">
+    </img>
+    <text id="Level" color="#FFFFFF" bind="Level" text="" outline="0" horwrap="1">
+    </text>
+    <panel id="Lock" bind="Lock" width="52" height="65" active="">
+    </panel>
+    <img id="BgName" bind="BgName" y="-58" width="112">
+    </img>
+    <text id="SkillName" color="#FFFFFF" bind="SkillName" text="" width="89" height="20" outline="0" horwrap="1" y="-58" minbestfit="6" maxbestfit="16" bestfit="1">
+    </text>
+  </prefab>
+</uipanel>

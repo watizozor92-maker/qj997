@@ -1,0 +1,85 @@
+---@class KLUISkillSettingPanelView:UIKmlLuaViewBase
+---@field BG_Templete UIKmlLuaControl
+---@field ReMask UIKmlLuaControl
+---@field img1231 UIKmlLuaControl
+---@field Frame UIKmlLuaControl
+---@field img2 UIKmlLuaControl
+---@field KmlXWFastSkillUI UIKmlLuaControl
+---@field closeBtn UIKmlLuaControl
+---@field Title_Str UIKmlLuaControl
+---@field ShowTypes UIKmlLuaControl
+---@field togShowGroup UIKmlLuaControl
+---@field togPattern UIKmlLuaControl
+---@field BtnAllTxt UIKmlLuaControl
+---@field BtnTurnTxt UIKmlLuaControl
+---@field btnAllMask UIKmlLuaControl
+---@field btnTurnMask UIKmlLuaControl
+---@field toggroup_skill_bagItem UIKmlLuaControl
+---@field SkillBtnSetting UIKmlLuaControl
+---@field SkillBtnA UIKmlLuaControl
+---@field BagItemBtnSetting UIKmlLuaControl
+---@field SkillBtnB UIKmlLuaControl
+---@field BtnReset UIKmlLuaControl
+---@field FastItemList UIKmlLuaControl
+---@field FastItemDataList UIKmlLuaControl
+---@field groupAll UIKmlLuaControl
+---@field BodyAllSkill UIKmlLuaControl
+---@field panel_atk UIKmlLuaControl
+---@field AttackButton UIKmlLuaControl
+---@field img1 UIKmlLuaControl
+---@field BtnKillMonster UIKmlLuaControl
+---@field BtnKillPerson UIKmlLuaControl
+---@field TogAllSkill1 UIKmlLuaControl
+---@field AllSkillIcon1 UIKmlLuaControl
+---@field addIcon1 UIKmlLuaControl
+---@field TogAllSkill2 UIKmlLuaControl
+---@field AllSkillIcon2 UIKmlLuaControl
+---@field addIcon2 UIKmlLuaControl
+---@field TogAllSkill3 UIKmlLuaControl
+---@field AllSkillIcon3 UIKmlLuaControl
+---@field addIcon3 UIKmlLuaControl
+---@field TogAllSkill4 UIKmlLuaControl
+---@field AllSkillIcon4 UIKmlLuaControl
+---@field addIcon4 UIKmlLuaControl
+---@field TogAllSkill5 UIKmlLuaControl
+---@field AllSkillIcon5 UIKmlLuaControl
+---@field addIcon5 UIKmlLuaControl
+---@field TogAllSkill6 UIKmlLuaControl
+---@field AllSkillIcon6 UIKmlLuaControl
+---@field addIcon6 UIKmlLuaControl
+---@field TogAllSkill7 UIKmlLuaControl
+---@field AllSkillIcon7 UIKmlLuaControl
+---@field addIcon7 UIKmlLuaControl
+---@field BgMain UIKmlLuaControl
+---@field MainSkill UIKmlLuaControl
+---@field groupTurn UIKmlLuaControl
+---@field img3 UIKmlLuaControl
+---@field SpTag UIKmlLuaControl
+---@field TxtTitle UIKmlLuaControl
+---@field BodyTurnSkill UIKmlLuaControl
+---@field TogTurnSkill1 UIKmlLuaControl
+---@field TurnSkillIcon1 UIKmlLuaControl
+---@field TogTurnSkill2 UIKmlLuaControl
+---@field TurnSkillIcon2 UIKmlLuaControl
+---@field TogTurnSkill3 UIKmlLuaControl
+---@field TurnSkillIcon3 UIKmlLuaControl
+---@field TogTurnSkill4 UIKmlLuaControl
+---@field TurnSkillIcon4 UIKmlLuaControl
+---@field TogTurnSkill5 UIKmlLuaControl
+---@field TurnSkillIcon5 UIKmlLuaControl
+---@field TogTurnSkill6 UIKmlLuaControl
+---@field TurnSkillIcon6 UIKmlLuaControl
+---@field TogTurnSkill7 UIKmlLuaControl
+---@field TurnSkillIcon7 UIKmlLuaControl
+---@field TogTurnSkill8 UIKmlLuaControl
+---@field TurnSkillIcon8 UIKmlLuaControl
+---@field MainSkill UIKmlLuaControl
+local KLUISkillSettingPanelView = {}
+setmetatable(KLUISkillSettingPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanelKml'
+---@param parent UIKmlLuaControl
+function KLUISkillSettingPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+return KLUISkillSettingPanelView

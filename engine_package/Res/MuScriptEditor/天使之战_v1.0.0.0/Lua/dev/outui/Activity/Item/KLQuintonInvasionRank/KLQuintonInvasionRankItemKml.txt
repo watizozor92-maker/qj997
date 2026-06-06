@@ -1,0 +1,8 @@
+<uipanel id="KLQuintonInvasionRankItemKml" name="昆顿入侵排名模板" a="00" width="220" height="34" zindex="-1">
+  <text id="pointCount" a="20" text="积分:99999" fontsize="16" height="34" width="114" ta="21" horwrap="1" x="-6" y="1" space="0" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <text id="name" a="10" linespace="0.6" text="默认内容" fontsize="16" height="34" width="119" ta="01" horwrap="1" x="33" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <img id="numberIcon" a="10" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="1" width="27" height="27" raycast="1" x="0" y="1">
+  </img>
+</uipanel>

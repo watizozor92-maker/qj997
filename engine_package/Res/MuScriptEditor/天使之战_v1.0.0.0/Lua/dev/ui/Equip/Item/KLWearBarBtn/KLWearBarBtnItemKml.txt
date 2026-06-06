@@ -1,0 +1,14 @@
+<uipanel id="KLWearBarBtnItem" name="穿戴栏按钮模板" zindex="-1">
+  <prefab width="0" height="0" path="UI/Template/Item/UIToggleItem.prefab" id="prefab_293">
+    <toggle id="toggle_item" bind="UIToggleItem">
+    </toggle>
+    <img id="ItemBackground" bind="ItemBackground">
+    </img>
+    <img id="ItemCheckmark" bind="ItemCheckmark">
+    </img>
+    <text id="ItemLabel" bind="ItemLabel">
+    </text>
+    <img id="img1" bind="Lock">
+    </img>
+  </prefab>
+</uipanel>

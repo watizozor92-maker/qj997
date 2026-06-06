@@ -1,0 +1,6 @@
+<uipanel id="KLTalkBtnPanel" name="npc对话入口界面" zindex="200" movecanvas="0#0#60" width="1334" height="750">
+  <panel id="TalkPanel" x="140" y="-300" width="81" height="72">
+    <button id="TalkBtn" width="81" height="72" atlas="Atlas/Common.spriteatlas" src="icon_talk" raycast="1">
+    </button>
+  </panel>
+</uipanel>

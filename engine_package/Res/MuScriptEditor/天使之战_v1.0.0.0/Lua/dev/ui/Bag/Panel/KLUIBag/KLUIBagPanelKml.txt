@@ -1,0 +1,102 @@
+<uipanel id="KLUIBagPanel" name="背包界面" adapter="1" zindex="0" a="21" height="660" width="344" onload="KmlXWBagUI/@背包界面初始完毕" databind="x=@bagX" onunload="KmlXWBagUI/@背包界面卸载" active="1" x="0" y="0" mask="1" maskalpha="0">
+  <panel id="BG_Templete" a="21" width="416" height="752" x="0" y="0">
+    <panel id="ReMask" a="00" width="408" height="732" y="-5" rectmask="1" x="0">
+      <img id="img1" a="00" width="680" height="740" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="9">
+      </img>
+    </panel>
+    <img id="Frame" a="21" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="136" scale9b="81" scale9r="146" scale9t="109" x="0" y="0">
+      <img id="img2" a="01" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="0">
+      </img>
+      <panel id="FashionRoot" a="02" width="344" height="79" y="25" x="1" moveto="">
+        <scrollview id="scrollview15" a="00" width="373" height="82" vertical="0" y="-10" raycast="1" x="0">
+          <layout id="layout16" width="360" height="230" a="10" vertical="0" contentsizefitter="2" raycast="1" cella="10" space="10">
+            <datalist id="datalist_suit">
+              <button id="btn_suit" width="125" height="43" onclick="" text="" raycast="1">
+                <img id="btn_suit_select" a="00" width="100" height="150" raycast="0" active="0">
+                </img>
+              </button>
+            </datalist>
+          </layout>
+        </scrollview>
+        <togglegroup id="togglegroup2" a="00" width="150" height="225" onload="" raycast="1">
+        </togglegroup>
+      </panel>
+      <img id="sv_frame" atlas="Atlas/UILoginPanel.spriteatlas" src="bg_black_grid_N" width="357" height="298" scale9b="26" scale9r="26" scale9l="26" scale9t="26" a="01" y="-390" x="0">
+      </img>
+      <panel id="MoneyRoot" a="02" width="344" height="76" x="0" y="-65">
+        <layout id="layout3" control_height="0" contentsizefitter="1" vertical="0" height="40" width="389" a="00" raycast="1" y="57" x="15" space="38" h5y="58" cella="11">
+          <button id="btn_gold" width="163" height="40" onclick="" text="" raycast="1" siblingindex="0" src="img_bag_10" atlas="Atlas/UIBagPanel_Out.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0">
+            <img id="goldIcon" a="10" width="25" height="25" raycast="1" siblingindex="1" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" x="8" y="2">
+            </img>
+            <text id="txt_gold" a="00" text="0" fontsize="18" height="25" width="106" ta="21" siblingindex="2" outline="0" horwrap="1" x="15" y="2" color="#1ADE1FFF">
+            </text>
+          </button>
+          <button id="btn_diamond" width="163" height="40" onclick="" text="" raycast="1" siblingindex="4" src="img_bag_10" atlas="Atlas/UIBagPanel_Out.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0">
+            <img id="diamondIcon" a="10" width="25" height="25" raycast="1" siblingindex="1" src="jifen" atlas="Atlas/QJ5_ItemLooksIcon.spriteatlas" x="8" y="2">
+            </img>
+            <text id="txt_diamond" a="00" text="0" fontsize="18" height="25" width="106" ta="21" siblingindex="2" outline="0" horwrap="1" x="15" y="2" color="#1ADE1FFF">
+            </text>
+          </button>
+        </layout>
+      </panel>
+      <img id="AttInfosRoot" a="01" width="336" height="114" raycast="1" x="0" y="-55" z="-200" src="bg_emptyBorder" atlas="Atlas/FG_Common.spriteatlas" active="0">
+        <layout id="layoutAtts" control_height="0" contentsizefitter="1" vertical="1" height="67" width="336" a="01" raycast="1" y="-15" cella="01" x="0">
+          <datalist id="datalist_atts">
+            <text id="text" outline="0" text="默认内容" fontsize="16" height="21" width="350" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#80B2FFFF">
+            </text>
+          </datalist>
+        </layout>
+      </img>
+      <text id="title" a="00" text="装 备" fontsize="20" height="24" width="82" ta="11" outline="0" horwrap="1" y="344" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" color="#FFFFFFFF" x="0">
+      </text>
+      <panel id="EquipRoot" a="20" x="-26" y="-3" width="450" height="750">
+        <panel id="EquipGrid" a="00" width="450" height="682" x="2" y="-140">
+          <button id="btn_go_model" a="00" width="69" height="69" onclick="" text="" raycast="1" x="187" y="355" src="btn_waiguan" atlas="Atlas/FG_shizhuang.spriteatlas" mimg="" pimg="" dimg="">
+          </button>
+        </panel>
+      </panel>
+      <button id="btn_attSuits" a="00" width="80" height="20" fontsize="16" onclick="" text="[套装属性]" raycast="1" x="0" y="328" color="#FFFFFF00" outlinesize="1" outlinecolor="#000000FF" textcolor="#828282FF">
+      </button>
+      <button id="btn_strengthenAtts" a="00" width="80" height="20" fontsize="16" onclick="" text="[强化属性]" raycast="1" x="-85" y="328" color="#FFFFFF00" outlinesize="1" outlinecolor="#000000FF" textcolor="#828282FF">
+      </button>
+      <button id="btn_attGems" a="00" width="75" height="20" fontsize="16" onclick="" text="[镶宝属性]" raycast="1" x="85" y="328" color="#FFFFFF00" outlinesize="1" outlinecolor="#000000FF" textcolor="#828282FF" fontstyle="" underline="">
+      </button>
+      <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-11" y="-19" z="-10" h5x="-354" h5y="10" raycast="1" width="34" height="34">
+      </img>
+      <button id="btn_emptyBg" a="20" width="2000" height="1500" onclick="" text="" raycast="1" x="199" color="#FFFFFF00" y="1">
+      </button>
+      <layout id="layout1" control_height="0" contentsizefitter="0" vertical="0" height="44" width="410" a="00" raycast="1" space="0" x="18" y="279" cella="11">
+        <panel id="btn_fix_Root" width="74" height="26">
+          <button id="btn_fix" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" onclick="KmlXWBagUI/@打开个人商店" width="74" height="26" mimg="" pimg="" dimg="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" text="修理" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+            <prefab path="Kml/KmlPrefab/Cookbook/Common/HighlightGo.prefab" id="obj_highLight" active="0" x="0" deltax="0">
+              <panel id="RawImage" bind="RawImage" x="0" y="0" width="88" height="72">
+              </panel>
+              <panel id="Effect" bind="Effect" x="0" y="0">
+              </panel>
+            </prefab>
+          </button>
+        </panel>
+        <panel id="btn_shop_Root" width="74" height="26">
+          <button id="btn_shop" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" onclick="KmlXWBagUI/@打开个人商店" width="74" height="26" mimg="" pimg="" dimg="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" text="商店" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          </button>
+        </panel>
+        <panel id="btn_storage_Root" width="74" height="26">
+          <button id="btn_storage" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" onclick="KmlXWBagUI/@打开个人商店" width="74" height="26" mimg="" pimg="" dimg="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" text="仓库" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          </button>
+        </panel>
+        <panel id="btn_sell_Root" width="74" height="26">
+          <button id="btn_sell" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" onclick="KmlXWBagUI/@打开个人商店" width="74" height="26" mimg="" pimg="" dimg="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" text="回收" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          </button>
+        </panel>
+        <panel id="btn_arrange_Root" width="74" height="26">
+          <button id="btn_arrange" atlas="Atlas/FG_Common.spriteatlas" src="btn_bag" onclick="KmlXWBagUI/@打开个人商店" width="74" height="26" mimg="" pimg="" dimg="" scale9l="0" scale9b="0" scale9r="0" scale9t="0" text="整理" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          </button>
+        </panel>
+      </layout>
+    </img>
+  </panel>
+  <prefab id="cut_area_up" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="360" active="0">
+  </prefab>
+  <prefab id="cut_area_down" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="-316" active="0">
+  </prefab>
+</uipanel>

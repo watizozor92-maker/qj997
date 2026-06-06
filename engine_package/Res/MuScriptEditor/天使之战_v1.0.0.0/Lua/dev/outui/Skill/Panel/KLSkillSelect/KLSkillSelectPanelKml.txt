@@ -1,0 +1,12 @@
+<uipanel id="KLSkillSelectPanelKml" name="选择技能界面" a="00" width="2000" height="2000" x="0" y="0" rotate="0,0,0" zindex="605">
+  <button id="Close" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="3000" height="3000" text="" raycast="1" color="#FFFFFF08" active="1" x="0" y="0">
+  </button>
+  <img id="bg" a="00" atlas="Atlas/PCPlatform_UI.spriteatlas" src="Main_Skill_PopUI" width="475" height="318" raycast="0" x="15" y="-137" scale9l="114" scale9b="81" scale9r="148" scale9t="61" color="#FFFFFFFF">
+    <img id="listMask" width="463" height="318" atlas="Atlas/Common.spriteatlas" src="Background_1" color="#FFFFFF05" x="2" y="0">
+      <gridview id="loopscrollview" vertical="0" a="11" x="0" y="0" width="456" height="366" cellwidth="75" cellheight="75" contentsizefitter="1" atlas="Atlas/UISkillPanel.spriteatlas" src="button_skill_set" cella="11" constraint="1" constraintcount="6" paddingleft="5" paddingtop="5" spacex="0">
+        <datalist id="loopscrollviewData">
+        </datalist>
+      </gridview>
+    </img>
+  </img>
+</uipanel>

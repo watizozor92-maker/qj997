@@ -1,0 +1,16 @@
+<uipanel id="KLTurnTableAwardItemKml" name="幸运转盘奖励模板" a="00" width="157" height="139" zindex="-1">
+  <img id="Image" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_dajiang" width="157" height="139" raycast="1" y="25">
+    <text id="CountText" a="00" text="" fontsize="14" height="28" width="163" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="-70">
+    </text>
+    <img id="Icon" a="00" atlas="Atlas/Common.spriteatlas" src="Knob_1" width="84" height="84" raycast="1" x="0" y="-5" color="#FFFFFF00">
+    </img>
+    <img id="HaveGet" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_Get" width="69" height="61" raycast="1" x="0" y="-5" active="0" z="-1500">
+    </img>
+   <prefab id="effect_tishi" path="Effect/UI/Eff_UI_anniutishi05.prefab" z="-500" y="-5" active="0">
+   </prefab>
+    <button id="GetButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="112" height="38" onclick="" text="领取" raycast="1" x="-1" y="-74" active="0">
+      <img id="RedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="49" y="13" active="0">
+      </img>
+    </button>
+  </img>
+</uipanel>

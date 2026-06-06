@@ -1,0 +1,19 @@
+<uipanel id="KLUIDailyRaffleRewardItem" name="每日抽奖奖励模板" width="98" height="98" zindex="-1">
+  <item id="equip_item" tips="" width="98" height="98" z="-200" atlas="Atlas/DailyRaffle.spriteatlas" bgtype="1" bgimg="img_kuang" itemid="" uniqueid="" selfrotation="" strengthlevel="" mfixsize="55,55" scale9l="5" scale9r="5" scale9t="5" scale9b="5" textpos="-15,12,0" textcolor="#fbd994">
+      <img id="img_quality" a= "11" atlas="Atlas/UIBagPanel.spriteatlas" src="" z="-500">
+      </img>
+    </item>
+
+  <panel id="effect_root" width="98" height="98" x="0" y="0" z="-300">
+      <model id="effect_model" width="98" height="98" src="" mscale="45,45,45" mrotate="0,0,0" x="0" y="0">
+      </model>
+  </panel>
+
+  <img id="arrow" atlas="Atlas/Common.spriteatlas" src="ty_icon_arrow_small" a="22" x="-3" y="3">
+  </img>
+  <img id="select" atlas="Atlas/DailyRaffle.spriteatlas" src="img_select" active="0">
+  </img>
+  <button id="btn" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="98" height="98" color="#00000000" raycast="1">
+  </button>
+</uipanel>
+;mscale="5,5,5"

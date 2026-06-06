@@ -1,0 +1,116 @@
+<uipanel id="KLNewVIPMainPanel" name="新版会员主界面" width="1012" height="496">
+  <img id="bg" a="00" atlas="" src="Texture/bg_vip.png" width="1260" height="600" raycast="1" x="0" y="0">
+    <img id="bg_vip" a="00" atlas="" src="Texture/bg_NewVIP.png" width="1012" height="494" raycast="1" y="-37" x="0">
+    </img>
+    <img id="img1" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="bg_NewVIP_level" width="998" height="114" raycast="1" x="-2" y="147">
+    </img>
+    <img id="img3" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="vip_tip" width="440" height="102" raycast="1" x="-115" y="150">
+      <text id="vipLevelTp" a="00" text="1" fontsize="16" height="52" width="52" ta="11" horwrap="1" x="143" y="18" fonttype="QJ5_font_NewVIP_Tips" outline="">
+      </text>
+    </img>
+  </img>
+  <button id="btn_close" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_close" width="46" height="47" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="495" y="240" h5x="-472" h5y="231">
+  </button>
+  <img id="textDec" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="ty_bg_threeFrame_N2" width="324" height="50" raycast="1" x="0" y="241" color="#FFFFFF00">
+    <text id="DIY_Text" a="00" text="尊享特权" fontsize="24" height="30" width="160" ta="11" horwrap="1" color="#D1BF9CFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="SpLine" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_xian" width="416" height="10" raycast="1" x="254" y="-82" color="#FFFFFFFF">
+  </img>
+  <img id="icon_vip" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_level" width="108" height="88" raycast="1" y="145" x="-432">
+    <img id="img6" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP" width="108" height="88" raycast="1" x="0" y="0">
+    </img>
+    <text id="vip_level" a="00" text="1" fontsize="16" height="80" width="80" ta="11" horwrap="1" y="10" fonttype="QJ5_font_NewVIP_level">
+    </text>
+  </img>
+  <img id="img_ranklistbgR" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="bg_arc" width="478" height="362" raycast="1" scale9l="23" scale9b="16" scale9r="23" scale9t="21" x="245" y="-96">
+    <img id="VipLevelReward1" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_gift" width="50" height="22" raycast="1" y="140" x="-195">
+      <img id="img_free" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_freeGift" width="90" height="25" raycast="1" x="99" y="-1">
+      </img>
+      <text id="VipLevel2" a="00" text="1" fontsize="16" height="30" width="32" ta="11" horwrap="1" y="-1" x="38" fonttype="QJ5_font_NewVIP_Gift">
+      </text>
+    </img>
+    <scrollview id="RewardScrollViewUp" a="00" width="296" height="70" vertical="0" y="67" raycast="1" movementtype="2" x="-73">
+      <layout id="layout10" width="296" height="70" a="00" vertical="0" contentsizefitter="0" raycast="1" space="5" cella="10">
+        <datalist id="UpRewardDataList">
+          <item id="upItem" src="20020001" width="70" height="70" tips="1" textcolor="#FAD994FF" mpos="0,0,-10" mfixsize="70,70">
+          </item>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="VipLevelReward2" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_gift" width="50" height="22" raycast="1" y="-19" x="-195">
+      <img id="img_pay" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_payGift" width="90" height="25" raycast="1" x="99" y="-1">
+      </img>
+      <text id="VipLevel3" a="00" text="1" fontsize="16" height="30" width="32" ta="11" horwrap="1" y="-1" x="38" fonttype="QJ5_font_NewVIP_Gift">
+      </text>
+    </img>
+    <scrollview id="RewardScrollViewDown" a="00" width="296" height="70" vertical="0" y="-94" raycast="1" movementtype="2" x="-73">
+      <layout id="layout14" width="296" height="70" a="00" vertical="0" contentsizefitter="0" raycast="1" space="5" cella="10">
+        <datalist id="DownRewardDataList">
+          <item id="downItem" src="20020001" width="70" height="70" tips="1" textcolor="#FAD994FF" mpos="0,0,-10" mfixsize="70,70">
+          </item>
+        </datalist>
+      </layout>
+    </scrollview>
+    <panel id="UpBtnGroup" a="00" width="124" height="42" x="147" y="67">
+      <button id="button17" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_common8" width="125" height="43" onclick="" text="已领取" raycast="1" mimg="" pimg="" dimg="">
+      </button>
+      <button id="btn_GetFree" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_common6" width="125" height="43" onclick="" text="可领取" raycast="1" mimg="" pimg="" dimg="" fontsize="18">
+        <img id="freeRedPoint" a="21" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_uiicon_41" width="17" height="17" raycast="1">
+        </img>
+      </button>
+    </panel>
+    <panel id="DownBtnGroup" a="00" width="124" height="42" x="147" y="-94">
+      <button id="button18" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_common8" width="125" height="43" onclick="" text="已领取" raycast="1" mimg="" pimg="" dimg="">
+      </button>
+      <button id="btn_GetPay" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_common6" width="125" height="43" onclick="" text="" raycast="1" x="0" y="0" mimg="" pimg="" dimg="">
+        <text id="GetPayText" horwrap="0" text="9999888" fontsize="18" height="25" width="66" ta="11" contentsizefitter="2" chatiteminfo="" x="12" y="0">
+          <img id="PayIcon" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_bag_04" width="24" height="24" raycast="1" a="10" x="-23" y="0">
+          </img>
+        </text>
+      </button>
+    </panel>
+  </img>
+  <button id="btn_up" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_monthlycard_go" width="144" height="44" onclick="" text="开通VIP特权" raycast="1" mimg="" pimg="" dimg="" x="372" y="138">
+    <panel id="priceRoot" a="00" width="134" height="41" x="-4" y="43">
+      <img id="img2" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_bag_04" width="30" height="30" raycast="1" x="-25" y="1">
+      </img>
+      <text id="txt_VipPrice" horwrap="0" text="999999" fontsize="20" height="26" width="200" ta="01" contentsizefitter="0" chatiteminfo="" x="91" y="0">
+      </text>
+    </panel>
+    <text id="txt_limitBuyCondition" horwrap="0" text="999999" fontsize="18" height="26" width="200" ta="11" contentsizefitter="0" chatiteminfo="" x="0" y="-35">
+    </text>
+  </button>
+  <img id="img_ranklistbgL" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="bg_arc" width="478" height="362" raycast="1" scale9l="23" scale9b="16" scale9r="23" scale9t="21" x="-240" y="-96">
+    <img id="VipLevelImg" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_description" width="226" height="76" raycast="1" y="140">
+      <img id="img_txt_vip" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_VIP" width="34" height="14" raycast="1" x="-25" y="-1">
+      </img>
+      <img id="img_txt_tequan" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_tequan" width="34" height="16" raycast="1" x="31" y="-1">
+      </img>
+      <text id="vipLevel1" a="00" text="1" fontsize="16" height="30" width="28" ta="11" horwrap="1" y="-1" x="3" fonttype="QJ5_font_NewVip_tequan">
+      </text>
+    </img>
+  </img>
+  <scrollview id="VipBuffScrollView" a="00" width="440" height="253" vertical="1" y="-110" raycast="1" x="-235" movementtype="2">
+    <layout id="layout2" width="360" height="230" a="11" vertical="1" contentsizefitter="0" raycast="1" cella="11" space="5">
+      <datalist id="buffDataList">
+        <panel id="UINewVipPerTxtPointTemplate" width="440" height="26">
+          <img id="Bg" a="11" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="icon_parnerraffle_ornament01" width="17" height="16" raycast="1" x="-1" y="-4">
+          </img>
+          <text id="buffTxt" a="11" text="激活<color=#5DE367>自动拾取</color>" fontsize="20" height="25" width="393" ta="01" horwrap="1" x="16" y="1">
+            <text id="buffTxtTip" a="10" text="激活自动拾取" fontsize="16" height="25" width="393" ta="01" horwrap="1" x="1" y="-24">
+            </text>
+          </text>
+        </panel>
+      </datalist>
+    </layout>
+  </scrollview>
+  <button id="LeftPageBtn" a="10" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_NewVIP_left" width="32" height="58" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-2" y="-31">
+    <img id="LeftDot" a="11" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_uiicon_41" width="17" height="17" raycast="1">
+    </img>
+  </button>
+  <button id="RightPageBtn" a="20" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_NewVIP_right" width="32" height="58" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-2" y="-31">
+    <img id="RightDot" a="21" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_uiicon_41" width="17" height="17" raycast="1">
+    </img>
+  </button>
+</uipanel>

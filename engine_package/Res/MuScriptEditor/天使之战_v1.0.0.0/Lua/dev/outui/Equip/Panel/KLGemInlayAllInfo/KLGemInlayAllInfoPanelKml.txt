@@ -1,0 +1,26 @@
+<uipanel id="KLGemInlayAllInfoPanelKml" name="萤石提示界面" adapter="1" a="20" width="100" height="300" zindex="400" raycast="1" z="-1000" x="-135" y="-60">
+  <button id="closeMaskBg" a="00" atlas="" src="" width="5000" height="5000" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" color="#FFFFFF00" x="1" y="1">
+  </button>
+  <img id="img2" a="20" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="detailBg" width="376" height="534" raycast="1" x="0" y="0">
+    <scrollview id="scrollview1" a="11" width="360" height="522" vertical="1" y="-4" raycast="1" x="1">
+      <layout id="layout2" width="360" height="230" a="01" vertical="1" contentsizefitter="3" raycast="1" cella="11" control_height="0" space="5">
+        <datalist id="datalist4">
+          <layout id="layout1" control_height="0" contentsizefitter="1" vertical="1" height="500" width="360" space="5" raycast="1">
+            <text id="gemTitleParent" text="火萤石（20级）" fontsize="18" height="30" width="335" ta="01" horwrap="1">
+              <img id="NotActive" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="weijihuodiban" width="61" height="23" raycast="1" x="132" y="0" active="0">
+                <text id="NoActiveTxt" a="00" text="未激活" fontsize="16" height="25" width="60" ta="11" horwrap="1" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+              <text id="ActiveTxt" a="00" text="已激活" fontsize="18" height="25" width="60" ta="11" horwrap="1" x="133" y="0" color="#1ADE1FFF" binddragid="" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+            </text>
+            <text id="skillInfoTxt" text="攻击时有100%概率触发额外伤害" contentsizefitter="1" fontsize="18" height="25" width="335" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" linespace="1.2">
+            </text>
+            <text id="attrInfoTxt" text="攻击时有100%概率触发额外伤害" contentsizefitter="1" fontsize="18" height="25" width="335" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" linespace="1.2">
+            </text>
+          </layout>
+        </datalist>
+      </layout>
+    </scrollview>
+  </img>
+</uipanel>

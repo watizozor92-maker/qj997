@@ -1,0 +1,14 @@
+<uipanel id="KLLuckyTurnTableItemKml" name="幸运转盘模板" a="00" width="107" height="85" zindex="-1">
+  <img id="BG" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_right" width="108" height="87" raycast="1" x="0" y="-1">
+  </img>
+  <img id="Selected" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_seleted" width="120" height="100" raycast="1">
+  </img>
+  <panel id="Point" a="00" width="10" height="10">
+  </panel>
+  <text id="Count" a="00" text="" fontsize="16" height="25" width="53" ta="11" horwrap="1" x="28" y="-28" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <img id="Flag" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_jipin" width="24" height="49" raycast="1" x="-41" y="20">
+  </img>
+  <text id="reTimes" a="00" text="" fontsize="18" height="25" width="83" ta="11" horwrap="1" x="13" y="30" outlinesize="1" outlinecolor="#000000FF" color="#E6E600FF">
+  </text>
+</uipanel>

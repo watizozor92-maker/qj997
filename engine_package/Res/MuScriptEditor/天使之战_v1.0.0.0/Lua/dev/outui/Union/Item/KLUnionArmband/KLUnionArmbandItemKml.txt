@@ -1,0 +1,14 @@
+<uipanel id="KLUnionArmbandItemKml" name="战盟臂章模板" width="346" height="40" zindex="-1">
+  <img atlas="Atlas/FG_Union.spriteatlas" src="textbg_信息底" width="345" height="38" scale9l="10" scale9t="10" scale9r="10" scale9b="10" raycast="1" id="img_55">
+  </img>
+  <text id="predes" text="" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" x="22" a="10">
+  </text>
+  <text id="preArr" text="" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" x="-15" active="">
+  </text>
+  <img id="tag1" atlas="Atlas/Common.spriteatlas" src="tips_yellow2" active="" x="45" color="#FFEB00" rotate="0,0,270">
+  </img>
+  <text id="nextpreArr" text="" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" x="95" color="#00ff00">
+  </text>
+  <img id="tag2" atlas="Atlas/Common.spriteatlas" src="tips_green2" active="" x="145">
+  </img>
+</uipanel>

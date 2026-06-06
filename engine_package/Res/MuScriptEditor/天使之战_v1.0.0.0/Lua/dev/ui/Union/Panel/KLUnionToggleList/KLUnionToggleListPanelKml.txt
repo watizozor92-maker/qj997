@@ -1,0 +1,30 @@
+<uipanel id="KLUnionToggleListPanel" name="战盟页签主界面" adapter="1" width="0" height="0" a="20" mask="1" maskalpha="0">
+  <togglegroup id="ToggleUnionIcon" width="60" height="160" active="1" a="20" x="0" y="234">
+    <layout vertical="1" a="01" id="layout_56">
+      <toggle id="joinToggle" onclick="KmlXWUnionOutUI/@申请战盟面板" togglegroup_id="ToggleUnionIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_shenqingzhanmeng_1" pimg="btn_shenqingzhanmeng_2" default="1" width="60" height="72">
+      </toggle>
+      <toggle id="createToggle" onclick="KmlXWUnionOutUI/@创建战盟面板" togglegroup_id="ToggleUnionIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_chuangjianzhanmeng_1" pimg="btn_chuangjianzhanmeng_2" width="60" height="72">
+      </toggle>
+    </layout>
+  </togglegroup>
+  <togglegroup id="ToggleUnionInIcon" width="60" height="160" active="0" a="20" x="0" y="234">
+    <layout vertical="1" a="01" id="layout_60">
+      <toggle id="infoToggle" onclick="KmlXWUnionMainUI/@OpenPanel 信息" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_xinxi_1" pimg="btn_xinxi_2" default="1" width="60" height="72">
+      </toggle>
+      <toggle id="armbandToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_bizhang_1" pimg="btn_bizhang_2" default="0" width="60" height="72">
+      </toggle>
+      <toggle id="activityToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_huodong_1" pimg="btn_huodong_2" default="0" width="60" height="72">
+      </toggle>
+      <toggle id="electionToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_jingxuan_1" pimg="btn_jingxuan_2" default="1" width="60" height="72">
+      </toggle>
+      <toggle id="replaceToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_qudai_1" pimg="btn_qudai_2" default="0" width="60" height="72">
+      </toggle>
+      <toggle id="campaignToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_tanhe_1" pimg="btn_tanhe_2" default="0" width="60" height="72">
+      </toggle>
+      <toggle id="taskToggle" togglegroup_id="ToggleUnionInIcon" atlas="Atlas/FG_Union.spriteatlas" src="btn_renwu_1" pimg="btn_renwu_2" default="0" width="60" height="72">
+      </toggle>
+    </layout>
+  </togglegroup>
+  <img id="img_block" a="00" atlas="" src="Texture/img_interface_main138.jpg" width="80" height="1000" active="0" raycast="1" color="#FFFFFF00">
+  </img>
+</uipanel>

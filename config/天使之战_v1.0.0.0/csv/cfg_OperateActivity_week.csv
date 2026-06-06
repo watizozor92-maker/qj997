@@ -1,0 +1,8 @@
+﻿int#c#s,string#c#s,int#c#s,string#c#s,int#c#s,string#c#s,string#c#s,string#c#s,int#c#s
+id,des,mainGroup,showIcon,priority,openCondition,closeCondition,showTitle,showType
+101003,【周末】周末活动第2期,3,button_zmhd,1,901#8&903#14&991#6,980#3#2,好运周末,0
+101005,【周末】周末活动第4期,5,button_zmhd,1,901#22&903#28&991#6,980#5#2,好运周末,0
+101007,【周末】周末活动第6期,7,button_zmhd,1,901#36&903#42&991#6,980#7#2,好运周末,0
+101009,【周末】周末活动第8期,9,button_zmhd,1,901#50&903#56&991#6,980#9#2,好运周末,0
+101011,【周末】周末活动第10期,11,button_zmhd,1,901#64&903#70&991#6,980#11#2,好运周末,0
+101013,【周末】周末活动第12期,13,button_zmhd,1,901#78&903#84&991#6,980#13#2,好运周末,0

@@ -1,0 +1,24 @@
+<uipanel id="KLWolfSoulFortressSummonItemKml" name="狼魂召唤模板" a="00" width="283" height="442" zindex="301" rotate="0,0,0" x="0" y="0">
+  <panel id="root" a="00" width="283" height="442" binddragid="" x="0" y="0">
+    <img id="img3" a="01" atlas="Atlas/UIWolfSoulFortress.spriteatlas" src="summonBg" width="283" height="399" raycast="1" scale9l="10" scale9b="4" scale9r="10" scale9t="11">
+    </img>
+    <img id="rank" a="00" atlas="Atlas/UIWolfSoulFortress.spriteatlas" src="quality_1" width="54" height="32" raycast="1" x="-26" y="181">
+      <text id="name" a="01" text="默认内容" fontsize="18" height="25" width="147" ta="01" horwrap="1" x="100" y="-3" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+    <button id="btnSummon" a="00" atlas="Atlas/UIWolfSoulFortress.spriteatlas" src="btn_summon" width="222" height="40" onclick="" text="" raycast="1" x="3" y="-195" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+    </button>
+    <model id="model" src="20020001" width="300" height="300" mrotate="0,180,0" mpos="1,-108,-500" x="0" y="22" z="-500" mscale="40,40,40" a="00">
+    </model>
+    <layout id="layout2" control_height="0" contentsizefitter="0" vertical="1" height="49" width="260" a="02" raycast="1" x="0" y="71" cella="10" space="0">
+      <img id="specialBg" active="0" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1">
+        <text id="textSpecial" a="02" text="" fontsize="16" height="25" width="196" ta="01" horwrap="1" z="-1000" x="118" y="0">
+        </text>
+      </img>
+      <img id="specialBg_2" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1">
+        <text id="textSpecial_2" a="02" text="" fontsize="16" height="25" width="196" ta="01" horwrap="1" z="-1000" x="118" y="0" binddragid="">
+        </text>
+      </img>
+    </layout>
+  </panel>
+</uipanel>

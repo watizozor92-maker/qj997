@@ -1,0 +1,138 @@
+<uipanel id="KLUISynthesisPanelKml" name="合成界面" a="20" adapter="1" width="300" height="300" x="0" zindex="200">
+  <img id="Mask" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="5000" height="5000" raycast="1" color="#FFFFFF00" x="0" y="0">
+  </img>
+  <img src="Texture/bg_bottomBg.png" a="20" raycast="1" id="Right" active="1" x="0" y="0" width="416" height="750">
+    <img id="title" atlas="Atlas/UISynthesisPanel.spriteatlas" src="title1" y="-2" x="0" a="01">
+    </img>
+    <button id="closeButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="181" y="350" h5x="-181" h5y="350">
+    </button>
+    <img id="ModelBG" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="bg_itembg" width="402" height="378" raycast="1" x="0" y="126">
+      <panel id="Model" a="00" width="200" height="200" x="1" y="45">
+      </panel>
+      <text id="ModelName" a="00" text="1代翅膀" fontsize="18" height="25" width="377" ta="11" horwrap="1" fonttype="" x="0" y="-79" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="ModelDescription" a="00" text="随机生成不同职业的翅膀" fontsize="16" height="25" width="301" ta="11" horwrap="1" fonttype="" x="0" y="-124" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <button id="PreviewButton" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="btn_preview" width="35" height="45" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="105" y="-78" binddragid="">
+      </button>
+    </img>
+    <text id="MaterialTitle" a="00" text="所需材料：" fontsize="18" height="25" width="93" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="-137" y="-50">
+    </text>
+    <scrollview id="MaterialScrollview" a="00" x="0" y="-146" width="326" height="144" vertical="1" raycast="1" movementtype="1">
+      <gridview id="gridview7" cellwidth="70" cellheight="70" raycast="1" spacex="10" spacey="10" contentsizefitter="3" a="01" cella="11" startcorner="0" constraint="1" constraintcount="4">
+        <datalist id="MaterialDataList">
+          <panel id="MaterialItem" width="70" height="70">
+            <item id="MaterialItem_Model" src="0" width="70" height="70">
+            </item>
+            <button id="MaterialItem_AddButton" a="00" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty" width="70" height="70" onclick="" text="" raycast="1" mimg="" pimg="" dimg="">
+              <text id="MaterialItem_AddButtonText" a="00" text="装备一件 " fontsize="16" height="70" width="70" ta="22" horwrap="1" x="1" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" linespace="1" z="-500">
+              </text>
+            </button>
+            <text id="MaterialItem_Text" a="00" text="9999" fontsize="16" height="63" width="66" ta="22" horwrap="1" x="0" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" linespace="1" z="-500">
+            </text>
+            <button id="MaterialItem_Button" a="00" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty" width="70" height="70" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" color="#FFFFFF00" x="0" y="0">
+            </button>
+          </panel>
+        </datalist>
+      </gridview>
+    </scrollview>
+    <text id="SuccessRateText" a="00" text="成功率：100%" fontsize="18" height="25" width="350" ta="11" horwrap="1" fonttype="" x="0" y="-344" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="MaxCountText" a="00" text="一次最多合成10个" fontsize="18" height="25" width="350" ta="11" horwrap="1" fonttype="" x="0" y="-230" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="SynthesisButton" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="ty_btn_1" width="113" height="46" onclick="" text="合成" raycast="1" x="0" y="-305" mimg="" pimg="" dimg="" fonttype="" outlinesize="1" outlinecolor="#000000FF" fontsize="20">
+      <img id="SynthesisButton_Red" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="52" y="13" active="0">
+      </img>
+    </button>
+    <panel id="SelectCount" a="00" width="350" height="38" x="-8" y="-260">
+      <text id="text1" a="00" text="合成次数：" fontsize="18" height="25" width="98" ta="01" horwrap="1" fonttype="" x="-135" y="0" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <button id="BtnMinus" a="00" atlas="Atlas/UIFruitPanel.spriteatlas" src="button_interface_minus2" width="38" height="38" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-70" y="1">
+      </button>
+      <input id="Input" a="00" atlas="Atlas/Common.spriteatlas" raycast="1" ta="11" src="bg_setting_xuanzekuang" scale9l="10" scale9r="10" scale9t="10" scale9b="10" textcolor="#FFFFFFFF" placecolor="#FFFFFFFF" mincount="0" width="121" height="34" text="" onchange="" x="11" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" place="" active="1" errortips="" color="#A8CFFFFF" type="1">
+      </input>
+      <button id="BtnAdd" a="00" atlas="Atlas/UIFruitPanel.spriteatlas" src="button_interface_plus5" width="38" height="38" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="95" y="1">
+      </button>
+    </panel>
+  </img>
+  <img src="Texture/ty_bg_4.png" a="20" raycast="1" id="Left" active="1" y="0" x="-413" width="322" height="750" atlas="">
+    <img id="title2" atlas="Atlas/UISynthesisPanel.spriteatlas" src="title2" y="-2" x="0" a="01">
+    </img>
+    <scrollview id="LeftButtonScrollview" a="00" width="283" height="664" vertical="1" y="-22" raycast="1" x="1">
+      <layout id="layout2" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" space="0">
+        <datalist id="LeftButtonDataList" a="11" active="1">
+          <panel id="LeftButton" width="290" height="50">
+            <button id="LeftButton_1" mimg="" atlas="Atlas/UISynthesisPanel.spriteatlas" src="btnA_01" width="272" height="48" onclick="" text="门票合成" raycast="1" pimg="" dimg="" fonttype="" ta="11" outlinesize="1" outlinecolor="#000000FF" fontsize="20" active="1" x="0" y="0" a="00">
+              <img id="RedDot_1" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="134" y="20" active="0">
+              </img>
+            </button>
+            <button id="LeftButton_2" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="btnB_01" width="228" height="36" onclick="" text="默认内容" raycast="1" mimg="" pimg="" dimg="" fonttype="" ta="11" outlinesize="1" outlinecolor="#000000FF" active="1" fontsize="18">
+              <img id="LeftButton_2_Arrow" a="00" atlas="Atlas/Common.spriteatlas" src="LeftArrow" width="30" height="30" raycast="1" x="87" y="2" rotate="0,0,0">
+              </img>
+              <img id="RedDot_2" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="112" y="15" active="0">
+              </img>
+            </button>
+            <button id="LeftButton_3" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="btnC_01" width="188" height="28" onclick="" text="默认内容" raycast="1" mimg="" pimg="" dimg="" fonttype="" ta="11" outlinesize="1" outlinecolor="#000000FF" active="1" fontsize="18">
+              <img id="RedDot_3" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="92" y="12" active="0">
+              </img>
+            </button>
+          </panel>
+        </datalist>
+        <panel id="panel1" width="250" height="20">
+        </panel>
+      </layout>
+    </scrollview>
+  </img>
+  <img src="Texture/ty_bg_4.png" a="20" raycast="1" id="Preview" active="1" y="0" x="312" width="322" height="750" atlas="">
+    <img id="img2" atlas="Atlas/UISynthesisPanel.spriteatlas" src="title3" y="-2" x="0" a="01">
+    </img>
+    <scrollview id="scrollview3" a="00" width="322" height="639" vertical="1" y="-35" raycast="1" x="5">
+      <layout id="layout4" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" space="5">
+        <datalist id="PreviewDataList" a="11" active="1">
+          <panel id="PreviewItem" width="300" height="100">
+            <img id="Preview_BG" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_interface_main130" width="280" height="100" raycast="1" scale9l="47" scale9b="41" scale9r="51" scale9t="35">
+            </img>
+            <item id="Preview_Model" src="0" width="70" height="70" x="-81" y="0" itemtype="0" tips="1">
+            </item>
+            <text id="Preview_Name" a="00" text="恶魔之翼" fontsize="16" height="70" width="170" ta="00" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="47" y="0" color="#FFFF00FF" linespace="1.2">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <button id="PreviewCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="127" y="351" h5x="-127" h5y="351">
+    </button>
+  </img>
+  <panel id="Special" a="00" width="10" height="10" active="0">
+    <button id="SpecialCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="2000" height="2000" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="0">
+    </button>
+    <img id="SpecialBG" a="00" atlas="Atlas/Common.spriteatlas" src="img_interface_main127" width="398" height="257" raycast="1" x="-58" y="-74" scale9l="41" scale9b="38" scale9r="39" scale9t="49">
+    </img>
+    <button id="SelectSpecialButton" a="00" atlas="Atlas/UISynthesisPanel.spriteatlas" src="ty_btn_1" width="125" height="43" onclick="" text="确定" raycast="1" x="-49" y="-161" mimg="" pimg="" dimg="" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+    <text id="SpecialTitleText" a="00" text="" fontsize="16" height="55" width="400" ta="11" horwrap="1" x="-58" y="28" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <scrollview id="SpecialItemScrollview" a="00" x="-57" y="-66" width="380" height="144" vertical="1" raycast="1">
+      <gridview id="gridview20" cellwidth="70" cellheight="70" raycast="1" cella="11" contentsizefitter="3" a="01" constraint="1" constraintcount="5" spacex="5" spacey="10">
+        <datalist id="SpecialItemDataList" active="1" a="11">
+          <panel id="SpecialItem" width="70" height="70">
+            <item id="SpecialItem_Model" src="0" width="70" height="70">
+            </item>
+            <text id="SpecialItem_Text" a="00" text="" fontsize="16" height="25" width="71" ta="11" horwrap="1" x="1" y="-21" z="-100" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+            <button id="SpecialItem_Button" a="00" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty" width="70" height="70" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" color="#FFFFFF00">
+            </button>
+            <img id="SpecialItem_SelectBG" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_light" width="74" height="76" raycast="0" x="1" y="0" scale9l="60" scale9b="25" scale9r="57" scale9t="19">
+            </img>
+            <img id="SpecialItem_SelectGou" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_gou" width="17" height="14" raycast="0" x="22" y="-21">
+            </img>
+            <text id="SpecialItem_StrengthText" a="00" text="" fontsize="16" height="17" width="71" ta="21" horwrap="1" x="0" y="25" z="-100" fonttype="real_font_strength" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+            <text id="SpecialItem_AppendText" a="00" text="" fontsize="16" height="17" width="71" ta="21" horwrap="1" x="0" y="7" z="-100" fonttype="real_font_append" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+          </panel>
+        </datalist>
+      </gridview>
+    </scrollview>
+  </panel>
+</uipanel>

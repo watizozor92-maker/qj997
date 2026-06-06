@@ -1,0 +1,28 @@
+<uipanel id="KLChallengeBossPosPanel" name="挑战boss位置信息界面" x="-558" y="260" width="300" height="216" a="11" zindex="0" onload="KmlXWChallengeBossUI/@秘境副本任务初始化">
+    <img id="Boss" width="300" height="220" src="bg_mainTaskBg" atlas="Atlas/UITask.spriteatlas" >
+        <panel id="pos_root" width="300" height="216" active="1">
+            <scrollview id="boss_pos" width="300" height="216" y="-4" vertical="1" active="1"> 
+                <layout id="boss_pos_layout" width="299" height="215" space="0" contentsizefitter="1" a="01" vertical="1">
+                    <datalist id="boss_pos_dl"  databind="@all_boss_pos_data">
+                        
+                    </datalist> 
+                </layout>
+            </scrollview>
+        </panel>
+        <panel id="hurt_root" width="300" height="216" active="0">
+            <scrollview id="hurt_root_scrollview" width="300" height="216" y="-4" vertical="1" active="1"> 
+                <layout id="hurt_root_layout" width="299" height="216" space="0" contentsizefitter="1" a="01" vertical="1">
+                    <datalist id="hurt_root_dl"  databind="@all_hurt_data">
+                        
+                    </datalist> 
+                </layout>
+            </scrollview>
+            <img id="my_ranking_img" atlas="Atlas/KmlChallengeBoss.spriteatlas" width="37" height="33" src="" x="20" y="-85" a="10" active="0"/>
+            <text id="my_ranking" text="" x="20" y="-85" a="10" fontSize="18" color="#ff2323" outlineSize="1" outlineColor="0"/>
+            <text id="my_name" text="" x="55" y="-85" a="10" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"/>
+            <text id="my_value" text="" x="-25" y="-85" a="20" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"/>
+        </panel>
+       <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="exitIcon" width="65" height="70" raycast="1" x="182" y="-74">
+    </img>
+    </img>
+</uipanel>

@@ -1,0 +1,10 @@
+<uipanel id="KLUIInfoChangeItem" width="220" height="35" zindex="300">
+  <panel id="item_root" width="220" height="35" active="0">
+    <img id="img_effect" src="Texture/img_common_promotion.png">
+    </img>
+    <img id="img_up" atlas="Atlas/Common.spriteatlas" src="img_promotion_up" x="-80">
+    </img>
+    <text id="text_attr" text="" fontsize="18" color="#FFFFFF00" outlinesize="1" outlinecolor="0" a="10" ta="01" x="45" outline="1" horwrap="1">
+    </text>
+  </panel>
+</uipanel>

@@ -1,0 +1,44 @@
+<uipanel id="KLGuoShiPanelKml" name="连击果实" a="20" width="416" height="750" x="0" y="0">
+  <panel id="panel" a="00" width="416" height="750" x="0" y="0">
+    <img id="BG" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_bg.png">
+      <img id="img2" a="01" width="132" height="58" raycast="1" src="btn_cebian1" atlas="Atlas/FG_Common.spriteatlas" y="5" active="0">
+      </img>
+      <text id="text1" a="00" text="果实" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="348">
+      </text>
+    </img>
+    <button id="close" a="21" width="55" height="55" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" raycast="1" >
+    </button>
+    <img id="img1" a="00" width="404" height="670" raycast="1" src="btn_cebian1" atlas="Atlas/FG_Common.spriteatlas" y="-34" scale9l="6" scale9b="6" scale9r="4" scale9t="5" active="0" x="0">
+    </img>
+    <img id="img6" a="01" width="390" height="484" raycast="1" atlas="" src="Texture/bg_fruit.png" x="0" y="-60">
+      <item id="item1" src="20020001" width="100" height="100" itemid="30030105" mfixsize="0,0" bgtype="0" mscale="100,100,100" x="-54" y="18">
+        <img id="img4" a="00" width="175" height="40" raycast="1" src="bg_emptyBorder" atlas="Atlas/FG_Common.spriteatlas" x="0" y="-91" alphaall="2">
+        </img>
+        <text id="cur_rate" a="00" text="连击加成+0.0%" fontsize="16" height="25" width="350" ta="11" outline="0" horwrap="1" x="9" y="-91" color="#A34AFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </item>
+      <item id="item2" src="20020001" width="100" height="100" itemid="30030105" x="74" y="21" mscale="70,70,70" bgtype="0" mrotate="0,0,0" mpos="" mfixsize="100,100">
+        <img id="img5" a="00" width="175" height="40" raycast="1" src="bg_emptyBorder" atlas="Atlas/FG_Common.spriteatlas" x="2" y="-58" alphaall="2">
+        </img>
+        <text id="cur_sd" a="00" text="SD护盾值+0" fontsize="16" height="25" width="350" ta="11" outline="0" horwrap="1" x="-3" y="-58" color="#BFBF00FF" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </item>
+    </img>
+    <text id="SD_Max" a="21" text="SD护盾值上限：" fontsize="16" height="25" width="199" ta="21" outline="0" horwrap="1" y="-60" x="-80" color="#00FF00FF">
+    </text>
+    <text id="SD_Max_Value" a="21" text="900000" fontsize="16" height="25" width="350" ta="21" outline="0" horwrap="1" x="-20" color="#00FF00FF" y="-60">
+    </text>
+    <text id="LianJiRate_Max" a="21" text="连击加成上限：" fontsize="16" height="25" width="156" ta="21" outline="0" horwrap="1" y="-85" x="-80" h5y="-85" color="#00FF00FF">
+    </text>
+    <text id="LianJiRate_Max_Value" a="21" text="600%" fontsize="16" height="25" width="350" ta="21" outline="0" horwrap="1" x="-20" color="#00FF00FF" y="-85">
+    </text>
+    <img id="img7" a="02" width="121" height="35" raycast="1" x="0" y="137" src="img_title_di" atlas="Atlas/TS_Union.spriteatlas">
+      <text id="text8" a="10" text="背包果实" fontsize="16" height="25" width="233" ta="01" outline="0" horwrap="1" x="30" y="0" color="#F59924FF">
+      </text>
+      <item id="rate_item" src="20020001" width="70" height="70" itemid="30030105" mfixsize="80,80" x="-60" y="-70" itemcount="0" tips="1" textcolor="#D9001CFF" mscale="50,50,50" a="00">
+      </item>
+      <item id="sd_item" src="20020001" width="70" height="70" itemid="30030105" mfixsize="80,80" x="60" y="-70" tips="1" itemcount="0" textcolor="#D9001CFF" mscale="45,45,45">
+      </item>
+    </img>
+  </panel>
+</uipanel>

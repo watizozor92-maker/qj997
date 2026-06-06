@@ -1,0 +1,38 @@
+<uipanel id="KLNewNewSynthesisNumSelectPanelKml" a="00" width="264" height="180" zindex="200" z="-500">
+  <button id="Btn_Close" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#FFFFFF00">
+  </button>
+  <panel id="Content" a="00" width="264" height="180">
+    <img id="Bg" a="00" width="264" height="180" raycast="1" atlas="" src="Texture/bg_tips.png">
+    </img>
+    <layout id="layout6" control_height="0" contentsizefitter="0" vertical="1" height="150" width="264" a="01" raycast="1" cella="01" space="27" y="-10">
+      <panel id="costNode" width="264" height="38">
+        <text text="数量" a="10" x="14" id="text_18" horwrap="1" y="0" fontsize="18" fonttype="" outlinecolor="#000000" outlinesize="1" ta="01" outline="1" width="39" height="18" fontstyle="0" underline="0" color="#E6E600FF">
+        </text>
+        <input id="txt_number" text="1" a="10" x="56" width="180" height="33" ta="11" fontsize="18" outlinecolor="#000000" outlinesize="1" textcolor="#1ADD1FFF" type="1" src="bg_text" atlas="Atlas/FG_Common.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" y="0" color="#FFFFFFFF" contenttype="1">
+          <img id="number_minus" src="button_interface_minus3" atlas="Atlas/Common.spriteatlas" x="-70" raycast="1">
+            <img id="img1" a="00" width="33" height="33" raycast="1" color="#FFFFFF00" x="0">
+            </img>
+          </img>
+          <img id="number_add" src="button_interface_plus6" atlas="Atlas/Common.spriteatlas" x="70" raycast="1">
+            <img id="img2" a="00" width="33" height="33" raycast="1" color="#FFFFFF00">
+            </img>
+          </img>
+        </input>
+      </panel>
+      <panel id="panel1" width="264" height="40">
+        <slider id="price_slider" atlas="Atlas/KLTradePanel.spriteatlas" src="img_slider_bg" fimg="img_slider" himg="btn_slider" width="226" height="35" minvalue="0" maxvalue="100" curvalue="0" wholenum="1" updateinterval="0.1" slidefillarealrtb="5,-5,0,0" slidehandlearealrtb="0,2,0,0" handlewidthtb="120,-27,-30" mimg="" pimg="" x="-6" y="10">
+          <panel bind="fillArea_attach" id="fillArea_attach" a="00" x="0" width="218" height="18">
+            <img bind="fill_attach" id="fill_attach" x="0">
+            </img>
+          </panel>
+          <panel bind="handleSlideArea_attach" id="fillArea_attach" x="0">
+            <img bind="handle_attach" id="handle_attach" x="-1" width="18" height="19">
+            </img>
+          </panel>
+        </slider>
+      </panel>
+    </layout>
+    <button id="Btn_Confirm" a="02" width="103" height="36" onclick="" text="确定" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" y="15" fontsize="18">
+    </button>
+  </panel>
+</uipanel>

@@ -1,0 +1,12 @@
+<uipanel id="KLMasterTalentIconItemKml" a="00" width="62" height="80" zindex="-1">
+  <img id="icon" a="01" width="54" height="54" raycast="1">
+    <text id="info" a="02" text="默认内容" fontsize="14" height="25" width="105" ta="11" outline="1" horwrap="1" y="-26" color="#CCCCCCFF">
+    </text>
+    <img id="mask" a="00" width="57" height="57" raycast="1" src="bg_icon_mask" atlas="Atlas/FG_MasterTalent.spriteatlas">
+      <img id="lock" a="00" width="36" height="45" raycast="1" src="icon_lock" atlas="Atlas/FG_MasterTalent.spriteatlas">
+      </img>
+    </img>
+    <button id="click" a="00" width="54" height="54" onclick="" text="" raycast="1" src="bg_setting_xuanzekuang" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFF00">
+    </button>
+  </img>
+</uipanel>

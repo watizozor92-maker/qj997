@@ -1,0 +1,40 @@
+<uipanel id="KLTalentTipPanelKml" name="大天使天赋点提示界面" a="00" width="350" height="415" zindex="800">
+  <img id="mask" a="00" width="2000" height="2000" raycast="1" color="#FFFFFF00" x="0" y="0">
+  </img>
+  <img id="bg" a="00" atlas="Atlas/UIMasterTalent.spriteatlas" src="bg_black_grid_N" width="350" height="415" raycast="1" scale9l="12" scale9b="12" scale9r="16" scale9t="12">
+    <panel id="panel2" a="00" width="350" height="118" x="0" y="142">
+      <img id="icon" a="00" atlas="Atlas/UIOutSkillIcon.spriteatlas" src="1001" width="70" height="70" raycast="1" x="-120" y="3">
+      </img>
+      <text id="name" a="00" text="攻击成功率增加" fontsize="18" height="25" width="246" ta="01" horwrap="1" x="45" y="37">
+      </text>
+      <text id="text2" a="00" text="等级" fontsize="18" height="25" width="50" ta="01" horwrap="1" x="-51" y="11" rotate="0,0,0">
+      </text>
+      <text id="level" a="20" text="0/2" fontsize="18" height="25" width="80" ta="11" horwrap="1" x="-11" y="11" rotate="0,0,0">
+      </text>
+      <text id="text5" a="00" text="需要前置消耗天赋点" fontsize="18" height="25" width="180" ta="01" horwrap="1" x="14" y="-12" rotate="0,0,0">
+      </text>
+      <text id="dian" a="20" text="5" fontsize="18" height="25" width="80" ta="11" horwrap="1" x="-11" y="-12" rotate="0,0,0">
+      </text>
+      <text id="talentpoint" a="20" text="5" fontsize="18" height="25" width="80" ta="11" horwrap="1" x="-11" y="-39" rotate="0,0,0">
+      </text>
+      <text id="text6" a="00" text="升至下级所需天赋点" fontsize="18" height="25" width="180" ta="01" horwrap="1" x="14" y="-39" rotate="0,0,0">
+      </text>
+    </panel>
+    <panel id="panel7" a="00" width="350" height="233" y="-34" x="0">
+      <img id="img8" a="01" atlas="Atlas/UIMasterTalent.spriteatlas" src="img_tips_shuxing_di" width="330" height="24" raycast="1" x="0" y="0">
+        <img id="img9" a="10" atlas="Atlas/UIMasterTalent.spriteatlas" src="nowLv" width="78" height="21" x="10" y="0">
+        </img>
+      </img>
+      <text id="currenttext" a="00" text="默认内容" fontsize="18" height="97" width="315" ta="00" horwrap="1" x="2" y="41">
+      </text>
+      <img id="img11" a="01" atlas="Atlas/UIMasterTalent.spriteatlas" src="img_tips_shuxing_di" width="330" height="24" raycast="1" x="0" y="-130">
+        <img id="img4" a="10" atlas="Atlas/UIMasterTalent.spriteatlas" src="nextLv" width="78" height="21" raycast="1" x="10" y="0">
+        </img>
+      </img>
+      <text id="nexttext" a="00" text="默认内容" fontsize="18" height="73" width="315" ta="00" horwrap="1" x="2" y="-79">
+      </text>
+    </panel>
+    <button id="UpButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="113" height="40" onclick="" text="升级" raycast="1" fonttype="" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0" y="-175" fontsize="18">
+    </button>
+  </img>
+</uipanel>

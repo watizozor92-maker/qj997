@@ -1,0 +1,4 @@
+<uipanel id="KLRedDotItem" name="红点模板" x="0" width="17" height="17">
+  <img id="redDotItem" atlas="Atlas/UIMisc.spriteatlas" src="img_uiicon_41" raycast="1">
+  </img>
+</uipanel>

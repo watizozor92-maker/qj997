@@ -1,0 +1,14 @@
+<uipanel id="KLTeamInfoItem" name="队伍信息模板" width="150" height="168">
+    <img id="HeaderIconBg" a="00" atlas="Atlas/UISkillPanel.spriteatlas" src="img_skill_headFrame" width="66" height="66" raycast="1" x="0" y="54">
+    </img>
+    <img id="icon" a="00" atlas="Atlas/MUIcon.spriteatlas" src="10" width="60" height="60" raycast="1" x="0" y="54">
+    </img>
+    <text id="playerName" a="00" text="你好" fontsize="16" height="25" width="204" ta="11" horwrap="1" y="9" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="state" a="00" text="默认内容" fontsize="16" height="25" width="204" ta="11" horwrap="1" x="0" y="-12" color="#FF0000FF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="select" a="00" atlas="Atlas/Common.spriteatlas" src="bg_setting_gou" width="45" height="48" raycast="1" x="0" y="54">
+    </img>
+    <img id="leaderIcon" a="00" atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="ty_ico_team" width="26" height="28" raycast="1" x="-19" y="70">
+    </img>
+</uipanel>

@@ -1,0 +1,52 @@
+<uipanel id="KLUIConsumerRankingPanelKml" name="充值排行榜界面" width="1334" height="750" zindex="200" raycast="0" x="0" y="1">
+  <img id="bg" src="Texture/img_ConsumerRanking_bg.png" width="845" height="490" x="88" y="-40">
+  </img>
+  <text id="NoRankListImg" a="00" text="排行榜暂无数据" fontsize="30" ta="01" horwrap="1" active="0">
+  </text>
+  <panel id="RankList_Panel">
+    <scrollview id="PlayerList" a="00" width="450" height="330" vertical="1" y="-7" raycast="1" x="290">
+      <layout width="450" height="330" a="01" space="5" contentsizefitter="1" vertical="1">
+        <datalist id="PlayerDataList">
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="TimeBg" a="00" atlas="Atlas/UIConsumerRanking.spriteatlas" src="time_di" raycast="1" x="280" y="177">
+      <countdown id="refreshTime" width="218" height="43" ta="11" x="0" color="#00ff00FF" y="0" fontsize="20">
+      </countdown>
+    </img>
+    <text id="RewardText" a="00" text="" fontsize="16" height="60" width="380" ta="00" horwrap="1" x="-125" y="-260" z="-257" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF" fonttype="" linespace="1">
+    </text>
+    <role id="Role" active="" model_list="" equip_list="" mscale="55,55,5" mrotate="0,180,0" x="-45" y="-144">
+    </role>
+    <panel id="mountModel" x="-80" y="-217" z="-300">
+    </panel>
+    <button id="LockButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="150" height="300" onclick="" text="" raycast="1" x="-120" y="-68" fonttype="" fontsize="18" color="#00000000" outlinesize="1" outlinecolor="#000000FF" ta="11" z="-200">
+    </button>
+    <panel id="left_root" x="-121" y="-65" z="0">
+      <img id="player_block" atlas="Atlas/UIConsumerRanking.spriteatlas" src="player_block" x="0" y="-10" active="0">
+      </img>
+      <img id="player_title" atlas="Atlas/UIConsumerRanking.spriteatlas" src="one_title" x="0" y="170">
+        <text id="user_name" text="虚位以待" fontsize="18" x="0" y="-10" z="0" color="#ffef6b" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </img>
+      <img id="xuwei" atlas="Atlas/UIConsumerRanking.spriteatlas" src="xuwei" x="-5" y="10">
+      </img>
+    </panel>
+    <img id="player_block" atlas="Atlas/UIConsumerRanking.spriteatlas" src="title" x="-234" y="171">
+    </img>
+    <panel id="MyRank" width="370" height="58" x="280" y="-220">
+      <img id="MyRank_BG" a="00" atlas="Atlas/UIConsumerRanking.spriteatlas" src="player_di" raycast="1" x="0">
+      </img>
+      <img id="MyRank_no" atlas="Atlas/UIConsumerRanking.spriteatlas" src="no_rank" raycast="1" x="-117" y="-15">
+      </img>
+      <text id="MyRank_Rank_title" a="00" text="我的排名" fontsize="20" height="40" width="150" ta="11" horwrap="1" fonttype="" color="#ff9c00" x="-117" y="18" active="1">
+      </text>
+      <text id="MyRank_RankText" a="00" text="99" fontsize="20" height="40" width="150" ta="11" horwrap="1" fonttype="Rank_Font" x="-117" y="-15" active="1">
+      </text>
+      <text id="MyRank_money" a="00" text="" fontsize="20" height="40" width="200" ta="11" horwrap="1" fonttype="" color="#ff9c00" x="66" y="-4" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </panel>
+  </panel>
+  <button id="closeEquipUIButton" width="1334" height="750" raycast="1" color="#FFFFFF00" active="0" x="2" y="0">
+  </button>
+</uipanel>

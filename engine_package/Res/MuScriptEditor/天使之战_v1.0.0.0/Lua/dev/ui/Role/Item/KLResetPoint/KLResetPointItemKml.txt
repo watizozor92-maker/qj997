@@ -1,0 +1,28 @@
+<uipanel id="KLResetPointItem" zindex="300" width="420" height="250" mask="0" raycast="1" z="-400" onload="KmlXWCommonTipUI/@LoadCommonTip">
+  <button id="MaskBtn" a="00" width="3000" height="3000" onclick="" text="" raycast="1" x="-323" y="230" color="#FFFFFF00">
+  </button>
+  <panel id="bg" width="355" height="264" x="60" y="-12">
+    <img id="bgImg" src="Texture/FG_dankuangdi.png" zindex="1003" width="355" height="264" atlas="" scale9l="76" scale9b="55" scale9r="76" scale9t="59" x="1" y="0" h5x="1" h5y="0">
+      <img atlas="Atlas/Common.spriteatlas" src="img_tip_title" y="141" width="81" height="56" id="img_679" active="0">
+      </img>
+      <text id="text1" a="00" text="提示" fontsize="20" height="35" width="350" ta="11" outline="0" horwrap="1" y="76" x="-1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF" active="1">
+      </text>
+    </img>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" width="34" height="34" x="-44" y="-26" onclick="KmlXWCommonTipUI/@CloseCommonTip" zindex="1003" h5x="-247" h5y="140">
+    </img>
+    <layout vertical="1" height="96" width="300" id="layout_681" x="0" y="3">
+      <text fontsize="18" height="35" text="消耗道具洗点将返回点数" outlinesize="1" outlinecolor="#000000" id="text_682" outline="0" horwrap="1" color="#FFFFFF" width="268" ta="11">
+      </text>
+      <item id="cost_item" width="62" height="62" itemid="" itemcount="">
+        <img id="item_click_img" atlas="Atlas/Common.spriteatlas" src="img_tip_title" color="#FFFFFF00" width="62" height="62" raycast="1">
+        </img>
+      </item>
+    </layout>
+    <layout x="0" y="-76" z="0" width="246" height="50" a="00" rotate="0,0,0" vertical="0" space="38" control_width="0" control_height="0" expand_width="0" expand_height="0" cella="00" id="layout_684">
+      <button id="common_lf_btn" text="取消" onclick="" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" zindex="1003" textcolor="#ED2E2EFF" fontsize="18" outlinesize="1" outlinecolor="#000000" dimg="" pimg="" z="0" width="103" height="36" mimg="" rotate="0,0,0" raycast="1">
+      </button>
+      <button id="common_rt_btn" text="确认" onclick="" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" zindex="1003" textcolor="#FFFFFFFF" fontsize="18" outlinesize="1" outlinecolor="#000000" dimg="" pimg="" z="0" width="103" height="36" mimg="" rotate="0,0,0" raycast="1">
+      </button>
+    </layout>
+  </panel>
+</uipanel>

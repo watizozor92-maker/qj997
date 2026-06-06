@@ -1,0 +1,16 @@
+<uipanel id="KLCareerChangePanel" name="转职界面" a="00" width="800" height="700" zindex="400">
+  <prefab path="UI/UIChangeProfessionPanel.prefab" width="800" height="700" y="60" id="prefab_88">
+    <button id="BtnOk" bind="btnOk">
+    </button>
+    <panel bind="SkillContent" id="SkillContent">
+    </panel>
+    <panel bind="EquipContent" id="EquipContent">
+    </panel>
+    <text bind="TextAttAward" id="TextAttAward">
+    </text>
+    <text bind="TextOriginalProfession" id="TextOriginalProfession">
+    </text>
+    <text bind="TextPresentProfession" id="TextPresentProfession">
+    </text>
+  </prefab>
+</uipanel>

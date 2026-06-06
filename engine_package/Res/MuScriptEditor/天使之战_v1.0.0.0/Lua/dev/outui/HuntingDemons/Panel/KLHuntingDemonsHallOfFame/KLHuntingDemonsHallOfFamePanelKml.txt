@@ -1,0 +1,50 @@
+<uipanel id="KLHuntingDemonsHallOfFamePanel" name="猎魔名人堂界面" a="00" width="1039" height="560" zindex="200" y="-15">
+  <img src="Texture/HuntingDemons_Bg2.png" atlas="" width="993" height="445" y="-26" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img_36">
+  </img>
+  <button id="btn_shop" src="icon_shop" atlas="Atlas/KLHuntingDemons.spriteatlas" a="12" raycast="1" x="26" y="41" mimg="" pimg="" dimg="" width="112" height="68">
+  </button>
+  <button id="btn_go" a="22" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" width="177" height="51" text="前往猎魔" raycast="1" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" textcolor="#F2F2F2FF" x="-22" y="41">
+  </button>
+  <item id="item" src="20020001" width="40" height="40" x="-348" y="-200" raycast="1">
+  </item>
+  <text text="0/0" outlinesize="1" outlinecolor="#000000" fontsize="18" a="11" x="200" y="-460" id="NumText" horwrap="1" width="200" height="40" ta="01">
+  </text>
+  <img src="di" atlas="Atlas/KLHuntingDemons.spriteatlas" a="02" y="40" id="img_20" x="25">
+    <text text="今日猎魔排行" y="8" ta="11" outlinesize="1" outlinecolor="#000000" id="text_21" horwrap="1" fontsize="18" width="150" height="20">
+    </text>
+    <text text="" y="-13" ta="11" color="#FF2323" outlinesize="1" outlinecolor="#000000" id="timeText" horwrap="1" width="320" height="20" fontsize="18">
+    </text>
+  </img>
+  <role id="role_mid" mscale="50,50,50" mrotate="0,180,0" x="22" y="-142" ani="">
+  </role>
+  <role id="role_left" mscale="50,50,50" mrotate="0,180,0" x="-274" y="-146" ani="">
+  </role>
+  <role id="role_right" mscale="50,50,50" mrotate="0,180,0" x="330" y="-146" ani="">
+  </role>
+  <button id="HelpButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="475" y="175">
+  </button>
+  <img id="roleTitle1" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="rank_1" width="65" height="59" raycast="1" x="20" y="153" z="-1000">
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-274" id="role_mid_integral_Text" horwrap="1" width="169" height="31" ta="11" color="#FFFF00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-298" id="role_mid_item_Text" horwrap="1" width="200" height="31" ta="11" color="#FF8A00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-38" id="role_mid_name_Text" horwrap="1" width="200" height="31" ta="11">
+    </text>
+  </img>
+  <img id="roleTitle2" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="rank_2" width="65" height="59" raycast="1" x="-274" y="142" z="-1000">
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-261" id="role_left_integral_Text" horwrap="1" width="169" height="31" ta="11" color="#FFFF00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-286" id="role_left_item_Text" horwrap="1" width="200" height="31" ta="11" color="#FF8A00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-38" id="role_left_name_Text" horwrap="1" width="200" height="31" ta="11">
+    </text>
+  </img>
+  <img id="roleTitle3" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="rank_3" width="65" height="59" raycast="1" x="330" y="142" z="-1000">
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-261" id="role_right_integral_Text" horwrap="1" width="169" height="31" ta="11" color="#FFFF00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-286" id="role_right_item_Text" horwrap="1" width="200" height="31" ta="11" color="#FF8A00FF">
+    </text>
+    <text text="" outlinesize="1" outlinecolor="#000000" fontsize="18" a="00" x="0" y="-38" id="role_right_name_Text" horwrap="1" width="200" height="31" ta="11">
+    </text>
+  </img>
+</uipanel>

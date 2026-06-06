@@ -1,0 +1,32 @@
+<uipanel id="KLLuckyBagPanelKml" adapter="1" zindex="201" a="20" height="750" width="416">
+  <prefab id="cut_area_up" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="360">
+  </prefab>
+  <prefab id="cut_area_down" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="-316">
+  </prefab>
+  <img src="Texture/FG_bg_2ColumnsTanKuang.png" a="21" raycast="1" id="img_66" x="0" y="0" width="416" height="750" atlas="">
+    <panel id="BG_Templete" a="00" width="416" height="750">
+      <panel id="ReMask" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="title" a="00" text="背  包" fontsize="20" height="40" width="200" ta="11" outline="0" horwrap="1" y="303" outlinesize="1" outlinecolor="#000000FF" x="0">
+    </text>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" width="50" height="50" x="-2" y="1" z="-10" h5x="-354" h5y="10" raycast="1">
+    </img>
+    <img id="sv_frame" atlas="Atlas/UILoginPanel.spriteatlas" src="bg_black_grid_N" width="342" height="553" scale9b="26" scale9r="26" scale9l="26" scale9t="26" a="01" y="-83" x="2">
+    </img>
+    <layout id="layout1" control_height="0" contentsizefitter="1" vertical="0" height="500" width="500" a="02" raycast="1" space="17" y="20" x="0" active="0">
+      <button id="btn_fix" atlas="Atlas/TS_Common.spriteatlas" src="btn_xiuli" onclick="KmlXWBagUI/@打开个人商店" width="75" height="44" mimg="" pimg="" dimg="" scale9l="38" scale9b="0" scale9r="32" scale9t="0" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1">
+      </button>
+      <button id="btn_arrange" atlas="Atlas/TS_Common.spriteatlas" src="btn_zhengli" onclick="KmlXWBagUI/@打开个人商店" width="75" height="44" mimg="" pimg="" dimg="" scale9l="38" scale9b="0" scale9r="32" scale9t="0" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1">
+      </button>
+      <button id="btn_storage" atlas="Atlas/TS_Common.spriteatlas" src="btn_cangku" a="11" x="39" y="50" onclick="KmlXWBagUI/@打开个人商店" width="75" height="44" mimg="" pimg="" dimg="" scale9l="38" scale9b="0" scale9r="32" scale9t="0" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1">
+      </button>
+      <button id="btn_sell" atlas="Atlas/TS_Common.spriteatlas" src="btn_huishou" onclick="KmlXWBagUI/@打开个人商店" width="75" height="44" mimg="" pimg="" dimg="" scale9l="38" scale9b="0" scale9r="32" scale9t="0" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1">
+      </button>
+    </layout>
+  </img>
+</uipanel>

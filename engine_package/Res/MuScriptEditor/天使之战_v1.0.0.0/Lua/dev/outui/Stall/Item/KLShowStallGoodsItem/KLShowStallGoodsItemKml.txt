@@ -1,0 +1,46 @@
+<uipanel id="KLShowStallGoodsItem" name="摆摊货物模板" width="188" height="217" zindex="-1">
+  <button id="btn_goods_item" src="bg_item_di" atlas="Atlas/FG_TradePanel.spriteatlas" width="188" height="217" y="0" raycast="1" mimg="" pimg="" dimg="">
+  </button>
+  <prefab id="scroll_text_template" path="Kml/KmlPrefab/Cookbook/Common/KmlScrollTextTemplate.prefab" a="01" width="140" y="-16" height="19">
+    <panel id="KmlScrollTextTemplate" bind="KmlScrollTextTemplate" width="140">
+    </panel>
+    <text id="txt_item_name" bind="Text" color="#F36055" width="280" text="你好你好你好你好你好你好你好你好你好" fontsize="16" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" x="-45" y="0" height="30">
+    </text>
+  </prefab>
+  <text id="monthCardText" text="1天" a="02" color="#FFFFFF" outlinesize="0" outlinecolor="#000000" fontsize="14" y="47" x="0" ta="11" width="100" horwrap="1" height="20" active="0" chatiteminfo="" outline="1">
+  </text>
+  <panel id="zhuoyue" a="01" width="188" height="217" y="0" x="0">
+    <text id="strengthLevel_" x="-5" y="-70" ta="21" width="100" height="24" outline="1" fonttype="FG_Font_Trade" horwrap="1" text="" a="21">
+    </text>
+    <text id="appendLevel_" x="-5" y="-90" ta="21" width="100" height="24" fonttype="FG_Equip_Append" outline="1" horwrap="1" a="21">
+    </text>
+    <img id="arrow_" a="11" x="110" y="-85" src="ty_green" atlas="Atlas/FG_TradePanel.spriteatlas" width="15" height="18">
+    </img>
+    <img id="imgQuality" a="11" width="45" height="35" raycast="0" x="14" y="-17" active="0">
+    </img>
+    <img id="xingyun" a="11" width="30" height="34" raycast="1" src="icon_xingyun" atlas="Atlas/FG_TradePanel.spriteatlas" x="4" y="-39" active="0">
+    </img>
+  </panel>
+  <img id="icon_career_bg" width="26" height="26" a="21" x="-6" y="-42" src="bg_career" atlas="Atlas/KLTradePanel.spriteatlas">
+    <img id="icon_career" a="00" width="30" height="30" raycast="1" x="0" y="0">
+    </img>
+  </img>
+  <item id="item" width="100" height="100" mfixsize="100,100" bgscale="0,0" itemid="10040001" y="20" x="0">
+  </item>
+  <img id="img_favor_count" src="star" atlas="Atlas/KLTradePanel.spriteatlas" x="-6" y="49" a="22" width="23" height="22">
+    <text id="txt_favor_count" text="1" color="#00ff00" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" y="-3">
+    </text>
+  </img>
+  <text id="itemCount" text="" a="02" color="#FFFFFF" outlinesize="0" outlinecolor="#000000" fontsize="16" y="58" x="0" ta="11" width="100" horwrap="1" height="20" active="1" chatiteminfo="" outline="1">
+  </text>
+  <text id="txt_count_down" text="" color="#FF0000" y="-115" width="180" ta="11" horwrap="1" outline="1" a="01">
+  </text>
+  <button id="btn_xiajia" a="00" width="102" height="36" onclick="" text="下架" raycast="1" y="-84" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
+  </button>
+  <img id="img_coin_type" src="img_bag_04" atlas="Atlas/UIBagPanel.spriteatlas" a="12" x="47" y="57" width="25" height="25" rotate="0,0,0">
+  </img>
+  <text id="txt_price" text="33161" color="#FAD994FF" outlinesize="1" outlinecolor="#000000" fontsize="18" y="58" x="79" ta="11" width="47" horwrap="0" fonttype="" outline="1" a="12" height="22" contentsizefitter="2">
+  </text>
+  <button id="btn_buy" a="00" width="102" height="36" onclick="" text="购买" raycast="1" y="-84" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
+  </button>
+</uipanel>

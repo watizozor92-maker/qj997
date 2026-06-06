@@ -1,0 +1,6 @@
+<uipanel id="KLUIChatViewKml" name="聊天列表模板" width="387" height="571" zindex="-1" a="01">
+  <loopscrollview id="chat_view" width="400" height="550" vertical="1" scrollpos="0" cellwidth="396" cellheight="80">
+    <datalist id="chat_data_list" databind="">
+    </datalist>
+  </loopscrollview>
+</uipanel>

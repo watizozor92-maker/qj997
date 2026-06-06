@@ -1,0 +1,98 @@
+<uipanel id="KLUISystemLeftPanel" name="主界面右侧通用按钮容器" adapter="1" zindex="200" width="1334" height="800" movecanvas="0#602#155" x="0" y="0" onload="KmlMainUI/@初始化系统数据" z="0" a="22" rotate="0,0,0" color="#00000000" raycast="0">
+  <panel id="move_root" x="602" y="155">
+    <img id="foldBtn" active="0" width="68" height="66" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_expand" onclick="KmlMainUI/@展开系统菜单栏" x="14" y="-75" z="0" a="00" rotate="0,0,0">
+    </img>
+    <panel id="bagBtn2" x="25" y="-74" z="0" a="00" active="0">
+      <panel id="maxBagTips" active="1" zindex="220">
+        <img id="bg" src="Texture/sanjitanchuang_bg.png" x="-80" a="20">
+          <button id="maxTipsCloseBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" x="12" y="8" raycast="1">
+          </button>
+          <text id="notice" text="亲，您的背包满了哦！" a="01" color="#E6E600" fontsize="20" x="2" y="-15" outline="0" horwrap="1">
+          </text>
+          <text id="notice1" text="您可以通过以下途径来解决" color="#ECE1E5" fontsize="18" y="20">
+          </text>
+          <button id="equipRecycleBtn" raycast="1" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" y="-42" x="-75" textcolor="#FFFFFF" fontsize="20" text="装备回收" outlinesize="1" outlinecolor="#000000">
+          </button>
+          <button id="autoRecycleBtn" raycast="1" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" y="-42" x="88" textcolor="#FFFFFF" fontsize="20" text="自动回收" outlinesize="1" outlinecolor="#000000">
+          </button>
+          <toggle id="notNoticeToggle" x="-80" y="16" z="0" width="33" height="33" a="02" rotate="0,0,0" raycast="1" src="button_interface_window54" atlas="Atlas/Common.spriteatlas" pimg="bg_setting_gou" default="0">
+            <text id="notNoticeToggleText" text="本次登录不再提醒" fontsize="18" width="219" y="-2" ta="01" a="10" x="41" color="#cccccc" avtive="0" outlinesize="1" outlinecolor="#000000FF" horwrap="1" height="44" fonttype="">
+            </text>
+          </toggle>
+          <img id="arrow" a="20" atlas="Atlas/KLUIPrivilegePanel.spriteatlas" src="img_arrow" width="47" height="35" rotate="0,0,90" x="20" y="21">
+          </img>
+        </img>
+      </panel>
+    </panel>
+    <panel id="hookRoot" x="2" y="8" active="0">
+      <img id="img1" a="00" atlas="Atlas/FG_MainPanel.spriteatlas" src="bg_hook_bg" width="153" height="70" raycast="1" y="-125" x="-18" active="0">
+      </img>
+      <panel id="bgmask" a="00" rectmask="0" width="194" height="90" x="-110" y="-124">
+        <img id="img_new_hook" a="00" atlas="Atlas/FG_MainPanel.spriteatlas" src="bg_hook_bg" width="156" height="73" raycast="1" y="4" x="96" active="1" scale9l="0" scale9b="0" scale9r="0" scale9t="0">
+          <panel id="autoHookIconContainer_2" raycast="1" x="-34" y="-2" z="0" width="55" height="55" a="00" rotate="0,0,0">
+            <img id="img_auto_2_close" width="5000" height="5000" color="#FFFFFF00" raycast="1">
+            </img>
+            <img id="autoMaxIcon_2" stop="1" rotateduration="3" loop="1" rotatevector="0,0,-360" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_hooksetting" x="-131" y="2" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" width="68" height="66">
+            </img>
+            <img id="autoMinIcon_2" stop="1" rotateduration="3" loop="1" rotatevector="0,0,-360" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_hooksetting" x="-5" y="1" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" width="68" height="66">
+            </img>
+          </panel>
+          <img id="btn_hook_in_icon" a="00" width="36" height="36" raycast="1" src="btn_zhankaishouqidi" atlas="Atlas/FG_MainPanel.spriteatlas" x="-102" y="-5" color="#FFFFFF00">
+            <button id="btn_hook_in" a="00" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_zhankaishouqi2" width="36" height="36" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" rotate="0,0,0" x="0" y="0">
+            </button>
+          </img>
+        </img>
+      </panel>
+      <img id="hookBtn" active="1" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_auto" x="18" y="-120" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" rotate="0,0,0" width="68" height="66">
+      </img>
+      <panel id="autoHookIconContainer" raycast="1" active="0" x="25" y="-160" z="0" width="55" height="55" a="00" rotate="0,0,0">
+        <img id="autoMaxIcon" stop="1" rotateduration="3" loop="1" rotatevector="0,0,-360" atlas="Atlas/UIMainPanel.spriteatlas" src="btn_dazhilun" x="-10" y="2" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" width="58" height="58">
+        </img>
+        <img id="autoMinIcon" stop="1" rotateduration="3" loop="1" rotatevector="0,0,-360" atlas="Atlas/UIMainPanel.spriteatlas" src="btn_xiaochilun" x="14" y="15" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" width="58" height="58">
+        </img>
+        <img id="autoTxtIcon" atlas="Atlas/UIMainPanel.spriteatlas" src="btn_zidong" x="2" y="-21" onclick="KmlMainUI/@开始挂机" z="0" a="00" raycast="1" rotate="0,0,0" width="58" height="58">
+        </img>
+      </panel>
+      <img id="btn_hook_out_icon" a="00" width="36" height="36" raycast="1" src="btn_zhankaishouqidi" atlas="Atlas/FG_MainPanel.spriteatlas" x="-36" y="-123" color="#FFFFFF00">
+        <button id="btn_hook_out" a="00" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_zhankaishouqi1" width="36" height="36" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" rotate="0,0,0" x="0" y="0">
+        </button>
+      </img>
+    </panel>
+    <img id="expandBtn" active="0" width="68" height="66" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_fold" onclick="KmlMainUI/@折叠系统菜单栏" x="14" y="-75" z="0" a="00" rotate="0,0,0">
+    </img>
+    <panel id="shapeShiftRoot" a="00" width="10" height="10" y="-75" x="-40" active="0">
+      <img id="img_shift_bg" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_bg" width="336" height="68" raycast="1" x="-50" y="0" active="0">
+        <layout width="250" height="68" space="10" x="-5" cella="20" id="layout_37">
+          <button id="btn_shift_1" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="1">
+            <img id="img_shift_icon_1" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg">
+            </img>
+            <circlebar id="Img_cdTime_1" atlas="Atlas/Common.spriteatlas" src="" loadingbar="Knob_1" frontcolor="#00000080" direction="1" toend="1" width="60" height="60" endper="0">
+            </circlebar>
+          </button>
+          <button id="btn_shift_2" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="0">
+            <img id="img_shift_icon_2" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg">
+            </img>
+            <circlebar id="Img_cdTime_2" atlas="Atlas/Common.spriteatlas" src="" loadingbar="Knob_1" frontcolor="#00000080" direction="1" toend="1" width="60" height="60" endper="0">
+            </circlebar>
+          </button>
+          <button id="btn_shift_3" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="0">
+            <img id="img_shift_icon_3" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg">
+            </img>
+            <circlebar id="Img_cdTime_3" atlas="Atlas/Common.spriteatlas" src="" loadingbar="Knob_1" frontcolor="#00000080" direction="1" toend="1" width="60" height="60" endper="0">
+            </circlebar>
+          </button>
+        </layout>
+      </img>
+      <button id="btn_shift" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift" width="95" height="95" onclick="" text="" raycast="1" mimg="" pimg="" dimg="">
+      </button>
+      <button id="btn_shift_cancel" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shifr_cancel" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="2">
+        <circlebar id="circlebar_cancel" a="00" width="107" height="107" src="img_cancel_shape_bg" atlas="Atlas/KLShapeShiftCard.spriteatlas" loadingbar="img_cancel_shape" direction="1" toend="1" endper="0" x="0" y="0">
+        </circlebar>
+      </button>
+    </panel>
+    <panel id="systemArea" active="0" x="-179" y="-308" z="0" width="10" height="10" a="00" rotate="0,0,0">
+      <gridview id="systemMenu" paddingtop="0" cellwidth="69" cellheight="69" startcorner="3" constraint="0" spacex="3" spacey="2" vertical="1" width="562" height="365" x="-53" y="27" a="00" rotate="0,0,0" cella="22" z="0" paddingbutttom="0" paddingleft="0" paddingright="0" raycast="0">
+      </gridview>
+    </panel>
+  </panel>
+</uipanel>

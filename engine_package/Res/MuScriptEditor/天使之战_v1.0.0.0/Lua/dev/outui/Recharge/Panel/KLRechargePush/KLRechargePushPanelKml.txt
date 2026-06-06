@@ -1,0 +1,24 @@
+<uipanel id="KLRechargePushPanel" name="特惠礼包界面" width="300" height="300">
+  <img id="Bg" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="bg_Rechargecurrency" width="1007" height="423" raycast="1" x="0" y="0">
+    <img id="ImageTitle" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="title_jineng" width="505" height="169" raycast="1" x="61" y="235">
+    </img>
+    <img id="img3" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="text_jineng" width="601" height="92" raycast="1" x="109" y="166">
+    </img>
+    <img id="img4" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="text_jineng2" width="319" height="37" raycast="1" x="61" y="108">
+    </img>
+    <img id="img5" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="bg_item" width="419" height="123" raycast="1" x="85" y="3">
+    </img>
+    <text id="Texts" a="00" text="真·霹雳旋风斩" fontsize="20" height="40" width="283" ta="11" horwrap="1" x="-297" y="-130" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="BuyBtn" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="button_Rechargecurrency" width="229" height="53" onclick="" text="18元" raycast="1" mimg="" pimg="" dimg="" x="61" y="-110" textcolor="#402117FF" outlinesize="1" outlinecolor="#CCB57DFF" fontsize="20">
+    </button>
+    <panel id="Item_model" a="00" width="177" height="158" x="-296" y="20">
+    </panel>
+    <scrollview id="scrollview1" a="00" x="101" y="2" width="358" height="133" vertical="0" raycast="1">
+      <gridview id="gridview2" cellwidth="270" cellheight="90" raycast="1" a="00" contentsizefitter="3">
+      </gridview>
+    </scrollview>
+  </img>
+  <button id="CloseBtn" a="00" atlas="Atlas/QJ5_RechargePushPanel.spriteatlas" src="close_recharge_skillawake" width="31" height="27" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="456" y="157" h5y="157" h5x="-458">
+  </button>
+</uipanel>

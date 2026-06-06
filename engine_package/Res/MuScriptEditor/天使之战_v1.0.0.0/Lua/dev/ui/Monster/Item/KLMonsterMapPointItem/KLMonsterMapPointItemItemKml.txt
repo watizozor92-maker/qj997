@@ -1,0 +1,14 @@
+<uipanel id="KLMonsterMapPointItemItem" name="怪物点位模板" width="174" height="25" zindex="-1">
+  <img id="MainBg" atlas="Atlas/TS_Common.spriteatlas" src="monsterlist1" width="208" height="39" x="0" y="0" raycast="1" active="1">
+  </img>
+  <img id="BG" atlas="Atlas/TS_Common.spriteatlas" src="monsterlist1" width="208" height="39" x="0" y="0" raycast="1" color="#FFFFFF00" dragscroll="1" active="1">
+  </img>
+  <text id="GoButtonText" text="前往" width="208" height="38" x="-2" y="0" horwrap="1" ta="21" fontsize="17" a="20" active="1" outline="0">
+  </text>
+  <text id="MonsterName" text="" width="200" height="39" x="0" y="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" active="1" ta="01" fontsize="17" a="10" outline="0">
+  </text>
+  <countdown id="last_time" text="" fontsize="17" width="120" formattype="6" height="25" a="20" ta="21" x="-5" y="0" color="#ff2323" outlinesize="1" outlinecolor="#000000FF" active="0">
+  </countdown>
+  <img id="select" atlas="Atlas/TS_Common.spriteatlas" src="monsterlist3" width="208" height="39" x="0" y="0" active="0">
+  </img>
+</uipanel>

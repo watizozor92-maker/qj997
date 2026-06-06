@@ -1,0 +1,44 @@
+<uipanel id="KLBagTipsPanel" name="背包提示界面" zindex="2" width="130" height="160" movecanvas="0#260#-195" x="0" y="0" z="500" a="00" raycast="0" active="1">
+  <panel id="move_root" x="260" y="-195">
+    <panel id="MainPanle" width="130" height="160" active="1">
+      <img id="Image" atlas="Atlas/Common.spriteatlas" src="bg_tips" width="130" height="160">
+      </img>
+      <prefab id="scroll_text_template" path="Kml/KmlPrefab/Cookbook/Common/KmlScrollTextTemplate.prefab" a="01" width="100" y="-15">
+        <panel id="KmlScrollTextTemplate" bind="KmlScrollTextTemplate" width="100">
+        </panel>
+        <text id="Text" bind="Text" width="80" text="" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </prefab>
+      <img id="AttrImage" atlas="Atlas/TS_Common.spriteatlas" src="wenlu" x="0" y="-10">
+      </img>
+      <text id="AttrText" width="80" height="34" x="-6" y="10" ta="11" text="" fonttype="ShortcutPoints" space="-10" fontsize="20" outlinesize="1" outlinecolor="#000000">
+      </text>
+      <panel id="Item" width="75" height="75" y="10" x="0">
+      </panel>
+      <img id="BtnClose" atlas="Atlas/Common.spriteatlas" src="ty_btn_close_small" x="-4" y="-4" a="21" onclick="KmlBubbleTipsUI/@关闭背包装备气泡 " width="15" height="15">
+      </img>
+      <img id="equiptag" atlas="Atlas/Common.spriteatlas" src="tips_green2" x="100" y="50" a="12">
+      </img>
+      <img id="bagtag" atlas="Atlas/Common.spriteatlas" src="tips_yellow2" x="100" y="50" a="12">
+      </img>
+      <img id="BtnUse1" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="120" height="40" y="-55" raycast="1" color="#FFFFFF" onclick=" ">
+        <text id="UseText" width="80" text="" ta="11" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
+        </text>
+        <img id="Light" atlas="Atlas/Common.spriteatlas" src="ty_btn_light" width="131" height="47" loop="1" fadeintime="1" fadeouttime="1">
+        </img>
+      </img>
+      <countdown id="TimeCountdown" active="" time="" endtimefunc="KmlBubbleTipsUI/@立即装备  " x="35" y="-55" width="40" height="20" z="0" a="00" rotate="0,0,0" fonttype="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="11">
+      </countdown>
+      <text id="strengthLevel" width="100" height="20" text="" fonttype="real_real_font_strength" active="1" x="12" y="37" ta="21">
+      </text>
+      <text id="appendLevel" width="100" height="20" text="" fonttype="FG_Equip_Append" active="1" x="12" y="20" ta="21">
+      </text>
+      <img id="xinyun" atlas="Atlas/FG_Common.spriteatlas" src="icon_xingyun" x="1" y="50" width="15" height="22" a="12" active="0">
+      </img>
+    </panel>
+  </panel>
+  <button id="buttonUseEx" a="00" width="153" height="74" onclick="" text="" raycast="1" x="262" y="-243" color="#FFFFFF00">
+  </button>
+  <button id="buttonUseClose" a="00" width="73" height="66" onclick="" text="" raycast="1" x="311" y="-122" color="#FFFFFF00">
+  </button>
+</uipanel>

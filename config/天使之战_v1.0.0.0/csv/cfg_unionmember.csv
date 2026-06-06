@@ -1,0 +1,4 @@
+﻿int#c#s,int#c#s,stringList#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,intListList#c#s,
+id,level,desc,hr,reg,post,changeName,leader,newjob,limit,impeach,makeEnemy,
+1,5,盟主,1,1,1,1,1,1,1,,1,
+2,4,副盟主,1,1,1,,,1,2,1,1,

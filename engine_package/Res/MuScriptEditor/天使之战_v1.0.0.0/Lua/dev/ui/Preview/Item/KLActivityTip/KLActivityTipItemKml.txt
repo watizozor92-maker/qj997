@@ -1,0 +1,14 @@
+<uipanel id="KLActivityTipItem" name="活动模板" zindex="-1" width="262" height="75">
+  <button id="activityitem" width="242" height="70" atlas="Atlas/KmlBubbleTipsUI.spriteatlas" src="act_info_bg" raycast="1">
+    <text id="name" fontsize="18" width="112" x="20" y="11" outlinesize="1" outlinecolor="#000000" ta="01">
+    </text>
+    <img id="state" atlas="Atlas/KmlBubbleTipsUI.spriteatlas" src="act_open" x="3" a="11">
+    </img>
+    <img id="icon" atlas="Atlas/KmlBubbleTipsUI.spriteatlas" src="devil_icon" scale="0.8" x="-72" y="0">
+    </img>
+    <text id="destimetxt" fontsize="16" width="112" x="20" y="-12" outlinesize="1" outlinecolor="#000000" color="#cccccc" ta="01">
+    </text>
+    <countdown id="endtime" color="" x="78" y="-12" formattype="1" width="90" height="16" z="0" a="00" rotate="0,0,0" outlinesize="1" outlinecolor="#000000" fontsize="16" ta="01">
+    </countdown>
+  </button>
+</uipanel>

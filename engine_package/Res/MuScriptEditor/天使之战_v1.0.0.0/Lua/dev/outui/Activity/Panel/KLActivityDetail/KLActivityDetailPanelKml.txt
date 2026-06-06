@@ -1,0 +1,116 @@
+<uipanel id="KLActivityDetailPanel" name="副本活动通用界面" width="1334" height="750" x="0" y="0" raycast="1">
+  <img id="bgClose" a="00" color="#ffffff00" width="1792" height="1025" raycast="1" x="1" y="113">
+  </img>
+  <img id="img2" a="00" width="630" height="523" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-8" active="1">
+  </img>
+  <img src="Texture/FG_dankuangdi2.png" width="647" height="558" x="0" y="-1" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+    <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="258" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
+    </img>
+    <img id="img3" a="00" width="608" height="446" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35" active="1">
+    </img>
+  </img>
+  <img id="closeBtn" color="#DCE1E5ff" width="34" height="34" x="296" y="237" clientclose="1" z="0" a="00" rotate="0,0,0" raycast="1" h5y="255" h5x="-500" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas">
+  </img>
+  <img id="devilTitle" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="emoguangchang" width="123" height="54" raycast="1" x="0" y="228" active="0" color="#FFFFFF00">
+    <text id="text3" a="00" text="恶魔广场" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="bloodTitle" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="xuesechengbao" width="123" height="54" raycast="1" x="0" y="228" active="1" color="#FFFFFF00" h5y="353">
+    <text id="text1" a="00" text="血色城堡" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="0">
+    </text>
+  </img>
+  <panel id="info" a="00" width="1334" height="750" x="0" y="-134">
+    <togglegroup id="togglegroup" width="150" height="225" onload="" raycast="1" x="1" y="0">
+    </togglegroup>
+    <img id="devilTitleicon" a="00" atlas="" src="Texture/bg_CommonTalent.png" width="422" height="114" raycast="1" x="80" y="253" active="1">
+    </img>
+    <img id="bloodTitleicon" a="00" atlas="" src="Texture/button_BigWeal.png" width="422" height="114" raycast="1" x="80" y="253" active="1">
+    </img>
+    <scrollview id="levelContent" a="00" width="158" height="424" vertical="1" y="101" raycast="1" x="-212">
+      <layout id="levelLayout" width="165" height="48" a="01" vertical="1" raycast="1" cella="01" expand_width="0" expand_height="0" space="5">
+        <datalist id="levelList">
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img57" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-191">
+      <text id="text58" a="00" text="开启时间：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="openTime" a="00" text="每天00：00：00" fontsize="20" height="46" width="292" ta="00" horwrap="1" x="244" y="-14" color="#29E629" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img45" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-242">
+      <text id="text46" a="00" text="副本等级：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="level" a="00" text="8级(400-982)" fontsize="18" height="25" width="272" ta="01" horwrap="1" x="236" y="0" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img54" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-271" active="1">
+      <text id="text55" a="00" text="推荐防御：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="defense" a="00" text="145（您的防御低于推荐值）" fontsize="18" height="25" width="272" ta="01" horwrap="1" x="235" y="0" color="#FF2424FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img60" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="93" active="0">
+      <text id="text61" a="00" text="下次开启：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="openTxt" active="1" a="00" text="已开启" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="145" y="0" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <countdown id="nextOpenTime" active="0" fontsize="16" width="165" formattype="0" height="25" ta="01" x="177" y="0" color="#FF2424FF" z="0" a="00" rotate="0,0,0">
+      </countdown>
+    </img>
+    <img id="img63" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-298">
+      <text id="text64" a="00" text="副本奖励：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <scrollview id="rewardList1" a="01" width="291" height="50" vertical="0" y="-294" raycast="1" x="124">
+      <layout id="layout67" width="360" height="50" a="10" vertical="0" contentsizefitter="2" raycast="1" space="4">
+        <datalist id="rewardList">
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img1" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-362">
+      <text id="text4" a="00" text="通用门票：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outline="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <img id="ticketBtn3" a="00" atlas="Atlas/FG_Fuben.spriteatlas" src="text_input" width="234" height="36" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="220" y="0">
+      </img>
+      <text id="ticketCount3" a="00" text="（0/1）" fontsize="18" height="36" width="234" ta="21" horwrap="1" x="220" y="0" outlinesize="0" outlinecolor="#000000FF" outline="1">
+      </text>
+      <model id="ticketModel3" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="122" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35" active="0">
+      </model>
+      <button id="addCountBtn2" a="00" width="34" height="34" onclick="" text="" raycast="1" src="btn_add1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="359">
+      </button>
+      <item id="ticketItem" src="20020001" width="35" height="35" x="122" bgtype="0">
+      </item>
+    </img>
+    <img id="img7" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="-405">
+      <text id="text8" a="00" text="专属门票：" fontsize="18" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outline="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <img id="ticketBtn" a="00" atlas="Atlas/FG_Fuben.spriteatlas" src="text_input" width="234" height="36" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="220" y="0">
+      </img>
+      <text id="ticketCount" a="00" text="（0/1）" fontsize="18" height="36" width="234" ta="21" horwrap="1" x="220" y="0" outlinesize="0" outlinecolor="#000000FF" outline="1">
+      </text>
+      <model id="ticketModel" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="122" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35">
+      </model>
+      <button id="changeTicketButton" x="227" atlas="Atlas/FG_Common.spriteatlas" raycast="1" src="btn_arrow_down" active="0">
+      </button>
+      <panel id="changeRoot" width="0" height="0" x="0" y="-40" active="0">
+        <button id="ticketBtn2" a="00" src="Texture/bg_empty_one.png" width="160" height="40" raycast="1" x="167" y="0">
+        </button>
+        <text id="ticketCount2" a="00" text="0/1" fontsize="16" height="25" width="153" ta="11" horwrap="1" x="166" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+        </text>
+        <model id="ticketModel2" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="105" y="0" z="0" width="35" height="35" a="00" rotate="0,180,0" mfixsize="35,35">
+        </model>
+      </panel>
+      <img id="addCountBtn" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_add1" width="34" height="34" raycast="1" x="359" y="0">
+      </img>
+    </img>
+    <button id="desBtn" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" x="268" y="288">
+    </button>
+    <text id="text2" active="1" a="00" text="今日剩余次数:" fontsize="16" height="25" width="154" ta="01" horwrap="1" x="219" y="-83" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <text id="leftcount" a="00" text="7" fontsize="16" height="25" width="184" ta="01" horwrap="1" x="125" y="0" color="#FF2424FF" outline="1">
+      </text>
+    </text>
+    <button id="enterBtn" a="01" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" onclick="" text="进入副本" raycast="1" x="75" y="-438" color="#FFFFFFFF" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" mimg="" pimg="" dimg="">
+    </button>
+  </panel>
+</uipanel>

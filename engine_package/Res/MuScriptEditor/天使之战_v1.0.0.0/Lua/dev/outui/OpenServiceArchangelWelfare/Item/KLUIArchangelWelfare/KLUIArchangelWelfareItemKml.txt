@@ -1,0 +1,34 @@
+<uipanel id="KLUIArchangelWelfareItem" name="开服大天使试炼模板" width="300" height="300" x="0" y="0" zindex="-1">
+  <prefab id="UIArchangelWelfareTemplate" path="DIY/QJ5/UI/Template/Template/Recharge/UIArchangelWelfareTemplate.prefab">
+    <img id="DIY_ICON" bind="DIY_ICON" active="1">
+      <text id="giftName" bind="giftName" active="1">
+      </text>
+    </img>
+    <text id="giftDesc" bind="giftDesc" active="1">
+    </text>
+    <text id="remainCount" bind="remainCount" active="1">
+    </text>
+    <img id="taskItemScrollView" bind="taskItemScrollView" active="1">
+      <img id="Viewport" bind="Viewport" active="1">
+        <gridview id="taskItemContent" bind="taskItemContent" active="1">
+        </gridview>
+      </img>
+      <loopscrollview id="loopscrollview" a="00" width="143" height="80" vertical="0" y="0" raycast="1" cellwidth="70" cellheight="70" autoadjust="1" scrollbar="0">
+        <datalist id="loopscrolldata">
+          <panel id="panel2" y="-70">
+            <item id="ItemIcon" src="20020001" width="70" height="70" raycast="1">
+            </item>
+          </panel>
+        </datalist>
+      </loopscrollview>
+    </img>
+    <panel id="EffectHighlight" bind="EffectHighlight" active="0" x="-1" y="20" width="1452" height="1050">
+      <panel id="RawImage" bind="RawImage" active="1">
+      </panel>
+    </panel>
+    <button id="BtnGo" bind="BtnGo" active="1">
+      <text id="Text" bind="Text" active="1">
+      </text>
+    </button>
+  </prefab>
+</uipanel>

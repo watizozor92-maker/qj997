@@ -1,0 +1,18 @@
+<uipanel id="KLUIChatSmallPanel" name="主界面聊天窗口" adapter="1" movecanvas="0#0#60" zindex="106" width="326" height="84" x="0" y="-583" a="02" onload="" onclick="" raycast="0" ap="0.5#1#0.5#1#0.5#1">
+  <panel id="move_root" x="0" y="0" offsetmax="0#0" offsetmin="0#0">
+    <img id="img1" a="00" width="330" height="88" raycast="1" src="bg_xiaoxidi" atlas="Atlas/NewMainPanel.spriteatlas">
+    </img>
+    <button id="openBtn" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" width="326" height="84" onclick="" color="#00000000" raycast="1">
+    </button>
+    <panel id="bgSmall" width="326" height="84">
+      <img id="bg" a="00" width="342" height="80" raycast="1" atlas="" src="Texture/bg_task.png" y="20" x="4" active="0">
+      </img>
+      <loopscrollview id="chat_small_view" width="326" height="84" vertical="1" scrollpos="0" x="0" y="0" cellwidth="336">
+        <datalist id="chat_small_data_list" databind="">
+        </datalist>
+      </loopscrollview>
+    </panel>
+    <panel id="templateRoot">
+    </panel>
+  </panel>
+</uipanel>

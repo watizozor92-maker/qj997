@@ -1,0 +1,10 @@
+﻿int#c#s,int#c#s,string#c#s,int#c#s,string#c#s,intList#c#s,intList#c#s,intList#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s
+id,type,name,rechargeType,condition,startTime,endTime,uiTime,index,subtype,bossGroup,sort,jump
+10001,1,BOSS首杀,,checkLevel>=27,1,8,8,,,10001,1,
+10002,1,黄金怪首杀,,checkLevel>=1,1,8,8,,,10002,2,
+20001,2,强化冲榜,,checkLevel>=1,1,8,8,20001,20001,,3,
+20002,2,追加冲榜,,checkLevel>=1,1,8,8,20002,20002,,4,
+20003,2,装备首爆,,checkLevel>=1,1,8,8,20003,20003,,5,
+20004,2,等级竞技,,checkLevel>=1,1,8,8,20004,20004,,6,
+20005,2,卓越竞技,,checkLevel>=1,1,8,8,20005,20005,,7,
+20006,2,首饰竞技,,checkLevel>=1,1,8,8,20006,20006,,8,

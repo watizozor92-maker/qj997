@@ -1,0 +1,118 @@
+<uipanel id="KLGemSynthesisPanelKml" a="20" width="416" height="750" zindex="100" x="-612" adapter="1">
+  <panel id="main" a="00" width="832" height="750">
+    <img id="bg" a="00" width="811" height="749" raycast="1" atlas="" src="Texture/bg_gemSynthesis.png" color="#FFFFFFFF">
+    </img>
+    <text id="title" a="00" text="镶嵌系统组合" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="332" x="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="微软雅黑">
+    </text>
+    <img id="tabInfo" a="10" width="400" height="750" raycast="1" color="#FFFFFF00" atlas="" src="Texture/bg_bottomBg.png" x="18">
+      <togglegroup id="togglegroup_tab" a="00" width="150" height="225" onload="" raycast="1">
+      </togglegroup>
+      <scrollview id="scrollview_tab" a="00" width="370" height="585" vertical="1" y="-10" raycast="1">
+        <layout id="layout2" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" space="8">
+          <datalist id="datalist_tab">
+            <toggle id="tabItem" width="369" height="88" src="bg_gem_tab1" default="0" togglegroup_id="togglegroup_tab" onclick="" raycast="1" atlas="Atlas/FG_Synthesis.spriteatlas" pimg="bg_gem_tab2">
+              <text id="tab_title" a="01" text="默认内容" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF" y="-8" x="0">
+              </text>
+              <text id="tab_content" a="00" text="默认内容" fontsize="16" height="25" width="325" ta="10" outline="1" horwrap="1" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" contentsizefitter="1" y="-10">
+              </text>
+            </toggle>
+          </datalist>
+        </layout>
+      </scrollview>
+    </img>
+    <img id="synthesisInfo" a="20" width="400" height="750" raycast="1" atlas="" src="Texture/bg_bottomBg.png" color="#FFFFFF00" x="-18">
+      <scrollview id="scrollview_synthesisInfo" a="01" width="400" height="650" vertical="1" y="-83" raycast="1">
+        <layout id="layout3" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" space="10">
+          <img id="target" width="369" height="156" raycast="1" src="" atlas="" color="#FFFFFF00">
+            <img id="img11" a="11" width="153" height="35" raycast="1" src="bg_gem_smallTitle" atlas="Atlas/FG_Synthesis.spriteatlas" x="-5" y="0">
+              <img id="img1" a="10" width="25" height="27" raycast="1" src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" x="5">
+                <text id="txt_targetTitle" a="10" text="" fontsize="16" height="25" width="350" ta="01" outline="1" horwrap="1" x="28" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </img>
+            <img id="target_bg" a="02" width="369" height="120" raycast="1" src="bg_gem_tab1" atlas="Atlas/FG_Synthesis.spriteatlas" scale9l="100" scale9b="30" scale9r="101" scale9t="31">
+              <layout id="layout_target" control_height="0" contentsizefitter="3" vertical="0" height="500" width="330" a="01" raycast="1" y="-35" space="90">
+                <datalist id="datalist_target">
+                  <img id="targetItem" src="bg_gem_item" width="56" height="56" raycast="0" atlas="Atlas/FG_Synthesis.spriteatlas">
+                    <text id="target_name" a="00" text="默认内容" fontsize="14" height="25" width="350" ta="11" outline="1" horwrap="1" contentsizefitter="3" x="0" y="40" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                    </text>
+                    <text id="target_count" a="00" text="0/0" fontsize="14" height="25" width="350" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" contentsizefitter="3" x="0" y="-40">
+                    </text>
+                  </img>
+                </datalist>
+              </layout>
+              <button id="btn_inlayInfo" a="02" width="34" height="34" onclick="" text="" raycast="1" src="btn_down" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-153" y="10" active="0">
+                <text id="txt_inlayInfo" a="10" text="镶嵌孔信息" fontsize="16" height="25" width="350" ta="01" outline="1" horwrap="1" x="38" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </button>
+            </img>
+          </img>
+          <img id="cost" color="#FFFFFF00" width="369" height="156" raycast="1" src="" atlas="">
+            <img id="img2" a="11" width="115" height="35" raycast="1" src="bg_gem_smallTitle" atlas="Atlas/FG_Synthesis.spriteatlas" x="-5" y="0" scale9l="50" scale9b="10" scale9r="51" scale9t="11">
+              <img id="img3" a="10" width="25" height="27" raycast="1" src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" x="5">
+                <text id="txt_costTitle" a="10" text="" fontsize="16" height="25" width="350" ta="01" outline="1" horwrap="1" x="28" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                </text>
+              </img>
+            </img>
+            <img id="cost_bg" a="02" width="369" height="120" raycast="1" src="bg_gem_tab1" atlas="Atlas/FG_Synthesis.spriteatlas" scale9l="100" scale9b="30" scale9r="101" scale9t="31">
+              <layout id="layout_cost" control_height="0" contentsizefitter="3" vertical="0" height="500" width="330" a="00" raycast="1" y="0" space="40">
+                <datalist id="datalist_cost">
+                  <panel id="costItem" width="60" height="60">
+                    <item id="cost_item" src="" width="56" height="56" bgimg="bg_gem_item" atlas="Atlas/FG_Synthesis.spriteatlas" raycast="1" bgscale="56,56" x="-1">
+                    </item>
+                    <text id="cost_name" a="00" text="默认内容" fontsize="14" height="25" width="350" ta="11" outline="1" horwrap="1" contentsizefitter="3" x="0" y="40" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+                    </text>
+                    <text id="cost_count" a="00" text="0/0" fontsize="14" height="25" width="350" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" contentsizefitter="3" x="0" y="-40">
+                    </text>
+                  </panel>
+                </datalist>
+              </layout>
+            </img>
+          </img>
+          <img id="desc" width="369" height="130" raycast="1" color="#FFFFFF00" src="" atlas="">
+            <img id="desc_bg" a="02" width="369" height="120" raycast="1" src="bg_gem_tab1" atlas="Atlas/FG_Synthesis.spriteatlas" scale9l="100" scale9b="30" scale9r="101" scale9t="31">
+              <text id="txt_costMoney" a="00" text="必要金币：" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" x="0" y="30" color="#4CC5FE" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+              <text id="txt_successRate" a="00" text="合成成功率：" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" x="0" y="5" color="#4CC5FE" outlinesize="1" outlinecolor="#000000FF">
+              </text>
+              <button id="btn_synthesis" a="00" width="80" height="30" onclick="" text="合成" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="130" y="-25" outlinesize="1" outlinecolor="#000000FF">
+              </button>
+            </img>
+          </img>
+          <img id="result" color="#FFFFFF00" width="369" height="156" raycast="1" src="" atlas="">
+            <img id="img34" a="11" width="153" height="35" raycast="1" src="bg_gem_smallTitle" atlas="Atlas/FG_Synthesis.spriteatlas" x="-5" y="0">
+              <img id="img4" a="10" width="25" height="27" raycast="1" x="5" y="0" src="img_uiicon_21" atlas="Atlas/Common.spriteatlas">
+                <text id="txt_resultTitle" a="10" text="合成结果预览" fontsize="16" height="25" width="350" ta="01" outline="1" horwrap="1" x="28" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="1">
+                </text>
+              </img>
+            </img>
+            <img id="result_bg" a="02" width="369" height="120" raycast="1" src="bg_gem_tab1" atlas="Atlas/FG_Synthesis.spriteatlas" scale9l="100" scale9b="30" scale9r="101" scale9t="31">
+              <img id="result_show" a="00" width="56" height="56" raycast="1" rotate="0,0,0" src="bg_gem_item" atlas="Atlas/FG_Synthesis.spriteatlas" y="-10">
+                <text id="result_tip" a="00" text="随机合成火、水、冰、风、雷、土荧之石" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" y="46">
+                </text>
+              </img>
+            </img>
+          </img>
+        </layout>
+      </scrollview>
+      <button id="inlayInfoPanel" a="00" width="2000" height="2000" onclick="" text="" raycast="1" x="0" y="0" src="" atlas="" mimg="" pimg="" dimg="" color="#FFFFFF00">
+        <panel id="inlayInfoPanel1" a="00" width="368" height="176" zindex="105" z="-400" y="30" x="-2">
+          <img id="inlayInfoContent" a="00" width="368" height="176" raycast="1" x="0" y="0" src="bg_gem_xiangqian_info" atlas="Atlas/FG_Synthesis.spriteatlas">
+            <text id="text5" a="01" text="选择要镶嵌的镶孔" fontsize="16" y="-10" height="25" width="350" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+            <layout id="layout_inlay" control_height="0" contentsizefitter="1" vertical="1" height="500" width="368" a="01" raycast="1" y="-40">
+              <datalist id="datalist_inlay">
+                <panel id="inlay_item" width="368" height="25">
+                  <text id="inlay_attr" a="00" text="默认内容" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" bestfit="0">
+                  </text>
+                </panel>
+              </datalist>
+            </layout>
+          </img>
+        </panel>
+      </button>
+    </img>
+    <button id="btn_close" a="21" width="34" height="34" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-23" y="-20">
+    </button>
+  </panel>
+</uipanel>

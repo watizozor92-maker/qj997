@@ -1,0 +1,7 @@
+﻿int#c,string#c,int#c,int#c#s,string#c,string#c,string#c
+id,showTogName,sortId,subType,togName,mainUIPanel,subUIRoute
+10011,直购,1,1,tog_Directpurchase,KLMainOperateActivityPanel,dev/outui/RunActive_RechargeDirect/Panel/KLUIRechargeDirect/KLUIRechargeDirectPanel
+10012,累充,2,2,tog_Accumulation,KLMainOperateActivityPanel,dev/outui/MainOperateActivity/Panel/KLMainOperateAddRecharge/KLMainOperateAddRechargePanel
+10013,抽奖,3,3,tog_lottery,KLMainOperateActivityPanel,dev/outui/OperateActivity/Panel/KLLuckyTurnTable/KLLuckyTurnTablePanel
+10014,钻石礼包,4,4,tog_Diamond,KLMainOperateActivityPanel,dev/outui/OperateActivity/Panel/KLOperateDiamondRecharge/KLOperateDiamondRechargePanel
+10015,消费排行,5,5,tog_Rank,KLMainOperateActivityPanel,dev/outui/ConsumerRanking/Panel/KLUIConsumerRanking/KLUIConsumerRankingPanel

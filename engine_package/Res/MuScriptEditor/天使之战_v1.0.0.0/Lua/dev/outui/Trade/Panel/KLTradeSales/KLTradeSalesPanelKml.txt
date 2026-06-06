@@ -1,0 +1,28 @@
+<uipanel id="KLTradeSalesPanel" name="交易行寄售货架界面" width="300" height="300" zindex="200" moveto="2,-20,0" x="1" y="-20">
+  <img id="title_bg" atlas="Atlas/KLTradePanel.spriteatlas" src="Trade_little_title" x="-181" y="170" width="633" height="32">
+    <text id="TradeSales_title" text="寄售的货架(0/8)" x="0" y="1" fontsize="16" outline="0" horwrap="1" ta="11" height="30" width="630">
+    </text>
+  </img>
+  <img id="bg" atlas="Atlas/KLTradePanel.spriteatlas" src="Trade_bottom" x="-170" y="-12" color="#FFFFFF00">
+    <panel id="TradeSales_Main" width="634" height="315" y="8">
+      <scrollview id="sales_scroll" width="634" height="315" vertical="1" scrollbar="0" autoadjust="0" y="0" x="0">
+        <gridview id="sales_grid" width="634" height="315" cellwidth="200" cellheight="215" spacex="5" spacey="16" cella="11" contentsizefitter="1" paddingtop="-10" constraintcount="0">
+        </gridview>
+      </scrollview>
+      <button id="StallButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" onclick="" text="开启摆摊" raycast="1" x="-14" y="-187" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="0" mimg="" pimg="" dimg="">
+      </button>
+      <panel id="StallView" width="600" height="43" onclick="" x="0" y="-178" fontsize="18" active="0">
+        <button id="stall_btn_chat" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" onclick="" text="摆摊喊话" raycast="1" x="115" y="-10" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1" mimg="" pimg="" dimg="" ta="11">
+        </button>
+        <button id="stall_btn_walk" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="38" onclick="" text="前往摊位" raycast="1" x="228" y="-10" fontsize="18" outlinesize="1" outlinecolor="#000000FF" active="1" mimg="" pimg="" dimg="" ta="11">
+        </button>
+        <text id="tanwei" text="摊位时间" color="#FF2323FF" a="10" x="-10" y="-11" fontsize="14" outline="1" horwrap="1" ta="01" width="110" height="18" fontstyle="0" underline="0">
+        </text>
+        <countdown id="stall_time" active="1" fontsize="14" width="165" formattype="1" height="25" ta="01" x="48" y="-11" color="#ED2E2EFF" z="0" a="10" rotate="0,0,0">
+        </countdown>
+      </panel>
+    </panel>
+  </img>
+  <text text="交易税:10%" fontsize="18" x="430" y="-250" color="#FF0000" id="taxRate" outline="0" horwrap="1">
+  </text>
+</uipanel>

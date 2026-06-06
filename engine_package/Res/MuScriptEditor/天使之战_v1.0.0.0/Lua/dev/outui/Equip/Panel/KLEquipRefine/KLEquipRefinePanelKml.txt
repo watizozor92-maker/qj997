@@ -1,0 +1,130 @@
+<uipanel id="KLEquipRefinePanelKml" a="20" adapter="1" width="416" height="750" name="装备洗练" x="-65">
+  <panel id="Content" a="00" width="416" height="750">
+    <panel id="Bg" a="00" width="416" height="750">
+      <panel id="panel3" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img5" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="img6" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <button id="Btn_Close" a="21" width="50" height="50" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-2" y="1">
+    </button>
+    <text id="Title" a="01" text="洗 练" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" y="-21" color="#DEE0E6FF">
+    </text>
+    <img id="EquipsBanner" a="01" width="388" height="204" raycast="1" x="0" y="-79" atlas="" src="Texture/FG_bg_equipRefine.png">
+      <togglegroup id="ToggleGroupSource" x="5" a="11" y="-40" width="53" height="150" deltay="0">
+        <toggle id="Tog_Equip" onclick="KmlXWEquipStrength/@点击穿戴栏" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_equip_dark" pimg="ty_btn_equip" default="1" width="53" height="56" a="01">
+        </toggle>
+        <toggle id="Tog_Bag" y="-65" onclick="KmlXWEquipStrength/@点击背包" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_bag_dark" pimg="ty_btn_bag" width="53" height="56" a="01">
+        </toggle>
+      </togglegroup>
+      <panel id="panel_equip_source" x="-77" y="-16" width="115" height="144" a="">
+        <img id="img3" a="01" width="112" height="34" raycast="1" src="bg_refineName" atlas="Atlas/FG_Forge.spriteatlas" x="0" y="38" text="" fontsize="" fontstyle="" underline="" color="">
+          <text id="text5" a="00" text="原始装备" fontsize="16" height="20" width="80" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </img>
+        <item id="item_mainEquip" width="115" height="144" mfixsize="106,192">
+        </item>
+        <img id="img_equip_source_add" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty" width="95" height="95" x="0" y="-3">
+          <text id="text26" a="02" text="请选择需要\n洗练的装备" fontsize="16" height="35" width="100" ta="10" outline="1" horwrap="1" y="-75" color="#FBD994FF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </img>
+        <button id="Btn_MainEquipCancel" a="00" width="115" height="144" onclick="" text="" raycast="1" color="#FFFFFF00">
+        </button>
+        <panel id="panel1" a="02" width="100" height="30" y="5" zindex="5" z="-300">
+          <text id="Text_MainEquipName" a="00" text="" fontsize="14" height="30" width="110" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+      </panel>
+      <panel id="panel_equip_target" x="79" y="-15" width="115" height="144">
+        <img id="img4" a="01" width="112" height="34" raycast="1" src="bg_refineName" atlas="Atlas/FG_Forge.spriteatlas" x="0" y="38">
+          <text id="text6" a="00" text="消耗装备" fontsize="16" height="20" width="80" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </img>
+        <item id="item_assistantEquip" width="115" height="144" mfixsize="106,192">
+        </item>
+        <img id="img_equip_target_add" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty" y="-3" active="1" color="#FFFFFF00">
+          <text id="text27" a="02" text="请选择洗练\n消耗的装备" fontsize="16" height="35" width="100" ta="11" outline="1" horwrap="1" y="-75" color="#FBD994FF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </img>
+        <button id="Btn_AssistantEquipCancel" a="00" width="115" height="144" onclick="" text="" raycast="1" color="#FFFFFF00">
+        </button>
+        <panel id="panel5" a="02" width="100" height="30" y="5" zindex="5" z="-300">
+          <text id="Text_AssistantEquipName" a="00" text="" fontsize="14" height="30" width="110" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+      </panel>
+    </img>
+    <img id="AttTitle" a="11" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="120" height="34" raycast="1" x="23" y="-287" active="0">
+      <text id="text15" a="10" text="卓越属性" fontsize="18" height="22" width="100" ta="01" horwrap="1" x="32" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#FFFFFFFF" fontstyle="0" underline="0">
+      </text>
+      <img id="img16" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
+      </img>
+      <text id="text1" a="10" text="随机生成1-2条" fontsize="18" height="22" width="145" ta="21" horwrap="1" x="213" y="0" outlinesize="0" outlinecolor="0" outline="0" color="#66D947FF" fontstyle="0" underline="0">
+      </text>
+    </img>
+    <scrollview id="scrollview17" a="01" width="380" height="225" vertical="1" y="-322" raycast="1" x="0">
+      <layout id="layout18" width="372" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="2">
+        <datalist id="DataList_Att">
+          <panel id="panel21" width="380" height="36">
+            <img id="bg" a="00" width="380" height="36" raycast="1" src="bg_att" atlas="Atlas/FG_Forge.spriteatlas" scale9l="7" scale9b="9" scale9r="8" scale9t="8">
+            </img>
+            <text id="Text_CurAtt" a="10" text="默认内容" fontsize="16" height="25" width="160" ta="01" outline="1" horwrap="1" x="14" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" y="1">
+            </text>
+            <img id="arrow" a="00" width="18" height="15" raycast="1" src="icon_arrow_1" atlas="Atlas/FG_Forge.spriteatlas" x="3" y="1">
+            </img>
+            <text id="Text_PreviewAtt" a="10" text="默认内容" fontsize="16" height="25" width="160" ta="01" outline="1" horwrap="1" x="208" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" y="1">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <scrollview id="scrollviewMain" a="01" width="380" height="225" vertical="1" y="-321" raycast="1" x="0">
+      <layout id="layoutMain" width="372" height="230" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="2">
+        <datalist id="DataList_MainAtt">
+          <panel id="panelMain" width="372" height="36">
+            <img id="bgMain" a="00" width="380" height="36" raycast="1" src="bg_att" atlas="Atlas/FG_Forge.spriteatlas" scale9l="7" scale9b="9" scale9r="8" scale9t="8">
+            </img>
+            <text id="Text_CurAttMain" a="10" text="默认内容" fontsize="16" height="25" width="372" ta="01" outline="1" horwrap="1" x="14" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" y="1">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="NeedMatTitle" a="11" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="120" height="34" raycast="1" x="23" y="-548" active="0">
+      <text id="text11" a="10" text="所需材料" fontsize="18" height="22" width="100" ta="01" horwrap="1" x="32" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1" color="#FFFFFFFF" fontstyle="0" underline="0">
+      </text>
+      <img id="img2" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
+      </img>
+    </img>
+    <scrollview id="scrollview1" a="01" width="380" height="76" vertical="1" y="-583" raycast="1" x="0">
+      <layout id="layout2" width="380" height="104" a="11" vertical="1" contentsizefitter="1" raycast="1" cella="11" space="2">
+        <datalist id="DataList_Cost">
+          <panel id="panel4" width="380" height="36">
+            <img id="img7" a="00" width="380" height="36" raycast="1" src="bg_att" atlas="Atlas/FG_Forge.spriteatlas" scale9l="8" scale9b="8" scale9r="7" scale9t="7">
+            </img>
+            <item id="Item_Cost" src="20020001" width="28" height="28" mfixsize="28,28" a="10" x="7" raycast="1" tips="1" y="1">
+            </item>
+            <text id="Text_CostName" a="10" text="1" fontsize="18" height="25" width="150" ta="01" outline="1" horwrap="1" x="47" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" y="1">
+            </text>
+            <text id="Text_CostNum" a="20" text="默认内容" fontsize="18" height="25" width="150" ta="21" outline="1" horwrap="1" x="-8" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" y="1">
+            </text>
+            <button id="Btn_CostAdd" a="00" width="30" height="30" raycast="1" active="0">
+            </button>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <button id="Btn_Refine" a="02" width="103" height="36" onclick="" text="洗练" raycast="1" y="40" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFFFF" active="0" outlinesize="1" outlinecolor="#000000FF" x="0">
+    </button>
+    <button id="Btn_RefineMain" a="02" width="103" height="36" onclick="" text="卸下" raycast="1" y="40" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFFFF" active="0" outlinesize="1" outlinecolor="#000000FF" x="0">
+    </button>
+    <img id="Img_Tips" a="01" width="386" height="305" raycast="1" atlas="" src="Texture/FG_bg_refine_tips.png" x="0" y="-331" active="1">
+    </img>
+    <text id="Text_NoTips" a="00" text="" fontsize="22" height="100" width="350" ta="11" outline="1" horwrap="1" x="0" y="-152" color="#FFFFFFFF" active="0">
+    </text>
+    <prefab id="Prefab_RefineComponent" path="Effect/UI/Eff_UI_xilianchenggong.prefab" active="0" y="140" z="-500">
+    </prefab>
+  </panel>
+</uipanel>

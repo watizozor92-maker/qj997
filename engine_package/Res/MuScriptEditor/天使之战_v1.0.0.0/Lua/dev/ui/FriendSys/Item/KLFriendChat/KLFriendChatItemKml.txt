@@ -1,0 +1,58 @@
+<uipanel id="KLFriendChatItem" width="677" height="448" a="10" z="-400" zindex="-1" x="0" y="0">
+  <panel id="bg" width="677" height="448" x="0" a="00" raycast="1">
+    <panel id="chat_panel" width="677" height="448" active="1">
+      <panel id="panel_root" width="677" height="448" active="1">
+      </panel>
+      <text id="player_name" text="" x="-52" y="-22" fontsize="18" color="#efebe5" a="01" outlinesize="1" outlinecolor="0">
+      </text>
+      <text id="chat_time" text="" x="-52" y="-75" fontsize="16" color="#9c978d" a="01" outlinesize="1" outlinecolor="0">
+      </text>
+      <panel id="di_panel" width="677" height="80" a="12" y="15" active="1">
+        <button id="pos_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_pos" width="49" height="49" x="120" y="-15" onclick="" raycast="1" mimg="" pimg="" dimg="">
+        </button>
+        <button id="bag_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_bag" width="49" height="49" x="180" y="-15" onclick="" raycast="1" mimg="" pimg="" dimg="">
+        </button>
+        <button id="biaoqing_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_emoij" width="49" height="49" x="60" y="-15" onclick="" raycast="1" mimg="" pimg="" dimg="">
+        </button>
+        <input id="text_input" text="" fontsize="18" place="点击输入内容" atlas="Atlas/FG_FriendPanel.spriteatlas" src="textbg_2" width="353" height="40" x="-322" y="-15" a="20" textcolor="#8f9295" placecolor="#8f9295" ta="01" horwrap="0" mline="1" outlinesize="1" outlinecolor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8">
+        </input>
+        <button id="fasong" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" x="267" y="-15" raycast="1" mimg="" pimg="" dimg="" text="发送" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          <text id="sendMessageBtnTxt" text="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1" ta="11">
+          </text>
+        </button>
+      </panel>
+    </panel>
+    <panel id="emoji_panel" width="410" height="194" x="52" y="-62" active="0">
+      <button id="emoji_mask" width="2500" height="1500" x="400" y="150" atlas="Atlas/Common.spriteatlas" src="img_email_choose" color="#00000000" onclick="" raycast="1">
+      </button>
+      <img id="emoji_bg" width="363" height="194" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" a="11" scale9l="10" scale9r="10" scale9t="10" scale9b="15">
+      </img>
+      <scrollview id="emoji" width="363" height="180" vertical="1" x="15" y="-4" a="11">
+        <gridview id="all_emoji_layout" width="455" height="180" a="01" cella="11" contentsizefitter="1" cellwidth="38" cellheight="38" spacex="21" spacey="15">
+          <datalist id="emoji_data_list">
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+    <panel id="item_panel" width="410" height="194" x="52" y="-72" active="0">
+      <button id="item_mask" width="2500" height="1500" x="400" y="150" atlas="Atlas/Common.spriteatlas" src="img_email_choose" color="#00000000" onclick="" raycast="1">
+      </button>
+      <img id="item_bg" width="345" height="180" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" a="11" scale9l="10" scale9r="10" scale9t="10" scale9b="15" y="0" alphaall="1">
+      </img>
+      <layout id="layout1" control_height="0" contentsizefitter="0" vertical="0" height="38" width="346" a="11" raycast="1" y="39" cella="10" x="-1">
+        <img id="btn_bag" width="133" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" raycast="1">
+          <img id="btn_bag_select" width="133" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
+          </img>
+          <text id="背包" text="背包" fontsize="18" color="#d2d2d2" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" y="-3">
+          </text>
+        </img>
+        <img id="btn_equip" width="133" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" raycast="1">
+          <img id="btn_equip_select" width="133" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
+          </img>
+          <text id="穿戴" text="穿戴" fontsize="18" color="#d2d2d2" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" y="-3">
+          </text>
+        </img>
+      </layout>
+    </panel>
+  </panel>
+</uipanel>

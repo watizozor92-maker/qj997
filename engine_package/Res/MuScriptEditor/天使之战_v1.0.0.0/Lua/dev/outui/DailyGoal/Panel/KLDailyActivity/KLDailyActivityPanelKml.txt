@@ -1,0 +1,7 @@
+<uipanel id="KLDailyActivityPanel" name="每日活动界面" width="1050" height="566" zindex="200">
+    <scrollview y="-26" width="986" height="458" >
+        <layout vertical="0" width="986" height="458" cella="10" contentsizefitter="2" a="10" >
+            <datalist id="datalist_activity"/>
+        </layout>
+    </scrollview>
+</uipanel>

@@ -1,0 +1,12 @@
+<uipanel id="KLInViteFriendPanel" name="邀请码界面" zindex="200" a="20" adapter="1" x="-265" y="0" z="0" width="10" height="10" rotate="0,0,0" raycast="0" color="#00000000">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlSettingUI/KmlInViteFriendSettingUI.prefab" a="12" id="prefab_819">
+    <text id="CodeTxt" bind="CodeTxt">
+    </text>
+    <text id="Num" bind="Num">
+    </text>
+    <button id="CopyBtn" bind="CopyBtn" onclick="KmlSettingUI/@复制邀请码">
+    </button>
+    <button id="GenerateBtn" bind="GenerateBtn" onclick="KmlSettingUI/@生成邀请码">
+    </button>
+  </prefab>
+</uipanel>

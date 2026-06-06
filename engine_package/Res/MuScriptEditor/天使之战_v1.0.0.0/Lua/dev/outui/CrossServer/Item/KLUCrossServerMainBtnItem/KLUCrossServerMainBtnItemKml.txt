@@ -1,0 +1,6 @@
+<uipanel id="KLUCrossServerMainBtnItem" name="跨服界面按钮模板" active="1" width="154" height="50" zindex="-1">
+    <img id="btn" atlas="Atlas/UIChallengeBoss.spriteatlas" src="one_button_bg" width="154" height="50" active="1" onclick="" dragscroll="1" raycast="1">
+        <img id="level_select" atlas="Atlas/UIChallengeBoss.spriteatlas" src="one_button_select_bg" width="154" height="50" active=""/>
+        <text id="type_name"  text="级" color="#FFFFFF" fontSize="20" outlineSize="1" outlineColor="0"/>
+    </img>
+</uipanel> 

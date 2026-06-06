@@ -1,0 +1,2 @@
+
+配置表D:\Work\Client\712OutVersion\tszz_beta\engine_package\Res\MuDataEditor\天使之战_v1.0.0.0\In\cfg_conditions内置说明表.xlsx第23行，第3列的数据,包含异常字符英文的“,”

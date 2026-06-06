@@ -1,0 +1,4 @@
+<uipanel id="KLTipBtntem" name="提示按钮模板" width="91" height="33" zindex="-1">
+  <button id="button_id" width="91" height="33" text="" onclick=" " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" raycast="1" active="1" fontsize="16" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="0" mimg="" pimg="" dimg="" ta="11">
+  </button>
+</uipanel>

@@ -1,0 +1,5 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,20810321,卓越的 白金护腿,1#1,0#10000,1#1,
+2,2,20820321,卓越的 魔王护腿,1#1,0#10000,2#1,
+3,2,20830321,卓越的 风之护腿,1#1,0#10000,3#1,

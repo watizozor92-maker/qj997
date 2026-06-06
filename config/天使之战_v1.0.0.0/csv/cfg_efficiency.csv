@@ -1,0 +1,6 @@
+﻿int#c#s,int#c#s,string#c#s,string#c#s,string#c#s,intlistlist#c#s,string#c#s,int#c#s,string#c#s,stringlistlist#c#s,int#c#s
+id,group,conditions,name,backgroundImg,item,text,Scale,jumpCondition,Jump,level
+1001,1,2101#30030201/2101#30030202/2101#30030203,经验倍率,recharge01,30030201,50,125,2301#30030201/2301#30030202/2301#30030203|903#1|,openUIPanel#dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel#1#JumpSelectItem_1=30030201&JumpSelectItem_2=30030202&JumpSelectItem_3=30030203|openUIPanel#dev/outui/FirstCharge/Panel/KLFirstCharge/KLFirstChargePanel|openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#1&3011,30
+1002,1,1201#1,经验倍率,recharge04,,10,,,openUIPanel#dev/outui/VIP/Panel/KLNewVIPMain/KLNewVIPMainPanel,30
+1004,2,2102#30/2102#31/2102#32/2102#33,快捷拾取,recharge03_2,,,,,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2,30
+1005,3,2102#30/2102#31/2102#32/2102#33,自动回收,recharge02_2,,,,,openUIPanel#dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel#1#2,30

@@ -1,0 +1,64 @@
+<uipanel id="KLArchangelTalentPanelKml" name="大天使天赋界面" a="00" width="1000" height="450" x="0" y="-50" zindex="200">
+  <panel width="1000" height="450" raycast="1" x="0" y="0" id="panel_50">
+    <layout id="talent_layout" control_height="0" contentsizefitter="1" vertical="1" height="480" width="120" a="01" raycast="1" x="-440" y="2" space="-9" cella="01">
+      <datalist id="talentName_data">
+      </datalist>
+    </layout>
+    <panel id="talent_pge" x="107" width="800" height="400" y="25">
+      <panel id="panel2" a="21" width="290" height="41" x="0" y="0">
+        <img id="img21" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="talent_cost_point" raycast="1" x="-280">
+        </img>
+        <text id="talent_cost_num" a="20" text="0" fontsize="16" height="25" width="72" ta="11" horwrap="1" x="-275" fonttype="ArchangeTalent">
+        </text>
+        <img id="img2" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="talent_point" raycast="1" x="-55">
+        </img>
+        <text id="talent_num" a="20" text="0" fontsize="16" height="25" width="72" ta="11" horwrap="1" x="-60" fonttype="ArchangeTalent">
+        </text>
+        <button id="reset_talent" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window65" width="38" height="38" raycast="1" x="110">
+        </button>
+      </panel>
+      <layout id="layout6" width="417" height="390" a="10" vertical="0" contentsizefitter="2" raycast="1" space="25" cella="00">
+        <datalist id="talent_data">
+        </datalist>
+      </layout>
+    </panel>
+    <panel id="panel1" a="00" width="1000" height="55" x="0" y="-200">
+      <loadingbar id="loadingbar_lv" a="00" width="622" height="24" src="progressbar_bg" atlas="Atlas/UIArchangel.spriteatlas" loadingbar="progress bar" endper="0" x="80" hidetext="1">
+        <text id="exp_info_text" a="00" text="默认内容" fontsize="16" height="25" width="350" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+        </text>
+      </loadingbar>
+      <img id="img1" a="10" atlas="Atlas/UIArchangel.spriteatlas" src="total_level" width="181" height="24" raycast="1" x="10" y="1">
+      </img>
+      <text id="total_level_text" a="00" text="8888" fontsize="16" height="25" width="100" ta="11" horwrap="1" fonttype="MasterTalent_Font1" x="-275" y="0">
+      </text>
+      <img id="talent_master" a="20" atlas="Atlas/UIArchangel.spriteatlas" src="talent_master" width="63" height="66" raycast="1" x="-30" y="5">
+      </img>
+    </panel>
+  </panel>
+  <panel id="tip" active="0" width="396" height="255">
+    <img id="tip_mask" width="2000" height="2000" color="#FFFFFF00" raycast="1">
+    </img>
+    <img id="tip_bg" a="00" atlas="" src="Texture/sanjitanchuang_bg.png" width="396" height="255" raycast="1" active="1">
+      <img id="img3" a="00" atlas="Atlas/Common.spriteatlas" src="img_tip_title" width="81" height="56" raycast="1" y="105">
+      </img>
+      <img id="point1" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-150" y="45">
+      </img>
+      <text id="text4" a="00" text="将把全部职业天赋重置为0级。\n并重新获得已消耗的所有职业天赋点。" fontsize="18" height="40" width="327" ta="00" horwrap="0" outlinesize="1" outlinecolor="#000000FF" x="25" y="35">
+      </text>
+      <img id="point2" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-150" y="-20">
+      </img>
+      <text id="text6" a="00" text="消耗道具" fontsize="18" height="20" width="90" ta="00" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-95" y="-20">
+      </text>
+      <img id="img7" a="00" atlas="Atlas/Common.spriteatlas" src="inputBg" width="133" height="35" raycast="1" y="-20" x="10">
+        <item id="cost_item" a="10" itemid="10040001" width="30" height="30" raycast="1" x="10" mfixsize="30,30" bgtype="0">
+        </item>
+        <text id="cost_text" a="20" text="888888" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="0">
+        </text>
+      </img>
+      <button id="tip_cancel" atlas="Atlas/TS_Common.spriteatlas" width="112" height="36" src="ty_btn_three_grey" outlinesize="1" outlinecolor="#000000" x="-100" y="-80" text="取消" fontsize="18" textcolor="#ff2323" raycast="1">
+      </button>
+      <button id="tip_sure" x="100" y="-80" text="确定" src="button_interface_window7" atlas="Atlas/Common.spriteatlas" raycast="1" width="113" height="40" outlinecolor="#000000" outlinesize="1" fontsize="18" textcolor="#FFFFFF">
+      </button>
+    </img>
+  </panel>
+</uipanel>

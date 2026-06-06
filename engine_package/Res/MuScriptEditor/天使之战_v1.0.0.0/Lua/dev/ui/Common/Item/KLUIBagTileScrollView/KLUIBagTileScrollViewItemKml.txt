@@ -1,0 +1,40 @@
+<uipanel id="KLUIBagTileScrollViewItem" width="0" height="0" a="11" zindex="-1">
+  <prefab id="BagTileScrollViewPrefab" path="Kml/KmlPrefab/Cookbook/Common/BagTileScrollView.prefab" x="" z="0" width="" a="11" cella="11" onload="KmlBagTileScrollView/@LoadData">
+    <panel id="prefabBagTileScrollView_" bind="BagTileScrollView">
+    </panel>
+    <img id="BagTileContent" bind="BagTileContent" src="item_frame32" atlas="Atlas/FG_BagPanel.spriteatlas" width="">
+      <datalist id="item_list_">
+      </datalist>
+      <datalist id="forbid_list_">
+        <prefab id="forbid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIBagForbidButton.prefab" x="" cella="11" a="11" width="45" height="45" enddragrelatepos="kml_xw_bag#BagTileContent|kml_storage_panel#BagTileContent">
+          <button id="UIBagForbidButton" bind="UIBagForbidButton" atlas="Atlas/FG_BagPanel.spriteatlas" src="item_lock" width="32" height="32" onclick="">
+          </button>
+        </prefab>
+      </datalist>
+      <datalist id="red_list_">
+        <prefab id="red_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIRedGridImg.prefab" x="" cella="11" a="11" width="45" height="45">
+          <img id="img2" atlas="Atlas/FG_BagPanel.spriteatlas" src="item_red" width="32" height="32" bind="UIRedGridImg">
+          </img>
+        </prefab>
+      </datalist>
+      <datalist id="red_grid_">
+        <prefab id="red_grid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIRedGridImg.prefab" x="" cella="11" a="11" width="32" height="32">
+          <img id="img2" bind="UIRedGridImg" atlas="Atlas/FG_BagPanel.spriteatlas" src="item_red" width="32" height="32">
+          </img>
+        </prefab>
+      </datalist>
+      <datalist id="green_grid_">
+        <prefab id="green_grid_item" path="Kml/KmlPrefab/Cookbook/KmlBagUI/UIGreenGridImg.prefab" x="" cella="11" a="11" width="32" height="32">
+          <img id="img3" bind="UIGreenGridImg" atlas="Atlas/FG_BagPanel.spriteatlas" src="item_lv" width="32" height="32">
+          </img>
+        </prefab>
+      </datalist>
+    </img>
+    <img id="img1" bind="Viewport">
+    </img>
+    <img id="img4" bind="CheckAreaBottom">
+    </img>
+    <img id="img5" bind="CheckAreaUp">
+    </img>
+  </prefab>
+</uipanel>

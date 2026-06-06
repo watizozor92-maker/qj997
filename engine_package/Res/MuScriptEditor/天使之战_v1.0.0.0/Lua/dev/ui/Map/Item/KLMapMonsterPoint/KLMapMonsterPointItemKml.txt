@@ -1,0 +1,8 @@
+<uipanel id="KLMapMonsterPointItem" name="地图怪物标点模板" a="00" width="80" height="80" zindex="-1" x="0" y="0">
+  <img id="Icon" atlas="Atlas/UIMapPanel.spriteatlas" src="MapIcon_boss" width="66" height="66" x="0" y="0">
+  </img>
+  <text id="Name" text="24323432" fontsize="16" height="36" width="293" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FACC91FF" y="-25" x="0">
+  </text>
+  <text id="Lv" a="00" text="LV9999" fontsize="16" height="25" width="350" ta="11" x="0" y="-35" horwrap="1" active="0">
+  </text>
+</uipanel>

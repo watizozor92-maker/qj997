@@ -1,0 +1,150 @@
+<uipanel id="KLGemInlayPanel" name="萤石养成界面" adapter="1" width="416" height="750" x="-67" y="0" a="20" zindex="200" binddragid="">
+  <panel id="panel1" a="00" width="416" height="750" x="0" y="0">
+    <img id="BG" a="20" atlas="" src="Texture/bg_bottomBg.png" width="416" height="750" raycast="1" x="0" y="0">
+      <img id="gemAddIcon" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-135" y="-36" active="1">
+        <scrollview id="arrContent" a="01" x="139" y="-34" width="390" height="100" vertical="1" raycast="1" scrollbar="0">
+          <gridview id="gridview3" cellwidth="390" cellheight="38" raycast="1" spacex="2" constraint="1" constraintcount="1" contentsizefitter="3" cella="00" startcorner="0" a="01">
+            <datalist id="datalist_gemAttrs">
+              <panel id="panel8" width="380" height="35">
+                <img id="img9" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="shengjidi2" width="345" height="38" raycast="1" x="0" y="0">
+                  <text id="singleAttrTxt" a="00" text="荧光宝石15级（火）    攻击力：114~1124" fontsize="18" height="25" width="368" ta="01" horwrap="1" x="16" y="1">
+                  </text>
+                </img>
+              </panel>
+            </datalist>
+          </gridview>
+        </scrollview>
+        <img id="NoAttribute" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="zhanwujiacheng2" width="98" height="26" raycast="1" x="135" y="-72">
+        </img>
+        <text id="gemAddParentTitle" a="00" text="萤石加成" fontsize="18" height="25" width="160" ta="01" horwrap="1" x="53" y="2" outlinesize="0" outlinecolor="0">
+        </text>
+      </img>
+      <loopscrollview id="scrollview15" a="00" x="0" y="-254" width="383" height="145" cellwidth="383" cellheight="70" vertical="1" raycast="1">
+        <datalist id="datalist_AllGemAttrs">
+          <panel width="383" height="70" id="panel_846">
+            <img id="gemInfoParent" a="01" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="shengjidi2" width="345" height="70" raycast="1" x="0" y="0">
+              <text id="gemTitleParent" a="01" text="火萤石（20级）" fontsize="18" height="30" width="335" ta="01" horwrap="1" x="1" y="-6">
+                <img id="NotActive" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="weijihuodiban" width="61" height="23" raycast="1" x="86" y="0">
+                  <text id="NoActiveTxt" a="00" text="未激活" fontsize="18" height="25" width="60" ta="11" horwrap="1" x="0" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+                  </text>
+                </img>
+                <text id="ActiveTxt" a="00" text="已激活" fontsize="18" height="25" width="60" ta="11" horwrap="1" x="86" y="0" color="#1ADE1FFF" binddragid="">
+                </text>
+                <button id="detialBtn" a="00" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_xq" width="40" height="48" onclick="" text="" raycast="1" x="146" y="-7" mimg="" pimg="" dimg="">
+                </button>
+              </text>
+              <scrollview id="scrollview1" a="00" width="295" height="30" vertical="1" y="-14" raycast="1" x="-20" movementtype="1">
+                <layout id="layout2" width="295" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="11">
+                  <text id="skillInfoTxt" outlinesize="1" text="攻击时有100%概率触发额外伤害" contentsizefitter="1" fontsize="18" height="40" width="290" ta="01" horwrap="1" outlinecolor="#000000FF" space="0" linespace="1">
+                  </text>
+                </layout>
+              </scrollview>
+              <scrollview id="scrollview3" a="00" width="295" height="30" vertical="1" y="-14" raycast="1" x="-20" movementtype="1" active="0">
+                <layout id="layout4" width="295" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="11">
+                  <text id="attrInfoTxt" outlinesize="1" text="" contentsizefitter="1" fontsize="18" height="30" width="290" ta="01" horwrap="1" outlinecolor="#000000FF" active="0">
+                  </text>
+                </layout>
+              </scrollview>
+            </img>
+          </panel>
+        </datalist>
+      </loopscrollview>
+      <img id="Title" a="01" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="qianbao" width="80" height="55" raycast="1" y="-4" x="0">
+      </img>
+      <togglegroup id="togglegroup3" a="00" width="409" height="225" onload="" raycast="1" x="1" y="286">
+        <img id="BGInner_2" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="Gem_EquipBorder" width="381" height="45" raycast="1" x="0" y="0">
+        </img>
+        <toggle id="schemeToggle1" width="190" height="40" a="00" default="0" togglegroup_id="togglegroup3" atlas="Atlas/TS_GemInlayPanel.spriteatlas" onclick="" src="img_L2" pimg="img_L1" raycast="1" x="-95" y="0" ison="0">
+          <text id="schemeTxt1" a="00" text="方案一" fontsize="18" height="36" width="134" ta="11" horwrap="1" x="26" y="0">
+          </text>
+          <img id="redPointImg1" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="84" y="0" active="0">
+          </img>
+        </toggle>
+        <toggle id="schemeToggle2" width="190" height="40" a="00" default="0" togglegroup_id="togglegroup3" atlas="Atlas/TS_GemInlayPanel.spriteatlas" onclick="" src="img_R2" pimg="img_R" raycast="1" y="0" x="95" ison="0">
+          <text id="schemeTxt2" a="00" text="方案二" fontsize="18" height="36" width="135" ta="11" horwrap="1" x="-24" y="0" rotate="0,0,0" outline="0">
+          </text>
+          <img id="redPointImg2" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="26" y="0" active="0">
+          </img>
+        </toggle>
+      </togglegroup>
+      <button id="CloseButton" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="6" y="10" active="1" h5x="-360" h5y="10">
+      </button>
+      <img id="SlateCellParentImg" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="xiangqiandi1" width="179" height="296" raycast="1" x="74" y="116">
+        <panel id="panel5" a="00" width="100" height="100" x="32" y="7">
+          <img id="SlateAddImg" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="ys_tianjia" width="95" height="95" raycast="1">
+          </img>
+          <item id="SlateCell" src="20020001" width="100" height="100" bgtype="0">
+          </item>
+          <img id="SlateImg" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="100" height="100" raycast="1" color="#FFFFFF00" rotate="0,0,0" x="0" y="0">
+          </img>
+          <text id="slateLevelTxt" a="02" text="100级" fontsize="18" height="25" width="100" ta="11" horwrap="1" active="0">
+          </text>
+        </panel>
+      </img>
+      <togglegroup id="ToggleGroupSource" a="11" x="363" y="-120" width="44" height="38">
+        <toggle id="gemBtn" onclick="KmlXWEquipStrength/@点击穿戴栏" togglegroup_id="ToggleGroupSource" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="Gem_weixuanzhogn" pimg="Gem_xuanzhong" default="1" width="53" height="56" x="0" y="0" ison="0">
+        </toggle>
+      </togglegroup>
+      <img id="GemCellParentImg" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="xiangqiandi3" width="179" height="296" raycast="1" x="74" y="116">
+        <panel id="GemCell1Parent" a="00" width="100" height="100" x="12" y="95">
+          <img id="SelectImg1" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="Gem_EquipSeletedImg" width="156" height="154" raycast="0" x="0" y="1" active="0">
+          </img>
+          <img id="AddImg1" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="ys_tianjia" width="70" height="70" raycast="1" x="0" y="0">
+          </img>
+          <item id="GemCell1" src="20020001" width="100" height="100" textcolor="" x="0" y="0" bgtype="0" qualityiconname="" a="00" binddragid="">
+          </item>
+          <img id="GemCellImg1" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="95" height="95" raycast="1" color="#FFFFFF00" x="0" y="0">
+          </img>
+          <text id="gemLevelTxt1" a="02" text="100级" fontsize="18" height="25" width="100" ta="11" horwrap="1" active="0">
+          </text>
+        </panel>
+        <panel id="GemCell2Parent" a="00" width="100" height="100" x="32" y="4">
+          <img id="SelectImg2" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="Gem_EquipSeletedImg" width="156" height="154" raycast="0" x="0" y="0" active="0">
+          </img>
+          <img id="AddImg2" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="ys_tianjia" width="70" height="70" raycast="1">
+          </img>
+          <item id="GemCell2" src="20020001" width="100" height="100" a="00" x="0" y="0" bgtype="0">
+          </item>
+          <img id="GemCellImg2" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="95" height="95" raycast="1" color="#FFFFFF00" x="0" y="0">
+          </img>
+          <text id="gemLevelTxt2" a="02" text="100级" fontsize="18" height="25" width="100" ta="11" horwrap="1" active="0">
+          </text>
+        </panel>
+        <panel id="GemCell3Parent" a="00" width="100" height="100" x="12" y="-90">
+          <img id="SelectImg3" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="Gem_EquipSeletedImg" width="156" height="154" raycast="0" x="0" y="0" active="0">
+          </img>
+          <img id="AddImg3" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="ys_tianjia" width="70" height="70" raycast="1" x="0" y="1">
+          </img>
+          <item id="GemCell3" src="20020001" width="100" height="100" a="00" x="0" y="0" bgtype="0">
+          </item>
+          <img id="GemCellImg3" a="00" atlas="Atlas/Common.spriteatlas" src="Background_1" width="95" height="95" raycast="1" color="#FFFFFF00" x="0" y="0">
+          </img>
+          <text id="gemLevelTxt3" a="02" text="100级" fontsize="18" height="25" width="100" ta="11" horwrap="1" active="0">
+          </text>
+        </panel>
+      </img>
+      <panel id="panel3" x="-95" y="116" width="193" height="300">
+        <img id="equipbg" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="yingshizhuangbeidiban" width="193" height="286" x="0" y="0">
+        </img>
+        <prefab id="scroll_text_template" path="Kml/KmlPrefab/Cookbook/Common/KmlScrollTextTemplate.prefab" a="01" width="140" y="-10" height="20">
+          <panel id="KmlScrollTextTemplate" bind="KmlScrollTextTemplate" width="140" height="20">
+          </panel>
+          <text id="equipName" bind="Text" color="#F36055" width="140" text="" fontsize="18" outlinesize="1" outlinecolor="#000000">
+          </text>
+        </prefab>
+        <item id="zhu_item" itemid="" mfixsize="100,150" bgtype="0" width="157" height="219" y="-8" mpos="0,0,-100" x="0" src="" textcolor="" bgscale="100,150">
+        </item>
+        <img id="zhu_add" atlas="Atlas/UIEquipOverlayPanel.spriteatlas" src="img_add" active="1" x="1" y="0" width="73" height="73">
+        </img>
+        <img id="zhu_click" width="171" height="231" raycast="1" color="#00000000" x="0" y="-8">
+        </img>
+      </panel>
+      <img id="AllGemAddParent_1" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" width="121" height="35" raycast="1" x="-131" y="-171" active="1">
+        <text id="AllGemAddTxtTitle" a="00" text="全身萤石组合" fontsize="18" height="25" width="160" ta="01" horwrap="1" x="49" y="0" outlinesize="0" outlinecolor="0">
+        </text>
+      </img>
+      <button id="HelpBtn" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="175" y="-342">
+      </button>
+    </img>
+  </panel>
+</uipanel>

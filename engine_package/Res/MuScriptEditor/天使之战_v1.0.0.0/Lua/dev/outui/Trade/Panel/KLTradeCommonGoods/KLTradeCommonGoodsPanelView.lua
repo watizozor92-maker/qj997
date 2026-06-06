@@ -1,0 +1,12 @@
+---@class KLTradeCommonGoodsPanelView:UIKmlLuaViewBase
+---@field loopscrollview_50 UIKmlLuaControlHandler
+---@field datalist_goods UIKmlLuaControlHandler
+local KLTradeCommonGoodsPanelView = {}
+setmetatable(KLTradeCommonGoodsPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/outui/Trade/Panel/KLTradeCommonGoods/KLTradeCommonGoodsPanelKml'
+---@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+function KLTradeCommonGoodsPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+return KLTradeCommonGoodsPanelView

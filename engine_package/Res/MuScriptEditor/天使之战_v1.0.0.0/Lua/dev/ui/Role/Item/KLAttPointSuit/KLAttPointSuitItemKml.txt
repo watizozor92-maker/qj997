@@ -1,0 +1,4 @@
+<uipanel id="KLAttPointSuitItem" width="290" height="436" zindex="-1">
+  <prefab path="UI/Template/Item/KLAttPointSuitItem.prefab" id="prefab_670">
+  </prefab>
+</uipanel>

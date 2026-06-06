@@ -1,0 +1,38 @@
+<uipanel id="KLNPCPhantomMentorPanelKml" name="npc对话界面" adapter="1" zindex="200" x="0" y="0" z="-2000" rotate="0,0,0" color="#00000000" width="1334" height="750" a="00" raycast="0">
+  <img id="bg1" width="2000" height="2000" raycast="1" color="#FFFFFF00" x="0" y="1" z="0" a="00" rotate="0,0,0">
+  </img>
+  <button id="cancelBtn" outlinesize="1" outlinecolor="#000000" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="3000" height="3000" z="0" a="00" rotate="0,0,0" raycast="1" x="472" y="-67" fontsize="18" text="" textcolor="#FFFFFF" color="#FFFFFF00">
+  </button>
+  <img id="bg" width="3000" height="212" z="0" a="02" rotate="0,0,0" raycast="1" x="0" y="-20" color="#000000FF" src="" atlas="">
+    <text id="TitleName" a="00" text="幻影导师" fontsize="20" height="25" width="350" ta="01" outline="1" horwrap="1" x="-485" y="87">
+    </text>
+    <img id="img2" a="00" width="3112" height="1" raycast="1" src="Background_1" atlas="Atlas/Common.spriteatlas" x="0" y="70" scale9l="15" scale9b="9" scale9r="10" scale9t="11" active="1" enable="1">
+    </img>
+    <img id="img3" a="00" width="160" height="1" raycast="1" src="Background_1" atlas="Atlas/Common.spriteatlas" x="0" y="-22" scale9l="15" scale9b="9" scale9r="10" scale9t="11" rotate="0,0,90" active="0" enable="0">
+    </img>
+    <img id="leftPanel" a="00" width="652" height="166" raycast="1" x="-333" y="-14" color="#FFFFFF00">
+      <text id="leftText1" a="00" text="新手免费BUFF（100级以下）" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="60" fontstyle="1" x="-20">
+      </text>
+      <text id="leftText2" a="00" text="BUFF效果：" fontsize="16" height="25" width="85" ta="01" outline="1" horwrap="1" y="28" x="-88">
+        <text id="leftText3" a="00" text="" fontsize="16" height="64" width="370" ta="00" outline="1" horwrap="1" x="217" y="-24">
+        </text>
+      </text>
+      <button id="leftBtn" a="00" width="103" height="36" onclick="" text="立即获取" raycast="1" y="-45" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+      </button>
+    </img>
+    <img id="rightPanel" a="00" width="652" height="166" raycast="1" x="333" y="-14" color="#FFFFFF00" active="0" enable="0">
+      <text id="rightText1" a="00" text="进阶BUFF（100级以上，需消耗800积分）" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="60" fontstyle="1">
+      </text>
+      <text id="rightText2" a="00" text="BUFF效果：" fontsize="16" height="25" width="85" ta="01" outline="1" horwrap="1" y="28" x="-118">
+        <text id="rightText3" a="00" text="" fontsize="16" height="64" width="377" ta="00" outline="1" horwrap="1" x="220" y="-24">
+        </text>
+      </text>
+      <button id="rightBtn" a="00" width="103" height="36" onclick="" text="立即获取" raycast="1" y="-45" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+      </button>
+      <button id="rightBtn2" a="00" width="103" height="36" onclick="" text="叠加购买" raycast="1" x="130" y="-45" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+      </button>
+      <text id="rightText4" a="00" ta="11" text="" fontsize="16" height="25" width="300" outline="1" horwrap="1" x="-180" y="-45" color="#00ff00">
+      </text>
+    </img>
+  </img>
+</uipanel>

@@ -1,0 +1,70 @@
+<uipanel id="KLGoldenTroopsItem" width="1039" height="578" zindex="201" name="黄金部队" x="0" y="0">
+  <panel id="outdoor_boss_panel" width="1039" height="578" x="0" y="0">
+    <img src="bg_1" width="719" height="430" x="294" y="-117" id="img_43" atlas="Atlas/FG_ChallgeBoss.spriteatlas" a="11">
+    </img>
+    <loopscrollview id="outdoor_boss_select" width="254" height="430" a="11" x="34" y="-125" vertical="1" cellwidth="254" cellheight="86">
+      <datalist id="outdoor_boss_level_data_list">
+      </datalist>
+    </loopscrollview>
+    <panel id="野外_boss_right_panel" width="719" height="430" x="294" y="-117" a="11">
+      <panel id="namePanel" width="207" height="44" x="103" y="-10" z="-300" zindex="203" a="11">
+        <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="0" y="0" id="img_47" scale9l="64" scale9b="0" scale9r="65" scale9t="0" a="11">
+          <text id="outdoor_boss_name" ta="11" text="" x="0" y="0" fontsize="18" color="#FFFFFF" outlinesize="0" outlinecolor="0" outline="1" horwrap="1">
+          </text>
+        </img>
+      </panel>
+      <panel id="outdoor_boss_path_root" width="200" height="200" x="-150" y="0" z="-150">
+        <model id="outdoor_boss_path" src="" mscale="120,120,120" mrotate="0,180,0" x="0" y="0">
+        </model>
+      </panel>
+      <img id="DropTitle" a="11" width="120" height="34" raycast="1" x="457" y="-10" src="bg_title" atlas="Atlas/FG_Common.spriteatlas">
+        <img atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="4" y="0" a="10" id="img_52">
+        </img>
+        <text id="野外_boss掉落title" text="掉落奖励" x="31" y="2" fontsize="18" color="#FFFFFFFF" outlinesize="0" outlinecolor="0" outline="0" horwrap="1" width="80" height="22" ta="01" a="10" fontstyle="0" underline="0">
+        </text>
+        <loopscrollview id="野外_boss_select" width="241" height="58" x="5" y="-43" vertical="0" cellwidth="64" cellheight="64" a="11" autoadjust="0">
+          <datalist id="outdoor_boss_reward_data_list">
+          </datalist>
+        </loopscrollview>
+      </img>
+      <img id="RefreshTimeTitle" a="11" width="120" height="34" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="457" y="-133">
+        <img id="img4" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="3" y="1">
+        </img>
+        <text id="text5" text="今日场次" x="31" y="2" fontsize="18" color="#FFFFFFFF" outlinesize="0" outlinecolor="0" outline="0" horwrap="1" width="80" height="22" ta="01" a="10" fontstyle="0" underline="0">
+        </text>
+        <img id="img6" a="11" width="253" height="113" raycast="1" src="bg_active" atlas="Atlas/UIChallengeBoss.spriteatlas" x="0" y="-44">
+          <loopscrollview id="scrollview7" a="00" width="253" height="113" vertical="1" y="0" raycast="1" cellwidth="259" cellheight="35">
+            <datalist id="DataList_RefreshTime">
+              <panel id="panel10" width="259" height="35">
+                <text id="Text_Time" a="10" text="14:00 -14:30" fontsize="18" height="25" width="150" ta="01" outline="1" horwrap="1" x="13">
+                </text>
+                <text id="Text_State" a="20" text="已结束" fontsize="18" height="25" width="100" ta="21" outline="1" horwrap="1" x="-14">
+                </text>
+              </panel>
+            </datalist>
+          </loopscrollview>
+        </img>
+      </img>
+      <img id="outdoor_boss_Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="80" height="76" raycast="1" x="-303" y="174" z="-500" active="0">
+        <text id="outdoor_boss_Integral_Text" a="00" text="9999" fontsize="16" height="83" width="100" ta="11" horwrap="1" outlinesize="0" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font" outline="1">
+        </text>
+      </img>
+      <loopscrollview id="野外boss_路线" width="698" height="59" x="10" y="-319" vertical="1" z="-500" zindex="205" cellwidth="238" cellheight="42" a="11">
+        <datalist id="outdoor_boss_line_data_list" databind="@outdoor_line">
+        </datalist>
+      </loopscrollview>
+      <text id="text13" a="12" text="所有线路中随机一条线路刷新一只" fontsize="18" height="22" width="271" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#E6E600FF" x="224" y="29">
+      </text>
+      <img id="recommend_panel" a="11" width="98" height="44" raycast="1" src="bg_zhanli" atlas="Atlas/KLHuntingDemons.spriteatlas" x="5" y="-10" z="-500" color="#FFFFFF00" active="0">
+        <text id="recommend_def" a="11" text="推荐攻击:99999" fontsize="16" height="20" width="87" ta="01" outline="1" horwrap="1" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" x="5" y="-2" offsetmax="92#-2">
+        </text>
+        <text id="recommend_atk" a="12" text="推荐防御" fontsize="16" height="20" width="87" ta="01" outline="1" horwrap="1" color="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" x="5" y="2">
+        </text>
+      </img>
+    </panel>
+    <panel id="panel2" a="11" width="719" height="430" x="294" y="-117" rotate="0,0,0" z="-500" zindex="203">
+      <img id="isKill_Img" a="00" width="129" height="77" raycast="0" src="img_kill" atlas="Atlas/Common.spriteatlas" x="-157" y="85" z="0" active="0">
+      </img>
+    </panel>
+  </panel>
+</uipanel>

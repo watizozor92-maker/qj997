@@ -1,0 +1,6 @@
+﻿int#s,int#s,string#s,int#s#c,string#s#c,string#s,string#s,string#s
+id,type,beizhu,item,num,probability,career,level
+1,1,赤炎·大恶魔,80010311,1#1,0#73170,,
+2,1,赤炎·天使审判长,80010321,1#1,0#73170,,
+3,1,赤炎·赋能泰坦,80020311,1#1,0#658537,,
+4,1,赤炎·神赋泰坦,80030311,1#1,0#195122,,

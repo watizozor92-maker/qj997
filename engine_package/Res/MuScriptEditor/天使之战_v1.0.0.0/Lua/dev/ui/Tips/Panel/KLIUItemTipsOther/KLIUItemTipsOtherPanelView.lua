@@ -1,0 +1,91 @@
+---@class KLIUItemTipsOtherPanelView:UIKmlLuaViewBase
+---@field background_close UIKmlLuaControl
+---@field panel_bg UIKmlLuaControl
+---@field title_bg UIKmlLuaControl
+---@field text_title UIKmlLuaControl
+---@field jichu_layout UIKmlLuaControl
+---@field panel2 UIKmlLuaControl
+---@field item_name UIKmlLuaControl
+---@field node_name UIKmlLuaControl
+---@field text_MU_node UIKmlLuaControl
+---@field text_MU UIKmlLuaControl
+---@field text_deal_node UIKmlLuaControl
+---@field text_deal UIKmlLuaControl
+---@field text_gem_node UIKmlLuaControl
+---@field text_gem UIKmlLuaControl
+---@field task_text_node UIKmlLuaControl
+---@field task_text UIKmlLuaControl
+---@field attr_txt_node UIKmlLuaControl
+---@field attr_txt UIKmlLuaControl
+---@field view_node_offset_2 UIKmlLuaControl
+---@field view_info UIKmlLuaControl
+---@field top_text UIKmlLuaControl
+---@field mid_text UIKmlLuaControl
+---@field bottom_text UIKmlLuaControl
+---@field view_node_offset_1 UIKmlLuaControl
+---@field overlyingTxt_node UIKmlLuaControl
+---@field overlyingTxt UIKmlLuaControl
+---@field bindOverlyingTxt_node UIKmlLuaControl
+---@field bindOverlyingTxt UIKmlLuaControl
+---@field base_list_layout UIKmlLuaControl
+---@field base_info_data UIKmlLuaControl
+---@field equip_time UIKmlLuaControl
+---@field equip_need_level_titlt_node UIKmlLuaControl
+---@field equip_need_level_titlt UIKmlLuaControl
+---@field equip_need_level UIKmlLuaControl
+---@field need_layout UIKmlLuaControl
+---@field equipNeedData UIKmlLuaControl
+---@field red_equip_need_level_titlt_node UIKmlLuaControl
+---@field red_equip_need_level_titlt UIKmlLuaControl
+---@field timeShow_text_node UIKmlLuaControl
+---@field timeShow_text UIKmlLuaControl
+---@field use_text_node UIKmlLuaControl
+---@field use_text UIKmlLuaControl
+---@field shop_deal_node UIKmlLuaControl
+---@field shop_deal UIKmlLuaControl
+---@field att_level_titlt_node UIKmlLuaControl
+---@field att_level_titlt UIKmlLuaControl
+---@field att_need_level UIKmlLuaControl
+---@field yulan_content_node UIKmlLuaControl
+---@field yulan_content UIKmlLuaControl
+---@field yulan_data_list UIKmlLuaControl
+---@field num_select UIKmlLuaControl
+---@field img1 UIKmlLuaControl
+---@field Input_PutNum UIKmlLuaControl
+---@field Btn_NumberMinus UIKmlLuaControl
+---@field Btn_NumberAdd UIKmlLuaControl
+---@field text_18 UIKmlLuaControl
+---@field Slider_PutNum UIKmlLuaControl
+---@field synthesisDesc UIKmlLuaControl
+---@field img4 UIKmlLuaControl
+---@field text3 UIKmlLuaControl
+---@field node_career_top UIKmlLuaControl
+---@field career_layout UIKmlLuaControl
+---@field equipzhiyeNeedData UIKmlLuaControl
+---@field node_career_bottom UIKmlLuaControl
+---@field btn_offset_node UIKmlLuaControl
+---@field bag_root UIKmlLuaControl
+---@field left_btn UIKmlLuaControl
+---@field left_btn_content UIKmlLuaControl
+---@field 属性_left_layout UIKmlLuaControl
+---@field left_data_list UIKmlLuaControl
+---@field right_btn UIKmlLuaControl
+---@field right_btn_content UIKmlLuaControl
+---@field 属性_right_layout UIKmlLuaControl
+---@field right_data_list UIKmlLuaControl
+---@field item_button UIKmlLuaControl
+---@field put_or_out UIKmlLuaControl
+---@field put_or_out_t UIKmlLuaControl
+---@field pills_put UIKmlLuaControl
+---@field text_100 UIKmlLuaControl
+---@field mail_attachment UIKmlLuaControl
+---@field text_102 UIKmlLuaControl
+local KLIUItemTipsOtherPanelView = {}
+setmetatable(KLIUItemTipsOtherPanelView,UIKmlLuaViewBase)
+local kmlPath = 'dev/ui/Tips/Panel/KLIUItemTipsOther/KLIUItemTipsOtherPanelKml'
+---@param parent UIKmlLuaControl
+function KLIUItemTipsOtherPanelView:Init(parent)
+    
+    self:InitRoot(parent,kmlPath)
+end
+return KLIUItemTipsOtherPanelView

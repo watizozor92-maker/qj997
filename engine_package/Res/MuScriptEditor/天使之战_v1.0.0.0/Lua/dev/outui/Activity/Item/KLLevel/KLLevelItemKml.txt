@@ -1,0 +1,10 @@
+<uipanel id="KLLevelItem" name="关卡模板" width="148" height="41" zindex="-1">
+  <toggle id="KLLevel" width="148" height="41" default="0" togglegroup_id="togglegroup" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" raycast="1" color="#FFFFFFFF" pcolor="#FFFFFFFF">
+    <img id="noClick" active="0" width="148" height="41" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" raycast="1">
+    </img>
+    <text id="levelName" a="00" text="第二城堡 700~800级" fontsize="16" height="35" width="160" ta="11" horwrap="1" x="1" y="2" color="#ABABABFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+    <button id="no_btn" width="148" height="41" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian1" color="#00000000" raycast="1">
+    </button>
+  </toggle>
+</uipanel>

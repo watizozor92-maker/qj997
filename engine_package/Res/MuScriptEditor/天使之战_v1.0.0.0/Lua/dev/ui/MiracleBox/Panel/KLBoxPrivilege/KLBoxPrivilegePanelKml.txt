@@ -1,0 +1,62 @@
+<uipanel id="KLBoxPrivilegePanel" name="盒子特权界面" width="1334" height="750" >
+    <img id="mask" width="2000" height="2000" color="#00000000" raycast="1" />
+        <img id="bg" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_bg" width="1096" height="662" raycast="1" >
+        <button id="close" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_close" raycast="1" x="485" y="170" />
+        <img id="big_title" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_bigtitle" x="220" y="185" />
+        <img id="fu_title" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_futitle" x="175" y="100" />
+        <img id="content_bg" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_contentbg" x="150" y="0" >
+            <img id="left" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_left" x="-180" y="35" />
+            <img id="right" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_right" x="220" y="35" />
+            <togglegroup id="toggle_group" width="265" height="45" y="35" x="20">
+                <layout width="265" height="45" cella="00" space="12" id="layout_38" contentsizefitter="2" >
+                <datalist id="toggle_list">
+                   
+                </datalist>
+                    ; <toggle id="toggle_box_Items" togglegroup_id="toggle_group" default="0" width="126" height="36" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="noselect_btn" pimg="select_btn">
+                    ;     <img id="select_Items" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="select_btnbox" />
+                    ;     <text text="每日礼包" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_40">
+                    ;     </text>
+                    ; </toggle>
+                </layout>
+            </togglegroup>
+            <panel id = "panel_1">
+                <img id="att_point_1"  atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="point" x="-180" >
+                    <text id="att_title" text = "专属属性" outlinecolor="#000000" outlinesize="1" fontsize="20" color="#FFD4A2" x="50" />
+                </img>
+                <gridview id="att_layout" paddingTop="12" width="150" cellHeight="20" cellwidth="150" spacey="8" cella="11" x="-90" y="-60" height="100"  >
+                    <datalist id="att_list">
+                        <text id="att_text" fontsize="18" outlinecolor="#271A06" outlinesize="1" color="#FFF2E2" />
+                    </datalist>
+                </gridview>
+                <text id="activate_text" text=""  fontSize="22" x="-130" y="-130" />
+                <img id="appellation_point_1"  atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="point" x="50" >
+                    <text id="att_title" text = "专属称号" outlinecolor="#000000" outlinesize="1" fontsize="20" color="#FFD4A2" x="50" />
+                </img>
+                <scrollview id="appellation_scroll" width="180" height="100" x="120" y="-60" vertical="1">
+                <layout id="appellation_layout"  contentsizefitter="1" width="180" height="100" space="10"  >
+                    <datalist id="appellation_list">
+                        <img id="appellation_item" width="160" height="65" />
+                    </datalist>
+                </layout>
+                </scrollview>     
+            </panel>
+            <panel id = "panel_2" active="0">
+                <img id="att_point_2"  atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="point" x="-180" >
+                    <text id="att_title" text = "礼包奖励" outlinecolor="#000000" outlinesize="1" fontsize="20" color="#FFD4A2" x="50" />
+                </img>
+                <scrollview id="item_scroll" width="430" height="100" x="45" y="-60">
+                <layout id="item_layout"  contentsizefitter="2" width="430" height="100" space="10"  >
+                    <datalist id="item_list">
+                        <img id="item_box" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="itembox" >
+                            <item id="item_show" mfixscale="70,70" width="70" height="70" bgtype="0" raycast="1"  />
+                        </img>
+                    </datalist>
+                </layout>
+                </scrollview>
+            </panel>
+        </img>
+        <button id="privilege_btn" y="-190" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" x="180" raycast="1" textcolor="#FFFFFF" fontSize="20" outlinecolor="#000000" outlinesize="1" text="未激活" />
+        <text id="tip" text="" fontsize="18" color="#F7D3A4" x="180" y="-230" />
+        <button id="DownLoad" atlas="Atlas/UIBoxPrivilegePanel.spriteatlas" src="BoxPrivilege_download" x="-350" y="-200" raycast="1" />
+    </img>
+</uipanel>

@@ -1,0 +1,6 @@
+<uipanel id="KLPickUpItemKml" name="拾取设置模板" zindex="-1">
+  <toggle id="pick_toggle" atlas="Atlas/Common.spriteatlas" src="button_interface_window54" pimg="ty_btn_gou" default="" width="40" x="-48" height="40" onclick="KmlSettingUI/@勾选拾取物品  1" oncancel="KmlSettingUI/@勾选拾取物品  0" z="0" a="00" rotate="0,0,0">
+  </toggle>
+  <text id="pickItemName" text="" fontsize="18" outlinesize="1" color="#DBE0E6FF" outlinecolor="#000" width="84" height="22" ta="01" x="21" y="0" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1">
+  </text>
+</uipanel>

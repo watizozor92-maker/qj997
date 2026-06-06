@@ -1,0 +1,18 @@
+<uipanel id="KLOpenServiceGiftItemKml" name="累计登录礼包模板" a="00" width="169" height="204" zindex="-1">
+  <img id="bg" a="11" atlas="Atlas/QJ5_UIOpenServiceGiftInner.spriteatlas" src="img_kaifu" width="169" height="204" raycast="1">
+    <img id="SpLight" a="00" atlas="Atlas/QJ5_UIOpenServiceGiftInner.spriteatlas" src="img_kaifugaolight" width="169" height="204" raycast="1">
+    </img>
+    <item id="ItemIcon" src="20020001" width="60" height="60" y="2" tips="1" mfixsize="60,60" mpos="-0.3850488,1.538735,0">
+    </item>
+    <text id="ItemTex" a="02" text="默认内容" fontsize="18" height="36" width="154" ta="11" horwrap="1" color="#F5F0E3FF" y="0">
+    </text>
+    <text id="text5" a="01" text="默认内容" fontsize="18" height="36" width="154" ta="11" horwrap="1" color="#F5F0E3FF" y="0">
+    </text>
+    <img id="redDot" a="21" atlas="Atlas/QJ5_UIOpenServiceGiftInner.spriteatlas" src="ico_red_n" width="17" height="17" raycast="1">
+    </img>
+    <button id="bg_Btn" a="00" atlas="Atlas/QJ5_UIOpenServiceGiftInner.spriteatlas" src="img_kaifu" width="169" height="204" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" color="#FFFFFF00">
+    </button>
+    <img id="get" a="00" atlas="Atlas/QJ5_UIOpenServiceGiftInner.spriteatlas" src="img_kaifuk" width="169" height="204" raycast="1" active="1" z="-300">
+    </img>
+  </img>
+</uipanel>

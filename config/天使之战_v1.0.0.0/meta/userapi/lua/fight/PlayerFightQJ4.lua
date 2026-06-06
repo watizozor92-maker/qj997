@@ -1,0 +1,1127 @@
+-- local LastAttakedByMonster = "@上次被怪物攻击的变量"
+
+-- local HurtTypeDefKeys = {
+--     YI_BAN = "YI_BAN",
+--     ZHUO_YUE = "ZHUO_YUE",
+--     XING_YUN = "XING_YUN",
+--     WU_SHI = "WU_SHI",
+--     SHUANG_BEI = "SHUANG_BEI"
+-- }
+
+
+
+-- FightDamageTypeCache = {}
+
+-- local this = {}
+-- local FightLog = {}
+
+-- function excusefightdamage0(actor, paramMapList)
+--     local fightResults = {}
+--     for _, paramMap in pairs(paramMapList) do
+--         paramMap["targetnum"] = #paramMapList
+--         local fightResultList = this.ExcuseFightDamage(actor, paramMap)
+--         for _, fightResult in pairs(fightResultList) do
+--             fightResult["target"] = paramMap["target"]
+--             local next_stage = fightResult.next_stage == nil and true or fightResult.next_stage --是否继续往下计算（触发闪避等不继续计算）
+--             if next_stage == true then
+--                 EquipDurability.beAttacked(paramMap, fightResult)
+--                 local result = this.onAttackAGAndSD(paramMap, fightResult)
+--                 table.concatTable(fightResults, result)
+--             else
+--                 table.insert(fightResults,fightResult)
+--             end
+--         end
+--     end
+--     return fightResults
+-- end
+
+
+-- function this.onAttackAGAndSD(paramMap, fightResult)
+--     local castertype = paramMap.castertype     --—— 攻击者类型
+--     local targettype = paramMap.targettype     --—— 受击者类型
+--     local casthurt = fightResult.casthurt      --攻击者伤害
+--     local targethurt = fightResult.targethurt  --受击者伤害
+--     local hurttype = fightResult.hurttype      --伤害类型
+--     local repeat1 = fightResult["repeat"]      --伤害次数
+--     -- local castershield = fightResult.castershield       --攻击者扣除护盾
+--     -- local targetshield = fightResult.targetshield       --受击者扣除护盾
+--     -- local targethurtshow = fightResult.targethurtshow   --飘字使用的伤害
+--     -- local comboskill = fightResult.comboskill           --是否是连击技能
+--     -- local target = fightResult.target                   --目标对象
+
+--     local extra_result = {}; --额外的飘字拆分
+
+--     if targettype == MapObjectType.PLAYER then
+--         fightResult.targethurt = targethurt --受击者伤害
+--         --伤害后AG和SD操作执行
+--         GameEvent.push(EventCfg.onAttackAGAndSD, paramMap, fightResult, extra_result)
+--         targethurt = fightResult.targethurt
+--         hurttype = fightResult.hurttype
+--     end
+--     fightResult.casthurt       = casthurt   --攻击者伤害
+--     fightResult.targethurt     = targethurt --受击者伤害
+--     fightResult.targethurtshow = targethurt --飘字使用的伤害
+--     fightResult.hurttype       = hurttype --伤害类型
+
+--     local result               = { fightResult }
+--     if #extra_result > 0 then
+--         table.concatTable(result, extra_result)
+--     end
+--     return result
+-- end
+
+
+
+
+-- function this.IsSelfPet(actor, target)
+--     if actor == nil or target == nil then
+--         return false
+--     end
+--     local selfType = getbaseinfo(actor, "mapobjecttype")
+--     local targetType = getbaseinfo(target, "mapobjecttype")
+--     if selfType ~= MapObjectType.PLAYER then
+--         return false
+--     end
+--     if targetType ~= MapObjectType.PET then
+--         return false
+--     end
+--     local masterId = getbaseinfo(target, "master")
+--     local id = getbaseinfo(actor, "id")
+--     if masterId ~= id then
+--         return false
+--     end
+--     return true
+-- end
+
+-- function this.logTargetAttrInfo(targetActor)
+--     if targetActor == nil then
+--         return
+--     end
+--     local targetAttrInfo = getallattrinfo(targetActor)
+--     if targetAttrInfo == nil then
+--         return
+--     end
+--     local logText = ""
+--     for k, v in pairs(targetAttrInfo) do
+--         local attrId = tonumber(k)
+--         local attrValue = tonumber(v)
+--         if attrValue ~= 0 then
+--             local attrName = ConfigDataManager.getTableValue("cfg_att_info", "attribute", "id", attrId)
+--             if not string.isNullOrEmpty(logText) then
+--                 logText = logText .. ","
+--             end
+--             logText = logText .. attrName .. "=" .. attrValue
+--         end
+--     end
+--     if not string.isNullOrEmpty(logText) then
+--         local name = getbaseinfo(targetActor, "rolename")
+--         logText = "攻击目标=" .. name .. ",目标属性【" .. logText .. "】"
+--     end
+--     fightlog(logText)
+-- end
+
+-- function this.ExcuseFightDamage(actor, paramMap)
+--     --fixme 异步问题，lua队列任务执行时，地图可能已经被销毁
+--     if not mapexists(actor) then
+--         info(actor:toString() .. "执行战斗脚本时，原地图已经被销毁")
+--         return this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--     end
+--     --fightlog("\n==========================================\n战斗日志\n==========================================")
+--     this.initData(paramMap)
+--     local castType = paramMap["castertype"]
+--     local targetType = paramMap["targettype"]
+--     local target = paramMap["target"]
+
+--     if this.IsSelfPet(actor, target) then
+--         fightlog("攻击自己的召唤兽无效")
+--         local result = this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--         return { result }
+--     end
+
+--     this.logTargetAttrInfo(target)
+
+--     if this.CanHit(paramMap) == false then
+--         local result = this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--         return { result }
+--     end
+
+--     -- 攻城战是否可以攻击
+--     if not RolandSeige.CanAttackRolandWall(actor, target, castType, targetType) then
+--         local result = this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--         return { result }
+--     end
+
+--     local originDamage
+--     local elementalDamage = 0
+--     local elementalType
+--     if castType == MapObjectType.PLAYER or castType == MapObjectType.PET then
+--         --攻击者是玩家或者宠物
+--         originDamage = this.PlayerCastDamage(actor, paramMap)
+--         --  元素伤害
+--         elementalDamage, elementalType = this.ElementalHurt(paramMap)
+--     elseif castType == 2 then
+--         --攻击者是怪物
+--         originDamage = this.MonsterCastDamage(actor, paramMap)
+--     else
+--         error("this.ExcuseFightDamage=>不存在的攻击者类型", castType)
+--         local result = this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--         return { result }
+--     end
+
+--     originDamage = EquipGem.handleGemAttrs(actor, target, originDamage, castType, targetType)
+--     originDamage = this.handleHuolong(paramMap, originDamage)
+
+--     originDamage = this.noviceProtect(paramMap, originDamage)
+--     if originDamage == 0 then
+--         local result = this.BuildFightResult(0, 0, 0, 0, 108, 1)
+--         return { result }
+--     end
+
+--     local originDamage, repeatl = this.getRepeatInfo(paramMap, originDamage)
+
+--     -- 副本修正伤害
+--     originDamage = this.DupFixDamage(originDamage, paramMap)
+--     elementalDamage = this.DupFixDamage(elementalDamage, paramMap)
+
+
+--     -- 反伤
+--     local casterHurt = this.ReflexDamage(paramMap, originDamage + elementalDamage)
+--     this.AfterCalcuDamage(paramMap, originDamage + elementalDamage)
+--     this.RecoverHP(paramMap, originDamage + elementalDamage)
+
+--     local resultList = {}
+--     local result = {}
+--     local isComboSkill = Skill.isComboSkill(actor, tonumber(paramMap["skillid"]))
+--     if isComboSkill then
+--         result = this.BuildFightResult(casterHurt, originDamage, 0, 0, 301, repeatl, isComboSkill)
+--     else
+--         result = this.BuildFightResult(casterHurt, originDamage, 0, 0, FightDamageTypeCache.GetHurtType(actor), repeatl, isComboSkill)
+--     end
+--     table.insert(resultList, result)
+--     if elementalDamage > 0 then
+--         local elementalResult = this.BuildFightResult(0, elementalDamage, 0, 0, elementalType, 1, isComboSkill)
+--         table.insert(resultList, elementalResult)
+--     end
+--     return resultList
+-- end
+
+-- -- 副本修正伤害
+-- function this.DupFixDamage(originDamage, paramMap)
+--     local caster = paramMap.caster
+--     local targetType = paramMap.targettype
+--     if targetType == MapObjectType.MONSTER then
+--         if RolandSeige.IsPlayerInRoland(caster) then
+--             return 1
+--         end
+--     end
+--     return originDamage
+-- end
+
+-- -- 线上秒杀加日志
+-- function this.LogMiaoSha(actor, target, targetType, hurt, monsterCfgId, skillId)
+--     if targetType == MapObjectType.MONSTER then
+--         local monsterType = tonumber(ConfigDataManager.getTableValue("cfg_monster", "type", "id", monsterCfgId))
+--         if monsterType == 2 or monsterType == 3 then
+--             local maxHp = getbaseinfo(target, "maxhp")
+--             if hurt * 2 >= maxHp then
+--                 info(actor:toString() .. "变身对BOSS造成巨额伤害。skillId:" .. skillId .. " ;monsterCfg:" .. monsterCfgId)
+--             end
+--         end
+--     end
+-- end
+
+-- -- 攻击回血
+-- function this.RecoverHP(paramMap, originDamage)
+--     local caster = paramMap["caster"]
+--     local HPAttackRecover = getattrinfo(caster, "HPAttackRecover")
+--     local HPAttackRecoveronus = getattrinfo(caster, "HPAttackRecoveronus")
+--     local attackBlood = getattrinfo(caster, "attackBlood")
+--     local attackRecover = originDamage * attackBlood
+--     local hpRecover = HPAttackRecover * (1 + HPAttackRecoveronus) + attackRecover
+--     local currentHp = getbaseinfo(caster, "hp")
+--     sethp(caster, hpRecover + currentHp)
+-- end
+
+-- function this.ReflexDamage(paramMap, originDamage)
+--     local casterHurt = 0
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local damageReflexProbability = getattrinfo(target, "damageReflexProbability")
+--     local damageReflexResistanceProbability = getattrinfo(caster, "damageReflexResistanceProbability")
+--     local rate = damageReflexProbability - damageReflexResistanceProbability
+--     if this.SelectRate(rate) then
+--         local damageReflex = getattrinfo(target, "damageReflex")
+--         local pvpDamageReflexAdd = getattrinfo(target, "pvpDamageReflexAdd")
+--         local pvpDamageReflexReduce = getattrinfo(caster, "pvpDamageReflexReduce")
+--         casterHurt = originDamage * damageReflex + pvpDamageReflexAdd - pvpDamageReflexReduce
+--         casterHurt = math.max(0, casterHurt)
+--     end
+--     return casterHurt
+-- end
+
+-- --处理重复伤害次数
+-- function this.getRepeatInfo(paramMap, originDamage)
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local valueTimes = ConfigDataManager.getTableValue("cfg_skill_info", "valueTimes", "skillID", skillId, "skillLevel", skillLevel)
+--     local repeatl = RandomUtil.selectKey(valueTimes)
+--     repeatl = math.max(repeatl, 1)
+--     originDamage = originDamage * repeatl
+--     return originDamage, repeatl
+-- end
+
+-- function this.handleHuolong(paramMap, originDamage)
+--     local caster = paramMap["caster"]
+--     local castMapObjectType = getbaseinfo(caster, "mapobjecttype")
+--     if castMapObjectType ~= MapObjectType.MONSTER then
+--         return originDamage
+--     end
+--     local monsterInfo = getmonsterinfo(caster)
+--     local cfgId = monsterInfo["cfgid"]
+--     if tonumber(cfgId) ~= MonsterConfigId.HUOLONG then
+--         return originDamage
+--     end
+--     local target = paramMap["target"]
+--     local targetMaxHp = getattrinfo(target, "maxHP")
+--     local costHp = targetMaxHp * 0.05
+--     return originDamage + costHp
+-- end
+
+-- function this.noviceProtect(paramMap, originDamage)
+--     local target = paramMap["target"]
+--     local targetType = paramMap["targettype"]
+--     if targetType ~= MapObjectType.PLAYER then
+--         return originDamage
+--     end
+--     local novice = getplaydef(target, NOVICE_PROTECT)
+--     if not novice then
+--         return originDamage
+--     end
+--     if novice then
+--         local currentHp = getbaseinfo(target, "hp")
+--         local haveHp = currentHp - originDamage
+--         local stringHp = ConfigDataManager.getTableValue("cfg_global", "value", "id", "15004")
+--         local hp = tonumber(stringHp)
+--         if haveHp < hp then
+--             return 0
+--         end
+--     end
+--     return originDamage
+-- end
+
+-- function this.initData(paramMap)
+--     local caster = paramMap["caster"]
+--     local originType = {
+--         [HurtTypeDefKeys.YI_BAN] = "1",
+--         [HurtTypeDefKeys.ZHUO_YUE] = "0",
+--         [HurtTypeDefKeys.XING_YUN] = "0",
+--         [HurtTypeDefKeys.WU_SHI] = "0",
+--         [HurtTypeDefKeys.SHUANG_BEI] = "0",
+--     }
+--     setplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE, originType)
+--     FightLog = {}
+--     --table.clear(FightLog)
+-- end
+
+-- function FightDamageTypeCache.GetHurtType(caster)
+--     local resultType = getplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE)
+--     local yiBanGongJi = resultType[HurtTypeDefKeys.YI_BAN]
+--     local zhuoYueYiJi = resultType[HurtTypeDefKeys.ZHUO_YUE]
+--     local xinYunYiJi = resultType[HurtTypeDefKeys.XING_YUN]
+--     local wuShiFangYu = resultType[HurtTypeDefKeys.WU_SHI]
+--     local shuangBeiYiJi = resultType[HurtTypeDefKeys.SHUANG_BEI]
+--     local typeString = yiBanGongJi .. zhuoYueYiJi .. xinYunYiJi .. wuShiFangYu .. shuangBeiYiJi
+--     local hurtTypeCache = getsysvar(SystemVarConst.NORMAL_DAMAGE_TYPE_CACHE, 0)
+--     local type = hurtTypeCache[typeString]
+--     if type == nil then
+--         error(caster, caster, "获取攻击类型配置失败，结果为", typeString)
+--         type = 101
+--     end
+--     return type
+-- end
+
+-- function FightDamageTypeCache.GetElementalHurtType(caster, key)
+--     local elementalCache = getsysvar(SystemVarConst.ELEMENTAL_DAMAGE_TYPE_CACHE, 0)
+--     local type = elementalCache[key]
+--     if type == nil then
+--         if string.contains(key, "1") then
+--             error(caster, caster, "获取元素伤害类型配置失败，结果为", key)
+--         end
+--         type = 101
+--     end
+--     return type
+-- end
+
+-- function this.BuildFightResult(casthurt, targethurt, castershield, targetshield, hurttype, repeatl, combo)
+--     combo = combo or false
+--     local result = {}
+--     result["comboskill"] = combo
+--     result["casthurt"] = casthurt
+--     result["targethurt"] = targethurt
+--     result["castershield"] = castershield
+--     result["targetshield"] = targetshield
+--     result["hurttype"] = hurttype
+--     result["repeat"] = repeatl
+--     result["targethurtshow"] = targethurt / repeatl --飘字体用的伤害：真实伤害除以次数
+--     fightlog(string.joinVar("目标扣血", math.floor(targethurt)) .. string.joinVar("攻击者扣血", math.floor(casthurt)) .. string.joinVar("目标扣护盾", math.floor(targetshield)) .. string.joinVar("攻击者扣护盾", math.floor(castershield)) .. string.joinVar("伤害类型", hurttype) .. string.joinVar("伤害次数", repeatl, true))
+--     result["fightLog"] = FightLog
+--     local next_stage = true
+--     if hurttype == 108 and targethurt == 0 then
+--         next_stage = false
+--     end
+--     result["next_stage"] = next_stage
+--     return result
+-- end
+
+-- function this.PlayerCastDamage(actor, paramMap)
+--     local finalDamage = 0
+--     --todo 不同公式区分
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local config = ConfigDataManager.getTableFirst("cfg_skill_info", "skillID", skillId, "skillLevel", skillLevel)
+--     local damageType = string.tonumber(config.damagetype)
+--     if damageType == 0 then
+--         finalDamage = this.PlayerCastDamageNomal(actor, paramMap)
+--     elseif damageType == 1 then
+--         finalDamage = this.PlayerLinkedDamage(actor, paramMap, config)
+--     end
+--     -- 保底伤害
+--     -- A打B最终伤害<保底伤害时，最终伤害=保底伤害=A最大攻击力*可配置系数
+--     fightlog("A打B最终伤害<保底伤害时，最终伤害=保底伤害=A最大攻击力*可配置系数")
+--     local minDC, maxDC = this.GetDCBySkill(paramMap)
+--     local factor = tonumber(ConfigDataManager.getTableValue("cfg_global", "value", "id", 7000)) / 10000
+--     local minDamage = maxDC * factor
+--     local originFinalDamage = finalDamage
+--     if finalDamage < minDamage then
+--         finalDamage = minDamage
+--     end
+--     fightlog("最终伤害：" .. originFinalDamage .. " 保底伤害：" .. minDamage)
+--     return finalDamage
+-- end
+
+-- -- 走链接公式
+-- function this.PlayerLinkedDamage(actor, paramMap, skillInfoCfg)
+--     local reqTargetId = paramMap["reqtargetid"]
+--     local target = paramMap["target"]
+--     local damageformulaString = skillInfoCfg.damageformula
+--     local damageformulaSplit = string.split(damageformulaString, "|")
+--     local linedNum = tonumber(damageformulaSplit[1])
+--     local shuaiJianStr = damageformulaSplit[2]
+--     local zhuMuBiaoStr = damageformulaSplit[3]
+--     local fuMuBiaoStr = damageformulaSplit[4]
+--     local shuaiJianDamage = this.LinkedCal(actor, shuaiJianStr)
+--     local zhuMuBiaoDamage = this.LinkedCal(actor, zhuMuBiaoStr)
+--     local fuMuBiaoDamage = this.LinkedCal(actor, fuMuBiaoStr)
+--     local targetNum = paramMap.targetnum
+--     fightlog("触发链式伤害=> 副目标数量：" .. (targetNum - 1) .. "链接数量：" .. linedNum .. " 衰减伤害：" .. shuaiJianDamage .. " 主目标伤害：" .. zhuMuBiaoDamage .. " 副目标伤害：" .. fuMuBiaoDamage)
+--     local damage = 0
+--     if targetNum <= 1 then
+--         damage = linedNum * shuaiJianDamage + zhuMuBiaoDamage
+--         fightlog("无副目标，主目标受到伤害：" .. damage)
+--     else
+--         if targetNum - 1 < linedNum then
+--             -- 副目标数量不足链接数量
+--             if target:toString() == tostring(reqTargetId) then
+--                 -- 主目标
+--                 damage = (linedNum - targetNum + 1) * shuaiJianDamage + zhuMuBiaoDamage
+--                 fightlog("副目标数量不足链接数量，主目标受到伤害：" .. damage)
+--             else
+--                 -- 副目标
+--                 damage = fuMuBiaoDamage
+--                 fightlog("副目标数量不足链接数量，副目标受到伤害：" .. damage)
+--             end
+--         else
+--             if target:toString() == tostring(reqTargetId) then
+--                 -- 主目标
+--                 damage = zhuMuBiaoDamage
+--                 fightlog("副目标数量达到链接数量，主目标受到伤害" .. damage)
+--             else
+--                 -- 副目标
+--                 damage = fuMuBiaoDamage
+--                 fightlog("副目标数量达到链接数量，副目标受到伤害" .. damage)
+--             end
+--         end
+--     end
+--     return damage
+-- end
+
+-- function this.LinkedCal(actor, configStr)
+--     local split = string.split(configStr, "#")
+--     local attr1 = tonumber(split[1])
+--     local multiple = tonumber(split[2]) / 10000
+--     local attr2 = tonumber(split[3])
+--     local attr1Name = attrid2name(attr1)
+--     local attr2Name = attrid2name(attr2)
+--     local attr1Value = getattrinfo(actor, attr1Name)
+--     local attr2Value = getattrinfo(actor, attr2Name)
+--     return attr1Value * multiple + attr2Value
+-- end
+
+-- -- 走通用公式
+-- function this.PlayerCastDamageNomal(actor, paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local armor = getattrinfo(target, "armor")
+--     local targetType = paramMap["targettype"]
+--     local armorPenetrate = 0
+--     if targetType == MapObjectType.PLAYER then
+--         armorPenetrate = getattrinfo(caster, "armorPenetrate")
+--     end
+--     local var
+--     if this.IsWuShiFangYu(paramMap) then
+--         fightlog("触发 无视防御")
+--         var = 0
+--     else
+--         var = 1
+--     end
+--     --伤害1=【IF（A幸运一击触发，A幸运攻击，A随机攻击）-（B防御-APVP防御穿透）/2*IF(A无视防御触发，0，1）】+A卓越攻击+A双倍攻击
+--     fightlog("伤害1=【IF（A幸运一击触发，A幸运攻击，A随机攻击）-（B防御-APVP防御穿透）/2*IF(A无视防御触发，0，1）】+A卓越攻击+A双倍攻击")
+--     local damage1 = this.XingYunDamage(paramMap) - math.max(0, (armor - armorPenetrate)) / 2 * var + this.ZhuoYueDamage(paramMap) + this.ShuangBeiYiJi(paramMap)
+--     fightlog("伤害1：" .. damage1)
+--     --伤害2=伤害1 * A使用技能对应技能系数 *（1+A技能伤害加成百分比 - B技能伤害减少百分比）
+--     fightlog("伤害2=伤害1 * A使用技能对应技能系数 *（1+A技能伤害加成百分比 - B技能伤害减少百分比）")
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local cfg_skill_infos = ConfigDataManager.getTable("cfg_skill_info", "skillID", skillId, "skillLevel", skillLevel)
+--     if table.isNullOrEmpty(cfg_skill_infos) then
+--         error(actor, " cfg_skill_info表配置不存在 skillId:", skillId, ",skillLevel:", skillLevel)
+--         return 0
+--     end
+--     local cfg_skill_info = cfg_skill_infos[1]
+--     local powerRate = tonumber(cfg_skill_info["powerrate"])
+--     powerRate = powerRate == nil and 0 or powerRate
+--     powerRate = powerRate / 10000
+--     local freeAtt6 = getattrinfo(caster, "freeAtt6")
+--     local freeAtt7 = getattrinfo(target, "freeAtt7")
+--     local damage2 = damage1 * powerRate * (1 + freeAtt6 - freeAtt7)
+--     fightlog("伤害2：" .. damage2)
+--     --伤害3=伤害2 *（1+A加点伤害加成）*（1+A伤害加成 - B伤害吸收）*（1 - B伤害减少）*【1+IF（B为怪物，A对怪伤害加成，0）*【1+IF（B为玩家，A对玩家伤害加成，0）-IF（B为玩家，B对玩家伤害吸收，0）】*【1-IF（B为玩家，B对玩家伤害减免，0）】
+--     fightlog("伤害3=伤害2 *（1+A加点伤害加成）*（1+A伤害加成 - B伤害吸收）*（1 - B伤害减少）*【1+IF（B为怪物，A对怪伤害加成，0）*【1+IF（B为玩家，A对玩家伤害加成，0）-IF（B为玩家，B对玩家伤害吸收，0）】*【1-IF（B为玩家，B对玩家伤害减免，0）】")
+--     local addtion = this.GetJiaDianAddition(paramMap)
+--     local damageRate = getattrinfo(caster, "damageRate")
+--     local damageAbsorb = getattrinfo(target, "damageAbsorb")
+--     local damageRateDecrement = getattrinfo(target, "damageRateDecrement")
+--     local damage3 = damage2 * (1 + addtion) * (1 + damageRate - damageAbsorb) * (1 - damageRateDecrement)
+--     damage3 = this.physicalSpellDamageReduction(target, damage3, skillId)
+--     damage3 = this.buffDecrement(target, damage3)
+--     if targetType == MapObjectType.MONSTER then
+--         local damageIncreaseRate = getattrinfo(caster, "damageIncreaseRate")
+--         damage3 = damage3 * (1 + damageIncreaseRate)
+--         -- 对怪物造成额外伤害
+--         damage3 = this.monsterExtraDamage(cfg_skill_info["monsterextradamage"], damage3)
+--     end
+--     if targetType == MapObjectType.PLAYER then
+--         local damageBonus = getattrinfo(caster, "damageIncreaseRate")
+--         local damageReductionBonus = getattrinfo(target, "damageReductionBonus")
+--         local absorbDamageToPlayers = getattrinfo(target, "absorbDamageToPlayers")
+--         damage3 = damage3 * (1 + damageBonus - absorbDamageToPlayers) * (1 - damageReductionBonus)
+--         -- 对玩家造成额外伤害
+--         damage3 = this.playerExtraDamage(target, cfg_skill_info["playerextradamage"], damage3)
+--         fightlog("伤害3 对玩家造成额外伤害：" .. damage3)
+--     end
+
+--     damage3 = this.decayDamage(paramMap, damage3, cfg_skill_info["decaydamage"])
+
+--     fightlog("伤害3：" .. damage3)
+--     -- 伤害4=伤害3+A技能伤害加成固定值 - B技能伤害减少固定值
+--     fightlog("伤害4=伤害3+A技能伤害加成固定值+A技能伤害固定值 - B技能伤害减少固定值")
+--     local freeAtt1 = getattrinfo(caster, "freeAtt1")
+--     local freeAtt2 = getattrinfo(target, "freeAtt2")
+--     local fixedDamage = tonumber(cfg_skill_info["fixeddamage"])
+--     if fixedDamage == nil then
+--         fixedDamage = 0
+--     end
+--     local damage4 = damage3 + freeAtt1 + fixedDamage - freeAtt2
+--     fightlog("伤害4：" .. damage4)
+--     local finalDamage = 0
+--     if targetType == MapObjectType.PLAYER then
+--         -- 最终伤害=伤害4+APVP出血伤害固定值-BPVP出血伤害抵抗固定值
+--         fightlog("最终伤害=伤害4+APVP出血伤害固定值-BPVP出血伤害抵抗固定值")
+--         local pvpBleedDamageAdd = getattrinfo(caster, "pvpBleedDamageAdd")
+--         local pvpBleedDamageReduce = getattrinfo(target, "pvpBleedDamageReduce")
+--         finalDamage = damage4 + math.max(0, pvpBleedDamageAdd - pvpBleedDamageReduce)
+--     elseif targetType == MapObjectType.MONSTER then
+--         -- 最终伤害=伤害4+A对怪伤害增加固定值
+--         fightlog("最终伤害=伤害4+A对怪伤害增加固定值")
+--         local pveDamageAdd = getattrinfo(caster, "pveDamageAdd")
+--         finalDamage = damage4 + pveDamageAdd
+--     end
+--     --  处于攻城战副本时，范围伤害修改
+--     finalDamage = this.RolandSeigeAOECal(actor, skillId, finalDamage)
+--     return finalDamage
+-- end
+
+-- --- 未选中的目标 衰减伤害
+-- function this.decayDamage(paramMap, damage3, decayDamage)
+--     if string.isNullOrEmpty(decayDamage) then
+--         return damage3
+--     end
+--     local reqTargetId = paramMap["reqtargetid"]
+--     local target = paramMap["target"]
+--     -- 未选中的目标 衰减伤害
+--     if tonumber(target:toString()) == reqTargetId then
+--         return damage3
+--     end
+--     local originDamage3 = damage3
+--     damage3 = damage3 * (1 - (tonumber(decayDamage) / 10000))
+--     fightlog("伤害3 未选中的目标衰减伤害 原始伤害3：" .. originDamage3 .. "计算后的伤害3：" .. damage3 .. "衰减伤害配置" .. decayDamage)
+--     return damage3
+-- end
+
+-- function this.playerExtraDamage(target, playerExtraDamageStr, damage3)
+--     local playerExtraDamage = string.toIntIntMap(playerExtraDamageStr)
+--     local originDamage3 = damage3
+--     if table.isNullOrEmpty(playerExtraDamage) then
+--         return damage3
+--     end
+--     local currentHp = getbaseinfo(target, "hp")
+--     for type, value in pairs(playerExtraDamage) do
+--         if type == 1 then
+--             -- 百分比
+--             damage3 = damage3 * (1 + (currentHp * value / 10000))
+--         elseif type == 2 then
+--             -- 固定数值
+--             damage3 = damage3 + value
+--         end
+--     end
+--     fightlog("伤害3 对玩家造成额外伤害 原始伤害3：" .. originDamage3 .. "计算后的伤害3：" .. damage3 .. "额外伤害配置" .. playerExtraDamageStr)
+--     return damage3
+-- end
+
+-- function this.monsterExtraDamage(monsterExtraDamageStr, damage3)
+--     local monsterExtraDamage = string.toIntIntMap(monsterExtraDamageStr)
+--     local originDamage3 = damage3
+--     if table.isNullOrEmpty(monsterExtraDamage) then
+--         return damage3
+--     end
+--     for type, value in pairs(monsterExtraDamage) do
+--         if type == 1 then
+--             -- 百分比
+--             damage3 = damage3 * (1 + (value / 10000))
+--         elseif type == 2 then
+--             -- 固定数值
+--             damage3 = damage3 + value
+--         end
+--     end
+--     fightlog("伤害3 对怪物造成额外伤害 原始伤害3：" .. originDamage3 .. "计算后的伤害3：" .. damage3 .. "额外伤害配置" .. monsterExtraDamageStr)
+--     return damage3
+-- end
+
+-- --- 目标属性概率减伤
+-- function this.buffDecrement(actor, damage)
+--     local damageRateDecrement5 = getattrinfo(actor, "damageRateDecrement5")
+--     if damageRateDecrement5 ~= 0 then
+--         local successRate = math.random(0, 100)
+--         if successRate <= 5 then
+--             damage = damage * (1 - damageRateDecrement5)
+--         end
+--     end
+
+--     local damageRateDecrement10 = getattrinfo(actor, "damageRateDecrement10")
+--     if damageRateDecrement10 ~= 0 then
+--         local successRate = math.random(0, 100)
+--         if successRate <= 10 then
+--             damage = damage * (1 - damageRateDecrement10)
+--         end
+--     end
+--     return damage
+-- end
+
+-- --- 物理法术伤害减免
+-- function this.physicalSpellDamageReduction(actor, damage, skillId)
+--     local powerSource = ConfigDataManager.getTableValue("cfg_skill", "powerSource", "id", skillId)
+--     if string.isNullOrEmpty(powerSource) then
+--         return damage
+--     end
+--     powerSource = tonumber(powerSource)
+--     if SkillPowerSource.PHYSICAL == powerSource then
+--         local physicalDamageReduction = getattrinfo(actor, "physicalDamageReduction")
+--         damage = damage * (1 - physicalDamageReduction)
+--         return damage
+--     end
+--     if SkillPowerSource.SPELL == powerSource then
+--         local MagicalDamageReduction = getattrinfo(actor, "MagicalDamageReduction")
+--         damage = damage * (1 - MagicalDamageReduction)
+--         return damage
+--     end
+--     return damage
+-- end
+
+-- function this.RolandSeigeAOECal(actor, skillId, originDamage)
+--     if RolandSeige.IsPlayerInRoland(actor) then
+--         local aoe = tonumber(ConfigDataManager.getTableValue("cfg_skill", "aoe", "id", skillId))
+--         if aoe == 1 then
+--             local rate = tonumber(ConfigDataManager.getTableValue("cfg_repGlobal", "value", "id", RepGlobalConfig.ROLAND_SEIGE.AOE_DAMAGE_FIX))
+--             return originDamage * (rate / 100)
+--         end
+--     end
+--     return originDamage
+-- end
+
+-- function this.MonsterCastDamage(actor, paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local armor = getattrinfo(target, "armor")
+--     --伤害1=【IF（A幸运一击触发，A幸运攻击，A随机攻击）】+A卓越攻击+A双倍攻击
+--     fightlog("伤害1=【IF（A幸运一击触发，A幸运攻击，A随机攻击）】+A卓越攻击+A双倍攻击")
+--     local damage1 = this.XingYunDamage(paramMap) + this.ZhuoYueDamage(paramMap) + this.ShuangBeiYiJi(paramMap)
+--     fightlog("伤害1：" .. damage1)
+--     --伤害2=伤害1 * A使用技能对应技能系数 *（1+A技能伤害加成百分比 - B技能伤害减少百分比）
+--     fightlog("伤害2=伤害1 * A使用技能对应技能系数 *（1+A技能伤害加成百分比 - B技能伤害减少百分比）")
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local powerRate = tonumber(ConfigDataManager.getTableValue("cfg_skill_info", "powerRate", "skillID", skillId, "skillLevel", skillLevel))
+--     powerRate = powerRate == nil and 0 or powerRate
+--     powerRate = powerRate / 10000
+--     local freeAtt6 = getattrinfo(caster, "freeAtt6")
+--     local freeAtt7 = getattrinfo(target, "freeAtt7")
+--     local damage2 = damage1 * powerRate * (1 + freeAtt6 - freeAtt7)
+--     fightlog("伤害2：" .. damage2)
+--     --伤害3=伤害2 *（1+A加点伤害加成）*（1+A伤害加成 - B伤害吸收）*（1 - B伤害减少）*（1 - B对怪伤害减少百分比）*【1 - IF（受多只怪物攻击，B多怪减伤百分比，0）】
+--     fightlog("伤害3=伤害2 *（1+A加点伤害加成）*（1+A伤害加成 - B伤害吸收）*（1 - B伤害减少）*（1 - B对怪伤害减少百分比）*【1 - IF（受多只怪物攻击，B多怪减伤百分比，0）】")
+--     local addtion = this.GetJiaDianAddition(paramMap)
+--     local damageRate = getattrinfo(caster, "damageRate")
+--     local damageAbsorb = getattrinfo(target, "damageAbsorb")
+--     local damageRateDecrement = getattrinfo(target, "damageRateDecrement")
+--     local damageReceiveDecrement = getattrinfo(target, "damageReceiveDecrement")
+--     local damage3 = damage2 * (1 + addtion) * (1 + damageRate - damageAbsorb) * (1 - damageRateDecrement) * (1 - damageReceiveDecrement)
+--     damage3 = this.physicalSpellDamageReduction(target, damage3, skillId)
+--     damage3 = this.buffDecrement(target, damage3)
+--     if this.IfAttackedMutipleMonster(paramMap) then
+--         local freeAtt9 = getattrinfo(target, "freeAtt9")
+--         damage3 = damage3 * (1 - freeAtt9)
+--     end
+--     local targetType = paramMap["targettype"]
+--     if targetType == MapObjectType.PLAYER then
+--         -- 对玩家造成额外伤害
+--         local playerExtraDamageStr = ConfigDataManager.getTableValue("cfg_skill_info", "playerextradamage", "skillID", skillId, "skillLevel", skillLevel)
+--         damage3 = this.playerExtraDamage(target, playerExtraDamageStr, damage3)
+--     end
+--     fightlog("伤害3：" .. damage3)
+--     -- 伤害4=伤害3 - B防御/2*IF(A无视防御触发，0，1）+A技能伤害加成固定值 - B技能伤害减少固定值
+--     fightlog("伤害4=伤害3 - B防御/2*IF(A无视防御触发，0，1）+A技能伤害加成固定值 - B技能伤害减少固定值")
+--     if this.IsWuShiFangYu(paramMap) == false then
+--         damage3 = damage3 - armor / 2
+--     end
+--     local freeAtt1 = getattrinfo(caster, "freeAtt1")
+--     local freeAtt2 = getattrinfo(target, "freeAtt2")
+--     local damage4 = damage3 + freeAtt1 - freeAtt2
+--     fightlog("伤害4：" .. damage4)
+--     -- 最终伤害=伤害4-B对怪伤害减少固定值
+--     fightlog("最终伤害=伤害4-B对怪伤害减少固定值")
+--     local pveDamageReduce = getattrinfo(target, "pveDamageReduce")
+--     local finalDamage = damage4 - pveDamageReduce
+--     --todo 保底伤害 怪物打玩家最终伤害<保底伤害时，最终伤害=保底伤害（怪物属性表配置）
+--     fightlog("怪物打玩家最终伤害<保底伤害时，最终伤害=保底伤害（怪物属性表配置）")
+--     local monInfo = getmonsterinfo(caster)
+--     local monsterConfig = monInfo["cfgid"]
+--     local minDamage = tonumber(ConfigDataManager.getTableValue("cfg_monster", "guaranteedDamage", "id", monsterConfig))
+--     if finalDamage < minDamage then
+--         finalDamage = minDamage
+--     end
+--     fightlog("最终伤害：" .. finalDamage .. "  保底伤害：" .. minDamage)
+--     return finalDamage
+-- end
+
+-- -- 元素伤害
+-- function this.ElementalHurt(paramMap)
+--     local caster = paramMap.caster
+--     local target = paramMap.target
+--     local hurtTypeKey
+--     -- 圣光
+--     local shengGuangDamage = 0
+--     local HolyUnMissRate = getattrinfo(caster, "HolyUnMissRate")
+--     local HolyResistUnMissRate = getattrinfo(target, "HolyResistUnMissRate")
+--     local HolyAttack = getattrinfo(caster, "HolyAttack")
+--     if not this.SelectRate(math.max(0, HolyResistUnMissRate - HolyUnMissRate)) and HolyAttack > 0 then
+--         local HolyDamageIncreased = getattrinfo(caster, "HolyDamageIncreased")
+--         local HolyDamageIncreasedBonus = getattrinfo(caster, "HolyDamageIncreasedBonus")
+--         local HolyDamageReduction = getattrinfo(target, "HolyDamageReduction")
+--         local HolyDamageReductionBonus = getattrinfo(target, "HolyDamageReductionBonus")
+--         shengGuangDamage = HolyAttack * (1 + HolyDamageIncreasedBonus - HolyDamageReductionBonus) + HolyDamageIncreased - HolyDamageReduction
+--         shengGuangDamage = math.max(shengGuangDamage, 0)
+--         if shengGuangDamage > 0 then
+--             hurtTypeKey = "1"
+--         else
+--             hurtTypeKey = "0"
+--         end
+--     else
+--         hurtTypeKey = "0"
+--     end
+--     -- 黑暗
+--     local heiAnDamage = 0
+--     local DarkUnMissRate = getattrinfo(caster, "DarkUnMissRate")
+--     local DarkResistUnMissRate = getattrinfo(target, "DarkResistUnMissRate")
+--     local DarkAttack = getattrinfo(caster, "DarkAttack")
+--     if not this.SelectRate(math.max(0, DarkResistUnMissRate - DarkUnMissRate)) and DarkAttack > 0 then
+--         local DarkDamageIncreased = getattrinfo(caster, "DarkDamageIncreased")
+--         local DarkDamageIncreasedBonus = getattrinfo(caster, "DarkDamageIncreasedBonus")
+--         local DarkDamageReduction = getattrinfo(target, "DarkDamageReduction")
+--         local DarkDamageReductionBonus = getattrinfo(target, "DarkDamageReductionBonus")
+--         heiAnDamage = DarkAttack * (1 + DarkDamageIncreasedBonus - DarkDamageReductionBonus) + DarkDamageIncreased - DarkDamageReduction
+--         heiAnDamage = math.max(heiAnDamage, 0)
+--         if heiAnDamage > 0 then
+--             hurtTypeKey = hurtTypeKey .. "1"
+--         else
+--             hurtTypeKey = hurtTypeKey .. "0"
+--         end
+--     else
+--         hurtTypeKey = hurtTypeKey .. "0"
+--     end
+--     -- 雷电
+--     local leiDianDamage = 0
+--     local ThunderUnMissRate = getattrinfo(caster, "ThunderUnMissRate")
+--     local ThunderResistUnMissRate = getattrinfo(target, "ThunderResistUnMissRate")
+--     local ThunderAttack = getattrinfo(caster, "ThunderAttack")
+--     if not this.SelectRate(math.max(0, ThunderResistUnMissRate - ThunderUnMissRate)) and ThunderAttack > 0 then
+--         local ThunderDamageIncreased = getattrinfo(caster, "ThunderDamageIncreased")
+--         local ThunderDamageIncreasedBonus = getattrinfo(caster, "ThunderDamageIncreasedBonus")
+--         local ThunderDamageReduction = getattrinfo(target, "ThunderDamageReduction")
+--         local ThunderDamageReductionBonus = getattrinfo(target, "ThunderDamageReductionBonus")
+--         leiDianDamage = ThunderAttack * (1 + ThunderDamageIncreasedBonus - ThunderDamageReductionBonus) + ThunderDamageIncreased - ThunderDamageReduction
+--         leiDianDamage = math.max(leiDianDamage, 0)
+--         if leiDianDamage > 0 then
+--             hurtTypeKey = hurtTypeKey .. "1"
+--         else
+--             hurtTypeKey = hurtTypeKey .. "0"
+--         end
+--     else
+--         hurtTypeKey = hurtTypeKey .. "0"
+--     end
+--     -- 风暴
+--     local fengBaoDmage = 0
+--     local StormUnMissRate = getattrinfo(caster, "StormUnMissRate")
+--     local StormResistUnMissRate = getattrinfo(target, "StormResistUnMissRate")
+--     local StormAttack = getattrinfo(caster, "StormAttack")
+--     if not this.SelectRate(math.max(0, StormResistUnMissRate - StormUnMissRate)) and StormAttack > 0 then
+--         local StormDamageIncreased = getattrinfo(caster, "StormDamageIncreased")
+--         local StormDamageIncreasedBonus = getattrinfo(caster, "StormDamageIncreasedBonus")
+--         local StormDamageReduction = getattrinfo(target, "StormDamageReduction")
+--         local StormDamageReductionBonus = getattrinfo(target, "StormDamageReductionBonus")
+--         fengBaoDmage = StormAttack * (1 + StormDamageIncreasedBonus - StormDamageReductionBonus) + StormDamageIncreased - StormDamageReduction
+--         fengBaoDmage = math.max(fengBaoDmage, 0)
+--         if fengBaoDmage > 0 then
+--             hurtTypeKey = hurtTypeKey .. "1"
+--         else
+--             hurtTypeKey = hurtTypeKey .. "0"
+--         end
+--     else
+--         hurtTypeKey = hurtTypeKey .. "0"
+--     end
+--     local totalDamage = shengGuangDamage + heiAnDamage + leiDianDamage + fengBaoDmage
+--     totalDamage = math.max(0, totalDamage)
+--     --  伤害类型（飘字）
+--     local hurtType = FightDamageTypeCache.GetElementalHurtType(caster, hurtTypeKey)
+--     return totalDamage, hurtType
+-- end
+
+-- function this.XingYunDamage(paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local minDC, maxDC = this.GetDCBySkill(paramMap)
+--     if this.IsXingYunYiJi(paramMap) then
+--         fightlog("触发 幸运一击")
+--         --A幸运攻击=A最大攻击 *（1+A幸运一击伤害加成 - B幸运一击伤害减少）
+--         local criticalDamageBonus = getattrinfo(caster, "criticalDamageBonus")
+--         local criticalDamageReducationBonus = getattrinfo(target, "criticalDamageReducationBonus")
+--         return maxDC * (1 + criticalDamageBonus - criticalDamageReducationBonus)
+--     else
+--         return math.randomFloat(minDC, maxDC)
+--     end
+-- end
+
+-- function this.ZhuoYueDamage(paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local minDC, maxDC = this.GetDCBySkill(paramMap)
+--     --A卓越攻击=A随机攻击 * IF（A卓越一击触发，A卓越一击伤害系数，0）*（1+A卓越一击伤害加成 - B卓越一击伤害减少）
+--     local coefficient
+--     if this.IsZhuoYueYiJi(paramMap) then
+--         fightlog("触发 卓越一击")
+--         coefficient = tonumber(ConfigDataManager.getTableValue("cfg_skill_info", "excellentRate", "skillID", skillId, "skillLevel", skillLevel))
+--         if coefficient == nil then
+--             coefficient = 0
+--         else
+--             coefficient = coefficient / 10000
+--         end
+--     else
+--         coefficient = 0
+--     end
+--     local excellentDamageBonus = getattrinfo(caster, "excellentDamageBonus")
+--     local excellentDamageReducationBonus = getattrinfo(target, "excellentDamageReducationBonus")
+--     return math.randomFloat(minDC, maxDC) * coefficient * (1 + excellentDamageBonus - excellentDamageReducationBonus)
+-- end
+
+-- function this.ShuangBeiYiJi(paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local minDC, maxDC = this.GetDCBySkill(paramMap)
+--     --A双倍攻击=A随机攻击 * IF（A双倍一击触发，1，0）*（1+A双倍一击伤害加成 - B双倍一击伤害减少）
+--     local coefficient
+--     if this.IsShuangBeiYiJi(paramMap) then
+--         fightlog("触发 双倍一击")
+--         coefficient = 1
+--     else
+--         coefficient = 0
+--     end
+--     local doubleDamageBonus = getattrinfo(caster, "doubleDamageBonus")
+--     local doubleDamageReducationBonus = getattrinfo(target, "doubleDamageReducationBonus")
+--     return math.randomFloat(minDC, maxDC) * coefficient * (1 + doubleDamageBonus - doubleDamageReducationBonus)
+-- end
+
+-- function this.IfAttackedMutipleMonster(paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local castType = paramMap["castertype"]
+--     local targetType = paramMap["targettype"]
+--     if castType ~= 2 or targetType ~= 1 then
+--         return false
+--     end
+--     local monsterId = caster:toString()
+--     local lastDataList = getplaydef(target, LastAttakedByMonster)
+--     local nowMillis = getbaseinfo("now")
+--     if type(lastDataList) ~= "table" then
+--         setplaydef(target, LastAttakedByMonster, { monsterId, nowMillis })
+--         return false
+--     end
+--     local lastMonsterId = lastDataList[1]
+--     local lastMillis = lastDataList[2]
+--     local duration = nowMillis - lastMillis
+--     if lastMonsterId == monsterId or duration < 1000 then
+--         setplaydef(target, LastAttakedByMonster, { monsterId, nowMillis })
+--         return false
+--     end
+--     setplaydef(target, LastAttakedByMonster, { monsterId, nowMillis })
+--     return true
+-- end
+
+-- function this.GetJiaDianAddition(paramMap)
+--     local caster = paramMap["caster"]
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local injuryType = tonumber(ConfigDataManager.getTableValue("cfg_skill_info", "injuryType", "skillID", skillId, "skillLevel", skillLevel))
+--     if injuryType == 1 then
+--         local addtion = getattrinfo(caster, "PhysicalDamage")
+--         return addtion
+--     elseif injuryType == 2 then
+--         local addtion = getattrinfo(caster, "MagicDamage")
+--         return addtion
+--     elseif injuryType == 3 then
+--         local addtion = getattrinfo(caster, "freeAtt8")
+--         return addtion
+--     else
+--         local maxDC = getattrinfo(caster, "maxDC")
+--         local maxMC = getattrinfo(caster, "maxMC")
+--         local maxCurDC = getattrinfo(caster, "maximumCurseAttackPower")
+--         if maxDC >= maxMC and maxDC >= maxCurDC then
+--             local addtion = getattrinfo(caster, "PhysicalDamage")
+--             return addtion
+--         elseif maxMC >= maxDC and maxMC >= maxCurDC then
+--             local addtion = getattrinfo(caster, "MagicDamage")
+--             return addtion
+--         elseif maxCurDC >= maxDC and maxCurDC >= maxMC then
+--             local addtion = getattrinfo(caster, "freeAtt8")
+--             return addtion
+--         end
+--         error("不存在的伤害类型" .. injuryType .. "skillId:" .. skillId)
+--         return 0
+--     end
+-- end
+
+-- function this.GetDCBySkill(paramMap)
+--     local caster = paramMap["caster"]
+--     local skillId = paramMap["skillid"]
+--     local skillLevel = paramMap["skilllevel"]
+--     local injuryType = tonumber(ConfigDataManager.getTableValue("cfg_skill_info", "injuryType", "skillID", skillId, "skillLevel", skillLevel))
+--     if injuryType == 1 then
+--         local maxDC = getattrinfo(caster, "maxDC")
+--         local minDC = getattrinfo(caster, "minDC")
+--         return minDC, maxDC
+--     elseif injuryType == 2 then
+--         local maxMC = getattrinfo(caster, "maxMC")
+--         local minMC = getattrinfo(caster, "minMC")
+--         return minMC, maxMC
+--     elseif injuryType == 3 then
+--         local maxMC = getattrinfo(caster, "maximumCurseAttackPower")
+--         local minMC = getattrinfo(caster, "minimumCurseAttackPower")
+--         return minMC, maxMC
+--     else
+--         local maxDC = getattrinfo(caster, "maxDC")
+--         local maxMC = getattrinfo(caster, "maxMC")
+--         local maxCurDC = getattrinfo(caster, "maximumCurseAttackPower")
+--         if maxDC >= maxMC and maxDC >= maxCurDC then
+--             local minDC = getattrinfo(caster, "minDC")
+--             return minDC, maxDC
+--         elseif maxMC >= maxDC and maxMC >= maxCurDC then
+--             local minMC = getattrinfo(caster, "minMC")
+--             return minMC, maxMC
+--         elseif maxCurDC >= maxDC and maxCurDC >= maxMC then
+--             local minCurDC = getattrinfo(caster, "minimumCurseAttackPower")
+--             return minCurDC, maxCurDC
+--         end
+--         return 0, 0
+--     end
+-- end
+
+-- function this.CanHit(paramMap)
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local castType = paramMap["castertype"]
+--     local targetType = paramMap["targettype"]
+--     local hitRate
+--     local missRate
+--     if castType == 2 or targetType == 2 then
+--         --pve
+--         hitRate = getattrinfo(caster, "hitRate")
+--         missRate = getattrinfo(target, "missRate")
+--     else
+--         --pvp
+--         hitRate = getattrinfo(caster, "pvpattackRate")
+--         missRate = getattrinfo(target, "eraRate")
+--     end
+--     local basicMiss = getattrinfo(target, "freeAtt10")
+--     --todo 命中概率=1 - (1 - 1 / ((B防御率 - A攻击率) / (B防御率 + A攻击率) * 0.8 + 1)) - B基础闪避率
+--     fightlog("命中概率=1 - (1 - 1 / ((B防御率 - A攻击率) / (B防御率 + A攻击率) * 0.8 + 1)) - B基础闪避率")
+--     fightlog("A攻击率：" .. hitRate .. " B防御率：" .. missRate .. "  B基础闪避率：" .. basicMiss)
+--     local probability
+--     if missRate + hitRate == 0 then
+--         probability = 1
+--     else
+--         probability = 1 - (1 - 1 / ((missRate - hitRate) / (missRate + hitRate) * 0.8 + 1)) - basicMiss
+--     end
+--     local hit = this.SelectRate(probability)
+--     fightlog("命中概率：" .. string.numToPercent(probability) .. "  命中：" .. tostring(hit))
+--     return hit
+-- end
+
+-- function this.IsXingYunYiJi(paramMap)
+--     --A幸运一击触发概率=A幸运一击概率 *（1 - B幸运一击概率抵抗）
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local criticalDamageChance = getattrinfo(caster, "criticalDamageChance")
+--     local criticalDamageResistanceChance = getattrinfo(target, "criticalDamageResistanceChance")
+--     local probability = criticalDamageChance * (1 - criticalDamageResistanceChance)
+--     local result = this.SelectRate(probability)
+--     if result then
+--         local resultType = getplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE)
+--         resultType[HurtTypeDefKeys.YI_BAN] = "0"
+--         resultType[HurtTypeDefKeys.XING_YUN] = "1"
+--         setplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE, resultType)
+--     end
+--     return result
+-- end
+
+-- function this.IsZhuoYueYiJi(paramMap)
+--     --A卓越一击触发概率=A卓越一击概率*（1-B卓越一击概率抵抗）
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local excellentDamageChance = getattrinfo(caster, "excellentDamageChance")
+--     local excellentDamageResistanceChance = getattrinfo(target, "excellentDamageResistanceChance")
+--     local probability = excellentDamageChance * (1 - excellentDamageResistanceChance)
+--     local result = this.SelectRate(probability)
+--     if result then
+--         local resultType = getplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE)
+--         resultType[HurtTypeDefKeys.YI_BAN] = "0"
+--         resultType[HurtTypeDefKeys.ZHUO_YUE] = "1"
+--         setplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE, resultType)
+--     end
+--     return result
+-- end
+
+-- function this.IsWuShiFangYu(paramMap)
+--     --A无视防御概率=A无视防御率 *（1 - B无视防御抵抗）
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local unMissRate = getattrinfo(caster, "unMissRate")
+--     local unMissResistanceRate = getattrinfo(target, "unMissResistanceRate")
+--     local probability = unMissRate * (1 - unMissResistanceRate)
+--     local result = this.SelectRate(probability)
+--     if result then
+--         local resultType = getplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE)
+--         resultType[HurtTypeDefKeys.YI_BAN] = "0"
+--         resultType[HurtTypeDefKeys.WU_SHI] = "1"
+--         setplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE, resultType)
+--     end
+--     return result
+-- end
+
+-- function this.IsShuangBeiYiJi(paramMap)
+--     --A双倍一击触发概率=A双倍一击概率 *（1 - B双倍一击概率抵抗）
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local doubleDamageChance = getattrinfo(caster, "doubleDamageChance")
+--     local doubleDamageResistanceChance = getattrinfo(target, "doubleDamageResistanceChance")
+--     local probability = doubleDamageChance * (1 - doubleDamageResistanceChance)
+--     local result = this.SelectRate(probability)
+--     if result then
+--         local resultType = getplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE)
+--         resultType[HurtTypeDefKeys.YI_BAN] = "0"
+--         resultType[HurtTypeDefKeys.SHUANG_BEI] = "1"
+--         setplaydef(caster, PlayerDefKey.PLAYER_FIGHT_HURT_TYPE, resultType)
+--     end
+--     return result
+-- end
+
+-- function this.SelectRate(probability)
+--     local randomNum = math.random()
+--     if randomNum <= probability then
+--         return true
+--     else
+--         return false
+--     end
+-- end
+
+-- function this.AfterCalcuDamage(paramMap, finalDamage)
+--     -- 如果攻击的怪物是秘境副本的BOSS则累加记录实时伤害
+--     local caster = paramMap["caster"]
+--     local target = paramMap["target"]
+--     local castType = paramMap["castertype"]
+--     local targetType = paramMap["targettype"]
+--     if castType == 1 and targetType == 2 then
+--         local monsterId = paramMap["monsterid"]
+--         -- 保存战盟boos造成伤害的玩家
+--         WarAlliance.savePlayerInvloveInfo(caster, target, finalDamage, monsterId)
+--     end
+-- end
+
+-- function fightlog(desc)
+--     table.insert(FightLog, desc .. "\n")
+-- end
+
+-- -- 服务器启动调用，缓存表数据
+-- function FightDamageTypeCache.Cache()
+--     local normalCache = {}
+--     local elementalCache = {}
+--     local tableList = ConfigDataManager.getList("cfg_damage_number")
+--     for index, valueMap in ipairs(tableList) do
+--         local id = valueMap["id"]
+--         local attributeA = valueMap["attributea"]
+--         local attributeB = valueMap["attributeb"]
+--         local attributeC = valueMap["attributec"]
+--         local attributeD = valueMap["attributed"]
+--         local attributeE = valueMap["attributee"]
+--         local keyString = attributeA .. attributeB .. attributeC .. attributeD .. attributeE
+--         if string.contains(keyString, "1") then
+--             if normalCache[keyString] ~= nil then
+--                 gameDebug.assertPrint(false, "cfg_damage_number缓存战斗飘字类型重复,id:" .. id .. ";key:" .. keyString)
+--             end
+--             normalCache[keyString] = id
+--         end
+--         -- 元素伤害
+--         local attributeF = valueMap["attributef"]
+--         local attributeG = valueMap["attributeg"]
+--         local attributeH = valueMap["attributeh"]
+--         local attributeI = valueMap["attributei"]
+--         local elementalKey = attributeF .. attributeG .. attributeH .. attributeI
+--         if string.contains(elementalKey, "1") then
+--             if elementalCache[elementalKey] ~= nil then
+--                 gameDebug.assertPrint(false, "cfg_damage_number缓存元素战斗飘字类型重复,id:" .. ";key:" .. elementalKey)
+--             end
+--             elementalCache[elementalKey] = id
+--         end
+--     end
+--     setsysvar(SystemVarConst.NORMAL_DAMAGE_TYPE_CACHE, normalCache)
+--     setsysvar(SystemVarConst.ELEMENTAL_DAMAGE_TYPE_CACHE, elementalCache)
+-- end

@@ -1,0 +1,1512 @@
+-- Trade = {}
+-- local this = {}
+-- MINUTE_SECOND = 60 * 1000
+-- TRADE_WAY = {
+--     GARD_BOSS = 1, -- 战盟boss
+--     SIEGE = 2, -- 攻城战
+--     UNION = 3, -- 战盟
+--     WORLD_UP = 4, -- 世界上架
+--     SYSTEM_UP = 5, -- 系统上架
+--     UNION_FLOW = 6, -- 战盟流拍
+--     STALL = 7; -- 面对面商店
+-- }
+
+-- TRADE_GOODS_TIPS = {
+--     SHOW = 1, -- 显示tips
+--     NO_SHOW = 0, -- 不显示
+-- }
+
+-- TRADE_RECORD_TYPE = {
+--     PREORDER = 0, -- 预购
+--     PURCHASE = 1, -- 购买
+--     SALE = 2, -- 售出
+-- }
+
+-- SORT_TYPE = {
+--     DEFAULT = 0, --默认
+--     ASC_BY_TIME = 1, --按照时间升序
+--     DESC_BY_TIME = 2, --按照时间降序
+--     ASC_BY_PRICE = 3, --按照价格升序
+--     DESC_BY_PRICE = 4, --按照价格降序
+-- }
+
+-- TRADE_CAPACITY_GLOBAL_ID = 8001
+-- local TRADE_GOODS_RECORD_UPPER_LIMIT = 80
+
+-- SYS_TRADE_WORLD_GOODS = "R$tradeWorldGoods"
+-- ROLE_TRADE_WORLD_GOODS = "T$tradeWorldGoods"
+-- ROLE_TRADE_GOODS_RECORD = "T$tradeWorldRecord"
+-- ROLE_TRADE_PRE_GOODS = "T$tradeWorldPre"
+
+
+
+-- local LogRecord = {}
+-- function LogRecord.new()
+--     local log = {}
+--     log.type = "" -- 上架 或 购买
+--     log.goodsName = "" -- 商品名字
+--     log.totalPrice = 0 -- 交易价格
+--     log.count = 0 -- 交易数量
+--     return log
+-- end
+
+-- function LogRecord.log(actor,log)
+--     local recharge = RechargeRecord.getTotalMoney(actor)
+--     local level = getbaseinfo(actor,"level")
+--     local time = getbaseinfo(actor,"nowsec")
+--     local timeToDate = TimeUtil.timeFormat(time)
+--     local roleName = getbaseinfo(actor,"rolename")
+--     local content = roleName .. log.type .. log.goodsName .. "数量为：" .. log.count .. "，总价格为：" .. log.totalPrice .. "，玩家充值：" .. recharge .. "，玩家等级为：" .. level .. "，当前时间是：" .. timeToDate
+--     logop(actor,LogOpType.TRADE, content)
+--     info(content)
+-- end
+
+
+-- ---@class Trade.GoodInfo 世界商品信息
+-- ---@field itemcfgid number 商品配置id
+-- ---@field itemid number 商品id
+-- ---@field itemname string 商品名字
+-- ---@field entrysize number 词条属性数量
+-- ---@field entryNums table 筛选词条编号
+-- ---@field garde number 品质
+-- ---@field ownid string 商品所属人id
+-- ---@field count number 商品数量
+-- ---@field unitPrice number 商品单价
+-- ---@field totalprice number 商品总价
+-- ---@field job table 职业
+-- ---@field cointype number 货币类型
+-- ---@field publicitytime number 公示时间
+-- ---@field upshelfduration number 竞拍时间
+-- ---@field tax table 税率
+-- ---@field subtype number 商品子类型
+-- ---@field type number 商量类型
+-- ---@field peroreder table 预购人员id
+-- ---@field publicitystatue boolean 是不是公示期间
+-- ---@field listingtime number 上架时间
+
+-- --获得数据
+-- function Trade.getSysTradeWorldGoods(actor)
+--     local data
+--     if actor == nil then
+--         data = getsysvar(SYS_TRADE_WORLD_GOODS)
+--     else
+--         data = getsysvar(actor, SYS_TRADE_WORLD_GOODS)
+--     end
+--     return data
+-- end
+
+-- --是否在跨服地图中
+-- function this.isCrossMap()
+--     return getbaseinfo("servertype") == 2
+-- end
+
+-- -- 世界交易行上架
+-- -- msgData 中要包含 itemcfgid,bagindex,count,listingprice,totalprice,id
+-- function Trade.worldTradeListing(actor, msgData)
+--     callonserial(actor, "trade_world_trade_listing", msgData)
+-- end
+
+-- function trade_world_trade_listing(actor, msgData)
+--     local isOpen, _ = Privilege.hasPrivilege(actor, Privilege.PrivilegeType.TRADE_SALE)
+--     if not isOpen then
+--        sendluamsg(actor, LuaMessageIdToClient.RES_NO_SPEC_PRIVILEGE, Privilege.PrivilegeType.TRADE_SALE)
+--        return
+--     end
+
+--     if not PKSystem.canTrade(actor) then
+--         error("PK值过高，交易行部分功能暂停使用", actor:toString())
+--         return
+--     end
+
+--     local itemCfgId = msgData["itemcfgid"]
+--     local stallInfo = ConfigDataManager.getTable("cfg_stall", "id", itemCfgId, "way", TRADE_WAY.WORLD_UP)
+--     if not stallInfo and table.isEmpty(stallInfo) then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT383)
+--         return
+--     end
+--     local listingCount = tonumber(msgData["count"])
+--     if listingCount <= 0 or tonumber(msgData["listingprice"]) <= 0 then
+--         tipinfo(actor,"请正常上架商品")
+--         return
+--     end
+
+--     local have = this.checkCapacity(actor)
+--     if not have then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT370)
+--         return
+--     end
+--     local itemStall = stallInfo[1]
+--     local jobTable = itemStall["job"]
+--     if string.isNullOrEmpty(jobTable) then
+--         jobTable = { 0 }
+--     elseif jobTable then
+--         jobTable = string.split(jobTable, "#")
+--     end
+--     local money = msgData["money"]
+--     local moneytype = string.splitInt(itemStall["money"], "#")
+--     if string.isNullOrEmpty(moneytype) or not table.contains(moneytype, tonumber(money))then
+--         tipinfo(actor,"交易货币类型不合法")
+--         return
+--     end
+--     local ready = itemStall["ready"]
+--     local readyTime = tonumber(ready) * MINUTE_SECOND
+--     local time = itemStall["time"]
+--     local shellTime = tonumber(time) * MINUTE_SECOND
+--     local tax = itemStall["tax"]
+--     local taxTable = {}
+--     if not tax then
+--         taxTable = { 0, 0 }
+--     elseif tax then
+--         local taxInfo = string.split(tax, "|")
+--         for index, value in ipairs(taxInfo) do
+--             local taxDetail = string.split(value, "#")
+--             table.insert(taxTable, tonumber(taxDetail[2]))
+--         end
+--     end
+--     local subtypeItem = tonumber(itemStall["subtype"])
+--     local typeItem = tonumber(itemStall["type"])
+--     local minNumber = tonumber(itemStall["minnumber"]) or 1
+--     if tonumber(msgData["count"]) % minNumber ~= 0 then
+--         return
+--     end
+--     local entryCount = 0
+--     local entries = {}
+--     local entryNums = {}
+--     local luaExtdata = {}
+--     local garde = 0
+--     if msgData["id"] ~= 0 then
+--         local itemInfo = getotheritemattinfo(actor,1,actor:toString(),msgData["id"])
+--         luaExtdata = EquipAndAppear.getItemExtData(actor, msgData["id"])
+--         if table.isNullOrEmpty(itemInfo) then
+--             error("交易行上架，获取道具细信息失败，道具id:",msgData["id"])
+--             noticeTip.noticeinfo(actor, StringIdConst.TEXT371)
+--             return
+--         end
+--         local itemCount = itemInfo["itemcount"] or 1
+--         if minNumber > itemCount then
+--             tipinfo(actor,"当前位置的道具数量小于交易行上架最小数量")
+--             -- noticeTip.noticeinfo(actor, StringIdConst.TEXT371)
+--             return
+--         end
+
+--         entries = itemInfo["entries"]
+--         if not table.isNullOrEmpty(entries) then
+--             entryCount = table.count(entries)
+--             for _, e in pairs(entries) do
+--                 local stallNum = string.tonumber(ConfigDataManager.getTableValue("cfg_equip_att", "stallNum", "id", e.entryid))
+--                 if stallNum > 0 and not table.contains(entryNums, stallNum) then
+--                     table.insert(entryNums, stallNum)
+--                 end
+--             end
+--         end
+--         garde = itemInfo["garde"] or 0
+--     else
+--         local itemCount = getbagitemcountbyid(actor, tonumber(msgData["itemcfgid"]));
+--         if minNumber > itemCount then
+--             tipinfo(actor,"当前位置的道具数量小于交易行上架最小数量")
+--             -- noticeTip.noticeinfo(actor, StringIdConst.TEXT371)
+--             return
+--         end
+--     end
+
+--     local listingItem = {}
+--     local itemCfgItem = tonumber(msgData["itemcfgid"])
+--     listingItem[itemCfgItem] = listingCount
+--     if not Bag.checkCostMap(actor, listingItem) then
+--         tipinfo(actor,"道具不足")
+--         return
+--     end
+
+--     info(actor:toString(),"上架道具信息",msgData)
+--     local result = bagtoshell(actor, msgData, 1)
+--     local reason = result["reason"]
+--     if reason ~= 0 then
+--         info(actor:toString(),"上架",itemStall["name"],"失败", reason)
+--         tipinfo(actor, "上架商品失败");
+--         return
+--     end
+--     if msgData["id"] == 0 then
+--         msgData["id"] = result["itemid"]
+--     end
+--     --从返回的数据获取count
+--     listingCount = result["count"]
+--     ---type Trade.GoodInfo 世界商品信息
+--     local goods = {
+--         itemcfgid = itemCfgItem,
+--         itemid = tonumber(msgData["id"]),
+--         garde = garde,
+--         itemname = itemStall["name"],
+--         entrysize = entryCount,
+--         entries = entries,
+--         appendlv = luaExtdata.appendlv or 0,
+--         strengthlv = luaExtdata.strengthlv or 0,
+--         entryNums = entryNums,
+--         ownid = actor:toString(),
+--         count           = listingCount,
+--         unitPrice       = tonumber(msgData["listingprice"]),
+--         totalprice      = math.round(tonumber(msgData["listingprice"]) * listingCount / minNumber),
+--         job             = jobTable,
+--         cointype = money,
+--         publicitytime = readyTime,
+--         upshelfduration = shellTime,
+--         tax = taxTable,
+--         subtype         = subtypeItem,
+--         type = typeItem,
+--         peroreder = nil,
+--         publicitystatue = true,
+--         listingtime = getbaseinfo(actor,"now")
+--     }
+--     this.worldGoodsSave(actor, goods)
+--     --- 保存埋点信息
+--     local log = LogRecord.new()
+--     log.type = "上架"
+--     log.goodsName = itemStall["name"]
+--     log.totalPrice = math.round(tonumber(msgData["listingprice"]) * tonumber(msgData["count"]) / minNumber)
+--     log.count = tonumber(msgData["count"])
+
+--     LogRecord.log(actor,log)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_LISTING_GOODS, true)
+--     TaskHandler.TriggerTaskGoal(actor, TaskTargetType.TRADE_LINE_UP_GOODS, itemCfgId)
+-- end
+
+-- -- 保存上架商品
+-- function this.worldGoodsSave(actor, goods)
+--     info("上架商品信息",goods)
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if not allWorldGoods then
+--         allWorldGoods = {}
+--     end
+--     local roleAllGoods = allWorldGoods[actor:toString()]
+
+--     if not roleAllGoods then
+--         roleAllGoods = {}
+--         allWorldGoods[actor:toString()] = roleAllGoods
+--     end
+--     roleAllGoods[tostring(goods.itemid)] = goods
+--     setsysvar(actor, SYS_TRADE_WORLD_GOODS, allWorldGoods)
+--     info("全服玩家全部数据",allWorldGoods)
+-- end
+
+
+-- -- 交易行检查格子是否够用
+-- function this.checkCapacity(actor)
+--     local capacity = ConfigDataManager.getTableValue("cfg_global", "value", "id", TRADE_CAPACITY_GLOBAL_ID)
+--     local is_has, count = Privilege.hasPrivilege(actor, Privilege.PrivilegeType.TRADE_LINE_UP_COUNT_INCREASE)
+--     capacity = capacity + count
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if not allWorldGoods then
+--         return true
+--     end
+--     local count = 0
+--     local roleAllGoods = allWorldGoods[actor:toString()]
+--     if roleAllGoods then
+--         count = table.count(roleAllGoods)
+--     end
+--     if count >= capacity then
+--         return false
+--     end
+--     return true
+-- end
+
+
+
+-- -- 下架商品
+-- -- msgData 中要包含 itemcfgid,itemId
+-- function Trade.worldOffShelfGoods(actor, msgData)
+--     callonserial(actor, "trade_world_off_shelf_goods", msgData)
+-- end
+
+-- function trade_world_off_shelf_goods(actor, msgData)
+--     local itemId = msgData[2]
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if not allWorldGoods then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+
+--     local roleAllGoods = allWorldGoods[actor:toString()]
+--     local goodsDetail = roleAllGoods[tostring(itemId)]
+--     if not goodsDetail then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT373)
+--         return
+--     end
+--     info("下架商品信息",goodsDetail)
+--     local ownid = goodsDetail.ownid
+--     if actor:toString() ~= tostring(ownid) then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT375)
+--         return
+--     end
+
+--     local publicityTime = goodsDetail.listingtime + goodsDetail.publicitytime
+--     local peroreder = goodsDetail.peroreder
+--     info("下架商品预购人员信息",peroreder)
+--     local now = getbaseinfo("now")
+--     if not table.isNullOrEmpty(peroreder) then
+--         -- noticeTip.noticeinfo(actor, StringIdConst.TEXT374)
+--         -- 清理预购人员存储的信息
+--         for index, preRid in pairs(peroreder) do
+--             this.tradeReturnPreorderCoin(
+--                     preRid,
+--                     itemId,
+--                     goodsDetail.cointype,
+--                     goodsDetail.totalprice,
+--                     goodsDetail.itemname
+--             )
+--         end
+--     end
+--     local count = goodsDetail.count
+
+--     local goodsInfo = getshellgoods(actor, tonumber(itemId))
+--     goodsInfo = goodsInfo[tonumber(itemId)]
+--     if table.isNullOrEmpty(goodsInfo) then
+--         tipinfo(actor, "下架失败，商品不存在")
+--         return
+--     end
+
+--     local realCount = tonumber(goodsInfo.count)
+
+--     if realCount ~= count then
+--         info("内置数据和外置数据数量不一致，以内置数据为准",  itemId, count, realCount)
+--         count = realCount
+--     end
+
+--     local ret = shelltobag(actor, actor:toString(), itemId, count, actor:toString(), 0, "")
+--     local reason = ret["reason"]
+--     if reason ~= 0 then
+--         tipinfo(actor, "下架商品失败")
+--         return
+--     end
+
+--     --- 全部下架无需关心组
+--     this.changeGoodsInfo(actor, itemId, count, count,0)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_OFF_GOODS, true)
+-- end
+
+-- --归坏预购商品的货币
+-- function this.tradeReturnPreorderCoin(preRid, itemId, cointype, totalprice, itemname)
+--     if this.isCrossMap() then
+--         Trade.tradeReturnPreorderCoin0(preRid, itemId, cointype, totalprice, itemname)
+--     else
+--         local roleInfo = getrolesummaryinfobyrid(getactor(preRid))
+--         if table.isNullOrEmpty(roleInfo) then
+--             --非本服的玩家
+--             local data = {
+--                 msgId= ServerMessageID.TRADE_RETURN_PREORDER_COIN,
+--                 itemId= itemId,
+--                 cointype= cointype,
+--                 totalprice= totalprice,
+--                 itemname= itemname
+--             }
+--             sendglobalmsg(data, {tonumber(preRid)})
+--         else
+--             Trade.tradeReturnPreorderCoin0(preRid, itemId, cointype, totalprice, itemname)
+--         end
+--     end
+-- end
+
+-- function Trade.tradeReturnPreorderCoin0(preRid, itemId, cointype, totalprice, itemname)
+--     local preActor = getactor(preRid)
+--     local myPreInfo = getplaydef(preActor, ROLE_TRADE_PRE_GOODS)
+--     if not table.isEmpty(myPreInfo) then
+--         local preIndex = this.findPreInfo(myPreInfo, tostring(itemId))
+--         if preIndex then
+--             table.remove(myPreInfo, preIndex)
+--             setplaydef(preActor, ROLE_TRADE_PRE_GOODS, myPreInfo)
+--         end
+--     end
+--     sendconfigmailbyrid(preActor, preRid,
+--             EmailConfig.TRADE_PRE_FAILED,
+--             { [tonumber(cointype)] = tonumber(totalprice)},
+--             itemname .. "#" .. "货币")
+-- end
+
+-- -- lua中保存商品信息改变
+-- function this.changeGoodsInfo(ownActor, goodId, itemCount, buyCount,minNumber)
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(ownActor)
+--     info("商品组数",minNumber)
+
+--     local roleAllGoods = allWorldGoods[ownActor:toString()]
+--     if roleAllGoods == nil then
+--         info("玩家无交易行数据",ownActor)
+--         return
+--     end
+--     local roleGoodsItem = roleAllGoods[tostring(goodId)]
+--     if roleGoodsItem == nil then
+--         info("玩家交易行商品不存在", ownActor, goodId)
+--         return
+--     end
+
+--     local goodsInfo = getshellgoods(ownActor, tonumber(goodId))
+--     goodsInfo = goodsInfo[tonumber(goodId)]
+--     if table.isNullOrEmpty(goodsInfo) then
+--         roleAllGoods[tostring(goodId)] = nil
+--         setsysvar(ownActor, SYS_TRADE_WORLD_GOODS, allWorldGoods)
+--         info("商品不存在，删除外置数据",ownActor, goodId, itemCount, buyCount, minNumber);
+--         return
+--     end
+
+--     local realCount = tonumber(goodsInfo.count)
+
+--     info("真实商品数据", goodId,goodsInfo)
+
+--     if realCount <= 0 then
+--         roleAllGoods[tostring(goodId)] = nil
+--         setsysvar(ownActor, SYS_TRADE_WORLD_GOODS, allWorldGoods)
+--         return
+--     end
+
+--     roleGoodsItem.count = realCount
+--     roleGoodsItem.totalprice = math.round(roleGoodsItem.count * roleGoodsItem.unitPrice / minNumber)
+--     setsysvar(ownActor, SYS_TRADE_WORLD_GOODS, allWorldGoods)
+
+--     info("修改数据后",roleGoodsItem)
+-- end
+
+
+-- -- 获取世界商品
+-- function Trade.getTradeWorldGoods(actor, msgData)
+--     Trade.flushWorldGoods()
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if table.isNullOrEmpty(allWorldGoods) then
+--         sendluamsg(actor, LuaMessageIdToClient.RES_GET_TRADE_GOODS, allWorldGoods)
+--         return
+--     end
+--     local goods = this.filterGoods(actor, allWorldGoods, msgData)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_GET_TRADE_GOODS, goods)
+-- end
+
+-- -- 过滤商品
+-- function this.filterGoods(actor, allWorldGoods, msgData)
+--     local goods = {}
+--     if msgData[1] == 100 then
+--         this.publicityGoods(goods, msgData, allWorldGoods)
+--         return goods
+--     elseif msgData[1] == 200 then
+--         this.myPreGoods(actor, goods, msgData, allWorldGoods)
+--         -- Trade.getPreBuyGoods(actor,msgData)
+--         return goods
+--     end
+--     this.arrangeGoods(goods, msgData, allWorldGoods)
+--     return goods
+-- end
+
+-- -- 获取公示商品
+-- function this.publicityGoods(goods, msgData, allWorldGoods)
+--     local now = getbaseinfo("now")
+--     for index, roleAllGoods in pairs(allWorldGoods) do
+--         for goodIndex, good in pairs(roleAllGoods) do
+--             local listingTime = good.listingtime
+--             local time = listingTime + good.publicitytime
+--             if now < time then
+--                 --local itemRank = ConfigDataManager.getTableValue("cfg_item", "rank", "id", good.itemCfgId)
+--                 if (msgData[5] == 0 or table.contains(good.entryNums or {}, tonumber(msgData[5]))) and (msgData[6] == 0 or good.garde == msgData[6]) then
+--                     if msgData[4] == 0 or good.job[1] == 0 or table.contains(good.job, tostring(msgData[4])) then
+--                         good["publicity"] = 1
+--                         good["timename"] = "公示中"
+--                         good["time"] = (time - now) / 1000
+--                         table.insert(goods, good)
+--                     end
+--                 end
+--             end
+--         end
+--     end
+
+-- end
+
+-- -- 预购商品
+-- function this.myPreGoods(actor, goods, msgData, allWorldGoods)
+--     local preGoodInfo = getplaydef(actor, ROLE_TRADE_PRE_GOODS)
+--     if not preGoodInfo or not allWorldGoods then
+--         return
+--     end
+--     local now = getbaseinfo("now")
+--     for index, preGood in pairs(preGoodInfo) do
+--         local roleAllGoods = allWorldGoods[preGood.rid]
+--         if roleAllGoods then
+--             local good = roleAllGoods[tostring(preGood.goodId)]
+--             if good then
+--                 --local itemRank = ConfigDataManager.getTableValue("cfg_item", "rank", "id", good.itemCfgId)
+--                 if (msgData[1] == 200 or good.type == msgData[1]) and (msgData[2] == 0 or msgData[2] == good.subtype) and (msgData[5] == 0 or table.contains(good.entryNums or {}, tonumber(msgData[5]))) and (msgData[6] == 0 or good.garde == msgData[6]) then
+--                     if msgData[4] == 0 or good.job[1] == 0 or table.contains(good.job, tostring(msgData[4])) then
+--                         local listingTime = good.listingtime
+--                         local time = listingTime + good.publicitytime
+--                         good["publicity"] = 1
+--                         good["timename"] = "公示中"
+--                         good["time"] = (time - now) / 1000
+--                         table.insert(goods, good)
+--                     end
+--                 end
+--             end
+--         end
+--     end
+-- end
+
+-- -- 获取分类商品
+-- function this.arrangeGoods(goods, msgData, allWorldGoods)
+--     local now = getbaseinfo("now")
+--     for index, roleAllGoods in pairs(allWorldGoods) do
+--         for index, good in pairs(roleAllGoods) do
+--             --local itemRank = ConfigDataManager.getTableValue("cfg_item", "rank", "id", good.itemcfgid)
+--             if good and good.listingtime and good.publicitytime then
+--                 local publicityTime = good.listingtime + good.publicitytime
+--                 local offShelfTime = publicityTime + good.upshelfduration
+--                 if (msgData[1] == 0 or good.type == msgData[1]) and (msgData[2] == 0 or msgData[2] == good.subtype) and (msgData[5] == 0 or table.contains(good.entryNums or {}, tonumber(msgData[5]))) and (msgData[6] == 0 or good.garde == msgData[6]) then
+--                     if msgData[4] == 0 or good.job[1] == 0 or table.contains(good.job, tostring(msgData[4])) then
+--                         -- local have = this.checkGood(allWorldGoods,good)
+--                         if publicityTime > now then
+--                             good["publicity"] = 1
+--                             good["timename"] = "公示中"
+--                             good["time"] = (publicityTime - now) / 1000
+--                         elseif publicityTime < now and offShelfTime > now then
+--                             good["publicity"] = 0
+--                             good["timename"] = "下架时间"
+--                             good["time"] = (offShelfTime - now) / 1000
+--                         end
+--                         table.insert(goods, good)
+--                     end
+--                 end
+--             end
+--         end
+--     end
+--     Trade.sortGoods(goods, msgData[3])
+-- end
+
+-- -- 商品排序
+-- function Trade.sortGoods(goods, type)
+--     if type == 0 then
+--         table.sort(goods, function(a, b)
+--             return a.listingtime < b.listingtime
+--         end)
+--     elseif type == SORT_TYPE.ASC_BY_TIME then
+--         table.sort(goods, function(a, b)
+--             return a.listingtime < b.listingtime
+--         end)
+--     elseif type == SORT_TYPE.DESC_BY_TIME then
+--         table.sort(goods, function(a, b)
+--             return a.listingtime > b.listingtime
+--         end)
+--     elseif type == SORT_TYPE.ASC_BY_PRICE then
+--         table.sort(goods, function(a, b)
+--             return a.totalprice < b.totalprice
+--         end)
+--     elseif type == SORT_TYPE.DESC_BY_PRICE then
+--         table.sort(goods, function(a, b)
+--             return a.totalprice > b.totalprice
+--         end)
+--     end
+-- end
+
+-- -- 购买世界交易行商品
+-- -- msgData 中要包含 itemcfgid,itemId,type,count
+-- function Trade.bugWorldGoods(actor, msgData)
+--     if this.isCrossMap() then
+--         trade_bug_world_goods(actor, msgData)
+--     else
+--         callonserial(actor, "trade_bug_world_goods", msgData)
+--     end
+-- end
+
+-- function trade_bug_world_goods(actor, msgData)
+--     local buyCount = msgData[4]
+--     local itemId = msgData[2]
+--     local goodRid = msgData[5]
+--     local goodActor = getactor(actor, goodRid)
+
+--     if buyCount <= 0 then
+--         tipinfo(actor,"请正确购买商品")
+--         return
+--     end
+    
+--     if not PKSystem.canTrade(actor) then
+--         error("PK值过高，交易行部分功能暂停使用", actor:toString())
+--         return
+--     end
+
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(goodActor)
+--     if not allWorldGoods then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+--     local roleAllGoods = allWorldGoods[tostring(goodRid)]
+--     if not roleAllGoods then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+--     local goodsDetail = roleAllGoods[tostring(itemId)]
+--     if not goodsDetail then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT373)
+--         return
+--     end
+--     info("购买商品信息",goodsDetail)
+--     local minNumber = ConfigDataManager.getTableValue("cfg_stall","minnumber","id", goodsDetail.itemcfgid, "way", TRADE_WAY.WORLD_UP)
+--     if not minNumber then
+--         error(actor,"购买道具",goodsDetail.itemcfgid,"未配置minNumber")
+--         return
+--     end
+--     if minNumber and tonumber(buyCount) % minNumber ~= 0 then
+--         error(actor,"购买道具",goodsDetail.itemcfgid,"不是minNumber的倍数")
+--         return
+--     end
+
+--     if buyCount > goodsDetail.count then
+--         tipinfo(actor,"请正确购买商品")
+--         return
+--     end
+
+--     local publicityTime = goodsDetail.listingtime + goodsDetail.publicitytime
+--     local now = getbaseinfo("now")
+--     if now < publicityTime then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT377)
+--         return
+--     end
+--     local ownid = goodsDetail.ownid
+--     if actor:toString() == tostring(ownid) then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT378)
+--         return
+--     end
+
+
+--     local unitPrice = goodsDetail.unitPrice
+--     local price = math.round(unitPrice * buyCount / minNumber)
+
+--     local cointype = goodsDetail.cointype
+--     local ownActor = getactor(actor, ownid)
+--     local itemCount = goodsDetail.count
+
+--     local haveCount = getbagitemcountbyid(actor, cointype)
+--     if haveCount < price then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT379)
+--         return
+--     end
+
+--     local peroreder = goodsDetail.peroreder
+--     if not table.isNullOrEmpty(peroreder) then
+--         tipinfo(actor,"当前商品，已经被其他玩家预购，请选择其他商品进行购买")
+--         return
+--     end
+
+--     local ret = shelltobag(ownActor, ownid, itemId, buyCount, actor:toString(), EmailConfig.TRADE_BUY, goodsDetail.itemname)
+--     local reason = ret["reason"]
+--     if reason ~= 0 then
+--         tipinfo(actor, "购买该商品失败")
+--         if reason == 2 then
+--             if this.isCrossMap() then
+--                 callonserial(goodActor,"trade_delete_goods_info", itemId)
+--             else
+--                 --内置的数据不存在了，把外置的也删除掉，这里是为了处理意外情况
+--                 roleAllGoods[tostring(itemId)] = nil
+--                 setsysvar(SYS_TRADE_WORLD_GOODS,allWorldGoods)
+--             end
+--         end
+--         return
+--     end
+
+--     removeitemfrombag(actor, cointype, price,0,9999,'交易行-购买商品')
+
+--     if this.isCrossMap() then
+--         callonserial(ownActor,"trade_change_goods_info",itemId, itemCount, buyCount, minNumber)
+--     else
+--         this.changeGoodsInfo(ownActor, itemId, itemCount, buyCount, minNumber)
+--     end
+--     local afterTaxPrice = this.calculationTax(ownActor, goodsDetail, buyCount, minNumber)
+--     sendconfigmailbyrid(ownActor, ownid, EmailConfig.TRADE_SUCCESSFUL_SOLD, { [tonumber(cointype)] = tonumber(afterTaxPrice) }, goodsDetail.itemname)
+--     this.saveTradeHistory(actor, TRADE_RECORD_TYPE.PURCHASE, goodsDetail, price)
+--     this.saveTradeHistory(ownActor, TRADE_RECORD_TYPE.SALE, goodsDetail, afterTaxPrice)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_BUY_GOODS, true)
+--     Trade.changeItemInfo(actor, ownid, itemId)
+-- end
+
+-- function trade_delete_goods_info(goodActor, goodsId)
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(goodActor)
+--     if table.isNullOrEmpty(allWorldGoods) then
+--         return
+--     end
+--     local roleAllGoods = allWorldGoods[goodActor:toString()]
+--     if table.isNullOrEmpty(roleAllGoods) then
+--         return
+--     end
+--     roleAllGoods[tostring(goodsId)] = nil
+--     setsysvar(SYS_TRADE_WORLD_GOODS,allWorldGoods)
+-- end
+
+-- function trade_change_goods_info(ownActor, itemId, itemCount, buyCount, minNumber)
+--     this.changeGoodsInfo(ownActor, itemId, itemCount, buyCount, minNumber)
+-- end
+
+
+-- -- 计算税率
+-- function this.calculationTax(ownActor, goodsDetail, count, minNumber)
+--     local unitPrice = goodsDetail.unitPrice
+--     local totalPrice = math.round(unitPrice * count / minNumber)
+--     local is_open, rate = Privilege.hasPrivilege(ownActor, Privilege.PrivilegeType.TAX_RATE)
+--     if is_open then
+--         totalPrice = totalPrice * (10000 - rate) / 10000
+--         totalPrice = math.round(totalPrice)
+--     else
+--         local table = goodsDetail.tax
+--         local tax = tonumber(table[1])
+--         local has_vip, vip_rate = VipGiftPack.hasPrivilege(ownActor, VipPrivilege.Type.tax)
+--         if has_vip and string.tonumber(vip_rate) > 0 then
+--             tax = tax * (100 - tonumber(vip_rate)) / 100
+--             tax = math.round(tax)
+--         end
+--         totalPrice = totalPrice * (100 - tax) / 100
+--         totalPrice = math.round(totalPrice)
+--         local deleteCount = tonumber(table[2])
+--         if has_vip then
+--             local addCount = math.round((deleteCount * tonumber(vip_rate)) / 100)
+--             deleteCount = deleteCount - addCount
+--         end
+--         totalPrice = totalPrice - deleteCount
+--     end
+--     return totalPrice
+-- end
+
+-- -- 保存交易记录
+-- function this.saveTradeHistory(actor, type, goodsDetail, totalPrice)
+--     local tradeRecorde = getplaydef(actor, ROLE_TRADE_GOODS_RECORD)
+--     if table.isNullOrEmpty(tradeRecorde) then
+--         tradeRecorde = {}
+--     end
+--     --- 整理交易记录
+--     if table.count(tradeRecorde) > TRADE_GOODS_RECORD_UPPER_LIMIT then
+--         local haveCount = table.count(tradeRecorde)
+--         local deleteCount = haveCount - TRADE_GOODS_RECORD_UPPER_LIMIT
+--         for i = 1, deleteCount do
+--             table.remove(tradeRecorde, 1)
+--         end
+--     end
+--     ---type Trade.Recorde 交易记录
+--     local goodRecord = {
+--         itemname = goodsDetail.itemname,
+--         time = getbaseinfo("now"),
+--         tradetype = type,
+--         cointype = goodsDetail.cointype,
+--         price = totalPrice
+--     }
+--     table.insert(tradeRecorde, goodRecord)
+--     setplaydef(actor, ROLE_TRADE_GOODS_RECORD, tradeRecorde)
+-- end
+
+
+-- ---@class Trade.Recorde 交易记录
+-- ---@field itemname string 商品名字
+-- ---@field time number 成交时间
+-- ---@field tradetype number 成交类型
+-- ---@field cointype number 货币类型
+-- ---@field price number 成交价格
+
+
+-- -- 获取我的交易记录
+-- function Trade.getWorldTradeRecord(actor)
+--     local tradeRecorde = getplaydef(actor, ROLE_TRADE_GOODS_RECORD)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_RECORD, tradeRecorde)
+-- end
+-- -- 获取我上架商品
+-- function Trade.getWorldMyListing(actor)
+--     local listingGood = {}
+--     local capacity = ConfigDataManager.getTableValue("cfg_global", "value", "id", TRADE_CAPACITY_GLOBAL_ID)
+--     local is_has, count = Privilege.hasPrivilege(actor, Privilege.PrivilegeType.TRADE_LINE_UP_COUNT_INCREASE)
+--     capacity = capacity + count
+--     listingGood["capacity"] = capacity
+--     local allgoods = {}
+--     local stallInfo = Stall.getStallTimeInfo(actor)
+--     if not stallInfo then
+--         stallInfo = {}
+--     end
+--     sendluamsg(actor, LuaMessageIdToClient.RES_STALL_INFO, stallInfo)
+
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if not allWorldGoods then
+--         local roleWorld = {}
+--         listingGood["number"] = 0
+--         listingGood["allgoods"] = roleWorld
+--         sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_MY_SHELVES, listingGood)
+--         -- noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+--     local roleWorld = allWorldGoods[actor:toString()]
+--     -- local roleWorld = getplaydef(actor, ROLE_TRADE_WORLD_GOODS)
+--     if not roleWorld then
+--         roleWorld = {}
+--         listingGood["number"] = 0
+--         listingGood["allgoods"] = roleWorld
+--         sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_MY_SHELVES, listingGood)
+--         return
+--     end
+--     local now = getbaseinfo("now")
+--     for index, good in pairs(roleWorld) do
+--         local publicityTime = good.listingtime + good.publicitytime
+--         local offShelfTime = publicityTime + good.upshelfduration
+--         if publicityTime > now then
+--             good["publicity"] = 1
+--             good["timename"] = "公示中"
+--             good["time"] = (publicityTime - now) / 1000
+--         elseif publicityTime < now and offShelfTime > now then
+--             good["publicity"] = 0
+--             good["timename"] = "下架时间"
+--             good["time"] = (offShelfTime - now) / 1000
+--         end
+--         table.insert(allgoods, good)
+--     end
+--     if allgoods then
+--         Trade.sortGoods(allgoods, 0)
+--     end
+--     listingGood["number"] = #allgoods
+--     listingGood["allgoods"] = allgoods
+--     jprint("listingGood",listingGood)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_MY_SHELVES, listingGood)
+-- end
+
+
+-- -- 预购商品
+-- -- msgData 中要包含 itemcfgid,itemId,type
+-- function Trade.preWorldGoods(actor, msgData)
+--     if this.isCrossMap() then
+--         trade_pre_world_goods(actor, msgData)
+--     else
+--         callonserial(actor, "trade_pre_world_goods", msgData)
+--     end
+-- end
+
+-- function trade_pre_world_goods(actor, msgData)
+--     local itemId = msgData[2]
+--     local goodRid = msgData[4]
+--     local goodActor = getactor(actor, goodRid)
+
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(goodActor)
+--     if not allWorldGoods then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+
+--     local roleAllGoods = allWorldGoods[tostring(goodRid)]
+--     if not roleAllGoods then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT372)
+--         return
+--     end
+
+--     local goodsDetail = roleAllGoods[tostring(itemId)]
+--     if not goodsDetail then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT373)
+--         return
+--     end
+--     info("预购商品信息",goodsDetail)
+--     local publicityTime = goodsDetail.listingtime + goodsDetail.publicitytime
+--     local now = getbaseinfo("now")
+--     if now > publicityTime then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT380)
+--         return
+--     end
+
+--     local ownid = goodsDetail.ownid
+--     if actor:toString() == tostring(ownid) then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT381)
+--         return
+--     end
+--     local peroreder = goodsDetail.peroreder
+--     if peroreder then
+--         for index, preRid in pairs(peroreder) do
+--             if tostring(preRid) == actor:toString() then
+--                 noticeTip.noticeinfo(actor, StringIdConst.TEXT382)
+--                 return
+--             end
+--         end
+--     end
+--     local totalprice = goodsDetail.totalprice
+--     local cointype = goodsDetail.cointype
+
+--     local haveCount = getbagitemcountbyid(actor, cointype)
+--     if haveCount < totalprice then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT379)
+--         return
+--     end
+
+--     if this.isCrossMap() then
+--         callonserial(goodActor, "trade_add_pre",  itemId, goodRid, actor)
+--     else
+--         this.addPre(goodActor, itemId, goodRid, actor)
+--     end
+--     removeitemfrombag(actor, cointype, totalprice,0,9999,'交易行-预购商品')
+
+--     local preGoodInfo = getplaydef(actor, ROLE_TRADE_PRE_GOODS)
+--     if not preGoodInfo then
+--         preGoodInfo = {}
+--     end
+--     local perGoodInfo = {
+--         rid = goodRid,
+--         goodId = itemId
+--     }
+--     table.insert(preGoodInfo, perGoodInfo)
+--     setplaydef(actor, ROLE_TRADE_PRE_GOODS, preGoodInfo)
+--     this.saveTradeHistory(actor, TRADE_RECORD_TYPE.PREORDER, goodsDetail, totalprice)
+--     sendluamsg(actor, LuaMessageIdToClient.RES_TRADE_PRE_ORDER, true)
+
+-- end
+
+-- function trade_add_pre(actor, goodId, goodRid, preActor)
+--     this.addPre(actor, goodId, goodRid, preActor)
+-- end
+
+-- -- 商品中添加预购信息
+-- function this.addPre(actor, goodId, goodRid, preActor)
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     local roleAllGoods = allWorldGoods[tostring(goodRid)]
+--     local goodsDetail = roleAllGoods[tostring(goodId)]
+--     local peroreder = goodsDetail.peroreder
+--     if not peroreder then
+--         peroreder = {}
+--     end
+--     table.insert(peroreder, preActor:toString())
+--     goodsDetail.peroreder = peroreder
+--     setsysvar(actor, SYS_TRADE_WORLD_GOODS, allWorldGoods)
+-- end
+
+-- function trade_flush_world_goods()
+--     local serverType = getbaseinfo("servertype")
+--     if serverType == 2 then
+--         -- 跨服服务器不执行
+--         return
+--     end
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(nil)
+--     if table.isNullOrEmpty(allWorldGoods) then
+--         return
+--     end
+--     local now = getbaseinfo("now")
+--     for index, roleAllGoods in pairs(allWorldGoods) do
+--         for index, good in pairs(roleAllGoods) do
+--             if good and good.listingtime and good.publicitytime then
+--                 local publicityTime = good.listingtime + good.publicitytime
+--                 local offShelfTime = publicityTime + good.upshelfduration
+--                 if now > publicityTime and now < offShelfTime and good.publicitystatue then
+--                     local peroreder = good.peroreder
+--                     if table.isNullOrEmpty(peroreder) then
+--                         good.publicitystatue = false
+--                         -- this.changeGoodState(good, roleAllGoods)
+--                     elseif peroreder then
+--                         this.handlePre(good, roleAllGoods)
+--                     end
+--                 elseif offShelfTime < now then
+--                     this.flowFilming(good, roleAllGoods)
+--                 end
+--             end
+--         end
+--     end
+--     setsysvar(SYS_TRADE_WORLD_GOODS, allWorldGoods)
+-- end
+
+-- -- 交易行刷新
+-- function Trade.flushWorldGoods()
+--     callonserial("trade_flush_world_goodstrade_flush_world_goods")
+-- end
+
+-- -- 合服时下架所有商品
+-- function Trade.combineglobalvar(varName,varData)
+--     gameDebug.print("合服时交易行全部商品信息", varData)
+--     for index, allWorldGoods in pairs(varData) do
+--         if not table.isEmpty(allWorldGoods) then
+--             for index, roleAllGoods in pairs(allWorldGoods) do
+--                 for index, good in pairs(roleAllGoods) do
+--                     if not table.isEmpty(good) then
+--                         local peroreder = good.peroreder
+--                         if table.isNullOrEmpty(peroreder) then
+--                             this.flowFilming(good, roleAllGoods)
+--                         else
+--                             this.handlePre(good, roleAllGoods)
+--                         end
+--                     end
+--                 end
+--             end
+--         end
+--     end
+--     setsysvar(SYS_TRADE_WORLD_GOODS, {})
+-- end
+
+
+-- -- 清理交易行脏数据
+-- function cleartradedata(actor)
+--     setsysvar(actor, SYS_TRADE_WORLD_GOODS,{})
+-- end
+
+
+-- -- 改变商品状态（公示状态改成竞拍）
+-- function this.changeGoodState(good, roleAllGoods)
+--     local ownId = good.ownid
+--     local ownActor = getactor(ownId)
+--     local allWorldGood = Trade.getSysTradeWorldGoods(ownActor)
+--     local myListingGoods = allWorldGood[ownActor:toString()]
+--     if not myListingGoods then
+--         return
+--     end
+--     local myGoodInfo = myListingGoods[tostring(good.itemid)]
+--     myGoodInfo.publicitystatue = false
+--     myListingGoods[tostring(good.itemid)] = myGoodInfo
+--     allWorldGood[ownActor:toString()] = myListingGoods
+--     setsysvar(ownActor, SYS_TRADE_WORLD_GOODS, allWorldGood)
+-- end
+
+-- -- 处理预购商品
+-- function this.handlePre(good, roleAllGoods)
+--     local peroreder = good.peroreder
+--     local successIndex = math.random(1, #peroreder)
+--     local successRid = peroreder[successIndex]
+--     local ownActor = getactor(good.ownid)
+--     local goodId = good.itemid
+--     -- 清理预购人员存储的信息
+--     for index, preRid in pairs(peroreder) do
+--         if tostring(successRid) ~= tostring(preRid) then
+--             this.tradeReturnPreorderCoin(
+--                     preRid,
+--                     goodId,
+--                     good.cointype,
+--                     good.totalprice,
+--                     good.itemname
+--             );
+--         end
+--     end
+
+--     local successActor = getactor(successRid)
+--     local minNumber = ConfigDataManager.getTableValue("cfg_stall","minnumber","id", good.itemcfgid, "way", TRADE_WAY.WORLD_UP)
+--     -- this.changeGoodsInfo(ownActor,itemId,itemCount,buyCount)
+--     local afterTaxPrice = this.calculationTax(ownActor, good, good.count,minNumber)
+--     local ret = shelltobag(ownActor, good.ownid, goodId, good.count, successRid, EmailConfig.TRADE_BUY, good.itemname)
+--     local reason = ret["reason"]
+--     if reason ~= 0 then
+--         info("预购商品进入背包失败",good.ownid, goodId, good.count, successRid, EmailConfig.TRADE_BUY, good.itemname)
+--         return
+--     end
+--     sendconfigmailbyrid(ownActor, good.ownid, EmailConfig.TRADE_SUCCESSFUL_SOLD, { [tonumber(good.cointype)] = tonumber(afterTaxPrice) }, good.itemname)
+--     roleAllGoods[tostring(good.itemid)] = nil
+--     -- this.saveTradeHistory(actor,TRADE_RECORD_TYPE.PURCHASE,goodsDetail,price)
+--     this.saveTradeHistory(ownActor, TRADE_RECORD_TYPE.SALE, good, afterTaxPrice)
+--     Trade.changeItemInfo(successActor, good.ownid, goodId)
+-- end
+
+-- -- 获取预购商品索引
+-- function this.findPreInfo(myPreInfo, goodId)
+--     for index, preInfo in pairs(myPreInfo) do
+--         if tostring(preInfo.goodId) == tostring(goodId) then
+--             return index
+--         end
+--     end
+-- end
+
+
+-- -- 商品流拍
+-- function this.flowFilming(good, roleAllGoods)
+--     local ownId = good.ownid
+--     local ownActor = getactor(ownId)
+--     if table.isNullOrEmpty(roleAllGoods) then
+--         error("当前玩家没有上架交易行商品",roleAllGoods)
+--         return
+--     end
+--     if good.itemid == nil then
+--         --清除错误的数据
+--         roleAllGoods[tostring(good.itemid)] = nil
+--         info("good itemid is null", good)
+--         return
+--     end
+--     local ret = shelltobag(ownActor, ownActor:toString(), good.itemid, good.count, ownActor:toString())
+--     local reason = ret["reason"]
+--     if reason ~= 0 then
+--         info("商品流拍，但是商品进入背包失败", ownActor:toString(), good.itemid, good.count)
+--         return
+--     end
+--     roleAllGoods[tostring(good.itemid)] = nil
+-- end
+
+
+
+-- -- 发送充值消息
+-- function Trade.sendRecharge(actor)
+--     local allRechargeInfo = getsysvar(actor, SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         allRechargeInfo = {}
+--     end
+--     local rechargeInfo = allRechargeInfo[actor:toString()]
+--     sendluamsg(actor, LuaMessageIdToClient.RES_RECHARGE_TRADE_INFO, rechargeInfo)
+-- end
+
+-- -- 午夜刷新重置记录
+-- function Trade.serverMiddleNight()
+--     local allRechargeInfo = getsysvar(SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         return
+--     end
+--     local now = getbaseinfo("now")
+--     for index, roleRechargeInfo in pairs(allRechargeInfo) do
+--         local actor = getactor(index)
+--         local rechargeGear = ConfigDataManager.getTable("cfg_lines", "id", roleRechargeInfo.gearPosition)
+--         if rechargeGear then
+--             local currentGearInfo = rechargeGear[1]
+--             local decayTime = tonumber(currentGearInfo.decaytime)
+--             local lsatGearChangeTime = roleRechargeInfo.lsatGearChangeTime
+--             local decay = lsatGearChangeTime + decayTime * 24 * 60 * MINUTE_SECOND
+--             if decay < now then
+--                 -- 降档处理
+--                 local decayGears = tonumber(currentGearInfo.decaygears)
+--                 if roleRechargeInfo.gearPosition ~= 1 then
+--                     roleRechargeInfo.gearPosition = decayGears
+--                     roleRechargeInfo.lsatGearChangeTime = now
+--                     local limit = this.calculationGearMaxLimit(nil, decayGears)
+--                     roleRechargeInfo.upperLimit = limit
+--                 end
+--                 roleRechargeInfo.quit = true
+--                 roleRechargeInfo.gearRecharge = 0
+--                 if tonumber(currentGearInfo.decaytime) > 1 then
+--                     roleRechargeInfo.bubble = false
+--                 else
+--                     roleRechargeInfo.bubble = true
+--                 end
+--             else
+--                 -- 不降档位检查是否要显示气泡
+--                 local time = lsatGearChangeTime + (decayTime - 1) * 24 * 60 * MINUTE_SECOND
+--                 if time < now then
+--                     roleRechargeInfo.bubble = true
+--                 else
+--                     roleRechargeInfo.bubble = false
+--                 end
+--             end
+--             roleRechargeInfo.cost = 0
+--             allRechargeInfo[index] = roleRechargeInfo
+--         end
+--         sendluamsg(actor, LuaMessageIdToClient.RES_RECHARGE_TRADE_INFO, roleRechargeInfo)
+--     end
+
+--     setsysvar(SYS_RECHARGE_INFO, allRechargeInfo)
+-- end
+
+
+
+-- ---@class recharge 充值记录
+-- ---@field totalRecharge number 总共充值金额
+-- ---@field lastRechargeTime number 上次充值时间（毫秒时间戳）
+-- ---@field gearPosition number 当前档位
+-- ---@field gearRecharge number 档位充值金额
+-- ---@field quit boolean 是否退档
+-- ---@field lsatGearChangeTime number 重置档位时间
+-- ---@field cost number 花费额度
+-- ---@field upperLimit number 额度上限
+-- ---@field bubble boolean 是否显示气泡
+
+-- SYS_RECHARGE_INFO = "R$rechargeInfo"
+
+-- function tsetrechargegear(actor)
+--     Trade.recharge(actor, 1)
+-- end
+
+
+-- -- 检查当前额度是否够
+-- function Trade.checkCost(actor, price)
+--     local allRechargeInfo = getsysvar(actor, SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         allRechargeInfo = {}
+--     end
+--     local rechargeInfo = allRechargeInfo[actor:toString()]
+--     if table.isEmpty(rechargeInfo) then
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT462)
+--         return false
+--     end
+--     local cost = rechargeInfo.cost
+--     local upperLimit = rechargeInfo.upperLimit
+--     if upperLimit >= cost + price then
+--         return true
+--     else
+--         noticeTip.noticeinfo(actor, StringIdConst.TEXT462)
+--         return false
+--     end
+-- end
+
+
+-- -- 增加花费
+-- function Trade.addCost(actor, price)
+--     local allRechargeInfo = getsysvar(actor, SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         allRechargeInfo = {}
+--     end
+--     local rechargeInfo = allRechargeInfo[actor:toString()]
+--     if table.isEmpty(rechargeInfo) then
+--         return
+--     end
+--     rechargeInfo.cost = rechargeInfo.cost + price
+--     allRechargeInfo[actor:toString()] = rechargeInfo
+--     setsysvar(actor, SYS_RECHARGE_INFO, allRechargeInfo)
+-- end
+
+-- -- 减少花费
+-- function Trade.deleteCost(actor, price)
+--     local allRechargeInfo = getsysvar(actor, SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         allRechargeInfo = {}
+--     end
+--     local rechargeInfo = allRechargeInfo[actor:toString()]
+--     if table.isEmpty(rechargeInfo) then
+--         return
+--     end
+--     if rechargeInfo.cost > price then
+--         rechargeInfo.cost = rechargeInfo.cost - price
+--     else
+--         rechargeInfo.cost = 0
+--     end
+--     allRechargeInfo[actor:toString()] = rechargeInfo
+--     setsysvar(actor, SYS_RECHARGE_INFO, allRechargeInfo)
+-- end
+
+-- -- 更新充值信息
+-- function Trade.recharge(actor, cfg, count, amount, ext, outRewards)
+--     local allRechargeInfo = getsysvar(actor, SYS_RECHARGE_INFO)
+--     if table.isEmpty(allRechargeInfo) then
+--         allRechargeInfo = {}
+--     end
+--     local rechargeInfo = allRechargeInfo[actor:toString()]
+--     if table.isEmpty(rechargeInfo) then
+--         rechargeInfo = {
+--             totalRecharge = amount,
+--             lastRechargeTime = getbaseinfo(actor, "now"),
+--             gearPosition = this.getRechargeGear(actor, amount),
+--             gearRecharge = 0,
+--             quit = false,
+--             lsatGearChangeTime = getbaseinfo(actor, "now"),
+--             cost = 0,
+--             upperLimit = 0,
+--             bubble = false
+--         }
+--         local upperLimit = this.calculationUpperLimit(actor, rechargeInfo.gearPosition, rechargeInfo.totalRecharge, rechargeInfo.quit)
+--         rechargeInfo.upperLimit = upperLimit
+--         allRechargeInfo[actor:toString()] = rechargeInfo
+--         setsysvar(actor, SYS_RECHARGE_INFO, allRechargeInfo)
+--         sendluamsg(actor, LuaMessageIdToClient.RES_RECHARGE_TRADE_INFO, rechargeInfo)
+--         return
+--     end
+--     -- 已经充值过逻辑处理
+--     rechargeInfo.totalRecharge = rechargeInfo.totalRecharge + amount
+--     rechargeInfo.lastRechargeTime = getbaseinfo(actor, "now")
+--     local gearPosition = rechargeInfo.gearPosition
+--     local rechargeGear = ConfigDataManager.getTable("cfg_lines", "id", gearPosition)
+--     if not rechargeGear then
+--         -- error("当前充值档位出现错误")
+--         return
+--     end
+--     local gearInfo = rechargeGear[1]
+--     local activationRecharge = tonumber(gearInfo.activationrecharge)
+--     local allRecharge = rechargeInfo.gearRecharge + amount
+--     if rechargeInfo.quit then
+--         -- 有退档现象，检查是否可以提升档位
+--         if allRecharge >= activationRecharge then
+--             -- 可以提升档位
+--             local maxGear = this.getRechargeGear(actor, rechargeInfo.totalRecharge)
+--             rechargeInfo.gearPosition = maxGear
+--             rechargeInfo.gearRecharge = 0
+--             rechargeInfo.quit = false
+--             local upperLimit = this.calculationUpperLimit(actor, maxGear, rechargeInfo.totalRecharge, false)
+--             rechargeInfo.upperLimit = upperLimit
+--         else
+--             -- 不能提升档位
+--             rechargeInfo.gearRecharge = rechargeInfo.gearRecharge + amount
+--         end
+--     else
+--         -- 没有发生过退档
+--         if allRecharge >= activationRecharge then
+--             -- 可以提升档位
+--             local maxGear = this.getRechargeGear(actor, rechargeInfo.totalRecharge)
+--             rechargeInfo.gearPosition = maxGear
+--             rechargeInfo.gearRecharge = 0
+--             rechargeInfo.quit = false
+--         else
+--             -- 不能提升档位
+--             rechargeInfo.gearRecharge = rechargeInfo.gearRecharge + amount
+--         end
+--         local upperLimit = this.calculationUpperLimit(actor, rechargeInfo.gearPosition, rechargeInfo.totalRecharge, false)
+--         rechargeInfo.upperLimit = upperLimit
+--     end
+--     rechargeInfo.lsatGearChangeTime = getbaseinfo(actor, "now")
+--     rechargeInfo.bubble = false
+--     allRechargeInfo[actor:toString()] = rechargeInfo
+--     setsysvar(actor, SYS_RECHARGE_INFO, allRechargeInfo)
+--     -- 发送lua信息
+--     sendluamsg(actor, LuaMessageIdToClient.RES_RECHARGE_TRADE_INFO, rechargeInfo)
+-- end
+
+-- -- 获取充值最高档位
+-- function this.getRechargeGear(actor, totalRecharge)
+--     local rechargeGear = ConfigDataManager.getTable("cfg_lines")
+--     if table.isEmpty(rechargeGear) then
+--         return 0
+--     end
+--     local maxGear = 0
+--     for index, gear in pairs(rechargeGear) do
+--         local interval = gear.interval
+--         local intervalTable = string.split(interval, "#")
+--         local minRecharge = tonumber(intervalTable[1])
+--         local maxRecharge = tonumber(intervalTable[2])
+--         if tonumber(gear.id) > maxGear then
+--             maxGear = tonumber(gear.id)
+--         end
+--         if totalRecharge >= minRecharge and totalRecharge <= maxRecharge then
+--             return tonumber(gear.id)
+--         end
+--     end
+--     return maxGear
+-- end
+
+-- -- 计算额度上限.
+-- function this.calculationUpperLimit(actor, gear, totalRecharge, quit)
+--     if quit then
+--         return this.calculationGearMaxLimit(actor, gear)
+--     else
+--         return this.calculationAllMaxLimit(actor, gear, totalRecharge)
+--     end
+-- end
+
+-- -- 计算档位的最大限额
+-- function this.calculationGearMaxLimit(actor, currentGear)
+--     if currentGear < 1 then
+--         return 0
+--     end
+--     local rechargeGear = ConfigDataManager.getTable("cfg_lines")
+--     if table.isEmpty(rechargeGear) then
+--         return 0
+--     end
+--     local limit = 0
+--     for index, gear in pairs(rechargeGear) do
+--         if currentGear >= tonumber(gear.id) then
+--             local interval = gear.interval
+--             local intervalTable = string.split(interval, "#")
+--             local minRecharge = tonumber(intervalTable[1])
+--             local maxRecharge = tonumber(intervalTable[2])
+--             local each = tonumber(gear.each)
+--             local quotaLimit = tonumber(gear.quotalimit)
+--             local gearLimit = math.ceil((maxRecharge - minRecharge + 1) / each) * quotaLimit
+--             limit = limit + gearLimit
+--         end
+--     end
+--     return limit
+-- end
+
+-- -- 计算总共充值的最大额度
+-- function this.calculationAllMaxLimit(actor, currentGear, totalRecharge)
+--     local rechargeGear = ConfigDataManager.getTable("cfg_lines", "id", currentGear)
+--     if table.isEmpty(rechargeGear) then
+--         -- error("当前充值档位出现错误")
+--     end
+--     local currentGearInfo = rechargeGear[1]
+--     local interval = currentGearInfo.interval
+--     local intervalTable = string.split(interval, "#")
+--     local minRecharge = tonumber(intervalTable[1])
+--     local each = tonumber(currentGearInfo.each)
+--     local quotaLimit = tonumber(currentGearInfo.quotalimit)
+--     local currentPrice = totalRecharge - minRecharge + 1
+--     local gearLimit = math.ceil(currentPrice / each) * quotaLimit
+--     local gear = currentGear - 1
+--     local allLimit = this.calculationGearMaxLimit(actor, gear)
+--     return gearLimit + allLimit
+-- end
+
+
+
+-- -- ------------------------------旧方法-----------------------------------------------------------------------
+
+-- -- 获取世界商品 商品配置id 商品id
+-- function Trade.getGoodsInfo(actor, msgData)
+--     -- jprint("msgData",msgData)
+--     local ownActor = getactor(actor, msgData[2])
+--     goodsdetailinfo(ownActor, msgData[1], TRADE_WAY.WORLD_UP, actor:toString())
+-- end
+
+
+-- -- 购买成功后交换lua中存储的道具信息
+-- function Trade.changeItemInfo(actor, ownId, itemId)
+--     local ownActor = getactor(actor, ownId)
+--     local equipext = EquipAndAppear.getItemExtData(ownActor, itemId)
+--     if table.isEmpty(equipext) then
+--         return
+--     end
+--     Trade.transferEquipExit(actor, itemId, equipext)
+--     EquipAndAppear.SetItemExtData(ownActor, itemId, {})
+-- end
+
+-- function Trade.transferEquipExit(actor, itemId, equipext)
+--     local roleInfo = getrolesummaryinfobyrid(actor)
+--     if table.isNullOrEmpty(roleInfo) then
+--         --非本服的玩家
+--         local data = {
+--             msgId= ServerMessageID.TRADE_TRANSFER_EQUIP_EXIT,
+--             itemId= itemId,
+--             equipext= equipext
+--         }
+--         sendglobalmsg(data, {tonumber(actor:toString())})
+--     else
+--         EquipAndAppear.SetItemExtData(actor, itemId, equipext)
+--     end
+-- end
+
+
+-- function getroletet(actor)
+--     local actorId = getactor(actor,"18023607160522752")
+--     local name = getbaseinfo(actorId,"rolename")
+
+-- end
+
+
+-- function Trade.login(actor)
+
+-- end
+
+-- function this.TradeDataRepair_2025_01_15(actor)
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if table.isNullOrEmpty(allWorldGoods) then
+--         shellclean(actor)
+--         return
+--     end
+--     local roleWorld = allWorldGoods[actor:toString()]
+--     if table.isNullOrEmpty(roleWorld) then
+--         shellclean(actor)
+--         return
+--     end
+--     local allItemId = {}
+--     for index, good in pairs(roleWorld) do
+--         local itemId = good.itemid
+--         table.insert(allItemId, itemId)
+--     end
+--     shellclean(actor,allItemId)
+-- end
+
+
+-- function this.TradeDataRepair_2025_03_11(actor)
+--     local serverType = getbaseinfo("servertype")
+--     if serverType == 2 then
+--         -- 跨服服务器不执行
+--         return
+--     end
+--     local allWorldGoods = Trade.getSysTradeWorldGoods(actor)
+--     if table.isNullOrEmpty(allWorldGoods) then
+--         return
+--     end
+--     local now = getbaseinfo("now")
+--     for index, roleAllGoods in pairs(allWorldGoods) do
+--         if not table.isNullOrEmpty(roleAllGoods) then
+--             for index, good in pairs(roleAllGoods) do
+--                 if not table.isNullOrEmpty(good) and good.listingtime and good.publicitytime then
+--                     if not good.itemid then
+--                         roleAllGoods[tostring(good.itemid)] = nil
+--                     else
+--                         local publicityTime = good.listingtime + good.publicitytime
+--                         local offShelfTime = publicityTime + good.upshelfduration
+--                         if offShelfTime < now then
+--                             local ownId = good.ownid
+--                             local ownActor = getactor(ownId)
+--                             shelltobag(ownActor, ownActor:toString(), good.itemid, good.count, ownActor:toString())
+                    
+--                             roleAllGoods[tostring(good.itemid)] = nil
+--                         end
+--                     end
+--                 end
+--             end
+--         end
+--     end
+--     setsysvar(SYS_TRADE_WORLD_GOODS, allWorldGoods)
+-- end
+
+-- --TODO 一定要放到文件最后
+-- --注册充值事件
+-- -- RechargeEventListerTable:eventLister("0", "交易行", Trade.recharge)

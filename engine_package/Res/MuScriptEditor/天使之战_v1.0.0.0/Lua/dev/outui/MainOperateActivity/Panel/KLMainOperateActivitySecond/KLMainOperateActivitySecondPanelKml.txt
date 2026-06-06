@@ -1,0 +1,28 @@
+<uipanel id="KLMainOperateActivitySecondPanelKml" name="公测活动界面" a="00" width="300" height="300" zindex="190">
+  <img id="img_operate" a="00" atlas="Atlas/QJ5_MainOperateActivityPanel.spriteatlas" src="bg_vip" width="1259" height="599" raycast="1" x="0" y="0" active="1">
+    <img id="img_tog" a="00" width="1012" height="494" raycast="1" src="bg_activityTable_son1" atlas="Atlas/QJ5_MainOperateActivityPanel.spriteatlas" y="-40" x="3">
+    </img>
+    <text id="txt_title" a="01" text="公测活动" fontsize="24" height="36" width="190" ta="11" horwrap="1" x="0" y="-40" color="#D1BF9CFF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="btn_close" a="21" atlas="Atlas/QJ5_MainOperateActivityPanel.spriteatlas" src="btn_close" width="39" height="40" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-117" y="-42" h5x="-1100" h5y="-42">
+    </button>
+    <togglegroup id="togglegroup" a="10" width="155" height="470" onload="" raycast="1" x="135" y="-31">
+    </togglegroup>
+    <scrollview id="scrollview_tog" a="10" width="155" height="470" vertical="1" y="-30" raycast="1" x="135" movementtype="1">
+      <layout id="layout6" width="360" height="230" a="11" vertical="1" contentsizefitter="3" raycast="1" cella="11" space="1">
+        <datalist id="TogInfoList">
+          <toggle id="togItem" width="155" height="50" default="0" togglegroup_id="togglegroup" atlas="Atlas/QJ5_MainOperateActivityPanel.spriteatlas" onclick="" src="btn_common2" pimg="btn_common1" raycast="1" ison="0">
+            <text id="txt_togName" a="00" text="每日礼包" fontsize="20" height="25" width="131" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+            </text>
+            <img id="img_redPoint" a="21" atlas="Atlas/QJ5_MainRechargePanel.spriteatlas" src="img_redPoint" width="17" height="17" raycast="1" binddragid="" active="0">
+            </img>
+          </toggle>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img_mainOperateMask" a="10" width="155" height="470" raycast="1" x="135" y="-30" color="#FFFFFF00" src="bg_activityTable_son1" atlas="Atlas/QJ5_MainOperateActivityPanel.spriteatlas" active="1">
+    </img>
+    <panel id="subParent" a="00" width="267" height="248">
+    </panel>
+  </img>
+</uipanel>

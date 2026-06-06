@@ -1,0 +1,4 @@
+<uipanel id="KLAttPointSuitChoicePanel" name="职业切换界面" width="893" height="656" x="-43" y="47" zindex="400">
+  <prefab path="Assets/Res/UI/KLAttPointSuitChoicePanel.prefab" width="893" height="656" id="prefab_687">
+  </prefab>
+</uipanel>

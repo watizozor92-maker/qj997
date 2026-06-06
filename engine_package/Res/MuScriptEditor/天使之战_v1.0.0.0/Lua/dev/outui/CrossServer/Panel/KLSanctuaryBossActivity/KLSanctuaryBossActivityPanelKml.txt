@@ -1,0 +1,10 @@
+<uipanel id="KLSanctuaryBossActivityPanel" name="圣域boss入口界面" zindex="200" width="1050" height="566" x="0" onload="" maskonclick="">
+  <panel id="root" width="1050" height="566">
+    <img id="bg" src="Texture/sanctuaryBg.png" raycast="1" x="81" y="-30" atlas="" width="816" height="456">
+    </img>
+    <button id="join_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" x="85" y="-178" text="前往挑战" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="" raycast="1">
+    </button>
+    <text id="tishi" text="" width="600" height="20" ta="11" x="85" y="-225" fontsize="18" color="#ff2323" outlinesize="1" outlinecolor="0">
+    </text>
+  </panel>
+</uipanel>

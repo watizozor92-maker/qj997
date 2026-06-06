@@ -1,0 +1,68 @@
+<uipanel id="KLUnionMemberInfoPanel" name="战盟成员信息界面" adapter="1" x="370" y="90" zindex="300">
+  <prefab path="UI/UIUnionMemberDataPanel.prefab" width="322" height="416" id="prefab_95" color="#000000FF" x="20" y="-115">
+    <img id="Bg1" bind="Bg1" atlas="Atlas/FG_Union.spriteatlas" src="bg_tips2" scale9b="30" scale9l="46" scale9r="39" scale9t="34" y="0" width="322" height="416">
+    </img>
+    <img id="img1" a="00" width="66" height="66" raycast="1" src="border_head" atlas="Atlas/FG_Common.spriteatlas" x="-90" y="154" siblingindex="1">
+    </img>
+    <button id="btn_PanelClose" bind="btn_PanelClose" onclick="KmlXWUnionMemberUI/@CloseMemberPanel" x="-200" y="-200" width="3000" height="2000">
+    </button>
+    <img id="HeadPortrait" bind="HeadPortrait" atlas="Atlas/MUIcon.spriteatlas" databind="src=@career_src" src="10" width="60" height="57" x="-90" y="154">
+      <img id="grey" bind="grey" active="0">
+      </img>
+    </img>
+    <text id="MemberNameText" bind="MemberNameText" databind="@name" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" width="150" height="22" text="朱蒂霍拉德" fontsize="18" fontstyle="0" underline="0" x="106" y="90" a="11">
+    </text>
+    <img id="MemberLevel" bind="MemberLevel" width="44" height="22" x="-90" y="136">
+      <text id="MemberLevelText" bind="MemberLevelText" databind="@level" outline="1" horwrap="1" color="#CCCCCCFF" outlinesize="1" outlinecolor="#000000FF" width="50" height="18" text="800" fontsize="14" fontstyle="0" underline="0" x="1" y="0">
+      </text>
+    </img>
+    <img id="panel_manager" bind="panel_manager" active="" x="0" y="-106" width="300" height="200">
+      <img id="img2" a="00" width="322" height="206" raycast="1" siblingindex="0" src="bg_tips2" atlas="Atlas/FG_Union.spriteatlas" scale9l="47" scale9b="30" scale9r="39" scale9t="34">
+      </img>
+      <img id="Bg2" bind="Bg2" active="0">
+      </img>
+      <gridview id="MemberSetType" bind="MemberSetType" cellwidth="36" cellheight="36" spacex="115" spacey="16" x="13" y="0" width="264" height="170">
+        <toggle id="tog_SetType1" bind="tog_SetType1" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition 2" default="0" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou" active="0">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+        <toggle id="tog_SetType2" bind="tog_SetType2" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition 3" default="0" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou" active="0">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+        <toggle id="tog_SetType3" bind="tog_SetType3" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition 4" default="0" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou" active="0">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+        <toggle id="tog_SetType4" bind="tog_SetType4" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition 5" default="1" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou" active="0">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+        <toggle id="tog_SetType5" bind="tog_SetType5" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition 1" default="0" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+        <toggle id="tog_SetType6" bind="tog_SetType6" onclick="KmlXWUnionMemberUI/@ChoiceMemberPosition -1" default="1" width="36" height="36" src="bg_togg" atlas="Atlas/FG_Common.spriteatlas" pimg="ty_gou">
+          <text id="text" bind="Text" outline="1" horwrap="1" x="65" y="9" a="00" width="96" height="20" fontsize="18" color="#FFFFFFFF">
+          </text>
+        </toggle>
+      </gridview>
+    </img>
+    <button id="PlayerDetailBtn" bind="PlayerDetailBtn" onclick="KmlXWUnionMemberUI/@MemberDetailPanelClick 查看玩家 " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" ta="11" dcolor="#FFFFFF" outlinecolor="#000000FF" textcolor="#FFFFFFFF" width="113" height="41" x="-62" y="127" text="查看玩家" fontsize="18">
+    </button>
+    <button id="AddFriendBtn" bind="AddFriendBtn" onclick="KmlXWUnionMemberUI/@MemberDetailPanelClick 添加好友 " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" width="113" height="41" x="72" y="127" text="加为好友" fontsize="18">
+    </button>
+    <button id="PrivateChatBtn" bind="PrivateChatBtn" onclick="KmlXWUnionMemberUI/@MemberDetailPanelClick 私聊 " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" width="113" height="41" x="-62" y="75" text="私聊" fontsize="18">
+    </button>
+    <button id="CancelManageBtn" bind="CancelManageBtn" onclick="KmlXWUnionMemberUI/@CloseMemberPanel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" mimg="" pimg="" dimg="" outlinesize="0" outline="0" fontsize="16" ta="11" dcolor="#FFFFFF" textcolor="#FF2424FF" outlinecolor="#000000FF" width="82" height="28" x="-54" y="-64">
+      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" text="取消" outlinesize="1" outlinecolor="#000000FF" y="1">
+      </text>
+    </button>
+    <button id="ConfirmManageBtn" bind="ConfirmManageBtn" onclick="KmlXWUnionMemberUI/@DoChangeMemberPosition" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" fontsize="18" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" a="22" width="82" height="28" x="-54" y="21">
+      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="1">
+      </text>
+    </button>
+    <img id="DIY_Image" bind="DIY_Image" active="0">
+    </img>
+  </prefab>
+</uipanel>

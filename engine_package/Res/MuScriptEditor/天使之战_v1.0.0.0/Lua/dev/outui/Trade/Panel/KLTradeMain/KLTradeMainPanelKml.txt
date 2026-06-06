@@ -1,0 +1,66 @@
+<uipanel id="KLTradeMainPanel" name="交易行主界面" a="00" width="1039" height="578" zindex="190" y="0" x="0" mask="1" maskalpha="0" rotate="0,0,0">
+  <img id="img4" a="00" width="1021" height="544" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="2" y="-17">
+  </img>
+  <img src="Texture/FG_dankuangdi2.png" width="1040" height="573" raycast="1" id="img_33" atlas="" x="1" y="-8" offsetmax="520#278" scale9l="150" scale9b="166" scale9r="181" scale9t="239" offsetmin="-520#-295">
+    <text id="text1" a="01" text="交易行" fontsize="20" height="24" width="85" ta="11" outline="0" horwrap="1" y="-38" space="1" x="1" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" color="#FFFFFFFF">
+    </text>
+    <img id="img5" a="01" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" x="0" y="-8">
+    </img>
+  </img>
+  <button id="btn_close" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" a="21" raycast="1" x="-17" y="-32" width="34" height="34" color="#FFFFFFFF" mimg="" pimg="" dimg="">
+  </button>
+  <img src="img_interface_main009" atlas="Atlas/Common.spriteatlas" width="1003" height="412" y="-36" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img_36" x="4" active="1">
+  </img>
+  <togglegroup id="toggle_group_home_tab" width="990" height="36" a="11" y="-85" x="35">
+    <layout width="990" height="40" cella="10" space="-1" id="layout_38" y="1">
+      <toggle id="toggle_trade_home" togglegroup_id="toggle_group_home_tab" default="1" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+        <text text="交易行" y="0" fontsize="18" color="#FFFFFFFF" outlinecolor="#000000" outlinesize="1" id="text_40" outline="0" horwrap="1" ta="11" width="56" height="18" x="0">
+        </text>
+      </toggle>
+      <toggle id="toggle_month_card" togglegroup_id="toggle_group_home_tab" default="1" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" active="0">
+        <text text="月卡寄售" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text2" horwrap="1" ta="11" outline="0" width="56" height="18" contentsizefitter="2">
+        </text>
+      </toggle>
+      <toggle active="0" id="toggle_trade_union" togglegroup_id="toggle_group_home_tab" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+        <text text="战盟拍卖" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_42" outline="0" horwrap="1" ta="11" width="125" height="18" contentsizefitter="2">
+        </text>
+      </toggle>
+      <toggle active="1" id="toggle_trade_CrossServer" togglegroup_id="toggle_group_home_tab" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+        <text text="跨服拍卖" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_43" outline="0" horwrap="1" ta="11" width="98" height="18" contentsizefitter="2">
+        </text>
+      </toggle>
+      <toggle id="toggle_trade_record" togglegroup_id="toggle_group_home_tab" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+        <text text="交易记录" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_44" outline="0" horwrap="1" ta="11" width="71" height="22" contentsizefitter="2" x="0">
+        </text>
+      </toggle>
+      <toggle id="toggle_trade_my_up" togglegroup_id="toggle_group_home_tab" width="120" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+        <text text="我的上架" y="0" fontsize="18" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" id="text_46" outline="0" horwrap="1" ta="11" width="86" height="18" contentsizefitter="2">
+        </text>
+      </toggle>
+    </layout>
+  </togglegroup>
+  <img src="img_bag_10" atlas="Atlas/UIBagPanel.spriteatlas" a="12" x="240" y="10" id="img_52" width="170" height="46" deltay="0">
+    <img src="img_bag_02" atlas="Atlas/UIBagPanel.spriteatlas" a="10" width="30" height="30" x="9" id="img_53">
+    </img>
+    <img src="ty_btn_add_2" atlas="Atlas/FG_Common.spriteatlas" a="10" x="174" y="0" id="img_54">
+    </img>
+    <text id="txt_qj_count" text="999" x="22" width="111" ta="21" fontsize="20" color="#E2B167" outlinecolor="#000000" outlinesize="1" outline="0" horwrap="1" height="22" space="1">
+    </text>
+    <button id="btn_qj_tip" color="#00000000" x="21" width="204" height="30" raycast="1" y="1" fontsize="20" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+  </img>
+  <img src="img_bag_10" atlas="Atlas/UIBagPanel.spriteatlas" a="12" x="24" y="10" id="img1" width="170" height="46">
+    <img src="img_bag_02" atlas="Atlas/UIBagPanel.spriteatlas" a="10" width="30" height="30" x="9" id="img2">
+    </img>
+    <img src="ty_btn_add_2" atlas="Atlas/FG_Common.spriteatlas" a="10" x="174" y="0" id="img3" width="34" height="34">
+    </img>
+    <text id="scoreCount" text="999" x="22" width="111" ta="21" fontsize="20" color="#E2B167" outlinecolor="#000000" outlinesize="1" outline="0" horwrap="1" height="22" space="1">
+    </text>
+    <button id="scoreBtn" color="#00000000" x="19" width="202" height="30" raycast="1" y="1" fontsize="20" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+  </img>
+  <text id="text_cost_tips" active="0" a="12" x="230" y="19" width="270" height="30" horwrap="1" color="#FFFFFF" fontsize="20" outlinesize="1" outlinecolor="#000000" ta="01" outline="0">
+  </text>
+  <img id="img_line" a="11" width="4" height="399" raycast="1" src="line" atlas="Atlas/FG_TradePanel.spriteatlas" x="191" y="-123">
+  </img>
+</uipanel>

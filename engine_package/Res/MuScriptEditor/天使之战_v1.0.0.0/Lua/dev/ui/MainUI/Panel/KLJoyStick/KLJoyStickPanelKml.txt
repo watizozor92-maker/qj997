@@ -1,0 +1,10 @@
+<uipanel id="KLJoyStickPanel" name="遥感界面" adapter="1" a="12" width="304" height="264" movecanvas="0#0#44" x="0" y="0" zindex="100">
+  <panel id="move_root" x="0" y="44">
+    <img id="JoyStickBg" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg2" color="#ffffff00" raycast="1" x="6" y="13" width="305" height="305">
+      <img id="JoyStickBgSmall" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg2" raycast="0" x="0" y="0">
+      </img>
+      <img id="JoyStick" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg1" raycast="0" x="0" y="0">
+      </img>
+    </img>
+  </panel>
+</uipanel>

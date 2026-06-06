@@ -1,0 +1,5 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,20410111,皮盔,1#1,0#10000,1#1,
+2,2,20420111,革盔,1#1,0#10000,2#1,
+3,2,20430111,藤盔,1#1,0#10000,3#1,

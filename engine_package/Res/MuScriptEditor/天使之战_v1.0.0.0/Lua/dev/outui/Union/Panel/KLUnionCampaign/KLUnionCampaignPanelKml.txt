@@ -1,0 +1,44 @@
+<uipanel id="KLUnionCampaignPanelKml" name="战盟弹劾界面" a="20" adapter="1" width="422" height="750" x="-56">
+  <img id="Bg" a="21" atlas="" src="Texture/FG_bg_2ColumnsTanKuang.png" width="416" height="750" raycast="1" x="-2" y="0" active="1" color="#FFFFFF00">
+    <img id="TitleImage" a="01" atlas="Atlas/TS_UnionElection.spriteatlas" src="title_campaign" width="132" height="58" raycast="1" x="0" y="0" active="0">
+    </img>
+    <panel id="Bg_Templete" a="00" width="416" height="750">
+      <panel id="panel3" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img5" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="img6" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="text2" a="01" text="弹劾盟主" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0">
+    </text>
+    <button id="btnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="-10" y="-20" mimg="" pimg="" dimg="" h5x="-360" h5y="10">
+    </button>
+    <text id="txtCountDown" a="01" text="" fonttype="" fontsize="20" height="24" width="300" ta="11" x="0" y="-83" horwrap="1" color="#FF2323FF" outlinesize="1" outlinecolor="#000000" outline="0" fontstyle="0" underline="0">
+    </text>
+    <text id="txtName" a="01" text="是否同意弹劾当前盟主" fonttype="" fontsize="20" height="24" width="338" ta="11" x="0" y="-149" outlinesize="1" outlinecolor="#000000" horwrap="1" color="#DCE1E5" outline="0" active="1" fontstyle="0" underline="0" deltay="-1">
+    </text>
+    <button id="btnAgree" a="11" atlas="Atlas/FG_Union.spriteatlas" src="Agree" width="182" height="186" onclick="" text="" fonttype="" raycast="1" x="24" y="-181" mimg="" pimg="" dimg="">
+      <text id="text5" a="00" text="消耗" fonttype="" fontsize="18" height="22" width="40" ta="11" x="-39" y="-61" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0" fontstyle="0" underline="0" color="#DCE1E5">
+      </text>
+      <item id="itemAgree" src="" width="32" height="32" x="0" y="-62" a="00" tips="1" bgtype="0" mfixsize="32,32">
+      </item>
+      <text id="txtAgree" a="00" text="23445" fonttype="" fontsize="18" height="22" width="50" ta="11" x="47" y="-61" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0" color="#FBD994FF" fontstyle="0" underline="0">
+      </text>
+      <text id="txtAgreeNum" a="00" text="01" fonttype="FG_Union_Vote" fontsize="20" height="30" width="100" ta="11" x="10" y="-8" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="1" color="#DCE1E5">
+      </text>
+    </button>
+    <button id="btnRefuse" a="21" atlas="Atlas/FG_Union.spriteatlas" src="Refuse" width="182" height="186" onclick="" text="" raycast="1" x="-37" y="-181" mimg="" pimg="" dimg="">
+      <text id="text12" a="00" text="消耗" fonttype="" fontsize="18" height="22" width="40" ta="11" x="-40" y="-61" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0" color="#DCE1E5" fontstyle="0" underline="0">
+      </text>
+      <item id="itemRefuse" src="" width="32" height="32" x="0" y="-62" a="00" tips="1" bgtype="0" mfixsize="32,32">
+      </item>
+      <text id="txtRefuse" a="00" text="23445" fonttype="" fontsize="18" height="22" width="50" ta="11" x="46" y="-61" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0" color="#FBD994FF" fontstyle="0" underline="0">
+      </text>
+      <text id="txtDisagreeNum" a="00" text="18" fonttype="FG_Union_Vote" fontsize="20" height="30" width="100" ta="11" x="5" y="-8" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0">
+      </text>
+    </button>
+    <text id="txtDesc" a="01" text="" fonttype="" fontsize="20" height="200" width="344" ta="00" x="0" y="-406" outlinesize="1" outlinecolor="#000000" horwrap="1" color="#DCE1E5" linespace="1.3" outline="0" fontstyle="0" underline="0">
+    </text>
+  </img>
+</uipanel>

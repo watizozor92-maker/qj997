@@ -1,0 +1,30 @@
+<uipanel id="KLUIMasterTalentMainPanelKml" name="天赋主界面" a="00" width="300" height="300" zindex="0">
+  <button id="Mask" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="2000" height="2000" onclick="" text="" raycast="1" color="#FFFFFF00">
+  </button>
+  <img src="Texture/img_interface_main138.jpg" y="-28" width="1024" height="500" id="img2" x="0">
+  </img>
+  <img atlas="Atlas/Common.spriteatlas" src="img_interface_main123" width="1045" height="560" scale9b="79" scale9l="88" scale9r="88" scale9t="92" id="img1" y="0" raycast="1">
+  </img>
+  <img atlas="Atlas/Common.spriteatlas" src="img_interface_main009" height="406" width="1006" x="0" y="-23" scale9b="20" scale9l="20" scale9r="20" scale9t="20" id="img3">
+  </img>
+  <img id="TalentBG" a="00" atlas="" src="" width="990" height="395" raycast="1" y="-21" x="-2" active="1" color="#FFFFFFFF">
+  </img>
+  <button id="CloseButton" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" x="502" y="255" raycast="1" h5y="255" h5x="-502">
+  </button>
+  <img atlas="Atlas/UIArchangel.spriteatlas" src="tatlent_title" y="250" id="Title" width="132" height="58" x="0">
+  </img>
+  <togglegroup id="ToggleGroup" a="00" width="986" height="51" onload="" raycast="1" x="0" y="200">
+    <scrollview id="TitleToggleList" a="00" x="0" y="-15" width="982" height="58" vertical="0" raycast="1" movementtype="2" autoadjust="0">
+      <gridview id="gridview26" cellwidth="150" cellheight="35" raycast="1" cella="11" a="10" contentsizefitter="2" constraint="2" startcorner="0" constraintcount="1" spacex="0" spacey="0">
+        <datalist id="TitleDatalist" active="1">
+          <toggle id="TitleToggle" width="150" height="35" active="1" default="0" togglegroup_id="ToggleGroup" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window41" pimg="button_interface_window39" raycast="1" scale9l="125" scale9b="22" scale9r="133" scale9t="21" pimg_scale9l="124" pimg_scale9b="23" pimg_scale9r="120" pimg_scale9t="21">
+            <text id="TitleToggleText" a="00" text="职业天赋" fontsize="18" height="30" width="100" ta="11" horwrap="1" fonttype="" outlinesize="1" outlinecolor="#000000FF" x="1" y="-3">
+            </text>
+            <img id="TitleToggleRedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="66" y="8" active="0">
+            </img>
+          </toggle>
+        </datalist>
+      </gridview>
+    </scrollview>
+  </togglegroup>
+</uipanel>

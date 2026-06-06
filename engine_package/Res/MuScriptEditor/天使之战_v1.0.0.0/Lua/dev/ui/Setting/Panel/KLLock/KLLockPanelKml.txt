@@ -1,0 +1,14 @@
+<uipanel id="KLLockPanel" name="锁定屏幕设置界面" zindex="400" onload="KmlSettingUI/@初始化锁定屏幕">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlSettingUI/KmlLockScreenUI.prefab" a="20" x="0" y="0" z="0" width="134" height="750" rotate="0,0,0" id="prefab_824">
+    <slider id="Slider" bind="Slider" curvalue="0" minvalue="0" maxvalue="100" onchange="KmlSettingUI/@LockChange" width="450" height="108">
+    </slider>
+    <img id="img1" bind="KmlLockScreenUI">
+    </img>
+    <img id="img2" bind="Image">
+    </img>
+    <text id="text3" bind="Text">
+    </text>
+    <img id="img4" bind="di">
+    </img>
+  </prefab>
+</uipanel>

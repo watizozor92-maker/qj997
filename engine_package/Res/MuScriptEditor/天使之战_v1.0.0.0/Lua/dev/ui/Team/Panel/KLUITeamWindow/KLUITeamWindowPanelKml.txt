@@ -1,0 +1,58 @@
+<uipanel id="KLUITeamWindowPanel" name="组队快捷窗口" movecanvas="0#-483#230" zindex="199" width="277" height="187" x="43" y="0" a="11">
+  <panel id="move_root" x="0" y="0" width="277" height="187" a="11">
+    <img atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" x="-41" y="-4" width="277" height="187" id="img_17" raycast="1">
+    </img>
+    <panel id="MemberPanel" active="1" width="277" height="187" x="-41" y="-5">
+      <img id="sc_member" active="1" x="2" y="3" z="0" width="282" height="192" a="21" rotate="0,0,0" raycast="0" color="#FFFFFF00" text="自动接受队伍邀请" fontsize="16" fontstyle="0" underline="0">
+        <scrollview id="Content_Members" width="282" height="192" x="0" vertical="1" rotate="0,0,0" a="21">
+          <gridview id="Content_Members_list" cellwidth="282" cellheight="40" spacex="0" spacey="0" cella="21" contentsizefitter="1" width="282" height="0" startcorner="1">
+            <datalist id="Members_list">
+            </datalist>
+          </gridview>
+        </scrollview>
+      </img>
+      <layout id="layout1" control_height="0" contentsizefitter="0" vertical="1" height="180" width="40" a="21" raycast="1" x="45" y="3" cella="21" space="2">
+        <button id="btn_invitation" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_addteammate" raycast="1" width="40" height="68" active="1" mimg="" pimg="" dimg="" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" fonttype="">
+        </button>
+        <button id="btn_team" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_teammate" raycast="1" width="40" height="68" active="1" mimg="" pimg="" dimg="" text="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+        </button>
+      </layout>
+    </panel>
+    <panel id="NoMemberPanel" active="0" width="277" height="187" x="-41" y="-5">
+      <text text="当前暂未加入队伍" fontsize="16" active="1" color="#FFFFFFFF" outlinesize="1" x="0" y="66" outlinecolor="#000000FF" id="text_27" horwrap="1" fonttype="" width="150" height="20" ta="11" outline="0" fontstyle="0" underline="0">
+      </text>
+      <button id="btn_joinTeam" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" raycast="1" width="104" height="38" x="1" y="28" active="1" mimg="" pimg="" dimg="" text="附近队伍" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+      </button>
+      <button id="btn_createTeam" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" raycast="1" width="104" height="38" x="1" y="-22" active="1" mimg="" pimg="" dimg="" text="创建队伍" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+      </button>
+      <toggle id="tog_autoJoin" atlas="Atlas/Common.spriteatlas" src="button_interface_window54" pimg="ty_btn_gou" default="0" width="21" height="22" x="-66" y="-62">
+        <text text="自动接受队伍邀请" togglecolor="#FFFFFF|#FFFFFF" fontsize="16" outlinesize="1" outlinecolor="#000000FF" x="80" y="0" id="text_33" horwrap="1" color="#FFFFFFFF" ta="11" fonttype="" width="134" height="20" outline="0" fontstyle="0" underline="0" a="00">
+        </text>
+      </toggle>
+    </panel>
+    <panel id="go_playerPanelBg" a="00" width="123" height="94" x="-274" y="-96" raycast="0" active="0" z="-100" color="#00000099">
+      <img id="go_playerPanelBgIcon" a="00" atlas="Atlas/FG_Common.spriteatlas" src="arrow_right" raycast="1" x="78" y="30" color="#C1C1C1FF">
+      </img>
+      <img id="sp_playerPanelBg" x="0" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="123" height="94" raycast="1" y="0" scale9l="57" scale9b="43" scale9r="61" scale9t="49" a="01" color="#FFFFFFFF">
+      </img>
+      <button id="CloseSelectPlayerUIButton" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="2000" height="2000" onclick="" text="" raycast="1" x="-200" y="-100" color="#FFFFFF00">
+      </button>
+      <gridview id="ButtonGridView" x="0" cellwidth="104" cellheight="38" raycast="1" width="104" height="250" y="-5" spacey="5" a="01">
+        <button id="LockButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="查看玩家" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="ChatButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="私聊" raycast="1" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="KickButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="踢出队伍" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="PromotedButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="升为队长" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="SelectPlayerButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="选中玩家" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="ReqPointButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="104" height="38" text="发送位置" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="LeaveTeamButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" width="104" height="38" text="离开队伍" raycast="1" fontsize="18" fonttype="" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+        </button>
+      </gridview>
+    </panel>
+  </panel>
+</uipanel>

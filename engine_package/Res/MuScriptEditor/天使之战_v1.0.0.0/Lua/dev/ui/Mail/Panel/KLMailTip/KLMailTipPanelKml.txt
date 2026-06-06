@@ -1,0 +1,10 @@
+<uipanel id="KLMailTipPanel" name="邮箱提示界面" zindex="400" width="1334" height="750" z="-200">
+  <img id="bg" width="1334" height="750" color="#00000000" raycast="1">
+    <img id="text_bg" src="Texture/bg_tips_2.png">
+      <img id="close_btn" x="285" y="180" width="50" height="50" raycast="1" color="#00000000">
+      </img>
+      <text id="text" fontsize="20" width="600" height="300" text="1、邮件最多保存15天,请及时处理邮件,谨防丢失。\n2、全部领取:一次性领取所有邮件中的附件。\n3、全部删除:一次性删除所有邮件。\n4、当背包不足时,无法领取邮件。">
+      </text>
+    </img>
+  </img>
+</uipanel>

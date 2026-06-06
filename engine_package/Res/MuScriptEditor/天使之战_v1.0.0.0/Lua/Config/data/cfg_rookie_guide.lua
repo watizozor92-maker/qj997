@@ -1,0 +1,74 @@
+-- 此文件工具自动生成，不要修改
+---@class cfg_rookie_guide_column
+---第一位占位符，第二三位根职业ID(0表示全职业)，第四五位引表示同线性引导，第六位编号
+---@field id number @引导ID column=1 A
+---填写后置引导id
+---不填则不存在
+---@field rearGuide number @后置引导 column=2 B
+---策划自己看的
+---无意义
+---@field noSense string @策划备注 column=3 C
+---1强引导
+---2弱引导
+---@field guideType number @引导类型 column=4 D
+---conditions条件表格式；引导检测条件不生效时需要找程序沟通是否该模块没有刷新检测条件
+---前后置任务只填首个任务条件
+---@field conditions string @引导显示条件 column=5 E
+---绑定具体的控件unity路径 从一级panel开始填写
+---@field uiAddress string @UI界面路径 column=6 F
+---需要突出展示的道具ID
+---格式：道具ID#跟职业ID|道具ID#跟职业ID
+---@field itemShowId IntListList @指向道具ID column=7 G
+---挂机界面
+---地图id#怪物id
+---@field monsterMapId number @指向地图与怪物id column=8 H
+---1提示面板
+---2高亮框体
+---3黑色遮罩
+---4指向道具（指向的道具会高亮）
+---可配置多个，用#隔开
+---@field showType IntList @引导展示类型 column=9 I
+---引导提示文本
+---@field guideText string @提示面板显示文本 column=10 J
+---1上 2下 3左 4右
+---@field arrowPosition number @箭头位置 column=11 K
+---控件高亮框体样式
+---0：正方形
+---1：圆形
+---不填默认为0
+---@field highlightType number @高亮框体样式 column=12 L
+---框选特效的大小
+---格式：宽#高
+---@field highlightScale IntList @高亮框体大小 column=13 M
+---框选特效的位置偏移
+---格式：X#Y
+---不填则不生效
+---@field highlightPosition IntList @高亮框体偏移 column=14 N
+---1接取任务触发
+---2点击任务触发
+---@field triggerType number @触发方式 column=15 O
+---1：主界面上方的两行图标处于打开弹出状态 2：主界面右侧功能图标栏处于打开弹出状态 （该字段用于解决用提示框引导时，这些功能栏能够处于弹出可见状态）
+---@field openState number @按钮面板缩放状态 column=16 P
+---1:关联任务完成后结束
+---2:点击任意位置结束（只适用于单个引导）
+---3:点击绑定控件结束
+---4：1+3，点一次触发一次；满足引导触发条件则持续显示（只适用于单个引导）
+---@field finishType number @结束条件 column=17 Q
+---按钮文本和指引按钮的层级差
+---@field textPath number @层级差 column=18 R
+---引导按钮的文本
+---@field text string @按钮文本 column=19 S
+---不填不显示，填1显示左，填2显示右
+---@field guidePeople number @引导人物显示 column=20 T
+---填map_info的id，只有在这个地图内才触发
+---@field mapId number @触发地图 column=21 U
+---不填或0表示正常引导，1代表人机引导
+---@field bot number @人机任务检测 column=22 V
+---引导顺序标识，无实际排序仅标识使用
+---格式：根职业（0表示无职业限制）#顺序|根职业#顺序
+---@field sequence IntListList @新手引导顺序标识 column=23 W
+---@field img StringList @引导框图片 column=24 X
+local cfg_rookie_guide =
+{
+}
+return cfg_rookie_guide

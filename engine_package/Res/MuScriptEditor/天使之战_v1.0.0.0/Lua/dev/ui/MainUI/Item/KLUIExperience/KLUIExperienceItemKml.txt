@@ -1,0 +1,12 @@
+<uipanel id="KLUIExperienceItem" x="200" y="-148" z="0" width="160" height="35" a="12" rotate="0,0,0" zindex="-1">
+  <img id="experience_item_bg1" width="160" height="35" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" src="experienceIcon" atlas="Atlas/TS_Common.spriteatlas">
+    <img id="addBtn" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" src="experienceAddIcon" width="30" height="30" x="0" y="0" onclick="KmlMainUI/@添加经验加成 " z="0" a="20" rotate="0,0,0" raycast="0">
+    </img>
+    <text id="experienceName" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" x="3" width="129" height="25" ta="01" color="#C0C0C0" y="0" z="0" a="10" rotate="0,0,0" horwrap="1">
+    </text>
+    <text id="experienceTxt" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" x="3" width="129" height="20" ta="21" color="#FFFFFF" y="0" z="0" a="10" rotate="0,0,0" horwrap="1">
+    </text>
+    <countdown id="time" active="0" time="" fonttype="" fontsize="16" width="106" formattype="0" height="25" ta="21" x="2" y="1" color="#FFFFFF" z="0" a="00" rotate="0,0,0">
+    </countdown>
+  </img>
+</uipanel>

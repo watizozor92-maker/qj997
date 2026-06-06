@@ -1,0 +1,20 @@
+<uipanel id="KLDailyGoalMainPanel" name="每日目标界面" width="1050" height="566" zindex="0" x="0" y="0">
+  <img src="Texture/bg_oneLv_noclose.png" raycast="1" id="img_27">
+    <img src="title_daily_goal" atlas="Atlas/DailyGoal.spriteatlas" a="01" y="6" x="-7" id="img_28">
+    </img>
+  </img>
+  <button id="btn_close" src="button_interface_close5" atlas="Atlas/Common.spriteatlas" a="21" x="12" y="7" raycast="1" width="75" height="69" h5y="7" h5x="-993">
+  </button>
+  <togglegroup id="tab_toggle_group" x="33" y="-41" width="414" height="35" a="11">
+    <layout vertical="0" width="414" height="35" cella="10" id="layout_31">
+      <toggle id="toggle_tab_daily_active" atlas="Atlas/TS_Common.spriteatlas" src="bg_toggle_dark" pimg="bg_toggle_light" togglegroup_id="tab_toggle_group" width="133" height="35" default="1">
+        <text text="每日活跃" y="-2" outlinecolor="#000000" outlinesize="1" fontsize="18" color="#FFFFFF" togglecolor="#FFFFFF|#999999" id="text_33" outline="0" horwrap="1" width="133" height="32" x="0" ta="11">
+        </text>
+      </toggle>
+      <toggle id="toggle_tab_activity" atlas="Atlas/TS_Common.spriteatlas" src="bg_toggle_dark" pimg="bg_toggle_light" togglegroup_id="tab_toggle_group" width="133" height="35">
+        <text text="活动" y="-1" outlinecolor="#000000" outlinesize="1" fontsize="18" color="#FFFFFF" togglecolor="#FFFFFF|#999999" id="text_35" outline="0" horwrap="1" width="133" height="32" x="0" ta="11" linespace="0" space="0">
+        </text>
+      </toggle>
+    </layout>
+  </togglegroup>
+</uipanel>

@@ -1,0 +1,3 @@
+﻿int#c#s,int#c#s,string#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,string#c#s,intList#c#s
+id,costGroupId,description,level,successLevel,rate,rateClient,failLevel,firstRate,tips,costTag
+1,1,幸运宝石+1,0,1,10000,10000,0,0,用于激活幸运属性,1254006799#1

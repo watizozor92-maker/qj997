@@ -1,0 +1,62 @@
+<uipanel id="KLUnionSummaryInfoPanel" name="战盟信息界面" adapter="1" a="20" height="750" width="416" x="-461" raycast="1" zindex="200">
+  <img src="" a="21" x="-13" id="img_70" atlas="" width="416" height="750" y="0" color="#FFFFFF00">
+    <panel id="BG_Templete" a="00" width="416" height="750">
+      <panel id="ReMask" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="waralliance_info" y="-2" x="8" a="01" active="0">
+    </img>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-10" y="-20" z="-10" h5x="-355" h5y="9" onclick="KmlXWUnionSummaryInfoUI/@close_info_panel" width="34" height="34">
+    </img>
+    <text id="text1" a="01" text="战盟信息" fontsize="20" height="24" width="200" ta="11" color="#FFFFFFFF" outline="1" horwrap="1" y="-34" x="0" fontstyle="0" underline="0" space="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <panel id="info_panel" y="-5" width="416" height="750" a="01" x="-12">
+    <img id="flag_bg" x="28" a="11" atlas="Atlas/FG_Union.spriteatlas" src="Flag" width="138" height="247" y="-80">
+      <img id="flag_img" width="97" height="90" y="17" src="Texture/log1.png" x="0">
+      </img>
+    </img>
+    <panel id="info_text_panel" x="-26" width="225" height="40" a="21" y="-76">
+      <img id="name_bg" x="-2" width="225" height="40" atlas="Atlas/FG_Union.spriteatlas" src="UnionNameBg">
+        <text id="name_text" databind="@union_name" text="战盟名称七个字" height="24" fonttype="" fontsize="20" outlinesize="1" outlinecolor="#000000" color="#E6E600FF" ta="11" outline="1" horwrap="1" width="160" fontstyle="0" underline="0" x="2" y="0">
+        </text>
+      </img>
+      <panel id="info_level_panel" x="0" y="-41" width="200" height="30">
+        <text id="exp_text" text="等级" fonttype="" a="10" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" color="#FFFFFFFF" ta="01" y="2" x="8" width="40" height="22" fontstyle="0" underline="0">
+        </text>
+        <text id="exp_text_value" databind="@union_level" text="8级" fonttype="" a="20" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="21" outline="1" horwrap="1" color="#FFFFFFFF" x="0" y="2" width="50" height="22" fontstyle="0" underline="0">
+        </text>
+      </panel>
+      <panel id="info_num_panel" x="0" y="-71" width="200" height="30">
+        <text id="exp_num" text="人数" fonttype="" a="10" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" color="#FFFFFFFF" x="8" y="2" ta="01" width="40" height="22" fontstyle="0" underline="0">
+        </text>
+        <text id="exp_num_value" databind="@num_str" text="4/100" fonttype="" a="20" color="#00ff00FF" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="21" outline="1" horwrap="1" x="-3" y="2" width="80" height="22" fontstyle="0" underline="0">
+        </text>
+      </panel>
+      <panel id="info_owner_panel" x="0" y="-101" width="200" height="30">
+        <text id="exp_owner" text="盟主" fonttype="" a="10" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" x="8" ta="01" color="#FFFFFFFF" width="40" height="22" fontstyle="0" underline="" y="2">
+        </text>
+        <text id="exp_owner_value" databind="@leader_name" text="128" fonttype="" a="20" fontsize="18" outlinesize="1" outlinecolor="#000000" ta="21" outline="1" horwrap="1" x="-1" color="#FFFFFFFF" width="50" height="22" fontstyle="0" underline="0" y="2">
+        </text>
+      </panel>
+    </panel>
+    <img id="content_bg" y="155" width="375" height="297" a="02" scale9l="0" scale9r="0" scale9t="0" scale9b="0" atlas="" src="Texture/Union_InfoBoxMini.png" x="0" color="#FFFFFFFF">
+      <panel y="-15" width="300" height="22" a="01" id="panel_89" x="-1" text="战盟公告" fontsize="18" fontstyle="0" underline="0" color="#FFFFFFFF">
+        <img id="content_bg_l" a="10" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_1" x="13">
+        </img>
+        <text id="content_title" a="01" text="战盟公告" fonttype="" fontsize="18" outlinesize="0" outlinecolor="#000000" outline="1" horwrap="1" color="#FFFFFFFF">
+        </text>
+        <img id="content_bg_r" a="20" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_2" x="-11">
+        </img>
+      </panel>
+      <text id="union_content" a="02" width="330" height="230" databind="@announcement" text="" fonttype="" fontsize="18" outlinesize="0" outlinecolor="#000000" horwrap="1" outline="1" x="0" y="18" color="#FFFFFFFF">
+      </text>
+    </img>
+    <text id="Text_JoinCondition" a="02" text="" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="75">
+    </text>
+  </panel>
+</uipanel>

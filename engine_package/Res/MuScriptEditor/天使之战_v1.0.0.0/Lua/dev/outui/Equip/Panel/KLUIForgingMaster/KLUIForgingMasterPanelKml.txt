@@ -1,0 +1,26 @@
+<uipanel id="KLUIForgingMasterPanel" name="锻造大师界面" adapter="1" zindex="400" z="-600" width="416" height="750" a="20" x="-480" active="" enable="">
+  <panel id="Content" a="00" width="416" height="750">
+    <panel id="Bg_Template" a="00" width="416" height="750">
+      <panel id="panel3" a="00" width="404" height="680" y="-29" rectmask="1">
+        <img id="img5" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="img6" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="text_title" text="强化大师" fontsize="20" outlinesize="0" outlinecolor="#000000FF" x="0" y="-18" color="#FFFFFFFF" horwrap="1" fonttype="" width="200" height="30" ta="11" outline="1" a="01" fontstyle="0" underline="0">
+    </text>
+    <button id="btn_close" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" color="#FFFFFFFF" raycast="1" x="-2" y="1" a="21" mimg="" pimg="" dimg="">
+    </button>
+    <text id="text_part_name" text="武器   防具" fontsize="16" outlinesize="0" outlinecolor="#000000FF" y="-48" color="#00ff00FF" horwrap="1" fonttype="" width="200" height="20" ta="11" outline="1" a="01" fontstyle="0" underline="0" x="0" active="0">
+    </text>
+    <text id="text_tips" text="满足强化条件可点亮属性" fontsize="16" outlinesize="1" outlinecolor="#000000FF" y="-73" horwrap="1" fonttype="" width="200" height="20" ta="11" outline="1" a="01" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" active="0">
+    </text>
+    <scrollview id="scrollview1" a="01" width="370" height="650" vertical="1" y="-75" raycast="1" x="-1" movementtype="1" color="#232323FF">
+      <layout id="layout2" width="370" height="305" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" space="14">
+        <datalist id="DataList_Condition">
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

@@ -1,0 +1,20 @@
+<uipanel id="KLUIPrivilegeItemDescriptionPanel" name="激活特权说明界面" width="300" height="300" zindex="205" z="-100">
+  <img id="img_mask_click" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="1334" height="750" raycast="1" active="1" color="#FFFFFF00">
+  </img>
+  <img id="img_bg" a="00" atlas="" src="Texture/img_privilege_tips.png" width="387" height="511" raycast="1" x="0" y="0" scale9l="65" scale9b="70" scale9r="72" scale9t="83">
+    <img id="img1" a="00" atlas="Atlas/KLUIPrivilegePanel.spriteatlas" src="img_line" width="350" height="7" raycast="1" y="199" x="0" scale9l="20" scale9b="0" scale9r="20" scale9t="0">
+    </img>
+    <text id="text_tip_title" text="阿巴阿巴" fontsize="24" ta="11" y="222" horwrap="1" width="300" height="24" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <scrollview id="scrollview_tips" a="00" width="310" height="403" vertical="1" y="-22" raycast="1" autoadjust="0" x="0" movementtype="2">
+      <layout id="layout_tips" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" control_width="0" control_height="1" space="15" expand_width="0">
+        <datalist id="datalist_tips">
+          <text id="text_tip" horwrap="1" text="1.消耗月卡时间兑换<color=#00ff00>黄金特权</color>或钻石特权获取超额收益。" color="#FFFFFF" fontsize="20" width="310" ta="00" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </datalist>
+      </layout>
+    </scrollview>
+    <button id="button_tip" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="125" height="43" onclick="" text="前往体验" raycast="1" y="-165" active="0">
+    </button>
+  </img>
+</uipanel>

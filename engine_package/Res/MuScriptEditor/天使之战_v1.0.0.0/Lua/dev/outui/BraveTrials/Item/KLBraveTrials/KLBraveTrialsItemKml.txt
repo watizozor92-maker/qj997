@@ -1,0 +1,16 @@
+<uipanel id="KLBraveTrialsItem" name="勇气试炼关卡模板" width="300" height="300" zindex="-1">
+  <button id="btn_level" x="-35" onclick="KmlXWBraveTrialsUI/@勇气试炼选中关卡">
+    <img id="img_level_select">
+    </img>
+  </button>
+  <img id="img_title_bg" x="-35" atlas="Atlas/KLBraveTrialsUI.spriteatlas" src="img_brave_bg">
+    <img id="img_title_select" atlas="Atlas/KLBraveTrialsUI.spriteatlas" src="img_brave_bg_select">
+    </img>
+    <text id="text_title" ta="11" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" text="勇气试炼100" fonttype="" width="100" height="24">
+    </text>
+  </img>
+  <item id="level_reward" x="-35" width="50" height="50" tips="0" bgtype="0" raycast="0">
+    <img id="img_level_reward_click" atlas="Atlas/KLBraveTrialsUI.spriteatlas" src="img_brave_bg_select" width="50" height="50" color="#FFFFFF00" raycast="1">
+    </img>
+  </item>
+</uipanel>

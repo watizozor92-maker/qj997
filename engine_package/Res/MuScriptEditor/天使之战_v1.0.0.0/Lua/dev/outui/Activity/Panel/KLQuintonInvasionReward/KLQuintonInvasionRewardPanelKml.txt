@@ -1,0 +1,85 @@
+<uipanel id="KLQuintonInvasionRewardPanelKml" name="昆顿入侵奖励界面" zindex="400" a="00" width="1334" height="750" x="0" y="0" z="-150">
+  <img id="bg" a="00" atlas="" src="Texture/img_window.png" width="1019" height="613" raycast="1" x="1" y="0">
+  </img>
+  <img id="img2" a="00" atlas="" src="Texture/quinton_invasion_bg1.png" width="992" height="473" raycast="1" x="0" y="0">
+  </img>
+  <img id="img5" a="00" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="-383" y="210">
+    <text id="text6" a="00" text="活动规则" fontsize="18" height="25" width="127" ta="01" horwrap="1" x="77" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="img3" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="icon1" width="183" height="25" raycast="1" x="-387" y="182">
+    <text id="text4" a="00" text="参与方式" fontsize="18" height="25" width="183" ta="01" horwrap="1" x="9" y="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="img12" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-68" y="-30">
+      <text id="text10" a="00" text="活动时间内可进入" fontsize="18" height="25" width="127" ta="01" horwrap="1" x="77" y="0" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+  </img>
+  <img id="img7" a="00" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="-36" y="210" binddragid="">
+    <text id="text8" a="00" text="活动奖励" fontsize="18" height="25" width="127" ta="01" horwrap="1" x="77" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="img9" a="00" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="276" y="210">
+    <text id="text10" a="00" text="个人积分奖励" fontsize="18" height="25" width="127" ta="01" horwrap="1" x="77" y="0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="img1" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="icon1" width="183" height="25" raycast="1" x="-387" y="118">
+    <text id="text2" a="00" text="开启时间" fontsize="18" height="25" width="183" ta="01" horwrap="1" x="9" y="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="img4" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-68" y="-28">
+      <text id="openDay" a="00" text="开启时间为开服第15天后" fontsize="18" height="23" width="284" ta="00" horwrap="1" x="156" y="-1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="opentime" a="00" text="每天12:00-13:00和17:00-20:00" fontsize="18" height="23" width="284" ta="00" horwrap="1" x="156" y="-24" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+  </img>
+  <img id="img6" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="icon1" width="183" height="25" raycast="1" x="-387" y="34">
+    <text id="text7" a="00" text="活动玩法" fontsize="18" height="25" width="183" ta="01" horwrap="1" x="9" y="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="activityDes" a="00" text="1.活动开启后玩家进入活动后会被分为
+猎鹰阵营、巨龙阵营、苍狼阵营3个阵
+营。
+2.活动开启后每对昆顿造成一定伤害获
+得1点积分。
+3.获得1点积分所需的伤害会随着开服天
+数提升。
+4.击杀其他玩家可以获得被击杀者20%
+的积分。
+5.活动结束后阵营积分第一的阵营可获
+得拍卖分红。
+6.活动结束后根据个人积分排名发放排
+名奖励。
+7.玩家每日只能获得一次积分奖励,每
+日活动排名奖励后再次参加活动将不能
+获得积分。
+8.奖励结算最低积分要求:30。
+" fontsize="14" height="272" width="256" ta="00" horwrap="1" x="47" y="-154" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <img id="img13" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="line" width="34" height="390" raycast="1" x="-168" y="0">
+  </img>
+  <img id="img14" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="line" width="34" height="390" raycast="1" x="171" y="0">
+  </img>
+  <text id="rewardMountDes" a="00" text="互动结束后跨服拍卖行将又概率上架坐骑-羊角有翼兽" fontsize="14" height="44" width="257" ta="11" horwrap="1" x="0" y="135" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+  </text>
+  <img id="model" a="00" width="60" height="60" atlas="Atlas/Common.spriteatlas" src="ty_equipicon" raycast="1" y="56" x="0" color="#ffffff00">
+    <item id="model_item" atlas="Atlas/Common.spriteatlas" bgimg="ty_equipicon" x="0" y="0" z="0" width="70" height="70">
+    </item>
+  </img>
+  <text id="text18" a="00" text="阵营积分第一阵营中的玩家个人积分超过<color=#00ff00>30</color>可活得拍卖分红" fontsize="14" height="38" width="220" ta="11" horwrap="1" x="1" y="-18" outlinesize="1" outlinecolor="#000000FF" chatiteminfo="">
+  </text>
+  <img id="img19" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="icon1" width="183" height="25" raycast="1" x="290" y="182">
+    <text id="text20" a="00" text="个人奖励预览" fontsize="18" height="25" width="183" ta="01" horwrap="1" x="9" y="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </img>
+  <scrollview id="rewardList1" a="01" width="239" height="412" vertical="1" y="-212" raycast="1" x="331">
+    <layout id="layout23" width="239" height="412" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" control_width="0" control_height="0" expand_width="1" expand_height="1">
+      <datalist id="rewardList">
+      </datalist>
+    </layout>
+  </scrollview>
+  <img id="title" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="rewardTitleIcon" width="151" height="53" raycast="1" x="0" y="277">
+  </img>
+  <img id="closeBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" raycast="1" x="488" y="277">
+  </img>
+</uipanel>

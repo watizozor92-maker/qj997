@@ -1,0 +1,120 @@
+<uipanel id="KLPreviewPanel" name="系统预告界面" zindex="200" width="1334" height="750" x="0" y="0" raycast="0" z="0" a="00" rotate="0,0,0" color="#00000000" mask="0">
+  <panel id="PreviewUI" width="1043" height="576" y="0" x="0" z="0" a="00" rotate="0,0,0">
+    <img id="img2" a="00" width="1018" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
+    </img>
+    <img src="Texture/FG_dankuangdi2.png" width="1042" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+      <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
+      </img>
+      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35">
+      </img>
+      <slider id="slider1" a="00" width="800" height="50" raycast="1" active="0">
+      </slider>
+    </img>
+    <img id="BG" width="1042" height="574" y="0" x="0" z="0" src="Texture/FG_bg_yijitanchuan2.png" a="00" rotate="0,0,0" raycast="1" active="1" atlas="" color="#FFFFFF00">
+      <img id="FG_line" a="00" src="Texture/FG_line.png" width="10" height="460" raycast="1" x="-325" y="-35">
+      </img>
+      <togglegroup id="togglegroup3" a="11" width="500" height="40" onload="" raycast="1" x="22" y="-68" active="0">
+        <layout id="layout5" control_height="0" contentsizefitter="0" vertical="0" height="40" width="500" a="11" raycast="1" cella="12" space="4">
+          <toggle id="Tog_Guide" width="112" height="35" src="bg_toggle_dark" default="1" togglegroup_id="togglegroup3" onclick="" raycast="1" atlas="Atlas/TS_Common.spriteatlas" pimg="bg_toggle_light">
+            <text id="text7" a="00" text="攻略" fontsize="18" height="35" width="112" ta="11" outline="0" horwrap="1" color="#FFFFFF">
+            </text>
+            <img id="RedDot_Guide" a="21" width="17" height="17" raycast="1" src="img_uiicon_41" atlas="Atlas/QJ5_Common.spriteatlas" x="3" y="4">
+            </img>
+          </toggle>
+          <toggle id="Tog_Preview" width="112" height="35" src="bg_toggle_dark" default="0" togglegroup_id="togglegroup3" onclick="" raycast="1" atlas="Atlas/TS_Common.spriteatlas" pimg="bg_toggle_light">
+            <text id="text9" a="00" text="玩法" fontsize="18" height="35" width="112" ta="11" outline="0" horwrap="1" color="#FFFFFF">
+            </text>
+            <img id="RedDot_Preview" a="21" width="17" height="17" raycast="1" src="img_uiicon_41" atlas="Atlas/QJ5_Common.spriteatlas" x="3" y="4">
+            </img>
+          </toggle>
+        </layout>
+      </togglegroup>
+      <scrollview id="Previewview" x="35" y="-97" z="0" width="150" height="450" vertical="1" a="11">
+        <layout id="layout" vertical="1" a="01" cella="01" width="180" height="0" space="2" contentsizefitter="1">
+          <datalist id="previewlist">
+            <button id="toggle" default="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" width="147" height="44" raycast="1">
+              <text id="test" text="" fontsize="18" x="0" y="0" width="180" a="00" ta="11" fonttype="" outlinecolor="#000000" outlinesize="1" active="1">
+              </text>
+              <img id="red" atlas="Atlas/UIMisc.spriteatlas" src="img_uiicon_41" a="21">
+              </img>
+            </button>
+          </datalist>
+        </layout>
+      </scrollview>
+      <scrollview id="content_scroll" x="90" y="-93" z="0" width="820" height="356" vertical="1" a="01">
+        <layout id="content_layout_scroll" vertical="1" x="0" y="0" width="810" a="01" cella="11" space="12" contentsizefitter="1" control_height="1">
+          <datalist id="contentlist">
+            <layout id="content_layout" vertical="1" width="810" cella="11" space="12" control_height="1">
+              <img id="preview_name_img" atlas="Atlas/FG_Common.spriteatlas" src="title_arrow" width="144" height="42">
+                <text id="preview_name" text="功能名称" fonttype="" fontsize="20" outlinecolor="#000000" outlinesize="1" color="#FBD994" a="00" ta="11" outline="1" horwrap="1">
+                </text>
+              </img>
+              <layout id="layout1" control_height="1" contentsizefitter="0" vertical="1" height="500" width="750" raycast="1" space="12" cella="11">
+                <datalist id="small_tittlelist">
+                  <layout id="textlayout1" width="730" vertical="1" cella="11" space="12" control_height="1">
+                    <layout id="preview_tittle_layout" width="780" height="27" paddingleft="33" cella="11" control_height="1">
+                      <text id="preview_tittle" text="开启时间" x="400" fontsize="18" color="#FBD994" fonttype="" outlinecolor="#000000" width="780" outline="1" horwrap="1">
+                        <img id="preciew_icon_img1" a="11" x="-27" y="4" atlas="Atlas/FG_Common.spriteatlas" src="star_1" control_height="1">
+                        </img>
+                      </text>
+                    </layout>
+                    <layout id="preview_text_layout" width="750" height="10" paddingleft="33" cella="11" control_height="1">
+                      <text id="preview_text" linespace="1.5" width="750" text="" horwrap="1" fonttype="" outlinecolor="#000000" outlinesize="1" fontsize="18" color="#DCE1E5" outline="1">
+                      </text>
+                    </layout>
+                    <layout id="preview_img_layout" width="750" height="10" paddingleft="16" cella="00">
+                      <img id="preview_img" width="750" height="10">
+                      </img>
+                    </layout>
+                  </layout>
+                </datalist>
+              </layout>
+              <layoutelement id="space" width="750" height="10" ignorelayout="0" minwidth="1" minheight="1" preferredwidth="1" preferredheight="10" flexiblewidth="1" flexibleheight="1" priority="1">
+              </layoutelement>
+            </layout>
+          </datalist>
+        </layout>
+      </scrollview>
+      <img id="img5" a="00" width="798" height="89" raycast="1" src="PreviewReward" atlas="Atlas/FG_Common.spriteatlas" x="89" y="-211" moveto="0,0,0">
+        <layout id="BtnLayout" control_height="1" vertical="0" height="89" width="773" cella="20" raycast="1" space="-100" x="-7" y="0" a="00">
+          <layoutelement id="layoutelement_Reward" width="48" height="60" ignorelayout="0" minwidth="1" minheight="1" preferredwidth="60" preferredheight="60" flexiblewidth="1" flexibleheight="1" priority="1">
+            <item id="Item_Reward" src="20020001" width="42" height="42" x="-126" y="0" mfixsize="42,42" textcolor="#FFFFFF">
+            </item>
+          </layoutelement>
+          <layoutelement id="layoutelement_BtnReceive" width="103" height="60" ignorelayout="0" minwidth="1" minheight="1" preferredwidth="103" preferredheight="60" flexiblewidth="1" flexibleheight="1" priority="1">
+            <button id="Btn_Receive" width="103" height="36" y="0" onclick="" text="领取" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" x="-14">
+              <img id="img_receiveRed" a="21" width="17" height="17" raycast="1" src="img_uiicon_41" atlas="Atlas/QJ5_Common.spriteatlas" x="3" y="4">
+              </img>
+            </button>
+          </layoutelement>
+        </layout>
+      </img>
+      <img id="preview_receive" atlas="Atlas/FG_Common.spriteatlas" src="PreviewReward" x="86" y="-210" width="798" height="89" active="1" scale9l="60" scale9b="40" scale9r="65" scale9t="29" color="#FFFFFFFF">
+        <button id="receive_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="-31" textcolor="#FFFFFF" fontsize="18" text="前往" outlinesize="1" outlinecolor="#000000FF" raycast="1" mimg="" pimg="" dimg="" width="103" height="36" a="20" y="0">
+          <img id="btnEffect" atlas="Atlas/TS_Common.spriteatlas" src="btnEffect" width="113" height="40" active="0">
+          </img>
+        </button>
+        <text id="receive_text" x="250" color="#FF0000" fontsize="20" fonttype="" outlinecolor="#000000" outlinesize="1" outline="1" horwrap="1">
+        </text>
+        <text id="receive_tips" x="21" width="80" height="22" color="#DCE1E5" fontsize="18" fonttype="" outlinecolor="#000000" outlinesize="1" text="奖励预览" outline="1" horwrap="1" ta="01" fontstyle="0" underline="0" y="1" a="10">
+        </text>
+        <scrollview id="rewardscroll" a="20" width="550" height="65" vertical="0" y="2" raycast="1" x="-149">
+          <layout id="layout2" width="360" height="65" a="20" vertical="0" contentsizefitter="2" raycast="1" cella="20" space="5">
+            <datalist id="reward_data">
+              <item id="receive_item" tips="1" itemid="" width="42" height="42" bgtype="1" itemtype="9" mfixsize="42,42" textcolor="#FFFFFF" fontsize="16">
+                <img id="clickItem" x="0" y="0" width="60" height="60" color="#00000000" raycast="1">
+                </img>
+              </item>
+            </datalist>
+          </layout>
+        </scrollview>
+      </img>
+      <img id="title" atlas="Atlas/KmlPreviewUI.spriteatlas" src="PreviewTitle" a="01" x="-5" y="10" active="0">
+      </img>
+      <img id="closeBtn" x="-16" y="-22" color="#FFFFFF" width="34" height="34" a="21" raycast="1" active="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" h5x="-985" h5y="5">
+      </img>
+      <text id="text1" a="01" text="攻略" fontsize="20" height="24" width="150" ta="11" outline="0" horwrap="1" y="-35" color="#FFFFFF" fontstyle="0" underline="0" x="0" space="0">
+      </text>
+    </img>
+  </panel>
+</uipanel>

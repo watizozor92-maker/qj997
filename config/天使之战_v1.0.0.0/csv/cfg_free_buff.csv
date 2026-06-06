@@ -1,0 +1,5 @@
+﻿int#c#s,string#c#s,string#c#s,string#c#s,stringList#c#s,stringListList#c#s,intList#c#s,intList#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,intList#c#s,intList#c#s,intListList#c#s,intListList#c#s,int#c#s,intList#c#s,intList#c#s,intList#c#s,intListList#c#s,intListList#c#s,int#c#s,int#c#s,int#c#s,intList#c#s,int#c#s,int#c#s
+id,name,conditions,icon,instructionConditions,instruction,time,autoPick,autoRecovery,autoPotion,withStore,withWarehouse,tradeNumber,trade,offlineExpAdd,offlineItem,mapLine,experience,itemDrop,itemConsume,monsterExp,gold,move,recovery,explode,attribute,autoUse,onHookTime,showType,itemModel,open,type
+1,特权卡,checkUseItemTime[30030121]=1,28,,KmlShopMallUI/OpenKmlShopMallUI,30#0#0#0,3#2,,,1,1,,,,,,,,,,,,,,,,,,,,
+2,高级特权卡,checkUseItemTime[30030122]=1,34,,KmlShopMallUI/OpenKmlShopMallUI,30#0#0#0,6#2,6,1,1,1,,,2000,1,,,,,,,,,,,,,,,,
+3,黄金线路卡,checkUseItemTime[30030124]=1,34,,,30#0#0#0,,,,,,,,,,3,,,,,,,,,,,,,,,

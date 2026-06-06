@@ -1,0 +1,20 @@
+<uipanel id="KLNewSynthesisPreviewPanelKml" a="00" width="356" height="265" mask="1" maskalpha="0" z="-300" zindex="230">
+  <img id="Content" a="00" width="356" height="265" raycast="1" atlas="" src="Texture/FG_dankuangdi.png" x="34" y="59">
+    <button id="Btn_Close" a="21" width="34" height="34" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-5" y="-15">
+    </button>
+    <text id="text2" a="01" text="合成预览" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" y="-20">
+    </text>
+    <scrollview id="scrollview3" a="00" width="290" height="100" vertical="0" y="-8" raycast="1" movementtype="2">
+      <layout id="layout4" width="290" height="80" a="00" vertical="0" contentsizefitter="2" raycast="1" space="5">
+        <datalist id="DataList_Item">
+          <panel id="panel6" width="80" height="80">
+            <item id="item7" src="20020001" width="80" height="80" mfixsize="80,80" tips="1" raycast="1">
+            </item>
+          </panel>
+        </datalist>
+      </layout>
+    </scrollview>
+    <text id="text1" a="02" text="合成后，会随机产出一个道具" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" y="21" color="#FA2424FF">
+    </text>
+  </img>
+</uipanel>

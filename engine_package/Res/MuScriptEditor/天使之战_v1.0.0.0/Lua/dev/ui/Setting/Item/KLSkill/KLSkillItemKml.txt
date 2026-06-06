@@ -1,0 +1,12 @@
+<uipanel id="KLSkillItemKml" name="召唤技能模板" x="155" y="-55" z="0" width="310" height="110" a="00" zindex="-1">
+  <img id="selectSkillBtn" color="#FFFFFF00" onclick="KmlSettingUI/@选择召唤技能  " width="310" height="110" a="00" rotate="0,0,0" raycast="1">
+  </img>
+  <text id="skillDes" text="" color="#FFFFFFFF" fontsize="18" width="203" height="83" ta="00" x="54" y="0" outlinesize="1" outlinecolor="#000000" z="0" a="00" rotate="0,0,0" horwrap="1">
+  </text>
+  <img id="skillBg" atlas="Atlas/UISettingPanel.spriteatlas" src="img_skill_frame1" width="108" height="110" x="-102" y="0" z="0" a="00" rotate="0,0,0" raycast="0">
+  </img>
+  <img id="SkillIcon" active="" atlas="Atlas/Skill_icon.spriteatlas" src="" width="70" height="70" x="-102" y="0" z="0" a="00" rotate="0,0,0" raycast="0">
+  </img>
+  <img id="line" atlas="Atlas/Common.spriteatlas" src="ty_tips_bg" width="369" height="3" x="40" y="-53" z="0" a="00" rotate="0,0,0" raycast="0">
+  </img>
+</uipanel>

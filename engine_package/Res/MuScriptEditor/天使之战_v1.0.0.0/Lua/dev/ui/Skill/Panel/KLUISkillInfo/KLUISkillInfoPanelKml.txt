@@ -1,0 +1,50 @@
+<uipanel id="KLUISkillInfoPanel" name="技能信息界面" adapter="1" x="1" y="-1" a="20" zindex="200" width="404" height="662">
+  <panel id="BG_Templete" a="00" width="416" height="750" x="-420" y="1">
+    <panel id="ReMask" a="00" width="404" height="735" y="-7" rectmask="1">
+      <img id="img1231" a="00" width="680" height="750" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="img1" a="00" width="161" height="27" raycast="0" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="363">
+      </img>
+    </img>
+  </panel>
+  <img id="KmlXWSkillInfoUI" x="-408" a="21" src="Texture/FG_bg_2ColumnsTanKuang.png" raycast="1" width="404" height="662" y="45" color="#ffffff00">
+    <togglegroup id="SkillTogGroup" allowswitchoff="0">
+    </togglegroup>
+    <img id="closeBtn" x="-16" y="-15" h5x="-355" h5y="6" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" raycast="1" width="34" height="34">
+    </img>
+    <img id="listMask" width="360" height="600" atlas="Atlas/Common.spriteatlas" src="Background_1" y="-60" x="-9" a="01">
+      <layout id="loopscrollview" vertical="0" a="11" x="0" y="0" width="360" height="555" cellwidth="120" cellheight="150" contentsizefitter="2" atlas="Atlas/UISkillPanel.spriteatlas" src="button_skill_set">
+        <datalist id="loopscrollviewData">
+        </datalist>
+      </layout>
+    </img>
+    <button id="BtnSkillSetting" x="140" y="-365" width="59" height="58" atlas="Atlas/UISkillPanel.spriteatlas" src="button_skill_set" raycast="1">
+    </button>
+    <layout id="pageList" vertical="0" width="184" height="21" a="02" y="5" cella="00" space="20" x="-7">
+      <datalist id="pageData">
+        <panel id="root" width="20" height="20">
+          <img id="pageImg" width="20" height="20" atlas="Atlas/UISkillPanel.spriteatlas" src="img_page" x="0" y="0">
+          </img>
+        </panel>
+      </datalist>
+    </layout>
+    <text id="TextTitle" color="#ffffff" a="01" text="技 能" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" linespace="1" outlinesize="1" outlinecolor="#000000FF" x="-9" y="-23">
+    </text>
+    <panel id="shapeShiftRoot" a="00" width="10" height="10" x="-125" y="-270" active="0" scale="0.75">
+      <img id="img_shift_bg" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_bg" width="336" height="68" raycast="1" x="-50" y="0" rotate="0,180,0" active="0">
+      </img>
+      <layout width="250" height="68" space="10" x="130" cella="10" id="layout_transfer_skill">
+        <datalist id="transfer_datalist">
+          <button id="btn_shift" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="1">
+            <img id="img_shift_icon" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg">
+            </img>
+          </button>
+        </datalist>
+      </layout>
+      <button id="btn_shift" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift" width="95" height="95" onclick="" text="" raycast="1" mimg="" pimg="" dimg="">
+      </button>
+    </panel>
+  </img>
+</uipanel>

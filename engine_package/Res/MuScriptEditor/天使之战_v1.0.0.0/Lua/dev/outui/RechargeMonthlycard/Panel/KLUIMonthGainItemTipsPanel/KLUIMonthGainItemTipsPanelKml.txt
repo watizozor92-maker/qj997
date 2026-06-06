@@ -1,0 +1,20 @@
+<uipanel id="KLUIMonthGainItemTipsPanel" name="月卡道具获取界面" zindex="800" z="-1000" x="0" y="0" width="10" height="10" a="00" rotate="0,0,0" raycast="0" color="#00000000">
+  <img id="CloseBG" width="2000" height="2000" raycast="1" x="0" y="0" z="0" a="00" rotate="0,0,0" fontsize="16" color="#00000000">
+    <img id="bgImg" src="Texture/bg_endingPanel.png" x="0" y="25" z="0" width="1061" height="388" a="00" rotate="0,0,0" raycast="0">
+      <img id="title" src="Texture/img_ending_reword.png" x="0" y="176" width="318" height="109">
+      </img>
+      <panel id="bg" width="420" height="92" x="0" y="59" z="0" a="00" rotate="0,0,0">
+        <scrollview id="scrollview" vertical="0" x="0" y="0" z="0" width="420" height="114" a="00" rotate="0,0,0" raycast="1">
+          <layout id="layout" vertical="0" cella="00" a="00" space="10" contentsizefitter="3" x="0" y="0" z="0" width="100" height="100" rotate="0,0,0" control_width="0" control_height="0" expand_width="0" expand_height="0" paddingtop="0" paddingbutttom="0" paddingleft="0" paddingright="0">
+            <datalist id="rewards">
+              <item id="item_" width="70" height="70" itemid="" mfixsize="70,70" uniqueid="" raycast="1">
+              </item>
+            </datalist>
+          </layout>
+        </scrollview>
+      </panel>
+      <text id="showTxt" a="00" text="已激活畅享月卡,立刻返利9000钻石" fontsize="18" height="25" width="447" ta="10" horwrap="1" y="-39" color="#5CE366FF">
+      </text>
+    </img>
+  </img>
+</uipanel>

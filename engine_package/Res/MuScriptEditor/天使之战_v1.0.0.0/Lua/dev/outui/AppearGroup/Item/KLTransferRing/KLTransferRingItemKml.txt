@@ -1,0 +1,14 @@
+<uipanel id="KLTransferRingItem" name="变身戒指模板" width="345" height="81" rotate="0,0,0" x="0" y="0" zindex="-1">
+  <button id="Bg" a="00" atlas="Atlas/AppearGroup.spriteatlas" src="bg_title_item" width="345" height="78" raycast="1" color="#FFFFFFFF" x="0" y="0">
+    <item id="Item" src="20020001" width="58" height="58" x="13" mfixsize="58,58" y="1" raycast="1" a="10">
+    </item>
+    <img id="SpState" a="20" atlas="Atlas/AppearGroup.spriteatlas" src="tab_title_selected" width="44" height="44" raycast="0" x="-5" y="0">
+    </img>
+    <text id="TxtName" a="10" text="毒牛怪变身指环" fontsize="18" height="22" width="160" ta="01" horwrap="1" x="81" y="15" outline="1" fontstyle="0" underline="0" color="#FFFFFFFF">
+    </text>
+    <text id="TxtTime" a="10" text="角色生效" fontsize="14" height="22" width="160" ta="01" horwrap="1" x="81" y="-17" active="0" outline="1">
+    </text>
+    <countdown id="TimeDown" a="10" width="100" height="18" ta="01" y="-17" color="#FF2323FF" x="81" formattype="2" fontsize="14" text="59分" fontstyle="0" underline="0">
+    </countdown>
+  </button>
+</uipanel>

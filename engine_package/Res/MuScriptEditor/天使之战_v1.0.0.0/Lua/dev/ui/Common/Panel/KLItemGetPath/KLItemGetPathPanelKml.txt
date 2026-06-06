@@ -1,0 +1,20 @@
+<uipanel id="KLItemGetPathPanel" name="通用道具获取路径界面" zindex="1006" x="0" y="0" z="-5500">
+  <img id="closeBg" active="0" width="2000" height="2000" raycast="1" color="#FFFFFF00" x="0" y="0">
+  </img>
+  <panel id="rootBG" width="242" height="186" color="#000000FF" x="0" y="0">
+    <img id="bg" atlas="" src="Texture/bg_tips.png" scale9l="25" scale9r="25" scale9t="25" scale9b="25" width="242" height="186" z="0" a="01" rotate="0,0,0" raycast="1" x="0" y="0" color="#000000FF">
+    </img>
+    <text id="title" text="获取途径" fontsize="16" width="106" height="22" a="01" rotate="0,0,0" ta="11" y="-18" horwrap="1" fonttype="" color="#E6E600FF" fontstyle="0" x="2" outline="1" underline="0">
+      <img id="img2" a="00" width="70" height="7" raycast="1" src="head_line_2" atlas="Atlas/FG_Common.spriteatlas" x="78" y="-1">
+      </img>
+      <img id="img3" a="00" width="70" height="7" raycast="1" src="head_line_1" atlas="Atlas/FG_Common.spriteatlas" x="-78" y="-1">
+      </img>
+    </text>
+    <scrollview id="gainList" width="260" height="113" a="01" rotate="0,0,0" vertical="1" x="0" y="-52" h5y="-62">
+      <gridview id="gainGrid" width="340" height="188" paddingtop="0" vertical="0" a="01" rotate="0,0,0" cellwidth="242" cellheight="47" cella="01" spacey="0" raycast="0" contentsizefitter="1">
+        <datalist id="gainData_list">
+        </datalist>
+      </gridview>
+    </scrollview>
+  </panel>
+</uipanel>

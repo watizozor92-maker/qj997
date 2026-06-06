@@ -1,0 +1,10 @@
+<uipanel id="KLMapHookPointItemKml" name="地图挂机点模板" a="11" width="125" height="30" zindex="-1">
+  <button id="btnPos" a="00" atlas="Atlas/FG_HookPoint.spriteatlas" src="point_di" width="93" height="30" onclick="" text="" raycast="1" x="0" y="0" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" color="#000000FF">
+    <text id="txtIndex" a="10" text="" fontsize="20" height="25" width="30" ta="11" x="4" y="0" horwrap="1" outline="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="text2" a="10" text="" fontsize="18" height="25" width="50" ta="11" x="33" y="0" horwrap="1" outline="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="txtPos" a="00" text="" fontsize="18" height="25" width="100" ta="11" x="41" y="0" horwrap="1" outline="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </button>
+</uipanel>

@@ -1,0 +1,106 @@
+<uipanel id="KLHuntingDemonsRewardPanel" name="猎魔奖励界面" a="00" width="1039" height="560" zindex="200" y="-5">
+  <img src="Texture/HuntingDemons_Bg1.png" atlas="" width="991" height="441" y="-36" scale9b="0" scale9t="0" scale9l="0" scale9r="0" id="img_36" x="0" active="1">
+  </img>
+  <panel id="RankList_Panel" width="300" height="456" x="350" y="-34">
+    <loopscrollview id="PlayerList" a="00" width="374" height="321" vertical="1" y="19" raycast="1" x="-42" cellwidth="370" cellheight="80">
+      <datalist id="PlayerDataList">
+        <panel id="PlayerItem" width="370" height="80" x="0" y="0" a="11">
+          <img id="PlayerItem_BG" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="Pic_1" width="302" height="56" raycast="1" x="34">
+          </img>
+          <img id="PlayerItem_HeadIconBG" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_headFrame" width="62" height="62" raycast="1" x="-51" y="0">
+          </img>
+          <img id="PlayerItem_HeadIcon" a="00" atlas="Atlas/MUIcon.spriteatlas" src="11" width="62" height="62" raycast="1" x="-51" y="0">
+          </img>
+          <text id="PlayerItem_RankText" a="00" text="99" fontsize="18" height="25" width="50" ta="11" horwrap="1" fonttype="排行榜序号" x="-100" y="0" active="1">
+          </text>
+          <img id="PlayerItem_RankIcon" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="S_icon1" width="34" height="34" raycast="1" x="-99" y="0">
+          </img>
+          <text id="PlayerItem_Name" a="00" text="昵称最多七个字" fontsize="18" height="25" width="196" ta="01" horwrap="1" fonttype="" x="82" y="13" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="PlayerItem_UnionName" a="00" text="战盟:战盟名字七个字" fontsize="16" height="25" width="196" ta="01" horwrap="1" fonttype="" x="82" y="-11" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="PlayerItem_LV" a="00" text="999" fontsize="16" height="20" width="40" ta="11" horwrap="1" fonttype="" x="-52" y="-21" outlinesize="1" outlinecolor="#000000FF" active="0">
+          </text>
+          <button id="PlayerItem_Button" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="302" height="56" onclick="" text="" raycast="1" color="#FFFFFF00" x="34" rotate="0,0,0" active="0">
+          </button>
+        </panel>
+      </datalist>
+    </loopscrollview>
+    <img id="TimeBg" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="Pic_RefreshTimeBg" width="299" height="31" raycast="1" x="-5" y="196">
+      <text id="TimeText" a="00" text="距离下次结算：xx:xx:xx" fontsize="18" height="25" width="272" ta="01" horwrap="1" x="14" y="0" color="#D9001CFF" outlinesize="1" outlinecolor="#000000FF" fonttype="">
+      </text>
+    </img>
+    <panel id="MyRank" width="370" height="58" x="-41" y="-184">
+      <img id="MyRank_BG" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="Pic_My" width="302" height="56" raycast="1" x="34">
+      </img>
+      <img id="MyRank_RankIconBG" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_headFrame" width="62" height="62" raycast="1" x="-51" y="0">
+      </img>
+      <img id="MyRank_RankIcon" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="S_icon1" width="34" height="34" raycast="1" x="-99" y="0">
+      </img>
+      <img id="MyRank_NoRank" a="00" atlas="Atlas/UIRankListPanel.spriteatlas" src="no" width="27" height="25" raycast="1" x="-99" y="0">
+      </img>
+      <img id="MyRank_HeadIcon" a="00" atlas="Atlas/MUIcon.spriteatlas" src="11" width="62" height="62" raycast="1" x="-51" y="0">
+      </img>
+      <text id="MyRank_Name" a="00" text="昵称最多七个字" fontsize="18" height="25" width="137" ta="01" horwrap="1" fonttype="" x="52" y="13" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="MyRank_UnionName" a="00" text="战盟:战盟名字七个字" fontsize="16" height="25" width="200" ta="01" horwrap="1" fonttype="" x="84" y="-11" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="MyRank_LV" a="00" text="999" fontsize="16" height="20" width="40" ta="11" horwrap="1" fonttype="" x="-52" y="-21" outlinesize="1" outlinecolor="#000000FF" active="0">
+      </text>
+      <text id="MyRank_RankText" a="00" text="99" fontsize="18" height="25" width="50" ta="11" horwrap="1" fonttype="排行榜序号" x="-100" y="0" active="1">
+      </text>
+    </panel>
+  </panel>
+  <panel id="mid" a="00" width="300" height="456" x="-39" y="-38">
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="img2" x="-135" y="160" width="25" height="27">
+      <text id="text2" a="00" text="全服当前杀怪积分：" fontsize="18" height="25" width="168" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="98" y="1">
+      </text>
+      <text id="IntegralText" a="00" text="" fontsize="18" height="25" width="108" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="227" y="1" rotate="0,0,0" color="#FF8A00FF">
+      </text>
+    </img>
+    <text id="tipsText" a="00" text="击杀同等级段的怪物可获得更高的积分,\n积分越高奖励越多！" fontsize="18" height="80" width="350" ta="01" horwrap="1" x="39" y="-121" color="#D9001CFF" outlinesize="1" outlinecolor="#000000FF" linespace="1.2" outline="0">
+    </text>
+    <text id="text5" a="00" text="当前转化比：" fontsize="18" height="25" width="134" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-67" y="135" outline="0">
+    </text>
+    <text id="conversionText" a="00" text="30%" fontsize="0" height="25" width="134" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="54" y="135" fonttype="Overlay_Font2" outline="0">
+    </text>
+    <layout id="layout44" control_height="0" contentsizefitter="1" vertical="0" height="185" width="421" a="00" raycast="1" x="0" y="-28" space="10">
+      <img id="item5Img" a="10" atlas="Atlas/TS_Common.spriteatlas" src="10230001" width="70" height="70" raycast="1" x="-68" y="0">
+      </img>
+      <text id="item5Text" a="00" text="" fontsize="18" height="70" width="364" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="32" y="0" fonttype="Earnings_Font" contentsizefitter="2">
+      </text>
+    </layout>
+    <button id="button_go" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" width="177" height="51" onclick="" text="前往挑战" raycast="1" ta="11" outlinesize="1" outlinecolor="#000000FF" fontsize="18" x="0" y="-183">
+    </button>
+    <panel id="NextIntegral" a="00" width="25" height="27" x="-135" y="80">
+      <img id="img4" a="00" atlas="Atlas/Common.spriteatlas" src="LeftArrow" width="47" height="47" raycast="1" rotate="0,0,90" x="65" y="33">
+      </img>
+      <text id="text6" a="00" text="下一阶段转化比：" fontsize="18" height="25" width="151" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="91" y="8" outline="0">
+      </text>
+      <text id="NextIntegralText" a="00" text="99%" fontsize="18" height="25" width="134" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="218" y="7" rotate="0,0,0" color="#FF8A00FF" fonttype="Overlay_Font1">
+      </text>
+      <text id="NextItemCountText" a="00" text="离目标差9999积分" fontsize="18" height="25" width="222" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="127" y="-25" rotate="0,0,0" color="#FFFFFFFF" fonttype="">
+      </text>
+    </panel>
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="img9" x="-135" y="26" width="25" height="27">
+      <text id="text10" a="00" text="当前猎魔徽章池" fontsize="18" height="25" width="134" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="82" y="1" outline="0">
+      </text>
+    </img>
+    <button id="HelpButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" onclick="" text="" raycast="1" x="162" y="200">
+    </button>
+    <text id="SeasonTimeText" a="00" text="赛季结束时间：2025年4月3日" fontsize="20" height="42" width="324" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="193" x="-8" color="#1ADD1AFF">
+    </text>
+  </panel>
+  <panel id="left" a="00" width="300" height="456" x="-345" y="-38">
+    <img src="img_uiicon_21" atlas="Atlas/Common.spriteatlas" a="00" id="img3" x="-135" y="200" width="25" height="27">
+      <img id="img1" a="10" atlas="Atlas/KLHuntingDemons.spriteatlas" src="title_2" width="122" height="23" raycast="1" x="28" y="2">
+      </img>
+    </img>
+    <scrollview id="Reward4Scrollview" y="-17" width="319" height="406" vertical="1" x="12" raycast="1" movementtype="1">
+      <layout id="layout41" width="360" height="230" a="01" vertical="1" contentsizefitter="3" raycast="1" cella="00" space="10">
+        <datalist id="Reward4DataList">
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

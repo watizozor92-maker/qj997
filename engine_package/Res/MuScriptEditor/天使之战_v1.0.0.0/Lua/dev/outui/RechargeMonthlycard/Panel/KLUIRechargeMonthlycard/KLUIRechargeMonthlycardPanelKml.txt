@@ -1,0 +1,108 @@
+<uipanel id="KLUIRechargeMonthlycardPanel" name="月卡活动界面" width="300" height="300" x="98" y="-45">
+  <prefab id="UIRechargeMonthlycardPanel" path="DIY/QJ5/UI/UIRechargeMonthlycardPanel.prefab">
+    <img id="card_bg" bind="card_bg" active="1">
+      <img id="white" bind="white" active="1">
+        <button id="MonthCardBtn" bind="MonthCardBtn" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="monthCard_btn"  active="1">
+          <text id="MonthBtnText" bind="MonthBtnText" active="1" height="32" horwrap="1">
+          </text>
+          <img id="whiteRed" a="00" atlas="Atlas/QJ5_UIRechargeMonthlycardPanel.spriteatlas" src="ico_red_n" width="17" height="17" raycast="1" x="47" y="11">
+          </img>
+        </button>
+        <img id="show" bind="show" active="1">
+          <img id="showtext" bind="showtext" active="0">
+          </img>
+          <img id="showtext2" bind="showtext2" active="0">
+          </img>
+          <img id="RewardScrollView" bind="RewardScrollView" active="1">
+            <img id="Viewport" bind="Viewport" active="1">
+              <gridview id="RewardContent" bind="RewardContent" active="1">
+              </gridview>
+            </img>
+            <scrollview id="NormalRewardViewList" a="00" width="264" height="60" vertical="0" y="-22" raycast="1">
+              <layout id="NormalLayout" width="260" height="102" a="00" vertical="0" contentsizefitter="2" raycast="1">
+                <datalist id="DataNormalRewardList">
+                  <panel id="panel3" width="60" height="60">
+                    <item id="ItemNormal" src="20020001" width="60" height="60" raycast="1">
+                    </item>
+                    <img id="img1" a="00" atlas="Atlas/QJ5_UIRechargeMonthlycardPanel.spriteatlas" src="icon_monthlycard_daily" width="43" height="20" raycast="1" x="-9" y="21">
+                    </img>
+                  </panel>
+                </datalist>
+              </layout>
+            </scrollview>
+          </img>
+        </img>
+        <text id="TipText" bind="TipText" active="1">
+          <img id="delete" bind="delete" active="1">
+          </img>
+        </text>
+        <text id="EndTimeText" bind="EndTimeText" active="0" horwrap="1">
+        </text>
+        <img id="whiteSelectImg" bind="whiteSelectImg" active="0">
+        </img>
+        <text id="whiteCardExpText" bind="whiteCardExpText" active="0">
+        </text>
+        <text id="whiteCardHookText" bind="whiteCardHookText" active="0" horwrap="1">
+        </text>
+        <text id="whiteCoinTxt" a="00" text="9000" fontsize="22" height="25" width="95" ta="00" horwrap="1" x="189" y="46" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <item id="whiteCoinItem" src="20020001" width="60" height="60" x="117" y="47" itemid="" bgtype="0" qualityiconname="" qualityscale="0" mscale="0.6,0.6,0.6" mfixsize="35,35">
+        </item>
+      </img>
+      <img id="gold" bind="gold" active="1">
+        <button id="GoldMonthCardBtn" bind="GoldMonthCardBtn" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="monthCard_btn" width="104" height="32" active="1">
+          <text id="GoldMonthBtnText" bind="GoldMonthBtnText" active="1">
+          </text>
+          <img id="goldRed" a="00" atlas="Atlas/QJ5_UIRechargeMonthlycardPanel.spriteatlas" src="ico_red_n" width="17" height="17" raycast="1" x="47" y="11">
+          </img>
+        </button>
+        <img id="show_1" bind="show_1" active="1">
+          <img id="Goldshowtext" bind="Goldshowtext" active="0">
+          </img>
+          <img id="showtext2_1" bind="showtext2_1" active="0">
+          </img>
+          <img id="RewardGoldScrollView" bind="RewardGoldScrollView" active="1">
+            <img id="Viewport_1" bind="Viewport_1" active="1">
+              <gridview id="Gold_RewardContent" bind="Gold_RewardContent" active="1">
+              </gridview>
+            </img>
+            <scrollview id="GoldRewardViewList" a="00" width="264" height="60" vertical="0" y="-22" raycast="1">
+              <layout id="layout3" width="260" height="102" a="00" vertical="0" contentsizefitter="1" raycast="1">
+                <datalist id="DataGoldRewardList">
+                  <panel id="panel4" width="60" height="60">
+                    <item id="ItemGold" src="20020001" width="60" height="60" raycast="1">
+                    </item>
+                    <img id="img2" a="00" atlas="Atlas/QJ5_UIRechargeMonthlycardPanel.spriteatlas" src="icon_monthlycard_daily" width="43" height="20" raycast="1" x="-9" y="21">
+                    </img>
+                  </panel>
+                </datalist>
+              </layout>
+            </scrollview>
+          </img>
+        </img>
+        <text id="GoldTipText" bind="GoldTipText" active="1">
+          <img id="delete_1" bind="delete_1" active="1">
+          </img>
+        </text>
+        <text id="GoldEndTimeText" bind="GoldEndTimeText" active="0">
+        </text>
+        <img id="goldSelectImg" bind="goldSelectImg" active="0">
+        </img>
+        <text id="goldCardExpText" bind="goldCardExpText" active="0">
+        </text>
+        <text id="goldCardHookText" bind="goldCardHookText" active="0">
+        </text>
+        <text id="goldCoinTxt" a="00" text="9000" fontsize="22" height="25" width="95" ta="00" horwrap="1" x="189" y="46" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+        <item id="goldCoinItem" src="20020001" width="60" height="60" x="117" y="47" itemid="" bgtype="0" qualityiconname="" qualityscale="0" mscale="0.6,0.6,0.6" mfixsize="35,35">
+        </item>
+      </img>
+    </img>
+    <img id="bg_bottom" bind="bg_bottom" active="1">
+      <button id="AllCardBtn" bind="AllCardBtn" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="monthCard_btn" width="104" height="32" active="1">
+        <text id="AllCardBtnText" bind="AllCardBtnText" active="1">
+        </text>
+      </button>
+    </img>
+  </prefab>
+</uipanel>

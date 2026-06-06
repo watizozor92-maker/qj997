@@ -1,0 +1,102 @@
+<uipanel id="FirstCharge" name="首充豪礼界面" width="300" height="300" x="0" y="0" z="500">
+  <prefab id="UIFirstChargePanel" path="UI/UIFirstChargePanel.prefab">
+    <img id="bg" bind="bg" x="-10" y="16" width="885" height="487">
+      <button id="btn_Close" bind="btn_ShutDown" width="39" height="37" x="428" y="234" h5x="-431" h5y="234">
+      </button>
+      <img id="font_ad" bind="font_ad">
+      </img>
+      <img id="font_ad2" bind="font_ad2">
+      </img>
+      <img id="font_ad3" bind="font_ad3">
+      </img>
+      <img id="font_advertising" bind="font_advertising">
+        <img id="bg1" bind="bg1">
+        </img>
+        <img id="Image1" bind="Image1" x="34" y="-23" width="88" height="46">
+          <text id="RebateText" bind="RebateText" horwrap="1" x="102" y="1" width="134" height="46" text="111%">
+          </text>
+        </img>
+      </img>
+      <panel id="model_image" bind="model_image" x="-215" y="-33" width="100" height="100">
+        <item id="Model_item" src="" width="100" height="100" y="10" mpos="0,0,90" selfrotation="2,50,0" bgtype="0" grey="0" x="0" bgimg="ty_num_bg" atlas="Atlas/TS_Common.spriteatlas" tips="0" bgscale="0,0" itemid="" mscale="80,80,80" mfixsize="0,0" z="-200" siblingindex="0">
+        </item>
+      </panel>
+      <img id="img_amount" bind="img_amount" x="111" y="150" width="552" height="51" active="0">
+        <text id="number" bind="number" horwrap="1" x="-13" y="2" width="160" height="30" fonttype="Font/font_first_recharge.fontsettings" active="0">
+        </text>
+      </img>
+      <panel x="111" y="150" width="552" height="51" id="panel_68" siblingindex="14">
+        <img id="img_text1" src="img_text1" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="176" y="-6" siblingindex="0">
+        </img>
+        <img id="img_text4" src="img_text4" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="-9" y="-6" active="0" siblingindex="1">
+        </img>
+        <img src="img_text2" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="-89" y="-8" id="img_70" siblingindex="2">
+        </img>
+        <img src="img_text3" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="-237" y="-8" id="img_71" siblingindex="3">
+        </img>
+        <img src="img_icon_diamond" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="-43" id="img_72" siblingindex="4">
+        </img>
+        <text id="text_recharge_num" text="98元" x="-177" horwrap="1" fonttype="Font/font_first_recharge.fontsettings" height="39" y="-2" ta="11" siblingindex="5">
+        </text>
+        <text id="text_reward_num" text="333" horwrap="1" fonttype="Font/font_first_recharge.fontsettings" y="1" x="27" width="106" height="40" ta="11" siblingindex="6">
+        </text>
+        <img src="元" atlas="Atlas/QJ5_FirstCharge.spriteatlas" x="-129" y="-2" id="img1" width="46" height="47" siblingindex="7">
+        </img>
+      </panel>
+      <button id="btn_charge" bind="btn_charge" x="197" y="-154" width="202" height="56">
+        <img id="GetText" bind="GetText">
+        </img>
+        <img id="ChargeText" bind="ChargeText">
+        </img>
+      </button>
+      <text id="hasReceive_text" bind="hasReceive_text" horwrap="1" x="198" y="-142" width="160" height="30">
+      </text>
+      <button id="btn_tips" bind="btn_tips">
+      </button>
+      <img id="bg_content" bind="bg_content">
+      </img>
+      <scrollview id="scrollviewItemList" a="00" width="440" height="105" vertical="0" y="22" raycast="1" x="184" siblingindex="15">
+        <layout id="layout2" width="360" height="230" a="10" vertical="0" contentsizefitter="2" raycast="1" control_width="0" expand_width="1" cella="10">
+        </layout>
+      </scrollview>
+      <img id="list_item" bind="list_item" active="0">
+        <img id="Viewport" bind="Viewport" x="0" y="1" width="449" height="103">
+        </img>
+      </img>
+      <text id="Text_accumulation" bind="Text_accumulation" horwrap="1">
+        <text id="Text1" bind="Text1" horwrap="1" x="28" y="0" width="298" height="30">
+        </text>
+      </text>
+      <text id="Text_tips" bind="Text_tips" horwrap="1" width="99" height="30" x="316" y="-109">
+        <text id="Text11" bind="Text11" horwrap="1">
+        </text>
+        <img id="Imager11" bind="Imager11">
+        </img>
+      </text>
+    </img>
+    <togglegroup id="ToggleGroup" bind="ToggleGroup" allowswitchoff="0">
+      <toggle id="panel_day3" bind="panel_day3">
+      </toggle>
+      <toggle id="panel_day2" bind="panel_day2">
+      </toggle>
+      <toggle id="panel_day1" bind="panel_day1">
+      </toggle>
+    </togglegroup>
+    <text id="togText_day1" bind="togText_day1" horwrap="1" width="160" height="30" x="72" y="115">
+      <img id="red1" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="15" height="15" raycast="1" x="51" y="11" active="0" siblingindex="0">
+      </img>
+    </text>
+    <text id="togText_day2" bind="togText_day2" horwrap="1" width="160" height="30" x="189" y="116">
+      <img id="red2" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="15" height="15" raycast="1" x="51" y="11" active="0" siblingindex="0">
+      </img>
+    </text>
+    <text id="togText_day3" bind="togText_day3" horwrap="1" width="160" height="30" x="304" y="115">
+      <img id="red3" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="15" height="15" raycast="1" x="51" y="11" active="0" siblingindex="0">
+      </img>
+    </text>
+    <text id="Text3" bind="Text3" horwrap="1">
+    </text>
+    <text id="ShowInfoText" bind="ShowInfoText" horwrap="1" x="-225" y="-133" width="360" height="30">
+    </text>
+  </prefab>
+</uipanel>

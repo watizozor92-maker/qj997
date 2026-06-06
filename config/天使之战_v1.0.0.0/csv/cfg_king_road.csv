@@ -1,0 +1,8 @@
+﻿int#c#s,int#c#s,string#c#s,string#c#s,int#c#s,intList#c#s
+id,groupID,name,icon,level,rewardItem
+1,1,第一章,UIRoadOfking_Text_1,20,50040092#20
+2,2,第二章,UIRoadOfking_Text_2,20,50040092#20
+3,3,第三章,UIRoadOfking_Text_3,20,50040092#20
+4,4,第四章,UIRoadOfking_Text_4,20,50040092#20
+5,5,第五章,UIRoadOfking_Text_5,20,50040092#20
+6,6,第六章,UIRoadOfking_Text_6,20,50040092#40

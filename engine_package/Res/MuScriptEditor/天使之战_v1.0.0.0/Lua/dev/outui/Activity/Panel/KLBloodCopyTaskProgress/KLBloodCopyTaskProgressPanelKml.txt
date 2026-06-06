@@ -1,0 +1,52 @@
+<uipanel id="KLBloodCopyTaskProgressPanel" name="血色城堡副本界面" a="11" width="300" height="300" x="-20" y="37" mask="0">
+  <img id="bg" a="00" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="277" height="187" raycast="1" x="1" y="15" color="#FFFFFF99">
+  </img>
+  <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-107" y="85">
+  </img>
+  <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="106" y="85" rotate="0,0,180">
+  </img>
+  <img id="desBtn" x="115" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" y="88">
+  </img>
+  <text id="title" a="00" text="恶魔广场第8层" fontsize="18" height="25" width="292" ta="11" horwrap="1" x="0" y="85" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF" rotate="0,0,0" outline="1">
+  </text>
+  <panel id="prepareRoot" a="00" width="0" height="0" x="0" y="0" active="0">
+    <button id="openActivityBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="93" height="31" onclick="" text="立即开启" raycast="1" x="1" y="-66" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF">
+    </button>
+    <text id="openDes" a="00" text="当前处于准备阶段" fontsize="18" height="25" width="267" ta="11" horwrap="1" x="0" y="24" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+    <text id="openDesTxt" a="00" text="秒后" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="30" y="-34" color="#29E629FF" active="0">
+    </text>
+    <text id="openTime" a="00" text="00:00" fontsize="18" height="25" width="267" ta="11" horwrap="1" color="#ff2323" x="1" y="-33" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+  </panel>
+  <panel id="fightRoot" a="00" width="239" height="156" x="0" y="-10">
+    <text id="waveNumber" text="第1波" fontsize="18" height="25" width="178" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" x="-30" y="71" outline="1">
+    </text>
+    <text id="taskName" text="交付大天使武器给倒交付大天使武器给倒地的大天使武器地的大天使武器" fontsize="16" height="45" width="257" ta="00" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="9" y="29" outline="1" h5y="32">
+      <text id="taskCount" x="80" text="5/20" fontsize="18" height="25" width="94" ta="21" horwrap="1" y="40" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1">
+      </text>
+    </text>
+    <panel id="rewardRoot" width="0" height="0" x="-8" y="15">
+      <scrollview id="rewardList1" width="244" height="55" vertical="0" raycast="1" y="-56" x="12">
+        <layout id="layout67" width="360" height="55" a="10" vertical="0" contentsizefitter="2" raycast="1" space="4">
+          <datalist id="rewardList" a="11">
+          </datalist>
+        </layout>
+      </scrollview>
+      <text id="text8" text="通关奖励" fontsize="18" height="25" width="91" ta="01" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" a="00" y="-16" x="-66" outline="1">
+      </text>
+    </panel>
+  </panel>
+  <panel id="endRoot" active="0">
+    <text id="text6" a="00" text="任务完成，战斗至最后一刻吧，勇士！" fontsize="18" height="38" width="186" ta="01" horwrap="1" x="0" y="20" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1">
+    </text>
+    <text id="text7" a="00" text="(倒计时为0前，仍可继续刷怪获得经验)" fontsize="16" height="38" width="240" ta="11" horwrap="1" x="0" y="-30" outlinesize="1" outlinecolor="#000000FF" color="#9F9F9F" outline="1">
+    </text>
+  </panel>
+  <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="btn_exit" width="40" height="48" raycast="1" x="162" y="-54">
+    <text id="endTime" a="02" text="00:00" ta="11" fontsize="18" color="#ff2323" height="25" width="106" horwrap="1" x="0" y="-24" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+  </img>
+  <text id="noPickUpWeaponTip" active="0" a="00" text="已被他人拾取，战斗至最后一刻吧，勇士！\n<size=16><color=#9F9F9F>(倒计时为0前，仍可继续刷怪获得经验)</color></size>" fontsize="18" height="154" width="246" ta="11" horwrap="1" x="4" y="-11" outlinesize="1" outlinecolor="#000000FF" outline="1">
+  </text>
+</uipanel>

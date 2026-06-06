@@ -1,0 +1,20 @@
+<uipanel id="KLCommonItemTipsPanel" name="通用道具提示界面" zindex="1002" width="420" height="250" z="-1000">
+  <panel id="bg" width="420" height="250">
+    <img id="bgImg" src="Texture/login_bg_2.png" width="534" height="330" raycast="1">
+      <img id="img_57" atlas="Atlas/Common.spriteatlas" src="img_tip_title" y="143">
+      </img>
+    </img>
+    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="65" height="60" x="245" y="139" raycast="1">
+    </img>
+    <text id="tipContent" text="" y="50" fontsize="18" height="170" width="470" x="0" ta="11" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" horwrap="1">
+    </text>
+    <item id="showItem" width="45" height="45" x="-45" y="-15" itemid="10010001" bgtype="0">
+      <text id="countInfo" text="123" a="10" x="70">
+      </text>
+    </item>
+    <button id="btn_cancel" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" y="-100" zindex="1003" textcolor="#ED2E2E" fontsize="20" text="取消" outlinesize="1" outlinecolor="#000000" x="-100" raycast="1">
+    </button>
+    <button id="btn_sure" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" y="-100" zindex="1003" textcolor="#FFFFFF" fontsize="20" text="确定" outlinesize="1" outlinecolor="#000000" x="100" raycast="1">
+    </button>
+  </panel>
+</uipanel>

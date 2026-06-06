@@ -1,0 +1,64 @@
+<uipanel id="KLKaLiMaSweepPanelKml" a="00" width="416" height="380" zindex="215" z="-600" x="0" y="0">
+  <button id="button9" a="00" width="3000" height="3000" onclick="" text="默认内容" raycast="1" color="#FFFFFF00" x="0" y="0">
+  </button>
+  <img id="img6" a="00" width="400" height="362" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="-9">
+  </img>
+  <img id="img8" a="01" width="88" height="21" raycast="1" src="bg_decorate" atlas="Atlas/FG_Common.spriteatlas" x="0" y="-4">
+  </img>
+  <img id="panel_sweep" a="00" width="416" height="380" raycast="1" atlas="" src="Texture/FG_dankuangdi3.png" y="0" scale9l="155" scale9b="36" scale9r="151" scale9t="102" x="0">
+    <text id="title" a="01" text="扫荡" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" y="-26">
+    </text>
+    <button id="btn_sweepClose" a="21" width="34" height="34" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-12" y="-19">
+    </button>
+    <img id="img1" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="37" y="-93">
+      <text id="text46" a="00" text="扫荡层数：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="level" a="00" text="" fontsize="16" height="25" width="224" ta="01" horwrap="1" x="207" y="0" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <img id="img2" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="37" y="-142">
+      <text id="text64" a="00" text="副本奖励：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+    </img>
+    <scrollview id="scrollview1" a="11" width="229" height="55" vertical="0" y="-122" raycast="1" x="154">
+      <layout id="layout67" width="360" height="50" a="11" vertical="0" contentsizefitter="2" raycast="1" space="4" cella="11">
+        <datalist id="rewardList">
+          <item id="item1" itemid="" itemcount="" width="53" height="53" bgtype="1" tips="1">
+            <img id="img_pass_reward_click" atlas="Atlas/KLBraveTrialsUI.spriteatlas" src="img_receive" color="#FFFFFF00" width="60" height="60" raycast="1">
+            </img>
+          </item>
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img3" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="37" y="-191">
+      <text id="text8" a="00" text="消耗门票：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFFFF" outline="1">
+      </text>
+      <img id="ticketBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_bg_chatBubbleFrame" width="160" height="40" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="167" y="0" active="0">
+      </img>
+      <text id="ticketCount" a="00" text="" fontsize="16" height="25" width="153" ta="11" horwrap="1" x="166" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <item id="ticketItem" src="20020001" width="30" height="30" x="105" y="0" raycast="1">
+      </item>
+    </img>
+    <img id="img5" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="37" y="-228">
+      <text id="text6" a="00" text="额外消耗：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFFFF" outline="1">
+      </text>
+      <img id="img7" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_bg_chatBubbleFrame" width="160" height="40" raycast="1" scale9l="14" scale9b="13" scale9r="13" scale9t="14" x="167" y="0" active="0">
+      </img>
+      <text id="lab_sweepExtraAlready" a="00" text="" fontsize="16" height="25" width="153" ta="11" horwrap="1" x="166" y="0" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <button id="btn_ticketGet" a="10" atlas="Atlas/FG_Common.spriteatlas" src="btn_add1" width="34" height="34" onclick="" text="" raycast="1" x="257" y="1" mimg="" pimg="" dimg="">
+      </button>
+      <item id="img_extraSweepItemItem" src="20020001" width="30" height="30" x="105">
+      </item>
+    </img>
+    <img id="img4" a="01" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="416" height="13" raycast="1" x="0" y="-284" color="#FFFFFF00">
+      <text id="text61" a="00" text="剩余次数：" fontsize="16" height="25" width="136" ta="01" horwrap="1" x="0" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1" contentsizefitter="2">
+        <text id="countTxt" active="1" a="20" text="" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="0" y="0" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF" outline="1" contentsizefitter="2">
+        </text>
+      </text>
+    </img>
+    <button id="sweepBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" onclick="" text="扫荡" raycast="1" color="#FFFFFFFF" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="1" y="-152" x="0" mimg="" pimg="" dimg="">
+    </button>
+  </img>
+</uipanel>

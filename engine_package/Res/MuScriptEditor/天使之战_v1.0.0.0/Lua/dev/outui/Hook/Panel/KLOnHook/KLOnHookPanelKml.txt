@@ -1,0 +1,50 @@
+<uipanel id="KLOnHookPanel" name="挂机界面" zindex="200" width="1334" height="750" x="0" y="0" raycast="1" z="0" a="00" rotate="0,0,0" color="#00000000">
+  <img id="mask" a="00" atlas="" src="Texture/ty_bg_threeFrame_N3.png" width="3000" height="2000" raycast="1" x="0" y="0" color="#FFFFFF00">
+  </img>
+  <img id="img2" a="00" width="860" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
+  </img>
+  <img src="Texture/FG_dankuangdi2.png" width="860" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+    <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
+    </img>
+    <img id="img3" a="00" width="800" height="450" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-48">
+    </img>
+  </img>
+  <text id="text12" a="00" text="挂机" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1">
+  </text>
+  <img id="closeBtn" color="#DCE1E5ff" width="34" height="34" x="398" y="245" clientclose="1" z="0" a="00" rotate="0,0,0" raycast="1" h5y="255" h5x="-500" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas">
+  </img>
+  <button id="btnSetting" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="110" height="22" onclick="" text="" raycast="1" x="330" y="191" color="#FFFFFF00" fontsize="18" fontstyle="0" underline="1">
+    <text id="text1" text="修改挂机设置" fontsize="18" color="#00ff00ff" width="110" height="22" ta="11" x="1" y="0" outlinesize="1" outlinecolor="#000000FF" z="0" a="00" rotate="0,0,0" horwrap="1" active="1" outline="1" fontstyle="0" loop="1" underline="0">
+    </text>
+    <text id="text4" a="00" text="————————" fontsize="16" height="25" width="112" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="1" y="-9" color="#00ff00FF">
+    </text>
+  </button>
+  <panel id="TempRoot" a="00" atlas="Atlas/Common.spriteatlas" src="bg1" width="800" height="438" raycast="1" x="0" y="-48" active="1" color="#FFFFFF00">
+    <panel id="root_hookPoints" a="00" width="0" height="0">
+    </panel>
+    <panel id="root_hookInfos" a="00" width="0" height="0">
+    </panel>
+  </panel>
+  <togglegroup id="toggleGroupTop">
+  </togglegroup>
+  <toggle id="HookPointToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" default="1" width="120" height="36" x="-315" y="197" z="0">
+    <text id="txt2" width="180" height="33" text="挂机点" outlinesize="1" outlinecolor="#000000FF" x="0" y="0" z="0" a="00" rotate="0,0,0" fontsize="18" ta="11" horwrap="1" color="#FFFFFFFF" outline="1">
+    </text>
+  </toggle>
+  <toggle id="HookInfoToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" default="0" width="120" height="36" x="-306" y="193" z="0" active="0" enable="0">
+    <text id="txt3" width="180" height="33" text="离线助手" outlinesize="1" outlinecolor="#000000FF" x="0" y="0" z="0" a="00" rotate="0,0,0" fontsize="18" ta="11" horwrap="1" color="#FFFFFFFF" linespace="0" outline="1">
+    </text>
+  </toggle>
+  <text id="txt_monthCard" a="00" text="已开通离线挂机特权" fontsize="18" height="22" width="188" ta="11" outline="1" horwrap="1" fontstyle="0" color="#00ff00FF" x="267" y="189" outlinesize="1" outlinecolor="#000000FF" active="0" enable="0">
+    <button id="btn_monthCard" a="00" width="125" height="43" onclick="" text="" raycast="1" y="0" x="0" color="#FFFFFF00" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+      <img id="img_red" a="00" width="180" height="2" raycast="1" src="bg_red" atlas="Atlas/FG_Common.spriteatlas" y="-9" active="1" color="#FFFFFF00">
+        <text id="text2" a="00" text="————————————————" fontsize="18" height="25" width="180" ta="00" outline="1" horwrap="1" color="#FF2424FF" underline="0" y="-5" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </img>
+      <img id="img_green" a="00" width="160" height="2" raycast="1" src="fill_setting_slider" atlas="Atlas/FG_Common.spriteatlas" y="-9" active="0" color="#FFFFFF00">
+        <text id="text3" a="00" text="————————————" fontsize="18" height="25" width="170" ta="10" outline="1" horwrap="1" color="#1ADE1FFF" fontstyle="0" y="-5" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </img>
+    </button>
+  </text>
+</uipanel>

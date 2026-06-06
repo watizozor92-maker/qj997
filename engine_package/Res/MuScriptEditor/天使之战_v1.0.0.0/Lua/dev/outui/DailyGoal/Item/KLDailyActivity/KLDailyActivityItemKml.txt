@@ -1,0 +1,24 @@
+<uipanel id="KLDailyActivityItem" name="每日活动任务模板" width="252" height="468" zindex="-1" x="0" y="0">
+  <img id="img_bg" src="img_activity_default" atlas="Atlas/DailyGoal.spriteatlas" raycast="1">
+    <text id="txt_title" text="标题" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" fontsize="22" a="01" y="-16" horwrap="1">
+    </text>
+    <text text="规则" outlinecolor="#000000" outlinesize="1" color="#CCCCCC" fontsize="18" a="11" x="11" y="-222" id="text_8" horwrap="1">
+    </text>
+    <text id="txt_rule_content" text="01:00起每隔2小时开启\n开启后15分钟内可进入" outlinecolor="#000000" outlinesize="1" width="195" height="80" color="#00ff00" fontsize="16" a="11" x="48" y="-222" horwrap="1" >
+    </text>
+    <text text="条件" outlinecolor="#000000" outlinesize="1" color="#CCCCCC" fontsize="18" a="11" x="11" y="-302" id="text_10" horwrap="1">
+    </text>
+    <text id="txt_condition" text="13:00:00-13:15:00" outlinecolor="#000000" outlinesize="1" color="#E6E600" fontsize="18" a="11" x="50" y="-302" horwrap="1" ta="">
+    </text>
+    <layout id="list_reward" a="02" y="64" width="222" height="70" space="4" >
+    </layout>
+    <button id="btn_go" src="button_interface_window7" atlas="Atlas/Common.spriteatlas" text="前往" textcolor="#FFFFFF" outlinecolor="#000000" outlinesize="1" fontsize="18" a="02" y="18" width="120" height="40" raycast="1">
+    </button>
+    <panel id="monsterInfoRoot" a="00" width="224" height="146" x="0" y="83">
+      <layout id="monsterMapRoot" control_height="0" contentsizefitter="0" vertical="1" height="144" width="108" a="01" raycast="1" x="-58" y="1" space="10">
+      </layout>
+      <layout id="monsterCountRoot" control_height="0" contentsizefitter="0" vertical="1" height="146" width="108" a="01" raycast="1" x="60" y="1" space="10">
+      </layout>
+    </panel>
+  </img>
+</uipanel>

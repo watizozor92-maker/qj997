@@ -1,0 +1,4 @@
+﻿int#s,int#s,string#s,int#s#c,string#s#c,string#s,string#s,string#s,intList#c#s,intListList#c#s,int#c#s,intListList#c#s
+id,type,beizhu,item,num,probability,career,level,skillbaoxiang,strengthenbaoxiang,luckbaoxiang,appendsbaoxiang
+1,1,艾利尼斯之殇,21200101,1#1,0#10000,,,,,,
+2,1,艾利尼斯之怒,21200111,1#1,0#10000,,,,,,

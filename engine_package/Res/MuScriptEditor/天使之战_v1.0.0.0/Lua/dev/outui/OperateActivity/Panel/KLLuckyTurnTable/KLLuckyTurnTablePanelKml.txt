@@ -1,0 +1,112 @@
+<uipanel id="KLLuckyTurnTablePanel" name="幸运寻宝转盘活动界面" width="300" height="300" zindex="200">
+  <panel id="panel1" a="00" width="840" height="485" y="-30" x="50">
+    <prefab id="mask" path="Kml/KmlPrefab/Cookbook/KmlBagUI/cutArea.prefab" y="302" width="830" height="150" x="0">
+    </prefab>
+    <img id="bg" a="00" atlas="Atlas/QJ5_RechargeLinkPanel.spriteatlas" src="bg_RechargeLink" width="827" height="109" raycast="1" x="31" y="169" active="0">
+    </img>
+    <img id="bg2" a="00" atlas="" src="Texture/bg_middle.png" width="692" height="503" raycast="1" x="98" y="-15" scale9l="0" scale9b="0" scale9r="0" scale9t="0" color="#FFFFFFFF">
+    </img>
+    <text id="reTime" a="00" text="" fontsize="16" height="21" width="350" ta="11" horwrap="1" x="110" y="216" outlinesize="1" outlinecolor="#000000FF" color="#FF4F47FF">
+    </text>
+    <text id="text3" a="00" text="剩余道具:" fontsize="16" height="21" width="78" ta="11" horwrap="1" x="322" y="-236" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      <item id="xunbaoquanModel" src="20020001" width="30" height="30" x="51" y="0">
+      </item>
+      <text id="ModelCount" a="00" text="10" fontsize="16" height="33" width="60" ta="01" horwrap="1" x="101" y="0" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+    </text>
+    <button id="OneBtn" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="buttom_treasure" width="162" height="42" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="0" y="-204" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+      <text id="freeTime" a="00" text="" fontsize="16" height="26" width="228" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="-32">
+      </text>
+      <text id="oneBtnTextCount" a="00" text="" fontsize="16" height="38" width="50" ta="11" horwrap="1" x="-13" y="-1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+      <text id="oneBtnText" a="00" text="寻宝1次" fontsize="16" height="38" width="70" ta="11" horwrap="1" x="41" y="-2" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+      <img id="oneBtnImage" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_GoldBox1" width="38" height="37" raycast="1" x="-61" y="-1" color="#FFFFFF00">
+        <item id="OnecostModel" src="20020001" width="30" height="30" textcolor="#FFFFFFFF" bgtype="0">
+        </item>
+      </img>
+      <img id="FreeRedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="76" y="17" active="0">
+      </img>
+    </button>
+    <button id="TenBtn" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="buttom_treasure" width="162" height="42" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="197" y="-204" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+      <text id="text10" a="00" text="" fontsize="16" height="26" width="228" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="-32" active="0">
+      </text>
+      <text id="tenBtntext" a="00" text="寻宝10次" fontsize="16" height="38" width="78" ta="11" horwrap="1" x="43" y="-1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+      <text id="tenBtnTextCount" a="00" text="免费" fontsize="16" height="38" width="56" ta="11" horwrap="1" x="-13" y="-1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+      </text>
+      <img id="tenBtnImage" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_GoldBox1" width="38" height="37" raycast="1" x="-61" y="-1" color="#FFFFFF00">
+        <item id="TenCostModel" src="20020001" width="30" height="30" bgtype="0">
+        </item>
+      </img>
+      <img id="img14" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="76" y="17" active="0">
+      </img>
+    </button>
+    <toggle id="SkipToggle" width="30" height="30" a="00" default="1" togglegroup_id="" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" onclick="" src="bg_jump1" pimg="bg_jump2" raycast="1" x="-221" y="-237">
+      <text id="text16" a="00" text="跳过动画" fontsize="16" height="26" width="86" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="58" y="0" active="1">
+      </text>
+    </toggle>
+    <button id="oddsBtn" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_tip" width="40" height="40" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="415" y="215">
+    </button>
+    <panel id="table" a="00" width="717" height="368" x="123" y="10">
+      <img id="1" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-300" y="137" color="#FFFFFF00">
+      </img>
+      <img id="2" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-190" y="137" color="#FFFFFF00">
+      </img>
+      <img id="3" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-80" y="137" color="#FFFFFF00">
+      </img>
+      <img id="4" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="30" y="137" color="#FFFFFF00">
+      </img>
+      <img id="5" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="140" y="137" color="#FFFFFF00">
+      </img>
+      <img id="6" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="250" y="137" color="#FFFFFF00">
+      </img>
+      <img id="7" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="250" y="47" color="#FFFFFF00">
+      </img>
+      <img id="8" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="250" y="-43" color="#FFFFFF00">
+      </img>
+      <img id="9" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="250" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="10" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="140" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="11" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="30" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="12" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-80" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="13" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-190" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="14" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-300" y="-133" color="#FFFFFF00">
+      </img>
+      <img id="15" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-300" y="-43" color="#FFFFFF00">
+      </img>
+      <img id="16" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_putong" width="107" height="85" raycast="1" x="-300" y="47" color="#FFFFFF00">
+      </img>
+    </panel>
+    <img id="rewardShow" a="00" atlas="" src="Texture/button_treasure_new.png" width="442" height="175" raycast="1" x="98" y="10">
+      <gridview id="rewardShowGrid" a="00" cellwidth="110" cellheight="110" raycast="1" width="435" height="175" spacex="115" paddingtop="40" paddingleft="50" y="-12">
+      </gridview>
+      <text id="GetShowText" a="00" text="" fontsize="52" height="70" width="800" ta="11" horwrap="1" x="13" y="70" fontstyle="1" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+    <img id="getShow" a="00" atlas="" src="Texture/button_treasure_new.png" width="442" height="175" raycast="1" x="98" y="10">
+      <gridview id="GetShowGrid" a="00" cellwidth="74" cellheight="74" raycast="1" width="435" height="175" spacex="15" spacey="15" y="-5">
+      </gridview>
+    </img>
+    <img id="exreward" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_dadi" width="133" height="505" raycast="1" x="-314" y="-14">
+      <img id="NowTime" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="bg_cishu" width="78" height="78" raycast="1" y="189">
+        <text id="NowTimeText" a="00" text="100" fontsize="16" height="25" width="47" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-1" y="2">
+        </text>
+        <img id="img40" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_leiji" width="102" height="26" raycast="1" x="-2" y="-33">
+          <text id="text39" a="00" text="累计次数" fontsize="16" height="25" width="99" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-1" y="0">
+          </text>
+        </img>
+      </img>
+    </img>
+    <scrollview id="scrollview1" a="00" width="110" height="380" vertical="1" y="-64" raycast="1" x="-311" movementtype="2">
+      <layout id="layout3" width="110" height="230" a="00" vertical="1" contentsizefitter="1" raycast="1">
+        <datalist id="Reward_list" a="11">
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

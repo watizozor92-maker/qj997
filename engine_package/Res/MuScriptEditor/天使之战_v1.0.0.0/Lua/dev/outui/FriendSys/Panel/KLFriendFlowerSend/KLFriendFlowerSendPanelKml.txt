@@ -1,0 +1,34 @@
+<uipanel id="KLFriendFlowerSendPanelKml" name="好友送花界面" a="00" width="1366" height="768" x="0" y="0" zindex="600" z="-500">
+  <button id="BtnMask" a="00" atlas="" src="" width="1366" height="768" onclick="" text="默认内容" raycast="1" x="0" y="0" mimg="" pimg="" dimg="" color="#FFFFFF00">
+  </button>
+  <img id="Bg" a="00" atlas="Atlas/UIChatPanelOut.spriteatlas" src="tancxhuangdi" raycast="1" x="0" y="0" width="355" height="264" scale9l="107" scale9b="98" scale9r="101" scale9t="94">
+    <img id="TxtTitle" atlas="Atlas/KLChatPanel.spriteatlas" src="send_flower_title" x="0" y="108" active="0">
+    </img>
+    <text id="text1" a="00" text="送 花" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="103" color="#FFFFFFFF">
+    </text>
+    <button id="BtnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="46" height="46" onclick="" text="" raycast="1" x="-5" y="0" mimg="" pimg="" dimg="" color="#FFFFFFFF">
+    </button>
+    <button id="BtnSend" a="00" src="btn_common_1_select" onclick="" text="赠送" fontsize="18" color="#FFFFFF" raycast="1" x="0" y="-88" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="38">
+    </button>
+    <text id="desc" a="00" text="默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容默认内容" fontsize="18" height="62" width="216" ta="00" x="43" y="-29" horwrap="1" outlinesize="1" outlinecolor="#000000" outline="0" color="#FFFFFFFF">
+    </text>
+    <button id="BtnTipDown" raycast="1" x="-21" y="26" atlas="Atlas/UIChatPanelOut.spriteatlas" src="icon_jiantou" a="20" onclick="" mimg="" pimg="" dimg="">
+    </button>
+    <img id="dropdown_list_flower" x="24" y="-119" src="monsterlist2" atlas="Atlas/TS_Common.spriteatlas" scale9b="12" scale9l="45" scale9r="50" scale9t="12" width="155" height="130" a="01" active="0">
+      <layout width="120" height="130" vertical="1" expand_height="1" expand_width="1" control_height="1" control_width="1" id="layout_63">
+        <button id="btn_flower_0" text="1朵鲜花" fontsize="16" color="#00000000" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" raycast="1" src="bg_btn_orange" atlas="Atlas/TS_Common.spriteatlas">
+        </button>
+        <button id="btn_flower_1" text="9朵鲜花" fontsize="16" color="#00000000" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" raycast="1" src="bg_btn_orange" atlas="Atlas/TS_Common.spriteatlas">
+        </button>
+        <button id="btn_flower_2" text="99朵鲜花" fontsize="16" color="#00000000" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" raycast="1" src="bg_btn_orange" atlas="Atlas/TS_Common.spriteatlas">
+        </button>
+        <button id="btn_flower_3" text="999朵鲜花" fontsize="16" color="#00000000" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" raycast="1" src="bg_btn_orange" atlas="Atlas/TS_Common.spriteatlas">
+        </button>
+      </layout>
+    </img>
+    <button id="btn_flower" x="24" y="140" raycast="1" text="1朵鲜花" a="02" textcolor="#00ff00" outlinesize="1" outlinecolor="#000000" src="texebg_input_s" atlas="Atlas/UIChatPanelOut.spriteatlas" fontsize="18" width="161" height="38" scale9l="10" scale9t="10" scale9r="10" scale9b="10" mimg="" pimg="" dimg="">
+    </button>
+    <item id="Item" src="20020001" width="70" height="70" x="-116" y="15" itemid="61200001" tips="1">
+    </item>
+  </img>
+</uipanel>

@@ -1,0 +1,10 @@
+<uipanel id="KLSkillInfoItem" name="技能信息模板" width="90" height="90" zindex="-1">
+  <prefab path="UI/Template/Item/UISkillInfoItem.prefab" width="90" height="90" id="prefab_84">
+    <img id="ImageSkillIcon" bind="ImageSkillIcon">
+    </img>
+    <text id="TextSkillName" bind="TextSkillName">
+    </text>
+    <button id="Bg" bind="Bg">
+    </button>
+  </prefab>
+</uipanel>

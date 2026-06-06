@@ -1,0 +1,32 @@
+<uipanel id="KLHookPointMonsterItemKml" name="挂机点boss模板" a="11" width="500" height="60" zindex="-1" x="0" y="0">
+  <img id="Bg" a="00" atlas="" src="Texture/hookInfoBg.png" width="500" height="60" raycast="1" x="0" y="0" scale9l="42" scale9b="37" scale9r="34" scale9t="29">
+    <prefab path="Kml/KmlPrefab/Cookbook/Common/HighlightGo.prefab" id="HighlightGo" active="0">
+      <panel id="RawImage" bind="RawImage" width="910" height="285">
+      </panel>
+      <panel id="Effect" bind="Effect" x="0" y="0">
+      </panel>
+    </prefab>
+    <img id="headBG" a="00" atlas="Atlas/FG_Common.spriteatlas" src="iem_kuang" width="80" height="80" raycast="0" x="-330" y="0" active="0" enable="0">
+    </img>
+    <img id="imgHead" a="00" atlas="Atlas/Common.spriteatlas" src="" width="55" height="55" raycast="0" x="-330" y="0" active="0" enable="0">
+    </img>
+    <text id="txtName" a="00" text="" fontsize="18" height="50" width="224" ta="01" x="-134" y="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+    <text id="txtLevel" a="00" text="" fontsize="18" height="25" width="85" ta="01" x="-46" y="6" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1" active="1">
+    </text>
+    <text id="txtExp" a="00" text="" fontsize="18" height="25" width="133" ta="01" x="61" y="2" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    </text>
+    <button id="btnGo" a="20" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="102" height="36" onclick="" text="立即前往" raycast="1" x="-18" y="0" fontsize="18" ta="11" textcolor="#EFEFEF" dcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+    <img id="imgArrow" a="00" atlas="Atlas/FG_HookPoint.spriteatlas" src="btn_icon" width="22" height="18" active="0" raycast="1" x="240" y="1" rotate="0,0,90">
+    </img>
+    <text id="txt_suggestion" a="00" text="" fontsize="18" height="50" width="130" ta="01" outline="1" horwrap="1" x="0" color="#FFFFFFFF" y="0" outlinesize="1" outlinecolor="#000000FF" active="0">
+      <img id="img1" a="10" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-20" y="10">
+      </img>
+      <img id="img2" a="10" width="19" height="19" raycast="1" src="point1" atlas="Atlas/FG_Common.spriteatlas" x="-20" y="-12">
+      </img>
+    </text>
+    <button id="btn_tips" a="00" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="90" y="0" active="0">
+    </button>
+  </img>
+</uipanel>

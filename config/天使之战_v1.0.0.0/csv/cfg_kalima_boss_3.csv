@@ -1,0 +1,5 @@
+﻿int#s,int#s,int#s#c,string#s,string#s#c,string#s,string#s,string#s
+id,type,item,beizhu,num,probability,career,level
+1,2,1000010,卡利玛-金币,96#144,0#10000,,
+2,2,6000140,再生原石,1#1,0#6000,,
+3,2,6000181,破碎的洛克之羽,1#1,0#10000,,

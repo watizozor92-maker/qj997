@@ -1,0 +1,9 @@
+﻿int#c#s,string#c#s,string#c#s,string#c#s,string#c#s,int#c#s,string#c#s,int#c#s,string#c#s
+id,showTogName,mainUIPanel,subUIRoute,togName,sortId,showCondition,cornerType,actualCondition
+1,黄金首杀,KLMainActivityPanel,dev/outui/OpenServerActivity/Panel/KLUIOpenServerFirstKill/KLUIOpenServerFirstKillPanel,tog_FirstKill,1,901#1&903#10&101#50,0,901#1&903#10
+2,大天使福利,KLMainActivityPanel,dev/outui/OpenServiceArchangelWelfare/Panel/KLUIOpenServiceArchangelWelfare/KLUIOpenServiceArchangelWelfarePanel,tog_2,2,100#999999,0,100#999999
+3,开服竞技,KLMainActivityPanel,dev/outui/OpenServerAthletics/Panel/KLOpenServerAthletics/KLOpenServerAthleticsPanel,tog_OpenServerAthletics,3,901#1&903#10&101#95,1,901#1&903#10
+4,翅膀任务,KLMainActivityPanel,dev/outui/WingTask/Panel/KLOpenServiceWingTask/KLOpenServiceWingTaskPanel,tog_WingTaskActivity,4,100#9999,0,901#1&903#10
+5,大天使武器,KLMainActivityPanel,dev/outui/MainActivity/Panel/KLArcWeapActivity/KLArcWeapActivityPanel,tog_ArcWeapActivity,5,101#999999,0,901#1&903#10
+6,七日登录,KLMainActivityPanel,dev/outui/OpenService/Panel/KLOpenServiceGiftInner/KLOpenServiceGiftInnerPanel,tog_SevenDayGiftActivity,6,901#1&903#10&101#70,0,901#1&903#10
+7,等级奖励,KLMainActivityPanel,dev/outui/LevelReward/Panel/KLLevelReward/KLLevelRewardPanel,tog_LevelReward,7,901#1&903#10&101#70,0,901#1&903#10

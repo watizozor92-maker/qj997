@@ -1,0 +1,6 @@
+<uipanel id="KLUIChatSelectTypeItem" name="聊天切换类型模板" width="190" height="30" zindex="-1" raycast="1">
+  <img id="bg" a="00" width="142" height="32" raycast="1" src="bg_select_no" atlas="Atlas/UIChatPanelOut.spriteatlas">
+    <text id="name" text="" fontsize="18" color="#DBE0E6FF" width="190" height="30" ta="11" onclick="KmlChatUI/@综合类型选择类型 " outline="1" horwrap="1">
+    </text>
+  </img>
+</uipanel>

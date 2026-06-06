@@ -1,0 +1,70 @@
+<uipanel id="KLUIEquipTransferPanel" name="装备转移界面" adapter="1" zindex="200" x="7" width="1334" height="750" a="20" onload="KmlXWEquipTransferUI/@界面初始化">
+  <img id="equip_bg" src="Texture/bg_bottomBg.png" x="385" raycast="1">
+  </img>
+  <panel id="panel_main" width="416" height="750" a="20" raycast="1" x="-75">
+    <img id="title_transfer" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="title_transfer" y="345" x="3">
+    </img>
+    <button id="btn_close" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" a="21" x="7" y="10" onclick="KmlXWEquipTransferUI/@关闭装备转移界面" h5x="-359" h5y="10">
+    </button>
+    <img src="Texture/bg_zhuanyi_new.png" y="147" x="-3" id="img_36">
+    </img>
+    <panel id="panel_equip_source" x="-105" y="133">
+      <panel id="panel_equip_source_item" width="133" height="234">
+      </panel>
+      <img id="img_equip_source_select" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="bg_transfer_select" active="1" y="-5">
+        <img id="img_equip_source_add" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty">
+        </img>
+        <img atlas="Atlas/KLEquipTransferUI.spriteatlas" src="text_selectip_left" y="-150" id="img_41">
+        </img>
+      </img>
+      <button id="btn_equip_source_takeoff" atlas="Atlas/TS_Common.spriteatlas" src="zy_btn_red" text="卸下" fontsize="18" outlinesize="1" outlinecolor="#000000FF" onclick="KmlXWEquipTransferUI/@卸下装备二次确认 1" active="0" y="-151" width="113" height="40">
+      </button>
+    </panel>
+    <panel id="panel_equip_target" x="100" y="133">
+      <panel id="panel_equip_target_item" width="133" height="234">
+      </panel>
+      <img id="img_equip_target_select" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="bg_transfer_select" active="0" y="-4">
+        <img id="img_equip_target_add" atlas="Atlas/TS_Common.spriteatlas" src="tianjia_ty">
+        </img>
+      </img>
+      <img id="img_equip_target_select_text" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="text_selectip_right" y="-155" x="3">
+      </img>
+      <button id="btn_equip_target_takeoff" atlas="Atlas/TS_Common.spriteatlas" src="zy_btn_red" text="卸下" fontsize="18" outlinesize="1" outlinecolor="#000000FF" onclick="KmlXWEquipTransferUI/@卸下装备二次确认 2" active="0" y="-151" width="113">
+      </button>
+    </panel>
+    <img id="img_49" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="img_left" x="-143" y="-110">
+    </img>
+    <img id="img_50" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="img_right" x="145" y="-110">
+    </img>
+    <toggle id="toggle_transfer_strengthen" x="-66" y="-71" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_gou_N" pimg="ty_btn_gou" default="0" width="35" height="35" pimgsize="40,35" raycast="1" oncancel="KmlXWEquipTransferUI/@强化等级取消">
+      <img id="img_transfer_strengthen" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="text_transtrength" x="92">
+      </img>
+    </toggle>
+    <toggle id="toggle_transfer_append" x="-66" y="-115" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_gou_N" pimg="ty_btn_gou" default="0" width="35" height="35" pimgsize="40,35" raycast="1" oncancel="KmlXWEquipTransferUI/@追加等级取消">
+      <img id="img_transfer_append" atlas="Atlas/KLEquipTransferUI.spriteatlas" src="text_transfer" x="92">
+      </img>
+    </toggle>
+    <panel x="-152" y="-218" width="24" height="26" active="1" id="panel_55">
+      <img atlas="Atlas/TS_Common.spriteatlas" src="img_title_di" x="42" active="1" id="img_56">
+      </img>
+      <text text="所需材料" a="10" color="#FFFFFF" fontsize="18" y="1" x="28" outlinesize="1" outlinecolor="#000000FF" id="text_57">
+      </text>
+    </panel>
+    <img id="cost_panel" atlas="Atlas/TS_Common.spriteatlas" src="ty_num_bg" width="344" height="38" y="-258" x="2" scale9l="10" scale9t="10" scale9r="10" scale9b="10" active="0">
+      <item id="item_cost" itemid="" x="-150" bgtype="0" width="30" height="30" tips="1">
+      </item>
+      <text id="text_cost_item_name" text="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" x="-118">
+      </text>
+      <text id="text_item_bag_count" text="" fontsize="18" a="20" x="-12" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+    <img id="success_anim" a="00" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_13" width="150" height="150" raycast="1" rotate="0,0,0" active="0" y="160" z="-500">
+      <text id="successText" a="00" text="转移成功" fontsize="18" height="25" width="100" ta="10" horwrap="1" color="#FFE800FF" y="-3">
+      </text>
+    </img>
+    <button id="btn_transfer" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window37_gery" text="转移" fontsize="20" textcolor="#FFFFFF" y="-310" outlinesize="1" outlinecolor="#000000FF" onclick="KmlXWEquipTransferUI/@装备等级属性转移">
+    </button>
+    <text id="text_reborn_tips" text="武器的再生词条无法转移给防具，反之同理" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="#000000FF" y="-350" active="0">
+    </text>
+  </panel>
+</uipanel>

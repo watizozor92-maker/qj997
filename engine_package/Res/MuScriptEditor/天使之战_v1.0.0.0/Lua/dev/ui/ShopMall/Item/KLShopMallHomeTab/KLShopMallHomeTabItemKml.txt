@@ -1,0 +1,6 @@
+<uipanel id="KLShopMallHomeTabItem" name="商城主页签模板" width="120" height="51" zindex="-1">
+  <toggle id="KmlShopMallHomeTab" togglegroup_id="TopHomeToggleGroup" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select">
+    <text id="Label" text="" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" horwrap="1" ta="11" outline="0" height="51" width="120" x="0">
+    </text>
+  </toggle>
+</uipanel>

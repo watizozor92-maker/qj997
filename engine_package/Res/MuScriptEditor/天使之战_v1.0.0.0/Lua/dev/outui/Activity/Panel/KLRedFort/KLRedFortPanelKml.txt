@@ -1,0 +1,66 @@
+<uipanel id="KLRedFortPanelKml" name="赤色要塞活动界面" a="00" width="300" height="300" x="0" y="-15" mask="0" raycast="1" adapter="1" zindex="200" active="1">
+  <panel id="root" a="00" width="1334" height="750" raycast="1" x="1" y="1">
+    <img id="img2_2" a="00" width="630" height="523" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-8" active="1">
+    </img>
+    <img src="Texture/FG_dankuangdi2.png" width="647" height="558" x="0" y="-1" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+      <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="258" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
+      </img>
+      <img id="img3_2" a="00" width="608" height="446" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35" active="1">
+      </img>
+    </img>
+    <panel id="bg" a="00" width="414" height="515" x="0" y="0">
+      <img id="img5" a="00" atlas="Atlas/TS_Common.spriteatlas" src="ty_bg_oneFrameBotton" width="387" height="357" raycast="1" x="0" y="-66" active="0">
+      </img>
+      <img id="img2" a="00" atlas="Atlas/UIRedFort.spriteatlas" src="text_title" width="132" height="58" raycast="1" x="0" y="229" color="#FFFFFF00">
+        <text id="text1" a="00" text="赤色要塞" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </img>
+      <img id="img3" a="00" atlas="Atlas/FG_Fuben.spriteatlas" src="bg_chiseyaose" width="582" height="155" raycast="1" x="2" y="97">
+      </img>
+      <button id="btnClose" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="295" y="239" binddragid="" h5y="235" h5x="-184" mimg="" pimg="" dimg="">
+      </button>
+      <panel id="panel6" a="00" width="174" height="24" x="-200" y="0">
+        <img id="img4" a="10" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1">
+        </img>
+        <text id="text5" a="10" text="副本奖励：" fontsize="18" height="25" width="188" ta="01" horwrap="1" x="19" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+        <layout id="itemRoot" control_height="0" contentsizefitter="1" vertical="0" height="0" width="269" a="00" raycast="1" x="155" y="-20" binddragid="" cella="11" space="10">
+        </layout>
+      </panel>
+      <panel id="panel16" a="00" width="174" height="24" x="-200" y="-64">
+        <img id="img17" a="10" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1">
+        </img>
+        <text id="text18" a="10" text="参与等级：" fontsize="18" height="25" width="188" ta="01" horwrap="1" x="19" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+        <text id="textLevel" a="00" text="70" fontsize="18" height="25" width="195" ta="01" horwrap="1" x="115" y="0" color="#E6E600FF" binddragid="" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </panel>
+      <panel id="panel19" a="00" width="174" height="24" x="-200" y="-98">
+        <img id="img20" a="10" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1">
+        </img>
+        <text id="text21" a="10" text="进入时间：" fontsize="18" height="25" width="188" ta="01" horwrap="1" x="19" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+        <text id="textOpenTime" a="00" text="20:00:00-20:05:00" fontsize="18" height="25" width="286" ta="01" horwrap="1" x="160" y="0" color="#00FF00FF" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </panel>
+      <panel id="panel22" a="00" width="174" height="24" x="-200" y="-132">
+        <img id="img23" a="10" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1">
+        </img>
+        <text id="textActivityTime" a="00" text="20:00:00-20:05:00" fontsize="18" height="25" width="275" ta="01" horwrap="1" x="155" y="0" color="#00FF00FF" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+        <text id="text24" a="10" text="活动时间：" fontsize="18" height="25" width="188" ta="01" horwrap="1" x="20" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </panel>
+      <panel id="panel28" a="00" width="174" height="24" x="-200" y="-166">
+        <img id="img29" a="10" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1">
+        </img>
+        <text id="text30" a="10" text="副本规则：" fontsize="18" height="25" width="188" ta="01" horwrap="1" x="20" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+        <text id="textRule" a="00" text="将所有人击杀或打下台子，自己存活到最后" fontsize="18" height="25" width="464" ta="01" horwrap="1" x="250" y="0" outline="1" outlinesize="1" outlinecolor="#000000">
+        </text>
+      </panel>
+    </panel>
+    <button id="btnEnter" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" onclick="" text="进入副本" raycast="1" x="1" y="-217" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000" fontsize="18">
+    </button>
+  </panel>
+</uipanel>

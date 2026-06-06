@@ -1,0 +1,172 @@
+<uipanel id="KLUnionInfoPanelKml" name="战盟信息界面" adapter="1" x="-473" width="416" height="750" zindex="200" a="20">
+  <panel id="Bg_Template" a="00" width="416" height="750" x="" y="0">
+    <panel id="panel2" a="00" width="404" height="680" y="-29" rectmask="1">
+      <img id="img5" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+      </img>
+    </panel>
+    <img id="img6" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109" x="0" y="0">
+    </img>
+  </panel>
+  <prefab path="UI/UIUnionInfoPanel.prefab" width="416" height="750" id="prefab_13" x="" y="0">
+    <panel id="UIUnionInfoPanel" bind="UIUnionInfoPanel" width="416">
+    </panel>
+    <button id="reportMask" bind="reportMask" x="0" y="0">
+    </button>
+    <text id="inexpValue2" bind="inExp" active="0" databind="@exp_str" text="" outline="0" horwrap="1">
+    </text>
+    <input id="fundInput" bind="fundInput" onchange="KmlXWUnionInfoUI/@DonateChange">
+    </input>
+    <text id="inGrade" bind="inGrade" active="0" outline="0" horwrap="1">
+    </text>
+    <text id="levelValue2" bind="inLevel" active="0" outline="1" horwrap="1">
+    </text>
+    <img id="bgtxt" bind="bgtxt" x="0" y="114" height="284" width="386" src="bag_info" atlas="Atlas/FG_Union.spriteatlas" scale9l="58" scale9b="77" scale9r="66" scale9t="69" a="02">
+    </img>
+    <text id="intro" bind="intro" x="60" y="-10" outline="1" horwrap="1" width="75" height="22" text="战盟公告" fontsize="18" fontstyle="0" underline="0" color="#DCE1E5" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="intro_rename" bind="intro_rename" x="80" y="-474" outline="1" horwrap="1" width="75" height="22" text="成员动态" fontsize="18" fontstyle="0" underline="0" color="#DCE1E5" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="BG" bind="BG" width="416">
+    </img>
+    <img id="img_bgBg" bind="img_bgBg" active="0">
+    </img>
+    <text id="inUnionAnnoy" bind="inUnionAnnoy" databind="@announcement" text="" fontsize="16" outlinesize="1" outlinecolor="#000000FF" x="180" width="354" outline="0" horwrap="1" color="#DCE1E5" height="20" deltay="0">
+    </text>
+    <button id="btn_3DItem" bind="btn_3DItem">
+    </button>
+    <text id="inMemberState" bind="inMemberState" x="2" fontsize="16" width="320" horwrap="1" outline="1" color="#DCE1E5" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <panel id="unionNameModify" bind="unionNameModify" databind="active=@change_name_active" active="0" x="236" y="-23">
+    </panel>
+    <img id="bg2" bind="bg" active="0">
+    </img>
+    <text id="result_fund" bind="result_fund" databind="@donate_get_value" text="0" outline="1" horwrap="1">
+    </text>
+    <button id="btn_donate" bind="btn_donate" onclick="KmlXWUnionInfoUI/@ChangeDonateCommit">
+    </button>
+    <text id="inMoneyValue2" bind="inMoney" active="0" databind="@union_capital" text="" outline="1" horwrap="1">
+    </text>
+    <button id="exitButton" bind="exitButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="0" y="40" width="103" height="36" mimg="" pimg="" dimg="" text="" fontsize="18" ta="11" outlinesize="0" outlinecolor="#000000FF" textcolor="#FFFFFFFF" a="02">
+      <text id="text2" a="00" text="退出战盟" fontsize="18" height="36" width="103" ta="11" siblingindex="1" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </button>
+    <button id="inMoneyAddButton2" bind="inMoneyAddButton" x="40" width="38" height="38" onclick="KmlXWUnionInfoUI/@Donate">
+    </button>
+    <text id="unionName" bind="unionName" databind="@union_name" width="226" text="" fontsize="20" color="#E6E600" outline="1" horwrap="1" height="40" y="0" a="00" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="bossValue2" bind="inBoss" active="0" databind="@leader_name" text="" outline="0" horwrap="1">
+    </text>
+    <img id="TitleImg" bind="Image" active="0">
+    </img>
+    <button id="btn_cancel" bind="btn_cancel" onclick="KmlXWUnionInfoUI/@ChangeDonateCancle">
+    </button>
+    <panel id="panel_report" bind="panel_report" databind="active=@change_announcement_active" active="0" x="21" y="-2" width="353" height="259">
+      <img id="bg_report" bind="bg" a="00" width="353" height="259" y="0" atlas="" src="Texture/FG_dankuangdi.png" x="0" color="#FFFFFFFF">
+        <button id="btn_panel_report_no" bind="btn_panel_report_no" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlXWUnionInfoUI/@ChangeUnionAnnouncementCancle" width="113" height="41" x="-67" y="-88" text="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+          <text id="text3" a="00" text="取消修改" fontsize="18" height="36" width="103" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </button>
+        <button id="btn_panel_report_yes" bind="btn_panel_report_yes" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlXWUnionInfoUI/@ChangeUnionAnnouncementCommit" width="113" height="41" x="66" y="-88" text="" textcolor="#FFFFFFFF" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+          <text id="text4" a="00" text="确认修改" fontsize="18" height="36" width="103" ta="11" siblingindex="1" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </button>
+      </img>
+      <input id="noticeInput" bind="noticeInput" onchange="KmlXWUnionInfoUI/@UnionAnnouncementChange" width="273" height="110" x="-1" y="5" fontsize="18" color="#DCE1E5" src="bg_content_long" atlas="Atlas/FG_Union.spriteatlas" scale9l="0" scale9b="0" scale9r="0" scale9t="0" outlinesize="1" outlinecolor="#000000FF" placecolor="#DCE1E5">
+      </input>
+      <text id="title_report" bind="title" outline="1" horwrap="1" width="100" height="24" text="" fontsize="20" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="-16" a="01">
+        <img id="report_border_left" bind="border_left" active="0">
+        </img>
+        <img id="report_border_right" bind="border_right" active="0">
+        </img>
+      </text>
+      <button id="Btn_ReportClose" a="21" width="34" height="34" onclick="" text="" raycast="1" siblingindex="3" x="-5" y="-20" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+      </button>
+      <text id="text6" a="01" text="战盟公告" fontsize="20" height="30" width="200" ta="11" siblingindex="5" outline="0" horwrap="1" y="-21" color="#FFFFFFFF" outlinesize="0" outlinecolor="#000000FF">
+      </text>
+    </panel>
+    <button id="changeFlagBtn" bind="changeFlagBtn" width="34" height="34" active="0" atlas="Atlas/FG_Common.spriteatlas" src="btn_modify" databind="active=@is_admin" onclick="KmlXWUnionInfoUI/@ChangeFlag" mimg="" pimg="" dimg="" y="6">
+    </button>
+    <button id="btn_panel_name_yes" bind="btn_panel_name_yes" onclick="KmlXWUnionInfoUI/@ChangeUnionNameCommit">
+    </button>
+    <button id="CloseButton" bind="CloseButton" onclick="KmlXWUnionInfoUI/@CloseMainPanel" x="-10" y="-20" width="34" height="34" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" a="21">
+    </button>
+    <button id="changeAnnoyBtn" bind="changeAnnoyBtn" width="34" height="34" atlas="Atlas/FG_Common.spriteatlas" src="btn_modify" onclick="KmlXWUnionInfoUI/@ChangeUnionAnnouncement" databind="active=@is_admin" active="0" x="42" y="-1" mimg="" pimg="" dimg="">
+    </button>
+    <text id="peopleCountValue2" bind="inPeopleCount" active="0" databind="@num_str" text="" color="#00FF00" outline="1" horwrap="1">
+    </text>
+    <button id="changeUnionNameBtn" bind="changeUnionNameBtn" width="34" height="34" onclick="KmlXWUnionInfoUI/@ChangeUnionName" databind="active=@is_admin" active="0" x="90" y="0" src="btn_modify" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+    </button>
+    <button id="btn_Election" x="135" y="58" width="83" height="28" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" text="竞选" active="0" enable="1" raycast="1" siblingindex="1" textcolor="#FFFFFFFF" fontsize="16" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+    <img id="nameDeco" bind="nameDeco" color="#FFFFFF" x="71" y="-81" width="226">
+    </img>
+    <button id="btn_panel_name_no" bind="btn_panel_name_no" onclick="KmlXWUnionInfoUI/@ChangeUnionNameCancle">
+    </button>
+    <button id="inexpAddButton2" bind="inexpAddButton" x="40" width="38" height="38" onclick="KmlXWUnionInfoUI/@AddUnionExp">
+    </button>
+    <panel id="info_panel" a="00" width="411" height="682" x="4" y="-30" siblingindex="3">
+      <panel id="top" a="00" width="205" height="164" x="72" y="203" siblingindex="0">
+        <panel id="panel6" a="01" width="205" height="35" x="0" y="-4" siblingindex="0">
+          <text id="text1" a="10" text="等级" fontsize="18" height="25" width="72" ta="01" outline="0" horwrap="1" color="#DCE1E5" x="12" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="levelValue" x="0" a="20" text="99" fontsize="18" height="25" width="92" ta="21" outline="0" horwrap="1" color="#DCE1E5" siblingindex="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+        <panel id="panel10" a="01" width="205" height="35" x="0" y="-34" siblingindex="1">
+          <text id="peopleCountValue" a="20" text="99" fontsize="18" height="25" width="92" ta="21" outline="0" horwrap="1" color="#DCE1E5" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="text12" a="10" text="人数" fontsize="18" height="25" width="72" ta="01" outline="0" horwrap="1" color="#DCE1E5" x="12" siblingindex="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+        <panel id="panel3" a="01" width="205" height="35" x="0" y="-64" siblingindex="2">
+          <text id="inexpValue" a="20" text="9999/9999" fontsize="18" height="25" width="85" ta="21" outline="0" horwrap="1" color="#DCE1E5" x="-35" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <button id="inexpAddButton" x="90" width="26" height="26" src="ty_btn_add" raycast="1" atlas="Atlas/FG_Common.spriteatlas" siblingindex="2" mimg="" pimg="" dimg="">
+          </button>
+          <text id="text5" a="10" text="经验" fontsize="18" height="25" width="72" ta="01" outline="0" horwrap="1" color="#DCE1E5" x="12" siblingindex="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+        <panel id="panel14" a="01" width="205" height="35" x="0" y="-94" siblingindex="3">
+          <text id="text16" a="10" text="资金" fontsize="18" height="25" width="72" ta="01" outline="0" horwrap="1" color="#DCE1E5" x="12" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="inMoneyValue" a="20" text="9999/9999" fontsize="18" height="25" width="85" ta="21" outline="0" horwrap="1" color="#FAD994FF" x="0" siblingindex="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <button id="inMoneyAddButton" x="90" active="0" width="28" height="28" src="ty_btn_add_2" atlas="Atlas/FG_Common.spriteatlas" siblingindex="2" mimg="" pimg="" dimg="">
+          </button>
+        </panel>
+        <panel id="panel20" a="01" width="205" height="35" x="0" y="-124" siblingindex="4">
+          <text id="text22" a="10" text="盟主" fontsize="18" height="25" width="72" ta="01" outline="0" horwrap="1" color="#DCE1E5" x="12" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+          <text id="bossValue" a="20" text="99" fontsize="18" height="25" width="151" ta="21" outline="0" horwrap="1" color="#DCE1E5" siblingindex="1" outlinesize="1" outlinecolor="#000000FF">
+          </text>
+        </panel>
+      </panel>
+    </panel>
+    <img id="BGInner" bind="BGInner" active="0" color="#FFFFFF00" width="406" height="750" a="00">
+    </img>
+    <text id="cost_txt_count" bind="txt_count" outline="1" horwrap="1">
+    </text>
+    <input id="warAllianceNameInput" bind="warAllianceNameInput" onchange="KmlXWUnionInfoUI/@UnionNameChange">
+    </input>
+    <panel id="panel_fund" bind="panel_fund" databind="active=@donate_active" active="0" x="30" y="-34" width="416" height="232">
+    </panel>
+    <panel id="inAnnoyScrollView" bind="inAnnoyScrollView" x="-10" y="-60" width="354" height="128">
+    </panel>
+    <img id="flagImage" bind="flagImage" width="138" height="247" x="30" y="-85" src="Flag" atlas="Atlas/FG_Union.spriteatlas">
+    </img>
+    <button id="btn_Impeach" x="135" y="58" width="83" height="28" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" active="0" text="弹劾" enable="1" raycast="1" siblingindex="4" textcolor="#FFFFFFFF" fontsize="16" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+    <panel id="inUnionMemberStateScrollView" bind="inUnionMemberStateScrollView" x="-15" y="-489" height="130" width="356">
+    </panel>
+    <button id="btn_Replace" x="135" y="58" width="83" height="28" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" active="0" text="取代" enable="1" raycast="1" siblingindex="2" fontsize="16" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    </button>
+    <button id="nameMask" bind="nameMask" x="-1124" y="68" width="3000" height="3000">
+    </button>
+  </prefab>
+  <item id="cost_item" x="299" y="-80" itemid="10040001" mfixsize="30,30" tips="1" bgtype="0" databind="active=@change_name_active" active="0">
+  </item>
+  <img id="flag_img" x="-110" y="190" width="97" height="90" databind="src=@armband_src" src="">
+  </img>
+  <text id="title" a="00" text="战盟信息" fontsize="20" height="28" width="150" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#ffffffFF" y="330">
+  </text>
+</uipanel>

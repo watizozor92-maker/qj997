@@ -1,0 +1,128 @@
+<uipanel id="KLNPCShopPanel" name="npc商店界面" zindex="200" a="21" adapter="1" x="0" y="0" z="0" rotate="0,0,0" raycast="0" onload="KmlXWNpcShopUI/@初始化" width="0" height="0" color="#00000000">
+  <panel id="BG_Templete" a="00" width="416" height="752" x="-208" y="-376">
+    <panel id="ReMask" a="00" width="408" height="732" y="-5" rectmask="1" x="0">
+      <img id="img15" a="00" width="680" height="740" raycast="0" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="bg_tankuangzuo" x="0" y="9">
+      </img>
+    </panel>
+    <img id="Frame" a="21" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi1.png" scale9l="136" scale9b="81" scale9r="146" scale9t="109" x="0" y="0">
+      <img id="img21" a="01" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="0">
+      </img>
+      <img id="CloseButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-11" y="-19" z="-10" h5x="-354" h5y="10" raycast="1" width="34" height="34">
+      </img>
+    </img>
+  </panel>
+  <img id="Background" src="Texture/FG_bg_2ColumnsTanKuang.png" raycast="0" x="0" y="-5" z="0" a="21" rotate="0,0,0" width="406" height="662" atlas="" color="#00000000">
+    <text id="title" a="00" text="商店" fontsize="20" height="30" width="200" ta="11" outline="0" horwrap="1" x="-2" y="298" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="scrollerBg" atlas="" src="Texture/FG_npcShop.png" x="-2" y="-20" z="0" width="382" height="556" a="00" rotate="0,0,0" raycast="0">
+      <scrollview id="ItemList" a="00" x="-1" y="3" width="370" height="539" vertical="1" raycast="0" movementtype="1">
+        <gridview id="gridview2" cellwidth="60" cellheight="60" raycast="1" contentsizefitter="3" constraint="1" constraintcount="6">
+          <datalist id="goods">
+            <img id="goolds_back" src="item_frame32" width="100" height="150" raycast="1" atlas="Atlas/FG_BagPanel.spriteatlas" loop="0" color="#FFFFFFFF">
+              <item id="show_item" width="55" height="55" itemid="" itemcount="" bgtype="0" mfixsize="55,55" textcolor="#fbd994" tips="1" itemtype="0" z="0" active="1" rotate="0,0,0" bgscale="55,55">
+                <img id="item_click" width="66" height="66" color="#00000000" raycast="1">
+                </img>
+              </item>
+            </img>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </img>
+    <button id="desButton" atlas="Atlas/Common.spriteatlas" src="btn_description" x="-146" y="-247" z="0" a="00" rotate="0,0,0" raycast="1" fontsize="16" text="" textcolor="#DCE1E5" width="30" height="30" active="0">
+    </button>
+    <button id="autoBuyBackground" atlas="Atlas/Common.spriteatlas" src="button_interface_window54" raycast="1" x="66" y="-301" z="0" a="00" rotate="0,0,0" width="36" height="36" active="0">
+      <text id="autoBuyText" text="自动买药" mline="1" fontsize="18" x="61" y="0" z="0" a="00" rotate="0,0,0" fonttype="" outlinesize="1" outlinecolor="#000000" ta="00" outline="0" horwrap="1" active="0">
+      </text>
+    </button>
+    <img id="autoBuyToggleCheck" atlas="Atlas/Common.spriteatlas" src="ty_btn_gou" x="66" y="-302" z="0" a="00" rotate="0,0,0" active="0">
+    </img>
+    <panel id="MoneyRoot" a="02" width="344" height="81" active="0">
+      <button id="btn_gold" a="00" width="156" height="43" onclick="" text="" raycast="1" siblingindex="0" src="img_bag_10" atlas="Atlas/UIBagPanel.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0" x="-78" y="0">
+        <img id="goldIcon" a="00" width="35" height="35" raycast="1" siblingindex="1" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" x="-54" y="3">
+        </img>
+        <text id="txt_gold" a="00" text="0" fontsize="18" height="30" width="106" ta="01" siblingindex="2" outline="0" horwrap="1" x="23" y="3" color="#1ADE1FFF">
+        </text>
+      </button>
+      <button id="btn_diamond" a="00" width="156" height="43" onclick="" text="" raycast="1" siblingindex="4" src="img_bag_10" atlas="Atlas/UIBagPanel.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0" x="78" y="0">
+        <img id="diamondIcon" a="00" width="35" height="35" raycast="1" siblingindex="1" src="img_bag_04" atlas="Atlas/UIBagPanel.spriteatlas" x="-54" y="3">
+        </img>
+        <text id="txt_diamond" a="00" text="0" fontsize="18" height="30" width="106" ta="01" siblingindex="2" outline="0" horwrap="1" x="23" y="3" color="#1ADE1FFF">
+        </text>
+      </button>
+    </panel>
+  </img>
+  <img id="Left" a="00" width="174" height="42" raycast="1" x="-315" y="-698" color="#DCE1E500" z="-500" active="0">
+    <button id="autoBuyLeftBtn" a="00" width="36" height="36" onclick="" text="" raycast="1" src="ty_btn_N" atlas="Atlas/FG_npcShop.spriteatlas" mimg="" pimg="" dimg="" x="-61">
+      <img id="autoBuyLeftBtnSelectImg" a="00" width="42" height="35" raycast="1" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas">
+      </img>
+    </button>
+    <img id="img4" a="00" width="99" height="34" raycast="1" src="bg3" atlas="Atlas/FG_npcShop.spriteatlas" x="9" scale9l="21" scale9b="10" scale9r="10" scale9t="6">
+      <text id="autoBuyLeftBtnText" a="00" text="中瓶治疗药水" fontsize="16" height="25" width="114" ta="11" outline="1" horwrap="1" x="0" y="0" color="#DCE1E5">
+      </text>
+    </img>
+    <button id="autoBuyLeftDownBtn" a="00" width="34" height="34" onclick="" text="" raycast="1" src="btn_down" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="83">
+      <img id="autoBuyLeftDownBtn11" src="btn_up" atlas="Atlas/FG_Common.spriteatlas" active="0">
+      </img>
+    </button>
+    <img id="leftDataPanel" a="00" width="188" height="90" raycast="1" src="bg_2" atlas="Atlas/FG_npcShop.spriteatlas" x="13" y="64">
+      <button id="leftMaskBtn" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#DCE1E500">
+      </button>
+      <scrollview id="scrollviewLeft" a="00" width="188" height="90" vertical="1" y="0" raycast="1" x="-13">
+        <layout id="layout9" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01">
+          <datalist id="datalistLeft">
+            <img id="leftpanel" color="#DCE1E500" width="170" height="38" raycast="1">
+              <panel id="img13" a="00" width="111" height="34" raycast="1" src="bg3" atlas="Atlas/FG_npcShop.spriteatlas" x="11" scale9l="21" scale9b="10" scale9r="10" scale9t="6">
+                <text id="leftDataText" a="00" text="中瓶魔力药水" fontsize="16" height="25" width="140" ta="11" outline="1" horwrap="1" x="16" y="0" color="#DCE1E5">
+                </text>
+              </panel>
+              <button id="leftDataBtn" a="00" width="36" height="36" onclick="" text="" raycast="1" src="ty_btn_N" atlas="Atlas/FG_npcShop.spriteatlas" mimg="" pimg="" dimg="" x="-63">
+                <img id="leftDataBtnSelectImg" a="00" width="42" height="35" raycast="1" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas">
+                </img>
+              </button>
+            </img>
+          </datalist>
+        </layout>
+      </scrollview>
+    </img>
+  </img>
+  <img id="Right" a="00" width="174" height="42" raycast="1" x="-123" y="-698" color="#DCE1E500" z="-500" active="0">
+    <button id="autoBuyRightBtn" a="00" width="36" height="36" onclick="" text="" raycast="1" src="ty_btn_N" atlas="Atlas/FG_npcShop.spriteatlas" mimg="" pimg="" dimg="" x="-61">
+      <img id="autoBuyRightBtnSelectImg" a="00" width="42" height="35" raycast="1" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas">
+      </img>
+    </button>
+    <img id="img4" a="00" width="99" height="34" raycast="1" src="bg3" atlas="Atlas/FG_npcShop.spriteatlas" x="10" scale9l="21" scale9b="10" scale9r="10" scale9t="6">
+      <text id="autoBuyRightBtnText" a="00" text="中瓶魔力药水" fontsize="16" height="25" width="114" ta="11" outline="1" horwrap="1" x="0" y="0" color="#DCE1E5">
+      </text>
+    </img>
+    <button id="autoBuyRightDownBtn" a="00" width="34" height="34" onclick="" text="" raycast="1" src="btn_down" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="84">
+      <img id="autoBuyRightDownBtn11" src="btn_up" atlas="Atlas/FG_Common.spriteatlas" active="0">
+      </img>
+    </button>
+    <img id="RightDataPanel" a="00" width="188" height="90" raycast="1" src="bg_2" atlas="Atlas/FG_npcShop.spriteatlas" x="13" y="64">
+      <button id="rightMaskBtn" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#DCE1E500" x="7" y="0">
+      </button>
+      <scrollview id="scrollviewRight" a="00" width="170" height="90" vertical="1" y="0" raycast="1" x="-13">
+        <layout id="layout9" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01">
+          <datalist id="datalistRight">
+            <img id="Rightpanel" color="#DCE1E500" width="170" height="38" raycast="1">
+              <img id="img13" a="00" width="111" height="34" raycast="1" src="bg3" atlas="Atlas/FG_npcShop.spriteatlas" x="11" scale9l="21" scale9b="10" scale9r="10" scale9t="6">
+                <text id="RightDataText" a="00" text="中瓶治疗药水" fontsize="16" height="25" width="140" ta="11" outline="1" horwrap="1" x="16" y="0" color="#DCE1E5">
+                </text>
+              </img>
+              <button id="RightDataBtn" a="00" width="36" height="36" onclick="" text="" raycast="1" src="ty_btn_N" atlas="Atlas/FG_npcShop.spriteatlas" mimg="" pimg="" dimg="" x="-63">
+                <img id="RightDataBtnSelectImg" a="00" width="42" height="35" raycast="1" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas">
+                </img>
+              </button>
+            </img>
+          </datalist>
+        </layout>
+      </scrollview>
+    </img>
+  </img>
+  <img id="img2" a="00" width="139" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-323" y="-655" active="1">
+  </img>
+  <img id="img1" a="00" width="25" height="27" raycast="1" x="-381" y="-657" src="star_1" atlas="Atlas/FG_Common.spriteatlas">
+    <text id="text3" a="00" text="自动买药设置" fontsize="18" height="25" width="113" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="66" y="5">
+    </text>
+  </img>
+</uipanel>

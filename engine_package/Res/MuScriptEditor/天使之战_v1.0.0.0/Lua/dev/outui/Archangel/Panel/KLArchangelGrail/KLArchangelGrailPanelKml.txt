@@ -1,0 +1,156 @@
+<uipanel id="KLArchangelGrailPanelKml" name="大天使圣杯界面" width="1334" height="750" adapter="1" x="-66" y="0" a="20" raycast="1" zindex="202" h5x="0">
+  <img id="BG" a="20" atlas="" src="Texture/bg_bottomBg.png" width="416" height="750" raycast="1">
+    <img id="title" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="title" raycast="1" y="345">
+    </img>
+    <button id="CloseButton" a="21" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" onclick="" text="" raycast="1" x="6" y="10" active="1" h5x="-345" h5y="10">
+    </button>
+    <img id="equip_top" a="00" atlas="Atlas/Common.spriteatlas" src="bg_friend_min" width="376" height="255" raycast="1" scale9l="14" scale9b="8" scale9r="16" scale9t="7" y="186" x="0">
+      <img id="item_bottom" a="10" atlas="Atlas/UIArchangelGrail.spriteatlas" src="item_bottom" width="181" height="243" raycast="1" x="0" y="0">
+        <item id="item8" src="20020001" width="150" height="150" bgtype="0" raycast="1">
+        </item>
+        <img id="item_add_img" a="00" atlas="Atlas/UIEquipOverlayPanel.spriteatlas" src="img_add" width="73" height="73" raycast="1">
+        </img>
+        <text id="item_name" a="01" text="七个七个七个字" fontsize="18" height="25" width="163" ta="11" horwrap="1" x="0" y="-2">
+        </text>
+        <img id="item_grail_tips" a="00" atlas="Atlas/UIEquipOverlayPanel.spriteatlas" src="img_add" width="150" height="190" raycast="1" color="#FFFFFF00">
+        </img>
+      </img>
+      <effect id="effectfail" effectid="50002" effecttype="1" mscale="100,100,100" width="200" height="200" active="0" x="-100" y="5" z="-300">
+      </effect>
+      <effect id="effectSucceed" effectid="50001" effecttype="1" mscale="100,100,100" width="200" height="200" active="0" x="-100" y="5" z="-300">
+      </effect>
+      <scrollview id="scrollview11" a="20" x="0" y="0" width="190" height="235" vertical="1" raycast="1">
+        <gridview id="gridview12" cellwidth="190" cellheight="40" raycast="1" width="190" height="300" cella="01" contentsizefitter="1" spacey="2">
+          <datalist id="grail_list" a="11">
+          </datalist>
+        </gridview>
+      </scrollview>
+    </img>
+    <panel id="grail_suit_all" a="00" y="-140" width="410" height="300">
+      <img id="empty_attr_bg" atlas="Atlas/UIArchangelGrail.spriteatlas" src="img_empty_bg" active="0" y="270">
+      </img>
+      <img id="img_suit_bg" atlas="Atlas/UIArchangelGrail.spriteatlas" src="img_suit_bg" y="115">
+      </img>
+      <scrollview id="scrollview_all_suit" a="00" x="0" width="410" height="260" vertical="1" y="-50" raycast="1">
+        <gridview id="gridview_all_suit" cellwidth="406" cellheight="74" raycast="1" cella="11" contentsizefitter="1">
+          <datalist id="grail_all_suit_list" a="11">
+            <panel id="suir_panel" width="380" height="100">
+              <img id="suit_bg" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="equip_suit_bg" width="406" height="74">
+              </img>
+              <text id="suit_name" a="10" text="圣杯套装名称" fontsize="18" x="20" height="25" width="90" ta="11" horwrap="1">
+              </text>
+              <text id="suit_attr_1" a="10" text="3件套:巴拉巴拉" fontsize="14" x="125" y="20" height="25" width="200" ta="01" horwrap="1">
+              </text>
+              <text id="suit_attr_2" a="10" text="5件套:巴拉巴拉" fontsize="14" x="125" height="25" width="200" ta="01" horwrap="1">
+              </text>
+              <text id="suit_attr_3" a="10" text="7件套:巴拉巴拉" fontsize="14" x="125" y="-20" height="25" width="200" ta="01" horwrap="1">
+              </text>
+              <button id="tipsBtn" atlas="Atlas/UIEquipRegeneratePanel.spriteatlas" src="btn_xq" raycast="1" x="150" active="1">
+              </button>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+    <panel id="strength_panel" a="00" width="415" height="422" y="-155" x="0" active="0">
+      <panel id="panel16" a="01" width="400" height="40" x="0" y="10">
+        <img id="img17" a="10" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="20" y="-2">
+        </img>
+        <text id="text18" a="00" text="圣杯属性" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="-55" y="0" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </panel>
+      <scrollview id="StrengthCostScrollView" a="00" x="3" y="-105" width="390" height="61" vertical="1" raycast="1" active="1" rotate="0,0,0">
+        <gridview id="gridview15" cellwidth="390" cellheight="35" raycast="1" spacey="2" constraint="1" constraintcount="1" contentsizefitter="3">
+          <datalist id="cost_list">
+            <panel id="cost_info">
+              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="360" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
+              </img>
+              <item id="cost_item" width="30" height="30" mfixsize="30,30" a="10" x="18" itemid="" bgtype="0" tips="1">
+              </item>
+              <text id="cost_name" a="10" x="50" text="" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0" ta="01" color="#FFFFFFFF">
+              </text>
+              <text id="cost_num" a="20" text="" x="-63" ta="21" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0">
+              </text>
+              <button id="costAddBtn" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="50" height="50" onclick="" raycast="1" active="1" a="20" x="-12">
+              </button>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+      <panel id="cost_title" a="01" width="400" height="40" x="0" y="-254">
+        <img id="img3" a="10" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="20" y="-2">
+        </img>
+        <text id="text4" a="00" text="所需材料" fontsize="16" height="25" width="200" ta="01" horwrap="1" x="-55" y="0" outlinesize="1" outlinecolor="#000000FF">
+        </text>
+      </panel>
+      <button id="strengthenBtn" a="02" atlas="Atlas/Common.spriteatlas" src="button_interface_window37" onclick="" text="强化" raycast="1" x="0" y="20" fontsize="20" active="1" outlinesize="1" outlinecolor="#000000">
+      </button>
+      <gridview id="gridview20" a="00" cellwidth="350" cellheight="35" raycast="1" width="350" height="240" y="65" x="0" spacey="5" startcorner="0">
+        <datalist id="grail_att_list" a="11">
+          <panel id="panel" width="350" height="35">
+            <img id="img1" atlas="Atlas/Common.spriteatlas" src="ty_info_bar" width="330" height="38" raycast="1" x="10" a="20" y="0">
+              <loadingbar id="loadingbar_attr" a="00" width="324" height="32" src="" atlas="Atlas/UIArchangelGrail.spriteatlas" loadingbar="img_bar_bg" loadingbar_scale9l="0" loadingbar_scale9b="0" loadingbar_scale9r="0" loadingbar_scale9t="0" binddragid="" loadingbarcolor="#FFFFFFFF" color="#FFFFFFFF" hidetext="1" endper="0">
+              </loadingbar>
+              <img id="bg_img" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="" width="324" height="32" raycast="0" active="1" x="0">
+              </img>
+              <img id="select_img" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="icon_select_2" width="354" height="62" raycast="1" scale9l="26" scale9b="32" scale9r="29" scale9t="26" active="0" x="0">
+              </img>
+              <text id="att_text" x="8" a="10" text="幸运一击伤害加成+8.88%" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0" width="200" height="25" ta="01">
+              </text>
+              <text id="max_att_text" x="-5" a="20" text="最大：8.88%" outlinesize="1" outlinecolor="#000000FF" fontsize="18" horwrap="0" width="110" height="25" ta="01">
+              </text>
+            </img>
+            <img id="zhufu_img" active="1" atlas="Atlas/UIArchangelGrail.spriteatlas" src="icon_zhu" width="36" height="36" raycast="1" a="10" x="-10" y="0">
+            </img>
+          </panel>
+        </datalist>
+      </gridview>
+      <img id="success_img" a="11" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="success_img" width="64" height="20" raycast="1" x="41" y="60">
+        <text id="success_rate" a="00" text="888%" fontsize="16" height="25" width="80" ta="01" horwrap="1" x="80" fonttype="AppendLevel">
+        </text>
+      </img>
+      <img id="strengthLevelBg" a="00" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_03" width="150" height="40" raycast="1" y="236" x="-95" active="1">
+        <text id="preLevel" a="00" text="+88" fontsize="16" height="30" width="64" ta="11" horwrap="1" x="-45" y="2" fonttype="font_strength_yellow" space="-5">
+        </text>
+        <img id="arrow" a="00" atlas="Atlas/TS_Common.spriteatlas" src="img_arrow1" width="46" height="35" raycast="1" x="0" y="3">
+        </img>
+        <text id="nextLevel" a="00" text="+88" fontsize="16" height="30" width="64" ta="01" horwrap="1" x="43" y="2" fonttype="font_strength_yellow" space="-5">
+        </text>
+      </img>
+    </panel>
+    <panel id="equipatt_panel" a="00" width="415" height="422" y="-155" x="0" active="1">
+      <img id="img_attr_title" a="01" atlas="Atlas/UIArchangelGrail.spriteatlas" src="" raycast="1">
+      </img>
+      <scrollview id="scrollview3" a="00" width="404" height="215" vertical="1" x="2" y="30" raycast="1">
+        <gridview id="gridview4" cellwidth="198" cellheight="28" raycast="1" cella="11" contentsizefitter="1" spacex="5" spacey="5">
+          <datalist id="equip_att_list" a="11">
+            <img atlas="Atlas/UIArchangelGrail.spriteatlas" src="equip_attr_bg" width="198" height="28" raycast="1" id="img_398">
+              <text id="equip_att_text" horwrap="1" text="默认内容" x="5" fontsize="16" height="25" width="198" ta="01" color="#CCCCCC">
+              </text>
+              <text id="equip_value_text" horwrap="1" text="默认内容" x="-5" fontsize="16" height="25" width="198" ta="21" color="#00ff00">
+              </text>
+            </img>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+    <panel id="suit_detail_panel" width="406" height="86" active="0" x="-2" y="-30">
+      <img id="detail_bg" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="equip_suit_detail" raycast="1" color="#FFFFFF00" width="3000" height="3000">
+      </img>
+      <img id="detail_bg_2" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="equip_suit_detail">
+      </img>
+      <text id="detail_name" a="10" text="圣杯套装名称" fontsize="18" x="20" y="5" height="25" width="90" ta="11" horwrap="0">
+      </text>
+      <text id="detail_attr_1" a="10" text="3件套:巴拉巴拉" fontsize="14" x="125" y="25" height="25" width="300" ta="01" horwrap="0">
+      </text>
+      <text id="detail_attr_2" a="10" text="5件套:巴拉巴拉" fontsize="14" x="125" y="5" height="25" width="300" ta="01" horwrap="0">
+      </text>
+      <text id="detail_attr_3" a="10" text="7件套:巴拉巴拉" fontsize="14" x="125" y="-15" height="25" width="300" ta="01" horwrap="0">
+      </text>
+    </panel>
+    <img id="warning_img" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="warning" width="149" height="40" raycast="1" y="-130">
+    </img>
+    <button id="btn_tips" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="35" height="35" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="175" y="-340">
+    </button>
+  </img>
+</uipanel>

@@ -1,0 +1,8 @@
+<uipanel id="KLSkillInfoItem" name="转职技能信息模板" width="90" height="90" zindex="-1">
+    <img id="Bg" width="72" height="72" a="01" src="img_skill_icon" atlas="Atlas/Common.spriteatlas" >
+        <img id="ImageSkillIcon" width="56" height="56" src="13150100" atlas="Atlas/Skill_icon.spriteatlas" >
+        </img>
+    </img>
+    <text id="TextSkillName" a="02" text="技能名称" fontsize="14" height="20" width="100" ta="11" x="0" y="0" color="#CCCCCC" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+</uipanel>

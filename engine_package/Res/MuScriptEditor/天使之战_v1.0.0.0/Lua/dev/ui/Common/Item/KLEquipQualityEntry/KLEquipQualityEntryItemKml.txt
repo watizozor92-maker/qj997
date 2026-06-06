@@ -1,0 +1,4 @@
+<uipanel id="KLEquipQualityEntryItemKml" a="11" width="0" height="0" zindex="-1">
+  <img id="imgQuality" a="11" width="45" height="35" raycast="0" x="0" y="0" active="0">
+  </img>
+</uipanel>

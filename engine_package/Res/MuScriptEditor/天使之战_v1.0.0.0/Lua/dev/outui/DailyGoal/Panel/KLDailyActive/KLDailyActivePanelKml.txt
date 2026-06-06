@@ -1,0 +1,60 @@
+<uipanel id="KLDailyActivePanel" name="每日活跃界面" width="1050" height="566" zindex="200">
+    <img src="bg_daily_active" atlas="Atlas/DailyGoal.spriteatlas" y="-30" />
+    <scrollview y="-84" width="820" height="450" a="11" x="30" vertical="1" >
+        <gridview cellwidth="410" cellheight="105" constraint="1" constraintcount="2" width="838" height="420" contentsizefitter="1" >
+            <datalist id="datalist_active">
+                
+            </datalist>
+        </gridview>
+    </scrollview>
+    ;<img atlas="Atlas/DailyGoal.spriteatlas" src="img_active_proBg" a="2,0" x="-70" scale9b="3" scale9t="7" scale9r="0" scale9l="0" width="14" height="340" y="-20" />
+    ;<img atlas="Atlas/DailyGoal.spriteatlas" src="img_active_pro" a="2,0" x="-72" scale9b="20" scale9t="20" scale9r="0" scale9l="0" width="10" height="340" y="-20" />
+    <slider id="slider_active_num" enable = "0" atlas="Atlas/DailyGoal.spriteatlas" src="img_active_proBg"  fimg="img_active_pro" 
+    direction="2" x="441" y="6" height="314" width="34" scale9l="0" scale9r="0" scale9t="7" scale9b="3" scale9l2="0" scale9r2="0" scale9t2="9" scale9b2="9"
+     slidefillarealrtb="-4,8,2,2" handlewidthtb="31,-37,0" slidehandlearealrtb="-10,30,0,0" minValue="0" maxValue="100" curValue="0" />
+     <img src="img_slider_scale" atlas="Atlas/DailyGoal.spriteatlas" x="440" y="6" />
+    <layout vertical="1" a="20" x="-38" height="310" y="16" width="40" control_height="1" expand_height="1" >
+        <text text="100" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" />
+        <text text="80" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" />
+        <text text="60" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" />
+        <text text="40" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" />
+        <text text="20" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" />
+    </layout>
+    <img src="icon_activity_num" atlas="Atlas/DailyGoal.spriteatlas" a="20" x="-32" y="-190" >
+        <text id="txt_cur_active_num" text="100" y="-3" width="46" height="35" outlinecolor="#000000" outlinesize="1" color="#FFFFFF" fonttype="txt_active_number" ta="11"  />
+    </img>
+    <layout vertical="1" a="20" x="-98" y="26" height="340" width="80" control_height="1" expand_height="1" >
+        <panel>
+            <button id="icon_box_5" src="icon_box_light_5" atlas="Atlas/DailyGoal.spriteatlas" raycast="1" > 
+                <prefab id="effect_box_5" path="Effect/UI/Eff_UI_xuanshangjiangli03.prefab" />
+            </button>
+        </panel>
+        <panel>
+            <button id="icon_box_4" src="icon_box_light_4" atlas="Atlas/DailyGoal.spriteatlas" raycast="1" > 
+                <prefab id="effect_box_4" path="Effect/UI/Eff_UI_xuanshangjiangli03.prefab" />
+            </button>
+        </panel>
+        <panel>
+            <button id="icon_box_3" src="icon_box_light_3" atlas="Atlas/DailyGoal.spriteatlas" raycast="1" > 
+                <prefab id="effect_box_3" path="Effect/UI/Eff_UI_xuanshangjiangli03.prefab" />
+            </button>
+        </panel>
+        <panel>
+            <button id="icon_box_2" src="icon_box_light_2" atlas="Atlas/DailyGoal.spriteatlas" raycast="1" > 
+                <prefab id="effect_box_2" path="Effect/UI/Eff_UI_xuanshangjiangli03.prefab" />
+            </button>
+        </panel>
+        <panel>
+            <button id="icon_box_1" src="icon_box_light_1" atlas="Atlas/DailyGoal.spriteatlas" raycast="1" > 
+                <prefab id="effect_box_1" path="Effect/UI/Eff_UI_xuanshangjiangli03.prefab" />
+            </button>
+        </panel>
+    </layout>
+    <layout vertical="1" a="20" x="-95" y="6" height="340" width="80" control_height="1" expand_height="1" >
+        <panel><img id="icon_get_5" src="img_active_getGift" atlas="Atlas/DailyGoal.spriteatlas" active="0" y="20" /></panel>
+        <panel><img id="icon_get_4" src="img_active_getGift" atlas="Atlas/DailyGoal.spriteatlas" active="0" y="20" /></panel>
+        <panel><img id="icon_get_3" src="img_active_getGift" atlas="Atlas/DailyGoal.spriteatlas" active="0" y="20" /></panel>
+        <panel><img id="icon_get_2" src="img_active_getGift" atlas="Atlas/DailyGoal.spriteatlas" active="0" y="20" /></panel>
+        <panel><img id="icon_get_1" src="img_active_getGift" atlas="Atlas/DailyGoal.spriteatlas" active="0" y="20" /></panel>
+    </layout>
+</uipanel>

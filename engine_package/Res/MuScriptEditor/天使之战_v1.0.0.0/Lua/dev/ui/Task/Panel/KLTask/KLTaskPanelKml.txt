@@ -1,0 +1,40 @@
+<uipanel id="KLTaskPanel" name="任务界面" color="#00000000" movecanvas="0" onload="KmlTaskUI/init_panel" a="11" zindex="180" width="100" height="100">
+  <panel id="move_root" x="0" y="0">
+    <panel id="root" x="0" y="0" a="11">
+      <scrollview id="info_view" width="277" height="188" vertical="1" a="11" x="0" y="0">
+        <gridview id="left_top_task_process_panel_layout" width="277" height="200" constraint="1" constraintcount="1" spacey="1" cellwidth="277" cellheight="62" contentsizefitter="1" x="140" paddingtop="4" cella="11" startcorner="0" a="11" ap="0#1#0#1#0#1">
+          <datalist id="left_top_task_list" databind="@left_top_task_list">
+            <panel id="panel_16" offsetmax="554#0" offsetmin="0#-62" width="277">
+              <img id="task_bg_" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_task" width="277" height="62" a="10" onclick="KmlTaskUI/task_item_click   " onclickmasktime="1">
+              </img>
+              <text id="Complete_Text" text="<color=#00ff00>已完成</color>" active="" fontsize="16" a="20" x="-10" y="0" outline="1" horwrap="1" ta="21">
+              </text>
+              <prefab id="Complete_" path="Kml/KmlPrefab/Cookbook/Common/HighlightGoRenWu.prefab" active="0">
+                <panel id="RawImage" bind="RawImage" width="300" height="130" x="8">
+                </panel>
+                <panel id="Effect" bind="Effect">
+                </panel>
+              </prefab>
+              <prefab id="Start_" path="Kml/KmlPrefab/Cookbook/Common/Eff_UI_renwu_shuaxin.prefab" width="277" height="62" a="00" active="0" x="0">
+                <panel id="prefabPanel" bind="Eff_UI_renwu_shuaxin" width="277" height="62">
+                </panel>
+                <panel id="Image_" bind="Image" width="277" height="62" scale="1">
+                </panel>
+              </prefab>
+              <prefab id="Eff_UI_renwu_dianji" path="Kml/KmlPrefab/Cookbook/Common/Eff_UI_renwu_dianji.prefab" width="277" height="62" a="10">
+                <panel id="Plane_" bind="Plane" active="0">
+                </panel>
+              </prefab>
+              <layout vertical="0" contentsizefitter="1" a="10" id="layout_24" x="11">
+                <text id="task_title" text="" active="0" fontsize="16" outline="1" ta="01" outlinesize="1" outlinecolor="#000000" horwrap="1">
+                </text>
+                <panel id="task_layout">
+                </panel>
+              </layout>
+            </panel>
+          </datalist>
+        </gridview>
+      </scrollview>
+    </panel>
+  </panel>
+</uipanel>

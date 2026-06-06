@@ -1,0 +1,17 @@
+<uipanel id="KLUIItemPreviewItem" name="道具预览模板" width="60" height="60" zindex="-1">
+  <item id="equip_item" tips="" width="60" height="60" z="-200" atlas="Atlas/Common.spriteatlas" bgtype="1" bgimg="bg_setting_xuanzekuang" itemid="" uniqueid="" selfrotation="" strengthlevel="" mfixsize="55,55" scale9l="5" scale9r="5" scale9t="5" scale9b="5" x="2">
+    <img id="img_quality" a="11" atlas="Atlas/UIBagPanel.spriteatlas" src="" z="-500">
+    </img>
+     <text id="count_attach" bind="count_attach" y="42" fontsize="14">
+        </text>
+  </item>
+  <panel id="effect_root" width="40" height="40" x="0" y="0" z="-300">
+    <model id="effect_model" width="60" height="60" src="" mscale="42,42,42" mrotate="0,0,0" x="0" y="0" active="0">
+    </model>
+  </panel>
+  <img id="arrow" atlas="Atlas/Common.spriteatlas" src="ty_icon_arrow_small" a="22" x="-1" y="3">
+  </img>
+  <button id="btn" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="40" height="40" color="#00000000" raycast="1" x="2">
+  </button>
+</uipanel>
+;mscale="5,5,5"

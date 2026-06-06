@@ -1,0 +1,14 @@
+﻿int#c#s,intList#c#s,int#c#s,int#c#s,string#c#s,string#c#s
+id,career,class,series,textUi,iconUi
+10111,1,1,1,text_YMblue,icon_YMjs
+10112,1,1,2,text_SHgreen,icon_SHjs
+10121,1,2,1,text_YMblue,icon_YMjs
+10122,1,2,2,text_SHgreen,icon_SHjs
+10211,2,1,1,text_XJblue,icon_XJfs
+10212,2,1,2,text_ZHgreen,icon_ZHfs
+10221,2,2,1,text_XJblue,icon_XJfs
+10222,2,2,2,text_ZHgreen,icon_ZHfs
+10311,3,1,1,text_ZHblue,icon_ZHgs
+10312,3,1,2,text_XJgreen,icon_XJgs
+10321,3,2,1,text_ZHblue,icon_ZHgs
+10322,3,2,2,text_XJgreen,icon_XJgs

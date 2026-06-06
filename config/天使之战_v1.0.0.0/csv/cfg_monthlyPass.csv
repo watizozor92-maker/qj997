@@ -1,0 +1,4 @@
+﻿int#c#s,int#c#s,string#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,int#c#s,intlistlist#c#s,int#c#s,int#c#s,int#c#s,int#c#s
+id,order,name,time,maxCount,limitType,limitCount,firstInCome,dayInCome,chat,stall,banType,inCome,pickUp,recovery,privilege
+30030306,1,月卡,2592000,10,1,,0,0,0,0,,0,0,0,0
+30030307,2,日卡,86400,10,1,0,0,0,0,0,5#2,0,0,0,0

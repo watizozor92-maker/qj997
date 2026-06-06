@@ -1,0 +1,14 @@
+<uipanel id="KLTradeSalesItem" width="200" height="194" zindex="-1" x="0" y="0">
+  <panel id="null_panel" width="182004" height="194" active="1">
+    <img id="bg" width="194" height="224" src="bg_goods_item" atlas="Atlas/KLTradePanel.spriteatlas" y="-11">
+      <img id="add" atlas="Atlas/KLTradePanel.spriteatlas" src="Trade_add">
+      </img>
+      <text id="null_title" a="00" text="请上架物品" fontsize="16" height="25" width="189" ta="11" outline="0" horwrap="1" x="1" y="83" color="#00FF00FF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </img>
+  </panel>
+  <panel id="have_panel" width="200" height="194" active="0">
+  </panel>
+  <button id="Item_btn" a="00" width="180" height="170" y="10" onclick="" text="" raycast="1" color="#FFFFFF00">
+  </button>
+</uipanel>

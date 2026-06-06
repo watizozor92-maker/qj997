@@ -1,0 +1,46 @@
+<uipanel id="KLGoldChallengeItemKml" name="黄金挑战模板" a="00" width="243" height="10" zindex="231" active="1" x="0" y="0">
+  <panel id="bgRoot" a="00" width="249" height="375" binddragid="" x="0" y="0">
+    <img id="bg" a="00" atlas="Atlas/UIGoldChallenge.spriteatlas" src="itemBg" width="242" height="369" raycast="1" x="0" y="0" scale9l="59" scale9b="203" scale9r="43" scale9t="128">
+    </img>
+    <panel id="textRoot" a="00" width="236" height="102" x="0" y="-43">
+      <img id="img1" a="00" atlas="Atlas/UIGoldChallenge.spriteatlas" src="textBg" width="212" height="88" raycast="1" scale9l="49" scale9b="30" scale9r="30" scale9t="25" x="0" y="0">
+      </img>
+      <text id="textTask" a="01" text="任务数量：0/1" fontsize="16" height="25" width="181" ta="01" horwrap="1" x="19" y="-63" binddragid="" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="textName" a="01" text="骷髅精灵" fontsize="18" height="25" width="237" ta="11" horwrap="1" x="0" y="-17" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+      <text id="textMap" a="01" text="所在地图：幻境一层" fontsize="16" height="25" width="181" ta="01" horwrap="1" x="19" y="-40" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      </text>
+    </panel>
+    <img id="frame_2" a="00" atlas="Atlas/UIGoldChallenge.spriteatlas" src="frame_2" width="238" height="362" raycast="0" x="0" y="0" scale9l="60" scale9b="129" scale9r="52" scale9t="65" active="0" binddragid="">
+    </img>
+    <img id="frame_3" a="00" atlas="Atlas/UIGoldChallenge.spriteatlas" src="frame" width="238" height="362" raycast="0" x="0" y="0" scale9l="60" scale9b="129" scale9r="52" scale9t="65" binddragid="" active="0">
+    </img>
+    <panel id="model" a="00" width="194" height="186" x="0" y="10" binddragid="" dragrotate="0">
+      <model id="model1" src="" width="10" height="10" x="0" y="29" mfixsize="300,300" mscale="30,30,30" mrotate="0,-180,0" mpos="0,0,-120" zindex="231">
+      </model>
+       <model id="model2" src="" width="10" height="10" x="0" y="29" mscale="30,30,30" mrotate="0,-180,0" mpos="0,0,-120" zindex="231">
+       </model>
+    </panel>
+    <layout id="starGrid" control_height="0" contentsizefitter="2" vertical="0" height="30" width="1334" a="00" raycast="1" y="143" x="0">
+    </layout>
+    <panel id="getTaskBtnRoot" a="02" width="246" height="31" x="0" y="17">
+      <button id="btnAbandon" a="01" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_three_grey" width="93" height="31" onclick="" text="放弃" raycast="1" binddragid="" mimg="" pimg="" dimg="" x="-49" y="0" outlinesize="1" textcolor="#FF0000FF" fontsize="20" outlinecolor="#000000FF" color="">
+      </button>
+      <button id="btnGo" a="01" atlas="Atlas/TS_Common.spriteatlas" src="button_interface_window11" width="93" height="31" onclick="" text="前往" raycast="1" binddragid="" mimg="" pimg="" dimg="" x="49" y="0" outlinesize="1" outlinecolor="#000000FF" active="1" textcolor="#FFFFFFFF" fontsize="20" color="#FFFFFFFF">
+      </button>
+    </panel>
+    <button id="btnGetTask" a="02" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_3" width="109" height="31" onclick="" text="领取任务" raycast="1" x="0" y="17" binddragid="" active="0" outlinesize="1" textcolor="#FFFFFFFF" fontsize="20" outlinecolor="#000000FF" color="#FFFFFFFF" mimg="" pimg="" dimg="">
+    </button>
+    <button id="btnSubmit" a="02" atlas="Atlas/TS_Common.spriteatlas" src="ty_btn_3" width="109" height="31" onclick="" text="领取奖励" raycast="1" x="0" y="17" binddragid="" active="0" outlinesize="0" color="#FFFFFFFF" textcolor="#FFFFFFFF" fontsize="20" mimg="" pimg="" dimg="">
+      <img id="btnEffect" a="00" atlas="Atlas/TS_Common.spriteatlas" src="btnEffect" width="119" height="41" raycast="1" x="0" y="0" color="#FFFFFFFF">
+      </img>
+    </button>
+    <scrollview id="itemRootView" a="00" width="221" height="50" vertical="0" y="-109" raycast="1" x="-1" scrollbar="0" autoadjust="0" barhandley="0" barareax="3" movementtype="1" binddragid="" active="1">
+      <layout id="layout2" width="223" height="0" a="10" vertical="0" contentsizefitter="0" raycast="1" cella="00" space="5">
+        <datalist id="itemRoot" databind="">
+        </datalist>
+      </layout>
+    </scrollview>
+  </panel>
+</uipanel>

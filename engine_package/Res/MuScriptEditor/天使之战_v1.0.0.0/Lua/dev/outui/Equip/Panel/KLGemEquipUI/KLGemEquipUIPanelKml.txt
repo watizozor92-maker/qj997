@@ -1,0 +1,40 @@
+<uipanel id="KLGemEquipUIPanel" name="萤石装备穿戴栏界面" zindex="200" a="21" x="" y="" adapter="1">
+  <prefab id="UIEquipPanel" path="UI/UIEquipPanel.prefab" a="21">
+    <button id="CloseButton" bind="CloseButton" active="1" src="button_interface_close5" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF" raycast="1" h5x="-373" h5y="10">
+    </button>
+    <panel id="UIEquipPanel_Root" bind="UIEquipPanel" x="-500" y="0" a="21" width="1334" height="750">
+      <text id="panelNameText" x="449" y="341" fontsize="20" text="" horwrap="1" siblingindex="5">
+      </text>
+    </panel>
+    <panel id="EquipGrid" bind="EquipGrid">
+    </panel>
+    <button id="wearBarChange" bind="Btn_wearBarChange">
+    </button>
+    <panel id="MoneyList" bind="MoneyList" active="">
+    </panel>
+    <button id="moneyBackground" bind="moneyBackground">
+    </button>
+    <text id="moneyText" bind="moneyText" text="" horwrap="1" height="46" width="166" a="00" outline="0">
+    </text>
+    <button id="WearArchange" bind="Btn_WearArchange">
+    </button>
+    <button id="MUCoinBackground" bind="MUCoinBackground">
+    </button>
+    <text id="muCoinText" bind="muCoinText" text="" horwrap="1" height="46" width="166" a="00">
+    </text>
+    <button id="MUBindCoinBackground" bind="MUBindCoinBackground">
+    </button>
+    <text id="muBindCoinText" bind="muBindCoinText" text="" horwrap="1" height="46" width="166" a="00">
+    </text>
+    <button id="diamondBackground" bind="diamondBackground">
+    </button>
+    <text id="diamondText" bind="diamondText" text="" horwrap="1" height="46" width="166" a="00">
+    </text>
+    <panel id="Grade" bind="Grade" active="0">
+    </panel>
+    <scrollview id="WearBarList" bind="WearBarList" y="50">
+      <togglegroup id="Content" bind="Content">
+      </togglegroup>
+    </scrollview>
+  </prefab>
+</uipanel>

@@ -1,0 +1,6 @@
+<uipanel id="KLMapNameTipPanel" name="地图名称提示界面" width="1334" height="750" zindex="0" z="310">
+  <prefab path="Kml/KmlPrefab/Cookbook/KmlBigMapUI/KLMapNameTipPanel.prefab" id="prefab_455">
+    <img id="ImgMapName" bind="ImgMapName" y="-14">
+    </img>
+  </prefab>
+</uipanel>

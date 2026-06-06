@@ -1,0 +1,18 @@
+<uipanel id="KLUnionActivityItemKml" name="战盟活动模板" a="11" width="375" height="158" zindex="-1">
+  <button id="Bg" a="00" atlas="" src="" width="365" height="158" onclick="" text="" raycast="1" x="0" y="0" mimg="" pimg="" dimg="">
+    <panel id="OpenTips" a="00" width="375" height="158">
+      <text id="limitText" a="12" text="参与要求" fontsize="18" height="18" width="90" ta="01" x="10" y="10" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="timeText" a="12" text="开启时间" fontsize="18" height="18" width="90" ta="01" x="10" y="34" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="TxtOpenTime" a="12" text="默认内容" fontsize="18" height="18" width="280" ta="01" x="98" y="33" horwrap="1" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+      <text id="TxtLimit" a="12" text="默认内容" fontsize="18" height="18" width="200" ta="01" x="98" y="10" horwrap="1" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF" outline="0">
+      </text>
+    </panel>
+    <img id="ImgOpen" a="00" atlas="Atlas/FG_Union.spriteatlas" src="Active_Open" width="163" height="44" raycast="1" x="0" y="0">
+    </img>
+    <text id="Text_Name" a="01" text="1" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </button>
+</uipanel>

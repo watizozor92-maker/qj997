@@ -1,0 +1,6 @@
+<uipanel id="KLSelectRewardItem" name="选中奖励模板" zindex="-1" x="248" y="-22" z="0" width="115" height="35" a="00" rotate="0,0,0">
+  <toggle id="select_toggle" togglegroup_id="togglegroup" atlas="Atlas/Common.spriteatlas" src="button_interface_window54" pimg="ty_btn_gou" default="0" width="35" x="0" height="35" z="0" a="10" rotate="0,0,0" y="0">
+    <text id="selectName" text="" fontsize="18" outlinesize="1" togglecolor="#00ff00FF|#FFFFFF" outlinecolor="#000000FF" width="84" height="22" ta="01" x="65" y="0" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1">
+    </text>
+  </toggle>
+</uipanel>

@@ -1,0 +1,12 @@
+<uipanel id="KLShowStallItemKml" name="摆摊交易道具模板" width="192" height="226" zindex="-1">
+  <panel id="null_panel" width="160" height="157" active="0">
+    <img id="bg" width="160" height="157" src="bg_goods_item" atlas="Atlas/KLTradePanel.spriteatlas">
+      <img id="null_title" atlas="Atlas/KLTradePanel.spriteatlas" src="Trade_addText" y="77">
+      </img>
+      <img id="add" atlas="Atlas/KLTradePanel.spriteatlas" src="Trade_add">
+      </img>
+    </img>
+  </panel>
+  <panel id="have_panel" width="160" height="157" active="0">
+  </panel>
+</uipanel>

@@ -1,0 +1,26 @@
+<uipanel id="KLItemBatchUsePanel" name="批量使用道具界面" width="1334" height="750" zindex="1002" z="-2500" mask="0" adapter="0" raycast="1">
+  <prefab id="KmlItemBatchUseUI" path="Kml/KmlPrefab/Cookbook/KmlItemBaseUI/KmlItemBatchUseUI.prefab">
+    <input id="InputFieldNum" bind="InputFieldLevel" errortips="不能超出道具的最大数量">
+    </input>
+    <panel id="Item" bind="Item">
+    </panel>
+    <button id="BtnCancel" bind="BtnCancel" mimg="" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" pimg="" dimg="">
+    </button>
+    <button id="BtnSure" bind="BtnSure" src="btn_tips" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
+    </button>
+    <button id="BtnCountMinus" bind="BtnLevelMinus">
+    </button>
+    <button id="BtnCountAdd" bind="BtnLevelAdd">
+    </button>
+    <panel id="panel1" bind="KmlItemBatchUseUI">
+    </panel>
+    <img id="img4" bind="Mask">
+    </img>
+    <img id="img5" bind="Bg" atlas="" src="Texture/bg_tips_2.png">
+    </img>
+    <panel id="panel6" bind="NumberInput">
+    </panel>
+    <text id="text7" bind="TextCount">
+    </text>
+  </prefab>
+</uipanel>

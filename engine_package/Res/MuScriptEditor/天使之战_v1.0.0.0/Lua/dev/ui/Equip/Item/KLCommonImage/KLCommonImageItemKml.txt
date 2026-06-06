@@ -1,0 +1,4 @@
+<uipanel id="KLCommonImageItem" name="通用图片模板" width="0" height="0" a="11" zindex="-1">
+  <img id="img" a="11" active="0">
+  </img>
+</uipanel>

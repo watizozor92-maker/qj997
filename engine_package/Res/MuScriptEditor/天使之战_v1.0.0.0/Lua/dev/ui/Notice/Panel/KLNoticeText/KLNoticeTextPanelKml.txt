@@ -1,0 +1,12 @@
+<uipanel id="KLNoticeTextPanel" width="300" height="300" z="-5500" zindex="1007">
+  <prefab id="noticeText" path="UI/UINoticeTextPanel.prefab">
+    <text id="notice" bind="notice">
+    </text>
+    <panel id="tipMidContainer" bind="tipMidContainer">
+    </panel>
+    <img id="noticeMidBg" bind="tipMidContainer/noticeMidBg">
+    </img>
+    <text id="tipTxt" bind="tipMidContainer/noticeMidBg/tipTxt">
+    </text>
+  </prefab>
+</uipanel>

@@ -1,0 +1,18 @@
+<uipanel id="KLTradeRecordItem" width="982" height="67" zindex="-1" x="0" y="0">
+  <img src="bg_trade_record_item" atlas="Atlas/KLTradePanel.spriteatlas" raycast="1" color="#00000000" id="img_413">
+  </img>
+  <img id="img_item_bg" src="bg_trade_record_item" atlas="Atlas/KLTradePanel.spriteatlas">
+  </img>
+  <text id="txt_item_name" text="道具名称道具名称道具名称道具名称道具名称" color="#ED2E2E" ta="11" outlinecolor="#000000" outlinesize="1" fontsize="16" x="-387" width="206" height="48" horwrap="1" outline="1">
+  </text>
+  <text id="txt_time" color="#FFFFFF" text="2024-9-4 19:47:58" outlinecolor="#000000" outlinesize="1" fontsize="16" x="-110" width="190" height="48" ta="11" horwrap="1" outline="1">
+  </text>
+  <text id="txt_trade_type" text="购买" outlinecolor="#000000" outlinesize="1" fontsize="16" x="173" width="190" height="48" ta="11" horwrap="1" outline="1">
+  </text>
+  <layout id="layout1" control_height="0" contentsizefitter="1" vertical="0" height="48" width="262" a="00" raycast="1" x="385" y="0" space="10">
+    <img id="img_coin_icon" width="30" height="30" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas">
+    </img>
+    <text id="txt_price" text="-15000" outlinecolor="#000000" outlinesize="1" fontsize="16" width="140" height="48" ta="11" outline="1" horwrap="1" contentsizefitter="2">
+    </text>
+  </layout>
+</uipanel>

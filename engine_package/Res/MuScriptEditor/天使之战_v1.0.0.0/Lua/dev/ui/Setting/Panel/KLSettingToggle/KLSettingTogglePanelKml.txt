@@ -1,0 +1,40 @@
+<uipanel id="KLSettingTogglePanel" name="设置总页签" zindex="0" raycast="1" adapter="1" x="0" y="0" z="0" width="416" height="750" a="20" rotate="0,0,0" color="#00000000">
+  <panel id="root" width="416" height="750" a="20" x="1" y="0">
+    <panel id="panel1" a="00" width="416" height="750">
+      <panel id="panel3" a="00" width="404" height="690" y="-24" rectmask="1">
+        <img id="img5" a="00" width="680" height="690" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
+        </img>
+      </panel>
+      <img id="img6" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom3" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      </img>
+    </panel>
+    <text id="text3" a="01" text="设置" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="-26" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" onclick="KmlSettingUI/@关闭界面" x="-11" y="-15" z="0" width="34" height="34" a="21" rotate="0,0,0" raycast="1">
+    </img>
+    <togglegroup id="toggleGroupTop" x="0" y="0" z="0" width="10" height="10" a="00" rotate="0,0,0">
+    </togglegroup>
+    <toggle id="basicSettingToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" default="0" width="114" height="36" onclick="KmlSettingUI/@打开基础设置界面" oncancel="KmlSettingUI/@切换页签 1" x="-126" y="299" z="0" a="00" rotate="0,0,0" scale9l="32" scale9b="0" scale9r="31" scale9t="0" pimg_scale9l="36" pimg_scale9b="0" pimg_scale9r="27" pimg_scale9t="0">
+      <text id="text1" a="00" text="基本设置" fontsize="18" height="22" width="90" ta="11" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" x="0" y="0">
+      </text>
+    </toggle>
+    <toggle id="showSettingToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" default="0" width="114" height="36" onclick="KmlSettingUI/@打开显示设置界面" oncancel="KmlSettingUI/@切换页签 4" x="-10" y="299" z="0" a="00" rotate="0,0,0">
+      <text id="text2" a="00" text="显示设置" fontsize="18" height="22" width="90" ta="11" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" x="0" y="0">
+      </text>
+    </toggle>
+    <toggle id="hookSettingToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" default="0" width="114" height="36" onclick="KmlSettingUI/@打开显示设置界面" oncancel="KmlSettingUI/@切换页签 4" x="110" y="299" z="0" a="00" rotate="0,0,0" moveto="0,0,0" active="0" enable="0">
+      <text id="text4" a="00" text="挂机设置" fontsize="18" height="22" width="90" ta="11" outline="0" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontstyle="0" underline="0" x="0" y="0">
+      </text>
+    </toggle>
+    <toggle id="codeToggle" togglegroup_id="toggleGroupTop" atlas="Atlas/UISettingPanel.spriteatlas" src="button_interface_Setting010" pimg="button_interface_Setting09" default="0" width="67" height="76" onclick="KmlSettingUI/@打开兑换码界面" oncancel="KmlSettingUI/@切换页签 5" x="460" y="-31" z="0" a="00" rotate="0,0,0" active="0">
+    </toggle>
+    <toggle id="inviteFriendToggle" active="0" togglegroup_id="toggleGroupTop" atlas="Atlas/UISettingPanel.spriteatlas" src="button_interface_Setting016" pimg="button_interface_Setting015" default="0" width="67" height="76" onclick="KmlSettingUI/@打开邀请好友界面" oncancel="KmlSettingUI/@切换页签 6" x="460" y="-107" z="0" a="00" rotate="0,0,0">
+    </toggle>
+    <button id="btn_changeRole" a="02" width="103" height="36" onclick="" text="切换角色" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-122" y="53" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" active="0">
+    </button>
+    <button id="btn_exitGame" a="02" width="103" height="36" onclick="" text="退出登录" raycast="1" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="66" y="54" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" active="0">
+    </button>
+    <img id="img1" a="00" width="396" height="650" raycast="1" x="2" y="-42" atlas="Atlas/FG_Common.spriteatlas" src="bg_black_grid" scale9l="37" scale9b="44" scale9r="38" scale9t="32">
+    </img>
+  </panel>
+</uipanel>

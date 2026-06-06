@@ -1,0 +1,15 @@
+﻿int#c,string#c,string#c,string#c,string#c,int#c,int#c,int#c,string#c,int#c,int#c,int#c,int#c
+id,remarks,picture,bg,text,textColor,attNameColor,attColor,attBg,sort,show,attGroup,attGroupSort
+1,基础属性,tips_attribute1,img_tips_shuxing_di,,,255,255,img_tips_shuxing_di,202,1,-1,-1
+2,强化属性,,,,,3007,3007,img_tips_shuxing_di,601,1,0,6
+3,追加属性,,,,,4001,4001,img_tips_shuxing_di,703,1,1,7
+4,卓越属性,tips_attribute3,img_tips_shuxing_di,,,4001,4001,img_tips_shuxing_di,704,1,1,7
+5,萤石属性,,,镶宝  物品属性信息,4002,4001,4001,img_tips_shuxing_di,1101,1,0,11
+6,套装属性,,,套装 物品属性信息,3007,255,255,img_tips_shuxing_di,801,1,0,8
+7,再生属性,,img_tips_shuxing_di,再生属性,251,2672,2672,bg_tips_4,9901,1,1,99
+8,大天使-成长属性,tips_attribute23,img_tips_shuxing_di,,4002,4001,4001,img_tips_shuxing_di,9902,1,1,99
+9,大天使-圣杯属性,tips_attribute28,img_tips_shuxing_di,,4002,4001,4001,img_tips_shuxing_di,9903,1,1,99
+10,首饰属性,tips_attribute21,img_tips_shuxing_di,,,2672,3004,img_tips_shuxing_di,9904,1,1,99
+11,技能,,,,,4001,4001,img_tips_shuxing_di,701,1,1,7
+12,幸运属性,,,,,4001,4001,,702,1,1,7
+13,套装随机属性,,,,,4001,4001,,402,1,1,4

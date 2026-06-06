@@ -1,0 +1,2 @@
+<uipanel id="KLFashionEquipPanelKml" a="00" width="300" height="300">
+</uipanel>

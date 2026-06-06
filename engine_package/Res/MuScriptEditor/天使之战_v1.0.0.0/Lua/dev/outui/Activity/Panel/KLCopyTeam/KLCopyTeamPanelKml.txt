@@ -1,0 +1,40 @@
+<uipanel id="KLCopyTeamPanelKml" name="副本组队界面" a="00" width="300" height="300">
+  <img id="img1" a="00" atlas="Atlas/Common.spriteatlas" src="img_interface_main127" width="800" height="400" raycast="1" scale9l="38" scale9b="26" scale9r="40" scale9t="56" x="1" y="1" color="#FFFFFFFF">
+  </img>
+  <text id="title" a="00" text="默认内容" fontsize="20" height="36" width="350" ta="11" horwrap="1" x="0" y="177" outlinesize="1" outlinecolor="#000000FF" color="#FFF000FF">
+  </text>
+  <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="bg_black_grid" width="760" height="234" raycast="1" scale9l="31" scale9b="35" scale9r="38" scale9t="34" x="0" y="0">
+  </img>
+  <text id="text4" a="00" text="点击确认准备，所有玩家准备完毕后进入副本。倒计时结束后未准备将自动拒绝" fontsize="16" height="25" width="658" ta="11" horwrap="1" color="#ABABABFF" y="-91" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <text id="text1" a="00" text="消耗道具：" fontsize="16" height="25" width="84" ta="01" horwrap="1" x="-305" y="-150" color="#ABABABFF" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_bg_chatBubbleFrame" width="150" height="48" raycast="1" scale9l="11" scale9b="11" scale9r="11" scale9t="12" x="-199" y="-150">
+  </img>
+  <img id="ticketBtn" a="00" width="43" color="#ffffff00" height="44" raycast="1" x="-249" y="-149">
+  </img>
+  <text id="ticketCount" a="00" text="0/11" fontsize="16" height="41" width="143" ta="11" horwrap="1" x="-200" y="-148" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <model id="ticketModel" mpos="0,0,0" mscale="15,15,15" mrotate="0,0,0" x="-250" y="-167" z="0" width="10" height="10" a="00" rotate="0,180,0" src="Model/Item/EventBloodCastle02">
+  </model>
+  <img id="addBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_plus6" width="21" height="21" raycast="1" x="-149" y="-150">
+  </img>
+  <text id="text5" a="00" text="准备倒计时：" fontsize="16" height="25" width="97" ta="01" horwrap="1" x="-53" y="-147" color="#ABABABFF" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <text id="countDown" a="00" text="00:00" fontsize="16" height="25" width="97" ta="01" horwrap="1" x="40" y="-147" color="#D9001CFF" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <button id="BtnDissolve" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" width="113" height="40" onclick="" text="解散" raycast="1" x="324" y="-146" outlinesize="1" outlinecolor="#000000FF" textcolor="#D9001CFF" active="1">
+  </button>
+  <img id="closeBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" raycast="1" x="381" y="178">
+  </img>
+  <button id="Btcanel" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" width="113" height="40" onclick="" text="拒绝" raycast="1" x="192" y="-146" textcolor="#D9001CFF" outlinesize="1" outlinecolor="#000000FF">
+  </button>
+  <button id="Btnok" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="准备" raycast="1" x="324" y="-146" outlinesize="1" outlinecolor="#000000FF" active="1">
+  </button>
+  <scrollview id="teamInfoList" a="00" width="725" height="177" vertical="0" y="-14" raycast="1" x="-14">
+    <layout id="layout12" width="360" height="230" a="00" vertical="0" contentsizefitter="2" raycast="1">
+      <datalist id="teamList">
+      </datalist>
+    </layout>
+  </scrollview>
+</uipanel>

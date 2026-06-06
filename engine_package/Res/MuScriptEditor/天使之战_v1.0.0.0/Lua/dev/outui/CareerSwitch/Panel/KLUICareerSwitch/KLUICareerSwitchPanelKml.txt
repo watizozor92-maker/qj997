@@ -1,0 +1,30 @@
+<uipanel id="KLUICareerSwitchPanelKml" name="角色改名界面" zindex="400" a="00" width="1334" height="750" x="0" y="0" z="-100" maskonclick="1">
+  <img id="bg" a="00" atlas="Atlas/TS_Common.spriteatlas" src="win_small" width="500" height="400" raycast="1" x="0" y="0" scale9l="29" scale9b="55" scale9r="35" scale9t="58">
+    <img id="title" a="00" atlas="Atlas/TS_Common.spriteatlas" src="role_switch" width="132" height="58" raycast="1" x="0" y="170">
+    </img>
+    <panel id="switch_panel" active="0">
+      <text id="switch_des" a="00" text="" fontsize="20" height="31" width="450" ta="11" horwrap="1" x="0" y="110" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="0">
+      </text>
+      <togglegroup id="ToggleGroupCareer" />
+      <gridview id="career_list_gridview" cellwidth="140" cellheight="40" contentsizefitter="1" constraint="0" spacex="15" spacey="15" width="455" a="01" y="75">
+        <datalist id="career_datalist">
+          <toggle id="careerToggle" default="0" atlas="Atlas/Common.spriteatlas" togglegroup_id="ToggleGroupCareer" src="btnA_02" pimg="btnA_01" width="140" height="40" >
+            <text id="name" text="" a="00" fontsize="18" height="25" width="140" ta="11" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="0" />
+          </toggle>
+        </datalist>
+      </gridview>
+    </panel>
+    <panel id="sure_panel" active="0">
+      <text id="sure_text" a="00" text="" fontsize="22" height="31" width="390" ta="11" horwrap="1" x="0" y="40" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="0" />
+    </panel>
+    <panel id="result_panel" active="0">
+      <text id="sure_text_2" a="00" text="转职成功" fontsize="22" height="31" width="390" ta="11" horwrap="1" x="0" y="40" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="0" />
+    </panel>
+    <button id="cancelBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window8" width="113" height="40" onclick="" text="取消" raycast="1" x="-90" y="-100" outlinesize="1" outlinecolor="#000000FF" fontsize="18" textcolor="#D9001CFF">
+    </button>
+    <button id="okBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="113" height="40" onclick="" text="转换" raycast="1" x="75" y="-100" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+    </button>
+    <img id="closeBtn" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" width="75" height="69" raycast="1" x="230" y="170" h5y="170" h5x="-230">
+    </img>
+  </img>
+</uipanel>

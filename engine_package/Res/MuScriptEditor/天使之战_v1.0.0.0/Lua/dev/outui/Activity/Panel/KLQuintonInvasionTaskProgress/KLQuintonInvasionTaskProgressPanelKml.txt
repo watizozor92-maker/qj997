@@ -1,0 +1,32 @@
+<uipanel id="KLQuintonInvasionTaskProgressPanelKml" name="昆顿入侵副本界面" a="11" width="300" height="300" x="-572" y="303" mask="0">
+  <panel id="fightRoot" a="00" width="0" height="0" x="0" y="0" active="1">
+    <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="99" y="85" rotate="0,0,180">
+    </img>
+    <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-98" y="85">
+    </img>
+    <img id="bg" a="00" atlas="Atlas/UIQuintonInvasion.spriteatlas" src="progressBg" width="268" height="218" raycast="1" x="1" y="-3">
+    </img>
+    <text id="waveNumber" a="00" text="击杀任务" fontsize="16" height="25" width="178" ta="01" horwrap="1" x="-33" y="61" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="taskName" a="00" text="击杀混顿" fontsize="16" height="25" width="187" ta="01" horwrap="1" x="-29" y="41" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="taskCount" a="00" text="" fontsize="16" height="25" width="94" ta="21" horwrap="1" x="81" y="41" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="text8" a="00" text="奖励预览" fontsize="16" height="25" width="94" ta="01" horwrap="1" x="-74" y="17" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <img id="desBtn" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" x="115" y="85">
+    </img>
+    <scrollview id="rewardList1" a="00" width="220" height="70" vertical="0" raycast="1" x="-10" y="-37">
+      <layout id="layout67" width="360" height="70" a="10" vertical="0" contentsizefitter="2" raycast="1" space="4">
+        <datalist id="rewardList">
+        </datalist>
+      </layout>
+    </scrollview>
+    <text id="title" a="00" text="混顿入侵" fontsize="18" height="25" width="292" ta="11" horwrap="1" x="0" y="85" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+  </panel>
+  <text id="countDownTime" a="00" text="00:00" ta="11" fontsize="16" color="#ff2323" height="25" width="106" horwrap="1" x="177" y="-100" outlinesize="1" outlinecolor="#000000FF">
+  </text>
+  <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="exitIcon" width="65" height="70" raycast="1" x="179" y="-49">
+  </img>
+</uipanel>

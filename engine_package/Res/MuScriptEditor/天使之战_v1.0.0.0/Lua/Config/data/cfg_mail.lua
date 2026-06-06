@@ -1,0 +1,142 @@
+-- 此文件工具自动生成，不要修改
+---@class cfg_mail_column
+---不能重复
+---@field id number @邮件id column=1 A
+---策划备注，程序不读
+---@field remarks string @邮件备注 column=2 B
+---1=信息邮件
+---2=附件邮件
+---@field type number @邮件类型 column=3 C
+---标题
+---@field title string @标题 column=4 D
+---@field content string @内容 column=5 E
+---单位：小时
+---@field remainTime number @保存时间 column=6 F
+---备注%s的代指内容
+---@field remark string @备注 column=7 G
+local cfg_mail =
+{
+	{id=15001, remarks="狼魂要塞胜利排名", title="狼魂要塞排名奖励", content="恭喜成功防守狼魂要塞，您在狼魂要塞活动中获得第<color=#9b39cc>%s</color>名，这是您的奖励！", remark="狼魂要塞玩法排名"},
+	{id=15011, remarks="狼魂要塞失败排名", title="狼魂要塞排名奖励", content="很遗憾狼魂要塞防守失败，您在狼魂要塞活动中获得第<color=#9b39cc>%s</color>名，这是您的奖励！", remark="狼魂要塞玩法排名"},
+	{id=17001, remarks="赤色要塞排名邮件", title="赤色要塞排名奖励", content="您在赤色要塞活动获得第<color=#9b39cc>%s</color>名，以下是您的奖励：", remark="赤色要塞玩法排名"},
+	{id=19001, remarks="大秘境钥匙邮件", title="大秘境钥匙升级", content="您在大秘境副本活动中，获得<color=#9b39cc>%s</color>评价，钥匙成功升至<color=#9b39cc>%s</color>级", remark="大秘境副本评级#钥匙等级"},
+	{id=19002, remarks="大秘境钥匙邮件", title="大秘境钥匙降级", content="您在大秘境副本活动中，获得<color=#9b39cc>%s</color>评价，钥匙降至<color=#9b39cc>%s</color>级，请再接再厉", remark="大秘境副本评级#钥匙等级"},
+	{id=19003, remarks="大秘境钥匙邮件", title="大秘境钥匙降级", content="您在大秘境副本活动中，中途退出，钥匙降至<color=#9b39cc>%s</color>级，请再接再厉", remark="钥匙等级"},
+	{id=19004, remarks="大秘境钥匙邮件", title="大秘境钥匙退还", content="您在大秘境副本活动中未选择升级钥匙，钥匙保留等级<color=#9b39cc>%s</color>级", remark="钥匙等级"},
+	{id=27001, remarks="猎魔积分争霸赛", title="猎魔积分争霸赛", remark="杀怪总积分#总猎魔勋章#玩家排名#玩家获得的猎魔勋章"},
+	{id=100000, remarks="被击杀提示", type=1, title="被击杀", content="您在<color=#758685>%s</color>被<color=#E93732>%s</color>击杀，失去了<color=#E93732>%s</color>金币", remark="地图#玩家名/怪物名#金币数"},
+	{id=100001, remarks="被击杀未掉落金币提示", type=1, title="被击杀", content="您在<color=#758685>%s</color>被<color=#E93732>%s</color>击杀", remark="地图#玩家名/怪物名"},
+	{id=105001, remarks="摆摊#购买成功", title="购买成功", content="您在<color=#9b39cc>%s</color>成功购买<color=#9b39cc>%s</color>。", remark="玩家#物品"},
+	{id=105002, remarks="摆摊#出售成功", title="出售成功", content="您的<color=#9b39cc>%s</color>已由<color=#9b39cc>%s</color>购买。", remark="物品#玩家"},
+	{id=105003, remarks="摆摊#下架#背包满", title="背包已满", content="背包已满，摆摊下架的商品已寄回，请查收。"},
+	{id=106001, remarks="竞拍成功", title="竞拍成功", content="您在交易行竞拍的<color=#9b39cc>%s</color>竞拍成功，请查收。", remark="物品"},
+	{id=106002, remarks="竞拍失败", title="竞拍失败", content="很遗憾，您没能竞拍到<color=#9b39cc>%s</color>，%s退还。", remark="物品#货币"},
+	{id=106003, remarks="竞拍失败#被下架", title="竞拍失败", content="您在交易行竞拍的<color=#9b39cc>%s</color>已被下架，%s退还。", remark="物品#货币"},
+	{id=106004, remarks="购买成功", title="购买成功", content="您在交易行成功购买了<color=#9b39cc>%s</color>，请查收。", remark="物品"},
+	{id=106005, remarks="预购成功", title="预购成功", content="您在交易行成功预购了<color=#9b39cc>%s</color>，请查收。", remark="物品"},
+	{id=106006, remarks="预购失败", title="预购失败", content="很遗憾，您没能成功预购<color=#9b39cc>%s</color>，%s退还。", remark="物品#货币"},
+	{id=106007, remarks="预购失败#被下架", title="预购失败", content="您在交易行预购的<color=#9b39cc>%s</color>被卖家下架，%s退还。", remark="物品#货币"},
+	{id=106009, remarks="上架超时", title="上架超时", content="您在交易行上架的<color=#9b39cc>%s</color>已超时，请重新上架。", remark="物品"},
+	{id=106010, remarks="上架失败", title="上架失败", content="您在交易行上架的<color=#9b39cc>%s</color>未能成功上架，请重新上架。", remark="物品"},
+	{id=106011, remarks="成功售出", title="成功售出", content="您在交易行成功售出<color=#9b39cc>%s</color>。", remark="物品"},
+	{id=106012, remarks="战盟拍卖分红", title="拍卖金分配", content="拍品%s被成功卖出，参与的玩家总共获得了%s%s的分红！恭喜您分得其中%s的拍卖金，请注意查收", remainTime=120, remark="物品#货币数量#货币名称#分红数量"},
+	{id=106013, remarks="商品下架", title="商品下架", content="您在交易行下架的商品已寄回，请查收"},
+	{id=107001, remarks="战盟#创建成功", type=1, title="成功创建战盟", content="恭喜您成功创建了战盟，盟主大人！"},
+	{id=107002, remarks="战盟#被同意入战盟", type=1, title="同意入会", content="<color=#9b39cc>%s</color>同意您加入。"},
+	{id=107003, remarks="战盟#被拒绝入战盟", type=1, title="拒绝入会", content="<color=#9b39cc>%s</color>拒绝了您的申请。"},
+	{id=107004, remarks="战盟#被踢出战盟", type=1, title="踢出战盟", content="你已被踢出战盟。"},
+	{id=107005, remarks="战盟#解散战盟", type=1, title="解散战盟", content="战盟已解散。"},
+	{id=107006, remarks="战盟#退出战盟", type=1, title="退出战盟", content="您已经退出了战盟。"},
+	{id=108001, remarks="传送失败#返还道具", type=1, title="传送失败", content="<color=#9b39cc>传送失败，请领取你的物品</color>"},
+	{id=109001, remarks="被击杀提示", type=1, title="被击杀", content="您在<color=#758685>%s</color>被<color=#1FD922>%s</color>的<color=#E93732>%s</color>击杀"},
+	{id=110001, remarks="活动#奖励发放", title="活动奖励", content="%s的奖励已发送，请注意查收！"},
+	{id=110002, remarks="活动#活动失败", type=1, title="活动失败", content="你的活动已经失败！"},
+	{id=110003, title="战盟排名第一奖励", content="本次战盟BOSS活动中，贵战盟排名第%s，根据您的排名，将发送活动奖励，请查收。排名越高，奖励越好，期待您下次有更好的表现。"},
+	{id=110004, title="战盟排名第一奖励", content="本次战盟BOSS活动中，贵战盟排名第%s，由于您未参与或参与时间少，无法获得本次奖励，请下次及时参加。"},
+	{id=110005, remarks="活动#个人伤害排名#前50", title="个人伤害排名", content="本次活动中，您获得了第%s名，根据您的排名，发放活动奖励，请查收。排名越高，奖励越好，期待您下次有更好的表现。"},
+	{id=110006, remarks="活动#个人伤害排名#大于50", title="个人伤害排名", content="本次活动中，您未能进入前50名，根据您的排名，发放活动奖励，请查收。排名越高，奖励越好，期待您下次有更好的表现。"},
+	{id=110007, remarks="世界BOSS#世界BOSS奖励#前50", title="世界BOSS排名前50奖励", content="本次活动中，恭喜您进入前50名"},
+	{id=110008, remarks="世界BOSS#世界BOSS奖励#超过50", title="世界BOSS排名超过50奖励", content="本次活动中，您未能进入前50名"},
+	{id=110016, remarks="福利#超值连领", title="超值连领活动奖励补发", content="您在超值连领中有未领取的奖励，现已为您补发，请查收。"},
+	{id=111001, remarks="背包#满", title="背包已满", content="您的背包已满，获得物品已通过邮件形式发送，请尽快领取！"},
+	{id=207001, remarks="竞选成功", type=1, title="竞选成功", content="恭喜您竞选成功，成为战盟%s新的盟主！"},
+	{id=207002, remarks="弹劾成功", type=1, title="弹劾成功", content="弹劾成功，%s已经不是战盟盟主，当前战盟处于无盟主状态。"},
+	{id=207003, remarks="弹劾失败", type=1, title="弹劾失败", content="弹劾失败，%s依然是战盟盟主。"},
+	{id=207004, remarks="战盟任务奖励补发", title="战盟任务奖励补发", content="这是您没有领取的战盟任务奖励，请查收。"},
+	{id=207005, remarks="竞选失败", title="竞选失败", content="很遗憾，您未能成功竞选上盟主，参加竞选的道具已返还，请查收。"},
+	{id=207006, remarks="发起竞选", type=1, title="有盟友发起了竞选！", content="盟主之位空置已久，现在有盟友对盟主之位发起了竞选投票，可在战盟竞选页面进行投票，投票结果将在24小时后进行结算。", remainTime=0},
+	{id=207007, remarks="发起弹劾", type=1, title="有盟友发起了弹劾！", content="您的战盟中有人对盟主%s发起了弹劾，弹劾投票已经开启，可在战盟弹劾页面进行投票，投票结果将在24小时后进行结算。", remainTime=0},
+	{id=207008, remarks="发起取代", type=1, title="有盟友发起了取代！", content="您的战盟中有人对盟主%s发起了取代，取代投票已经开启，可在战盟取代页面进行投票，投票结果将在24小时后进行结算。", remainTime=0},
+	{id=207009, remarks="取代失败", title="其他人成为新盟主", content="%s取代了前盟主%s成为了新的盟主，现将您预付的取代费用退回。"},
+	{id=207010, remarks="取代成功", type=1, title="恭喜您成为新盟主！", content="恭喜您成功取代了前盟主%s成为了新的盟主！", remainTime=0},
+	{id=206001, remarks="好友删除", type=1, title="好友删除", content="%s删除了与你的好友关系，你们现在不是好友了。"},
+	{id=406001, remarks="攻城战胜利方全体奖励", title="攻城战胜利方全体奖励", content="恭喜你占领了罗兰峡谷，夺得了本次攻城战的胜利，这是你的奖励！"},
+	{id=406002, remarks="攻城战失败", title="攻城战失败", content="你本次攻城战未能占领罗兰峡谷，希望你下次能取得胜利！"},
+	{id=406003, remarks="攻城战胜利方盟主奖励", title="攻城战胜利方盟主奖励", content="恭喜你带领的战盟占领了罗兰峡谷，夺得了本次攻城战的胜利，这是额外给与你的奖励！"},
+	{id=406004, remarks="攻城战积分奖励", title="攻城战积分奖励", content="恭喜获得攻城战积分第%s名，这是您的奖励！", remark="攻城战个人积分名次"},
+	{id=406005, remarks="攻城战积分奖励", title="攻城战积分奖励", content="恭喜获得攻城战积分第二名，这是您的奖励！"},
+	{id=406006, remarks="攻城战积分奖励", title="攻城战积分奖励", content="恭喜获得攻城战积分第三名，这是您的奖励！"},
+	{id=601001, remarks="取消匹配返还副本道具", title="取消匹配返还副本道具", content="由于您取消了本次副本匹配，系统自动退还副本道具。"},
+	{id=700001, remarks="物品找回", title="物品找回", content="这是您因背包空间不足而遗漏的物品，请查收。"},
+	{id=700002, remarks="物品找回", title="物品找回", content="这是您在%s未拾取/遗漏的物品，请查收。"},
+	{id=142001, remarks="青铜徽记激活礼包", title="青铜徽记激活礼包", content="恭喜你激活了青铜徽记，这是您的奖励！"},
+	{id=142002, remarks="白银徽记激活礼包", title="白银徽记激活礼包", content="恭喜你激活了白银徽记，这是您的奖励！"},
+	{id=142003, remarks="黄金徽记激活礼包", title="黄金徽记激活礼包", content="恭喜你激活了黄金徽记，这是您的奖励！"},
+	{id=142004, remarks="钻石徽记激活礼包", title="钻石徽记激活礼包", content="恭喜你激活了钻石徽记，这是您的奖励！"},
+	{id=142005, remarks="星辰徽记激活礼包", title="星耀徽记激活礼包", content="恭喜你激活了星耀徽记，这是您的奖励！"},
+	{id=142006, remarks="月曜徽记激活礼包", title="月曜徽记激活礼包", content="恭喜你激活了月曜徽记，这是您的奖励！"},
+	{id=142007, remarks="日恒徽记激活礼包", title="日恒徽记激活礼包", content="恭喜你激活了日恒徽记，这是您的奖励！"},
+	{id=160001, remarks="灵魂福袋累充1次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到1次，这是您的奖励！"},
+	{id=160002, remarks="灵魂福袋累充3次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到3次，这是您的奖励！"},
+	{id=160003, remarks="灵魂福袋累充5次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到5次，这是您的奖励！"},
+	{id=160004, remarks="灵魂福袋累充10次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到10次，这是您的奖励！"},
+	{id=160005, remarks="灵魂福袋累充20次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到20次，这是您的奖励！"},
+	{id=160006, remarks="灵魂福袋累充30次", title="灵魂福袋累充奖励", content="恭喜灵魂福袋累充达到30次，这是您的奖励！"},
+	{id=170001, remarks="魔炼之地1首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地1】，以下是符文师如尼给你的额外奖励！"},
+	{id=170002, remarks="魔炼之地2首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地2】，以下是符文师如尼给你的额外奖励！"},
+	{id=170003, remarks="魔炼之地3首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地3】，以下是符文师如尼给你的额外奖励！"},
+	{id=170004, remarks="魔炼之地4首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地4】，以下是符文师如尼给你的额外奖励！"},
+	{id=170005, remarks="魔炼之地5首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地5】，以下是符文师如尼给你的额外奖励！"},
+	{id=170006, remarks="魔炼之地6首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地6】，以下是符文师如尼给你的额外奖励！"},
+	{id=170007, remarks="魔炼之地7首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地7】，以下是符文师如尼给你的额外奖励！"},
+	{id=170008, remarks="魔炼之地8首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地8】，以下是符文师如尼给你的额外奖励！"},
+	{id=170009, remarks="魔炼之地9首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地9】，以下是符文师如尼给你的额外奖励！"},
+	{id=170010, remarks="魔炼之地10首通奖励", content="尊敬的勇士，为表彰你首通【魔炼之地10】，以下是符文师如尼给你的额外奖励！"},
+	{id=777777, remarks="盒子特权每日礼包", title="盒子特权每日礼包", content="恭喜勇士，使用盒子登录获得每日礼包，这是您的奖励！"},
+	{id=888888, remarks="测试邮件1", title="新手大礼包", content="恭喜玩家升到45级，获得新手大礼包！"},
+	{id=999999, remarks="测试邮件2", title="进阶大礼包", content="恭喜玩家来到亚特兰蒂斯，获得进阶大礼包！"},
+	{id=800001, remarks="限时礼包", title="【限时礼包】免费奖励", content="这是您未领取的免费奖励，请查收"},
+	{id=800002, remarks="每日累充", title="【每日累充】奖励", content="这是您未领取的奖励，请查收"},
+	{id=800003, remarks="每日馈赠", title="【每日馈赠】奖励", content="这是您未领取的奖励，请查收"},
+	{id=900001, remarks="转盘抽奖累抽奖励补发", title="累抽奖励补发", content="本次抽奖活动已结束，这是您尚未领取的累抽次数奖励，请查收"},
+	{id=900002, remarks="周末活动-直购礼包奖励补发", title="直购礼包奖励补发", content="本次活动已结束，这是您尚未领取的礼包奖励，请查收"},
+	{id=900003, remarks="周末活动-累充奖励补发", title="累充奖励补发", content="本次累冲活动已结束，这是您尚未领取的礼包奖励，请查收"},
+	{id=900004, remarks="周末活动-钻石礼包奖励补发", title="钻石礼包奖励补发", content="本次活动已结束，这是您尚未领取的礼包奖励，请查收"},
+	{id=900005, remarks="周末活动-消费排行奖励发放", title="消费排行奖励发放", content="本次消费排行活动已结束，这是您的奖励，请查收"},
+	{id=910001, remarks="昆顿入侵跨服竞拍成功", title="跨服竞拍成功", content="您在交易行跨服竞拍的<color=#9b39cc>%s</color>竞拍成功，请查收。"},
+	{id=910002, remarks="昆顿入侵跨服竞拍失败", title="跨服竞拍失败", content="很遗憾，您没能竞拍到<color=#9b39cc>%s</color>，%s退还。"},
+	{id=910003, remarks="昆顿入侵跨服竞拍分红", title="获胜阵营拍卖分红", content="拍品%s被成功卖出，参与的玩家总共获得了%s%s的分红！恭喜您分得其中%s的拍卖金，请注意查收", remark="物品#货币数量#货币名称#分红数量"},
+	{id=920001, remarks="红名-掉落道具惩罚", type=1, title="道具掉落", content="由于您处于红名状态，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s个%s。您可以前往商店购买免罪符消除红名，以减少损失。", remark="击杀玩家名称#道具数量#道具名称（带道具品质色）"},
+	{id=920002, remarks="红名-掉落装备惩罚", type=1, title="装备掉落", content="由于您处于红名状态，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。您可以前往商店购买免罪符消除红名，以减少损失。", remark="击杀玩家名称#装备名称（带装备品质色）"},
+	{id=920004, remarks="红名-金币掉落惩罚", type=1, title="金币掉落", content="由于您处于红名状态，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。"},
+	{id=920011, remarks="黄名-掉落道具惩罚", type=1, title="道具掉落", content="由于您当前pk值较高，在被<color=#E93732>%s</color>击败后，您不幸掉落了您不幸掉落了%s个%s。您可以前往商店购买免罪符消除红名，以减少损失。", remark="击杀玩家名称#道具数量#道具名称（带道具品质色）"},
+	{id=920012, remarks="黄名-掉落装备惩罚", type=1, title="装备掉落", content="由于您当前pk值较高，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。您可以前往商店购买免罪符消除红名，以减少损失。", remark="击杀玩家名称#装备名称（带装备品质色）"},
+	{id=920013, remarks="黄名-金币掉落惩罚", type=1, title="金币掉落", content="由于您当前pk值较高，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。"},
+	{id=920021, remarks="白名-掉落道具惩罚", type=1, title="道具掉落", content="很遗憾勇者，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s个%s。", remark="击杀玩家名称#道具数量#道具名称（带道具品质色）"},
+	{id=920022, remarks="白名-掉落装备惩罚", type=1, title="装备掉落", content="很遗憾勇者，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。", remark="击杀玩家名称#装备名称（带装备品质色）"},
+	{id=920023, remarks="白名-金币掉落惩罚", type=1, title="金币掉落", content="很遗憾勇者，在被<color=#E93732>%s</color>击败后，您不幸掉落了%s。"},
+	{id=920003, remarks="交易行圣杯下架", type=1, title="关于交易行圣杯道具下架及返还背包的通知", content="为了提升游戏体验并进一步优化交易系统，我们对交易行中的圣杯道具进行了必要的调整。现决定下架线上所有玩家交易行上架的圣杯道具，具体情况如下：\n下架时间：本次更新后\n下架内容：所有已上架至交易行的圣杯道具\n处理方式：\n1、目前交易行中已上架的圣杯道具将被自动下架，并会立即返还至玩家的背包。\n2、若您已上架了圣杯道具，请注意您的背包中将收到返还的圣杯道具。\n3、请尽快处理与圣杯道具相关的交易，避免受到不必要的影响。\n祝您游戏愉快！"},
+	{id=930001, remarks="背包已满", title="背包已满", content="您穿戴的装备强化后不满足穿戴需求已自动脱下，请查收"},
+	{id=940001, remarks="宝箱开启掉落补发", title="宝箱奖励补发", content="宝箱开启的掉落奖励您未拾取，已补发请查收"},
+	{id=950001, remarks="冰风堡攻城战胜利奖", title="冰风堡攻城战胜利奖", content="恭喜您所在的战盟成为本次冰风堡攻城战的胜利战盟，为您发放以下奖励"},
+	{id=950002, remarks="冰风堡攻城战参与奖", title="冰风堡攻城战参与奖", content="感谢您参与本次冰风堡攻城战！无论战果如何，您的身影都是战场上最闪耀的星火，为您发放以下奖励"},
+	{id=950003, remarks="冰风堡攻城战MVP奖", title="冰风堡攻城战MVP奖", content="您在本次冰风堡攻城战中表现卓越！为您发放以下奖励"},
+}
+
+local defaults = {remarks="活动#战盟伤害排名#1", type=2, title="【魔炼之地】首通奖励", content="本次猎魔积分争霸赛活动中，所有玩家共获得<color=#00FF00>%s</color>积分，共转化<color=#00FF00>%s</color>猎魔勋章。您在猎魔积分争霸赛活动中获得第<color=#00FF00>%s</color>名，奖励<color=#00FF00>%s</color>猎魔勋章。排名越高，奖励越好，期待您下次有更好的表现。", remainTime=360, remark=""}
+local mt = {__index = defaults}
+for _, v in ipairs(cfg_mail) do
+	setmetatable(v, mt)
+end
+
+return cfg_mail

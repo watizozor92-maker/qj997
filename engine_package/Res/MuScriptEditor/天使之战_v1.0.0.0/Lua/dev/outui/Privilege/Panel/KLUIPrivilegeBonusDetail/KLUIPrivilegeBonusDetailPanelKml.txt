@@ -1,0 +1,43 @@
+<uipanel id="KLUIPrivilegeBonusDetailPanelKml" name="特权经验加成界面" a="00" width="415" height="220" zindex="201" y="164" x="-500" >
+    <img id="closeBtn" width="5000" height="5000" color="#FFFFFF00" raycast="1" />
+    ;<panel id="panel_experience_menu" a="12" width="415" height="220" y="45">
+        <img a="12" atlas="Atlas/Common.spriteatlas" src="cdTime_2" width="205" height="250" raycast="1">
+            <layout control_height="1" vertical="1" height="240" width="200" a="01" raycast="1" x="0" y="-10" cella="01" space="7">
+                <text text="掉率加成=" fontsize="15" width="200" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000" />
+                <text text="(基本倍率100%+特权加成)×三倍加成-基本倍率100%" fontsize="15" width="200" ta="11" horwrap="1" color="#D60065" outlinesize="1" outlinecolor="#000000" />
+                <text horwrap="1" text="— — —特权掉落加成— — —" fontsize="15" width="210" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_drop_gold" horwrap="1" text="黄金特权加成0%" fontsize="15" width="200" ta="11" color="#ED2E2E" outlinesize="1" outlinecolor="#000000" >
+                    <img id="img_drop_gold" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text id="text_drop_diamond" horwrap="1" text="钻石特权加成0%" fontsize="15" width="200" ta="11" color="#ED2E2E" outlinesize="1" outlinecolor="#000000">
+                    <img id="img_drop_diamond" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text horwrap="1" text="— — —三倍掉落加成— — —" fontsize="15" width="200" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_drop_month_card" horwrap="1" text="月卡三倍收益加成0%" fontsize="15" width="200" ta="11" color="#00F5FF" outlinesize="1" outlinecolor="#000000">
+                    <img id="img_drop_month_card" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text horwrap="1" text="— — — — — — — — — —" fontsize="15" width="200" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_drop_total" text="获得0%掉落加成" fontsize="15" width="200" ta="11" horwrap="1" color="#FF8A00" outlinesize="1" outlinecolor="#000000" />
+            </layout>
+        </img>
+        <img a="12" atlas="Atlas/Common.spriteatlas" src="cdTime_2" width="205" height="250" raycast="1" x="210">
+            <layout control_height="1" vertical="1" height="240" width="200" a="01" raycast="1" x="0" y="-10" cella="01" space="7">
+                <text text="经验值加成=" fontsize="15" width="200" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000" />
+                <text text="(基本倍率100%+特权加成)×三倍加成-基本倍率100%" fontsize="15" width="200" ta="11" horwrap="1" color="#D60065" outlinesize="1" outlinecolor="#000000" />
+                <text horwrap="1" text="— — —特权经验加成— — —" fontsize="15" width="210" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_exp_gold" horwrap="1" text="黄金特权加成0%" fontsize="15" width="200" ta="11" color="#ED2E2E" outlinesize="1" outlinecolor="#000000">
+                    <img id="img_exp_gold" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text id="text_exp_diamond" horwrap="1" text="钻石特权加成0%" fontsize="15" width="200" ta="11" color="#ED2E2E" outlinesize="1" outlinecolor="#000000">
+                    <img id="img_exp_diamond" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text horwrap="1" text="— — —三倍经验加成— — —" fontsize="15" width="200" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_exp_month_card" horwrap="1" text="月卡三倍收益加成0%" fontsize="15" width="200" ta="11" color="#00F5FF" outlinesize="1" outlinecolor="#000000">
+                    <img id="img_exp_month_card" a="00" atlas="Atlas/Common.spriteatlas" src="ty_btn_add" width="35" height="35" raycast="1" x="80" />
+                </text>
+                <text horwrap="1" text="— — — — — — — — — —" fontsize="15" width="200" ta="11" outlinesize="1" outlinecolor="#000000" />
+                <text id="text_exp_total" text="获得0%经验加成" fontsize="15" width="200" ta="11" horwrap="1" color="#FF8A00" outlinesize="1" outlinecolor="#000000" />
+            </layout>
+        </img>
+    ;</panel>
+</uipanel>

@@ -1,0 +1,28 @@
+<uipanel id="KLUIRechargeDirectPanelKml" name="直购礼包活动界面" a="00" width="267" height="248" zindex="212">
+  <panel id="panel1" a="00" width="836" height="477" x="85" y="-39">
+    <img id="bg" a="00" width="836" height="477" raycast="1" src="img_interface_main115" atlas="Atlas/Common.spriteatlas" scale9l="4" scale9b="4" scale9r="3" scale9t="3" active="1">
+    </img>
+    <scrollview id="scrollview1" a="00" width="455" height="477" vertical="1" y="0" raycast="1" x="186" autoadjust="1" movementtype="1">
+      <layout id="layout2" width="455" height="477" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01">
+        <datalist id="giftDataList">
+        </datalist>
+      </layout>
+    </scrollview>
+    <img id="img1" a="11" width="336" height="35" raycast="1" src="bg1" atlas="Atlas/Common.spriteatlas" x="5" y="-5" scale9l="3" scale9b="4" scale9r="4" scale9t="3" color="#FFFFFFEB">
+      <text id="text3" a="10" text="礼包刷新时间：" fontsize="20" height="25" width="247" ta="01" horwrap="1" x="8" y="0" color="#00ff00FF" outline="1">
+        <countdown id="refreshTime" width="218" height="43" ta="01" x="118" color="#00ff00FF" y="0" fontsize="20">
+        </countdown>
+      </text>
+    </img>
+    <button id="buyAllBtn" a="00" width="146" height="43" onclick="" text="" raycast="1" src="btn_warOrder_receive" atlas="Atlas/QJ5_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" x="-236" y="-63">
+      <text id="priceText" a="00" text="598元" fontsize="18" height="35" width="110" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      </text>
+      <text id="oldText" a="00" text="原价：  <color=red>598</color>" fontsize="16" height="35" width="110" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="35" color="#FFFFFFFF" x="-2" outline="1">
+        <text id="text7" a="00" text="——" fontsize="16" height="25" width="50" ta="11" horwrap="1" color="#D9001CCF" outlinesize="1" outlinecolor="#000000FF" x="28" y="1" outline="1">
+        </text>
+      </text>
+      <text id="text6" a="00" text="一键购买" fontsize="16" height="35" width="110" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-40">
+      </text>
+    </button>
+  </panel>
+</uipanel>

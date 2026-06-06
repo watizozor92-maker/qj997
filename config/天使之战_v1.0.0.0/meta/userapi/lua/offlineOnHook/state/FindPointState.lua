@@ -1,0 +1,24 @@
+-- -- 离线挂机寻找点状态模块
+-- FindPointState = {}
+
+-- -- 处理寻找点状态
+-- function FindPointState.handle(actor)
+--     lg("寻找挂机物点状态")
+--     local x, y = HookCommonUtils.findMonsterPoint(actor)
+--     if x == nil then
+--         -- 未找到怪点，开始或继续计时
+--         local startTime = StateManager.getNoMonsterStartTime(actor)
+--         if startTime <= 0 then
+--             local now = getbaseinfo("nowsec")
+--             StateManager.setNoMonsterStartTime(actor, now)
+--         end
+--         StateManager.clearPointHistory(actor)
+--         lg("未找到挂机怪点")
+--     else
+--         -- 找到怪点，重置无怪物计时器
+--         StateManager.resetNoMonsterTimer(actor)
+--         StateManager.saveTargetPoint(actor, x, y)
+--         StateManager.transformState(actor, StateManager.STATE_MOVE_TO_POINT)
+--         lg("找到挂机物点", x, y)
+--     end
+-- end

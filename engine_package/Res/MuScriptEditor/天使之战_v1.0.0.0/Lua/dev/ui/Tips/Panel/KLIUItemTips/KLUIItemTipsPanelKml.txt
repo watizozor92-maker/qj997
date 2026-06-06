@@ -1,0 +1,192 @@
+<uipanel id="KLUIItemTipsPanel" name="道具提示界面" zindex="1006" width="221" z="-5500" x="0" active="1" height="10">
+  <button id="background_close" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="2000" height="1500" onclick="" text="" raycast="1" color="#FFFFFF00" active="1" x="0" y="0">
+  </button>
+  <img id="panel_bg" noclip="1" width="242" height="264" atlas="Atlas/TS_Common.spriteatlas" src="bg_tips" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" x="0" y="0">
+    <img id="title_bg" width="242" height="40" atlas="" src="Texture/bg_tips.png" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" active="0" ap="0#1#1#1#0.5#0">
+      <text id="text_title" text="" width="242" fontsize="20" x="0" y="-5" horwrap="1" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" outline="0" ta="11">
+      </text>
+    </img>
+    <layout id="jichu_layout" control_height="0" contentsizefitter="1" vertical="1" height="448" width="239" a="01" raycast="1" x="0" y="0">
+      <panel id="panel2" width="1334" height="12">
+      </panel>
+      <text id="item_name" text="" fontsize="16" color="" outline="0" width="280" outlinecolor="0" outlinesize="0" horwrap="1" fontstyle="0" height="22" ta="11">
+      </text>
+      <panel id="node_name" width="1334" height="8">
+      </panel>
+      <panel id="text_MU_node" width="1334" height="19">
+        <text id="text_MU" linespace="0" text="『 奇迹MU 』" fontsize="16" height="18" width="350" ta="11" outline="0" horwrap="1" color="#80B2FFFF" y="0" x="0">
+        </text>
+      </panel>
+      <panel id="text_deal_node" width="1334" height="19">
+        <text id="text_deal" linespace="0" text="耐久度 ： [99/149]" fontsize="16" height="18" width="350" ta="11" outline="0" horwrap="1" active="1" y="0" x="0">
+        </text>
+      </panel>
+      <panel id="text_gem_node" width="1334" height="19">
+        <text id="text_gem" linespace="0" text="『  奇迹MU  』" fontsize="16" height="22" width="350" ta="11" outline="0" horwrap="1" color="#FFFFFFFF">
+        </text>
+      </panel>
+      <panel id="task_text_node" width="1334" height="19" active="0">
+        <text id="task_text" linespace="0" text="任务物品" fontsize="16" height="16" width="350" ta="11" outline="0" horwrap="1" active="1">
+        </text>
+      </panel>
+      <panel id="attr_txt_node" width="1334" height="19" active="0">
+        <text id="attr_txt" linespace="0" text="人物物品" fontsize="16" height="16" width="350" ta="11" outline="0" horwrap="1" active="1">
+        </text>
+      </panel>
+      <panel id="view_node_offset_2" width="1334" height="1">
+      </panel>
+      <layout id="view_info" control_height="1" contentsizefitter="1" vertical="1" height="500" width="500" cella="01" raycast="1" space="3">
+        <text id="top_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11">
+        </text>
+        <text id="mid_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11" height="18">
+        </text>
+        <text id="bottom_text" text="" width="244" horwrap="1" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="1" ta="11" height="18">
+        </text>
+      </layout>
+      <panel id="view_node_offset_1" width="1334" height="1">
+      </panel>
+      <panel id="overlyingTxt_node" width="1334" height="19" active="0">
+        <text id="overlyingTxt" linespace="0" text="" fontsize="16" height="16" width="350" ta="11" outline="0" horwrap="1" color="#FFFFFFFF" active="1">
+        </text>
+      </panel>
+      <panel id="bindOverlyingTxt_node" width="1334" height="19" active="0">
+        <text id="bindOverlyingTxt" linespace="0" text="" fontsize="16" height="16" width="350" ta="11" outline="0" horwrap="1" color="#FFFFFFFF" active="1">
+        </text>
+      </panel>
+      <layout id="base_list_layout" vertical="1" width="356" height="20" cella="01" space="0" active="1" contentsizefitter="1">
+        <datalist id="base_info_data">
+          <panel id="root" width="350" height="22">
+            <item id="item" mfixsize="30,30" width="25" height="16" a="10" bgtype="0">
+            </item>
+            <text id="value" text="" active="1" width="441" height="16" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" outline="0" ta="11">
+            </text>
+            <text id="itemname" a="00" text="默认内容" fontsize="16" height="20" width="309" ta="11" horwrap="1" x="0" y="0" outline="0" active="0">
+            </text>
+            <text id="more_info" height="20" text="" active="1" width="325" linespace="1" fontsize="16" x="0" horwrap="1" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0">
+            </text>
+            <img id="title" atlas="Atlas/UIEquipInfoPanel.spriteatlas" src="" a="00" x="0" active="1" width="316">
+            </img>
+            <text id="desc" text="" active="1" width="325" height="20" linespace="0.6" fontsize="16" x="0" a="00" horwrap="1" color="#FFFFFF" ta="11" outlinecolor="0" outlinesize="1" outline="0">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+      <text id="equip_time" linespace="0" text="耐久度 ： [99/149]" fontsize="16" height="20" width="350" ta="11" outline="0" horwrap="1" active="0">
+      </text>
+      <panel id="equip_need_level_titlt_node" width="250" height="21" active="0">
+        <text id="equip_need_level_titlt" text="所需等级:" fontsize="16" height="16" width="250" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
+          <text id="equip_need_level" text="" fontsize="16" x="85" y="0" a="10" color="" outlinecolor="0" outlinesize="1" outline="0" horwrap="1">
+          </text>
+        </text>
+      </panel>
+      <layout id="need_layout" width="262" height="80" vertical="1" cella="01" space="5" contentsizefitter="1">
+        <datalist id="equipNeedData">
+          <panel width="150" height="16" id="panel_1427">
+            <text id="name" text=":" height="20" fontsize="16" x="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="313">
+            </text>
+            <text id="value" text="" height="20" fontsize="16" x="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="307">
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+      <panel id="red_equip_need_level_titlt_node" width="250" height="10" active="0">
+        <text id="red_equip_need_level_titlt" text="所需等级:" height="18" fontsize="16" width="250" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
+        </text>
+      </panel>
+      <panel id="timeShow_text_node" width="1334" height="19">
+        <text id="timeShow_text" linespace="0" text="人物物品" fontsize="16" height="22" width="350" ta="11" outline="0" horwrap="1" active="1" color="#FF1AFFFF">
+        </text>
+      </panel>
+      <panel id="use_text_node" width="1334" height="19" active="0">
+        <text id="use_text" linespace="0" text="人物物品" fontsize="16" height="22" width="350" ta="11" outline="0" horwrap="1" active="1">
+        </text>
+      </panel>
+      <panel id="shop_deal_node" width="1334" height="19" active="0">
+        <text id="shop_deal" linespace="0" text="人物物品" fontsize="16" height="16" width="350" ta="11" outline="0" horwrap="1" active="1" color="#FF331AFF">
+        </text>
+      </panel>
+      <panel id="att_level_titlt_node" width="1334" height="19" active="0">
+        <text id="att_level_titlt" text="所需属性点预计等级:" height="16" fontsize="22" width="360" horwrap="1" outline="0" color="#FFFFFF" outlinesize="0" outlinecolor="0" active="0" ta="11">
+          <text id="att_need_level" text="" fontsize="16" height="16" x="0" y="0" a="00" color="#FFFFFF" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" ta="11" width="360">
+          </text>
+        </text>
+      </panel>
+      <panel id="yulan_content_node" width="278" height="750">
+        <loopscrollview id="yulan_content" autoadjust="1" width="263" height="247" vertical="1" raycast="1" cellwidth="66" cellheight="70" x="0" y="1">
+          <datalist id="yulan_data_list">
+          </datalist>
+        </loopscrollview>
+      </panel>
+      <panel width="239" height="110" id="num_select" z="0" zindex="0" active="1" alphaall="1" raycast="1">
+        <img id="img1" a="01" width="222" height="1" raycast="1" color="#535353FF" x="0" y="-10" src="line" atlas="Atlas/FG_Synthesis.spriteatlas">
+        </img>
+        <input id="Input_PutNum" text="1" a="11" x="47" width="180" height="30" ta="11" fontsize="18" textcolor="#00ff00" outlinecolor="#000000" outlinesize="1" type="1" src="input_bg" atlas="Atlas/FG_Synthesis.spriteatlas" scale9b="5" scale9l="4" scale9r="4" scale9t="5" y="-30" color="">
+          <button id="Btn_NumberMinus" src="sub" atlas="Atlas/FG_Synthesis.spriteatlas" x="15" raycast="1" y="0" mimg="" pimg="" dimg="" width="21" height="9" a="10">
+          </button>
+          <button id="Btn_NumberAdd" src="add" atlas="Atlas/FG_Synthesis.spriteatlas" x="-15" raycast="1" y="0" width="21" height="21" mimg="" pimg="" dimg="" a="20">
+          </button>
+          <text text="数量" a="10" x="-39" id="text_18" horwrap="1" y="0" fontsize="16" fonttype="" outlinecolor="#000000FF" outlinesize="1" ta="11" outline="0" width="35" height="20" fontstyle="0" underline="0" color="#E6E600FF">
+          </text>
+        </input>
+        <slider id="Slider_PutNum" atlas="Atlas/FG_Synthesis.spriteatlas" src="slider_bg" fimg="sliber_line" himg="btn_slider" x="0" y="15" scale9l="0" scale9r="0" scale9t="0" scale9b="0" scale9l2="10" scale9r2="0" scale9t2="0" scale9b2="0" width="226" height="22" minvalue="1" maxvalue="100" curvalue="1" wholenum="1" updateinterval="0.1" slidefillarealrtb="5,2,3,3" slidehandlearealrtb="0,12,0,0" handlewidthtb="18,-18,0,2,-1" handlearealrtb="-10,-10,-10" a="02" h5x="-" mimg="" pimg="" fimg_scale9l="0" fimg_scale9b="0" fimg_scale9r="0" fimg_scale9t="0">
+        </slider>
+      </panel>
+      <panel id="synthesisDesc" width="239" height="60">
+        <img id="img4" a="01" width="222" height="1" raycast="1" color="#535353FF" x="0" y="0" src="line" atlas="Atlas/FG_Synthesis.spriteatlas">
+        </img>
+        <text id="text3" text="必要材料放入不可交易物品\n合成后也将不可交易" fontsize="14" height="36" width="195" ta="10" outline="1" horwrap="1" contentsizefitter="0" color="#FF2323FF" x="0" y="0" fontstyle="0" underline="0">
+        </text>
+      </panel>
+      <panel id="node_career_top" width="300" height="14" active="1">
+      </panel>
+      <layout id="career_layout" width="300" vertical="1" cella="01" space="5" contentsizefitter="1">
+        <datalist id="equipzhiyeNeedData">
+          <panel id="careerNode" width="300" height="16">
+            <img id="jobBg" width="242" height="16" raycast="1" src="bg_red" atlas="Atlas/FG_Common.spriteatlas" color="#FFFFFF">
+            </img>
+            <text id="title" text="" fontsize="16" horwrap="1" height="16" outline="0" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" active="1" ta="11" width="198">
+              <text id="name" text="" fontsize="16" x="0" y="1" a="00" color="#FFFFFF" horwrap="1" outline="0" width="360" ta="11" height="20">
+              </text>
+            </text>
+          </panel>
+        </datalist>
+      </layout>
+      <panel id="node_career_bottom" width="300" height="16" active="1">
+      </panel>
+      <panel id="btn_offset_node" width="424" height="14">
+      </panel>
+      <layout id="bag_root" vertical="0" width="356" height="26" cella="01" active="1" space="24" contentsizefitter="1">
+        <button id="left_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_common_2_select" width="91" height="33" onclick="KmlEquipTipsUI/@打开锻造" active="1" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="16" mimg="" pimg="" dimg="">
+          <scrollview id="left_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1" x="0">
+            <layout id="属性_left_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
+              <datalist id="left_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+        <button id="right_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_common_2_select" width="91" height="33" onclick="KmlEquipTipsUI/@take_off_equip" active="1" outlinesize="1" outlinecolor="0" textcolor="#D3CAC3" fontsize="16" mimg="" pimg="" dimg="">
+          <scrollview id="right_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1" h5y="45" x="0">
+            <layout id="属性_right_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
+              <datalist id="right_data_list">
+              </datalist>
+            </layout>
+          </scrollview>
+        </button>
+      </layout>
+      <layout id="item_button" vertical="2" width="356" height="38" cella="01" active="1" space="24" contentsizefitter="1">
+        <button id="put_or_out" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="100" height="45" onclick="KmlItemTipsUI/@put_or_out_method" active="0" raycast="1">
+          <text id="put_or_out_t" text="" fontsize="16" active="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+          </text>
+        </button>
+        <button id="pills_put" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="100" height="45" onclick="KmlItemTipsUI/@pills_put" active="0" raycast="1">
+          <text id="text_100" text="放入" fontsize="16" active="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+          </text>
+        </button>
+        <button id="mail_attachment" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" width="134" height="44" active="0" onclick="KmlItemTipsUI/@插入邮件附件">
+          <text id="text_102" text="插入附件" fontsize="16" active="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
+          </text>
+        </button>
+      </layout>
+    </layout>
+  </img>
+</uipanel>

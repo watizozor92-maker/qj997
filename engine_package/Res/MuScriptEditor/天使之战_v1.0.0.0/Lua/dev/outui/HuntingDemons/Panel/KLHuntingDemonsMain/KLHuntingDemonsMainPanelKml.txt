@@ -1,0 +1,22 @@
+<uipanel id="KLHuntingDemonsMainPanel" name="猎魔积分争霸赛主界面" width="1039" height="560" zindex="0">
+  <button id="MaskButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="2000" height="2000" onclick="" text="" raycast="1" color="#FFFFFF00">
+  </button>
+  <img src="Texture/ty_bg_threeFrame_N3.png" width="1039" height="560" raycast="1" id="img2">
+  </img>
+  <img src="img_interface_main009" atlas="Atlas/Common.spriteatlas" x="2" width="1012" height="458" y="-43" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img1" active="1">
+  </img>
+  <togglegroup id="togglegroup3" a="00" width="350" height="49" onload="" raycast="1" x="-324" y="203">
+    <toggle id="toggle_HallOfFame" width="133" height="35" a="00" default="0" togglegroup_id="togglegroup3" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window41" pimg="button_interface_window39" raycast="1" x="-108" y="0">
+      <text id="text5" a="00" text="猎魔名人堂" fontsize="18" height="25" width="132" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-2">
+      </text>
+    </toggle>
+    <toggle id="toggle_Reward" width="133" height="35" a="00" default="0" togglegroup_id="togglegroup3" atlas="Atlas/Common.spriteatlas" onclick="" src="button_interface_window41" pimg="button_interface_window39" raycast="1" x="25" y="0">
+      <text id="text7" a="00" text="猎魔奖励" fontsize="18" height="25" width="132" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-2">
+      </text>
+    </toggle>
+  </togglegroup>
+  <button id="button_close" src="button_interface_close5" atlas="Atlas/Common.spriteatlas" a="21" raycast="1" binddragid="" x="0" y="0" h5x="-960" h5y="0">
+  </button>
+  <img src="title3" atlas="Atlas/KLHuntingDemons.spriteatlas" a="01" id="img3" width="186" height="55">
+  </img>
+</uipanel>

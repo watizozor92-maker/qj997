@@ -1,0 +1,12 @@
+<uipanel id="KLUIChatItemKml" name="聊天通用模板" width="396" height="80" zindex="-1">
+  <img id="icon_root" atlas="Atlas/UIMainAttackPanel.spriteatlas" src="img_interface_main097" width="66" height="66" a="11" active="1">
+    <img id="icon" atlas="Atlas/MUIcon.spriteatlas" src="" width="60" height="60" raycast="1">
+    </img>
+  </img>
+  <text id="name" text="" fontsize="16" x="75" y="-7" a="11" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+  </text>
+  <img id="qipao" atlas="Atlas/KLChatPanel.spriteatlas" src="img_chat_pao" width="300" height="50" x="70" y="-30" a="11" scale9l="15" scale9r="15" scale9t="22" scale9b="7">
+    <richtext id="richT" text="" fontsize="16" x="13" y="0" a="10" chatiteminfo="" raycast="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" mline="1" maxwidth="290" parentaddwidth="20" parentaddheight="15" parent2addwidth="-1" parent2addheight="67" emoji="1">
+    </richtext>
+  </img>
+</uipanel>
