@@ -13,6 +13,7 @@ end
 
 function this.RegistEvents()
     SL:RegisterLUAEvent(LUA_EVENT_MAIN_UI_VISIBLE,this.LUA_EVENT_MAIN_UI_VISIBLE)
+    -- SL:RegisterLUAEvent(LUA_EVENT_ENTER_MAP,this.LUA_EVENT_ENTER_MAP)
 end
 
 function this.UnRegistEvents()
@@ -28,8 +29,7 @@ end
 function this:LUA_EVENT_MAIN_UI_VISIBLE(info)
     local vis = info.vis
     local name = info.name
-    this.showPanelMap[name] = vis
-
+    this.showPanelMap[name] = vis    
     SL:onLUAEvent(LUA_EVENT_MAIN_UI_VISIBLE_AFTER, info)
     
 end

@@ -1071,6 +1071,7 @@ function entermap(actor, lastMapCfgId, mapCfgId)
     gameDebug.debug(TaskHandler.sendTaskState, actor)
     gameDebug.debug(RoleAttr.enterMap, actor, mapCfgId)
     gameDebug.debug(BingFengBao.enterMap, actor, mapCfgId)
+
 end
 
 function leavemap(actor, reason)

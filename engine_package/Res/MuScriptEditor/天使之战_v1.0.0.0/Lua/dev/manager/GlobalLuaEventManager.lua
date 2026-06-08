@@ -5,7 +5,7 @@
 ---@class GlobalEventManger
 GlobalLuaEventManager = {}
 local this = GlobalLuaEventManager
-
+local firstRun = true
 function this.Init()
     
     this.RegistEvents()
@@ -160,6 +160,22 @@ function this.LUA_EVENT_ENTER_MAP(_, eventData)
     InfoManager.copActivityInfo:ClearCopyData()
     SL:SetOffset2CSPreScene(Vector3(0, 0, 0))
     SL:UpdateMainCameraPos()
+
+    if firstRun then
+        firstRun = false
+        local cameraDistance = tonumber(SL:GetLocalString("GET_CAMERA_DISTANCE"))
+        if cameraDistance and cameraDistance > 0 then
+            if cameraDistance == 13 then
+                SL.MainCamera:SetLookCamera(true,Vector2(32,-45),10,10,90)
+            else
+                --设置相机距离
+                if SL:GetMetaValue(EMetaVarGetKey.ENGINE_IS_LOCK_CAMERA) then
+                    SL.MainCamera:SetLookCamera(false,Vector2(32,-45),10,10,90)
+                end
+                SL.MainCamera:Set3DCameraParams(cameraDistance,45,45)
+            end
+        end
+    end
     --SL:BanAutoFinishNpcTalkTask()
 end
 

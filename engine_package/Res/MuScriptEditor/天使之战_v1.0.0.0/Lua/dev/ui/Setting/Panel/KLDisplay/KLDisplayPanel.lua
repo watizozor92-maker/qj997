@@ -51,7 +51,7 @@ function this:Refresh()
     local isLimitShowCount = SL:GetMetaValue(EMetaVarGetKey.GET_IS_LIMIT_PLAYER_SHOW_COUNT)
     local limitShowCount = SL:GetMetaValue(EMetaVarGetKey.GET_LIMIT_PLAYER_SHOW_COUNT)
     local powerSaveMode = SL:GetMetaValue(EMetaVarGetKey.GET_POWER_SAVING_MODE)
-    local cameraDistance = SL:GetMetaValue(EMetaVarGetKey.GET_CAMERA_DISTANCE) or 13
+    local cameraDistance = tonumber(SL:GetLocalString("GET_CAMERA_DISTANCE")) or 13
     local isHideDragonSoulSkillShow = InfoManager.dragonSoulSkillInfo.dragonSoulSkillCheck
     local isHideVIPHead = InfoManager.newVipInfo.isHideVIPHeadShow
 
@@ -207,10 +207,12 @@ function this:SliderCameraDistance(control,_,data)
     local value = math.ceil(data[1])
     -- 确保相机距离在有效范围内 (1-40)
     value = math.max(1, math.min(40, value))
-    SL:SetMetaValue(EMetaVarSetKey.SET_CAMERA_DISTANCE,value)
+    SL:SetLocalString("GET_CAMERA_DISTANCE",value.."")
     GUI:Text_setString(self.view.txtCamera,tostring(value))
     local sliderPointerPosX = self.sliderStartPosXCamera + self.barWidthCamera * value / 40
     GUI:setPositionX(self.view.barCamera, sliderPointerPosX)
+
+    
     --设置相机距离
     if SL:GetMetaValue(EMetaVarGetKey.ENGINE_IS_LOCK_CAMERA) then
         SL.MainCamera:SetLookCamera(false,Vector2(32,-45),10,10,90)
@@ -305,7 +307,12 @@ function this:SetRectTrans(rectTrans, anchorMin, anchorMax, sizeDelta)
 end
 
 function this:Close()
-    SL.MainCamera:SetLookCamera(true,Vector2(32,-45),10,10,90)
+    local cameraDistance = tonumber(SL:GetLocalString("GET_CAMERA_DISTANCE")) or 13
+    if cameraDistance == 13 then
+        SL.MainCamera:SetLookCamera(true,Vector2(32,-45),10,10,90)
+    end
+    -- SL.MainCamera:SetLookCamera(true,Vector2(32,-45),10,10,90)
+    
 end
 
 return this
