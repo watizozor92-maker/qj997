@@ -181,12 +181,12 @@ function Team.getShareExp(actor, monsterId, originExp,monCfgId)
                 local dy = math.abs(selfY - memberY)
                 local distance = math.max(dx, dy)
                 if distance <= needDistance then
-                    local memberActor = getactor(actor, memberInfo.rid)
-                    local lastSec = Player.getLastAttackTime(memberActor)
-                    if nowSec - lastSec <= needSec then
+                    -- local memberActor = getactor(actor, memberInfo.rid)
+                    -- local lastSec = Player.getLastAttackTime(memberActor)
+                    -- if nowSec - lastSec <= needSec then
                         teamSize = teamSize + 1
                         teamExpMap[tonumber(memberInfo.rid)] = 0
-                    end
+                    -- end
                 end
             end
         end
