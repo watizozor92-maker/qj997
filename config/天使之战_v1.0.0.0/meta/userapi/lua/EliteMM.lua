@@ -197,7 +197,29 @@ function EliteMM.login(actor)
     end
 end
 
-function EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId)
+function EliteMM.calcBuffParams(buffConfig, casterActor, actor, buffId)
+    local g = ConfigDataManager.getTableValue("cfg_global", "value", "id", GlobalConfigId.ELITEMM_MAX_VALUE)
+    g = string.toIntIntMap(g)
+    --计算增益属性
+    local buffparams = string.split(buffConfig.buffparam, "|")
+    local attrId = string.splitInt(buffparams[1], "#")[1]
+    local layers = 1
+    local info = getbuffinfo(actor)
+    if not table.isEmpty(info) then
+        for i = 1, #info do
+            if info[i].buffcfgid == buffId then
+                layers = info[i].layers
+                break
+            end
+        end
+    end
+    local v = this.getBuffValue(casterActor or actor, buffId, layers)
+    local max = g[attrId] or 99999
+    v = math.min(v, max)
+    return {id = attrId, value = v}
+end
+
+function EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId, casterActor)
     local type = getbaseinfo(actor, "mapobjecttype")
     if type ~= MapObjectType.PLAYER then
         return
@@ -253,16 +275,16 @@ function EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId
             for _, data in pairs(info) do
                 if string.find(data, "#") then
                     local v = string.splitInt(data, "#")
-                    local name = attrid2name(actor, v[1])
-                    data = getattrinfo(actor, name) * v[2] / 10000
+                    local name = attrid2name(casterActor, v[1])
+                    data = getattrinfo(casterActor, name) * v[2] / 10000
                 end
                 needTime = needTime + data
             end
         else
             if string.find(calcTime, "#") then
                 local v = string.splitInt(calcTime, "#")
-                local name = attrid2name(actor, v[1])
-                local data = getattrinfo(actor, name) * v[2] / 10000
+                local name = attrid2name(casterActor, v[1])
+                local data = getattrinfo(casterActor, name) * v[2] / 10000
                 needTime = data
             else
                 needTime = string.tonumber(calcTime)
@@ -274,16 +296,17 @@ function EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId
             local total = ConfigDataManager.getTableValue("cfg_buff", "bufftotaltime", "id", buffCfgId)
             newTotal = string.tonumber(total)
         end
+        -- local buffValue = EliteMM.calcBuffParams(buffConfig, casterActor, actor, buffCfgId)
         -- local newTotal = 10000 -- 测试
         -- 设置新持续时间（秒）
-        setbuffdata(actor, buffId, { bufftotaltime = math.floor(newTotal) })
+        setbuffdata(actor, buffId, { bufftotaltime = math.floor(newTotal)})
 
         -- 更新关闭时间戳
         skillClose[buffCfgId] = nowSec + newTotal / 1000
         timeInfo.skillClose = skillClose
         API.SetTable(actor, __buffExistTimeKey, timeInfo)
         -- 更新属性
-        this.calcPlayerAttr(actor)
+        this.calcPlayerAttr(actor, casterActor)
     end
 end
 
@@ -415,13 +438,11 @@ function this.tryAddReplaceBuff(actor, buffId, timeInfo, type)
     API.SetTable(actor, __delayAddBuffs, delayAddBuffs)
 end
 
-function this.calcPlayerAttr(actor)
+function this.calcPlayerAttr(actor, casterActor)
     local timeInfo = API.GetTable(actor, __buffExistTimeKey) or {}
     local skillClose = timeInfo.skillClose or {}
     local eliteClose = timeInfo.eliteClose or {}
     local attrs = {}
-    local info = getbuffinfo(actor)
-
     local g = ConfigDataManager.getTableValue("cfg_global", "value", "id", GlobalConfigId.ELITEMM_MAX_VALUE)
     g = string.toIntIntMap(g)
     for buffId, _ in pairs(skillClose) do
@@ -429,21 +450,8 @@ function this.calcPlayerAttr(actor)
         if table.isEmpty(buffConfig) then
             goto continue
         end
-        local buffparams = string.split(buffConfig.buffparam, "|")
-        local attrId = string.splitInt(buffparams[1], "#")[1]
-        local layers = 1
-        if not table.isEmpty(info) then
-            for i = 1, #info do
-                if info[i].buffcfgid == buffId then
-                    layers = info[i].layers
-                    break
-                end
-            end
-        end
-        local v = this.getBuffValue(actor, buffId, layers)
-        local max = g[attrId] or 99999
-        v = math.min(v, max)
-        table.mergeAdd(attrs, { [attrId] = v })
+        local v = EliteMM.calcBuffParams(buffConfig, casterActor, actor, buffId)
+        table.mergeAdd(attrs, { [v.id] = v.value })
         :: continue ::
     end
     for buffId, _ in pairs(eliteClose) do

@@ -1593,7 +1593,7 @@ function buffeffect(targetActor, buffCfgId, casterActor, hurtTotal, targetTotal,
 end
 
 function buffeffectafter(targetActor, buffCfgId, casterActor, hurtTotal, targetTotal, layers, buffFromType, buffId)
-    Buffer.buffeffectafter(targetActor, buffCfgId, layers, buffFromType, buffId)
+    Buffer.buffeffectafter(targetActor, buffCfgId, layers, buffFromType, buffId, casterActor)
 end
 -- reason 1:正常失效, 2:由于同一buff叠加层数触发失效
 function bufflose(actor, buffCfgId, ownerId, reason)

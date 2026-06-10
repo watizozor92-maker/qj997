@@ -93,7 +93,7 @@ function Buffer.buffeffect(actor, buffCfgId, layers, buffFromType, buffId, caste
     end
 end
 
-function Buffer.buffeffectafter(actor, buffCfgId, layers, buffFromType, buffId)
+function Buffer.buffeffectafter(actor, buffCfgId, layers, buffFromType, buffId, casterActor)
     local buffConfig = ConfigDataManager.getById("cfg_buff", buffCfgId)
     if table.isNullOrEmpty(buffConfig) then
         return
@@ -108,13 +108,13 @@ function Buffer.buffeffectafter(actor, buffCfgId, layers, buffFromType, buffId)
     local attr = {}
     for key, value in pairs(buffCounts) do
         if value == BuffType.ELITE then
-            EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId)
+            EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId, casterActor)
         end
     end
-    Buffer.sendBuffInfo(actor)
+    Buffer.sendBuffInfo(actor, casterActor)
 end
 
-function Buffer.sendBuffInfo(actor)
+function Buffer.sendBuffInfo(actor, casterActor)
     local type = getbaseinfo(actor, "mapobjecttype")
     if type ~= MapObjectType.PLAYER then
         return
@@ -128,7 +128,7 @@ function Buffer.sendBuffInfo(actor)
             local layers = buff.layers
             local buffValue = {}
             if EliteMM.isEliteOrSkill(actor, cfgId) then
-                buffValue = EliteMM.getBuffValue(actor, cfgId, layers)
+                buffValue = EliteMM.getBuffValue(casterActor or actor, cfgId, layers)
             else
                 buffValue = buff.buffext or {}
             end
