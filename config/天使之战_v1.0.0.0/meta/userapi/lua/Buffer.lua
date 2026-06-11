@@ -1,6 +1,7 @@
 Buffer = {}
 NOVICE_PROTECT = "T$_noviceProtect"
 BuffType = {
+    MOVE = 2,
     SD = 9,
     AG = 10,
     ELITE = 11, -- 精英MM
@@ -97,13 +98,22 @@ function Buffer.buffeffectafter(actor, buffCfgId, layers, buffFromType, buffId, 
     local buffConfig = ConfigDataManager.getById("cfg_buff", buffCfgId)
     if table.isNullOrEmpty(buffConfig) then
         return
-    end
+    end    
     -- 计算公式
     local buffCounts = string.splitInt(buffConfig.buffcount, "#")
     -- 参数
     local buffValues = string.split(buffConfig.buffvalue, "|")
     -- 效果
     local buffParams = string.split(buffConfig.buffparam, "|")
+
+    --20260611 加 41 表示移动到目标地图
+    if tonumber(buffConfig.bufftype) == BuffType.MOVE and tonumber(buffParams[1]) == 41 then
+        local x = getbaseinfo(actor, "x")
+        local y = getbaseinfo(actor, "y")
+        local mapId = getbaseinfo(actor, "mapid")
+        local srcMapId = getbaseinfo(casterActor, "mapid")
+        movemapplayer(actor, srcMapId, mapId, x, y, 2)
+    end
 
     local attr = {}
     for key, value in pairs(buffCounts) do

@@ -1,10 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "../../../../../config/天使之战_v1.0.0.0/meta"
-		},
-		{
-			"path": "dev"
+			"path": "."
 		}
 	],
 	"settings": {}
