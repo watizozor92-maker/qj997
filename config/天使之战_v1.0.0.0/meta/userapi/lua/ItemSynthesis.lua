@@ -36,6 +36,7 @@ function ItemSynthesis.synthesis(actor, msgData)
     local successItems = msgData[3]    -- 辅助道具
     local dingxiangItem = msgData[4][1]
     local protectIds = msgData[5]
+    local luckyItem = msgData[6]        -- 幸运道具 {id=道具cfgId, count=数量}
 
     --SynthesisLog.new()
     --SynthesisLog.addLog(string.format("1.合成开始，合成配置id:[%d]，         放入的刚需道具（consumeItem字段）：%s  ，          放入的公式额外消耗道具 成功率增加道具（consumeItem2字段）：[%s]，         放入的定向道具（productid字段）：[%s]，          放入的保护道具（protect字段）：[%s]"
@@ -90,6 +91,61 @@ function ItemSynthesis.synthesis(actor, msgData)
     local totalRate = baseRate + successRateFromExtra
     local finalRate = math.min(totalRate, maxSuccessRate)
 
+    -- ========== 幸运道具加成 ==========
+    local luckyAddRate = 0  -- 幸运道具额外加的成功率
+    local luckyCostMap = {} -- 要扣除的幸运道具 {cfgId=count}
+
+    if luckyItem and luckyItem.id then
+        local luckyItemId = tonumber(luckyItem.id)
+        local luckyItemCount = tonumber(luckyItem.count) or 0
+
+        -- 第1步：从配置中解析 luckyItem 字段，格式: id#rate|id#rate
+        -- 比如 "1001#1000|1002#2000" 解析成 { [1001]=1000, [1002]=2000 }
+        local luckyItemCfg = cfg_synthesis.luckyitem or ""
+        local luckyRateMap = {}  -- {道具id = 加成成功率}
+
+        if not string.isNullOrEmpty(luckyItemCfg) then
+            local pairs = string.split(luckyItemCfg, "|")
+            for _, p in ipairs(pairs) do
+                local parts = string.split(p, "#")
+                if #parts >= 2 then
+                    local itemId = tonumber(parts[1])
+                    local rate = tonumber(parts[2]) or 0
+                    if itemId then
+                        luckyRateMap[itemId] = rate
+                    end
+                end
+            end
+        end
+
+        -- 第2步：检查玩家用的道具ID在不在配置里
+        if not luckyRateMap[luckyItemId] then
+            tipinfo(actor, "该道具不是幸运道具")
+            return
+        end
+
+        -- 第3步：检查背包里道具够不够
+        if luckyItemCount <= 0 then
+            tipinfo(actor, "幸运道具数量不正确")
+            return
+        end
+
+        local haveCount = Bag.getItemCount(actor, luckyItemId) or 0
+        if haveCount < luckyItemCount then
+            tipinfo(actor, "幸运道具数量不足")
+            return
+        end
+
+        -- 第4步：计算加成成功率 = 每个道具的加成 × 数量
+        local perRate = luckyRateMap[luckyItemId]  -- 从配置读取每个道具的加成率
+        luckyAddRate = perRate * luckyItemCount
+        luckyCostMap[luckyItemId] = luckyItemCount
+    end
+
+    -- 第5步：把幸运道具加成加上去（可以超过maxSuccessRate上限！）
+    finalRate = finalRate + luckyAddRate
+    -- ================================
+
     -- 4. 随机判定
     local result = RandomUtil.isLuck(finalRate)
 
@@ -99,6 +155,10 @@ function ItemSynthesis.synthesis(actor, msgData)
     table.mergeAdd(coin, needCost)
     table.mergeAdd(coin, extraCost)
     table.mergeAdd(needBagIndexCost, extraBagIndexCost)
+    -- 扣除幸运道具
+    if next(luckyCostMap) then
+        table.mergeAdd(coin, luckyCostMap)
+    end
     local isProtect = table.notEmpty(protectIds)
     if isProtect then
         local protect = string.splitInt(cfg_synthesis.protect, "#")
