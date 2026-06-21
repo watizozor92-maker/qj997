@@ -20,7 +20,7 @@ function Buffer.buffeffect(actor, buffCfgId, layers, buffFromType, buffId, caste
     -- 参数
     local buffValues = string.split(buffConfig.buffvalue, "|")
     -- 效果
-    local buffParams = string.split(buffConfig.buffparam, "|")
+    local buffParams = string.split(buffConfig.buffparam, "|")    
 
     local attr = {}
     for key, value in pairs(buffCounts) do
@@ -101,21 +101,9 @@ function Buffer.buffeffectafter(actor, buffCfgId, layers, buffFromType, buffId, 
     end    
     -- 计算公式
     local buffCounts = string.splitInt(buffConfig.buffcount, "#")
-    -- 参数
-    local buffValues = string.split(buffConfig.buffvalue, "|")
-    -- 效果
-    local buffParams = string.split(buffConfig.buffparam, "|")
-
     --20260611 加 41 表示移动到目标地图
-    if tonumber(buffConfig.bufftype) == BuffType.MOVE and tonumber(buffParams[1]) == 41 then
-        local x = getbaseinfo(actor, "x")
-        local y = getbaseinfo(actor, "y")
-        local mapId = getbaseinfo(actor, "mapid")
-        local srcMapId = getbaseinfo(casterActor, "mapid")
-        movemapplayer(actor, srcMapId, mapId, x, y, 2)
-    end
+    Buffer.moveBuff(buffConfig, actor, casterActor)
 
-    local attr = {}
     for key, value in pairs(buffCounts) do
         if value == BuffType.ELITE then
             EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId, casterActor)
@@ -247,6 +235,57 @@ function Buffer.safetyAreaBuff(actor)
     end
 end
 
+--移动BUFF 20260621 luo
+function Buffer.moveBuff(buffConfig, actor, casterActor)
+    -- 参数
+    -- local buffValues = string.split(buffConfig.buffvalue, "|")
+    -- 效果
+    local buffParams = string.split(buffConfig.buffparam, "|")
+    if tonumber(buffConfig.bufftype) == BuffType.MOVE then
+        local buffParam = tonumber(buffParams[1])
+        if buffParam == 41 then
+            local id = getbaseinfo(actor, "id")
+            local casterId = getbaseinfo(casterActor or actor, "id")
+            -- local rolename = getbaseinfo(actor, "rolename")
+            -- local casterRolename = getbaseinfo(casterActor, "rolename")
+            -- info(actor, "actor:" .. rolename .. ", id:" .. id .. " --> casterActor:" .. casterRolename .. ", id:" .. casterId)
+            if casterId ~= id then
+                local x = getbaseinfo(casterActor, "x")
+                local y = getbaseinfo(casterActor, "y")
+                local mapId = getbaseinfo(casterActor , "mapid")
+                local srcMapId = getbaseinfo(actor, "mapid")
+                movemapplayer(actor, srcMapId, mapId, x, y, 2)
+            end
+        elseif  buffParam == 42 then
+            local teamId = getbaseinfo(actor, "teamid")
+            if not teamId or teamId == 0 then
+                -- 非队伍成员
+                info(actor, "非队伍成员")
+                return
+            end
+            --获取所有队员
+            local teamActorList = Team.GetAllMemberRids(actor)
+            if teamActorList == nil then
+                -- 没有队伍信息
+                info(actor, "没有队伍信息")
+                return
+            end
+            local selfRid = getbaseinfo(actor, "rid")
+            local x = getbaseinfo(actor, "x")
+            local y = getbaseinfo(actor, "y")
+            local mapId = getbaseinfo(actor, "mapid")
+
+            -- 移动所有队员
+            for _, targetRid in pairs(teamActorList) do
+                if selfRid ~= targetRid then
+                    local targetActor = getactor(actor, targetRid)
+                    local srcMapId = getbaseinfo(targetActor, "mapid")
+                    movemapplayer(actor, srcMapId, mapId, x, y, 2)
+                end
+            end
+        end
+    end
+end
 --[[
 Buffer = {}
 
