@@ -253,8 +253,8 @@ function Buffer.moveBuff(buffConfig, actor, casterActor)
                 local x = getbaseinfo(casterActor, "x")
                 local y = getbaseinfo(casterActor, "y")
                 local mapId = getbaseinfo(casterActor , "mapid")
-                local srcMapId = getbaseinfo(actor, "mapid")
-                movemapplayer(actor, srcMapId, mapId, x, y, 2)
+                local line = getbaseinfo(casterActor, "line")
+                maptransfer(actor, x, y, mapId, line)
             end
         elseif  buffParam == 42 then
             local teamId = getbaseinfo(actor, "teamid")
@@ -274,13 +274,12 @@ function Buffer.moveBuff(buffConfig, actor, casterActor)
             local x = getbaseinfo(actor, "x")
             local y = getbaseinfo(actor, "y")
             local mapId = getbaseinfo(actor, "mapid")
-
+            local line = getbaseinfo(actor, "line")
             -- 移动所有队员
             for _, targetRid in pairs(teamActorList) do
                 if selfRid ~= targetRid then
                     local targetActor = getactor(actor, targetRid)
-                    local srcMapId = getbaseinfo(targetActor, "mapid")
-                    movemapplayer(actor, srcMapId, mapId, x, y, 2)
+                    maptransfer(targetActor, x, y, mapId, line)
                 end
             end
         end
