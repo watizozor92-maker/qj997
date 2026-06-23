@@ -130,7 +130,7 @@ function ItemSynthesis.synthesis(actor, msgData)
             return
         end
 
-        local haveCount = Bag.getItemCount(actor, luckyItemId) or 0
+        local haveCount = Bag.countItem(actor, luckyItemId) or 0
         if haveCount < luckyItemCount then
             tipinfo(actor, "幸运道具数量不足")
             return

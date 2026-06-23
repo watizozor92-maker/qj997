@@ -72,7 +72,7 @@ function handlerequest(actor, uid, msgID, msgData)
     elseif msgID == LuaMessageIdToSever.GET_TEAM_RECRUIT then
         Team.getteamrecruitlua(actor, msgID)                 -- 获取组队喊话信息
     elseif msgID == LuaMessageIdToSever.LEADER_AGREE_APPLY then
-        Team.leaderAgreeApply(actor, msgID)                  -- 队长一键同意申请记录
+        Team.leaderAgreeApply(actor, msgData)                  -- 队长一键同意申请记录
     elseif msgID == LuaMessageIdToSever.GET_RESET_FRUIT_COUNT then
         FruitScript.toGetResetCount(actor)                   -- 获取重置果实次数
     elseif msgID == LuaMessageIdToSever.S_RESET_FRUIT then
@@ -237,6 +237,10 @@ function handlerequest(actor, uid, msgID, msgData)
         RoleAttr.changePrivilegeAttrPointProgramme(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_WAR_ALLIANCE_HAS_QUALIFY then
         Auction.ShowAutionPanel(actor)
+    elseif msgID == LuaMessageIdToSever.REQ_TEAM_JOIN then
+        Team.JoinTeam(actor, msgData)
+    elseif msgID == LuaMessageIdToSever.REQ_TEAM_AGREE_JOIN then
+        Team.AgreeJoinTeam(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_UNION_TASK_DATA then
         UnionMemberTask.sendUnionTaskData(actor)
     elseif msgID == LuaMessageIdToSever.REQ_SUBMIT_UNION_TASK then

@@ -55,8 +55,24 @@ function Team.teamrecruitchange(actor, activeid, upperlevel, lowerlevel)
 end
 
 -- 队长一键同意审批记录
-function Team.leaderAgreeApply(actor)
-    agreeteamapply(actor)
+function Team.leaderAgreeApply(actor, msgData)
+    local applyList = msgData
+    local teamId = tonumber(getbaseinfo(actor, "teamid"))
+    local notifyLeader = false
+    for _, rid in ipairs(applyList) do
+        local joinActor = getactor(actor, rid)
+        if Team.CanJoin(teamId, joinActor) then
+            replyapply(actor, 1, rid)
+        else
+            tipinfo(joinActor, "队伍中不能有2个以上相同的职业")
+            if not notifyLeader then
+                tipinfo(actor, "因职业人数限制，有队员不能加入队伍")
+                notifyLeader = true
+            end
+            replyapply(actor, 0, rid)
+        end
+    end
+    -- agreeteamapply(actor)
 end
 
 ---获取队伍所有成员rid
@@ -373,11 +389,66 @@ function Team.reqGetTeamMemberPosition(actor)
     sendluamsg(actor, LuaMessageIdToClient.RES_GET_TEAM_MEMBER_POSITION, res)
 end
 
+function Team.CanJoin(teamId, joinActor, maxCareer)
+    local teamInfo = getteaminfo(joinActor, teamId)
+    if table.isNullOrEmpty(teamInfo) then
+        info(joinActor, "没有队伍信息")
+        return false
+    end
+    local teamActorList = teamInfo.allteammemberinfo
+    if teamActorList == nil then
+        -- 没有队伍信息
+        info(joinActor, "没有队伍信息")
+        return false
+    end
+    local joinCareer = getbaseinfo(joinActor, "getbasecareer")
+    local careerMap = {}
+    careerMap[joinCareer] = (careerMap[joinCareer] or 0) + 1
+    maxCareer = maxCareer or 2
+    for _, memberInfo in pairs(teamActorList) do
+        local targetRid = tonumber(memberInfo["rid"])
+        local targetActor = getactor(joinActor, targetRid)
+        local career = getbaseinfo(targetActor, "getbasecareer")
+        careerMap[career] = (careerMap[career] or 0) + 1
+        if careerMap[career] > maxCareer then
+            info(joinActor, "队伍中不能有2个以上相同的职业")            
+            return false
+        end
+    end
+    return true
+end
+function Team.JoinTeam(actor, msgData)
+    info(msgData)
+    local teamId = msgData.teamId
+    if not Team.CanJoin(teamId, actor) then
+        -- sendmsg(actor, 5, "队伍中不能有2个以上相同的职业")
+        tipinfo(actor, "队伍中不能有2个以上相同的职业")
+        return
+    end
+    applyjointeam(actor, teamId)
+end
 
-
-
-
-
-
+function Team.AgreeJoinTeam(actor, msgData)
+    info(msgData)
+    local leaderId = msgData.leaderId
+    if not leaderId then
+        info(actor, "请求参数 leaderId 为空")
+        return
+    end
+    local leaderActor = getactor(leaderId)
+    if not leaderActor then
+        info(actor, "未找到领队信息")
+        return
+    end
+    --自己的队伍
+    local teamId = getbaseinfo(actor, "teamid")
+    if not Team.CanJoin(teamId, leaderActor) then
+        -- sendmsg(actor, 5, "队伍中不能有2个以上相同的职业")
+        tipinfo(actor, "队伍中不能有2个以上相同的职业")
+        replyapply(actor, 0, leaderId)
+        return
+    end
+    replyapply(actor, 1, leaderId)
+end
 
 MessageRouter:register(LuaMessageIdToSever.REQ_TEAM_EQUIP_INFO, Team.sendEquipInfo)

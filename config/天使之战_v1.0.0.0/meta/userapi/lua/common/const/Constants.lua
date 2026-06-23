@@ -709,6 +709,7 @@ CareerType = {
     MO_JIAN_SHI = 4,    -- 魔剑士
     SHENG_DAO_SHI = 5,  -- 圣导师
     ZHAO_HUO_SHI = 6,   --召唤师
+    GUANG_MING_FA_SHI = 7,   --光明法师
 }
 
 -- 玩家传送分配模式
