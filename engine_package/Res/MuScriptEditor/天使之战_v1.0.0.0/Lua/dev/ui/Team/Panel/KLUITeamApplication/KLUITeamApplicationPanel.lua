@@ -82,7 +82,8 @@ function this:RefuseOtherApply(_, eventData)
 end
 
 function this:AgreeOtherApply(_, eventData)
-    SL:ReqAgreeReplyApply(eventData.leaderId)
+    -- SL:ReqAgreeReplyApply(eventData.leaderId)
+    SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_TEAM_AGREE_JOIN, {leaderId = eventData.leaderId})
 end
 
 ---创建或者刷新界面数据时调用
@@ -104,12 +105,16 @@ function this:RegistEvents()
 end
 
 function this:AgreeAllRequestList()
-    SL:SendLuaNetMsg(LuaMessageIdToSever.LEADER_AGREE_APPLY)
+    local msgData = {}
+    for _,v in ipairs(self.InviteListOrApplyList) do
+        table.insert(msgData,  v.rid)
+    end
+    SL:SendLuaNetMsg(LuaMessageIdToSever.LEADER_AGREE_APPLY,msgData)
     self.InviteListOrApplyList = {}
     GUI:DataListUpdateData(self.view.application_datalist)
     GUI:SetActive(self.view.agreebtn,false)
     GUI:SetActive(self.view.clearbtn,false)
-end
+end 
 
 function this:ClearAllRequestList()
     SL:ReqClearAllRequestList()

@@ -643,6 +643,10 @@ LuaMessageIdToSever = {
     REQ_OTHER_MOUNT_RANK = 2000150, -- 请求其他人排行榜展示坐骑
     REQ_WAR_ALLIANCE_HAS_QUALIFY = 2000151, -- 请求战盟boss是否能显示竞拍面板
 
+    --组队相关
+    REQ_TEAM_JOIN = 2000161,            -- 请求加入组队
+    REQ_TEAM_AGREE_JOIN = 2000162,      -- 请求同意加入组队
+    --组队相关 END
     REQ_UNION_TASK_DATA = 2001552, -- 请求战盟任务数据
     REQ_SUBMIT_UNION_TASK = 2001553, -- 请求提交战盟任务
     REQ_MONSTER_COUNT_BY_ID = 2001554, -- 请求获取怪物数量
