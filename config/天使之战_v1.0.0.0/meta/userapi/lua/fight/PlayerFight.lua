@@ -193,14 +193,16 @@ function this.ExcuseFightDamage(actor, paramMap)
             local wingdamageRate = getattrinfo(actor, "wingdamageRate")
             local casterignoreMonsterDefenseRate = getattrinfo(actor, "ignoreMonsterDefenseRate")
             local ignoreMonsterDefenseNum = casterignoreMonsterDefenseRate * armor
-            originDamage = (finalDC - (armor - ignoreMonsterDefenseNum)) * skillDamagPro * skillPowerRate * (1 + wingdamageRate) * shuangBeiMultiplier
+            local roleLevel = getbaseinfo(target, "level")
+            originDamage = ((roleLevel / 10) + finalDC - (armor - ignoreMonsterDefenseNum)) * skillDamagPro * skillPowerRate * (1 + wingdamageRate) * shuangBeiMultiplier
             this.addFightLog(fightContext, string.format("玩家打怪伤害计算：(%.2f-(%.2f-%.2f))*%.2f*%.4f*(1+%.2f)*%.2f=%.2f", finalDC, armor, ignoreMonsterDefenseNum, skillDamagPro, skillPowerRate, wingdamageRate, shuangBeiMultiplier, originDamage))
         elseif castType == MapObjectType.MONSTER and targetType == MapObjectType.PLAYER then
             --怪打玩家
             --伤害=（怪物攻击- 防御/2）*（1-总的“伤害吸收”）*（1-总的“伤害减少”）
             local damageAbsorb = getattrinfo(target, "damageAbsorb")
             local damageDecrement = getattrinfo(target, "damageDecrement")
-            originDamage = (finalDC - armor / 2) * (1 - damageAbsorb) * (1 - damageDecrement)
+            local roleLevel = getbaseinfo(target, "level")
+            originDamage = ((roleLevel / 10) + finalDC - armor / 2) * (1 - damageAbsorb) * (1 - damageDecrement)
             this.addFightLog(fightContext, string.format("怪物打玩家伤害计算：(%.2f-%.2f/2)*(1-%.2f)*(1-%.2f)=%.2f", finalDC, armor, damageAbsorb, damageDecrement, originDamage))
         elseif castType == MapObjectType.PET and targetType == MapObjectType.PLAYER then
             originDamage = math.max(0, finalDC - armor / 2)
@@ -213,7 +215,8 @@ function this.ExcuseFightDamage(actor, paramMap)
             local wingdamageRate = getattrinfo(actor, "wingdamageRate")
             local damageAbsorb = getattrinfo(target, "damageAbsorb")
             local damageDecrement = getattrinfo(target, "damageDecrement")
-            originDamage = (finalDC - armor / 2) * skillDamagPro * (1 + wingdamageRate) * (1 - damageAbsorb) * (1 - damageDecrement) * shuangBeiMultiplier
+            local roleLevel = getbaseinfo(target, "level")
+            originDamage = ((roleLevel / 10) + finalDC - armor / 2) * skillDamagPro * (1 + wingdamageRate) * (1 - damageAbsorb) * (1 - damageDecrement) * shuangBeiMultiplier
             this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：(%.2f-%.2f/2)*%.2f*(1+%.2f)*(1-%.2f)*(1-%.2f)*%.2f=%.2f", finalDC, armor, skillDamagPro, wingdamageRate, damageAbsorb, damageDecrement, shuangBeiMultiplier, originDamage))
         end
         -- 指定技能伤害额外增加
