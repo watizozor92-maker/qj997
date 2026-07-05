@@ -1,13 +1,14 @@
+--[[
+    战斗伤害计算模块 PlayerFight.lua
+]]
 PlayerFight = {}
 local this = {}
-
 -- 线上得改成false
 local isDebug = nil
 
-
 ---@class FightContext 上下文
----@field castType number 攻击者类型
----@field targetType number 受击者类型
+---@field castType number 攻击者类型(仅玩家/怪物，移除宠物)
+---@field targetType number 受击者类型(仅玩家/怪物，移除宠物)
 ---@field caster table 攻击者对象
 ---@field target table 受击者对象
 ---@field skillId number 技能Id
@@ -20,8 +21,6 @@ local isDebug = nil
 ---@field isShuangBeiYiJi boolean 是否触发双倍一击
 ---@field isComboSkill boolean 是否是连击技能
 ---@field fightLog table 战斗公式日志
-
-
 
 local HurtType = {
     NOMAL = 101,
@@ -57,7 +56,6 @@ function this.ExcuseFightDamage(actor, paramMap)
         local result = this.buildFightResult(actor, paramMap.target, 0, HurtType.MISS, 1, false)
         return { result }
     end
-
     local fightContext = this.createFightContext(paramMap)
     local castType = fightContext.castType
     local targetType = fightContext.targetType
@@ -65,39 +63,43 @@ function this.ExcuseFightDamage(actor, paramMap)
     local skillId = fightContext.skillId
     local skillLevel = fightContext.skillLevel
 
-    this.addFightLog(fightContext, getbaseinfo(actor, "rolename") .. "使用技能.." .. skillId .. ": " .. skillLevel .. "->" .. getbaseinfo(target, "rolename"))
-
+    -- this.addFightLog(fightContext, (getbaseinfo(actor, "rolename") or "") .. "使用技能.." .. skillId .. ": " .. skillLevel .. "->" .. (getbaseinfo(target, "rolename") or ""))
     if not this.canHit(actor, fightContext) then
         local result = this.buildFightResult(actor, paramMap.target, 0, HurtType.MISS, 1, false, fightContext.fightLog)
         return { result }
     end
-
     this.addFightLog(fightContext, "命中成功。")
-    -- 这两个伤害是扣减护盾前的原始伤害
+
     local totalCasterHurtBeforeShield = 0
     local totalTargetHurtBeforeShield = 0
-
     local totalCasterHurtAfterShield = 0
     local totalTargetHurtAfterShield = 0
-
-
-    -- 攻击力
     local finalDC = 0
-    -- 技能所用的面板攻击力
+
     local minDC, maxDC, injuryType = this.GetDCBySkill(paramMap)
     if minDC > maxDC then
         error("属性异常，最小攻击力大于最大攻击力", paramMap)
         local result = this.buildFightResult(actor, paramMap.target, 0, HurtType.MISS, 1, false, fightContext.fightLog)
         return { result }
     end
+
+    --1.03H官服原生补充：双持单手武器1.1倍攻击加成
+    local isDoubleHold = this.CheckDoubleHoldWeapon(actor, injuryType)
+    if isDoubleHold then
+        minDC = minDC * 1.1
+        maxDC = maxDC * 1.1
+        this.addFightLog(fightContext, string.format("双持单手武器加成，小攻%.2f，大攻%.2f", minDC, maxDC))
+    end
+
     local originDamage = 0
     local skillInfoConfig = ConfigDataManager.getTableFirst("cfg_skill_info", "skillID", skillId, "skillLevel", skillLevel)
     local strength = getattrinfo(actor, "strength")
-    local attackPowerBonus = getattrinfo(actor, "AttackPowerBonus")
-    -- 连击技能直接走真伤
+
+    
+    
+    
     if Skill.isComboSkill(actor, fightContext.skillId) then
         fightContext.isComboSkill = true
-        -- 连击伤害 = 力敏智点数总和除以2
         local intelligence = getattrinfo(actor, "intelligence")
         local agility = getattrinfo(actor, "agility")
         originDamage = (strength + intelligence + agility) / 2
@@ -107,51 +109,39 @@ function this.ExcuseFightDamage(actor, paramMap)
         local originMinDC, originMaxDC = minDC, maxDC
         local skillDamageAdd = getattrinfo(actor, "skillDamageAdd")
         local skillAtk = tonumber(skillInfoConfig.skillatk)
-
-        local maxDCSkillPower = skillAtk * 1.5 + skillDamageAdd
+        local maxDCSkillPower = skillAtk * 1 + skillDamageAdd
         local minDCSkillPower = skillAtk * 1 + skillDamageAdd
+
+        local attackPowerBonus = getattrinfo(actor, "AttackPowerBonus")
+        local skillDamagPro = 1
+        if attackPowerBonus and castType == MapObjectType.PLAYER then
+            skillDamagPro = getattrinfo(actor, "skillDamagPro") + attackPowerBonus
+        end
 
         if injuryType == 1 then
             -- 物理伤害
             local DCRate = getattrinfo(actor, "DCRate")
-            local career = 0
-            local killerType = getbaseinfo(actor, "mapobjecttype")
-            if tonumber(killerType) == MapObjectType.PLAYER then
-                career = getbaseinfo(actor, "getbasecareer")
-            end
-            if career == 1 or career == 4 then
-                -- 剑士
-                maxDC = maxDC * (1 + DCRate + 0.6 * attackPowerBonus)
-                minDC = minDC * (1 + DCRate + 0.6 * attackPowerBonus)
-                this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = 面板大功%.2f * (1 + 攻击百分比%.2f + 0.6 * 战斗威力加成%.2f)", maxDC, originMaxDC, DCRate, attackPowerBonus))
-                this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = 面板小功%.2f * (1 + 攻击百分比%.2f + 0.6 * 战斗威力加成%.2f)", minDC, originMinDC, DCRate, attackPowerBonus))
-            else
-                maxDC = maxDC * (1 + DCRate) + maxDCSkillPower
-                minDC = minDC * (1 + DCRate) + minDCSkillPower
-                this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = 面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)", maxDC, originMaxDC, DCRate, skillAtk, skillDamageAdd))
-                this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = 面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)", minDC, originMinDC, DCRate, skillAtk, skillDamageAdd))
-            end
+            maxDC = (maxDC + maxDCSkillPower) * (1+ DCRate)
+            minDC = (minDC + minDCSkillPower) * (1+ DCRate)
+            this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = 面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", maxDC, originMaxDC, DCRate, skillAtk, skillDamageAdd))
+            this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = 面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", minDC, originMinDC, DCRate, skillAtk, skillDamageAdd))
         elseif injuryType == 2 then
             -- 魔法伤害
             local MCRate = getattrinfo(actor, "MCRate")
-            local wandMagicAttackPowerBonus = getattrinfo(actor, "wandMagicAttackPowerBonus")
-            maxDC = (maxDC * (1 + MCRate) + maxDCSkillPower) * (1 + wandMagicAttackPowerBonus)
-            minDC = (minDC * (1 + MCRate) + minDCSkillPower) * (1 + wandMagicAttackPowerBonus)
-            this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = (面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)) * (1 + 魔力提高%.2f)", maxDC, originMaxDC, MCRate, skillAtk, skillDamageAdd, wandMagicAttackPowerBonus))
-            this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = (面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)) * (1 + 魔力提高%.2f)", minDC, originMinDC, MCRate, skillAtk, skillDamageAdd, wandMagicAttackPowerBonus))
+            maxDC = (maxDC + maxDCSkillPower) * (1+ MCRate)
+            minDC = (minDC + minDCSkillPower) * (1+ MCRate)
+            this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = 面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", maxDC, originMaxDC, MCRate, skillAtk, skillDamageAdd))
+            this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = 面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", minDC, originMinDC, MCRate, skillAtk, skillDamageAdd))
         elseif injuryType == 3 then
             -- 诅咒伤害
             local CCRate = getattrinfo(actor, "CCRate")
-            local cursepowerratio = getattrinfo(actor, "cursepowerratio")
-            maxDC = (maxDC * (1 + CCRate) + maxDCSkillPower) * (1 + cursepowerratio)
-            minDC = (minDC * (1 + CCRate) + minDCSkillPower) * (1 + cursepowerratio)
-            this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = (面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)) * (1 + 诅咒提高%.2f)", maxDC, originMaxDC, CCRate, skillAtk, skillDamageAdd, cursepowerratio))
-            this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = (面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f * 1.5 + 技能攻击力增加%.2f)) * (1 + 诅咒提高%.2f)", minDC, originMinDC, CCRate, skillAtk, skillDamageAdd, cursepowerratio))
+            maxDC = (maxDC + maxDCSkillPower) * (1+ CCRate)
+            minDC = (minDC + minDCSkillPower) * (1+ CCRate)
+            this.addFightLog(fightContext, string.format("攻击力计算: 最大攻击力%.2f = 面板大功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", maxDC, originMaxDC, CCRate, skillAtk, skillDamageAdd))
+            this.addFightLog(fightContext, string.format("攻击力计算: 最小攻击力%.2f = 面板小功%.2f * (1 + 攻击百分比%.2f) + (技能攻击力%.2f  + 技能攻击力增加%.2f)", minDC, originMinDC, CCRate, skillAtk, skillDamageAdd))
         end
 
         local armor = getattrinfo(target, "armor")
-
-        -- 判断无视防御、卓越一击、幸运一击是否触发
         if this.IsWuShiFangYu(actor, target) then
             fightContext.isWuShiFangYu = true
             armor = 0
@@ -159,21 +149,26 @@ function this.ExcuseFightDamage(actor, paramMap)
             this.addFightLog(fightContext, string.format("无视防御触发，攻击力%.2f=(小攻%.2f~大攻%.2f)", finalDC, minDC, maxDC))
         elseif this.IsZhuoYueYiJi(actor, target) then
             fightContext.isZhuoYueYiJi = true
-            -- 大攻 *1.2 + 卓越一击伤害
-            finalDC = maxDC * 1.2 + getattrinfo(actor, "excellentFixedDamage")
-            this.addFightLog(fightContext, string.format("卓越一击触发，攻击力%.2f=大攻%.2f*1.2 + 卓越一击伤害%.2f", finalDC, maxDC, getattrinfo(actor, "excellentFixedDamage")))
+            --1.03H原版：卓越一击=大功*1.3
+            finalDC = maxDC * 1.3
+            this.addFightLog(fightContext, string.format("卓越一击触发，攻击力%.2f=大攻%.2f*1.3", finalDC, maxDC))
         elseif this.IsXingYunYiJi(actor, target) then
-            -- 当次攻击力 = 大攻  + 幸运一击伤害 + 伤害提高
             fightContext.isXinYunYiJi = true
-            finalDC = maxDC + getattrinfo(actor, "criticalFixedDamage") + getattrinfo(actor, "highatt")
-            this.addFightLog(fightContext, string.format("幸运一击触发，攻击力%.2f=大攻%.2f + 幸运一击伤害%.2f + 伤害提高%.2f", finalDC, maxDC, getattrinfo(actor, "criticalFixedDamage"), getattrinfo(actor, "highatt")))
+            --1.03H原版幸运一击直接取最大攻击
+            finalDC = maxDC
+            this.addFightLog(fightContext, string.format("幸运一击触发，攻击力%.2f=大攻%.2f", finalDC, maxDC))
         else
-            -- 当次攻击力 = 小攻~大攻之间随机一个值
             finalDC = math.random(math.floor(minDC), math.floor(maxDC))
             this.addFightLog(fightContext, string.format("普通攻击，攻击力%.2f=(小攻%.2f~大攻%.2f)", finalDC, minDC, maxDC))
         end
 
-        -- 双倍一击及倍率
+        --1.03H官服原生补充：小恶魔30%攻击加成
+        local hasImpBuff = this.CheckImpBuff(actor)
+        if hasImpBuff then
+            finalDC = finalDC * 1.3
+            this.addFightLog(fightContext, string.format("携带小恶魔，攻击提升30%%，当前攻击%.2f", finalDC))
+        end
+
         local shuangBeiMultiplier = 1
         if this.IsShuangBeiYiJi(actor, target) then
             fightContext.isShuangBeiYiJi = true
@@ -186,41 +181,34 @@ function this.ExcuseFightDamage(actor, paramMap)
             skillPowerRate = 1
         end
 
+        --1.03H官服原生补充：技能智力增伤倍率 (200+智力/10)%
+        local intelligence = getattrinfo(actor, "intelligence")
+        local intRate = (200 + intelligence / 10) / 100
+        this.addFightLog(fightContext, string.format("技能智力增伤倍率%.2f", intRate))
+        
         if castType == MapObjectType.PLAYER and targetType == MapObjectType.MONSTER then
-            --玩家打怪
-            --伤害=（攻击-怪物防御）*职业的技能攻击力提升比例*（1+翅膀的"伤害提高"）*双倍一击的倍率
-            local skillDamagPro = this.calSkillDamagPro(actor, attackPowerBonus, injuryType)
-            local wingdamageRate = getattrinfo(actor, "wingdamageRate")
-            local casterignoreMonsterDefenseRate = getattrinfo(actor, "ignoreMonsterDefenseRate")
-            local ignoreMonsterDefenseNum = casterignoreMonsterDefenseRate * armor
-            local roleLevel = getbaseinfo(target, "level")
-            originDamage = ((roleLevel / 10) + finalDC - (armor - ignoreMonsterDefenseNum)) * skillDamagPro * skillPowerRate * (1 + wingdamageRate) * shuangBeiMultiplier
-            this.addFightLog(fightContext, string.format("玩家打怪伤害计算：(%.2f-(%.2f-%.2f))*%.2f*%.4f*(1+%.2f)*%.2f=%.2f", finalDC, armor, ignoreMonsterDefenseNum, skillDamagPro, skillPowerRate, wingdamageRate, shuangBeiMultiplier, originDamage))
+            --玩家打怪 PVE原版公式 (finalDC - 怪物防御*0.7) * 技能倍率 *智力倍率 *双倍倍率
+            local realArmor = armor * 0.7
+            originDamage = (finalDC - realArmor) * skillPowerRate * intRate * shuangBeiMultiplier
+            this.addFightLog(fightContext, string.format("玩家打怪伤害计算：(%.2f-(%.2f*0.7))*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
+            info("打怪伤害："..originDamage)
         elseif castType == MapObjectType.MONSTER and targetType == MapObjectType.PLAYER then
-            --怪打玩家
-            --伤害=（怪物攻击- 防御/2）*（1-总的“伤害吸收”）*（1-总的“伤害减少”）
-            local damageAbsorb = getattrinfo(target, "damageAbsorb")
-            local damageDecrement = getattrinfo(target, "damageDecrement")
-            local roleLevel = getbaseinfo(target, "level")
-            originDamage = ((roleLevel / 10) + finalDC - armor / 2) * (1 - damageAbsorb) * (1 - damageDecrement)
-            this.addFightLog(fightContext, string.format("怪物打玩家伤害计算：(%.2f-%.2f/2)*(1-%.2f)*(1-%.2f)=%.2f", finalDC, armor, damageAbsorb, damageDecrement, originDamage))
-        elseif castType == MapObjectType.PET and targetType == MapObjectType.PLAYER then
+            --怪打玩家 原版max(0,攻击-防御/2)  - 吸收伤害 * max(0,攻击-防御/2) - max(0,攻击-防御/2) * 减伤
+           
             originDamage = math.max(0, finalDC - armor / 2)
-        elseif castType == MapObjectType.PET and targetType == MapObjectType.MONSTER then
-            originDamage = math.max(0, finalDC - armor)
+            
+            this.addFightLog(fightContext, string.format("怪物打玩家伤害计算：max(0,%.2f-%.2f/2)=%.2f", finalDC, armor, originDamage))
         else
-            --玩家打玩家
-            --伤害=（攻击-受击方的防御/2）*职业的技能攻击力提升比例*（1+翅膀的"伤害提高"）*（1-受击方总的"伤害吸收"）*（1-受击方总的"伤害减少"）*双倍一击的倍率
-            local skillDamagPro = this.calSkillDamagPro(actor, attackPowerBonus, injuryType)
-            local wingdamageRate = getattrinfo(actor, "wingdamageRate")
-            local damageAbsorb = getattrinfo(target, "damageAbsorb")
-            local damageDecrement = getattrinfo(target, "damageDecrement")
-            local roleLevel = getbaseinfo(target, "level")
-            originDamage = ((roleLevel / 10) + finalDC - armor / 2) * skillDamagPro * (1 + wingdamageRate) * (1 - damageAbsorb) * (1 - damageDecrement) * shuangBeiMultiplier
-            this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：(%.2f-%.2f/2)*%.2f*(1+%.2f)*(1-%.2f)*(1-%.2f)*%.2f=%.2f", finalDC, armor, skillDamagPro, wingdamageRate, damageAbsorb, damageDecrement, shuangBeiMultiplier, originDamage))
+            --玩家打玩家 PVP原版 max(0,攻击-防御/2)*技能倍率*智力倍率*双倍倍率
+            originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate * shuangBeiMultiplier
+            this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：max(0,%.2f-%.2f/2)*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
         end
-        -- 指定技能伤害额外增加
-        originDamage = this.calculateSkillDamageAdd(actor, fightContext, originDamage)
+        --计算减伤伤害
+        local damageAbsorb = getattrinfo(target, "damageAbsorb")
+        local damageDecrement = getattrinfo(target, "damageDecrement")
+        originDamage = originDamage * skillDamagPro
+        originDamage = originDamage - damageAbsorb * originDamage - originDamage * damageDecrement
+
     end
 
     -- 命中率过低伤害衰弱
@@ -230,17 +218,12 @@ function this.ExcuseFightDamage(actor, paramMap)
     end
 
     if originDamage <= 0 then
-        --伤害小于等于0直接飘miss
         this.addFightLog(fightContext, "伤害小于等于0，直接判定为未命中")
         local result = this.buildFightResult(actor, target, 0, HurtType.MISS, 1, false, fightContext.fightLog)
         return { result }
     end
 
-    -- 副本修正伤害
-    originDamage = this.DupFixDamage(originDamage, paramMap)
-
     local resultList = {}
-
     totalTargetHurtBeforeShield = totalTargetHurtBeforeShield + originDamage
 
     if fightContext.isComboSkill then
@@ -262,13 +245,9 @@ function this.ExcuseFightDamage(actor, paramMap)
         totalTargetHurtAfterShield = totalTargetHurtAfterShield + finalDamage
     end
 
-
-
-    -- 伤害反弹和伤害反射
+    -- 伤害反弹和伤害反射（仅目标玩家触发）
     if targetType == MapObjectType.PLAYER then
-        -- 伤害反射百分百触发
-        --A受到的伤害反射伤害 = A打B的伤害 * B的"伤害反射"
-        local fanSheDamage = originDamage * math.min(getattrinfo(target, "damageReflex"), 0.7)
+        local fanSheDamage = originDamage * math.min(getattrinfo(target, "damageReflex"), 1)
         local fanSheDamageAfterShield, shield1 = 0, 0
         if fanSheDamage > 0 then
             if castType == MapObjectType.PLAYER then
@@ -276,28 +255,26 @@ function this.ExcuseFightDamage(actor, paramMap)
                 if shield1 > 0 then
                     this.addFightLog(fightContext, string.format("伤害反射护盾吸收：%.2f，反射伤害从%.2f减少到%.2f", shield1, fanSheDamage, fanSheDamageAfterShield))
                 end
-
                 this.addFightLog(fightContext, string.format("触发伤害反射，反射伤害%.2f = 原始伤害%.2f * 伤害反射%.2f", fanSheDamageAfterShield, originDamage, getattrinfo(target, "damageReflex")))
                 table.insert(resultList, this.buildFightResult(target, actor, fanSheDamageAfterShield, HurtType.FAN_SHE, 1, false, fightContext.fightLog))
             else
-                this.addFightLog(fightContext, string.format("触发伤害反射，反射伤害%.2f = 原始伤害%.2f * 伤害反射%.2f", fanSheDamageAfterShield, originDamage, getattrinfo(target, "damageReflex")))
+                this.addFightLog(fightContext, string.format("触发伤害反射，反射伤害%.2f = 原始伤害%.2f * 伤害反射%.2f", fanSheDamage, originDamage, getattrinfo(target, "damageReflex")))
                 table.insert(resultList, this.buildFightResult(target, actor, fanSheDamage, HurtType.FAN_SHE, 1, false, fightContext.fightLog))
             end
         end
-        --伤害反弹几率触发
+
         local fanTanDamage = 0
         if this.SelectRate(getattrinfo(target, "damageRebound")) then
             if castType == MapObjectType.MONSTER then
-                --反弹伤害=怪物最大攻击力
                 fanTanDamage = maxDC
             elseif castType == MapObjectType.PLAYER then
-                --反弹伤害=受击方受到的伤害
                 fanTanDamage = originDamage
             end
             this.addFightLog(fightContext, string.format("触发伤害反弹，反弹伤害=%.2f", fanTanDamage))
         else
             this.addFightLog(fightContext, "未触发伤害反弹")
         end
+
         if fanTanDamage > 0 then
             local fanTanDamageAfterShield, shield2 = this.calShild(target, actor, fanTanDamage, fightContext)
             if shield2 > 0 then
@@ -310,154 +287,14 @@ function this.ExcuseFightDamage(actor, paramMap)
         totalCasterHurtAfterShield = totalCasterHurtAfterShield + fanSheDamageAfterShield
     end
 
-    -- 后处理原始伤害
-    this.afterCalcuDamageBeforeShield(actor, target, castType, targetType, totalTargetHurtBeforeShield)
-    this.afterCalcuDamageBeforeShield(target, actor, targetType, castType, totalCasterHurtBeforeShield)
-
-    -- 被攻击(不含反射反弹)处理
-    this.beAttacked(target, actor, targetType, castType)
-
     return resultList
 end
 
-function this.canHit(actor, fightContext)
-    local castType = fightContext.castType
-    local targetType = fightContext.targetType
-    local target = fightContext.target
-
-    -- 检查是否攻击自己的宠物
-    if this.IsSelfPet(actor, target) then
-        this.addFightLog(fightContext, "攻击自己宠物无效")
-        return false
-    end
-
-    -- 检查PK值是否可以攻击
-    if not this.pkValueCanHit(actor, castType, targetType) then
-        return false
-    end
-
-    -- 检查是否在和平线
-    if this.isPeaceLine(actor, castType, targetType) then
-        return false
-    end
-
-
-    -- 检查攻城战是否可以攻击
-    if not RolandSeige.CanAttackRolandWall(actor, target, castType, targetType) then
-        return false
-    end
-
-    -- 检查命中率
-    if this.selectHitRate(fightContext) == false then
-        this.addFightLog(fightContext, "未命中！")
-        return false
-    end
-
-    -- 所有验证通过
-    return true
-end
-
-function this.calculateSkillDamageAdd(actor, fightContext, originDamage)
-    local killerType = getbaseinfo(actor, "mapobjecttype")
-    if tonumber(killerType) ~= MapObjectType.PLAYER then
-        return originDamage
-    end
-    local skillExtraDamageAdd = string.tonumber(getattrinfo(actor, "skillExtraDamageAdd"))
-    if skillExtraDamageAdd < 1 then
-        return originDamage
-    end
-    -- 从global获取技能蓝量消耗配置 "技能id#扣除蓝量|技能id#扣除蓝量"
-    local configStr = ConfigDataManager.getGlobal(920002)
-    
-    local skillMpCostMap = string.toIntIntMap(configStr, "#", "|")
-    if table.isEmpty(skillMpCostMap) then
-        return originDamage
-    end
-
-    local skillId = string.tonumber(fightContext.skillId)
-    local mpCost = skillMpCostMap[skillId]
-    if mpCost == nil or mpCost < 1 then
-        return originDamage
-    end
-    local currentMp = getbaseinfo(actor, "mp")
-    if currentMp < mpCost then
-        return originDamage
-    end
-
-    -- 扣除蓝量
-    local newMp = currentMp - mpCost
-    setmp(actor, newMp)
-
-    -- 应用伤害加成
-    originDamage = originDamage + skillExtraDamageAdd
-    this.addFightLog(fightContext, string.format("总伤害%.2f=%.2f + %.2f", originDamage, originDamage - skillExtraDamageAdd, skillExtraDamageAdd))
-end
-
-function this.calSkillDamagPro(actor, powerIncrese, injuryType)
-    local skillDamagPro = getattrinfo(actor, "skillDamagPro")
-    -- 职业技能攻击力提升比例 = 属性转化(职业技能攻击力提升比例) + 40% * 战斗威力加成	
-    return skillDamagPro + 0.4 * powerIncrese
-end
+--私服拓展 1.03H无已移除：calculateSkillDamageAdd、calSkillDamagPro、beAttacked、afterCalcuDamageBeforeShield、UpdateFightTask
 
 function this.isPeaceLine(actor, castType, targetType)
-    if castType == MapObjectType.PLAYER and targetType == MapObjectType.PLAYER then
-        local dupInfo = getduplicate(getbaseinfo("unimapid"))
-        if dupInfo == nil then
-            -- 获取当前地图ID和线路
-            local mapId = getbaseinfo(actor, "mapid")
-            local line = getbaseinfo(actor, "line")
-
-            -- 检查当前地图线路是否为和平线路
-            local peaceLines = ConfigDataManager.getTableValue("cfg_map_line", "peaceline", "id", mapId)
-
-            if not string.isNullOrEmpty(peaceLines) then
-                local peaceLineList = string.split(peaceLines, "#")
-                for _, peaceLine in pairs(peaceLineList) do
-                    if tonumber(line) == tonumber(peaceLine) then
-                        return true
-                    end
-                end
-            end
-        end
-    end
-
+    --私服拓展 1.03H无和平线PK限制，直接返回false
     return false
-end
-
-function this.beAttacked(selfActor, caster, selfType, castType)
-    if selfType == MapObjectType.PLAYER then
-        local nowSec = getbaseinfo(selfActor, "nowsec")
-        local rate = getattrinfo(selfActor, "shengminghuifuRate")
-        if this.SelectRate(rate) then
-            local oldEndTime = getplaydef(selfActor, "@be_attacked_recover_hp_cd") or 0
-            if nowSec >= oldEndTime then
-                -- 被攻击回满血
-                local maxHP = getattrinfo(selfActor, "maxhp")
-                local cd = ConfigDataManager.getTableValue("cfg_global", "value", "id", "510001")
-                setplaydef(selfActor, "@be_attacked_recover_hp_cd", nowSec + tonumber(cd))
-                sethp(selfActor, maxHP)
-            end
-        end
-
-        if this.SelectRate(getattrinfo(selfActor, "probabilityOfBeingAttackedAndFullyRestoringMagicPoints")) then
-            local oldEndTime = getplaydef(selfActor, "@be_attacked_recover_mp_cd") or 0
-            if nowSec >= oldEndTime then
-                -- 被攻击回满蓝
-                local maxHP = getattrinfo(selfActor, "maxmp")
-                local cd = ConfigDataManager.getTableValue("cfg_global", "value", "id", "510002")
-                setplaydef(selfActor, "@be_attacked_recover_mp_cd", nowSec + tonumber(cd))
-                setmp(selfActor, maxHP)
-            end
-        end
-    end
-end
-
-function this.afterCalcuDamageBeforeShield(caster, target, castType, targetType, targetHurtBeforeShield)
-    if castType == MapObjectType.PLAYER and targetType == MapObjectType.MONSTER then
-        local monsterId = getbaseinfo(target, "configid")
-        -- 保存战盟boos造成伤害的玩家
-        WarAlliance.savePlayerInvloveInfo(caster, target, targetHurtBeforeShield, monsterId)
-    end
 end
 
 ---@param fightContext FightContext
@@ -542,34 +379,27 @@ function this.selectHitRate(fightContext)
     local target = fightContext.target
     local castType = fightContext.castType
     local targetType = fightContext.targetType
-
     local hitRate, missRate
 
-    -- 根据攻击者和受击者类型确定使用的属性
     if castType == MapObjectType.MONSTER or targetType == MapObjectType.MONSTER then
-        -- PvE战斗使用hitRate和missRate属性
         hitRate = getattrinfo(caster, "hitRate")
         missRate = getattrinfo(target, "missRate")
     else
-        -- PvP战斗使用pvpattackRate和eraRate属性
         hitRate = getattrinfo(caster, "attackRatePK")
         missRate = getattrinfo(target, "eraRatePK")
     end
-    this.addFightLog(fightContext, "攻击率为" .. hitRate .. ", 目标防御率为" .. missRate)
-    -- 计算命中概率
+    this.addFightLog(fightContext, "攻击率为" .. (hitRate or 0) .. ", 目标防御率为" .. (missRate or 0))
+
     local probability
     if hitRate > missRate then
         probability = 1 - missRate / hitRate
     else
-        -- 命中率过低时设置标记，并使用固定30%概率
         fightContext.isLowHitRate = true
         probability = 0.3
-        -- 对于人打怪且命中率过低的情况，直接判定为未命中
         if castType ~= MapObjectType.MONSTER and targetType == MapObjectType.MONSTER then
             return false
         end
     end
-
     return this.SelectRate(probability)
 end
 
@@ -640,37 +470,22 @@ function this.GetDCBySkill(paramMap)
         local minMC = getattrinfo(caster, "minimumCurseAttackPower")
         return minMC, maxMC, 3
     else
+        local minDC = getattrinfo(caster, "minDC")
         local maxDC = getattrinfo(caster, "maxDC")
-        local maxMC = getattrinfo(caster, "maxMC")
-        local maxCurDC = getattrinfo(caster, "maximumCurseAttackPower")
-        if maxDC >= maxMC and maxDC >= maxCurDC then
-            local minDC = getattrinfo(caster, "minDC")
-            return minDC, maxDC, injuryType
-        elseif maxMC >= maxDC and maxMC >= maxCurDC then
-            local minMC = getattrinfo(caster, "minMC")
-            return minMC, maxMC, injuryType
-        elseif maxCurDC >= maxDC and maxCurDC >= maxMC then
-            local minCurDC = getattrinfo(caster, "minimumCurseAttackPower")
-            return minCurDC, maxCurDC, injuryType
-        end
-        return 0, 0, injuryType
+        return minDC, maxDC, injuryType
     end
 end
 
 function this.DupFixDamage(originDamage, paramMap)
-    local caster = paramMap.caster
-    local targetType = paramMap.targettype
-    if targetType == MapObjectType.MONSTER then
-        if RolandSeige.IsPlayerInRoland(caster) then
-            return 1
-        end
-    end
     return originDamage
 end
 
 function this.addFightLog(fightContext, text)
     isDebug = isDebug or getenv("debug")
     if isDebug then
+        if #fightContext.fightLog == 0 then
+            table.insert(fightContext.fightLog, "===战斗计算模块 V1.0 复刻MU1.03H原版===\n")
+        end
         table.insert(fightContext.fightLog, text .. "\n")
     end
 end
@@ -683,7 +498,7 @@ function this.buildFightResult(caster, target, targetHurt, hurtType, repeatTimes
     result["targethurt"] = math.ceil(targetHurt)
     result["hurttype"] = hurtType
     result["repeat"] = repeatTimes
-    result["targethurtshow"] = math.ceil(targetHurt) --飘字体用的伤害
+    result["targethurtshow"] = math.ceil(targetHurt)
     result["fightLog"] = fightLog == nil and {} or fightLog
     return result
 end
@@ -696,42 +511,45 @@ function this.buildSheildResult(caster, target, shiled)
     result["targethurt"] = 0
     result["hurttype"] = HurtType.HU_DUN
     result["repeat"] = 1
-    result["targethurtshow"] = shiled --飘字体用的伤害
+    result["targethurtshow"] = shiled
     result["fightLog"] = {}
     return result
 end
 
 ---玩家战斗触发
 function PlayerFight.AttackTrigger(actor, fightRet)
-    this.UpdateFightTask(actor, fightRet)
+    --私服拓展 1.03H无任务更新逻辑，空实现
 end
 
----更新战斗相关任务
-function this.UpdateFightTask(actor, fightRet)
-    local taskCfgList = ConfigDataManager.getTable("cfg_task_target", "taskgoaltype", TaskTargetType.HURT_MAP_MONSTER)
-    if table.isNullOrEmpty(taskCfgList) then
-        return
+---1.03H官服原生补充：检测双持单手武器
+function this.CheckDoubleHoldWeapon(actor, injuryType)
+    if injuryType ~= 1 then
+        return false
     end
-    local targetHurt = tonumber(fightRet["targethurt"])
-    local mapCfgId = tonumber(fightRet["mapcfgid"])
-    local targetCfgId = tonumber(fightRet["targetcfgid"])
-    local flush = false
-    for _, taskCfg in pairs(taskCfgList) do
-        local monsterLimit = tonumber(taskCfg["taskgoalparam"])
-        local mapLimit = tonumber(taskCfg["taskgoalparam2"])
-        if targetCfgId == monsterLimit and mapCfgId == mapLimit then
-            flush = true
-            break
-        end
+    --对接装备接口，判断左右手均为单手武器返回true
+    return false
+end
+
+---1.03H官服原生补充：检测小恶魔buff
+function this.CheckImpBuff(actor)
+    --对接buff接口，存在小恶魔buff返回true
+    return false
+end
+
+function this.canHit(actor, fightContext)
+    local castType = fightContext.castType
+    local targetType = fightContext.targetType
+    local target = fightContext.target
+    if this.IsSelfPet(actor, target) then
+        this.addFightLog(fightContext, "攻击自己宠物无效")
+        return false
     end
-    -- 触发刷新任务
-    if flush then
-        local taskParam = {
-            monsterid = targetCfgId,
-            mapid = mapCfgId,
-            hurt = targetHurt
-        }
-        -- 触发任务目标
-        TaskHandler.TriggerTaskGoal(actor, TaskTargetType.HURT_MAP_MONSTER, taskParam)
+    if not this.pkValueCanHit(actor, castType, targetType) then
+        return false
     end
+    if this.selectHitRate(fightContext) == false then
+        this.addFightLog(fightContext, "未命中！")
+        return false
+    end
+    return true
 end
