@@ -1,6 +1,7 @@
 --恶魔广场副本
 DevilSquare = {}
 
+DevilSquare.EXPSCORE_DIV = 5
 -- @description 客户端请求面板数据
 -- @param 玩家对象；请求参数
 -- @return
@@ -355,6 +356,18 @@ function DevilSquare.GenMonsterDevilSquare(mapId, genMonCfgId)
     DuplicateCommon.DupGenMonsterCommon(mapId, genMonCfgId)
 end
 
+function DevilSquare.IncreaseKillCount(actor, mapId)
+    local playerDupInfo = getplaydef(actor, DevilSquarePlayerConst.DEVIL_SQUARE_MAP_INFO)
+    if not playerDupInfo or playerDupInfo == "" then
+        return
+    end
+    local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
+    if killCount == nil or killCount <= 0 then
+        killCount = 0
+    end
+    killCount = killCount + 1
+    setplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT, killCount)
+end
 -- @description 击杀怪物
 -- @param 归属者;默认掉落经验；怪物配置id
 -- @return 经验值
@@ -374,14 +387,17 @@ function DevilSquare.KillMonterInDevilSquare(actor, mapId, monCfgId)
             end
             setenvirvar(mapId, DuplicateVarConst.DEVIL_SQUARE_STATE_KILL_COUNT, newCount)
         end
-        
-        -- 玩家击杀数量
-        local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
-        if killCount == nil or killCount <= 0 then
-            killCount = 0
+        local teamMembers = Team.GetAllMemberRids(actor)
+        if teamMembers == nil or #teamMembers <= 0 then
+            -- 玩家击杀数量
+            DevilSquare.IncreaseKillCount(actor, mapId)
+        else
+            info("玩家击杀数量 in ", mapId, " ", #teamMembers)
+            for _, memberRid in ipairs(teamMembers) do
+                local memberActor = getactor(actor, memberRid)
+                DevilSquare.IncreaseKillCount(memberActor, mapId)
+            end
         end
-        killCount = killCount + 1
-        setplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT, killCount)
     end
 end
 
@@ -393,6 +409,28 @@ function DevilSquare.AddExp(actor, mapId, exp)
     end
     killExp = killExp + exp
     setplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_EXP, killExp)
+    --处理组队经验
+    -- local teamMembers = Team.GetAllMemberRids(actor)
+    -- if teamMembers == nil or #teamMembers <= 0 then
+    --     -- 玩家杀怪经验
+    --     local killExp = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_EXP)
+    --     if killExp == nil or killExp <= 0 then
+    --         killExp = 0
+    --     end
+    --     killExp = killExp + exp
+    --     setplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_EXP, killExp)
+    --     return
+    -- end
+    -- local addExp = exp / #teamMembers
+    -- for _, member in ipairs(teamMembers) do
+    --     local memberActor = getactor(actor, member)
+    --     local memberExp = getplaydef(memberActor, DevilSquarePlayerConst.KILL_MONSTER_EXP)
+    --     if memberExp == nil or memberExp <= 0 then
+    --         memberExp = 0
+    --     end
+    --     memberExp = memberExp + addExp
+    --     setplaydef(memberActor, DevilSquarePlayerConst.KILL_MONSTER_EXP, memberExp)
+    -- end
 end
 
 -- @description 玩家副本结算
@@ -406,9 +444,9 @@ function DevilSquare.PlayerSettleMentDevilSquare(actor)
     local playerDupInfo = getplaydef(actor, DevilSquarePlayerConst.DEVIL_SQUARE_MAP_INFO)
     local configId = playerDupInfo[2]
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = killCount * score * scoreExp
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV)  * score * scoreExp
     -- 经验加成
-    totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
+    -- totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     -- 这里发放积分经验
     additemtobag(actor, ItemConfigId.EXP, totalScoreExp, 0, 9999, ItemActionProxy.DEMON_SQUARE)
     -- 活动剩余次数
@@ -483,7 +521,7 @@ function DevilSquare.ReqReciveRewardDevilSquare(actor, multipleCount)
     local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
     local configId = dupInfo[2]
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = killCount * score * scoreExp
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score * scoreExp
     totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     -- 副本进度任务刷新
     DuplicateCommon.FinishDupActivity(actor, configId)
@@ -581,10 +619,10 @@ function DevilSquare.ResDupTaskUpdate(actor, mapId)
     local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
     --通关奖励
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = killCount * score * scoreExp
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score * scoreExp
     totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     --击杀怪物积分
-    local killScore = killCount * score
+    local killScore = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score
 
     local response = {}
     response["wave"] = wave
