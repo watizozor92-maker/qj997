@@ -184,9 +184,11 @@ function this.ExcuseFightDamage(actor, paramMap)
         --1.03H官服原生补充：技能智力增伤倍率 (200+智力/10)%
         local intelligence = getattrinfo(actor, "intelligence")
         local intRate = (200 + intelligence / 10) / 100
+        local wingdamageRate = 0
         this.addFightLog(fightContext, string.format("技能智力增伤倍率%.2f", intRate))
         
         if castType == MapObjectType.PLAYER and targetType == MapObjectType.MONSTER then
+            wingdamageRate = getattrinfo(actor, "wingdamageRate")
             --玩家打怪 PVE原版公式 (finalDC - 怪物防御*0.7) * 技能倍率 *智力倍率 *双倍倍率
             local realArmor = armor * 0.7
             originDamage = (finalDC - realArmor) * skillPowerRate * intRate * shuangBeiMultiplier
@@ -199,6 +201,7 @@ function this.ExcuseFightDamage(actor, paramMap)
             
             this.addFightLog(fightContext, string.format("怪物打玩家伤害计算：max(0,%.2f-%.2f/2)=%.2f", finalDC, armor, originDamage))
         else
+            wingdamageRate = getattrinfo(actor, "wingdamageRate")
             --玩家打玩家 PVP原版 max(0,攻击-防御/2)*技能倍率*智力倍率*双倍倍率
             originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate * shuangBeiMultiplier
             this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：max(0,%.2f-%.2f/2)*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
@@ -207,7 +210,7 @@ function this.ExcuseFightDamage(actor, paramMap)
         local damageAbsorb = getattrinfo(target, "damageAbsorb")
         local damageDecrement = getattrinfo(target, "damageDecrement")
         originDamage = originDamage * skillDamagPro
-        originDamage = originDamage - damageAbsorb * originDamage - originDamage * damageDecrement
+        originDamage = originDamage - (damageAbsorb * originDamage) - (originDamage * damageDecrement) + (originDamage * wingdamageRate)
 
     end
 
