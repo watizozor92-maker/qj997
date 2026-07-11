@@ -20,6 +20,7 @@ local isDebug = nil
 ---@field isWuShiFangYu boolean 是否触发无视防御
 ---@field isShuangBeiYiJi boolean 是否触发双倍一击
 ---@field isComboSkill boolean 是否是连击技能
+---@field isFatalDamage boolean 是否触发致命一击
 ---@field fightLog table 战斗公式日志
 
 local HurtType = {
@@ -31,9 +32,11 @@ local HurtType = {
     ZHUO_YUE = 104,
     XING_YUN = 102,
     WU_SHI = 106,
+    ZHI_MING = 111,
     ZHUO_YUE_AND_SHUANG_BEI = 603,
     XING_YUN_AND_SHUANG_BEI = 602,
     WU_SHI_AND_SHUANG_BEI = 604,
+    ZHI_MING_AND_SHUANG_BEI = 605,--致命一击
     NOMAL_AND_SHUANG_BEI = 601,
     LIAN_JI = 301,
 }
@@ -150,13 +153,17 @@ function this.ExcuseFightDamage(actor, paramMap)
         elseif this.IsZhuoYueYiJi(actor, target) then
             fightContext.isZhuoYueYiJi = true
             --1.03H原版：卓越一击=大功*1.3
-            finalDC = maxDC * 1.3
+            finalDC = maxDC * 1.3 + this.GetZhuoyueYiJiDamage(actor)
             this.addFightLog(fightContext, string.format("卓越一击触发，攻击力%.2f=大攻%.2f*1.3", finalDC, maxDC))
         elseif this.IsXingYunYiJi(actor, target) then
             fightContext.isXinYunYiJi = true
             --1.03H原版幸运一击直接取最大攻击
-            finalDC = maxDC
+            finalDC = maxDC + this.GetXingyunYiJiDamage(actor)
             this.addFightLog(fightContext, string.format("幸运一击触发，攻击力%.2f=大攻%.2f", finalDC, maxDC))
+        elseif this.IsFatalDamage(actor, target) then--致命一击
+            fightContext.isFatalDamage = true
+            finalDC = maxDC * this.GetFatalDamage(actor)
+            this.addFightLog(fightContext, string.format("致命一击触发，攻击力%.2f=大攻%.2f", finalDC, maxDC))
         else
             finalDC = math.random(math.floor(minDC), math.floor(maxDC))
             this.addFightLog(fightContext, string.format("普通攻击，攻击力%.2f=(小攻%.2f~大攻%.2f)", finalDC, minDC, maxDC))
@@ -186,32 +193,35 @@ function this.ExcuseFightDamage(actor, paramMap)
         local intRate = (200 + intelligence / 10) / 100
         local wingdamageRate = 0
         this.addFightLog(fightContext, string.format("技能智力增伤倍率%.2f", intRate))
-        
+
         if castType == MapObjectType.PLAYER and targetType == MapObjectType.MONSTER then
             wingdamageRate = getattrinfo(actor, "wingdamageRate")
             --玩家打怪 PVE原版公式 (finalDC - 怪物防御*0.7) * 技能倍率 *智力倍率 *双倍倍率
             local realArmor = armor * 0.7
-            originDamage = (finalDC - realArmor) * skillPowerRate * intRate * shuangBeiMultiplier
+            originDamage = (finalDC - realArmor) * skillPowerRate * intRate
             this.addFightLog(fightContext, string.format("玩家打怪伤害计算：(%.2f-(%.2f*0.7))*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
-            info("打怪伤害："..originDamage)
+            -- info("打怪伤害："..originDamage)
         elseif castType == MapObjectType.MONSTER and targetType == MapObjectType.PLAYER then
             --怪打玩家 原版max(0,攻击-防御/2)  - 吸收伤害 * max(0,攻击-防御/2) - max(0,攻击-防御/2) * 减伤
-           
             originDamage = math.max(0, finalDC - armor / 2)
-            
             this.addFightLog(fightContext, string.format("怪物打玩家伤害计算：max(0,%.2f-%.2f/2)=%.2f", finalDC, armor, originDamage))
         else
             wingdamageRate = getattrinfo(actor, "wingdamageRate")
             --玩家打玩家 PVP原版 max(0,攻击-防御/2)*技能倍率*智力倍率*双倍倍率
-            originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate * shuangBeiMultiplier
+            originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate
             this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：max(0,%.2f-%.2f/2)*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
         end
         --计算减伤伤害
         local damageAbsorb = getattrinfo(target, "damageAbsorb")
-        local damageDecrement = getattrinfo(target, "damageDecrement")
-        originDamage = originDamage * skillDamagPro
+        local damageDecrement = getattrinfo(target, "damageDecrement")        
+
         originDamage = originDamage - (damageAbsorb * originDamage) - (originDamage * damageDecrement) + (originDamage * wingdamageRate)
 
+        originDamage = originDamage * skillDamagPro
+        --最后算双倍伤害倍率
+        if shuangBeiMultiplier > 1 then
+            originDamage = originDamage * shuangBeiMultiplier
+        end
     end
 
     -- 命中率过低伤害衰弱
@@ -310,6 +320,8 @@ function this.getHurtType(fightContext)
             hurtType = HurtType.ZHUO_YUE_AND_SHUANG_BEI
         elseif fightContext.isXinYunYiJi then
             hurtType = HurtType.XING_YUN_AND_SHUANG_BEI
+        elseif fightContext.isFatalDamage then
+            hurtType = HurtType.ZHI_MING_AND_SHUANG_BEI
         else
             hurtType = HurtType.NOMAL_AND_SHUANG_BEI
         end
@@ -320,6 +332,8 @@ function this.getHurtType(fightContext)
             hurtType = HurtType.ZHUO_YUE
         elseif fightContext.isXinYunYiJi then
             hurtType = HurtType.XING_YUN
+        elseif fightContext.isFatalDamage then
+            hurtType = HurtType.ZHI_MING
         else
             hurtType = HurtType.NOMAL
         end
@@ -343,6 +357,7 @@ function this.createFightContext(paramMap)
     fightContext.isWuShiFangYu = false
     fightContext.isShuangBeiYiJi = false
     fightContext.isComboSkill = false
+    fightContext.isFatalDamage = false
     fightContext.fightLog = {}
     return fightContext
 end
@@ -431,6 +446,11 @@ function this.IsZhuoYueYiJi(actor, target)
     return this.SelectRate(math.min(rate, maxRate))
 end
 
+function this.GetZhuoyueYiJiDamage(actor, _)
+    local damage = getattrinfo(actor, "excellentFixedDamage")
+    return damage
+end
+
 function this.IsXingYunYiJi(actor, target)
     local rate = getattrinfo(actor, "criticalDamageChance")
     local targetRate = getattrinfo(target, "criticalDamageResistanceChance")
@@ -439,11 +459,28 @@ function this.IsXingYunYiJi(actor, target)
     return this.SelectRate(math.min(rate, maxRate))
 end
 
+function this.GetXingyunYiJiDamage(actor, _)
+    local damage = getattrinfo(actor, "criticalFixedDamage")
+    damage = damage + getattrinfo(actor, "highatt")
+    return damage
+end
+
 function this.IsShuangBeiYiJi(actor, target)
     local rate = getattrinfo(actor, "doubleDamageChance")
     local targetRate = getattrinfo(target, "doubleDamageResistanceChance")
     rate = rate * (1 - targetRate)
     return this.SelectRate(rate)
+end
+
+function this.IsFatalDamage(actor, target)
+    local rate = getattrinfo(actor, "deadlyStrikeChance")
+    local targetRate = getattrinfo(target, "deadlyStrikeResistanceChance")
+    rate = rate * (1 - targetRate)
+    return this.SelectRate(rate)
+end
+
+function this.GetFatalDamage(_, _)
+    return 1.5
 end
 
 function this.SelectRate(probability)
