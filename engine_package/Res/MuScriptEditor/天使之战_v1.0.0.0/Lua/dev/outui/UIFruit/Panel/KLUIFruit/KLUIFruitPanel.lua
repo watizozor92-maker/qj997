@@ -1,3 +1,4 @@
+local items = require("dev.outui.Activity.Panel.KLGoldChallenge.KLGoldChallengePanelView").items
 ---@class KLUIFruitPanel:UIKmlLuaPanelBase
 ---@field view KLUIFruitPanelView
 ---@field FruitAttDataList table<number,cfg_fruit_column> @果实表信息
@@ -347,6 +348,20 @@ function this:FruitDataListItemCountFunc()
     return #self.allFruitDataList
 end
 
+---获取果实的物品信息
+function this:GetFruitItemInfo(index, itemCfgId, isUse)
+    if self.allFruitDataList[index].count > 0 and isUse then
+        local item = SL:MeData_GetCfgBaseOnItemId(itemCfgId)
+        if item then
+            SL:OpenTips("bag", itemCfgId, item.id, item.count >= 10 and 10 or item.count)
+            return true
+        end
+    else
+        SL:CommonItemGetPath(nil, itemCfgId)
+    end
+    return false
+end
+
 function this:FruitDataListItemGetFunc(realIndex)
     local index = realIndex + 1
     local data = {
@@ -358,17 +373,21 @@ function this:FruitDataListItemGetFunc(realIndex)
         itemcustomcount = self:GetFruitCountStr(self.allFruitDataList[index].count),
     }
     local item = GUI:Item_Create(self.view.FruitDataList, data)
-    GUI:AddOnClickEvent(item, self, function()
-        local cfgId = self.allFruitDataList[index].cfgId
+    GUI:AddOnClickEvent(item, self, function()        
         local isUse = self.isCanUse
         if not table.contains(self.firstAttTypeList,self.allFruitDataList[index].type) then
             isUse = true
         end
-        if self.allFruitDataList[index].count > 0 and isUse then
-            local item = SL:MeData_GetCfgBaseOnItemId(cfgId)
-            SL:OpenTips("bag", cfgId,item.id,self.allFruitDataList[index].count >= 10 and 10 or self.allFruitDataList[index].count)
+        local items = self.allFruitDataList[index].items
+        if items and #items > 0 then
+            for _, v in ipairs(items) do
+                if self:GetFruitItemInfo(index, tonumber(v), isUse) then
+                    break
+                end
+            end
         else
-            SL:CommonItemGetPath(nil,cfgId)
+            local cfgId = self.allFruitDataList[index].cfgId
+            self:GetFruitItemInfo(index, cfgId, isUse)
         end
     end)
     
@@ -402,7 +421,12 @@ end
 function this:GetBagAllFruit()
     self.allFruitDataList = {}
     for i, v in pairs(self.FruitAttDataList) do
-        table.insert(self.allFruitDataList,{cfgId = v.id,type = v.attribute,count = SL:GetBagItemCount(v.id)})
+        table.insert(self.allFruitDataList,{
+            cfgId = v.id,
+            type = v.attribute,
+            count = SL:GetBagItemCount(v.id),
+            items = v.itemids,
+        })
     end
     GUI:DataListUpdateData(self.view.FruitDataList)
 end
