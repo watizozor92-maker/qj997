@@ -1,4 +1,4 @@
-<uipanel id="KLSettlementPanel" name="副本结算界面" zindex="200" x="5" y="-90" z="-100" rotate="0,0,0" color="#00000000" onload="KmlBloodActivityUI/@结算界面初始化 " width="10" height="10" a="00" raycast="0">
+<uipanel id="KLSettlementPanel" name="副本结算界面" zindex="200" x="5" y="-90" z="-100" rotate="0,0,0" color="#00000000" onload="KmlBloodActivityUI/@结算界面初始化 " width="10" height="10" a="00" raycast="0" active="0" enable="0">
   <img id="bgClose" width="2000" height="2000" raycast="1" color="#FFFFFF00" onclick="KmlBloodActivityUI/@普通领取 " x="2" y="1" z="0" a="00" rotate="0,0,0">
   </img>
   <img id="bg" src="Texture/FG_chise2.png" scale9l="0" scale9r="0" scale9t="0" scale9b="0" width="536" height="540" z="0" a="01" rotate="0,0,0" raycast="1" x="1" y="383" atlas="">

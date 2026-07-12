@@ -180,7 +180,12 @@ function this:UpdateData(itemData,isDown, searchType)
         GUI:setVisible(self.view.icon_career, true)
         GUI:setVisible(self.view.icon_career_bg, true)
         local job = SL:GetMetaValue(EMetaVarGetKey.JOB)
-        GUI:Image_loadTexture(self.view.icon_career, "1" .. tostring(job), "Atlas/KLTradePanel.spriteatlas")
+        if job > 3 then
+            GUI:setVisible(self.view.icon_career, false)
+            GUI:setVisible(self.view.icon_career_bg, false)
+        else
+            GUI:Image_loadTexture(self.view.icon_career, "1" .. tostring(job), "Atlas/KLTradePanel.spriteatlas")
+        end
     else
         GUI:setVisible(self.view.icon_career, false)
         GUI:setVisible(self.view.icon_career_bg, false)

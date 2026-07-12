@@ -35,9 +35,12 @@
 local KLTradeHomePanelView = {}
 setmetatable(KLTradeHomePanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Panel/KLTradeHome/KLTradeHomePanelKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLTradeHomePanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTradeHomePanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Panel/KLTradeHome/KLTradeHomePanel']
+
 return KLTradeHomePanelView

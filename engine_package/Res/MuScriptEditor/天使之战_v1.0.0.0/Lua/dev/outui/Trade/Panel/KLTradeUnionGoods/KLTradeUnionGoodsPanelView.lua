@@ -1,16 +1,19 @@
 ---@class KLTradeUnionGoodsPanelView:UIKmlLuaViewBase
----@field img_48 UIKmlLuaControl
----@field text_49 UIKmlLuaControl
----@field text_50 UIKmlLuaControl
----@field text_51 UIKmlLuaControl
----@field text_52 UIKmlLuaControl
----@field osa_scrollview_union_goods UIKmlLuaControl
+---@field img_48 UIKmlLuaControlHandler
+---@field text_49 UIKmlLuaControlHandler
+---@field text_50 UIKmlLuaControlHandler
+---@field text_51 UIKmlLuaControlHandler
+---@field text_52 UIKmlLuaControlHandler
+---@field osa_scrollview_union_goods UIKmlLuaControlHandler
 local KLTradeUnionGoodsPanelView = {}
 setmetatable(KLTradeUnionGoodsPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Panel/KLTradeUnionGoods/KLTradeUnionGoodsPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLTradeUnionGoodsPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTradeUnionGoodsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Panel/KLTradeUnionGoods/KLTradeUnionGoodsPanel']
+
 return KLTradeUnionGoodsPanelView

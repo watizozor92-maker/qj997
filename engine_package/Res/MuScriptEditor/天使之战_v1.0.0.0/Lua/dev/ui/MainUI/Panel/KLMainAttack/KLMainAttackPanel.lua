@@ -506,7 +506,7 @@ function this:UpdateFormSkillUnlockState()
                     break
                 end
             end
-            SL:LogError("形态技能只解锁了一个，检查解锁等级")
+            --SL:LogError("形态技能只解锁了一个，检查解锁等级")
         end
         self:UpdateFormSkill()
     end

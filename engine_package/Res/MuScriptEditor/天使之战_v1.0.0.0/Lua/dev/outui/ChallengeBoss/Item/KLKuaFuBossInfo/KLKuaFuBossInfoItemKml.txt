@@ -3,8 +3,8 @@
     <img src="Texture/bg_challenge_boss_bg_area.png" width="719" height="440" x="128" y="-38" id="img_90">
     </img>
     <loopscrollview id="privilege_boss_select" width="267" height="420" a="11" x="26" y="-110" vertical="1" cellwidth="249" cellheight="79">
-        <datalist id="privilege_boss_level_data_list" databind="">
-        </datalist>
+      <datalist id="privilege_boss_level_data_list" databind="">
+      </datalist>
     </loopscrollview>
     <panel id="tequan_boss_right_panel" width="700" height="400" x="130" y="-43">
       <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="-148" y="180" id="img_94">
@@ -20,8 +20,8 @@
       <text id="dropTitleText" text="掉落奖励" x="102" y="186" height="20" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
       </text>
       <loopscrollview id="tequan_boss_select" width="302" height="137" x="218" y="88" vertical="1" cellwidth="67" cellheight="67">
-          <datalist id="privilege_boss_reward_data_list" databind="">
-          </datalist>
+        <datalist id="privilege_boss_reward_data_list" databind="">
+        </datalist>
       </loopscrollview>
       <text id="tipText" text="每天固定时间在神之国度内随机位置刷新\n击杀后可掉落珍贵道具" width="300" height="100" a="11" ta="00" x="400" y="-200" fontsize="18" mline="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
       </text>

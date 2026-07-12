@@ -21,7 +21,7 @@
               </item>
             </layout>
           </panel>
-          <img id="img_icon" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="recharge01" raycast="1" color="#FFFFFFFF" x="2" y="26" width="169" height="103">
+          <img id="img_icon" a="00" atlas="Atlas/UIBagPanel.spriteatlas" src="10020001" raycast="1" color="#FFFFFFFF" x="2" y="26" width="169" height="103">
           </img>
           <panel id="img_mask" a="00" atlas="Atlas/QJ5_UIShopMainPanel.spriteatlas" src="bg_count" width="190" height="33" raycast="1" x="0" y="-43">
             <img id="img_reward" a="00" active="0" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="icon_zuanshi" width="22" height="19" raycast="1" x="-13" y="1" color="#FFFFFFFF">

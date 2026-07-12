@@ -24,9 +24,12 @@
 local KLTradeGoodsItemView = {}
 setmetatable(KLTradeGoodsItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Item/KLTradeGoods/KLTradeGoodsItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLTradeGoodsItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTradeGoodsItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Item/KLTradeGoods/KLTradeGoodsItem']
+
 return KLTradeGoodsItemView

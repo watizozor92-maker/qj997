@@ -1,24 +1,27 @@
 ---@class KLUIMasterTalentCareerSwitchPanelView:UIKmlLuaViewBase
----@field MaskCloseButton UIKmlLuaControl
----@field BG UIKmlLuaControl
----@field Left UIKmlLuaControl
----@field img6 UIKmlLuaControl
----@field LeftText UIKmlLuaControl
----@field LeftConsume UIKmlLuaControl
----@field ConsumeItem UIKmlLuaControl
----@field ConsumeText UIKmlLuaControl
----@field LeftButton UIKmlLuaControl
----@field Right UIKmlLuaControl
----@field img7 UIKmlLuaControl
----@field RightButton UIKmlLuaControl
----@field CloseButton UIKmlLuaControl
----@field Title UIKmlLuaControl
+---@field MaskCloseButton UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field Left UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field LeftText UIKmlLuaControlHandler
+---@field LeftConsume UIKmlLuaControlHandler
+---@field ConsumeItem UIKmlLuaControlHandler
+---@field ConsumeText UIKmlLuaControlHandler
+---@field LeftButton UIKmlLuaControlHandler
+---@field Right UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
+---@field RightButton UIKmlLuaControlHandler
+---@field CloseButton UIKmlLuaControlHandler
+---@field Title UIKmlLuaControlHandler
 local KLUIMasterTalentCareerSwitchPanelView = {}
 setmetatable(KLUIMasterTalentCareerSwitchPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/MasterTalent/Panel/KLUIMasterTalentCareerSwitch/KLUIMasterTalentCareerSwitchPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLUIMasterTalentCareerSwitchPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUIMasterTalentCareerSwitchPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/MasterTalent/Panel/KLUIMasterTalentCareerSwitch/KLUIMasterTalentCareerSwitchPanel']
+
 return KLUIMasterTalentCareerSwitchPanelView

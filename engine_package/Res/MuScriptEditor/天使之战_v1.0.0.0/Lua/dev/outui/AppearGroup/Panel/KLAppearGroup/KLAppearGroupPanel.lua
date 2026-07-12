@@ -6,15 +6,15 @@ local this = KLAppearGroupPanel
 ---@type table<E_FashionType,UIKmlLuaControl>
 local togs = {}
 local togToPanel = {
-    [E_FashionType.Appear] = "dev/outui/AppearGroup/Panel/KLAppear/KLAppearPanel",
     [E_FashionType.Title] = "dev/outui/AppearGroup/Panel/KLTitle/KLTitlePanel",
+    [E_FashionType.Appear] = "dev/outui/AppearGroup/Panel/KLAppear/KLAppearPanel",
     [E_FashionType.TransferRing] = "dev/outui/AppearGroup/Panel/KLTransferRing/KLTransferRingPanel",
     [E_FashionType.Change] = "dev/outui/AppearGroup/Panel/KLSuit/KLSuitPanel",
     [E_FashionType.Render] = "dev/outui/AppearGroup/Panel/KLRender/KLRenderPanel",
 }
 local togTitle = {
-    [E_FashionType.Appear] = "外观",
     [E_FashionType.Title] = "称号",
+    [E_FashionType.Appear] = "外观",
     [E_FashionType.TransferRing] = "首饰",
     [E_FashionType.Change] = "幻化",
     [E_FashionType.Render] = "染色",
@@ -23,8 +23,8 @@ local togTitle = {
 ---创建时调用一次
 function this:Init()
 
-    togs[E_FashionType.Appear] = self.view.TogAppear
     togs[E_FashionType.Title] = self.view.TogTitle
+    togs[E_FashionType.Appear] = self.view.TogAppear
     togs[E_FashionType.TransferRing] = self.view.TogBox
     togs[E_FashionType.Change] = self.view.TogChange
     togs[E_FashionType.Render] = self.view.TogRender
@@ -41,13 +41,13 @@ end
 ---创建或者刷新界面数据时调用
 function this:Refresh()
     SL.HideMainPanel()
-    local page = self.args or E_FashionType.Appear
+    local page = self.args or E_FashionType.Title
 
     if self.args and type(self.args) == "table" then
         page = self.args.type
         self.isFromBag = self.args.isFromBag
     else
-        page = self.args or E_FashionType.Appear
+        page = self.args or E_FashionType.Title
         self.isFromBag = false
     end
 

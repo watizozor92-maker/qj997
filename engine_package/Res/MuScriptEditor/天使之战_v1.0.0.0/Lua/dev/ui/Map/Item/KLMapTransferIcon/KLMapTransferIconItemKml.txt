@@ -1,4 +1,6 @@
 <uipanel id="KLMapTransferIconItem" name="地图传送点模板" width="48" height="57" zindex="-1" rotate="0,0,45">
-    <img src="img_minimap__gate_old" atlas="Atlas/UIMapPanel.spriteatlas" width="48" height="57" />
-    <text text="名称" id="txt_name" fontsize="16" outlinecolor="#000000" outlinesize="1" y="-30" />
+  <img src="img_minimap__gate_old" atlas="Atlas/UIMapPanel.spriteatlas" width="48" height="57" id="img_301">
+  </img>
+  <text text="名称" id="txt_name" fontsize="16" outlinecolor="#000000" outlinesize="1" y="-30">
+  </text>
 </uipanel>

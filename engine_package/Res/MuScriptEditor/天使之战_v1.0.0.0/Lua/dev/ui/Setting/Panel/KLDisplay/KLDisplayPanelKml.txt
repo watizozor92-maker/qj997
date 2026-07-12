@@ -131,7 +131,7 @@
               </button>
             </layout>
           </img>
-          <panel id="panel1" a="00" width="350" height="50" x="1" y="133">
+          <panel id="panel1" a="00" width="350" height="50" x="1" y="133" active="0" enable="0">
             <text id="text7" a="10" text="视野距离" fontsize="18" height="22" width="80" ta="01" outline="1" horwrap="1" fontstyle="0" outlinesize="1" underline="0" color="#FFFFFFFF" x="60" y="1" deltax="0.5" deltay="0.1" outlinecolor="#000000FF">
             </text>
             <img id="img7" a="00" width="169" height="17" raycast="1" src="img_bg_progress" atlas="Atlas/FG_Common.spriteatlas" x="53" y="-1" scale9l="146" scale9b="0" scale9r="172" scale9t="0">

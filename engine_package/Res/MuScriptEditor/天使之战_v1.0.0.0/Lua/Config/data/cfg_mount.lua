@@ -58,10 +58,7 @@
 ---@field display number @是否显示在坐骑图鉴中 column=25 Y
 
 local local_attribute = {
-    attribute_1={{200041,40},{311012,1200},{313012,600}},
-    attribute_2={{200041,50},{311012,2000},{313012,1000}},
-    attribute_3={{303012,200},{303022,200},{303042,200},{303062,200}},
-    attribute_4={{200011,18},{200021,30},{305012,2000}},
+    attribute_1={},
 
 }
 
@@ -77,43 +74,43 @@ local local_rotation = {
 
 local cfg_mount =
 {
-	{id=1, name="独角兽", type=1, icon="21600001", itemId=21600001, speed=500, attribute={{200011,6},{200021,10}}, mountId=1, scale=0.04, scale2=1, horizontal=-15, height=0.2, around=-35, motion=1, rotation={0,-90,270}},
-	{id=2, name="彩云兽", type=1, icon="21600002", itemId=21600002, speed=600, attribute={{200011,9},{200021,15},{207011,666},{206011,6}}, mountId=2, scale=1.4, scale2=40, horizontal=0, height=1.4, motion=2},
-	{id=3, type=2, itemId=21600003, speed=500, attribute={{200011,18},{200021,30},{305012,200}}, mountId=3, replaceMount={{1,32},{2,30},{3,31},{4,4},{5,5},{6,6}}},
-	{id=4, name="雷刃炎狼兽", type=2, icon="21600012", itemId=21600004, speed=800, attribute={{200011,18},{200021,30},{305012,200},{325012,500}}, mountId=4},
-	{id=5, name="乌狼兽", type=2, icon="21600013", itemId=21600005, attribute=local_attribute.attribute_1, mountId=5, motion=13},
-	{id=6, name="金狼兽", type=2, icon="21600014", itemId=21600006, attribute=local_attribute.attribute_2, mountId=6},
-	{id=7, name="黑王马", icon="21600015", itemId=21900001, speed=500, attribute={{200041,20},{311012,500}}, mountId=7, horizontal=-1, height=2.7, motion=4},
-	{id=8, name="幽灵马", icon="21600016", itemId=21900002, speed=500, attribute={{200041,30},{311012,800},{313012,300}}, mountId=8, scale2=1, horizontal=-0.5, height=4.2, motion=4},
-	{id=9, name="黄金马", icon="21600017", itemId=21900003, speed=500, attribute=local_attribute.attribute_1, mountId=9, scale2=1, horizontal=-0.5, height=4.2, motion=4},
-	{id=10, name="白焰马", icon="21600018", itemId=21900004, speed=500, attribute=local_attribute.attribute_2, mountId=8, scale2=1, horizontal=-0.5, height=4.2, motion=4},
-	{id=11, name="皇家铠马", icon="21600016", itemId=21600015, speed=600, attribute={{207011,1000},{305022,200},{312112,200}}, mountId=8, horizontal=-1.5, height=4.2, motion=4, limitedtype=1, limitedtime=24},
-	{id=12, name="金龙", icon="21600020", itemId=21600019, speed=1300, attribute={{200011,30},{200021,50},{303012,500}}, mountId=11, scale2=24, horizontal=0, height=2.6, motion=113},
-	{id=13, name="白虎", icon="21600020", itemId=21600007, speed=600, attribute={{200011,4},{200021,6},{207011,66},{206011,6}}, mountId=12, horizontal=0, height=2.2, motion=114},
-	{id=14, name="熊猫", icon="21600023", itemId=21600023, attribute={{200011,9},{200021,15},{206011,6},{311212,100},{319032,300}}, mountId=13, horizontal=-1.6, height=2.2, motion=114},
+	{id=1, name="独角兽", type=1, icon="21600001", itemId=21600001, speed=500, mountId=1, scale=0.04, scale2=1, horizontal=-15, height=0.2, around=-35, motion=1, rotation={0,-90,270}},
+	{id=2, name="彩云兽", type=1, icon="21600002", itemId=21600002, speed=600, mountId=2, scale=1.4, scale2=40, horizontal=0, height=1.4, motion=2},
+	{id=3, type=2, itemId=21600003, speed=500, mountId=3, replaceMount={{1,32},{2,30},{3,31},{4,4},{5,5},{6,6}}},
+	{id=4, name="雷刃炎狼兽", type=2, icon="21600012", itemId=21600004, speed=800, mountId=4},
+	{id=5, name="乌狼兽", type=2, icon="21600013", itemId=21600005, mountId=5, motion=13},
+	{id=6, name="金狼兽", type=2, icon="21600014", itemId=21600006, mountId=6},
+	{id=7, name="黑王马", icon="21600015", itemId=21900001, speed=500, mountId=7, horizontal=-1, height=2.7, motion=4},
+	{id=8, name="幽灵马", icon="21600016", itemId=21900002, speed=500, mountId=8, scale2=1, horizontal=-0.5, height=4.2, motion=4},
+	{id=9, name="黄金马", icon="21600017", itemId=21900003, speed=500, mountId=9, scale2=1, horizontal=-0.5, height=4.2, motion=4},
+	{id=10, name="白焰马", icon="21600018", itemId=21900004, speed=500, mountId=8, scale2=1, horizontal=-0.5, height=4.2, motion=4},
+	{id=11, name="皇家铠马", icon="21600016", itemId=21600015, speed=600, mountId=8, horizontal=-1.5, height=4.2, motion=4, limitedtype=1, limitedtime=24},
+	{id=12, name="金龙", icon="21600020", itemId=21600019, speed=1300, mountId=11, scale2=24, horizontal=0, height=2.6, motion=113},
+	{id=13, name="白虎", icon="21600020", itemId=21600007, speed=600, mountId=12, horizontal=0, height=2.2, motion=114},
+	{id=14, name="熊猫", icon="21600023", itemId=21600023, mountId=13, horizontal=-1.6, height=2.2, motion=114},
 	{id=15, name="星冥龙", icon="21600030", itemId=21600030, speed=1500, mountId=14, scale2=24, horizontal=-0.5, height=3.4, motion=113},
-	{id=16, name="雪鹿", icon="21600041", itemId=21600041, speed=800, attribute={{305012,300},{305022,300}}, mountId=15, horizontal=-0.5, height=2.6, motion=114},
-	{id=17, name="白毛狮王", icon="21600043", itemId=21600043, speed=1200, attribute={{303012,300},{303022,300}}, mountId=16, horizontal=-0.7, height=1.6, motion=114, display=1},
-	{id=18, name="冥焰马", icon="21600045", itemId=21600045, speed=800, attribute={{304012,300},{304022,300}}, mountId=17, horizontal=-0.5, height=3, motion=114},
+	{id=16, name="雪鹿", icon="21600041", itemId=21600041, speed=800, mountId=15, horizontal=-0.5, height=2.6, motion=114},
+	{id=17, name="白毛狮王", icon="21600043", itemId=21600043, speed=1200, mountId=16, horizontal=-0.7, height=1.6, motion=114, display=1},
+	{id=18, name="冥焰马", icon="21600045", itemId=21600045, speed=800, mountId=17, horizontal=-0.5, height=3, motion=114},
 	{id=19, name="草泥马", icon="21600047", itemId=21600047, speed=1200, mountId=18, horizontal=-0.8, motion=115, display=1},
 	{id=20, name="大蝎子", icon="21600049", itemId=21600049, speed=1200, mountId=19, scale2=25, horizontal=-1.5, height=2.2, motion=115},
 	{id=21, name="黄金天马", type=2, icon="21600051", itemId=21600051, speed=1200, mountId=20, horizontal=-0.8, height=3.2, motion=114, display=1},
 	{id=22, name="狮鹫", icon="21600053", itemId=21600053, speed=1200, mountId=21, horizontal=0, height=2.8, motion=114, display=1},
 	{id=23, name="水乌龟", icon="21600055", itemId=21600055, speed=1200, mountId=22, horizontal=-1, height=1.2, motion=115, display=1},
-	{id=24, name="午夜", icon="21600057", itemId=21600057, attribute={}, mountId=7, horizontal=-1.5, height=3.4, motion=4, limitedtype=1, limitedtime=168, display=1},
-	{id=25, name="绿林狂蝎", icon="21600059", itemId=21600059, attribute={{305042,500},{305062,500}}, mountId=24, horizontal=0.7, height=2.8, motion=115},
-	{id=26, name="冻土冰狼", icon="21600060", itemId=21600060, attribute={{303042,500},{303062,500}}, mountId=25, horizontal=-1.5, height=2.8, motion=119},
-	{id=27, name="星穹泽风", type=2, icon="21600061", itemId=21600061, attribute={{305042,1000},{305062,1000}}, mountId=26, horizontal=-0.75, height=3.8, motion=121},
-	{id=28, name="灵珀蜗天", type=2, icon="21600062", itemId=21600062, speed=1200, attribute={{303042,1000},{303062,1000}}, mountId=27, horizontal=0, height=-1.8, motion=122, rotation={90,-270,180}},
-	{id=29, name="碧霄瑶光", icon="21600063", itemId=21600063, speed=1200, attribute={{304042,1000},{304062,1000}}, mountId=28, horizontal=-1, height=-2.6, motion=123, rotation={180,-270,180}, display=1},
-	{id=30, itemId=0, speed=500, attribute=local_attribute.attribute_4, mountId=29},
-	{id=31, itemId=0, speed=800, attribute=local_attribute.attribute_4, mountId=30},
-	{id=32, itemId=0, speed=800, attribute={{200011,18},{200021,30},{305012,20000}}, mountId=31},
-	{id=33, name="破坏炎狼兽", type=2, icon="21600013", itemId=21600105, attribute={{200021,80},{200011,80},{311022,1200}}, mountId=5, motion=13},
-	{id=34, name="守护炎狼兽", type=2, icon="21600014", itemId=21600106, attribute={{206011,100},{311022,1200}}, mountId=6},
+	{id=24, name="午夜", icon="21600057", itemId=21600057, mountId=7, horizontal=-1.5, height=3.4, motion=4, limitedtype=1, limitedtime=168, display=1},
+	{id=25, name="绿林狂蝎", icon="21600059", itemId=21600059, mountId=24, horizontal=0.7, height=2.8, motion=115},
+	{id=26, name="冻土冰狼", icon="21600060", itemId=21600060, mountId=25, horizontal=-1.5, height=2.8, motion=119},
+	{id=27, name="星穹泽风", type=2, icon="21600061", itemId=21600061, mountId=26, horizontal=-0.75, height=3.8, motion=121},
+	{id=28, name="灵珀蜗天", type=2, icon="21600062", itemId=21600062, speed=1200, mountId=27, horizontal=0, height=-1.8, motion=122, rotation={90,-270,180}},
+	{id=29, name="碧霄瑶光", icon="21600063", itemId=21600063, speed=1200, mountId=28, horizontal=-1, height=-2.6, motion=123, rotation={180,-270,180}, display=1},
+	{id=30, itemId=0, speed=500, mountId=29},
+	{id=31, itemId=0, speed=800, mountId=30},
+	{id=32, itemId=0, speed=800, mountId=31},
+	{id=33, name="破坏炎狼兽", type=2, icon="21600013", itemId=21600105, mountId=5, motion=13},
+	{id=34, name="守护炎狼兽", type=2, icon="21600014", itemId=21600106, mountId=6},
 }
 
-local defaults = {name="炎狼兽", type=3, icon="21600011", speed=1000, attribute={{303012,200},{303022,200},{303042,200},{303062,200}}, skillID=0, skillLevel=0, mountEquip=0, replaceMount={}, scale=1, scale2=30, horizontal=-1.3, height=2.5, around=0, motion=60004, area=0, hpp=2.5, limitedtype=0, limitedtime=0, rotation={0,-90,180}, ridingEffect=60001, display=0}
+local defaults = {name="炎狼兽", type=3, icon="21600011", speed=1000, attribute={}, skillID=0, skillLevel=0, mountEquip=0, replaceMount={}, scale=1, scale2=30, horizontal=-1.3, height=2.5, around=0, motion=60004, area=0, hpp=2.5, limitedtype=0, limitedtime=0, rotation={0,-90,180}, ridingEffect=60001, display=0}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_mount) do
 	setmetatable(v, mt)

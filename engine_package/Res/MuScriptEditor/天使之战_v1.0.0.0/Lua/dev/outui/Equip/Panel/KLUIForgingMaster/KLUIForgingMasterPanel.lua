@@ -18,7 +18,7 @@ function this:Init()
         return self:DataListItemInit(realIndex)
     end, function(realIndex, kmlControl)
         return self:DataListItemUpdate(realIndex)
-    end)
+    end)       
 end
 
 ---注册UI事件和服务器消息
@@ -115,7 +115,11 @@ function this:AddData(cfg, targetLevel, levels)
     }
     if self.count == 0 then
         data.current = targetLevel
-        data.total = cfg.lv
+        if SL:MeData_GetCareer().baseCareer == 4 then
+            data.total = 6
+        else            
+            data.total = 7
+        end   
     else
         local current = 0
         for i, v in pairs(cfg.strPartId) do
@@ -124,7 +128,12 @@ function this:AddData(cfg, targetLevel, levels)
             end
         end
         data.current = current
-        data.total = table.count(cfg.strPartId)
+        --data.total = table.count(cfg.strPartId)
+        if SL:MeData_GetCareer().baseCareer == 4 then            
+            data.total = 6
+        else            
+            data.total = 7
+        end    
     end
     
     table.insert(self.datas, data)

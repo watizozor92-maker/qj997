@@ -1,22 +1,25 @@
 ---@class KLMountInfoItemView:UIKmlLuaViewBase
----@field selectToggle UIKmlLuaControl
----@field select UIKmlLuaControl
----@field model_item_bg UIKmlLuaControl
----@field mountIcon UIKmlLuaControl
----@field item_model UIKmlLuaControl
----@field tipClick UIKmlLuaControl
----@field mountName UIKmlLuaControl
----@field wear_mount_icon UIKmlLuaControl
----@field endTime UIKmlLuaControl
----@field gainTip UIKmlLuaControl
----@field activeTip UIKmlLuaControl
----@field red UIKmlLuaControl
+---@field selectToggle UIKmlLuaControlHandler
+---@field select UIKmlLuaControlHandler
+---@field model_item_bg UIKmlLuaControlHandler
+---@field mountIcon UIKmlLuaControlHandler
+---@field item_model UIKmlLuaControlHandler
+---@field tipClick UIKmlLuaControlHandler
+---@field mountName UIKmlLuaControlHandler
+---@field wear_mount_icon UIKmlLuaControlHandler
+---@field endTime UIKmlLuaControlHandler
+---@field gainTip UIKmlLuaControlHandler
+---@field activeTip UIKmlLuaControlHandler
+---@field red UIKmlLuaControlHandler
 local KLMountInfoItemView = {}
 setmetatable(KLMountInfoItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Mount/Item/KLMountInfo/KLMountInfoItemKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLMountInfoItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLMountInfoItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Mount/Item/KLMountInfo/KLMountInfoItem']
+
 return KLMountInfoItemView

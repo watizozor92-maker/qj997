@@ -1,13 +1,13 @@
 <uipanel id="KLMonthCardNewPanelKml" a="00" width="584" height="750" x="83" y="-19">
   <img id="img1" a="00" width="1334" height="750" raycast="1" color="#FFFFFF00" x="0" y="0">
   </img>
-  <img id="img4" a="00" width="434" height="544" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="-21" y="0">
+  <img id="img4" a="00" width="392" height="507" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="-33" y="19">
   </img>
-  <img id="Bg" a="00" width="447" height="578" raycast="1" atlas="" src="Texture/FG_dankuangdi2.png" y="3" scale9l="185" scale9b="216" scale9r="173" scale9t="208" x="-15">
-    <img id="img5" a="00" width="414" height="474" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="10" scale9b="19" scale9r="18" scale9t="21" x="-12" y="-29">
+  <img id="Bg" a="00" width="410" height="541" raycast="1" atlas="" src="Texture/FG_dankuangdi2.png" y="23" scale9l="185" scale9b="216" scale9r="173" scale9t="208" x="-33">
+    <img id="img5" a="00" width="415" height="474" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="10" scale9b="19" scale9r="18" scale9t="21" x="2" y="-37">
     </img>
-    <img id="left" a="11" width="434" height="486" raycast="1" atlas="" src="Texture/FG_monthcardBG2.png" x="-3" y="-72" moveto="0,0,0">
-      <scrollview id="content_scroll2" x="64" y="-100" z="0" width="305" height="184" vertical="1" a="11">
+    <img id="left" a="11" width="401" height="486" raycast="1" atlas="" src="Texture/bg_monthCard_s.png" x="9" y="-70" moveto="0,0,0" color="#FFFFFF00">
+      <scrollview id="content_scroll2" x="76" y="-38" z="0" width="305" height="184" vertical="1" a="11">
         <layout id="content_layout_scroll2" vertical="1" x="0" y="0" width="350" a="10" cella="10" space="10" contentsizefitter="1" control_height="1">
           <datalist id="contentlist2">
             <layout id="preview_tittle_layout2" width="350" height="10" paddingleft="16" cella="11" control_height="1">
@@ -32,11 +32,11 @@
         </img>
       </button>
     </img>
-    <img id="right" a="11" width="434" height="486" raycast="1" atlas="" src="Texture/FG_monthcardBG1.png" x="4" y="-76" active="0" enable="0">
-      <scrollview id="content_scroll" x="60" y="-134" z="0" width="340" height="166" vertical="1" a="11">
+    <img id="right" a="11" width="392" height="486" raycast="1" atlas="" src="Texture/FG_monthcardBG1.png" x="4" y="-75" active="0" enable="0">
+      <scrollview id="content_scroll" x="17" y="-93" z="0" width="340" height="166" vertical="1" a="11">
         <layout id="content_layout_scroll" vertical="1" x="0" y="0" width="350" a="10" cella="10" space="10" contentsizefitter="1" control_height="1">
           <datalist id="contentlist">
-            <layout id="preview_tittle_layout" width="350" height="10" paddingleft="16" cella="11" control_height="1">
+            <layout id="preview_tittle_layout" width="346" height="10" paddingleft="16" cella="11" control_height="1" deltax="151">
               <text id="preview_tittle" text="开启时间" fontsize="18" color="#FAD994FF" fonttype="" outlinecolor="#000000FF" width="350" outline="1" horwrap="1" outlinesize="1">
                 <img id="preciew_icon_img1" a="11" x="-18" y="-3" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" control_height="1">
                 </img>
@@ -53,7 +53,7 @@
       </text>
       <button id="btn_rightBuy1" a="10" width="113" height="41" onclick="" text="立即购买" raycast="1" x="78" y="-133" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" scale9l="31" scale9b="14" scale9r="25" scale9t="16">
         <img id="img2" a="00" width="112" height="26" raycast="1" src="bg_shijiandi" atlas="Atlas/FG_MonthCardPanel.spriteatlas" y="-39">
-          <text id="RightTimeText1" a="00" text="持续：30天" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="1" outlinesize="1" outlinecolor="#000000FF">
+          <text id="RightTimeText1" a="00" text="持续：30天" fontsize="18" height="27" width="350" ta="11" outline="1" horwrap="1" y="-6" outlinesize="1" outlinecolor="#000000FF" x="52">
           </text>
         </img>
       </button>
@@ -66,15 +66,15 @@
     </img>
     <button id="btn_close" a="21" width="46" height="46" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-22" y="-17">
     </button>
-    <text id="title" a="01" text="月卡特权" fontsize="20" height="25" space="0" width="200" ta="11" outline="0" horwrap="1" x="0" y="-37" color="#ffffffff" outlinesize="1" outlinecolor="#000000FF">
+    <text id="title" a="01" text="畅玩卡特权" fontsize="20" height="25" space="0" width="203" ta="11" outline="0" horwrap="1" x="2" y="-29" color="#ffffffff" outlinesize="1" outlinecolor="#000000FF">
     </text>
-    <img id="img6" a="00" width="161" height="27" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="268">
+    <img id="img6" a="00" width="160" height="30" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="262" x="2" offsetmin="-78#247" offsetmax="82#277" moveto="">
     </img>
   </img>
-  <panel id="effectRoot" a="00" width="796" height="750" zindex="801" z="-800" x="-94" y="-1">
+  <panel id="effectRoot" a="00" width="796" height="750" zindex="801" z="-800" x="-78" y="-2">
     <effect id="effect1" effectid="10002" effecttype="1" mscale="1,1,1" width="300" height="300" active="0" x="34" y="10">
     </effect>
-    <effect id="effect2" effectid="10003" effecttype="1" mscale="1,1,1" width="300" height="300" active="0">
+    <effect id="effect2" effectid="10003" effecttype="1" mscale="1,1,1" width="300" height="300" active="0" x="0" y="0">
     </effect>
   </panel>
 </uipanel>

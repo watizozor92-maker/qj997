@@ -262,12 +262,6 @@ EMetaVarSetKey = {
     ---@param rid number
     ---@param mountId number
     SET_PLAYER_MOUNTID = "SET_PLAYER_MOUNTID", --设置玩家当前骑乘的坐骑id
-    --- 设置距离
-    ---@param distance number 相机距离
-    SET_CAMERA_DISTANCE = "SET_CAMERA_DISTANCE", --设置相机距离
-    ---是否普攻技能使用
-    ---@return EAutoOnHookStatus 是否普攻技能使用
-    SET_ONHOOK_COMMID_STATE = "SET_ONHOOK_COMMID_STATE", --设置是否使用普攻技能
 }
 
 
@@ -1575,22 +1569,15 @@ EMetaVarGetKey = {
     ---获取挂机状态
     ---@return EAutoOnHookStatus 挂机状态
     GET_ONHOOK_STATE = "GET_ONHOOK_STATE", --获取挂机状态
-    ---是否普攻技能使用
-    ---@return EAutoOnHookStatus 是否普攻技能使用
-    GET_ONHOOK_COMMID_STATE = "GET_ONHOOK_COMMID_STATE", --获取是否使用普攻技能
-    
     --- 获取玩家当前骑乘的坐骑id
     ---@param rid number
     ---@return number
-    GET_PLAYER_MOUNTID = "GET_PLAYER_MOUNTID", --获取玩家当前骑乘的坐骑id    
-    --- 相机距离
-    ---@return number 
-    GET_CAMERA_DISTANCE = "GET_CAMERA_DISTANCE", --获取相机距离
+    GET_PLAYER_MOUNTID = "GET_PLAYER_MOUNTID", --获取玩家当前骑乘的坐骑id
     ---获取主角装备穿戴栏
     ---@return number[] @穿戴栏 cfg_career表careerWearBar字段
     GET_OPEN_WEARBARS = "GET_OPEN_WEARBARS", --获取玩家职业的穿戴栏
     --- 根据属性类型获取玩家的强化，追加属性值
-    ---@param type string 属性类型
+    ---@param type
     ---@return number
     GET_STRENGTH_ADD_ATTRIBUTE = "GET_STRENGTH_ADD_ATTRIBUTE", --根据属性类型获取玩家的属性值
     ---根据属性名获取对应cfg_att_conversion表信息（不推荐使用,建议直接外置读表）

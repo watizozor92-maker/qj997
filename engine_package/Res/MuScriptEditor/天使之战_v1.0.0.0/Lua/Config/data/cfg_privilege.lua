@@ -41,8 +41,8 @@ local local_privilege = {
 
 local cfg_privilege =
 {
-	{id=72, name="畅玩卡", type=2, minType=12, item=30031062, buff=30000013, time=43200, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
-	{id=73, name="黄金卡(1天)", type=2, minType=12, item=30031063, buff=30000014, time=1440, privilege=local_privilege.privilege_1, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
+	{id=73, name="畅玩卡", type=2, minType=12, item=30031062, buff=30000013, time=43200, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
+	{id=72, name="黄金卡(1天)", type=2, minType=12, item=30031063, buff=30000014, time=43200, privilege=local_privilege.privilege_1, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
 	{id=74, name="黄金卡(30天)", type=2, minType=12, item=30031064, buff=30000014, time=43200, privilege=local_privilege.privilege_1, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
 }
 

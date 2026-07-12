@@ -112,7 +112,7 @@ end
 
 function this:CreatButtonOnClick(control)
     ---先做已创建人物数量判断
-    if #SL.LoginManager:GetLoginRes_Role() < 5 then
+    if #SL.LoginManager:GetLoginRes_Role() < 4 then
         self:ShowChooseRole()
     else
         self.isAll = true

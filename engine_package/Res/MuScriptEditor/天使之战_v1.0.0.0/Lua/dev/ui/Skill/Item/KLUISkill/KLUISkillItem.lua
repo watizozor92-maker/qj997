@@ -28,8 +28,8 @@ function this:UpdateUI(skillId, luaIndex)
     if cacheSkill then
         if cacheSkill.unLock then
             GUI:Text_setString(self.view.Level,"Lv." .. cacheSkill.level)
-            GUI:SetActive(self.view.Lock,false)
-        else
+            GUI:SetActive(self.view.Lock,false)            
+        else           
             GUI:Text_setString(self.view.Level,"")
             GUI:SetActive(self.view.Lock,true)
         end

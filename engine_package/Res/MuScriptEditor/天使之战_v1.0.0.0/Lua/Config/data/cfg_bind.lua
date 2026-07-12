@@ -9,13 +9,13 @@
 ---[[客户端不使用]]@field   @ column=4 D
 local cfg_bind =
 {
-	{id=1, remark="系统发放"},
-	{id=2, remark="怪物掉落", bind=0},
+	{id=1, remark="系统发放", bind=1},
+	{id=2, remark="怪物掉落"},
 	{id=3, remark="任务"},
 	{id=4, remark="首饰任务"},
-	{id=5, remark="商城购买"},
+	{id=5, remark="商城购买", bind=1},
 	{id=6, remark="功能预告"},
-	{id=7, remark="交易行购买", bind=0},
+	{id=7, remark="交易行购买"},
 	{id=8, remark="狼魂要塞"},
 	{id=9, remark="赤色要塞"},
 	{id=10, remark="每日目标"},
@@ -27,7 +27,7 @@ local cfg_bind =
 	{id=16, remark="勇士任务"},
 }
 
-local defaults = {bind=1}
+local defaults = {bind=0}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_bind) do
 	setmetatable(v, mt)

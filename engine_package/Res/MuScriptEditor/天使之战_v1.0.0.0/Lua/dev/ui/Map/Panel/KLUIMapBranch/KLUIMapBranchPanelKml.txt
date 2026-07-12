@@ -1,8 +1,8 @@
-<uipanel id="KLUIMapBranchPanel" name="地图分线界面" width="1334" height="750" zindex="200" raycast="1" x="0" y="0" h5x="2" h5y="3">
-  <img id="img2" a="00" atlas="" src="Texture/FG_ty_bg_oneFrameBotton_N2.jpg" width="514" height="488" raycast="1" x="0" y="-27" scale9l="9" scale9b="8" scale9r="10" scale9t="11" active="1">
+<uipanel id="KLUIMapBranchPanel" name="地图分线界面" width="1334" height="750" zindex="200" raycast="0" x="0" y="0" h5x="2" h5y="3">
+  <img id="img2" a="00" atlas="" src="Texture/FG_ty_bg_oneFrameBotton_N2.jpg" width="379" height="444" raycast="0" x="2" y="-26" scale9l="9" scale9b="8" scale9r="10" scale9t="11" active="1">
   </img>
-  <img src="bg_bottom2" width="534" height="554" y="0" scale9b="78" scale9l="188" scale9r="157" scale9t="126" raycast="1" id="img_522" x="0" atlas="Atlas/FG_Common.spriteatlas">
-    <img src="img_interface_main009" width="500" height="452" y="-37" scale9b="13" scale9l="7" scale9r="11" scale9t="8" raycast="1" id="img1" x="1" atlas="Atlas/Common.spriteatlas" active="1">
+  <img src="bg_bottom2" width="400" height="531" y="0" scale9b="78" scale9l="188" scale9r="157" scale9t="126" raycast="0" id="img_522" x="0" atlas="Atlas/FG_Common.spriteatlas">
+    <img src="img_interface_main009" width="392" height="469" y="-37" scale9b="13" scale9l="7" scale9r="11" scale9t="8" raycast="1" id="img1" x="1" atlas="Atlas/Common.spriteatlas" active="1">
       <img id="img4" a="11" atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" raycast="1" x="11" y="-5" active="0">
         <text id="currentLine_txt" a="10" text="当前线路：%d" fontsize="18" height="25" width="157" color="#FFFFFF" ta="01" horwrap="1" x="30" y="1" outline="0">
         </text>
@@ -10,25 +10,25 @@
       <text id="allLine_txt" a="21" text="线路总数：%d" fontsize="18" height="25" width="108" color="#FFFFFF" ta="21" horwrap="1" x="-18" y="-5" outline="0" active="0">
       </text>
     </img>
-    <img atlas="Atlas/UIMapPanel.spriteatlas" src="txt_title_changelu" y="252" id="img_523" a="" x="-2" width="131" height="56" active="0">
+    <img atlas="Atlas/UIMapPanel.spriteatlas" src="txt_title_changelu" y="231" id="img_523" a="" x="1" width="131" height="56" active="0">
     </img>
-    <text id="text1" a="02" text="*PK线路内击杀其他玩家不增加罪恶值" fontsize="18" height="25" width="634" ta="11" horwrap="1" x="1" y="41" color="#FFFFFF" fonttype="" active="0" outline="0">
+    <text id="text1" a="02" text="*PK线路内击杀其他玩家不增加罪恶值" fontsize="18" height="25" width="340" ta="11" horwrap="1" x="1" y="41" color="#FFFFFF" fonttype="" active="0" outline="0">
     </text>
     <button id="redName_btn" atlas="Atlas/Common.spriteatlas" src="btn_common6" textcolor="#FFFFFF" width="100" y="-222" text="红名系统" outlinesize="1" outlinecolor="0" raycast="1" active="0" x="162" height="40">
     </button>
-    <text id="text4" a="00" text="切换路线" fontsize="20" height="58" width="350" ta="11" outline="0" horwrap="1" x="0" y="230" outlinesize="0" outlinecolor="#000000FF" color="#FFFFFF">
+    <text id="text4" a="00" text="切换路线" fontsize="20" height="58" width="350" ta="11" outline="0" horwrap="1" x="-2" y="223" outlinesize="0" outlinecolor="#000000FF" color="#FFFFFF">
     </text>
-    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" x="0" y="0" raycast="1" width="75" height="69" h5x="-311" h5y="246" a="21">
+    <img id="closeBtn" atlas="Atlas/Common.spriteatlas" src="button_interface_close5" x="11" y="7" raycast="1" width="75" height="69" h5x="-311" h5y="246" a="21">
     </img>
   </img>
-  <togglegroup id="switch_branch_togglegroup" y="-35" a="00" width="492" height="424" x="0" deltax="0.5">
-    <scrollview id="scrollview1" a="00" width="485" height="424" vertical="1" y="0" raycast="1" x="0">
+  <togglegroup id="switch_branch_togglegroup" y="-35" a="00" width="401" height="418" x="0" deltax="0.5">
+    <scrollview id="scrollview1" a="00" width="389" height="453" vertical="1" y="0" raycast="1" x="0">
       <gridview id="branch_layout" width="485" cellwidth="424" cellheight="61" raycast="1" height="427" cella="11" contentsizefitter="1" spacey="17" spacex="0" paddingtop="17" paddingbottom="17" vertical="0" constraint="1" constraintcount="1" paddingleft="33">
       </gridview>
     </scrollview>
   </togglegroup>
   <togglegroup id="topBtnGroup" y="42" a="00" x="-65">
-    <layout id="layout2" width="393" height="40" vertical="0" space="1" cella="11" x="15" y="161" contentsizefitter="0" control_width="0" control_height="0" expand_width="0" active="0">
+    <layout id="layout2" width="393" height="40" vertical="0" space="1" cella="11" x="68" y="153" contentsizefitter="0" control_width="0" control_height="0" expand_width="0" active="0">
       <toggle id="normal_toggle" width="130" height="40" color="#D6D6D6FF" default="1" togglegroup_id="topBtnGroup" atlas="Atlas/FG_Common.spriteatlas" onclick="" src="btn_dingyeqian2" pimg="btn_dingyeqian1" raycast="1" ison="1">
         <text id="text3" a="00" text="普通地图" fontsize="18" height="25" width="100" ta="11" horwrap="1" x="1" y="0" outline="0" color="#FFFFFF">
         </text>

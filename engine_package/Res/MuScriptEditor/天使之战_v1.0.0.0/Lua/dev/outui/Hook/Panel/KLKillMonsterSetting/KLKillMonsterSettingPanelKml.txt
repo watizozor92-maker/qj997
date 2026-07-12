@@ -76,6 +76,10 @@
           <text id="text2" a="00" text="杀怪范围" fontsize="18" height="22" width="87" ta="01" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="16" color="#DBE0E6FF" fontstyle="0" underline="0" y="3">
           </text>
         </img>
+        <text id="NoNAtt" a="00" text="开启普攻" fontsize="18" height="22" width="98" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="64" y="120" fontstyle="0" underline="0" color="#DBE0E6FF">
+          <button id="noAttackBtn" a="00" width="68" height="34" onclick="" text="" raycast="1" src="btn_fatener_no" atlas="Atlas/KLHookHepler.spriteatlas" mimg="" pimg="" dimg="" x="76" y="0">
+          </button>
+        </text>
       </img>
       <img id="topNode" width="372" height="135" raycast="1" src="" atlas="" color="#FFFFFF00" active="1" y="-44" x="-54">
         <layout id="layout20" control_height="0" contentsizefitter="1" vertical="0" height="29" width="500" a="01" raycast="1" x="5" y="-85" space="-8">

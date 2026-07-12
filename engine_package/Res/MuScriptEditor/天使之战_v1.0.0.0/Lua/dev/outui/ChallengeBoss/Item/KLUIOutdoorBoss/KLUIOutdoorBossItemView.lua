@@ -28,9 +28,12 @@
 local KLUIOutdoorBossItemView = {}
 setmetatable(KLUIOutdoorBossItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/ChallengeBoss/Item/KLUIOutdoorBoss/KLUIOutdoorBossItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLUIOutdoorBossItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUIOutdoorBossItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/ChallengeBoss/Item/KLUIOutdoorBoss/KLUIOutdoorBossItem']
+
 return KLUIOutdoorBossItemView

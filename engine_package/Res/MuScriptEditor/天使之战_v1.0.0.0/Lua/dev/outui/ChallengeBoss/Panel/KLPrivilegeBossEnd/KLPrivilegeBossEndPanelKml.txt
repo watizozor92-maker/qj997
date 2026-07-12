@@ -1,4 +1,6 @@
 <uipanel id="KLPrivilegeBossEndPanel" name="特权boss结束界面" x="0" y="240" width="300" height="200" zindex="101" onload="">
-    <img id="" atlas="Atlas/UIMessagePanel.spriteatlas" src="xs_btn_4" width="170" height="30" />
-    <countdown id="end_time" text="结束倒计时{0}" time=""  formattype="3" fontSize="20" color="#FF2323" outlineSize="1" outlineColor="0" active="1"/>
+  <img id="img_107" atlas="Atlas/UIMessagePanel.spriteatlas" src="xs_btn_4" width="170" height="30">
+  </img>
+  <countdown id="end_time" text="结束倒计时{0}" time="" formattype="3" fontsize="20" color="#FF2323" outlinesize="1" outlinecolor="0" active="1">
+  </countdown>
 </uipanel>

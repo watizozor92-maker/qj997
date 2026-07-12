@@ -52,29 +52,22 @@
 ---0表示全职业
 ---@field careerLimit IntListList @职业限制 column=13 M
 
-local local_postTask = {
-    postTask_1={666610},
-
-}
-
 local local_careerLimit = {
-    careerLimit_1={{0}},
+    careerLimit_1={{1,1},{2,1},{3,1},{7,1},{6,1}},
+    careerLimit_2={{1,2},{2,2},{3,2},{7,2}},
 
 }
 
 local cfg_task_career =
 {
-	{order=1, id=666601, title="一转任务1接取", npcGet=100307, diaLogGet="是否接取一转任务1，开始完成一转转职之旅", levelMin=150, preTask={{"checkBagItem[10010001]>=1000000"}}, postTask={666602}},
+	{order=1, id=666601, title="一转任务1接取", npcGet=100307, diaLogGet="是否接取一转任务1，开始完成一转转职之旅，需要100万金币才能领取。", levelMin=150, preTask={{"checkBagItem[10010001]>=1000000"}}, postTask={666602}},
 	{order=2, id=666603, title="一转任务2接取", npcGet=100307, diaLogGet="是否接取一转任务2，开始完成一转转职之旅", levelMin=150, preTask={{"checkFinishTask[666602]"}}},
-	{order=3, id=666605, title="二转任务1接取", npcGet=100114, diaLogGet="是否接取二转任务1，开始完成二转转职之旅", levelMin=220, postTask={666606}},
-	{order=4, id=666607, title="二转任务2接取", npcGet=100114, diaLogGet="是否接取二转任务2，开始完成二转转职之旅", levelMin=220, preTask={{"checkFinishTask[666606]"}}, postTask={666608}, careerLimit={{1,1}}},
-	{order=5, id=666609, title="三转任务1接取", diaLogGet="是否接取三转任务1，开始完成三转转职之旅", levelMin=380, preTask={{"checkFinishTask[666608]&checkBagItem[10010001]>=5000000"}}, postTask=local_postTask.postTask_1, careerLimit={{1,2}}},
-	{order=6, id=6666091, title="三转任务1接取", diaLogGet="是否接取三转任务1，开始完成三转转职之旅", levelMin=380, preTask={{"checkFinishTask[666606]&checkBagItem[10010001]>=5000000"}}, postTask=local_postTask.postTask_1, careerLimit={{2,2},{3,2}}},
-	{order=7, id=666611, title="三转任务2接取", diaLogGet="是否接取三转任务2，开始完成三转转职之旅", levelMin=400, preTask={{"checkFinishTask[666610]&checkBagItem[10010001]>=7000000"}}, postTask={666612,60666121,60666122}},
-	{order=8, id=666613, title="三转任务3接取", diaLogGet="是否接取三转任务3，开始完成三转转职之旅", levelMin=400, preTask={{"checkFinishTask[666612]&checkBagItem[10010001]>=10000000"}}, postTask={666614}},
+	{order=3, id=666605, title="二转任务1接取", npcGet=100114, diaLogGet="是否接取二转任务1，开始完成二转转职之旅，需要300万金币才能领取。", levelMin=220, postTask={666606}, careerLimit=local_careerLimit.careerLimit_2},
+	{order=4, id=666607, title="二转任务2接取", npcGet=100114, diaLogGet="是否接取二转任务2，开始完成二转转职之旅", levelMin=220, preTask={{"checkFinishTask[666606]"}}, postTask={666608}, careerLimit=local_careerLimit.careerLimit_2},
+	{order=5, id=666609, title="三转任务1接取", npcGet=100902, diaLogGet="是否接取三转任务1，开始完成三转转职之旅，需要1000万金币才能领取。", levelMin=380, preTask={{"checkBagItem[10010001]>=10000000"}}, postTask={666610}, careerLimit={{1,3},{2,3},{3,3},{5,3},{7,3},{4,1},{6,2}}},
 }
 
-local defaults = {uiTitleType=4, npcGet=100902, levelMax=0, preTask={{"(checkFinishTask[6666041]&checkBagItem[10010001]>=3000000)"},{"(checkFinishTask[6666042]&checkBagItem[10010001]>=3000000)"},{"(checkFinishTask[6666043]&checkBagItem[10010001]>=3000000)"}}, postTask={6666041,6666042,6666043}, careerLimit={{0}}}
+local defaults = {uiTitleType=4, levelMax=0, preTask={{"(checkFinishTask[6666041]&checkBagItem[10010001]>=3000000)"},{"(checkFinishTask[6666042]&checkBagItem[10010001]>=3000000)"},{"(checkFinishTask[6666043]&checkBagItem[10010001]>=3000000)"}}, postTask={6666041,6666042,6666043}, careerLimit={{1,1},{2,1},{3,1},{7,1},{6,1}}}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_task_career) do
 	setmetatable(v, mt)

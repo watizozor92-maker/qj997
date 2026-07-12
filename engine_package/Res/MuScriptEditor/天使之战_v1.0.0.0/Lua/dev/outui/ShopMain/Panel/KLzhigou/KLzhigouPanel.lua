@@ -179,6 +179,7 @@ function this:Close()
         SL:UnSchedule(self.refreshTimer)
         self.refreshTimer = nil
     end
+    --GUI:UIPanel_Close("dev/outui/ShopMain/Panel/KLzhigou/KLzhigouPanel")
 end
 function this:OnClickcloseBtn()
     GUI:UIPanel_Close("dev/outui/ShopMain/Panel/KLzhigou/KLzhigouPanel")    

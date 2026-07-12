@@ -94,11 +94,19 @@ function this:RefreshUI(parm,role)
     if self.parm and self.parm.role then
         local baseCareer = self.parm.role.career.baseCareer
         local src = "1" .. baseCareer
-        GUI:Image_loadTexture(self.view.icon, src, "Atlas/MUIcon.spriteatlas")
+        if baseCareer == 7 then
+            GUI:Image_loadTexture(self.view.icon,"177","Atlas/FG_AttrPanel.spriteatlas")
+        else            
+            GUI:Image_loadTexture(self.view.icon, src, "Atlas/MUIcon.spriteatlas")
+        end
     elseif is_player then
         local baseCareer = role.data.career.baseCareer
         local src = "1" .. baseCareer
-        GUI:Image_loadTexture(self.view.icon, src, "Atlas/MUIcon.spriteatlas")
+        if baseCareer == 7 then
+            GUI:Image_loadTexture(self.view.icon,"177","Atlas/FG_AttrPanel.spriteatlas")
+        else            
+            GUI:Image_loadTexture(self.view.icon, src, "Atlas/MUIcon.spriteatlas")
+        end
     else
         local cdfId = role.data.serverData.cfgId
         local src = SL:GetConfig("cfg_monster", cdfId).icon

@@ -2,51 +2,51 @@
   <prefab path="Kml/KmlPrefab/Cookbook/KmlSettingUI/KmlHookSettingUI.prefab" a="20" x="54" y="-22" z="0" width="10" height="10" rotate="0,0,0" id="prefab_794">
     <toggle id="ScopeOfMonster1" bind="ScopeOfMonster1" default="1" onclick="KmlSettingUI/@攻击范围设置 1">
     </toggle>
-    <toggle id="planToggle2" bind="towPlan" togglegroup_id="planToggleGroup" onclick="KmlSettingUI/@挂机技能方案选择 2">
-    </toggle>
-    <toggle id="planToggle1" bind="onePlan" togglegroup_id="planToggleGroup" onclick="KmlSettingUI/@挂机技能方案选择 1">
-    </toggle>
-    <togglegroup id="planToggleGroup" bind="planToggleGroup">
-    </togglegroup>
-    <text id="skillLevel" bind="skillLevel" outline="1" horwrap="1">
-    </text>
-    <text id="skillName" bind="skillName" outline="1" horwrap="1">
-    </text>
-    <img id="skillIcon" bind="skillIcon">
-    </img>
-    <button id="CallSkillBtn" bind="CallSkillBtn" onclick="KmlSettingUI/@召唤技能设置">
-    </button>
-    <panel id="callSkill" bind="callSkill" active="">
-    </panel>
-    <input id="comebackTime" type="1" bind="comebackTime" mincount="0" maxcount="99999999999" text="10" onchange="KmlSettingUI/@返回挂机点时间设置">
-    </input>
-    <toggle id="combackHookPoint" bind="combackHookPoint" default="0" onclick="KmlSettingUI/@返回挂机点 1" oncancel="KmlSettingUI/@返回挂机点 0">
-    </toggle>
-    <toggle id="combackAtk" bind="combackAtk" default="0" onclick="KmlSettingUI/@自动反击 true" oncancel="KmlSettingUI/@自动反击 false">
-    </toggle>
-    <text id="mpTxt" bind="mpTxt" outline="" horwrap="">
-    </text>
-    <text id="hpTxt" bind="hpTxt" outline="1" horwrap="1">
-    </text>
-    <slider id="mpSlider" bind="mpSlider" width="180" height="13" curvalue="50" minvalue="0" maxvalue="100" onchange="KmlSettingUI/@吃蓝瓶设置">
-    </slider>
-    <slider id="hpSlider" bind="hpSlider" width="180" height="13" curvalue="50" minvalue="0" maxvalue="100" onchange="KmlSettingUI/@吃血瓶设置">
-    </slider>
-    <toggle id="ScopeOfMonster8" bind="ScopeOfMonster8" default="0" onclick="KmlSettingUI/@攻击范围设置 8">
-    </toggle>
-    <toggle id="ScopeOfMonster7" bind="ScopeOfMonster7" default="0" onclick="KmlSettingUI/@攻击范围设置 7">
-    </toggle>
-    <toggle id="ScopeOfMonster6" bind="ScopeOfMonster6" default="0" onclick="KmlSettingUI/@攻击范围设置 6">
-    </toggle>
-    <toggle id="ScopeOfMonster5" bind="ScopeOfMonster5" default="0" onclick="KmlSettingUI/@攻击范围设置 5">
-    </toggle>
-    <toggle id="ScopeOfMonster4" bind="ScopeOfMonster4" default="0" onclick="KmlSettingUI/@攻击范围设置 4">
-    </toggle>
-    <toggle id="ScopeOfMonster3" bind="ScopeOfMonster3" default="0" onclick="KmlSettingUI/@攻击范围设置 3">
+    <toggle id="ScopeOfMonster2" bind="ScopeOfMonster2" default="0" onclick="KmlSettingUI/@攻击范围设置 2">
     </toggle>
     <text id="explain" bind="explain" active="1" outline="1" horwrap="1">
     </text>
-    <toggle id="ScopeOfMonster2" bind="ScopeOfMonster2" default="0" onclick="KmlSettingUI/@攻击范围设置 2">
+    <toggle id="ScopeOfMonster3" bind="ScopeOfMonster3" default="0" onclick="KmlSettingUI/@攻击范围设置 3">
+    </toggle>
+    <toggle id="ScopeOfMonster4" bind="ScopeOfMonster4" default="0" onclick="KmlSettingUI/@攻击范围设置 4">
+    </toggle>
+    <toggle id="ScopeOfMonster5" bind="ScopeOfMonster5" default="0" onclick="KmlSettingUI/@攻击范围设置 5">
+    </toggle>
+    <toggle id="ScopeOfMonster6" bind="ScopeOfMonster6" default="0" onclick="KmlSettingUI/@攻击范围设置 6">
+    </toggle>
+    <toggle id="ScopeOfMonster7" bind="ScopeOfMonster7" default="0" onclick="KmlSettingUI/@攻击范围设置 7">
+    </toggle>
+    <toggle id="ScopeOfMonster8" bind="ScopeOfMonster8" default="0" onclick="KmlSettingUI/@攻击范围设置 8">
+    </toggle>
+    <slider id="hpSlider" bind="hpSlider" width="180" height="13" curvalue="50" minvalue="0" maxvalue="100" onchange="KmlSettingUI/@吃血瓶设置">
+    </slider>
+    <slider id="mpSlider" bind="mpSlider" width="180" height="13" curvalue="50" minvalue="0" maxvalue="100" onchange="KmlSettingUI/@吃蓝瓶设置">
+    </slider>
+    <text id="hpTxt" bind="hpTxt" outline="1" horwrap="1">
+    </text>
+    <text id="mpTxt" bind="mpTxt" outline="" horwrap="">
+    </text>
+    <toggle id="combackAtk" bind="combackAtk" default="0" onclick="KmlSettingUI/@自动反击 true" oncancel="KmlSettingUI/@自动反击 false">
+    </toggle>
+    <toggle id="combackHookPoint" bind="combackHookPoint" default="0" onclick="KmlSettingUI/@返回挂机点 1" oncancel="KmlSettingUI/@返回挂机点 0">
+    </toggle>
+    <input id="comebackTime" type="1" bind="comebackTime" mincount="0" maxcount="99999999999" text="10" onchange="KmlSettingUI/@返回挂机点时间设置">
+    </input>
+    <panel id="callSkill" bind="callSkill" active="">
+    </panel>
+    <button id="CallSkillBtn" bind="CallSkillBtn" onclick="KmlSettingUI/@召唤技能设置">
+    </button>
+    <img id="skillIcon" bind="skillIcon">
+    </img>
+    <text id="skillName" bind="skillName" outline="1" horwrap="1">
+    </text>
+    <text id="skillLevel" bind="skillLevel" outline="1" horwrap="1">
+    </text>
+    <togglegroup id="planToggleGroup" bind="planToggleGroup">
+    </togglegroup>
+    <toggle id="planToggle1" bind="onePlan" togglegroup_id="planToggleGroup" onclick="KmlSettingUI/@挂机技能方案选择 1">
+    </toggle>
+    <toggle id="planToggle2" bind="towPlan" togglegroup_id="planToggleGroup" onclick="KmlSettingUI/@挂机技能方案选择 2">
     </toggle>
     <panel id="ContainerContent" bind="ContainerContent" active="1" x="-187" y="1" width="374" height="745">
     </panel>

@@ -113,8 +113,7 @@ function this:ShowItem()
         end
     end
     ---月卡或者日卡生效
-    ---luoxiangri 2024-06-17    
-    if InfoManager.monthCardInfo.MonthCardTimeTotal > (SL:GetMetaValue(EMetaVarGetKey.SERVER_TIME) + 86400000) then
+    if SL:HasConfigTwoKeys("cfg_stall", EMonthType.MonthCardTime, 4, "id", "way") and InfoManager.monthCardInfo.MonthCardTimeTotal > (SL:GetMetaValue(EMetaVarGetKey.SERVER_TIME) + 86400000) then
         ---月卡时间特殊处理
         if InfoManager.monthCardInfo.IsGetDailyCard or InfoManager.monthCardInfo.IsGetMonthCard then
             local MonthTimeData = {

@@ -87,7 +87,6 @@ function this:RES_STALL_GOODS(_, message)
     --    local title_list = string.split(message.title,'#')
     --    GUI:Text_setString(self.view.title,title_list[2])
     --end
-    info("[KLShowStallPanel] message.allgoods", message.allgoods)
     self:ShowGoodsInfo(message.allgoods)
     local userid = SL:GetMetaValue("USER_ID")
     if message.rid and tonumber(message.rid) == tonumber(userid) then

@@ -9,8 +9,12 @@ end
 
 ---@param friend FriendProto.FriendInfo
 function this:SetFriend(friend)
-    self.friend = friend
-    GUI:Image_loadTexture(self.view.Icon,"1"..friend.career,"Atlas/MUIcon.spriteatlas")
+    self.friend = friend    
+    if friend.career == 7 then
+        GUI:Image_loadTexture(self.view.Icon,"177","Atlas/FG_AttrPanel.spriteatlas")
+    else
+        GUI:Image_loadTexture(self.view.Icon,"1"..friend.career,"Atlas/MUIcon.spriteatlas")
+    end  
     GUI:Text_setString(self.view.friend_level, "LV."..friend.level)
     GUI:Text_setString(self.view.friend_name, friend.name)
     GUI:Text_setString(self.view.friend_union_name, "战盟："..(string.isNullOrEmpty(friend.unionName) and "无" or friend.unionName))

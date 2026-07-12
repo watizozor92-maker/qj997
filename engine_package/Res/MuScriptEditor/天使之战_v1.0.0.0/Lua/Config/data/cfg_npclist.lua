@@ -65,7 +65,7 @@ local local_openPanel = {
     openPanel_1={},
     openPanel_2={{"dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel"}},
     openPanel_3={{"dev/ui/Bag/Panel/KLDepots/KLDepotsPanel","table:x=-415;y=0"},{"dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel"}},
-    openPanel_4={{"dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel","33"}},
+    openPanel_4={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","1"}},
 
 }
 
@@ -76,10 +76,10 @@ local local_namey = {
 
 local cfg_npclist =
 {
-	{id=100101, name="酒吧老板娘·莉亚", showInMinimap="酒吧老板娘", icon="img_minimap__npc", x=123, y=135, appr=9, content="", openPanel={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","1"}}},
+	{id=100101, name="酒吧老板娘·莉亚", showInMinimap="酒吧老板娘", icon="img_minimap__npc", x=123, y=135, appr=9, content="", openPanel=local_openPanel.openPanel_4},
 	{id=100102, name="铁匠·汉斯", x=116, y=141, appr=2, direction=2, content="", openPanel={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","2"}}, speak=20018},
 	{id=100103, name="魔导师·帕希", x=118, y=113, appr=3, direction=2, content="", openPanel={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","3"}}},
-	{id=100104, showInMinimap="BUFF", x=131, y=128, direction=2, openPanel=local_openPanel.openPanel_1},
+	{id=100104, showInMinimap="BUFF", x=131, y=128, direction=2, openPanel=local_openPanel.openPanel_2},
 	{id=100105, name="流浪商人·海罗德", showInMinimap="流浪商人", icon="img_minimap__npc", x=183, y=136, appr=7, content="", openPanel=local_openPanel.openPanel_1},
 	{id=100106, name="少女·安娜", x=127, y=86, appr=15, content="", openPanel=local_openPanel.openPanel_1},
 	{id=100107, name="仓库使者·塞弗特", showInMinimap="仓库", icon="img_minimap__npc", x=147, y=145, appr=1, content=""},
@@ -88,8 +88,7 @@ local cfg_npclist =
 	{id=100110, showInMinimap="BUFF", x=132, y=90, direction=2, openPanel=local_openPanel.openPanel_2},
 	{id=100111, showInMinimap="BUFF", icon="img_minimap__npc", x=97, y=129, openPanel=local_openPanel.openPanel_2},
 	{id=100112, name="仓库使者·塞弗特", showInMinimap="仓库", icon="img_minimap__npc", x=145, y=109, appr=1, direction=2, content=""},
-	{id=100113, name="赤色要塞报名官", showInMinimap="赤色要塞", icon="img_minimap__npc", x=130, y=134, appr=17, direction=3, openPanel={{"dev/outui/Activity/Panel/KLRedFort/KLRedFortPanel"}}},
-	{id=100114, name="警卫队长摩伦", icon="img_minimap__npc", x=107, y=86, appr=57, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666605;2=666607"}}},
+	{id=100114, name="警卫队长摩伦（220级二转）", mapId=1003, showInMinimap="二转", icon="img_minimap__npc", x=184, y=30, appr=57, direction=3, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666605;2=666607"}}},
 	{id=100401, name="精灵·安吉拉", mapId=1004, x=173, y=125, appr=22, content="", openPanel={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","5"}}, speak=20021},
 	{id=100402, mapId=1004, showInMinimap="BUFF", x=167, y=118, openPanel=local_openPanel.openPanel_2},
 	{id=100403, name="工匠·尤达", mapId=1004, x=195, y=124, appr=21, content="", openPanel={{"dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel","4"}}},
@@ -99,34 +98,29 @@ local cfg_npclist =
 	{id=100407, mapId=1004, showInMinimap="BUFF", x=165, y=84, direction=3, openPanel=local_openPanel.openPanel_2},
 	{id=100408, mapId=1004, showInMinimap="BUFF", x=202, y=130, direction=3, openPanel=local_openPanel.openPanel_2},
 	{id=105201, name="仓库使者·塞弗特", mapId=1052, x=50, y=229, appr=1, content=""},
-	{id=105202, name="流浪商人·塞尔维亚", mapId=1052, x=44, y=229, appr=44, content="", openPanel=local_openPanel.openPanel_1},
+	{id=105202, name="流浪商人·塞尔维亚", mapId=1052, x=44, y=229, appr=44, content="", openPanel=local_openPanel.openPanel_4},
 	{id=105203, name="召唤师·摩尔塞", mapId=1052, x=36, y=216, appr=28, direction=3, content="", openPanel=local_openPanel.openPanel_1},
 	{id=105204, mapId=1052, showInMinimap="BUFF", x=57, y=232, direction=3, openPanel=local_openPanel.openPanel_2},
 	{id=105205, mapId=1052, showInMinimap="BUFF", x=97, y=219, openPanel=local_openPanel.openPanel_2},
 	{id=105206, mapId=1052, showInMinimap="BUFF", x=44, y=167, direction=2, openPanel=local_openPanel.openPanel_2},
-	{id=100301, name="战盟使者·罗斯", mapId=1003, showInMinimap="战盟", icon="img_minimap__npc", x=215, y=45, appr=29, openPanel=local_openPanel.openPanel_1},
+	{id=100301, name="战盟使者·罗斯", mapId=1003, showInMinimap="战盟", icon="img_minimap__npc", x=215, y=45, appr=29, content="你好，勇士！我能为你提供些帮助", openPanel=local_openPanel.openPanel_1},
 	{id=100302, name="仓库使者·塞弗特", mapId=1003, showInMinimap="仓库", icon="img_minimap__npc", x=218, y=63, appr=1, content=""},
 	{id=100303, name="武器商人·苏菲", mapId=1003, x=186, y=47, appr=45, direction=2, content="", openPanel=local_openPanel.openPanel_1},
 	{id=100304, name="魔导师·露茜", mapId=1003, x=225, y=41, appr=46, direction=2, content="", openPanel=local_openPanel.openPanel_4},
 	{id=100305, name="老板娘·莉娜", mapId=1003, x=226, y=25, appr=11, direction=2, openPanel=local_openPanel.openPanel_4, size=200},
 	{id=100306, name="血色城堡守卫·大天使的使者", mapId=1003, showInMinimap="血色城堡", icon="img_minimap__npc", x=209, y=29, appr=51, content="", openPanel={{"dev/outui/Activity/Panel/KLActivityDetail/KLActivityDetailPanel","11001"}}, namey={0,-6,0}},
-	{id=100307, name="圣导士塞维娜", mapId=1003, x=184, y=32, appr=43, direction=3, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666601;2=666603"}}, time=0, talkdistance=0},
+	{id=100307, name="圣导士塞维娜（150级一转）", mapId=1003, showInMinimap="一转", x=184, y=32, appr=43, direction=3, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666601;2=666603"}}, time=0, talkdistance=0},
 	{id=100308, name="警卫队长", mapId=1003, x=198, y=46, appr=57, direction=3, openPanel=local_openPanel.openPanel_1, time=0, talkdistance=0},
-	{id=100309, mapId=1003, showInMinimap="BUFF", x=178, y=43, openPanel=local_openPanel.openPanel_2},
-	{id=100310, mapId=1003, showInMinimap="BUFF", x=219, y=72, direction=2, openPanel=local_openPanel.openPanel_2},
-	{id=100201, mapId=1002, showInMinimap="BUFF", x=105, y=240, direction=2, openPanel=local_openPanel.openPanel_2},
-	{id=100501, mapId=1005, showInMinimap="BUFF", x=211, y=81, openPanel=local_openPanel.openPanel_2},
-	{id=100801, mapId=1008, showInMinimap="BUFF", x=17, y=25, direction=2, openPanel=local_openPanel.openPanel_2},
 	{id=101201, name="受伤的大天使", mapId=1012, showInMinimap="受伤的大天使", icon="img_minimap__npc", x=10, y=9, appr=50, direction=2, openPanel={{"dev/outui/Activity/Panel/KLBloodTip/KLBloodTipPanel","101201"}}},
 	{id=100901, name="艾德·萤之石管理员", mapId=1052, showInMinimap="萤石管理", icon="img_minimap__npc", x=46, y=243, appr=24, content="", limitLv=1, openPanel={{"dev/outui/Synthesis/Panel/KLGemSynthesis/KLGemSynthesisPanel"}}},
-	{id=100902, name="弟子黛彬", mapId=1035, x=228, y=48, appr=20, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666609;2=666611;3=666613;4=6666091"}}},
+	{id=100902, name="弟子黛彬（380级三转）", mapId=1003, showInMinimap="三转", x=184, y=28, appr=20, direction=3, openPanel={{"dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel","table:1=666609"}}},
 	{id=100903, name="摩斯", mapId=1052, showInMinimap="合成", x=22, y=225, appr=28, direction=2, openPanel={{"dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel","table:1=8"}}},
 	{id=100904, name="暗黑血狼人扩雷", mapId=1035, x=62, y=239, appr=49, openPanel={{"dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel","70001"}}},
 	{id=100905, name="守卫", mapId=1042, x=119, y=168, appr=14, direction=3, openPanel={{"dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel","70002"}}},
 	{id=100120, name="驯兽师", showInMinimap="合成", x=122, y=114, appr=28, direction=2, openPanel={{"dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel","table:1=10;2=11;3=12"}}},
 }
 
-local defaults = {name="幻影导师·凯蒂", mapId=1001, showInMinimap="", icon="", appr=12, direction=4, content="你好，勇士！我能为你提供些帮助", limitLv=0, openPanel={{"dev/ui/Bag/Panel/KLDepots/KLDepotsPanel","table:x=-415;y=0"},{"dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel"}}, namey={0,0,0}, size=100, speak=0, time=1, talkdistance=2}
+local defaults = {name="幻影导师·凯蒂", mapId=1001, showInMinimap="", icon="", appr=12, direction=4, content="勇士！我能为你提供些帮助", limitLv=0, openPanel={{"dev/ui/Bag/Panel/KLDepots/KLDepotsPanel","table:x=-415;y=0"},{"dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel"}}, namey={0,0,0}, size=100, speak=0, time=1, talkdistance=2}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_npclist) do
 	setmetatable(v, mt)

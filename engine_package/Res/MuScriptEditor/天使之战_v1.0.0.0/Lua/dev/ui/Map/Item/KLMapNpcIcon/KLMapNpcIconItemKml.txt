@@ -1,4 +1,6 @@
 <uipanel id="KLMapNpcIconItem" name="地图npc图标模板" width="14" height="24" zindex="-1" rotate="0,0,45">
-    <img id="icon" src="img_minimap__npc" atlas="Atlas/UIMapPanel.spriteatlas" width="14" height="24" />
-    <text id="txt_name" y="-20" color="#00FF00" fontSize="16" outlinecolor="#000000" outlinesize="1" />
+  <img id="icon" src="img_minimap__npc" atlas="Atlas/UIMapPanel.spriteatlas" width="14" height="24">
+  </img>
+  <text id="txt_name" y="-20" color="#00FF00" fontsize="16" outlinecolor="#000000" outlinesize="1">
+  </text>
 </uipanel>

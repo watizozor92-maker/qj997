@@ -3,7 +3,7 @@
 ---@field id number @id column=1 A
 ---职业的名称
 ---@field name string @职业名称 column=2 B
----1剑士 2魔法师 3弓箭手 4魔剑士 5圣导师   6召唤师
+---1剑士 2魔法师 3弓箭手 4魔剑士 5圣导师   6召唤师 7白法
 ---@field baseCareer number @所属职业 column=3 C
 ---表示在该职业树的第几层
 ---@field careerRank number @职业等级 column=4 D
@@ -60,7 +60,7 @@
 
 local local_task = {
     task_1={},
-    task_2={666614},
+    task_2={666610},
     task_3={666606},
     task_4={6666042},
 
@@ -105,34 +105,31 @@ local local_unlockItem = {
 
 local cfg_career =
 {
-	{id=1, name="剑士", isExpAdd=local_isExpAdd.isExpAdd_2, modelId=1, careerRec=local_careerRec.careerRec_1, window=0},
-	{id=4, name="骑士", careerRank=2, task={6666041}, level=150, modelId=1, careerRec=local_careerRec.careerRec_1, rewardText="可分配的职业点数20点"},
-	{id=10, name="神骑士", careerRank=3, task={666608}, level=220, modelId=201, careerRec=local_careerRec.careerRec_2, rewardText="可分配的职业点数0点"},
+	{id=1, name="剑士", isExpAdd=local_isExpAdd.isExpAdd_2, modelId=1, careerRec=local_careerRec.careerRec_1, window=0, rewardText=""},
+	{id=4, name="骑士", careerRank=2, task={6666041}, level=150, modelId=1, careerRec=local_careerRec.careerRec_1},
+	{id=10, name="神骑士", careerRank=3, task={666608}, level=220, modelId=201, careerRec=local_careerRec.careerRec_2},
 	{id=7, name="圣殿武士", careerRank=4, task=local_task.task_2, level=380, modelId=301, careerRec=local_careerRec.careerRec_2, rewardText="可分配的职业点数70点"},
-	{id=2, name="魔法师", baseCareer=2, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=2, careerRec=local_careerRec.careerRec_3, window=0},
-	{id=5, name="魔导师", baseCareer=2, careerRank=2, task=local_task.task_4, level=150, modelId=2, careerRec=local_careerRec.careerRec_3, rewardText="可分配的职业点数20点"},
-	{id=11, name="神导士", baseCareer=2, careerRank=3, task=local_task.task_3, level=220, modelId=202, careerRec=local_careerRec.careerRec_4, rewardText="可分配的职业点数0点"},
+	{id=2, name="魔法师", baseCareer=2, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=2, window=0, rewardText=""},
+	{id=5, name="魔导师", baseCareer=2, careerRank=2, task=local_task.task_4, level=150, modelId=2},
+	{id=11, name="神导士", baseCareer=2, careerRank=3, task=local_task.task_3, level=220, modelId=202, careerRec=local_careerRec.careerRec_4},
 	{id=8, name="大法师", baseCareer=2, careerRank=4, task=local_task.task_2, level=380, modelId=302, careerRec=local_careerRec.careerRec_4, rewardText="可分配的职业点数70点", careerEffect=70},
-	{id=3, name="弓箭手", baseCareer=3, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=3, careerRec={{1,4,0,0,0}}, window=0},
-	{id=6, name="圣射手", baseCareer=3, careerRank=2, task={6666043}, level=150, modelId=3, careerRec={{1,4,0,0,0},{0,1,0,4,0}}, rewardText="可分配的职业点数20点"},
-	{id=12, name="神射手", baseCareer=3, careerRank=3, task=local_task.task_3, level=220, modelId=203, careerRec=local_careerRec.careerRec_5, rewardText="可分配的职业点数0点"},
+	{id=3, name="弓箭手", baseCareer=3, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=3, careerRec={{1,4,0,0,0}}, window=0, rewardText=""},
+	{id=6, name="圣射手", baseCareer=3, careerRank=2, task={6666043}, level=150, modelId=3, careerRec={{1,4,0,0,0},{0,1,0,4,0}}},
+	{id=12, name="神射手", baseCareer=3, careerRank=3, task=local_task.task_3, level=220, modelId=203, careerRec=local_careerRec.careerRec_5},
 	{id=9, name="精灵游侠", baseCareer=3, careerRank=4, task=local_task.task_2, level=380, modelId=303, careerRec=local_careerRec.careerRec_5, rewardText="可分配的职业点数70点"},
-	{id=401, name="魔剑士", baseCareer=4, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=4, window=0},
-	{id=402, name="剑魔", baseCareer=4, careerRank=2, level=150, modelId=4, rewardText="可分配的职业点数20点"},
-	{id=403, name="剑圣", baseCareer=4, careerRank=3, level=220, modelId=4, rewardText="可分配的职业点数0点"},
-	{id=501, name="圣导师", baseCareer=5, isExpAdd=local_isExpAdd.isExpAdd_2, careerWearBar={12,9}, modelId=5, careerRec=local_careerRec.careerRec_7, window=0},
-	{id=502, name="圣徒", baseCareer=5, careerRank=2, level=150, modelId=5, careerRec=local_careerRec.careerRec_7, rewardText="可分配的职业点数20点"},
-	{id=503, name="祭祀", baseCareer=5, careerRank=3, level=220, modelId=5, careerRec=local_careerRec.careerRec_7, rewardText="可分配的职业点数0点"},
-	{id=601, name="召唤术师", baseCareer=6, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=6, careerRec=local_careerRec.careerRec_3, window=0},
-	{id=602, name="召唤导师", baseCareer=6, careerRank=2, level=150, modelId=6, careerRec=local_careerRec.careerRec_3, rewardText="可分配的职业点数20点"},
-	{id=603, name="召唤巫师", baseCareer=6, careerRank=3, level=220, modelId=6, careerRec=local_careerRec.careerRec_3, rewardText="可分配的职业点数0点"},
-	{id=701, name="光明法师", baseCareer=7, isExpAdd=local_isExpAdd.isExpAdd_2, careerRec=local_careerRec.careerRec_1, window=0},
-	{id=702, name="圣光导师", baseCareer=7, careerRank=2, task=local_task.task_4, level=150, careerRec=local_careerRec.careerRec_1, rewardText="可分配的职业点数20点"},
-	{id=703, name="神官", baseCareer=7, careerRank=3, task=local_task.task_3, level=220, careerRec=local_careerRec.careerRec_2, rewardText="可分配的职业点数0点"},
-	{id=704, name="天国主教", baseCareer=7, careerRank=4, task=local_task.task_2, level=380, careerRec=local_careerRec.careerRec_2, rewardText="可分配的职业点数70点"},
+	{id=401, name="魔剑士", baseCareer=4, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=4, careerRec=local_careerRec.careerRec_6, window=0, rewardText=""},
+	{id=402, name="剑圣", baseCareer=4, careerRank=2, task=local_task.task_2, level=380, modelId=4, careerRec=local_careerRec.careerRec_6, rewardText="可分配的职业点数70点"},
+	{id=501, name="圣导师", baseCareer=5, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=5, careerRec=local_careerRec.careerRec_7, window=0, rewardText=""},
+	{id=502, name="祭祀", baseCareer=5, careerRank=2, task=local_task.task_2, level=380, modelId=5, careerRec=local_careerRec.careerRec_7, rewardText="可分配的职业点数70点"},
+	{id=601, name="召唤术师", baseCareer=6, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=6, window=0, rewardText=""},
+	{id=602, name="召唤导师", baseCareer=6, careerRank=2, task=local_task.task_4, level=150, modelId=6},
+	{id=603, name="召唤巫师", baseCareer=6, careerRank=3, task=local_task.task_2, level=380, modelId=6, rewardText="可分配的职业点数70点"},
+	{id=701, name="光明法师", baseCareer=7, isExpAdd=local_isExpAdd.isExpAdd_2, modelId=7, careerRec=local_careerRec.careerRec_1, window=0, rewardText=""},
+	{id=702, name="圣光法师", baseCareer=7, careerRank=2, task=local_task.task_4, level=150, modelId=7, careerRec=local_careerRec.careerRec_1},
+	{id=703, name="圣光导师", baseCareer=7, careerRank=3, task=local_task.task_2, level=380, modelId=7, careerRec=local_careerRec.careerRec_2, rewardText="可分配的职业点数70点"},
 }
 
-local defaults = {baseCareer=1, careerRank=1, task={}, level=0, isExpAdd={2}, freeAtt={}, careerWearBar={1,9}, modelId=7, careerRec={{0,2,0,5,0},{5,2,0,0,0}}, window=1, unlockskill={}, unlockItem={}, rewardText="", upGradeEffect=55, careerEffect=0, wash=0, recPicture="", recText=""}
+local defaults = {baseCareer=1, careerRank=1, task={}, level=0, isExpAdd={2}, freeAtt={}, careerWearBar={1,9}, careerRec={{0,2,0,3,0}}, window=1, unlockskill={}, unlockItem={}, rewardText="可分配的职业点数20点", upGradeEffect=55, careerEffect=0, wash=0, recPicture="", recText=""}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_career) do
 	setmetatable(v, mt)

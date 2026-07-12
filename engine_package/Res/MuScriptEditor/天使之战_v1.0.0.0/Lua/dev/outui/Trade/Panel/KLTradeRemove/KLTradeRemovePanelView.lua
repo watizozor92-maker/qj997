@@ -10,9 +10,12 @@
 local KLTradeRemovePanelView = {}
 setmetatable(KLTradeRemovePanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Panel/KLTradeRemove/KLTradeRemovePanelKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLTradeRemovePanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTradeRemovePanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Panel/KLTradeRemove/KLTradeRemovePanel']
+
 return KLTradeRemovePanelView

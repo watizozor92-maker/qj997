@@ -31,7 +31,7 @@ local cfg_huanyingdaoshi =
 	{id=3, type=3, condition="2103#24", buff={10300003}, item=local_item.item_1},
 }
 
-local defaults = {level={1,99}, item={{10250001,800},{100000004,1}}, text="物理攻击力+20，魔法攻击力+40，防御力+20，\n生命值+50，魔法值+25\n持续8小时，死亡消失<color=#4C961D>(白银特权：死亡不消失)</color>"}
+local defaults = {level={1,99}, item={{10250001,800},{100000004,1}}, text="物理攻击力+30，魔法攻击力+80，防御力+30，\n生命值+100，魔法值+40\n持续8小时，死亡消失<color=#4C961D>(畅玩卡死亡不消失)</color>"}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_huanyingdaoshi) do
 	setmetatable(v, mt)

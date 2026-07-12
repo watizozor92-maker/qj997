@@ -1,46 +1,49 @@
 ---@class KLMountEquipPanelView:UIKmlLuaViewBase
----@field bg UIKmlLuaControl
----@field title UIKmlLuaControl
----@field closeBtn UIKmlLuaControl
----@field ownerMountRoot UIKmlLuaControl
----@field img7 UIKmlLuaControl
----@field img6 UIKmlLuaControl
----@field img5 UIKmlLuaControl
----@field bagItemRoot UIKmlLuaControl
----@field bagScroll UIKmlLuaControl
----@field layout4 UIKmlLuaControl
----@field bagRoot UIKmlLuaControl
----@field datalist9 UIKmlLuaControl
----@field oneKeyTakeOff UIKmlLuaControl
----@field oneKeyPutOn UIKmlLuaControl
----@field btn_recycle UIKmlLuaControl
----@field btn_helment UIKmlLuaControl
----@field selectPic UIKmlLuaControl
----@field img1 UIKmlLuaControl
----@field item_helment UIKmlLuaControl
----@field red_helment UIKmlLuaControl
----@field btn_foot UIKmlLuaControl
----@field img2 UIKmlLuaControl
----@field item_foot UIKmlLuaControl
----@field red_foot UIKmlLuaControl
----@field btn_saddle UIKmlLuaControl
----@field img3 UIKmlLuaControl
----@field item_saddle UIKmlLuaControl
----@field red_saddle UIKmlLuaControl
----@field btn_rein UIKmlLuaControl
----@field img4 UIKmlLuaControl
----@field item_rein UIKmlLuaControl
----@field red_rein UIKmlLuaControl
----@field notActive UIKmlLuaControl
----@field img9 UIKmlLuaControl
----@field img_notForever UIKmlLuaControl
----@field img11 UIKmlLuaControl
+---@field bg UIKmlLuaControlHandler
+---@field title UIKmlLuaControlHandler
+---@field closeBtn UIKmlLuaControlHandler
+---@field ownerMountRoot UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field bagItemRoot UIKmlLuaControlHandler
+---@field bagScroll UIKmlLuaControlHandler
+---@field layout4 UIKmlLuaControlHandler
+---@field bagRoot UIKmlLuaControlHandler
+---@field datalist9 UIKmlLuaControlHandler
+---@field oneKeyTakeOff UIKmlLuaControlHandler
+---@field oneKeyPutOn UIKmlLuaControlHandler
+---@field btn_recycle UIKmlLuaControlHandler
+---@field btn_helment UIKmlLuaControlHandler
+---@field selectPic UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field item_helment UIKmlLuaControlHandler
+---@field red_helment UIKmlLuaControlHandler
+---@field btn_foot UIKmlLuaControlHandler
+---@field img2 UIKmlLuaControlHandler
+---@field item_foot UIKmlLuaControlHandler
+---@field red_foot UIKmlLuaControlHandler
+---@field btn_saddle UIKmlLuaControlHandler
+---@field img3 UIKmlLuaControlHandler
+---@field item_saddle UIKmlLuaControlHandler
+---@field red_saddle UIKmlLuaControlHandler
+---@field btn_rein UIKmlLuaControlHandler
+---@field img4 UIKmlLuaControlHandler
+---@field item_rein UIKmlLuaControlHandler
+---@field red_rein UIKmlLuaControlHandler
+---@field notActive UIKmlLuaControlHandler
+---@field img9 UIKmlLuaControlHandler
+---@field img_notForever UIKmlLuaControlHandler
+---@field img11 UIKmlLuaControlHandler
 local KLMountEquipPanelView = {}
 setmetatable(KLMountEquipPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Mount/Panel/KLMountEquip/KLMountEquipPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLMountEquipPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLMountEquipPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Mount/Panel/KLMountEquip/KLMountEquipPanel']
+
 return KLMountEquipPanelView

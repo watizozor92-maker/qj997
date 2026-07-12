@@ -152,9 +152,9 @@ function this:RefreshReward(count)
         count = math.floor(count)
     end
     if self.expItem then
-        self.expItem:RefreshItem(10080001,count)
+        --self.expItem:RefreshItem(10080001,count)
     else
-        self.expItem = GUI:UIPanel_Open("dev/outui/Activity/Item/KLItem/KLItemItem",self.view.rewardModel,self,{cfgId = 10080001,count = count,width = 50,height=50},true)
+        --self.expItem = GUI:UIPanel_Open("dev/outui/Activity/Item/KLItem/KLItemItem",self.view.rewardModel,self,{cfgId = 10080001,count = count,width = 50,height=50},true)
     end
 end
 

@@ -5,14 +5,14 @@
     <img id="img1" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="bg_NewVIP_level" width="998" height="114" raycast="1" x="-2" y="147">
     </img>
     <img id="img3" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="vip_tip" width="440" height="102" raycast="1" x="-115" y="150">
-      <text id="vipLevelTp" a="00" text="1" fontsize="16" height="52" width="52" ta="11" horwrap="1" x="143" y="18" fonttype="QJ5_font_NewVIP_Tips" outline="">
+      <text id="vipLevelTp" a="00" text="1" fontsize="16" height="52" width="52" ta="11" horwrap="1" x="143" y="18" fonttype="QJ5_font_NewVIP_Tips" outline="1">
       </text>
     </img>
   </img>
   <button id="btn_close" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="btn_close" width="46" height="47" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="495" y="240" h5x="-472" h5y="231">
   </button>
   <img id="textDec" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="ty_bg_threeFrame_N2" width="324" height="50" raycast="1" x="0" y="241" color="#FFFFFF00">
-    <text id="DIY_Text" a="00" text="尊享特权" fontsize="24" height="30" width="160" ta="11" horwrap="1" color="#D1BF9CFF" outlinesize="1" outlinecolor="#000000FF">
+    <text id="DIY_Text" a="00" text="尊享特权" fontsize="24" height="30" width="160" ta="11" horwrap="1" color="#D1BF9CFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
     </text>
   </img>
   <img id="SpLine" a="00" atlas="Atlas/QJ5_UINewVIPMain.spriteatlas" src="img_NewVIP_xian" width="416" height="10" raycast="1" x="254" y="-82" color="#FFFFFFFF">

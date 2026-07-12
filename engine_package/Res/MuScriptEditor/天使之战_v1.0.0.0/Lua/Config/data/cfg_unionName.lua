@@ -6,10 +6,10 @@
 ---@field name string @战盟名称 column=2 B
 local cfg_unionName =
 {
-	{id=1, name="薄纱册滑"},
-	{id=2, name="橙絮战神"},
-	{id=3, name="云缨逸绝"},
-	{id=4, name="侧虱小魔"},
-	{id=5, name="美述大师"},
+	{id=1, name="奇迹战魂"},
+	{id=2, name="大天使之城"},
+	{id=3, name="罗兰大陆"},
+	{id=4, name="血色战神"},
+	{id=5, name="欧皇降世"},
 }
 return cfg_unionName

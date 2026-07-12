@@ -81,10 +81,7 @@ local local_preTask = {
 
 local local_rewardItem = {
     rewardItem_1={{10010002,2000,0,1}},
-    rewardItem_2={{10010002,5000,0,1}},
-    rewardItem_3={{10070001,10,0,0}},
-    rewardItem_4={{10070001,20,0,0}},
-    rewardItem_5={{10070001,5,0,0}},
+    rewardItem_2={{10070001,10,0,0}},
 
 }
 
@@ -95,50 +92,28 @@ local local_group = {
 
 local local_consume = {
     consume_1={},
-    consume_2={{10010001,5000000}},
 
 }
 
 local cfg_task =
 {
 	{id=900001, title="双怪物测试", uiTitleType=2, taskTargetId={1002008,1002012}, preTask={{"checkFinishTask[130081]"}}, rewardItem={}},
-	{id=10001, title="对话酒店老板娘", taskTargetId={1004001}, preTask={}, rewardItem={{30010002,10,0,1},{30010012,10,0,1}}},
-	{id=10002, title="对话幻影导师", taskTargetId={1004005}, preTask={{"checkFinishTask[10001]"}}, rewardItem=local_rewardItem.rewardItem_1},
-	{id=10006, title="提升等级到6级", taskTargetId={1005006}, preTask={{"checkFinishTask[10002]"}}, rewardItem=local_rewardItem.rewardItem_1},
-	{id=10007, title="对话酒店老板娘，买小药", taskTargetId={1001001}, preTask={{"checkFinishTask[10006]"}}, rewardItem={{10010002,2000,0,1},{10080001,1200,0,1}}},
-	{id=10012, title="提升等级到20级", taskTargetId={1005020}, preTask={{"checkFinishTask[10007]"}}, rewardItem=local_rewardItem.rewardItem_1},
-	{id=10013, title="前往冰风谷", taskTargetId={1003001}, preTask={{"checkFinishTask[10012]"}}, rewardItem=local_rewardItem.rewardItem_1},
-	{id=10021, title="提升等级到30级", taskTargetId={1005030}, preTask={{"checkFinishTask[10013]"}}, rewardItem=local_rewardItem.rewardItem_1},
-	{id=10022, title="前往地下城", taskTargetId={1003002}, preTask={{"checkFinishTask[10021]"}}},
-	{id=10035, title="前往失落之塔1", taskTargetId={1003003}, preTask={{"checkFinishTask[10022]"}}},
-	{id=10036, title="加入战盟", uiTitleType=2, taskTargetId={1009001}, levelMin=9999, preTask={{"checkFinishTask[10035]"}}},
-	{id=10059, title="获得帝王之书*10", taskTargetId={1008001}, diaLogDone="您真的找回了，帝王之书，这本书用强大魔力谱写而成，记载了奇迹大陆和平之战年代的事迹。", preTask={{"checkFinishTask[10036]"}}},
-	{id=10060, title="获得断魂之剑*5", taskTargetId={1008002}, diaLogDone="勇敢的剑士，您真的找到了“断魂之剑”。\n让我告诉你“断魂之剑”的由来吧。\n奇迹大陆的先祖帝摩廉在统一帝国之后，为了祭莫和平把自己的宝刀断为两截。", preTask={{"checkFinishTask[10059]"}}, rewardItem=local_rewardItem.rewardItem_4},
-	{id=10072, title="前往天空之城", taskTargetId={1003007}, preTask={{"checkFinishTask[10060]"}}},
-	{id=10077, title="获得荣誉戒指*20", taskTargetId={1008006}, preTask={{"checkFinishTask[10072]"}}},
-	{id=10099, title="提升等级到330级", taskTargetId={1005330}, preTask={{"checkFinishTask[10077]"}}},
-	{id=10107, title="前往安宁池", taskTargetId={1003011}, preTask={{"checkFinishTask[10099]"}}},
-	{id=10108, title="击杀树妖", taskTargetId={1002081}, preTask={{"checkFinishTask[10107]"}}},
-	{id=10109, title="击杀毒树妖", taskTargetId={1002082}, preTask={{"checkFinishTask[10108]"}}},
-	{id=10110, title="击杀残忍的树妖", taskTargetId={1002086}, preTask={{"checkFinishTask[10109]"}}},
-	{id=10111, title="击杀暗影爪牙", taskTargetId={1002084}, preTask={{"checkFinishTask[10110]"}}},
-	{id=10112, title="击杀暗影骑士", taskTargetId={1002085}, preTask={{"checkFinishTask[10111]"}}},
-	{id=10113, title="击杀暗影武士", taskTargetId={1002087}, preTask={{"checkFinishTask[10112]"}}},
-	{id=10114, title="提升等级到400级", taskTargetId={1005400}, preTask={{"checkFinishTask[10113]"}}},
-	{id=666602, title="击杀怪物获取帝王之书", uiTitleType=4, taskTargetId={6066602}, levelMin=9999, preTask={{"checkFinishTask[666601]"}}, rewardItem=local_rewardItem.rewardItem_3, consume={{10010001,1000000}}},
-	{id=6666041, title="击杀怪物获取断魂之剑", uiTitleType=4, taskTargetId={60666041}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_3},
-	{id=6666042, title="击杀怪物获取先知之魂", uiTitleType=4, taskTargetId={60666042}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_3},
-	{id=6666043, title="击杀怪物获取精灵之泪", uiTitleType=4, taskTargetId={60666043}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_3},
-	{id=666606, title="击杀怪物获取荣誉之戒", uiTitleType=4, taskTargetId={6066606}, levelMin=220, preTask={{"checkFinishTask[666605]"}}, rewardItem={{10070001,6,0,0}}, consume={{10010001,3000000}}},
-	{id=666608, title="击杀怪物获取暗黑之石", uiTitleType=4, taskTargetId={6066608}, levelMin=220, preTask={{"checkFinishTask[666607]"}}, rewardItem={{100000001,1,0,0}}, consume=local_consume.consume_2},
-	{id=666610, title="击杀怪物获取三转任务物品", uiTitleType=4, levelMin=380, preTask={{"checkFinishTask[666609]"}}, rewardItem=local_rewardItem.rewardItem_4, consume=local_consume.consume_2},
-	{id=666612, title="击杀暗黑防御者", uiTitleType=4, taskTargetId={6066612}, levelMin=400, preTask={{"checkFinishTask[666611]"}}, rewardItem=local_rewardItem.rewardItem_5, consume={{10010001,7000000}}},
-	{id=60666121, title="击杀暗黑咒术师", uiTitleType=4, taskTargetId={60666121}, levelMin=400, preTask={{"checkFinishTask[666612]"}}, rewardItem=local_rewardItem.rewardItem_5},
-	{id=60666122, title="击杀暗黑扫荡者", uiTitleType=4, taskTargetId={60666122}, levelMin=400, preTask={{"checkFinishTask[6666121]"}}, rewardItem=local_rewardItem.rewardItem_3},
-	{id=666614, title="击杀巴卡斯休息室中的暗黑指挥官", uiTitleType=4, taskTargetId={6066614}, levelMin=400, preTask={{"checkFinishTask[666613]"}}, rewardItem={{10070001,30,0,0}}, consume={{10010001,10000000}}},
+	{id=10001, title="对话酒店老板娘", uiTitleType=1, taskTargetId={1004001}, preTask={}, rewardItem={{30010002,10,0,1},{30010012,10,0,1}}},
+	{id=10002, title="对话幻影导师", uiTitleType=1, taskTargetId={1004005}, preTask={{"checkFinishTask[10001]"}}},
+	{id=10006, title="提升等级到6级", uiTitleType=1, taskTargetId={1005006}, preTask={{"checkFinishTask[10002]"}}},
+	{id=10007, title="对话酒店老板娘，买小药", uiTitleType=1, taskTargetId={1001001}, preTask={{"checkFinishTask[10006]"}}, rewardItem={{10010002,2000,0,1},{10080001,1200,0,1}}},
+	{id=10012, title="提升等级到20级", uiTitleType=1, taskTargetId={1005020}, preTask={{"checkFinishTask[10007]"}}},
+	{id=10013, title="前往冰风谷", uiTitleType=1, taskTargetId={1003001}, preTask={{"checkFinishTask[10012]"}}},
+	{id=666602, title="击杀怪物获取帝王之书", taskTargetId={6066602}, levelMin=150, preTask={{"checkFinishTask[666601]"}}, rewardItem=local_rewardItem.rewardItem_2, consume={{10010001,1000000}}},
+	{id=6666041, title="击杀怪物获取断魂之剑", taskTargetId={60666041}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_2},
+	{id=6666042, title="击杀怪物获取先知之魂", taskTargetId={60666042}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_2},
+	{id=6666043, title="击杀怪物获取精灵之泪", taskTargetId={60666043}, levelMin=150, preTask=local_preTask.preTask_1, rewardItem=local_rewardItem.rewardItem_2},
+	{id=666606, title="击杀怪物获取荣誉之戒", taskTargetId={6066606}, levelMin=220, preTask={{"checkFinishTask[666605]"}}, rewardItem={{10070001,20,0,0}}, consume={{10010001,3000000}}},
+	{id=666608, title="击杀怪物获取暗黑之石", taskTargetId={6066608}, levelMin=220, preTask={{"checkFinishTask[666607]"}}, rewardItem={{100000001,1,0,0}}},
+	{id=666610, title="击杀怪物获取三转任务物品", levelMin=380, preTask={{"checkFinishTask[666609]"}}, rewardItem={{10070001,70,0,0}}, consume={{10010001,10000000}}},
 }
 
-local defaults = {uiTitleType=1, taskTargetId={60666101,60666102,60666103}, npcGet=0, diaLogGet="", npcDone=0, diaLogDone="感谢您勇士，请收下这些。", levelMin=0, levelMax=0, rewardItem={{10010002,5000,0,1}}, monsterlist=0, group={}, consume={}}
+local defaults = {uiTitleType=4, taskTargetId={60666101,60666102,60666103}, npcGet=0, diaLogGet="", npcDone=0, diaLogDone="感谢您勇士，请收下这些。", levelMin=0, levelMax=0, rewardItem={{10010002,2000,0,1}}, monsterlist=0, group={}, consume={}}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_task) do
 	setmetatable(v, mt)

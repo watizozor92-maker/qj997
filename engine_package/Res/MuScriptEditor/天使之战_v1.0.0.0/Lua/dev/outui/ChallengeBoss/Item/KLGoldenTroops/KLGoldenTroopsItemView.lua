@@ -33,8 +33,11 @@
 local KLGoldenTroopsItemView = {}
 setmetatable(KLGoldenTroopsItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/ChallengeBoss/Item/KLGoldenTroops/KLGoldenTroopsItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLGoldenTroopsItemView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLGoldenTroopsItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/ChallengeBoss/Item/KLGoldenTroops/KLGoldenTroopsItem']
+
 return KLGoldenTroopsItemView

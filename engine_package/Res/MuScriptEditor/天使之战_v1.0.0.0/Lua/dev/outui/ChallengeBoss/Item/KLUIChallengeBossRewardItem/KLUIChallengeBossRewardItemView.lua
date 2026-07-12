@@ -1,16 +1,19 @@
 ---@class KLUIChallengeBossRewardItemView:UIKmlLuaViewBase
----@field equip_item UIKmlLuaControl
----@field img_quality UIKmlLuaControl
----@field effect_root UIKmlLuaControl
----@field effect_model UIKmlLuaControl
----@field arrow UIKmlLuaControl
----@field btn UIKmlLuaControl
+---@field equip_item UIKmlLuaControlHandler
+---@field img_quality UIKmlLuaControlHandler
+---@field effect_root UIKmlLuaControlHandler
+---@field effect_model UIKmlLuaControlHandler
+---@field arrow UIKmlLuaControlHandler
+---@field btn UIKmlLuaControlHandler
 local KLUIChallengeBossRewardItemView = {}
 setmetatable(KLUIChallengeBossRewardItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/ChallengeBoss/Item/KLUIChallengeBossRewardItem/KLUIChallengeBossRewardItemKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLUIChallengeBossRewardItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUIChallengeBossRewardItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/ChallengeBoss/Item/KLUIChallengeBossRewardItem/KLUIChallengeBossRewardItem']
+
 return KLUIChallengeBossRewardItemView

@@ -67,12 +67,12 @@ function this:SwitchForm(form)
     for i, v in pairs(cfg.assistType) do
         if form == 1 then
             if v == 1 then
-                self.formCorrect = false
+                --self.formCorrect = false
                 break
             end
         else
             if v == 2 or v == 4 then
-                self.formCorrect = false
+                --self.formCorrect = false
                 break
             end
         end

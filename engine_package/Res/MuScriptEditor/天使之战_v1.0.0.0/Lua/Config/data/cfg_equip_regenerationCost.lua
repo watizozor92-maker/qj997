@@ -27,17 +27,17 @@ local cfg_equip_regenerationCost =
 	{id=102, level=2},
 	{id=103, level=3},
 	{id=104, level=4},
-	{id=105, level=5},
-	{id=106, level=6},
+	{id=105, level=5, rate=5000, rateClient=5000},
+	{id=106, level=6, rate=5000, rateClient=5000},
 	{id=201, description="防具", group=2, level=1},
 	{id=202, description="防具", group=2, level=2},
 	{id=203, description="防具", group=2, level=3},
 	{id=204, description="防具", group=2, level=4},
-	{id=205, description="防具", group=2, level=5},
-	{id=206, description="防具", group=2, level=6},
+	{id=205, description="防具", group=2, level=5, rate=5000, rateClient=5000},
+	{id=206, description="防具", group=2, level=6, rate=5000, rateClient=5000},
 }
 
-local defaults = {description="武器", group=1, rate=5000, rateClient=5000, cost={{50030009,1}}}
+local defaults = {description="武器", group=1, rate=10000, rateClient=10000, cost={{50030009,1}}}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_equip_regenerationCost) do
 	setmetatable(v, mt)

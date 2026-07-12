@@ -54,12 +54,13 @@ end
 
 function this:SetOn()
     self.isSelect = true
-    GUI:Button_loadTextureNormal(self.view.btnItem2, "btn_cebian1","Atlas/FG_Common.spriteatlas")
+    --GUI:Button_loadTextureNormal(self.view.btnItem2, "btn_cebian1","Atlas/FG_Common.spriteatlas")
+    GUI:Button_loadTextureNormal(self.view.btnItem2, "img_btnBuy","Atlas/QJ5_UITreasureHunt.spriteatlas")
 end
 
 function this:SetOff()
     self.isSelect = false
-    GUI:Button_loadTextureNormal(self.view.btnItem2, "btn_cebian2","Atlas/FG_Common.spriteatlas")
+    GUI:Button_loadTextureNormal(self.view.btnItem2, "buttom_treasure","Atlas/QJ5_UITreasureHunt.spriteatlas")
 end
 
 function this:SetIsRecommended()

@@ -44,12 +44,17 @@
 ---@field panel StringList @快捷指令 column=10 J
 
 local local_rewardItem = {
-    rewardItem_1={{10010002,125000}},
+    rewardItem_1={{10010002,50000}},
 
 }
 
 local local_rewardSpecial = {
-    rewardSpecial_1={{10090001,4000}},
+    rewardSpecial_1={{10090001,2000}},
+
+}
+
+local local_panel = {
+    panel_1={""},
 
 }
 
@@ -58,10 +63,12 @@ local cfg_gard_task =
 	{id=1, taskName="全员消灭5只野外BOSS", taskType=2, sorting=1},
 	{id=2, taskName="全员通关40次恶魔广场", taskType=3, taskContent={10001,40}, sorting=2, panel={"transferNPC","100406"}},
 	{id=3, taskName="全员通关40次血色城堡", taskType=3, taskContent={11001,40}, sorting=3, panel={"transferNPC","100306"}},
-	{id=4, taskName="全员消灭100名敌方玩家", rewardSpecial={{10090001,3000}}, taskType=4, taskContent={100}, sorting=4, panel={"openUIPanel","dev/ui/Map/Panel/KLBigMap/KLBigMapPanel"}},
+	{id=4, taskName="全员消灭100名敌方玩家", taskType=4, taskContent={100}, sorting=4, panel={"openUIPanel","dev/ui/Map/Panel/KLBigMap/KLBigMapPanel"}},
+	{id=5, taskName="全员参加狼魂要塞50次", taskType=5, taskContent={15001,50}, sorting=5, panel=local_panel.panel_1},
+	{id=5, taskName="全员参加罗兰攻城战50次", taskType=5, taskContent={16001,50}, sorting=6, panel=local_panel.panel_1},
 }
 
-local defaults = {rewardItem={{10010002,125000}}, rewardSpecial={{10090001,4000}}, taskContent={40006,50012,60008,70007,80006,80007,11010,90008,14012,5}, taskRefreshes=3, hour=3, panel={"openUIPanel","dev/outui/ChallengeBoss/Panel/KLChallengeBoss/KLChallengeBossPanel","1","monsterType=2"}}
+local defaults = {rewardItem={{10010002,50000}}, rewardSpecial={{10090001,2000}}, taskContent={40006,50012,60008,70007,80006,80007,11010,90008,14012,5}, taskRefreshes=1, hour=1, panel={"openUIPanel","dev/outui/ChallengeBoss/Panel/KLChallengeBoss/KLChallengeBossPanel","1","monsterType=2"}}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_gard_task) do
 	setmetatable(v, mt)

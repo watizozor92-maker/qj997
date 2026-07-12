@@ -8,7 +8,6 @@
 ---@field ReMask UIKmlLuaControlHandler
 ---@field img1 UIKmlLuaControlHandler
 ---@field Frame UIKmlLuaControlHandler
----@field CloseButton UIKmlLuaControlHandler
 ---@field EquipGrid UIKmlLuaControlHandler
 ---@field MoneyList UIKmlLuaControlHandler
 ---@field moneyBackground UIKmlLuaControlHandler
@@ -27,6 +26,7 @@
 ---@field wearBarChange UIKmlLuaControlHandler
 ---@field WearArchange UIKmlLuaControlHandler
 ---@field panelNameText UIKmlLuaControlHandler
+---@field CloseButton UIKmlLuaControlHandler
 local KLEquipUIPanelView = {}
 setmetatable(KLEquipUIPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanelKml'

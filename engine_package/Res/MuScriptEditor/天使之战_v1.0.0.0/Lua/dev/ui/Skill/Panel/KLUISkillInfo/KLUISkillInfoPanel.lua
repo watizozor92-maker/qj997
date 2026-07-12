@@ -280,24 +280,33 @@ function this:SettingOnClick(isClick)
     if self.isOpenSetting then
         self.isOpenSetting = false
         GUI:ToggleGroup_AllowSwitChoff(self.view.SkillTogGroup, false)
-        GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanel", nil, nil, { skillId = self.curSelectId, baseUI = self })
-        GUI:UIPanel_Close("dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanel")
-        if self.skillItem then
-            self.skillItem:SetTogDefaultThis()
-        elseif isClick then
-            self.curSelectIndex = nil
-            GUI:DataListUpdateData(self.view.loopscrollviewData)
-        end
+        -- GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanel", nil, nil, { skillId = self.curSelectId, baseUI = self })
+        -- GUI:UIPanel_Close("dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanel")
+        -- if self.skillItem then
+        --     self.skillItem:SetTogDefaultThis()
+        -- elseif isClick then
+        --     self.curSelectIndex = nil
+        --     GUI:DataListUpdateData(self.view.loopscrollviewData)
+        -- end
     else
         self.isOpenSetting = true
         GUI:ToggleGroup_AllowSwitChoff(self.view.SkillTogGroup, true)
-        if self.skillItem then
-            self.skillItem:SetTogIsOn(false)
-        end
-        GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanel", nil, nil, { curSelectId = self.curSelectId })
-        GUI:UIPanel_Close("dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanel")
+        -- if self.skillItem then
+        --     self.skillItem:SetTogIsOn(false)
+        -- end
+        -- GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanel", nil, nil, { curSelectId = self.curSelectId })
+        -- GUI:UIPanel_Close("dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanel")
     end
-
+    
+    GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillDescribe/KLUISkillDescribePanel", nil, nil, { skillId = self.curSelectId, baseUI = self })   
+    if self.skillItem then
+        self.skillItem:SetTogDefaultThis()
+        self.skillItem:SetTogIsOn(false)
+    elseif isClick then
+        self.curSelectIndex = nil
+        GUI:DataListUpdateData(self.view.loopscrollviewData)
+    end
+    GUI:UIPanel_Open("dev/ui/Skill/Panel/KLUISkillSetting/KLUISkillSettingPanel", nil, nil, { curSelectId = self.curSelectId })    
 end
 
 function this:BtnCloseOnClick()

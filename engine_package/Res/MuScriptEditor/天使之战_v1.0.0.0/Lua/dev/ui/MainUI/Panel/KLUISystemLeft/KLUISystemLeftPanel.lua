@@ -495,7 +495,7 @@ end
 function this:CreateBtn(systemName)
     ---@type cfg_MainPanelUI_column
     local tbl = SL:cfg_MainPanelUI_post_GetSystemInfoBySystemId(systemName)
-    if tbl.displayLocation == self.systemType and tbl.showon ~= 1 then
+    if tbl~=nil and tbl.displayLocation == self.systemType and tbl.showon ~= 1 then
         ---@type KLUISystemItem
         local systemPanelItem = GUI:UIPanel_Open("dev/ui/MainUI/Item/KLUISystem/KLUISystemItem",self.view.systemMenu,self,tbl,true)
         table.insert(self.systemTemplateList,systemPanelItem)

@@ -22,8 +22,8 @@
       <text id="txt_favor_count" text="1" color="#00ff00" outlinesize="1" outlinecolor="#000000" outline="0" horwrap="1" y="-3">
       </text>
     </img>
-    <img id="icon_career_bg" width="28" height="28" a="21" x="-6" y="-42" src="bg_career" atlas="Atlas/KLTradePanel.spriteatlas">
-      <img id="icon_career" a="00" width="30" height="30" raycast="1">
+    <img id="icon_career_bg" width="28" height="28" a="21" x="-6" y="-42" src="bg_career" atlas="Atlas/KLTradePanel.spriteatlas" active="0" enable="0">
+      <img id="icon_career" a="00" width="30" height="30" raycast="0" active="0" enable="0">
       </img>
     </img>
     <button id="btn_buy" a="00" width="103" height="36" onclick="" text="购买" raycast="1" y="-84" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">

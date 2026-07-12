@@ -36,7 +36,7 @@ local cfg_equip_strengthenCost_v2 =
 	{id=4, description="灵魂宝石（卓越）"},
 	{id=5, description="灵魂宝石（卓越）（初始）"},
 	{id=6, description="灵魂宝石（套装）"},
-	{id=7, description="灵魂宝石（套装）（初始）"},
+	{id=7, description="灵魂宝石（套装）（初始）", failLevel=5, tips="失败退到5级"},
 	{id=8, description="灵魂宝石（镶宝）", rate=4000, rateClient=4000},
 	{id=9, description="灵魂宝石（镶宝）（初始）", rate=4000, rateClient=4000},
 	{id=10, description="祝福宝石（绑定）", rate=10000, rateClient=10000, tips="本级失败不掉级", costTag={50030002,1}},
@@ -45,7 +45,7 @@ local cfg_equip_strengthenCost_v2 =
 	{id=13, description="灵魂宝石（卓越）（绑定）", costTag=local_costTag.costTag_2},
 	{id=14, description="灵魂宝石（卓越）（初始）（绑定）", costTag=local_costTag.costTag_2},
 	{id=15, description="灵魂宝石（套装）（绑定）", costTag=local_costTag.costTag_2},
-	{id=16, description="灵魂宝石（套装）（初始）（绑定）", costTag=local_costTag.costTag_2},
+	{id=16, description="灵魂宝石（套装）（初始）（绑定）", failLevel=5, tips="失败退到5级", costTag=local_costTag.costTag_2},
 	{id=17, description="灵魂宝石（镶宝）（绑定）", rate=4000, rateClient=4000, costTag=local_costTag.costTag_2},
 	{id=18, description="灵魂宝石（镶宝）（初始）（绑定）", rate=4000, rateClient=4000, costTag=local_costTag.costTag_2},
 }

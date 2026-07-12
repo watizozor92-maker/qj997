@@ -20,7 +20,9 @@ function this:Init()
     ---额外消耗限制放置数量
     self.consumeItemLimitCount = {
         -- [50040068] = 1
-    }
+    }  
+    self.hasluckyitem = false
+    self.hasbaohuitem = false
     -- SL:LogTable(SL:GetMetaValue("BAG_DATA"),true)
     GUI:DataListInitData(self.view.DataList_TabType, function()
         return table.count(self.tabDatas)
@@ -33,6 +35,7 @@ function this:Init()
 
     GUI:UIPanel_Open("dev/ui/Common/Item/KLUIBagTileScrollView/KLUIBagTileScrollViewItem", self.view.Smelter, self,
         {
+            --x = -17,
             x = -17,
             y = 322,
             contentW = 350,
@@ -429,7 +432,7 @@ function this:CheckItem(item, count)
                 end
             end
 
-            return self:CheckItemLimit4(cfg, item, itemCfg)
+            return self:CheckItemLimit4(cfg, item, itemCfg) or self:CheckItemLimitLuckyItem(v, item, itemCfg)
         end
         return true
     end
@@ -452,8 +455,9 @@ function this:CheckItem(item, count)
             -- 检查定向材料
             result, tips = self:CheckItemLimit3(v, item, itemCfg)
             if not result then
-                result = self:CheckItemLimit4(v, item, itemCfg)
+                result = self:CheckItemLimit4(v, item, itemCfg) or self:CheckItemLimitLuckyItem(v, item, itemCfg)
             end
+            
             if result then
                 return true
             else
@@ -711,6 +715,21 @@ end
 function this:CheckItemLimit4(synthesisCfg, item, itemCfg)
     if #synthesisCfg.protect > 0 then
         for i, v in pairs(synthesisCfg.protect) do
+            if GUIUtil.ItemEquals(v, item.cfgId) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+---检查幸运符咒道具
+---@param synthesisCfg cfg_synthesis_column
+---@param item cfg_item_column
+---@param itemCfg cfg_item_column
+function this:CheckItemLimitLuckyItem(synthesisCfg, item, itemCfg)
+    if #synthesisCfg.luckyItem > 0 then
+        for i, v in pairs(synthesisCfg.luckyItem) do
             if GUIUtil.ItemEquals(v, item.cfgId) then
                 return true
             end
@@ -1170,8 +1189,16 @@ function this:RefreshFormula(formula, maxProgress)
             -- 刷新成功率和消耗显示
             local rate = math.min(successRate, tonumber(formula.successRateMax)) // 100
             -- SL:LogError("rate", rate, formula.successRate, successRate, formula.successRateMax)
-            GUI:Text_setText(self.view.Text_SuccessRate,
-                rate .. "%(<color=#E6E600>上限" .. (formula.successRateMax // 100) .. "%</color>)")
+           
+            if table.count(self.lucky_items) > 0 and self.hasluckyitem then
+                local luckyRate = self.lucky_items[1][2]       
+                GUI:Text_setText(self.view.Text_SuccessRate,(rate+luckyRate//100) .. "%(<color=#E6E600>上限" .. ((formula.successRateMax+luckyRate) // 100) .. "%</color>)")
+                -- GUI:Text_setText(self.view.Text_SuccessRate,
+                --     rate .. "%+10%(<color=#E6E600>上限" .. (formula.successRateMax // 100) .. "%+10%</color>)")
+            else
+                GUI:Text_setText(self.view.Text_SuccessRate,
+                    rate .. "%(<color=#E6E600>上限" .. (formula.successRateMax // 100) .. "%</color>)")
+            end
             self:RefreshCoinCost(formula.coin)
         else
             GUI:Text_setText(self.view.Text_SuccessRate, "0%")
@@ -1195,14 +1222,15 @@ function this:RefreshFormula(formula, maxProgress)
 end
 
 function this:RefreshOtherCost(formula, smelterItems, tips2, successRate)
-    self.extritems = {}
+    self.extritems = {}    
     local type1 = {}
     local type2 = {}
-    local type3 = {}
+    local type3 = {}    
     local type1InfoList = {}
     local type2InfoList = {}
     local type3InfoList = {}
     local specialConsumeRate = 0
+
     for i, v in pairs(formula.consumeItem2) do
         if v[1] == 2 then
             local count, _, tempType2 = self:GetItemCountBySmelter2(v, smelterItems, self.extritems, formula)
@@ -1283,8 +1311,7 @@ function this:RefreshOtherCost(formula, smelterItems, tips2, successRate)
                 info.hasItem and "#E6E600" or "#FF2323", info.name)
         end
     end
-
-
+      
     self.baohu_items = {}
     if #formula.protect > 0 then
         local baohu_str = ""
@@ -1296,10 +1323,35 @@ function this:RefreshOtherCost(formula, smelterItems, tips2, successRate)
             end
             baohu_str = string.format("%s<color=%s>%s(合成保护道具)</color>\n", baohu_str,
                 count >= 1 and "#E6E600" or "#FF2323", cfg.name)
+            if count >= 1 then
+                self.hasbaohuitem = true
+            else
+                self.hasbaohuitem = false
+            end  
         end
         tips2 = tips2 .. baohu_str
-    end
+    end  
 
+    self.lucky_items = {}
+    if #formula.luckyItem > 0 then
+        local luckyItem_str = ""   
+        local luckyItem = {}
+        for i, v in pairs(formula.luckyItem) do
+            luckyItem[i] = v
+            table.insert(self.lucky_items, luckyItem)
+        end 
+        local cfg = SL:GetConfig("cfg_item", luckyItem[1])  
+        local count, _, tbl = self:GetItemCountBySmelter(luckyItem[1], smelterItems, nil, luckyItem) 
+        luckyItem_str = string.format("%s<color=%s>%s(幸运符咒道具)</color>\n", luckyItem_str,
+                 count >= 1 and "#E6E600" or "#FF2323", cfg.name)
+        if count >= 1 then
+            self.hasluckyitem = true
+        else
+            self.hasluckyitem = false
+        end
+        
+        tips2 = tips2 .. luckyItem_str
+    end  
     -- tips = tips.. "\n\n\n" .. "<color=#DF4BE8>失败时，原先的合成材料会全部消失</color>"
     -- 刷新配方显示
     GUI:Text_setText(self.view.Text_Tips2, tips2)
@@ -1843,7 +1895,9 @@ function this:ItemClick(_, item, args)
     -- end
     -- self.bagUI:RefreshFilterTagList({ [item.id] = 1 })
     -- self:SmelterToBagItem_Out(item.id, 1)
+   
     self:SmelterToBagItem_Out(item.id, item.count)
+    
     --SL:OpenTips("synthesis", item.cfgId, item.id, nil, self.smelter_putItem)
 end
 
@@ -1970,8 +2024,20 @@ function this:OnClick_Btn_Confirm()
             end
         end
         local baohuItems = {}
-        for i, v in pairs(self.baohu_items) do
-            table.insert(baohuItems, v.itemConfigId)
+        -- for i, v in pairs(self.baohu_items) do
+        --     table.insert(baohuItems, v.itemConfigId)
+        -- end
+        if self.hasbaohuitem then
+            baohuItems = {
+                1254003899
+            }
+        end
+        local luckyItems = {}
+        if self.hasluckyitem then
+            luckyItems = {
+                id = self.lucky_items[1][1],
+                count = 1
+            }        
         end
         local putCost = {}
         for i, v in pairs(self.minorCost) do
@@ -2033,13 +2099,24 @@ function this:OnClick_Btn_Confirm()
     for i, v in pairs(self.baohu_items) do
         table.insert(baohuItems, v.itemConfigId)
     end
+    local luckyItems = {}    
+    if self.hasluckyitem then
+        luckyItems = {
+            id = self.lucky_items[1][1],
+            count = 1
+        }        
+    end
+
     local data = {
         [1] = self.formula.id,
         [2] = putItems,
         [3] = extritItems,
         [4] = dingxiaItems,
         [5] = baohuItems,
+        [6] = luckyItems
     }
+    SL:Log("合成数据")
+    -- SL:LogTable(data[6],true)
     ---检查合成是否有绑定道具
     for _, v in pairs(data) do
         if type(v) == "table" then
@@ -2063,7 +2140,7 @@ function this:OnClick_Btn_Confirm()
         end
     end
 
-    --SL:LogTable(data,true,"data")
+    SL:LogTable(data,true,"data")
     SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_ITEM_SYNTHESIS, data)
 end
 
@@ -2137,7 +2214,7 @@ function this:STRENGTH_EQUIP_RESULT(_, msg)
     SL:onLUAEvent(LUA_EVENT_STRENGTH_OK, msg)
 end
 
----装备追加回包
+---装备追加回包 
 function this:APPEND_EQUIP_RESULT(_, msg)
     if msg.issuccess then
         SL:TipMessage("装备追加成功", 1, NoticeType.NoticeMid)

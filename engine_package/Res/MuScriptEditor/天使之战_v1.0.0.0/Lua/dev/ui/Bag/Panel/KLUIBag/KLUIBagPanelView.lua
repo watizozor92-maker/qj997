@@ -49,9 +49,12 @@
 local KLUIBagPanelView = {}
 setmetatable(KLUIBagPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Bag/Panel/KLUIBag/KLUIBagPanelKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLUIBagPanelView:Init(parent)
 
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUIBagPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel']
+
 return KLUIBagPanelView

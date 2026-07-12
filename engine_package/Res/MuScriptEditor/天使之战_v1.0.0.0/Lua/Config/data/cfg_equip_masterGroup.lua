@@ -30,6 +30,7 @@ local cfg_equip_masterGroup =
 	{id=1201, strPartId=12},
 	{id=1301, strPartId=13},
 	{id=1401, strPartId=14},
+	{id=1801, strPartId=18},
 	{id=102, strPartId=1, type=2, group=2},
 	{id=202, strPartId=2, type=2, group=2},
 	{id=302, strPartId=3, type=2, group=2},

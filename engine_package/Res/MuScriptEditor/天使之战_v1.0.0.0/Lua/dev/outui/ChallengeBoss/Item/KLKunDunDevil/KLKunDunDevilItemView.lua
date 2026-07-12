@@ -33,8 +33,11 @@
 local KLKunDunDevilItemView = {}
 setmetatable(KLKunDunDevilItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/ChallengeBoss/Item/KLKunDunDevil/KLKunDunDevilItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLKunDunDevilItemView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLKunDunDevilItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/ChallengeBoss/Item/KLKunDunDevil/KLKunDunDevilItem']
+
 return KLKunDunDevilItemView

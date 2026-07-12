@@ -3,7 +3,7 @@
   </img>
   <img id="img2" a="00" width="860" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
   </img>
-  <img src="Texture/FG_dankuangdi2.png" width="860" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+  <img src="Texture/FG_dankuangdi2.png" width="866" height="578" x="3" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
     <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
     </img>
     <img id="img3" a="00" width="800" height="450" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-48">

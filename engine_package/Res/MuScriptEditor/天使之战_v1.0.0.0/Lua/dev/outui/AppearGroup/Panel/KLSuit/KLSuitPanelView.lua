@@ -23,4 +23,7 @@ function KLSuitPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLSuitPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/AppearGroup/Panel/KLSuit/KLSuitPanel']
+
 return KLSuitPanelView

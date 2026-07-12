@@ -22,8 +22,11 @@ function this:Init()
         GUI:setVisible(self.view.BtnAlreadyAdd, false)
         GUI:setVisible(self.view.BtnAdd, false)
     end
-    GUI:Image_loadTexture(self.view.Icon,"1" .. self.data.career,"Atlas/MUIcon.spriteatlas")
-    
+    if self.data.career == 7 then
+        GUI:Image_loadTexture(self.view.Icon,"177","Atlas/FG_AttrPanel.spriteatlas")
+    else 
+        GUI:Image_loadTexture(self.view.Icon,"1" .. self.data.career,"Atlas/MUIcon.spriteatlas")
+    end  
 
 end
 

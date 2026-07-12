@@ -10,7 +10,7 @@
     </img>
     <img id="imgHead" a="00" atlas="Atlas/Common.spriteatlas" src="" width="55" height="55" raycast="0" x="-330" y="0" active="0" enable="0">
     </img>
-    <text id="txtName" a="00" text="" fontsize="18" height="50" width="224" ta="01" x="-134" y="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    <text id="txtName" a="00" text="" fontsize="18" height="50" width="224" ta="01" x="-123" y="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1" moveto="0,0,0">
     </text>
     <text id="txtLevel" a="00" text="" fontsize="18" height="25" width="85" ta="01" x="-46" y="6" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1" active="1">
     </text>

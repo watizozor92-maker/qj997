@@ -81,6 +81,7 @@ end
 
 function this:CloseAllSubPanel()
     --GUI:UIPanel_Close("dev/outui/ShopMain/Panel/KLShopMain/KLShopMainPanel")
+    GUI:UIPanel_Close("dev/outui/ShopMain/Panel/KLzhigou/KLzhigouPanel")
     GUI:UIPanel_Close("dev/outui/ShopMain/Panel/KLRecharge/KLRechargePanel")
     GUI:UIPanel_Close("dev/ui/ShopMall/Panel/KLShopMall/KLShopMallPanel")
 end

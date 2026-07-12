@@ -1,40 +1,40 @@
 <uipanel id="KLUIPrivilegeBossItem" name="特权boss挑战界面" width="1030" height="560" zindex="201">
-    <panel id="privilege_boss_panel" width="1030" height="560">
-      <img src="Texture/bg_challenge_boss_bg_area.png" width="719" height="435" x="128" y="-41" id="img_59">
+  <panel id="privilege_boss_panel" width="1030" height="560">
+    <img src="Texture/bg_challenge_boss_bg_area.png" width="719" height="435" x="128" y="-41" id="img_59">
+    </img>
+    <loopscrollview id="privilege_boss_select" width="267" height="420" a="11" x="26" y="-110" vertical="1" cellwidth="267" cellheight="79">
+      <datalist id="privilege_boss_level_data_list">
+      </datalist>
+    </loopscrollview>
+    <panel id="tequan_boss_right_panel" width="700" height="400" x="130" y="-43">
+      <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="-148" y="180" id="img_63">
       </img>
-      <loopscrollview id="privilege_boss_select" width="267" height="420" a="11" x="26" y="-110" vertical="1" cellwidth="267" cellheight="79">
-          <datalist id="privilege_boss_level_data_list" >
-          </datalist>
-      </loopscrollview>
-      <panel id="tequan_boss_right_panel" width="700" height="400" x="130" y="-43">
-        <img atlas="Atlas/UIChallengeBoss.spriteatlas" src="bg_boss_name" width="216" height="44" x="-148" y="180" id="img_63">
-        </img>
-        <text id="privilege_boss_name" text="" x="-150" y="180" z="-300" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
-        </text>
-        <panel id="privilege_boss_path_root" width="200" height="200" x="-150" y="20" z="-150">
-          <model id="privilege_boss_path" src="" mscale="120,120,120" mrotate="0,180,0" x="0" y="0">
-          </model>
-        </panel>
-        <img atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="-288" y="-2" a="21" id="img_67">
-        </img>
-        <text id="tequan_boss掉落title" text="掉落奖励" x="102" y="186" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
-        </text>
-        <loopscrollview id="tequan_boss_select" width="302" height="137" x="218" y="88" vertical="1" cellwidth="67" cellheight="67">
-            <datalist id="privilege_boss_reward_data_list" >
-            </datalist>
-        </loopscrollview>
-        <text id="tishi" text="开通特权后每日恢复1次次数\n黄金特权额外恢复1次次数\n钻石特权额外恢复2次次数" width="300" height="100" a="11" ta="00" x="417" y="-200" fontsize="18" mline="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" linespace="1.3">
-        </text>
-        <button id="privilege_boss_join_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" a="11" x="460" y="-315" text="前往挑战" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="" raycast="1">
-        </button>
-        <text id="shengyu" text="剩余挑战次数" x="-30" y="5" a="21" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0">
-        </text>
-        <text id="privilege_boss_last_num" text="" x="335" y="196" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0">
-        </text>
-        <img id="tequan_boss_Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="80" height="76" raycast="1" x="-303" y="174" z="-500">
-          <text id="tequan_boss_Integral_Text" a="00" text="9999" fontsize="16" height="83" width="100" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font">
-          </text>
-        </img>
+      <text id="privilege_boss_name" text="" x="-150" y="180" z="-300" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+      </text>
+      <panel id="privilege_boss_path_root" width="200" height="200" x="-150" y="20" z="-150">
+        <model id="privilege_boss_path" src="" mscale="120,120,120" mrotate="0,180,0" x="0" y="0">
+        </model>
       </panel>
+      <img atlas="Atlas/Common.spriteatlas" src="img_uiicon_21" width="25" height="27" x="-288" y="-2" a="21" id="img_67">
+      </img>
+      <text id="tequan_boss掉落title" text="掉落奖励" x="102" y="186" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+      </text>
+      <loopscrollview id="tequan_boss_select" width="302" height="137" x="218" y="88" vertical="1" cellwidth="67" cellheight="67">
+        <datalist id="privilege_boss_reward_data_list">
+        </datalist>
+      </loopscrollview>
+      <text id="tishi" text="开通特权后每日恢复1次次数\n黄金特权额外恢复1次次数\n钻石特权额外恢复2次次数" width="300" height="100" a="11" ta="00" x="417" y="-200" fontsize="18" mline="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" linespace="1.3">
+      </text>
+      <button id="privilege_boss_join_btn" onclickmasktime="0.5" atlas="Atlas/Common.spriteatlas" src="btn_warOrder_shop" a="11" x="460" y="-315" text="前往挑战" fontsize="20" textcolor="#FFFFFF" outlinesize="1" outlinecolor="0" onclick="" raycast="1">
+      </button>
+      <text id="shengyu" text="剩余挑战次数" x="-30" y="5" a="21" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0">
+      </text>
+      <text id="privilege_boss_last_num" text="" x="335" y="196" fontsize="18" color="#00ff00" outlinesize="1" outlinecolor="0">
+      </text>
+      <img id="tequan_boss_Integral_BG" a="00" atlas="Atlas/KLHuntingDemons.spriteatlas" src="integral_bg" width="80" height="76" raycast="1" x="-303" y="174" z="-500">
+        <text id="tequan_boss_Integral_Text" a="00" text="9999" fontsize="16" height="83" width="100" ta="11" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" fonttype="Battle_Font">
+        </text>
+      </img>
     </panel>
+  </panel>
 </uipanel>

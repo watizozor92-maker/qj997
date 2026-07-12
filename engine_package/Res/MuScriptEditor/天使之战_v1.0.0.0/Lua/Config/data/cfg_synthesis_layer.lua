@@ -8,7 +8,7 @@
 ---@field type IntList @关联合成表父类别id column=5 E
 local cfg_synthesis_layer =
 {
-	{id=1, name="一般合成", description="装备强化、透明披风、恶魔广场通行证、坐骑合成", type={1,3}},
+	{id=1, name="一般合成", description="装备强化、透明披风、恶魔广场通行证", type={1,3}},
 	{id=2, name="玛雅合成", description="玛雅龙斧、玛雅雷杖、玛雅神弓", type={17}},
 	{id=3, name="翅膀合成", description="翅膀合成、翅膀材料合成", type={4,5,6,7,8,9,10}},
 	{id=4, name="大天使武器合成", description="大天使武器、卓越大天使武器、祝福大天使武器、大天使铁锤", type={11,12,13,14}},

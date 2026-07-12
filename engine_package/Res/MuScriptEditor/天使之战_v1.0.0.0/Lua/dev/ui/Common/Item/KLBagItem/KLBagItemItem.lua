@@ -168,7 +168,8 @@ function KLBagItemItem:Refresh()
     GUI:Image_setType(self.view.holdImg_, EImageType.Tiled)
    -- GUI:SetAttr(self.view.holdImg_,"ppum",0.8)
     if self.forgeGroupType == EForgeGroupType.Strength then
-        if self.args.equipPos == 9 or self.args.equipPos == 12 or self.args.equipPos == 13 or self.args.equipPos == EEquipSlotType.Mount then
+        --if self.args.equipPos == 9 or self.args.equipPos == 12 or self.args.equipPos == 13 or self.args.equipPos == EEquipSlotType.Mount then
+        if self.args.equipPos == EEquipSlotType.Mount then
             GUI:setVisible(self.view.root,false)
         else
             GUI:setVisible(self.view.root,true)

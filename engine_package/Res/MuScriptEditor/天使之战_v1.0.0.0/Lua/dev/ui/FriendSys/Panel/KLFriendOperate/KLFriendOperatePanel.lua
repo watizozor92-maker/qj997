@@ -37,7 +37,11 @@ end
 ---显示玩家数据
 ---@param friendInfo UserProtos.RoleInfo
 function this:ShowPlayInfo(friendInfo)
-    GUI:Image_loadTexture(self.view.SpPlayer,"1"..friendInfo.career.baseCareer,"Atlas/MUIcon.spriteatlas")
+    if friendInfo.career.baseCareer == 7 then
+        GUI:Image_loadTexture(self.view.SpPlayer,"177","Atlas/FG_AttrPanel.spriteatlas")
+    else
+        GUI:Image_loadTexture(self.view.SpPlayer,"1"..friendInfo.career.baseCareer,"Atlas/MUIcon.spriteatlas")
+    end
     GUI:Text_setString(self.view.TxtLevel,"等级:"..friendInfo.level)
     ---@type cfg_career_column
     local careerTbl =  SL:GetConfigMultiKeys("cfg_career", friendInfo.career.baseCareer
@@ -155,7 +159,7 @@ function this:ShowPlayerEquips()
         _zindex = 203
     end
     --角色装备信息
-    GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", _, _, {
+    GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", _, _, {
         isOther = true,
         rid = self.rid,
         x = 0,

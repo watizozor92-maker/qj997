@@ -224,38 +224,38 @@ end
 ---@param career CommonProtos.Career @职业数据
 function this:SetPlayerHead(Control,career)
      if career.baseCareer == 1 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/111.png")
+        GUI:Image_loadTexture(Control,"111","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/111.png")
         return
     end
      if career.baseCareer == 2 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/122.png")
+        GUI:Image_loadTexture(Control,"122","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/122.png")
         return
     end
      if career.baseCareer == 3 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/133.png")
+        GUI:Image_loadTexture(Control,"133","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/133.png")
         return
     end
      if career.baseCareer == 4 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/144.png")
+        GUI:Image_loadTexture(Control,"144","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/144.png")
         return
     end
     if career.baseCareer == 5 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/155.png")
+        GUI:Image_loadTexture(Control,"155","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/155.png")
         return
     end
     if career.baseCareer == 6 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/166.png")
+         GUI:Image_loadTexture(Control,"166","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/166.png")
         return
     end
     if career.baseCareer == 7 then
-        --Art\AtlasRes\Sprites\FG_AttrPanel
-        GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/177.png")
+         GUI:Image_loadTexture(Control,"177","Atlas/FG_AttrPanel.spriteatlas")
+        --GUI:Image_loadTexture(Control,"Art/AtlasRes/Sprites/FG_AttrPanel/177.png")
         return
     end
     --GUI:Image_loadTexture(Control,"1"..career.baseCareer,"Atlas/MUIcon.spriteatlas")
@@ -724,8 +724,8 @@ function this:OnClickLockButton()
         SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_PLAYER_EQUIP_GRAIL_INFO, self.selectPlayerId)
     else
         GUI:SetActive(self.view.closeEquipUIButton,true)
-        --角色装备信息
-        GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", _, _, {
+        --角色装备信息dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel
+        GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", _, _, {
             isOther = true,
             rid = self.selectPlayerId,
             isHideMainUI = true,

@@ -16,14 +16,18 @@ end
 function this:GoRecycleBtnOnClick()
     local cfg = SL:GetConfig("cfg_global", 710001)
     if cfg then
-        GUI:UIPanel_Open(cfg.value)
+        --GUI:UIPanel_Open(cfg.value)
+        GUI:UIPanel_Open("dev/ui/Recover/Panel/KLRecover/KLRecoverPanel")
+        --dev/ui/Recover/Panel/KLRecover/KLRecoverPanel
         --GUI:UIPanel_Close("dev/outui/Bag/Panel/KLBagButtonTips/KLBagButtonTipsPanel")
     end
 end
 function this:GoAutoRecycleBtnOnClick()
     local cfg = SL:GetConfig("cfg_global", 710002)
     if cfg then
-        GUI:UIPanel_Open(cfg.value)
+        --GUI:UIPanel_Open(cfg.value)
+        GUI:UIPanel_Open("dev/outui/MonthCard/Panel/KLMonthCardNew/KLMonthCardNewPanel")
+        --dev/outui/MonthCard/Panel/KLMonthCardNew/KLMonthCardNewPanel
     end
 end
 function this:leftDataBtnOnClick()

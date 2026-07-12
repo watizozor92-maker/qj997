@@ -136,7 +136,7 @@ function this:RegistEvents()
 	GUI:AddOnClickEvent(self.view.gotoButton, self, self.gotoButton)
 	GUI:AddOnClickEvent(self.view.liuGuangBtn, self, self.liuGuangBtn)
 	GUI:AddOnClickEvent(self.view.strengthMasterBtn, self, self.strengthMasterBtn)
-	GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
+	--GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
 	GUI:AddOnClickEvent(self.view.Btn_Helper, self, self.OnClick_Btn_Helper)
 	SL:RegisterLUAEvent(LUA_EVENT_EQUIP_GRID_CLICK, self.LUA_EVENT_EQUIP_GRID_CLICK, self)
 	SL:RegisterLUAEvent(LUA_EVENT_BAG_CHANGE_AFTER, self.LUA_EVENT_BAG_CHANGE_AFTER, self)
@@ -177,7 +177,7 @@ function this:liuGuangBtn()
 				local nowStrengthLevel = streamInfo[1]
 				local streamId = streamInfo[2]
 				if strengthLevel < nowStrengthLevel then
-					GUI:SetStreamAttr(self.view.item_model, streamId)
+					--GUI:SetStreamAttr(self.view.item_model, streamId)
 					GUI:setVisible(self.view.liuguangInfo, true)
 					GUI:Text_setString(self.view.liuguangInfo, '+' .. nowStrengthLevel .. '流光效果')
 					
@@ -498,7 +498,7 @@ function this:ClickEquip(equipInfo)
 		else
 			self:SetEquipAttrInfo(self.equipInfo.cfgId, strengthLevel)
 			GUI:setVisible(self.view.StrengthCustomScrollView,true)
-			GUI:setVisible(self.view.strengthIcon_1,true)
+			--GUI:setVisible(self.view.strengthIcon_1,true)
 			GUI:setVisible(self.view.strengthButton,true)
 			GUI:Text_setText(self.view.equipAttribute, "幸运属性" .. SL:GetColorText("(未激活)","#999999"))
 			self:RefreshSuccessRatio(self.equipInfo.cfgId, strengthLevel)
@@ -530,9 +530,9 @@ end
 function this:SetLiuGuang(equipInfo)
 	local liuGuangId = EquipFunc.GetEquipLiuGuangId(equipInfo)
 	if liuGuangId then
-		GUI:SetStreamAttr(self.view.item_model, liuGuangId)
+		--GUI:SetStreamAttr(self.view.item_model, liuGuangId)
 	else
-		GUI:ResetStreamAttr(self.view.item_model)
+		--GUI:ResetStreamAttr(self.view.item_model)
 	end
 end
 
@@ -581,7 +581,7 @@ function this:SetMaxAttrInfo(cfgId, strengthLevel)
 	self.strengthAttTextList = {
 		
 	}
-	GUI:setVisible(self.view.strengthIcon, true)
+	--GUI:setVisible(self.view.strengthIcon, true)
 	local groupId = SL:GetConfig('cfg_equip_luck', cfgId).groupId
 	if not SL:HasConfigTwoKeys('cfg_equip_luckGroup', groupId, strengthLevel, 'group', 'lv') then
 		return
@@ -635,7 +635,7 @@ end
 function this:SetEquipCostInfo(cfgId, strengthLevel)
 	strengthLevel = 0
 	self.costList = {}
-	GUI:setVisible(self.view.strengthIcon_1, true)
+	--GUI:setVisible(self.view.strengthIcon_1, true)
 	GUI:setVisible(self.view.StrengthCustomScrollView, true)
 	local costId = SL:GetConfig('cfg_equip_luck', cfgId).costId
 	local next_level = strengthLevel
@@ -674,7 +674,7 @@ function this:SetEquipAttrInfo(cfgId, strengthLevel)
 		
 	}
 	
-	GUI:setVisible(self.view.strengthIcon, true)
+	--GUI:setVisible(self.view.strengthIcon, true)
 	local groupId = SL:GetConfig('cfg_equip_luck', cfgId).groupId
 	local nowAttrInfo
 	if SL:HasConfigTwoKeys('cfg_equip_luckGroup', groupId, strengthLevel, 'group', 'lv') then
@@ -784,7 +784,7 @@ end
 
 -- 装备模型
 function this:SetEquipModel(cfgId)
-	GUI:setVisible(self.view.item_model, true)
+	--GUI:setVisible(self.view.item_model, true)
 	-- GUI:Item_UpdataData(self.view.item_model, {
 	-- 	itemid = cfgId,
 	-- 	mscale = EquipFunc.GetEquipInScaleAtt(cfgId, nil, EquipFunc.ItemForgeShowEquipScale(cfgId)),
@@ -800,7 +800,7 @@ function this:SetEquipModel(cfgId)
         mrotate = _rotate,
         mpos = _pos,
     }
-    GUI:Item_UpdataData(self.view.item_model, data)
+    --GUI:Item_UpdataData(self.view.item_model, data)
 end
 
 --是否是满级装备

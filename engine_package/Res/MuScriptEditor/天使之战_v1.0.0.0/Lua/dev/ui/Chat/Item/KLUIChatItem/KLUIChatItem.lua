@@ -57,6 +57,7 @@ function this:RefreshItem(data)
     if channel ~= EChatChannelType.SYSTEM and not is_union_system then
         local career = self.message.career
         careerStr = "1" .. career
+        careerimgstr = "1" .. career .. career
         local server_name = ""
         --跨服消息要在玩家名字前面显示服务器名字
         if channel == EChatChannelType_Out.CORSS_SERVER then
@@ -109,7 +110,8 @@ function this:RefreshItem(data)
         GUI:setPositionX(self.view.name, 10)
         GUI:setPositionX(self.view.qipao, 12)
     else
-        GUI:Image_loadTexture(self.view.icon, careerStr, "Atlas/MUIcon.spriteatlas")
+       -- GUI:Image_loadTexture(self.view.icon, careerStr, "Atlas/MUIcon.spriteatlas")
+        GUI:Image_loadTexture(self.view.icon, careerimgstr, "Atlas/FG_AttrPanel.spriteatlas")
         GUI:setVisible(self.view.icon_root, true)
     end
     if self.message.itemList and table.count(self.message.itemList) > 0 then

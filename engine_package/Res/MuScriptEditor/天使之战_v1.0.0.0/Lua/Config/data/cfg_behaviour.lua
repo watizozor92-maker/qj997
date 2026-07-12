@@ -100,7 +100,7 @@
 ---@field effectServerAnimSpeed number @单个动画播放速度 column=22 V
 
 local local_wing = {
-    wing_1={21300011,21300021,21300031,21310011,21310021,21310031,21310041,21320011,21320021,21320031,21320041,21320051,21320061,21325011,21325021,21325031,21325041,21325051,21325061,21330011,21330021,21330031,21330041,21330051,21330061,21340011,21340021,21340031,21340041,21340051,21340061,21310501,21310601,21310701,21310801,21310901,21311001,21320501,21320601,21320701,21320801,21320901,21321001,21330501,21330601,21330701,21330801,21330901,21331001,21310501,21310601,21310701,21310801,21310901,21311001,21320501,21320601,21320701,21320801,21320901,21321001,21330501,21330601,21330701,21330801,21330901,21331001,2130001199,2130002199,2130003199,2131001199,2131002199,2131003199,2131004199,2132001199,2132002199,2132003199,2132004199,2132005199,2132006199,2132501199,2132502199,2132503199,2132504199,2132505199,2132506199,2133001199,2133002199,2133003199,2133004199,2133005199,2133006199,2134001199,2134002199,2134003199,2134004199,2134005199,2134006199,2131050199,2131060199,2131070199,2131080199,2131090199,2131100199,2132050199,2132060199,2132070199,2132080199,2132090199,2132100199,2133050199,2133060199,2133070199,2133080199,2133090199,2133100199,2131050199,2131060199,2131070199,2131080199,2131090199,2131100199,2132050199,2132060199,2132070199,2132080199,2132090199,2132100199,2133050199,2133060199,2133070199,2133080199,2133090199,2133100199},
+    wing_1={21300011,21300021,21300031,21310011,21310021,21310031,21310041,21320011,21320021,21320031,21320041,21320051,21320061,21325011,21325021,21325031,21325041,21325051,21330011,21330021,21330031,21330041,21330051,21330061,21340011,21340021,21340031,21340041,21340051,21340061,1554,1555,1556,1557,1573,1574,2130001199,2130002199,2130003199,2131001199,2131002199,2131003199,2131004199,2132001199,2132002199,2132003199,2132004199,2132005199,2132006199,2132501199,2132502199,2132503199,2132504199,2132505199,2133001199,2133002199,2133003199,2133004199,2133005199,2133006199,2134001199,2134002199,2134003199,2134004199,2134005199,2134006199,155499,155599,155699,155799,157399,157499,21325061,2132506199,21370011,21370021,21370031,21370041,2137001199,2137002199,2137003199,2137004199},
     wing_2={},
 
 }
@@ -364,7 +364,7 @@ local cfg_behaviour =
 	{id=212050001, skillName="所有职业-飞行持弩-野外移动", behaviour=1, career=3, equip=local_equip.equip_3, mount=local_mount.mount_1, anim=local_anim.anim_25},
 	{id=212050002, skillName="所有职业-飞行-弓-野外移动", behaviour=1, career=3, equip=local_equip.equip_4, mount=local_mount.mount_1, anim=local_anim.anim_18},
 	{id=212050003, skillName="所有职业-飞行-双手剑-野外移动", behaviour=1, equip=local_equip.equip_6, mount=local_mount.mount_1, anim=local_anim.anim_18},
-	{id=212060000, behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
+	{id=212060000, skillName="所有职业-空手-翅膀-彩云兽移动", behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
 	{id=212060001, skillName="所有职业-空手-翅膀-炎狼兽移动", behaviour=1, equip=local_equip.equip_1, anim=local_anim.anim_20},
 	{id=212060002, skillName="所有职业-空手-翅膀-星冥龙移动", behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_4, anim=local_anim.anim_5},
 	{id=212070000, skillName="所有职业-持武器-翅膀-兽角、彩云兽移动", behaviour=1, equip=local_equip.equip_2, mount=local_mount.mount_2, anim=local_anim.anim_21},
@@ -399,7 +399,7 @@ local cfg_behaviour =
 	{id=212250001, skillName="所有职业-飞行持弩-野外游泳", behaviour=1, area=2, career=3, equip=local_equip.equip_3, mount=local_mount.mount_1, anim=local_anim.anim_25},
 	{id=212250002, skillName="所有职业-飞行-弓-野外游泳", behaviour=1, area=2, career=3, equip=local_equip.equip_4, mount=local_mount.mount_1, anim=local_anim.anim_18, Sound=20013},
 	{id=212250003, skillName="所有职业-飞行-双手武器-野外游泳", behaviour=1, area=2, equip=local_equip.equip_6, mount=local_mount.mount_1, anim=local_anim.anim_18, Sound=20013},
-	{id=212260000, behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
+	{id=212260000, skillName="所有职业-空手-翅膀-彩云兽移动", behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
 	{id=212260001, skillName="所有职业-空手-翅膀-炎狼兽移动", behaviour=1, area=2, equip=local_equip.equip_1, anim=local_anim.anim_20},
 	{id=212260002, skillName="所有职业-空手-翅膀-星冥龙移动", behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_4, anim=local_anim.anim_5},
 	{id=212270000, skillName="所有职业-持武器-翅膀-兽角、彩云兽游泳", behaviour=1, area=2, equip=local_equip.equip_2, mount=local_mount.mount_2, anim=local_anim.anim_21},
@@ -506,7 +506,7 @@ local cfg_behaviour =
 	{id=412050001, skillName="所有职业-飞行持弩-野外移动", state=4, behaviour=1, career=3, equip=local_equip.equip_3, mount=local_mount.mount_1, anim=local_anim.anim_25},
 	{id=412050002, skillName="所有职业-飞行-弓-野外移动", state=4, behaviour=1, career=3, equip=local_equip.equip_4, mount=local_mount.mount_1, anim=local_anim.anim_18},
 	{id=412050003, skillName="所有职业-飞行-双手剑-野外移动", state=4, behaviour=1, equip=local_equip.equip_6, mount=local_mount.mount_1, anim=local_anim.anim_18},
-	{id=412060000, state=4, behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
+	{id=412060000, skillName="所有职业-空手-翅膀-彩云兽移动", state=4, behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
 	{id=412060001, skillName="所有职业-空手-翅膀-炎狼兽移动", state=4, behaviour=1, equip=local_equip.equip_1, anim=local_anim.anim_20},
 	{id=412060002, skillName="所有职业-空手-翅膀-星冥龙移动", state=4, behaviour=1, equip=local_equip.equip_1, mount=local_mount.mount_4, anim=local_anim.anim_5},
 	{id=412070000, skillName="所有职业-持武器-翅膀-兽角、彩云兽移动", state=4, behaviour=1, equip=local_equip.equip_2, mount=local_mount.mount_2, anim=local_anim.anim_21},
@@ -541,7 +541,7 @@ local cfg_behaviour =
 	{id=412250001, skillName="所有职业-飞行持弩-野外游泳", state=4, behaviour=1, area=2, career=3, equip=local_equip.equip_3, mount=local_mount.mount_1, anim=local_anim.anim_25},
 	{id=412250002, skillName="所有职业-飞行-弓-野外游泳", state=4, behaviour=1, area=2, career=3, equip=local_equip.equip_4, mount=local_mount.mount_1, anim=local_anim.anim_18, Sound=20013},
 	{id=412250003, skillName="所有职业-飞行-双手武器-野外游泳", state=4, behaviour=1, area=2, equip=local_equip.equip_6, mount=local_mount.mount_1, anim=local_anim.anim_18, Sound=20013},
-	{id=412260000, state=4, behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
+	{id=412260000, skillName="所有职业-空手-翅膀-彩云兽移动", state=4, behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_2, anim=local_anim.anim_19},
 	{id=412260001, skillName="所有职业-空手-翅膀-炎狼兽移动", state=4, behaviour=1, area=2, equip=local_equip.equip_1, anim=local_anim.anim_20},
 	{id=412260002, skillName="所有职业-空手-翅膀-星冥龙移动", state=4, behaviour=1, area=2, equip=local_equip.equip_1, mount=local_mount.mount_4, anim=local_anim.anim_5},
 	{id=412270000, skillName="所有职业-持武器-翅膀-兽角、彩云兽游泳", state=4, behaviour=1, area=2, equip=local_equip.equip_2, mount=local_mount.mount_2, anim=local_anim.anim_21},
@@ -741,12 +741,13 @@ local cfg_behaviour =
 	{id=520200020, skillName="魔剑-闪电轰顶", state=5, safeZone=0, career=4, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1004022}, animMode=local_animMode.animMode_2, anim={"SpellSword@leidianhongding"}, Sound=0},
 	{id=520200021, skillName="魔剑-暗影突袭", state=5, safeZone=0, career=4, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1004023}, animMode=local_animMode.animMode_2, anim={"Magic@nengliangqiu01"}, Sound=0},
 	{id=520200022, skillName="魔剑-圣盾防御", state=5, safeZone=0, career=4, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill=local_skill.skill_4, anim=local_anim.anim_49, Sound=0},
-	{id=610010000, skillName="男性死亡", state=6, behaviour=1, safeZone=0, career=1, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
-	{id=610020000, skillName="男性死亡", state=6, behaviour=1, safeZone=0, career=2, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
+	{id=610010000, state=6, behaviour=1, safeZone=0, career=1, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
+	{id=610020000, state=6, behaviour=1, safeZone=0, career=2, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
 	{id=610030000, skillName="女性死亡", state=6, behaviour=1, safeZone=0, career=3, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60007},
-	{id=610040000, skillName="男性死亡", state=6, behaviour=1, safeZone=0, career=4, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
-	{id=610050000, skillName="男性死亡", state=6, behaviour=1, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
+	{id=610040000, state=6, behaviour=1, safeZone=0, career=4, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
+	{id=610050000, state=6, behaviour=1, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
 	{id=610060000, skillName="女性死亡", state=6, behaviour=1, safeZone=0, career=6, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60007},
+	{id=610070000, state=6, behaviour=1, safeZone=0, career=7, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, anim=local_anim.anim_66, Sound=60004},
 	{id=520500000, skillName="圣导师-普通攻击-不拿武器", state=5, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1015000}, anim=local_anim.anim_67, Sound=0},
 	{id=520500001, skillName="圣导师-冲击", state=5, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1014012}, anim=local_anim.anim_67, Sound=0},
 	{id=520500002, skillName="圣导师-星云火链", state=5, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1005001}, anim=local_anim.anim_67, Sound=0},
@@ -755,7 +756,7 @@ local cfg_behaviour =
 	{id=520500005, skillName="圣导师-地裂", state=5, safeZone=0, career=5, wing=local_wing.wing_2, equip=local_equip.equip_1, mount=local_mount.mount_1, skill={1005002}, anim=local_anim.anim_67, Sound=0},
 }
 
-local defaults = {skillName="所有职业-空手-翅膀-彩云兽移动", state=2, behaviour=2, safeZone=2, area=0, career=0, sex=0, wing={21300011,21300021,21300031,21310011,21310021,21310031,21310041,21320011,21320021,21320031,21320041,21320051,21320061,21325011,21325021,21325031,21325041,21325051,21325061,21330011,21330021,21330031,21330041,21330051,21330061,21340011,21340021,21340031,21340041,21340051,21340061,21310501,21310601,21310701,21310801,21310901,21311001,21320501,21320601,21320701,21320801,21320901,21321001,21330501,21330601,21330701,21330801,21330901,21331001,21310501,21310601,21310701,21310801,21310901,21311001,21320501,21320601,21320701,21320801,21320901,21321001,21330501,21330601,21330701,21330801,21330901,21331001,2130001199,2130002199,2130003199,2131001199,2131002199,2131003199,2131004199,2132001199,2132002199,2132003199,2132004199,2132005199,2132006199,2132501199,2132502199,2132503199,2132504199,2132505199,2132506199,2133001199,2133002199,2133003199,2133004199,2133005199,2133006199,2134001199,2134002199,2134003199,2134004199,2134005199,2134006199,2131050199,2131060199,2131070199,2131080199,2131090199,2131100199,2132050199,2132060199,2132070199,2132080199,2132090199,2132100199,2133050199,2133060199,2133070199,2133080199,2133090199,2133100199,2131050199,2131060199,2131070199,2131080199,2131090199,2131100199,2132050199,2132060199,2132070199,2132080199,2132090199,2132100199,2133050199,2133060199,2133070199,2133080199,2133090199,2133100199}, equipNum=0, equip={{3,101},{1,105},{1,102}}, mount={3,4,5,6,7,11,12,13,14,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,1412,1413,1414,1415,1416,1417,1418,1419,15,16,17,18,19,21,22,23,24,27,28,29,30,31,32,33,34}, skill={}, strPart={}, animMode={0}, anim={"magic_attack1","magic_attack2"}, animSpeed=0, Sound=20008, animUp="", animDown="", speed=0, effectServerAnimSpeed=0}
+local defaults = {skillName="男性死亡", state=2, behaviour=2, safeZone=2, area=0, career=0, sex=0, wing={21300011,21300021,21300031,21310011,21310021,21310031,21310041,21320011,21320021,21320031,21320041,21320051,21320061,21325011,21325021,21325031,21325041,21325051,21330011,21330021,21330031,21330041,21330051,21330061,21340011,21340021,21340031,21340041,21340051,21340061,1554,1555,1556,1557,1573,1574,2130001199,2130002199,2130003199,2131001199,2131002199,2131003199,2131004199,2132001199,2132002199,2132003199,2132004199,2132005199,2132006199,2132501199,2132502199,2132503199,2132504199,2132505199,2133001199,2133002199,2133003199,2133004199,2133005199,2133006199,2134001199,2134002199,2134003199,2134004199,2134005199,2134006199,155499,155599,155699,155799,157399,157499,21325061,2132506199,21370011,21370021,21370031,21370041,2137001199,2137002199,2137003199,2137004199}, equipNum=0, equip={{3,101},{1,105},{1,102}}, mount={3,4,5,6,7,11,12,13,14,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411,1412,1413,1414,1415,1416,1417,1418,1419,15,16,17,18,19,21,22,23,24,27,28,29,30,31,32,33,34}, skill={}, strPart={}, animMode={0}, anim={"magic_attack1","magic_attack2"}, animSpeed=0, Sound=20008, animUp="", animDown="", speed=0, effectServerAnimSpeed=0}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_behaviour) do
 	setmetatable(v, mt)

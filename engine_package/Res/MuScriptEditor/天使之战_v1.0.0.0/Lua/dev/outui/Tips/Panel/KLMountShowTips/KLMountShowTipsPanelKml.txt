@@ -1,22 +1,22 @@
-<uipanel id="KLMountShowTipsPanelKml" a="00" width="300" height="300" zindex="1002" z="-3000">
+<uipanel id="KLMountShowTipsPanelKml" a="00" width="300" height="300" zindex="1002" z="-3000" active="0">
   <button id="MsakBtn" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" color="#00000000" raycast="0" onclick="" active="1" x="47" y="66" fontsize="16">
   </button>
   <img id="bg" width="274" height="620" atlas="" src="Texture/bg_tips.png" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" active="1" ap="0.5#1#0.5#1#0.5#1">
-    <text id="text3" ap="0.5#1#0.5#1#0.5#1" a="00" text="词条达到一定数量后即可解锁新外观" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" y="0" h5y="274" color="#FFBF00FF" outlinesize="1" outlinecolor="#000000FF">
-    </text>
     <scrollview id="scrollview1" ap="0.5#1#0.5#1#0.5#1" a="00" width="265" height="578" vertical="1" y="-25" raycast="1" x="-2">
       <layout id="layout2" width="360" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1">
         <datalist id="MountItemData">
           <panel id="MountItem" width="254" height="250">
-            <text id="itemText" a="00" text="默认" fontsize="16" height="25" width="259" ta="01" outline="1" horwrap="1" y="113" x="4">
-            </text>
             <img id="itemBg" a="00" width="256" height="216" raycast="1" src="Texture/bg_zuoqidi.png" atlas="" y="-9">
             </img>
+            <text id="itemText" a="00" text="默认" fontsize="16" height="25" width="259" ta="01" outline="1" horwrap="1" y="113" x="4">
+            </text>
             <model id="model9" width="190" height="190" x="-25" y="-56">
             </model>
           </panel>
         </datalist>
       </layout>
     </scrollview>
+    <text id="text3" ap="0.5#1#0.5#1#0.5#1" a="00" text="词条达到一定数量后即可解锁新外观" fontsize="16" height="25" width="350" ta="11" outline="1" horwrap="1" y="0" h5y="274" color="#FFBF00FF" outlinesize="1" outlinecolor="#000000FF">
+    </text>
   </img>
 </uipanel>

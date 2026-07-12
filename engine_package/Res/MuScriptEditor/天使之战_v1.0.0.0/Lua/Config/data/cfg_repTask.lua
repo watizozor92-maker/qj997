@@ -107,7 +107,7 @@ local cfg_repTask =
 	{id=16001004, name="阶段4", UItext="占领罗兰之冠", type=5, param={1}, moveTo=local_moveTo.moveTo_5},
 	{id=16001101, cehua="攻城战-守方任务", name="阶段1", UItext="守护外城门", nextID=16001102, param=local_param.param_3, moveTo=local_moveTo.moveTo_2},
 	{id=16001102, cehua="攻城战-守方任务", name="阶段2", UItext="守护中城门", nextID=16001103, param=local_param.param_4, moveTo=local_moveTo.moveTo_3},
-	{id=16001103, cehua="攻城战-守方任务", name="阶段3", UItext="守护内城门", nextID=16001104, param=local_param.param_5, moveTo=local_moveTo.moveTo_4},
+	{id=16001103, cehua="攻城战-守方任务", name="阶段3", UItext="守护内城门", nextID=16001104, param=local_param.param_5, reward={{10240001,10000,1}}, moveTo=local_moveTo.moveTo_4},
 	{id=16001104, cehua="攻城战-守方任务", name="阶段4", UItext="守护罗兰之冠", type=5, param=local_param.param_6, moveTo=local_moveTo.moveTo_5},
 	{id=21001001, cehua="昆顿入侵", name="昆顿入侵", UItext="击杀昆顿", param={21001001,1}, moveTo=local_moveTo.moveTo_6},
 	{id=27001001, cehua="咒怨魔王", name="咒怨魔王", UItext="击杀小怪", nextID=27001002, type=1, param=local_param.param_6, moveTo=local_moveTo.moveTo_6},

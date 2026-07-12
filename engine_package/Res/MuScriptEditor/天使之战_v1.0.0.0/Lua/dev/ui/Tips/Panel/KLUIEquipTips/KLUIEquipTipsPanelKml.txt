@@ -12,7 +12,7 @@
       <img id="equip_name_bg" x="0" y="-14" width="272" ta="11" height="18" raycast="1" src="bg_red" atlas="Atlas/FG_Common.spriteatlas" horwrap="1" color="#FFFFFF" a="01">
       </img>
       <text id="equip_name" text="" fontsize="16" color="#FFFFFFFF" outlinecolor="0" outlinesize="0" x="0" y="-13" width="300" ta="11" outline="0" horwrap="1" height="20" a="01" fontstyle="0">
-        <button id="MountShowBtn" a="21" width="50" height="50" onclick="" text="" raycast="1" src="btn_preview" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-20" textcolor="#FFFF80FF" outlinesize="1" outlinecolor="#000000FF" y="-5">
+        <button id="MountShowBtn" a="21" width="50" height="50" onclick="" text="" raycast="0" src="" atlas="" mimg="" pimg="" dimg="" x="-20" textcolor="#FFFF80FF" outlinesize="1" outlinecolor="#000000FF" y="-5" active="0" enable="0">
         </button>
       </text>
       <layout id="jichu_layout" width="361" x="0" y="-44" a="01" vertical="1" cella="01" space="0" height="405" contentsizefitter="1">

@@ -4,6 +4,7 @@
 ---@field mapDataList UIKmlLuaControlHandler
 ---@field scrollview2 UIKmlLuaControlHandler
 ---@field layout3 UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
 local KLHookPointItemView = {}
 setmetatable(KLHookPointItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Hook/Item/KLHookPoint/KLHookPointItemKml'

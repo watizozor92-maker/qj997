@@ -103,29 +103,29 @@ function this:Init()
     end
 
     self.gridData = {
-        [EEquipSlotType.Weapon] = { bg = "img_player_weapon1", otherBg = "img_player_weapon1_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 86, height = 216, x = 24, y = -120, qualityX = 3, qualityY = -3, strengthX = -16, selectX = 0, selectY = 0, selectWidth = 86, selectHeight = 216 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.OffHandWeapon] = { bg = "img_player_weapon2", otherBg = "img_player_weapon2_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 86, height = 216, x = 300, qualityX = 5.2, qualityY = -2.8, y = -120, strengthX = -10, selectX = 0, selectY = 0, selectWidth = 86, selectHeight = 216 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Helmet] = { bg = "img_player_helm", otherBg = "img_player_helm_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 109, height = 106, x = 150, y = -15, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 0, selectY = -2, selectWidth = 107, selectHeight = 102 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Armor] = { bg = "img_player_armor", otherBg = "img_player_armor_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 110, height = 216, x = 150, y = -120, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 3, selectY = 0, selectWidth = 105, selectHeight = 210 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Glove] = { bg = "img_player_glove", otherBg = "img_player_glove_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 88, height = 105, x = 24, y = -335, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 2, selectY = -2, selectWidth = 86, selectHeight = 101 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Pant] = { bg = "img_player_pant", otherBg = "img_player_pant_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 109, height = 106, x = 150, y = -335, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 3, selectY = -3, selectWidth = 105, selectHeight = 100 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Boot] = { bg = "img_player_boot", otherBg = "img_player_boot_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 88, height = 105, x = 300, y = -335, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -1, selectWidth = 83, selectHeight = 100 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Necklace] = { bg = "img_player_necklace", otherBg = "img_player_necklace_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 103, y = -15, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 54, selectHeight = 50,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.LeftEarring] = { bg = "img_player_earrings", otherBg = "img_player_earrings_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 103, y = -120, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 54, selectHeight = 50 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.RightEarring] = { bg = "img_player_earrings", otherBg = "img_player_earrings_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 252, y = -120, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 50,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.LeftRing] = { bg = "img_player_ring", otherBg = "img_player_ring_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 103, y = -335, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 54, selectHeight = 50,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.RightRing] = { bg = "img_player_ring", otherBg = "img_player_ring_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 252, y = -335, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 3, selectY = -1, selectWidth = 50, selectHeight = 48 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.Guard] = { bg = "img_player_pet", otherBg = "img_player_pet_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 88, height = 105, x = 24, y = -15, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -2, selectWidth = 84, selectHeight = 100,xinyunX = 3, xinyunY = 5 },        
-        [EEquipSlotType.Wing] = { bg = "img_player_wing", otherBg = "img_player_wing_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 88, height = 105, x = 300, y = -15, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -2, selectWidth = 82, selectHeight = 100,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.PriestHawk] = { bg = "img_player_washi", otherBg = "img_player_washi_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 96, height = 116, x = 330, y = -157, qualityX = 3, qualityY = -2, strengthX = -10 ,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.ArchangelWeapon] = { bg = "img_player_weapon1", otherBg = "img_player_weapon1_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 97, height = 228, x = 28, y = -120, qualityX = 3, qualityY = -3, strengthX = -16, selectX = 5, selectY = -2, selectWidth = 78, selectHeight = 211,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.ArchangelOffHandWeapon] = { bg = "img_player_weapon2", otherBg = "img_player_weapon2_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 98, height = 228, x = 328, qualityX = 5.2, qualityY = -2.8, y = -120, strengthX = -10, selectX = 8.5, selectY = -5, selectWidth = 80, selectHeight = 210 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.ArchangelHelmet] = { bg = "img_player_helm", otherBg = "img_player_helm_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 124, height = 115, x = 166, y = -15, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -2, selectWidth = 107, selectHeight = 102 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.ArchangelArmor] = { bg = "img_player_armor", otherBg = "img_player_armor_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 124, height = 228, x = 166, y = -120, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -3, selectWidth = 105, selectHeight = 210 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.ArchangelGlove] = { bg = "img_player_glove", otherBg = "img_player_glove_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 96, height = 116, x = 30, y = -335, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 2, selectY = -2, selectWidth = 86, selectHeight = 101 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.ArchangelPant] = { bg = "img_player_pant", otherBg = "img_player_pant_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 124, height = 115, x = 166, y = -335, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -3, selectWidth = 105, selectHeight = 100 ,xinyunX = 3, xinyunY = 5},
-        [EEquipSlotType.ArchangelBoot] = { bg = "img_player_boot", otherBg = "img_player_boot_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 96, height = 116, x = 330, y = -335, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -3, selectWidth = 83, selectHeight = 100,xinyunX = 3, xinyunY = 5 },
-        [EEquipSlotType.Mount] = { bg = "img_mount", otherBg = "img_mount_noNull", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 56, height = 56, x = 252, y = -15, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 0, selectY = 0, selectWidth = 54, selectHeight = 50,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.Weapon] = { bg = "img_player_weapon1", otherBg = "img_player_weapon1_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 90, y = -19, qualityX = 3, qualityY = -3, strengthX = -16, selectX = 0, selectY = 0, selectWidth = 72, selectHeight = 111 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.OffHandWeapon] = { bg = "img_player_weapon2", otherBg = "img_player_weapon2_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 370, y = -19, qualityX = 5.2, qualityY = -2.8, strengthX = -10, selectX = 0, selectY = 0, selectWidth = 72, selectHeight = 111 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Helmet] = { bg = "img_player_helm", otherBg = "img_player_helm_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 229, y = 53, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 0, selectY = -2, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Armor] = { bg = "img_player_armor", otherBg = "img_player_armor_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 229, y = -19, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 3, selectY = 0, selectWidth = 72, selectHeight = 111 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Glove] = { bg = "img_player_glove", otherBg = "img_player_glove_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 90, y = -129, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 2, selectY = -2, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Pant] = { bg = "img_player_pant", otherBg = "img_player_pant_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 229, y = -129, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 3, selectY = -3, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Boot] = { bg = "img_player_boot", otherBg = "img_player_boot_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 370, y = -129, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -1, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Necklace] = { bg = "img_player_necklace", otherBg = "img_player_necklace_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51, x = 169, y = -20, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 51,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.LeftEarring] = { bg = "img_player_earrings", otherBg = "img_player_earrings_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51, x = 169, y = -79, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 51 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.RightEarring] = { bg = "img_player_earrings", otherBg = "img_player_earrings_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51, x = 312, y = -79, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 51,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.LeftRing] = { bg = "img_player_ring", otherBg = "img_player_ring_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51, x = 169, y = -129, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 51,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.RightRing] = { bg = "img_player_ring", otherBg = "img_player_ring_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51, x = 312, y = -129, qualityX = 0, qualityY = 0, strengthX = -3, selectX = 3, selectY = -1, selectWidth = 51, selectHeight = 51 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.Guard] = { bg = "img_player_pet", otherBg = "img_player_pet_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 90, y = 52, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -2, selectWidth = 72, selectHeight = 72,xinyunX = 3, xinyunY = 5 },        
+        [EEquipSlotType.Wing] = { bg = "img_player_wing", otherBg = "img_player_wing_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 110, height = 72, x = 331, y = 52, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -2, selectWidth = 110, selectHeight = 72,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.PriestHawk] = { bg = "img_player_washi", otherBg = "img_player_washi_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 45, height = 45, x = 169, y = 70, qualityX = 3, qualityY = -2, strengthX = -10 ,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.Mount] = { bg = "img_mount", otherBg = "img_mount_noNull", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 51, height = 51,x = 312,  y = -20, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 0, selectY = 0, selectWidth = 51, selectHeight = 51,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.ArchangelWeapon] = { bg = "img_player_weapon1", otherBg = "img_player_weapon1_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 90, y = -19, qualityX = 3, qualityY = -3, strengthX = -16, selectX = 5, selectY = -2, selectWidth = 72, selectHeight = 111,xinyunX = 3, xinyunY = 5 },
+        [EEquipSlotType.ArchangelOffHandWeapon] = { bg = "img_player_weapon2", otherBg = "img_player_weapon2_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 370, y = -19, qualityX = 5.2, qualityY = -2.8, strengthX = -10, selectX = 8.5, selectY = -5, selectWidth = 72, selectHeight = 111 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.ArchangelHelmet] = { bg = "img_player_helm", otherBg = "img_player_helm_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 229, y = 53, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -2, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.ArchangelArmor] = { bg = "img_player_armor", otherBg = "img_player_armor_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 111, x = 229, y = -19, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -3, selectWidth = 72, selectHeight = 111 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.ArchangelGlove] = { bg = "img_player_glove", otherBg = "img_player_glove_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 90, y = -129, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 2, selectY = -2, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.ArchangelPant] = { bg = "img_player_pant", otherBg = "img_player_pant_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 229, y = -129, qualityX = 7, qualityY = -2, strengthX = -12, selectX = 7, selectY = -3, selectWidth = 72, selectHeight = 72 ,xinyunX = 3, xinyunY = 5},
+        [EEquipSlotType.ArchangelBoot] = { bg = "img_player_boot", otherBg = "img_player_boot_select", bgAtlas = "Atlas/FG_BagEquip.spriteatlas", width = 72, height = 72, x = 370, y = -129, qualityX = 3, qualityY = -2, strengthX = -12, selectX = 3, selectY = -3, selectWidth = 72, selectHeight = 72,xinyunX = 3, xinyunY = 5 },
     }
     self.specialData = { bg = "img_player_gemstone", width = 96, height = 116, x = 330, y = -270, qualityX = 3, qualityY = -2, strengthX = -10 ,xinyunX = 3, xinyunY = 5}
     if not self.args then
@@ -289,15 +289,15 @@ function this:SetSelfWearBarType(wearBarType)
             show = true
             local icon = SL:GetConfig("cfg_wearing_bar", EEquipWearBarType.Archange).icon
             local icon2 = SL:GetConfig("cfg_wearing_bar", EEquipWearBarType.ShengDaoShi).icon
-            GUI:Image_loadTexture(self.view.WearArchange, icon, "Atlas/UIzhuangbeixt.spriteatlas")
             GUI:Image_loadTexture(self.view.wearBarChange, icon2, "Atlas/UIzhuangbeixt.spriteatlas")
+            GUI:Image_loadTexture(self.view.WearArchange, icon, "Atlas/UIzhuangbeixt.spriteatlas")
 
         elseif wearBarType == EEquipWearBarType.Archange then
             show = true
             local icon = SL:GetConfig("cfg_wearing_bar", self.baseWearBar).icon
             local icon2 = SL:GetConfig("cfg_wearing_bar", EEquipWearBarType.ShengDaoShi).icon
             GUI:Image_loadTexture(self.view.wearBarChange, icon2, "Atlas/UIzhuangbeixt.spriteatlas")
-            GUI:Image_loadTexture(self.view.WearArchange, icon, "Atlas/UIzhuangbeixt.spriteatlas")
+            GUI:Image_loadTexture(self.view.WearArchange, icon, "Atlas/UIzhuangbeixt.spriteatlas")       
         else
             local icon = SL:GetConfig("cfg_wearing_bar", EEquipWearBarType.Archange).icon
             local icon2 = SL:GetConfig("cfg_wearing_bar", self.baseWearBar).icon
@@ -333,16 +333,16 @@ function this:UpdateEquips()
     ---@type cfg_wearing_bar_column
     local tbl = SL:GetConfig("cfg_wearing_bar", wearBarType)
 
-    if wearBarType == 12 then --圣导师专属装备栏
-        self.gridData[EEquipSlotType.OffHandWeapon].height =110
-        self.gridData[EEquipSlotType.OffHandWeapon].selectHeight =110
-        self.gridData[EEquipSlotType.OffHandWeapon].y = -267
+    -- if wearBarType == 12 then --圣导师专属装备栏
+    --     self.gridData[EEquipSlotType.OffHandWeapon].height =111
+    --     self.gridData[EEquipSlotType.OffHandWeapon].selectHeight =111
+    --     self.gridData[EEquipSlotType.OffHandWeapon].y = -19
 
-        self.gridData[EEquipSlotType.ArchangelOffHandWeapon].height =110
-        self.gridData[EEquipSlotType.ArchangelOffHandWeapon].selectHeight =110
-        self.gridData[EEquipSlotType.ArchangelOffHandWeapon].y = -267
+    --     self.gridData[EEquipSlotType.ArchangelOffHandWeapon].height =111
+    --     self.gridData[EEquipSlotType.ArchangelOffHandWeapon].selectHeight =111
+    --     self.gridData[EEquipSlotType.ArchangelOffHandWeapon].y = -19
         
-    end
+    -- end
 
     for k, data in ipairs(self.equipSlotTypeList) do
         --类型
@@ -358,7 +358,7 @@ function this:UpdateEquips()
                     self.isUpdateEquips = true
                     self.endEquipSlotTypeListIndex = k
                     local default = self.gridData[v] or self.gridData[p]
-                    if self.wearBar == EEquipWearBarType.ShengDaoShi and v == EEquipSlotType.OffHandWeapon then
+                    if self.wearBar == EEquipWearBarType.ShengDaoShi and v == EEquipSlotType.OffHandWeapon then                    
                         default = self.specialData
                     end
                     local itemCfgId = self.equips[v] and self.equips[v].cfgId or nil
@@ -404,7 +404,7 @@ function this:UpdateEquips()
                     end)
                 else
                     local default = self.gridData[v] or self.gridData[p]
-                    if self.wearBar == EEquipWearBarType.ShengDaoShi and v == EEquipSlotType.OffHandWeapon then
+                    if self.wearBar == EEquipWearBarType.ShengDaoShi and v == EEquipSlotType.OffHandWeapon then                    
                         default = self.specialData
                     end
                     local args = { equipPos = v, isOtherPlayer = self.isOtherPlayer, isEquipGrid = true, item = nil, default = default or {}, x = default.x, y = default.y, click = self.OnGridItemClick, callBackUI = self }

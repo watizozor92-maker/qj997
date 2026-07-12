@@ -1,3 +1,2 @@
-<uipanel id="KLPrivilegeBossOpenPanel" name="特权boss开启界面" zindex="203" width="1049" height="565"  x="0" onload = "" maskonclick="">
-   
+<uipanel id="KLPrivilegeBossOpenPanel" name="特权boss开启界面" zindex="203" width="1049" height="565" x="0" onload="" maskonclick="">
 </uipanel>

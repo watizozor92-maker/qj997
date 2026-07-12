@@ -6,7 +6,17 @@ local AutoFightUseSkill = SL:Get_G()['AutoFightUseSkill']
 local AutoFightControl = SL:Get_G()['AutoFightControl']
 local sagittariusWeaponDurabilityTips
 local this = LianJiInfo
-
+local NomalAttackTBL = {
+    1004000,
+    1304001,
+    1304002,
+    1020063,
+    1014000,
+    1011000,
+    1012000,
+    1015000,
+    1016000,
+}
 function this:ctor()
     
 end
@@ -437,56 +447,6 @@ function this:LUA_TRIGGER_RELEASE_HOOK_SKILL(rid,range,canAtkTargets)
     end
 end
 
-function this:GetCanUseSkillData(_releaseSkill, skillId, temMonsterId, NoUseHookRangeAttack)
-    local maxpriorityLevelId = -1 -- 可以释放的最大技能优先级技能ID
-    local maxpriority = -1 -- 可以释放的最大技能优先级
-    local isCanRelease = false -- 是否可以释放
-    local monsterId = 0 -- 目标怪物ID
-    local updateIndexOffset = false
-    -- 检查技能类型是否为普通攻击技能
-    if _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Common and _releaseSkill.skillTbl.assistType[2] == SubSkillAssistTypeEx.Summon then -- 如果是召唤类技能
-        updateIndexOffset = true
-        if not SL:IsCanUseSummonSkill(skillId) then -- 检查是否可以使用召唤技能
-            return maxpriorityLevelId,maxpriority,isCanRelease,monsterId, updateIndexOffset
-        end
-        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-        isCanRelease = true -- 设置可以释放标志为真
-        monsterId = temMonsterId -- 记录目标怪物ID
-    elseif _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Common and _releaseSkill.skillTbl.assistType[2] == SubSkillAssistTypeEx.Buff then -- 如果是增益类技能
-        updateIndexOffset = true
-        if not SL:IsCanUseBuffSkill(skillId) then -- 使用增益技能            
-            return maxpriorityLevelId,maxpriority,isCanRelease,monsterId, updateIndexOffset
-        end
-        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-        isCanRelease = true -- 设置可以释放标志为真
-        monsterId = temMonsterId -- 记录目标怪物ID
-    else
-        -- 普通技能的处理
-        local isCanUse,error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, temMonsterId) -- 检查技能是否可用
-        if isCanUse then -- 如果技能可用
-            AutoFightControl.releaseSkillError = ESkillReleaseError.None -- 设置技能释放错误状态为无
-            maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-            maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-            isCanRelease = true -- 设置可以释放标志为真
-            monsterId = temMonsterId -- 记录目标怪物ID
-            updateIndexOffset = true
-        else
-            ---技能距离不够时要考虑，这个怪是否在挂机圈内，如果在的话才可以移动去释放技能
-            if error and error == ESkillReleaseError.SkillRangeNotEnough and 
-                (self:MonsterIsInHookRange(temMonsterId,skillId) or NoUseHookRangeAttack) then -- 如果错误是距离不够，且怪物在挂机圈范围内
-                maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-                maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-                isCanRelease = false -- 设置可以释放标志为假（因为距离不够）
-                AutoFightControl.releaseSkillError = error -- 记录错误类型
-                monsterId = temMonsterId -- 记录目标怪物ID
-                updateIndexOffset = true
-            end
-        end
-    end
-    return maxpriorityLevelId,maxpriority,isCanRelease,monsterId, updateIndexOffset
-end
 ---@param isAutoSetTarget  boolean 是否自动设置目标
 function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
     --自动战斗逻辑
@@ -503,99 +463,196 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
     local monsterId -- 怪物ID
     local isOnlyGroupSkill = self:IsOnlyGroupSkill(skillList,commonSkillId) -- 检查是否只有群体技能可用
     
-    if not DataManager.hookSkillData then
-        DataManager.hookSkillData = {}
-    end
-    -- local groupSkillIndex = DataManager.hookSkillData.groupSkillIndex or 0 -- 获取群体技能ID
-    local otherSkillIndex = DataManager.hookSkillData.otherSkillIndex or 0 -- 获取其他技能ID
-    
-    -- if not self:IsCanReleaseBuffSkill() and  not self:IsCanReleaseSummonSkill() then
-    --     for i = 1, #groupSave do
-    --         groupSkillIndex = groupSkillIndex + 1
-    --         if groupSkillIndex > #groupSave then
-    --             groupSkillIndex = 1
-    --         end
-    --         local skillId = groupSave[i] -- 当前遍历的技能ID
-    --         local atkCount,temMonsterId = self:GetSkillRangeCountAndId(skillId,range) -- 获取当前技能范围内的怪物数量和其中一个怪物ID
-    --         temMonsterId = temMonsterId or rid -- 如果没找到特定怪物ID，则使用传入的角色ID
-    --         local _releaseSkill = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)[skillId] -- 获取已学习的技能信息
-    --         if _releaseSkill and (isOnlyGroupSkill or atkCount > 1 ) and commonSkillId ~= skillId then -- 如果技能存在，且满足条件（仅群体技能模式或范围内有多个目标）且不是普通攻击技能
-    --             if _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Group then -- 如果是群体技能
-    --                 local isCanUse,error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, temMonsterId) -- 检查技能是否可用
-    --                 if isCanUse then -- 如果技能可用
-    --                     if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
-    --                         AutoFightControl.releaseSkillError = ESkillReleaseError.None -- 设置技能释放错误状态为无
-    --                         maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-    --                         maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-    --                         isCanRelease = true -- 设置可以释放标志为真
-    --                         monsterId = temMonsterId -- 记录目标怪物ID
-    --                     end
-    --                 else
-    --                     ---技能距离不够时要考虑，这个怪是否在挂机圈内，如果在的话才可以移动去释放技能
-    --                     if error and error == ESkillReleaseError.SkillRangeNotEnough and (self:MonsterIsInHookRange(temMonsterId,skillId) or NoUseHookRangeAttack) then -- 如果错误是距离不够，且怪物在挂机圈范围内
-    --                         if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
-    --                             maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
-    --                             maxpriorityLevelId = skillId -- 更新最高优先级技能ID
-    --                             isCanRelease = false -- 设置可以释放标志为假（因为距离不够）
-    --                             AutoFightControl.releaseSkillError = error -- 记录错误类型
-    --                             monsterId = temMonsterId -- 记录目标怪物ID
-    --                         end
-    --                     end
-    --                 end
-    --             end
-    --         end
-    --     end
-    -- end
-
-
-    -- if maxpriorityLevelId ~= -1 then -- 如果找到了可释放的技能
-    --     DataManager.hookSkillData.groupSkillIndex = groupSkillIndex -- 更新群体技能索引
-    --     if isAutoSetTarget then
-    --         self:SetSelectTargetId(monsterId) -- 设置选中的目标ID
-    --     end
-    --     return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease } -- 返回替换结果
-    -- end
-    -- 切换技能索引
-    local isCommonSkill = DataManager.hookSkillData.isCommonSkillHook or false
-    otherSkillIndex = otherSkillIndex + 1
-    if otherSkillIndex > #skillList then
-        otherSkillIndex = 1
-    end
-    local skillId = skillList[otherSkillIndex] -- 当前遍历的技能ID
-    local isSpecCommAtkSkill = skillId == 1004000 or skillId == 1304001 or skillId == 1304002 or skillId == 1020063
-    if (skillId == commonSkillId or isSpecCommAtkSkill) then
-        if not isCommonSkill or isSpecCommAtkSkill then
-            otherSkillIndex = otherSkillIndex + 1
-            if otherSkillIndex > #skillList then
-                otherSkillIndex = 1
+    if not self:IsCanReleaseBuffSkill() and not self:IsCanReleaseSummonSkill() then
+        for i = 1, #groupSave do
+            local skillId = groupSave[i] -- 当前遍历的技能ID
+            local atkCount,temMonsterId = self:GetSkillRangeCountAndId(skillId,range) -- 获取当前技能范围内的怪物数量和其中一个怪物ID
+            temMonsterId = temMonsterId or rid -- 如果没找到特定怪物ID，则使用传入的角色ID
+            local _releaseSkill = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)[skillId] -- 获取已学习的技能信息
+            if _releaseSkill and (isOnlyGroupSkill or atkCount > 1 ) and commonSkillId ~= skillId then -- 如果技能存在，且满足条件（仅群体技能模式或范围内有多个目标）且不是普通攻击技能
+                if _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Group then -- 如果是群体技能
+                    local isCanUse,error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, temMonsterId) -- 检查技能是否可用
+                    if isCanUse then -- 如果技能可用
+                        
+                        if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                            AutoFightControl.releaseSkillError = ESkillReleaseError.None -- 设置技能释放错误状态为无
+                            maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                            maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                            isCanRelease = true -- 设置可以释放标志为真
+                            monsterId = temMonsterId -- 记录目标怪物ID
+                        end
+                        
+                    else
+                        ---技能距离不够时要考虑，这个怪是否在挂机圈内，如果在的话才可以移动去释放技能
+                        if error and error == ESkillReleaseError.SkillRangeNotEnough and (self:MonsterIsInHookRange(temMonsterId,skillId) or NoUseHookRangeAttack) then -- 如果错误是距离不够，且怪物在挂机圈范围内
+                            if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                                maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                                maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                                isCanRelease = false -- 设置可以释放标志为假（因为距离不够）
+                                AutoFightControl.releaseSkillError = error -- 记录错误类型
+                                monsterId = temMonsterId -- 记录目标怪物ID
+                            end
+                        end
+                    end
+                end
             end
-            skillId = skillList[otherSkillIndex]
         end
     end
-    local _releaseSkill = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)[skillId] -- 获取已学习的技能信息
-    local atkCount,temMonsterId = self:GetSkillRangeCountAndId(skillId,range) -- 获取当前技能范围内的怪物数量和其中一个怪物ID
 
-    temMonsterId = temMonsterId or rid -- 如果没找到特定怪物ID，则使用传入的角色ID
-    if _releaseSkill then -- 如果技能存在且不是普通攻击技能         
-        local updateIndexOffset = false
-        maxpriorityLevelId,maxpriority,isCanRelease,monsterId, updateIndexOffset = self:GetCanUseSkillData(_releaseSkill, skillId, temMonsterId, NoUseHookRangeAttack)
-        if updateIndexOffset then
-            -- 保存技能索引
-            DataManager.hookSkillData.otherSkillIndex = otherSkillIndex
-        end
-    end
-    -- SL:Log(string.format("释放技能: index=%d, skillId=%d", otherSkillIndex, maxpriorityLevelId))
-    if maxpriorityLevelId ~= -1 then        
+
+    if maxpriorityLevelId ~= -1 then -- 如果找到了可释放的技能
         if isAutoSetTarget then
             self:SetSelectTargetId(monsterId) -- 设置选中的目标ID
         end
-        return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease } -- 返回替换    
+        return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease } -- 返回替换结果        
     end
 
+    ---除群攻技能之外的技能
+    for i = 1, #skillList do -- 遍历技能优先级列表
+        local skillId = skillList[i] -- 当前遍历的技能ID
+        local _releaseSkill = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)[skillId] -- 获取已学习的技能信息
+        local atkCount,temMonsterId = self:GetSkillRangeCountAndId(skillId,range) -- 获取当前技能范围内的怪物数量和其中一个怪物ID
+
+        temMonsterId = temMonsterId or rid -- 如果没找到特定怪物ID，则使用传入的角色ID
+        if _releaseSkill and (commonSkillId ~= skillId)  then -- 如果技能存在且不是普通攻击技能
+            if _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Common and _releaseSkill.skillTbl.assistType[2] == SubSkillAssistTypeEx.Summon then -- 如果是召唤类技能
+                if SL:IsCanUseSummonSkill(skillId) then -- 检查是否可以使用召唤技能
+                    if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                        isCanRelease = true -- 设置可以释放标志为真
+                        monsterId = temMonsterId -- 记录目标怪物ID
+                    end
+                end
+            elseif _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Common and _releaseSkill.skillTbl.assistType[2] == SubSkillAssistTypeEx.Buff then -- 如果是增益类技能
+                if SL:IsCanUseBuffSkill(skillId) then -- 使用增益技能                   
+                    if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                        isCanRelease = true -- 设置可以释放标志为真
+                        monsterId = temMonsterId -- 记录目标怪物ID
+                    end
+                end
+            else
+                if _releaseSkill.skillTbl.assistType[1] ~= SkillAssistTypeEx.Group  then -- 如果不是群体技能
+                    local isCanUse,error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId,temMonsterId) -- 检查技能是否可用
+                    if isCanUse then -- 如果技能可用    
+                        if skillId == 1300005 then
+                            local teamlist = SL:GetMetaValue(EMetaVarGetKey.TEAM_MEMBER_LIST)
+                            if teamlist~=nil then
+                                local teamhp = 1.0
+                                local teammaxHp = 1.0
+                                local teamprecent = 1.0
+                                local isCanUse1300005 = false
+                                for i=1,#teamlist do                                
+                                    --print("变量值teamlist：", teamlist[i].hp,"字符串")
+                                    teamhp = teamlist[i].hp
+                                    teammaxHp = teamlist[i].maxHp
+                                    teamprecent = teamhp / teammaxHp
+                                    if teamprecent <= 0.9 then
+                                        isCanUse1300005 = true
+                                    end
+                                end
+                                if isCanUse1300005 then
+                                    if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                                        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                                        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                                        isCanRelease = true -- 设置可以释放标志为真
+                                        monsterId = temMonsterId -- 记录目标怪物ID
+                                    end                            
+                                end
+                            else
+                                local hp = SL:GetMetaValue("HP")
+                                local maxHp = SL:GetMetaValue("MAXHP")
+                                local precent = hp / maxHp
+                                if precent <= 0.9 then
+                                    if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                                        maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                                        maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                                        isCanRelease = true -- 设置可以释放标志为真
+                                        monsterId = temMonsterId -- 记录目标怪物ID
+                                    end                            
+                                end
+                            end
+                        else                        
+                            if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                                AutoFightControl.releaseSkillError = ESkillReleaseError.None -- 设置技能释放错误状态为无
+                                maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                                maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                                isCanRelease = true -- 设置可以释放标志为真
+                                monsterId = temMonsterId -- 记录目标怪物ID
+                            end
+                        end
+                    else
+                        ---技能距离不够时要考虑，这个怪是否在挂机圈内，如果在的话才可以移动去释放技能
+                        if error and error == ESkillReleaseError.SkillRangeNotEnough and  (self:MonsterIsInHookRange(temMonsterId,skillId) or NoUseHookRangeAttack) then -- 如果错误是距离不够，且怪物在挂机圈范围内
+                            if maxpriority <=  _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                                AutoFightControl.releaseSkillError = error -- 记录错误类型
+                                maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                                maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                                isCanRelease = false -- 设置可以释放标志为假（因为距离不够）
+                                monsterId = temMonsterId -- 记录目标怪物ID
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if isNotAttackPoint then       
+        if commonSkillId == maxpriorityLevelId or (maxpriorityLevelId == 1304001 or maxpriorityLevelId == 1304002 or maxpriorityLevelId == 1020063) then
+            maxpriorityLevelId = -1
+        end
+    end
+
+    if maxpriorityLevelId ~= -1 then -- 如果找到了可释放的技能       
+        if isAutoSetTarget then
+            self:SetSelectTargetId(monsterId) -- 设置选中的目标ID
+        end
+        return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease } -- 返回替换结果
+    else
+        ---最后检查普攻技能 20260702 禁用普攻技能
+        local skillId = commonSkillId -- 使用普通攻击技能ID
+        local _releaseSkill = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)[skillId] -- 获取已学习的技能信息
+        local atkCount,temMonsterId = self:GetSkillRangeCountAndId(skillId,range) -- 获取当前技能范围内的怪物数量和其中一个怪物ID
+        temMonsterId = temMonsterId or rid -- 如果没找到特定怪物ID，则使用传入的角色ID
+        local isCanUse,error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId,temMonsterId) -- 检查普通攻击技能是否可用
+        local setIsCanUseCommonSkill = not isNotAttackPoint--普攻技能开关
+        
+        if isCanUse and setIsCanUseCommonSkill then -- 如果技能可用
+            if maxpriority <= _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                AutoFightControl.releaseSkillError = ESkillReleaseError.None -- 设置技能释放错误状态为无
+                maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                isCanRelease = true -- 设置可以释放标志为真
+                monsterId = temMonsterId -- 记录目标怪物ID
+            end
+        else
+            if not setIsCanUseCommonSkill then
+                skillId = -1
+            end            
+            ---技能距离不够时要考虑，这个怪是否在挂机圈内，如果在的话才可以移动去释放技能
+            if error and error == ESkillReleaseError.SkillRangeNotEnough and (self:MonsterIsInHookRange(temMonsterId,skillId) or NoUseHookRangeAttack) then -- 如果错误是距离不够，且怪物在挂机圈范围内
+                if maxpriority <=  _releaseSkill.skillTbl.priorityLevel then -- 如果当前技能优先级大于等于最大优先级
+                    AutoFightControl.releaseSkillError = error -- 记录错误类型
+                    maxpriority = _releaseSkill.skillTbl.priorityLevel -- 更新最大优先级
+                    maxpriorityLevelId = skillId -- 更新最高优先级技能ID
+                    isCanRelease = false -- 设置可以释放标志为假（因为距离不够）
+                    monsterId = temMonsterId -- 记录目标怪物ID
+                end
+            end
+        end
+
+        if maxpriorityLevelId ~= -1 then -- 如果找到了可释放的技能
+            if isAutoSetTarget then
+                self:SetSelectTargetId(monsterId) -- 设置选中的目标ID
+            end
+            return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease } -- 返回替换结果
+        end
+    end
     return skillTriggerData
 end
-
-
 ---没有单体技能则判定为只有群体技能
 function this:IsOnlyGroupSkill(skillList,commonSkillId)
     for i = 1, #skillList do

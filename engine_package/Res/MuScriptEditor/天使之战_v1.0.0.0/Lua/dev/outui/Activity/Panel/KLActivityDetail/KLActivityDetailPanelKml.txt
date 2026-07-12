@@ -51,7 +51,7 @@
       </text>
     </img>
     <img id="img60" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-123" y="93" active="0">
-      <text id="text61" a="00" text="下次开启：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF">
+      <text id="text61" a="00" text="下次开启：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
       </text>
       <text id="openTxt" active="1" a="00" text="已开启" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="145" y="0" color="#29E629FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
       </text>
@@ -104,7 +104,7 @@
       <img id="addCountBtn" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_add1" width="34" height="34" raycast="1" x="359" y="0">
       </img>
     </img>
-    <button id="desBtn" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" x="268" y="288">
+    <button id="desBtn" a="00" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="0" x="268" y="288" active="0" enable="0">
     </button>
     <text id="text2" active="1" a="00" text="今日剩余次数:" fontsize="16" height="25" width="154" ta="01" horwrap="1" x="219" y="-83" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
       <text id="leftcount" a="00" text="7" fontsize="16" height="25" width="184" ta="01" horwrap="1" x="125" y="0" color="#FF2424FF" outline="1">

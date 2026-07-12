@@ -1,9 +1,14 @@
 <uipanel id="KLUIPrivilegeBossPosItem" name="特权boss信息模板" active="1" width="298" height="50" zindex="-1">
-    <text id="btn" width="298" height="50" raycast="1" onclick="">
-        <text id="name" text="" x="20" y="-12" a="10" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"> </text> 
-        <text id="num" text="" x="-30" y="-12" a="20" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"> </text> 
-        <text id="pos_str" text="" x="-25" y="12" a="20" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"/>
-        <text id="info" text="" x="20" y="12" a="10" fontSize="18" color="#FFFFFF" outlineSize="1" outlineColor="0"/>
-        <countdown id="revive_time" text="刷新倒计时{0}" time=""  formattype="1" x="20" y="-10" a="10" ta="01" fontSize="18" color="#9b9b9b" outlineSize="1" outlineColor="0" active="0"/>
-    </text> 
-</uipanel> 
+  <text id="btn" width="298" height="50" raycast="1" onclick="">
+    <text id="name" text="" x="20" y="-12" a="10" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+    </text>
+    <text id="num" text="" x="-30" y="-12" a="20" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+    </text>
+    <text id="pos_str" text="" x="-25" y="12" a="20" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+    </text>
+    <text id="info" text="" x="20" y="12" a="10" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+    </text>
+    <countdown id="revive_time" text="刷新倒计时{0}" time="" formattype="1" x="20" y="-10" a="10" ta="01" fontsize="18" color="#9b9b9b" outlinesize="1" outlinecolor="0" active="0">
+    </countdown>
+  </text>
+</uipanel>

@@ -10,9 +10,12 @@
 local KLTradeCrossServerBuyPanelView = {}
 setmetatable(KLTradeCrossServerBuyPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Panel/KLTradeCrossServerBuy/KLTradeCrossServerBuyPanelKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLTradeCrossServerBuyPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTradeCrossServerBuyPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Panel/KLTradeCrossServerBuy/KLTradeCrossServerBuyPanel']
+
 return KLTradeCrossServerBuyPanelView

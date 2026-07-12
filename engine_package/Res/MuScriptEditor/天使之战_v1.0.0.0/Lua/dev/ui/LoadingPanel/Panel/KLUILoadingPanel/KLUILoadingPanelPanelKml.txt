@@ -2,17 +2,17 @@
   <prefab id="UILoadingPanel" path="UI/UILoadingPanel.prefab" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
     <panel id="UILoadingPanel_Root" bind="UILoadingPanel" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
     </panel>
-    <img id="img1" a="00" width="1334" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" height="750" raycast="1" siblingindex="0" atlas="" src="Texture/bg_loadingWait.jpg" active="1">
+    <img id="img1" a="00" width="1334" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" height="750" raycast="1" siblingindex="0" atlas="" src="Texture/qjMUloading.png" active="1">
     </img>
     <img id="img2" a="00" width="1334" height="750" raycast="1" siblingindex="1" atlas="" src="Texture/bg_loading_2.jpg" active="0">
     </img>
-    <panel id="RawImage_Background" bind="RawImage_Background" active="0" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
+    <panel id="RawImage_Background" bind="RawImage_Background" active="0" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" x="0" y="0" width="1920" height="1080">
     </panel>
-    <img id="Image_ProgressBG" bind="Image_ProgressBG" active="1" y="65" z="-1000" ap="0.5#0#0.5#0#0.5#0.5">
+    <img id="Image_ProgressBG" bind="Image_ProgressBG" active="1" y="129" z="-1000" ap="0.5#0#0.5#0#0.5#0.5" selfrotation="0,0,0" h5x="0" x="12" width="1178" height="36">
       <img id="Image_Progress" bind="Image_Progress" active="1">
       </img>
     </img>
-    <text id="Text_Message" bind="Text_Message" active="1" y="99" z="-1000" ap="0.5#0#0.5#0#0.5#0.5">
+    <text id="Text_Message" bind="Text_Message" active="1" y="99" z="-1000" ap="0.5#0#0.5#0#0.5#0.5" outline="1" horwrap="1">
     </text>
   </prefab>
 </uipanel>

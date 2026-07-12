@@ -164,9 +164,9 @@ function this:RegistEvents()
     GUI:AddOnClickEvent(self.view.strengthButton, self, self.strengthButton)
     GUI:AddOnClickEvent(self.view.gotoButton, self, self.gotoButton)
     GUI:AddOnClickEvent(self.view.closeMask, self, self.closeMask)
-    GUI:AddOnClickEvent(self.view.liuGuangBtn, self, self.liuGuangBtn)
+    --GUI:AddOnClickEvent(self.view.liuGuangBtn, self, self.liuGuangBtn)
     GUI:AddOnClickEvent(self.view.strengthMasterBtn, self, self.strengthMasterBtn)
-    GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
+    --GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
     GUI:AddOnClickEvent(self.view.Btn_Helper, self, self.OnClick_Btn_Helper)
     SL:RegisterLUAEvent(LUA_EVENT_EQUIP_GRID_CLICK, self.LUA_EVENT_EQUIP_GRID_CLICK, self)
     SL:RegisterLUAEvent(LUA_EVENT_BAG_CHANGE_AFTER, self.LUA_EVENT_BAG_CHANGE_AFTER, self)
@@ -207,9 +207,9 @@ function this:liuGuangBtn()
                 local nowStrengthLevel = streamInfo[1]
                 local streamId = streamInfo[2]
                 if strengthLevel < nowStrengthLevel then
-                    GUI:SetStreamAttr(self.view.item_model, streamId)
+                    --GUI:SetStreamAttr(self.view.item_model, streamId)
                     GUI:setVisible(self.view.liuguangInfo, true)
-                    GUI:Text_setString(self.view.liuguangInfo, '+' .. nowStrengthLevel .. '流光效果')
+                    --GUI:Text_setString(self.view.liuguangInfo, '+' .. nowStrengthLevel .. '流光效果')
 
                     self.showLiuGuang = true
                     break
@@ -562,11 +562,11 @@ function this:ClickEquip(equipInfo)
     if SL:HasConfig('cfg_equip_strengthen', equipInfo.cfgId) then
         self.equipInfo = equipInfo
         self:ResetUi()
-        GUI:setVisible(self.view.liuGuangBtn, true)
+        --GUI:setVisible(self.view.liuGuangBtn, true)
         local strengthLevel = EquipFunc.GetEquipStrengthLevel(self.equipInfo)
         self.strengthLevel = strengthLevel
         self:SetEquipName(self.equipInfo.cfgId, strengthLevel)
-        self:SetEquipModel(self.equipInfo.cfgId)
+        --self:SetEquipModel(self.equipInfo.cfgId)
         self:SetLiuGuang(self.equipInfo)
         self:SetLiuGuangBtn(self.equipInfo)
         local isMax = this.IsMaxEquip(self.equipInfo,strengthLevel)
@@ -615,7 +615,7 @@ function this:SetLiuGuangBtn(equipInfo)
         for _, streamInfo in pairs(stream) do
             local nowStrengthLevel = streamInfo[1]
             if strengthLevel < nowStrengthLevel then
-                GUI:setVisible(self.view.liuGuangBtn, true)
+                --GUI:setVisible(self.view.liuGuangBtn, true)
                 return
             end
         end
@@ -683,7 +683,7 @@ function this:SetMaxAttrInfo(cfgId, strengthLevel)
             arrowShow = false
         }
     }
-    GUI:setVisible(self.view.strengthIcon, true)
+    --GUI:setVisible(self.view.strengthIcon, true)
     local groupIds = SL:GetConfig('cfg_equip_strengthen', cfgId).groupId
     local groupId = groupIds
     if not SL:HasConfigTwoKeys('cfg_equip_strengthenGroup', groupId, strengthLevel, 'group', 'lv') then
@@ -796,7 +796,7 @@ end
 -- 消耗道具
 function this:SetEquipCostInfo(cfgId, strengthLevel)
     self.costList = {}  
-    GUI:setVisible(self.view.strengthIcon_1, true)
+    --GUI:setVisible(self.view.strengthIcon_1, true)
     GUI:setVisible(self.view.StrengthCustomScrollView, true)
     local costId = SL:GetConfig('cfg_equip_strengthen', cfgId).costId
     local next_level = strengthLevel + 1
@@ -881,7 +881,7 @@ function this:SetEquipAttrInfo(cfgId, strengthLevel)
             arrowShow = true
         }
     }
-    GUI:setVisible(self.view.strengthIcon, true)
+    --GUI:setVisible(self.view.strengthIcon, true)
     local groupId = SL:GetConfig('cfg_equip_strengthen', cfgId).groupId
     local nowAttrInfo
     if SL:HasConfigTwoKeys('cfg_equip_strengthenGroup', groupId, strengthLevel, 'group', 'lv') then

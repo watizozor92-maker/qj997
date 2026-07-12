@@ -63,7 +63,7 @@
 ---@field campaignVoteCast IntList @盟主弹劾投票消耗 column=25 Y
 
 local local_campaignCast = {
-    campaignCast_1={10040001,500},
+    campaignCast_1={10040001,800},
 
 }
 
@@ -73,7 +73,7 @@ local local_campaignText = {
 }
 
 local local_cast = {
-    cast_1={10010002,20000},
+    cast_1={10010002,18000},
 
 }
 
@@ -89,12 +89,12 @@ local local_level = {
 }
 
 local local_condition = {
-    condition_1={{1,100},{2,300},{3,450},{4,650},{5,700},{6,880}},
+    condition_1={{1,100},{2,300},{3,500},{4,700},{5,800},{6,900}},
 
 }
 
 local local_reward = {
-    reward_1={{1,10950001,0,100},{2,10950001,0,200},{3,10950001,0,300},{4,10950001,0,400},{5,10950001,0,500},{6,10950001,0,600}},
+    reward_1={{1,10950001,0,120},{2,10950001,0,180},{3,10950001,0,270},{4,10950001,0,370},{5,10950001,0,510},{6,10950001,0,620}},
 
 }
 
@@ -106,7 +106,7 @@ local local_bottom = {
 }
 
 local local_replaceCast = {
-    replaceCast_1={10010002,2000},
+    replaceCast_1={10010002,3000},
 
 }
 
@@ -116,12 +116,12 @@ local local_replaceText = {
 }
 
 local local_voteCast = {
-    voteCast_1={10010002,10000},
+    voteCast_1={10010002,20000},
 
 }
 
 local local_campaignVoteCast = {
-    campaignVoteCast_1={10010002,10000},
+    campaignVoteCast_1={10010002,30000},
 
 }
 
@@ -229,7 +229,7 @@ local cfg_unionLevel =
 	{unionLevel=100, level=local_level.level_2, bottom=local_bottom.bottom_1},
 }
 
-local defaults = {unionExp=120000, playerNumber=200, abdicationTime=4320, impeachment=1440, campaign=1440, campaignCast={10040001,500}, campaignCondition="2501#720", campaignText={"加入战盟时间超过<color=%s>12小时</color>"}, cast={10010002,20000}, electionConditions="101#100", electionTime=0, text={"等级达到<color=%s>100</color>"}, gardBless=5, level={1,2,3,4,5,6}, condition={{1,100},{2,300},{3,450},{4,650},{5,700},{6,880}}, reward={{1,10950001,0,100},{2,10950001,0,200},{3,10950001,0,300},{4,10950001,0,400},{5,10950001,0,500},{6,10950001,0,600}}, bottom={2,101}, replaceCast={10010002,2000}, replaceConditions="101#150", replaceText={"等级达到<color=%s>150</color>"}, continuousOfflineTime=1440, replaceTime=1440, voteCast={10010002,10000}, campaignVoteCast={10010002,10000}}
+local defaults = {unionExp=120000, playerNumber=200, abdicationTime=4320, impeachment=1440, campaign=1440, campaignCast={10040001,800}, campaignCondition="2501#720", campaignText={"加入战盟时间超过<color=%s>12小时</color>"}, cast={10010002,18000}, electionConditions="101#100", electionTime=0, text={"等级达到<color=%s>100</color>"}, gardBless=5, level={1,2,3,4,5,6}, condition={{1,100},{2,300},{3,500},{4,700},{5,800},{6,900}}, reward={{1,10950001,0,120},{2,10950001,0,180},{3,10950001,0,270},{4,10950001,0,370},{5,10950001,0,510},{6,10950001,0,620}}, bottom={2,101}, replaceCast={10010002,3000}, replaceConditions="101#150", replaceText={"等级达到<color=%s>150</color>"}, continuousOfflineTime=1440, replaceTime=1440, voteCast={10010002,20000}, campaignVoteCast={10010002,30000}}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_unionLevel) do
 	setmetatable(v, mt)

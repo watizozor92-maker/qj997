@@ -140,7 +140,7 @@ function this:RegistEvents()
     GUI:AddOnClickEvent(self.view.strengthButton, self, self.strengthButton)
     GUI:AddOnClickEvent(self.view.gotoButton, self, self.gotoButton)
     GUI:AddOnClickEvent(self.view.appendMasterBtn, self, self.AppendMasterBtn)
-    GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
+    --GUI:AddOnClickEvent(self.view.item_model, self, self.item_modelOnClick)
     GUI:AddOnClickEvent(self.view.Btn_Helper, self, self.OnClick_Btn_Helper)
     SL:RegisterLUAEvent(LUA_EVENT_EQUIP_GRID_CLICK, self.LUA_EVENT_EQUIP_GRID_CLICK, self)
     SL:RegisterLUAEvent(LUA_EVENT_BAG_CHANGE_AFTER, self.LUA_EVENT_BAG_CHANGE_AFTER, self)
@@ -445,11 +445,11 @@ end
 function this:SetLiuGuang(equipInfo)
     local liuGuangId = EquipFunc.GetEquipLiuGuangId(equipInfo)
     if liuGuangId then
-        GUI:SetStreamAttr(self.view.item_model, liuGuangId)
+        --GUI:SetStreamAttr(self.view.item_model, liuGuangId)
     else
-        GUI:ResetStreamAttr(self.view.item_model)
-        GUI:ResetStreamAttr(self.view.item_model)
-        GUI:ResetStreamAttr(self.view.item_model)
+        --GUI:ResetStreamAttr(self.view.item_model)
+        --GUI:ResetStreamAttr(self.view.item_model)
+        --GUI:ResetStreamAttr(self.view.item_model)
     end
 end
 
@@ -496,7 +496,7 @@ function this:SetMaxAttrInfo(cfgId, strengthLevel)
             arrowShow = false
         }
     }
-    GUI:setVisible(self.view.strengthIcon, true)
+    --GUI:setVisible(self.view.strengthIcon, true)
     local now_attr_map = {}
     ---@type cfg_equip_appends_column
     local cfg = SL:GetConfig('cfg_equip_appends', cfgId)
@@ -604,7 +604,7 @@ end
 
 function this:SetEquipCostInfo(cfgId, strengthLevel)
     self.costList = {}
-    GUI:setVisible(self.view.strengthIcon_1, true)
+    --GUI:setVisible(self.view.strengthIcon_1, true)
     GUI:setVisible(self.view.StrengthCustomScrollView, true)
     local costId = SL:GetConfig('cfg_equip_appends', cfgId).costId
     local next_level = strengthLevel + 1
@@ -684,7 +684,7 @@ function this:SetEquipAttrInfo(cfgId, strengthLevel)
             arrowShow = true
         }
     }
-    GUI:setVisible(self.view.strengthIcon, true)
+    --GUI:setVisible(self.view.strengthIcon, true)
     local now_attr_map = {}
     local next_attr_map = {}
     ---@type cfg_equip_appends_column
@@ -794,7 +794,7 @@ function this:SetEquipName(cfgId, strengthLevel)
 end
 
 function this:SetEquipModel(cfgId)
-    GUI:setVisible(self.view.item_model, true)
+    --GUI:setVisible(self.view.item_model, true)
     -- GUI:Item_UpdataData(self.view.item_model, {
     --     itemid = cfgId,
     --     mscale = EquipFunc.GetEquipInScaleAtt(cfgId, nil, EquipFunc.ItemForgeShowEquipScale(cfgId)),
@@ -810,7 +810,7 @@ function this:SetEquipModel(cfgId)
         mrotate = _rotate,
         mpos = _pos,
     }
-    GUI:Item_UpdataData(self.view.item_model, data)
+    --GUI:Item_UpdataData(self.view.item_model, data)
 end
 
 function this.IsMaxEquip(equipInfo, strength_level)

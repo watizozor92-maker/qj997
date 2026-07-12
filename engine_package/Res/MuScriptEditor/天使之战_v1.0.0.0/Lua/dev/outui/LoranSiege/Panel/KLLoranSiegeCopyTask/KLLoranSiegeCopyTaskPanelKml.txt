@@ -1,6 +1,6 @@
 <uipanel id="KLLoranSiegeCopyTaskPanel" name="攻城战副本界面" width="300" height="300" x="0" y="45" a="11" zindex="0">
   <img id="Boss" width="300" height="200" y="8" src="bg_mainTaskBg" atlas="Atlas/UITask.spriteatlas">
-    <text id="ActivityName" text="攻城战" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="88" x="0" color="#e6e600" active="1" contentsizefitter="2">
+    <text id="ActivityName" text="攻城战" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="88" x="0" color="#e6e600" active="1" contentsizefitter="2" outline="1">
       <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
       </img>
       <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
@@ -13,11 +13,11 @@
           </img>
           <img id="taskIcon" a="10" width="30" height="30" raycast="1" src="icon_attack" atlas="Atlas/KLSiegePanel.spriteatlas" x="10">
           </img>
-          <text id="stateName" text="阶段1" fontsize="20" height="24" width="174" ta="01" horwrap="1" y="15" x="50" color="#FFFFFFFF" active="1" contentsizefitter="0" a="10" outlinesize="1" outlinecolor="#000000FF">
+          <text id="stateName" text="阶段1" fontsize="20" height="24" width="174" ta="01" horwrap="1" y="15" x="50" color="#FFFFFFFF" active="1" contentsizefitter="0" a="10" outlinesize="1" outlinecolor="#000000FF" outline="1">
           </text>
           <text id="taskName" text="摧毁外城门" fontsize="20" height="24" width="99" ta="11" horwrap="1" y="-11" x="50" color="#FFFFFFFF" active="1" contentsizefitter="2" a="10" outlinesize="1" outlinecolor="#000000FF">
           </text>
-          <text id="taskProgress" text="0/1" fontsize="20" height="24" width="99" ta="11" horwrap="1" y="-11" x="-6" color="#1ADE1FFF" active="1" contentsizefitter="2" a="20" outlinesize="1" outlinecolor="#000000FF">
+          <text id="taskProgress" text="0/1" fontsize="20" height="24" width="99" ta="11" horwrap="1" y="-11" x="-6" color="#1ADE1FFF" active="1" contentsizefitter="2" a="20" outlinesize="1" outlinecolor="#000000FF" outline="1">
           </text>
         </button>
         <text id="nowOccupyingPartyTitle" text="当前占领方" fontsize="20" height="24" width="47" ta="11" horwrap="1" y="-8" x="17" color="#FFFFFFFF" active="1" contentsizefitter="2" a="10" outlinesize="1" outlinecolor="#000000FF">

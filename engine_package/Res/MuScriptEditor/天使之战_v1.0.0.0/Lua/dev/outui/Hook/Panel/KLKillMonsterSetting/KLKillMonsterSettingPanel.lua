@@ -2,7 +2,7 @@
 ---@field view KLKillMonsterSettingPanelView
 local KLKillMonsterSettingPanel = class(UIKmlLuaPanelBase)
 local this =KLKillMonsterSettingPanel
-
+isNotAttackPoint = true
 ---创建时调用一次
 function this:Init() 
     self.isFirst = true
@@ -10,7 +10,9 @@ function this:Init()
     self.plan = nil
     self.hookSkillTemplateList = {}
     self.isComebackHookPoint = SL:GetMetaValue(EMetaVarGetKey.GET_IS_COMEBACK_HOOKPOINT)
+    
     GUI:Button_loadTextures(self.view.combackHookBtn,self.isComebackHookPoint and "btn_fatener_ok" or "btn_fatener_no",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+    GUI:Button_loadTextures(self.view.noAttackBtn,isNotAttackPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
     
 --[[    local hpSlider = GUI:GetRectTransform(self.view.sliderHP)
     local handle_attach = hpSlider.transform:Find("handleSlideArea_attach&isAttach&KmlPanel").transform:Find("handle_attach&isAttach&KmlImage")
@@ -64,6 +66,7 @@ function this:RegistEvents()
     GUI:Input_SetOnEndEdit(self.view.input_time, self, self.InputFieldOnEndEdit)
     GUI:Input_SetOnValueChange(self.view.input_time, self, self.ComebackTimeOnInputValueChange)
     GUI:AddOnClickEvent(self.view.combackHookBtn,self,self.CombackHookOnClick)
+    GUI:AddOnClickEvent(self.view.noAttackBtn,self,self.NoAttackOnClick)
 
     GUI:SetSliderOnValueChange(self.view.sliderHP, self, self.sliderHPOnValueChange)
     GUI:SetSliderOnValueChange(self.view.sliderMP, self, self.sliderMPOnValueChange)
@@ -114,6 +117,11 @@ end
 function this:CombackHookOnClick()
     self.isComebackHookPoint = not self.isComebackHookPoint
     GUI:Button_loadTextures(self.view.combackHookBtn,self.isComebackHookPoint and "btn_fatener_ok" or "btn_fatener_no",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+end
+
+function this:NoAttackOnClick()
+    isNotAttackPoint = not isNotAttackPoint
+    GUI:Button_loadTextures(self.view.noAttackBtn,isNotAttackPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
 end
 
 function this:SelectKillRangeOnToggleValueChange(control,data,eventData)
@@ -211,8 +219,8 @@ function this:ShowHookSkill()
         for i, v in pairs(skills) do
             ---@type cfg_skill_column
             local skillTbl = SL:GetConfig('cfg_skill', v.skillId)
-            -- local commonSkillId = SL:GetMetaValue(EMetaVarGetKey.SKILL_GET_COMMON_ID)
-            if skillTbl and skillTbl.set ~= 1 then --and v.skillId ~= commonSkillId 过滤掉通用技能 20260606 luo
+            local commonSkillId = SL:GetMetaValue(EMetaVarGetKey.SKILL_GET_COMMON_ID)
+            if skillTbl and skillTbl.set ~= 1 and v.skillId ~= commonSkillId then
                 local data = {skillId = v.skillId,isHookSkill = hookSkills[v.skillId]~=nil}
                 table.insert(tempSkills,data)
             end

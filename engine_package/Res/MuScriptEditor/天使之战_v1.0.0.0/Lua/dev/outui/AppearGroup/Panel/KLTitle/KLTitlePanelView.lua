@@ -27,4 +27,7 @@ function KLTitlePanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTitlePanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/AppearGroup/Panel/KLTitle/KLTitlePanel']
+
 return KLTitlePanelView
