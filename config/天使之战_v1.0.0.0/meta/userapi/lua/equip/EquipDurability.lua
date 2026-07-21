@@ -149,13 +149,13 @@ function this.updateEquipDurability(actor)
             durabilityAccumulation[id] = totalDurabilityAccumulation
             EquipDurability.setDurabilityAccumulation(actor, durabilityAccumulation)
             local pos = gameequip.pos(equipIndex)
-            if this.isGuard(pos) and itemExtData.durabilityNum <= 0 then
-                this.removeEquip(actor, equip, "守护耐久度为0移除")
-                --local reduceRate = EquipDurability.getReduceRate(cfgId, itemExtData.strengthlv or 0, itemExtData.durabilityNum or 0)
-                --if itemExtData.durabilityNum < 1 then
-                --    EquipDurability.updateDurabilityAttr(actor, itemExtData, cfgId)
-                --end
-            else
+            -- if this.isGuard(pos) and itemExtData.durabilityNum <= 0 then
+            --     this.removeEquip(actor, equip, "守护耐久度为0移除")
+            --     -- local reduceRate = EquipDurability.getReduceRate(cfgId, itemExtData.strengthlv or 0, itemExtData.durabilityNum or 0)
+            --     -- if itemExtData.durabilityNum < 1 then
+            --     --    EquipDurability.updateDurabilityAttr(actor, itemExtData, cfgId)
+            --     -- end
+            -- else
                 --ZzpTest.print("攻击怪物 最新耐久累积值:" .. itemExtData.durabilityAccumulation, "本次累计耐久累积值:" .. totalDurabilityAccumulation, "减少1耐久需要造成的伤害段数：" .. durabilityResistValue, "耐久值:" .. itemExtData.durabilityNum)
                 if isDurabilityChange then
                     if itemExtData.durabilityNum < 1 then
@@ -171,7 +171,7 @@ function this.updateEquipDurability(actor)
                     isChange = true
                 end
                 EquipAndAppear.SetItemExtData(actor, id, itemExtData)
-            end
+            -- end
         end
 
         :: continue ::

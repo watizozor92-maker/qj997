@@ -387,18 +387,22 @@ function DevilSquare.KillMonterInDevilSquare(actor, mapId, monCfgId)
             end
             setenvirvar(mapId, DuplicateVarConst.DEVIL_SQUARE_STATE_KILL_COUNT, newCount)
         end
-        local teamMembers = Team.GetAllMemberRids(actor)
-        if teamMembers == nil or #teamMembers <= 0 then
-            -- 玩家击杀数量
-            DevilSquare.IncreaseKillCount(actor, mapId)
-        else
-            info("玩家击杀数量 in ", mapId, " ", #teamMembers)
-            for _, memberRid in ipairs(teamMembers) do
-                local memberActor = getactor(actor, memberRid)
-                DevilSquare.IncreaseKillCount(memberActor, mapId)
-            end
-        end
+        -- local teamMembers = Team.GetAllMemberRids(actor)
+        -- if teamMembers == nil or #teamMembers <= 0 then
+        --     -- 玩家击杀数量
+        --     DevilSquare.IncreaseKillCount(actor, mapId)
+        -- else
+        --     info("玩家击杀数量 in ", mapId, " ", #teamMembers)
+        --     for _, memberRid in ipairs(teamMembers) do
+        --         local memberActor = getactor(actor, memberRid)
+        --         DevilSquare.IncreaseKillCount(memberActor, mapId)
+        --     end
+        -- end
     end
+end
+
+function DevilSquare.OnGetExp(actor, mapId, originExp)
+    return math.floor(originExp / DevilSquare.EXPSCORE_DIV)
 end
 
 function DevilSquare.AddExp(actor, mapId, exp)
@@ -444,7 +448,7 @@ function DevilSquare.PlayerSettleMentDevilSquare(actor)
     local playerDupInfo = getplaydef(actor, DevilSquarePlayerConst.DEVIL_SQUARE_MAP_INFO)
     local configId = playerDupInfo[2]
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV)  * score * scoreExp
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV * score ) * scoreExp
     -- 经验加成
     -- totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     -- 这里发放积分经验
@@ -458,6 +462,7 @@ function DevilSquare.PlayerSettleMentDevilSquare(actor)
     response["killExp"] = killExp        --击杀怪物掉落的经验
     response["scoreExp"] = totalScoreExp --积分经验
     response["leftCount"] = leftCount    --剩余次数
+    info("[DevilSquare] 玩家结算积分经验", totalScoreExp)
     sendluamsg(actor, LuaMessageIdToClient.RES_DEVIL_SQUARE_SETTLEMENT, response)
 end
 
@@ -521,8 +526,8 @@ function DevilSquare.ReqReciveRewardDevilSquare(actor, multipleCount)
     local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
     local configId = dupInfo[2]
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score * scoreExp
-    totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV * score ) * scoreExp
+    -- totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     -- 副本进度任务刷新
     DuplicateCommon.FinishDupActivity(actor, configId)
     if multipleCount <= 1 then
@@ -554,7 +559,8 @@ function DevilSquare.ReqReciveRewardDevilSquare(actor, multipleCount)
             removeitemfrombag(actor, costItemId, costItemCount, 0, 9999, '恶魔广场')
             -- 发放奖励
             local totalExp = killExp * (multipleCount - 1) + totalScoreExp * (multipleCount - 1)
-            
+            info("[DevilSquare] 玩家领取奖励", totalExp)
+
             additemtobag(actor, ItemConfigId.EXP, totalExp, 0, 9999, ItemActionProxy.DEMON_SQUARE)
             -- 清空角色副本信息
             DevilSquare.ClearPlayerDevilSquareDef(actor)
@@ -619,10 +625,10 @@ function DevilSquare.ResDupTaskUpdate(actor, mapId)
     local killCount = getplaydef(actor, DevilSquarePlayerConst.KILL_MONSTER_COUNT)
     --通关奖励
     local score, scoreExp = DevilSquare.CalcuScoreAndExp(configId)
-    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score * scoreExp
-    totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
+    local totalScoreExp = math.floor(killCount / DevilSquare.EXPSCORE_DIV * score ) * scoreExp
+    -- totalScoreExp = Player.calculExpByAddRate(actor, totalScoreExp)
     --击杀怪物积分
-    local killScore = math.floor(killCount / DevilSquare.EXPSCORE_DIV) * score
+    local killScore = math.floor(killCount / DevilSquare.EXPSCORE_DIV * score)
 
     local response = {}
     response["wave"] = wave
@@ -631,6 +637,7 @@ function DevilSquare.ResDupTaskUpdate(actor, mapId)
     response["rewardCount"] = totalScoreExp
     response["score"] = killScore
     response["nextWaveTime"] = getenvirvar(mapId, DuplicateVarConst.DEVIL_SQUARE_NEXT_STATE_TIME)
+    info("[DevilSquare] 玩家结算积分经验", totalScoreExp)
     sendluamsg(actor, LuaMessageIdToClient.RES_DEVIL_SQUARE_TASK, response)
 end
 

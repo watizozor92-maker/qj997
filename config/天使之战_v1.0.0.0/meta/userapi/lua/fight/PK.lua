@@ -669,14 +669,21 @@ function PKSystem.onPlayerKilled(actor, target)
     -- PK线路不加PK值
     local mapCfgId = getbaseinfo(actor, "mapid")
     local line = getbaseinfo(actor, "line")
-    if PkRepository.isPKLine(mapCfgId, line) then
+    -- if PkRepository.isPKLine(mapCfgId, line) then
+    --     return
+    -- end
+    --排除盟战地图
+    if mapCfgId == 16001 then
         return
     end
-
     if BingFengBao.IsPlayerInRoland(actor) and BingFengBao.isOpen() then
         return
     end
-
+    --排除和平模式
+    local mode = getbaseinfo(actor, "fightmodel")
+    if mode == 1 then
+        return
+    end
     -- 击杀非白名才加PK值
     local targetPKPoint = PKPoints.get(target)
     local targetPKStage = PKSystem.getPKStageRule(targetPKPoint:getPoints())

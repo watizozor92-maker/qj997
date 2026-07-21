@@ -306,7 +306,7 @@ function EliteMM.afterBuffEffect(actor, buffConfig, layers, buffFromType, buffId
         timeInfo.skillClose = skillClose
         API.SetTable(actor, __buffExistTimeKey, timeInfo)
         -- 更新属性
-        this.calcPlayerAttr(actor, casterActor)
+        this.calcPlayerAttr(actor, casterActor, buffCfgId)
     end
 end
 
@@ -438,11 +438,13 @@ function this.tryAddReplaceBuff(actor, buffId, timeInfo, type)
     API.SetTable(actor, __delayAddBuffs, delayAddBuffs)
 end
 
-function this.calcPlayerAttr(actor, casterActor)
+function this.calcPlayerAttr(actor, casterActor, updatebuffId)
     local timeInfo = API.GetTable(actor, __buffExistTimeKey) or {}
     local skillClose = timeInfo.skillClose or {}
     local eliteClose = timeInfo.eliteClose or {}
+    local attrClose = timeInfo.attrClose or {}
     local attrs = {}
+    local tempAttrClose = {}
     local g = ConfigDataManager.getTableValue("cfg_global", "value", "id", GlobalConfigId.ELITEMM_MAX_VALUE)
     g = string.toIntIntMap(g)
     for buffId, _ in pairs(skillClose) do
@@ -450,10 +452,21 @@ function this.calcPlayerAttr(actor, casterActor)
         if table.isEmpty(buffConfig) then
             goto continue
         end
-        local v = EliteMM.calcBuffParams(buffConfig, casterActor, actor, buffId)
+        local v = nil
+        if attrClose[buffId] and updatebuffId ~= buffId then
+            v = attrClose[buffId]
+        else
+            v = EliteMM.calcBuffParams(buffConfig, casterActor, actor, buffId)
+            -- lg("计算buff:", v)
+            attrClose[buffId] = v
+        end
+        tempAttrClose[buffId] = v
         table.mergeAdd(attrs, { [v.id] = v.value })
         :: continue ::
     end
+    --保存属性缓存
+    timeInfo.attrClose = tempAttrClose
+    API.SetTable(actor, __buffExistTimeKey, timeInfo)
     for buffId, _ in pairs(eliteClose) do
         local buffConfig = ConfigDataManager.getById("cfg_buff", buffId)
         if table.isEmpty(buffConfig) then
@@ -468,6 +481,7 @@ function this.calcPlayerAttr(actor, casterActor)
         :: continue ::
     end
     -- lg("计算后角色属性:", attrs)
+
     addrolekmlattributes(actor, "elitemm_skill_buff", attrs)
 end
 
@@ -519,10 +533,12 @@ function this.tryRemoveExistBuff(actor, buffId, timeInfo, type)
     timeInfo = timeInfo or (API.GetTable(actor, __buffExistTimeKey) or {})
     local skillClose = timeInfo.skillClose or {}
     local eliteClose = timeInfo.eliteClose or {}
+    local attrClose = timeInfo.attrClose or {}
     if type == 1 then
         eliteClose[buffId] = nil
     elseif type == 2 then
         skillClose[buffId] = nil
+        attrClose[buffId] = nil
     end
     delbuff(actor, buffId)
     timeInfo.eliteClose = eliteClose
@@ -556,6 +572,13 @@ function EliteMM.isEliteOrSkill(actor, buffCfgId)
 end
 
 function EliteMM.getBuffValue(actor, buffCfgId, layers)
+    local timeInfo = API.GetTable(actor, __buffExistTimeKey) or {}
+    local attrClose = timeInfo.attrClose or {}
+    local skillClose = timeInfo.skillClose or {}
+    local v = attrClose[buffCfgId]
+    if v and layers == 1 and skillClose[buffCfgId] then
+        return { [v.id] = v.value }
+    end
     local buffConfig = ConfigDataManager.getById("cfg_buff", buffCfgId)
     if table.isEmpty(buffConfig) then
         return {}
@@ -581,11 +604,12 @@ function EliteMM.tryClear(actor, buffCfgId, reason)
     end
     local eliteClose = timeInfo.eliteClose or {}
     local skillClose = timeInfo.skillClose or {}
-
+    local attrClose = timeInfo.attrClose or {}
     local update = false
     if skillClose[buffCfgId] then
         update = true
         skillClose[buffCfgId] = nil
+        attrClose[buffCfgId] = nil
         this.tryAddReplaceBuff(actor, buffCfgId, timeInfo, 2)
     elseif eliteClose[buffCfgId] then
         update = true
@@ -595,7 +619,9 @@ function EliteMM.tryClear(actor, buffCfgId, reason)
     if update then
         timeInfo.eliteClose = eliteClose
         timeInfo.skillClose = skillClose
+        timeInfo.attrClose = attrClose
         API.SetTable(actor, __buffExistTimeKey, timeInfo)
+        -- 更新属性
         this.calcPlayerAttr(actor)
     end
     if table.isEmpty(eliteClose) then

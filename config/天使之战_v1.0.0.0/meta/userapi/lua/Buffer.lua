@@ -133,6 +133,7 @@ function Buffer.sendBuffInfo(actor, casterActor)
             local ite = { buffId = id, buffCfgId = cfgId, buffValue = buffValue }
             table.insert(info, ite)
         end
+        -- lg("发送buff信息:", info)
         sendluamsg(actor, LuaMessageIdToClient.RES_BUFF_VALUES, info)
     else
         sendluamsg(actor, LuaMessageIdToClient.RES_BUFF_VALUES, {})
@@ -239,6 +240,12 @@ end
 function Buffer.moveBuff(buffConfig, actor, casterActor)
     -- 参数
     -- local buffValues = string.split(buffConfig.buffvalue, "|")
+    local mapid = getbaseinfo(actor, "mapid")
+    local mapExclude = {1010,1011,1012,1025,1035}
+    if mapid == nil or table.getKey(mapExclude, mapid) then
+        tipinfo(actor, "当前地图不能使用移动技能")
+        return
+    end
     -- 效果
     local buffParams = string.split(buffConfig.buffparam, "|")
     if tonumber(buffConfig.bufftype) == BuffType.MOVE then

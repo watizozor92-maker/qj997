@@ -97,9 +97,6 @@ function this.ExcuseFightDamage(actor, paramMap)
     local originDamage = 0
     local skillInfoConfig = ConfigDataManager.getTableFirst("cfg_skill_info", "skillID", skillId, "skillLevel", skillLevel)
     local strength = getattrinfo(actor, "strength")
-
-    
-    
     
     if Skill.isComboSkill(actor, fightContext.skillId) then
         fightContext.isComboSkill = true
@@ -213,7 +210,7 @@ function this.ExcuseFightDamage(actor, paramMap)
         end
         --计算减伤伤害
         local damageAbsorb = getattrinfo(target, "damageAbsorb")
-        local damageDecrement = getattrinfo(target, "damageDecrement")        
+        local damageDecrement = getattrinfo(target, "damageDecrement")
 
         originDamage = originDamage - (damageAbsorb * originDamage) - (originDamage * damageDecrement) + (originDamage * wingdamageRate)
 
@@ -448,6 +445,7 @@ end
 
 function this.GetZhuoyueYiJiDamage(actor, _)
     local damage = getattrinfo(actor, "excellentFixedDamage")
+    damage = damage + getattrinfo(actor, "excellentDamageAdd")
     return damage
 end
 

@@ -31,9 +31,13 @@ function CustomTransmit.GetPointFromMapMove(mapId)
     end
     return nil
 end
-
 function CustomTransmit.CustomToTransmit(actor, targetMap, targetLine, currX, currY, x, y, fromMapMove)
-    local checkResult = CustomTransmit.checkTransmit(actor, targetMap, targetLine, currX, currY, x, y,fromMapMove, true)
+    -- local checkPoint = CustomTransmit.CheckTransferPoint(actor)    
+    local lineid = getbaseinfo(actor, "line")
+    if lineid ~= targetMap then
+        targetLine = lineid
+    end
+    local checkResult = CustomTransmit.checkTransmit(actor, targetMap, targetLine, currX, currY, x, y,fromMapMove, false)
     if checkResult ~= nil then
         return checkResult
     end

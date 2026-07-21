@@ -53,20 +53,24 @@ function this:Init()
 
     self.AttDataList = {}
     local fruitCfg = SL:GetConfigTable("cfg_fruit")
+    local attrMap = {}
     ---@param v cfg_fruit_column
     for i, v in pairs(fruitCfg) do
-        table.insert(self.FruitAttDataList,v)
-
-        ---@type cfg_att_info_column
-        local attCfg = SL:GetConfig("cfg_att_info",v.attribute)
-        if attCfg.base == 1 then
-            table.insert(self.firstAttTypeList,v.attribute)
-            table.insert(self.AttDataList,{type=v.attribute,index = v.index,point=0})
+        if not attrMap[v.attribute] then
+            table.insert(self.FruitAttDataList,v)
+            attrMap[v.attribute] = v
+            
+                ---@type cfg_att_info_column
+            local attCfg = SL:GetConfig("cfg_att_info",v.attribute)
+            if attCfg.base == 1 then
+                table.insert(self.firstAttTypeList,v.attribute)
+                table.insert(self.AttDataList,{type=v.attribute,index = v.index,point=0})
+            end
+            if attCfg.remarks == 2 then
+                table.insert(self.remarksAttTypeList,v.attribute)
+            end
+            self.AttNameStrList[v.attribute] = v.name
         end
-        if attCfg.remarks == 2 then
-            table.insert(self.remarksAttTypeList,v.attribute)
-        end
-        self.AttNameStrList[v.attribute] = v.name
     end
     
     table.sort(self.AttDataList,function(a, b) 
