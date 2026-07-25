@@ -241,6 +241,8 @@ function handlerequest(actor, uid, msgID, msgData)
         Team.JoinTeam(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_TEAM_AGREE_JOIN then
         Team.AgreeJoinTeam(actor, msgData)
+    elseif msgID == LuaMessageIdToSever.REQ_TEAM_AGREE_INVITE then
+        Team.AgreeInviteTeam(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_UNION_TASK_DATA then
         UnionMemberTask.sendUnionTaskData(actor)
     elseif msgID == LuaMessageIdToSever.REQ_SUBMIT_UNION_TASK then
@@ -986,12 +988,7 @@ function monsterdieexp(actor, exp, monCfgId, monsterId, x, y)
     return finalExp
 end
 
--- function getexp(actor, originExp, fromType, innerAddRate)
---     if fromType == 2 then
---         local teamExpBonus = Team.getExpBonus(actor)
---         return originExp * teamExpBonus
---     end
--- end
+
 
 
 function getexpafter(actor, exp, fromType)
@@ -1001,9 +998,9 @@ function getexpafter(actor, exp, fromType)
         if dupInfo ~= nil then
             local dupType = dupInfo["type"]
             if dupType == DuplicateType.DEVIL_SQUARE then
-                DevilSquare.AddExp(actor, mapId, exp)
+                --DevilSquare.AddExp(actor, mapId, exp)
             elseif dupType == DuplicateType.BLOODY_CASTLE then
-                BloodyCastle.AddExp(actor, mapId, exp)
+                --BloodyCastle.AddExp(actor, mapId, exp)
             end
         end
     end
@@ -1074,8 +1071,7 @@ function entermap(actor, lastMapCfgId, mapCfgId)
     gameDebug.debug(CrossMap.CheckEnterCrossMap, actor, lastMapCfgId, mapCfgId)
     gameDebug.debug(TaskHandler.sendTaskState, actor)
     gameDebug.debug(RoleAttr.enterMap, actor, mapCfgId)
-    gameDebug.debug(BingFengBao.enterMap, actor, mapCfgId)
-
+    gameDebug.debug(BingFengBao.enterMap, actor, mapCfgId)    
 end
 
 function leavemap(actor, reason)
@@ -1432,7 +1428,7 @@ end
 -- @param 玩家对象 当前x坐标 当前y坐标 原目标x坐标 原目标y坐标
 -- @return 拦截结果 {result= true,reason = "ttt", ignoreNotice = false}
 -- true标识拦截，执行脚本内逻辑,放弃原传送,false 标识放行,执行原传送; reason为拦截原因说明; ignoreNotice为是否忽略向客户端发送拦截提示,默认发送
-function customtotransmit(actor, targetMap, targetLine, currX, currY, x, y, fromMapMove)
+function customtotransmit(actor, targetMap, targetLine, currX, currY, x, y, fromMapMove)   
     return CustomTransmit.CustomToTransmit(actor, targetMap, targetLine, currX, currY, x, y, fromMapMove)
 end
 
