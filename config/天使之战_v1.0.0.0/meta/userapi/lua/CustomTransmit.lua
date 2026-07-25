@@ -37,6 +37,12 @@ function CustomTransmit.CustomToTransmit(actor, targetMap, targetLine, currX, cu
     if lineid ~= targetMap then
         targetLine = lineid
     end
+    if targetMap == 1011 then
+        local wingItem = getitembytypeandsubtype(actor, 2, 13, 3)
+        if wingItem == nil or table.isEmpty(wingItem) then
+            return { result = true, reason = "没有翅膀"}
+        end
+    end
     local checkResult = CustomTransmit.checkTransmit(actor, targetMap, targetLine, currX, currY, x, y,fromMapMove, false)
     if checkResult ~= nil then
         return checkResult
