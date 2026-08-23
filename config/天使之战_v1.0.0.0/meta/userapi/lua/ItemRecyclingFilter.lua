@@ -15,6 +15,7 @@ local groups = {
     baoShi    = '102',
     zuoYue    = '103',
     jiNeng    = '104',
+    suitEquip = '198',
 }
 
 function ItemRecyclingFilter.getCanRecycleIndexs(actor, itemRecoveryType, groupIds)
@@ -37,11 +38,15 @@ function ItemRecyclingFilter.getCanRecycleIndexs(actor, itemRecoveryType, groupI
         [groups.baoShi] = this.checkBaoShi,
         [groups.zuoYue] = this.checkZuoYue,
         [groups.jiNeng] = this.checkJiNeng,
+        [groups.suitEquip] = this.checkSuitEquip,
     }
 
     -- 遍历所有背包物品
     for _, itemInfo in pairs(allItemInfo) do
         local itemCfgId = itemInfo.cfgid
+        if itemCfgId == 20750711 then
+            info("物品ID:", itemCfgId)
+        end
         if not this.medicineCanRecycling(actor, itemCfgId) then
             goto continue
         end
@@ -65,14 +70,47 @@ function ItemRecyclingFilter.getCanRecycleIndexs(actor, itemRecoveryType, groupI
         end
         ::continue::
     end
-    -- lg("回收物品索引:", bagIndex)
+    lg("回收物品索引:", bagIndex)
     if table.isEmpty(bagIndex) then
         return
     end
     return bagIndex
 end
 
+function this.commonCheck(actor, itemInfo, conditionIds)
+    local itemRecoveryGroup = ConfigDataManager.getTableValue("cfg_item", "recoverygroup", "id", itemInfo.cfgid)
+    local recoveryTable = ConfigDataManager.getTable("cfg_recovery", "id", itemRecoveryGroup)
+    if not recoveryTable or table.isEmpty(recoveryTable) then
+        -- error(actor,"回收类型配置错误")
+        return this.checkEquip(actor, itemInfo, conditionIds)
+    end
+    local equipext = EquipAndAppear.getItemExtData(actor, tonumber(itemInfo.id))
+    if not table.isNullOrEmpty(equipext) then
+        EquipAndAppear.SetItemExtData(actor, tonumber(itemInfo.id), {})
+    end
+
+    local recoveryInfo = recoveryTable[1]
+    local materialString = recoveryInfo.material
+    materialString = string.split(materialString, "|")
+    for _, materialStr in pairs(materialString) do
+        local material = string.splitInt(materialStr, "#")
+        local len = table.count(material)
+        if len == 3 then
+            return true
+        elseif len == 4 then
+            local bind = material[1]
+            local lockItem = ConfigDataManager.getTableValue("cfg_item", "lockitem", "id", itemInfo.cfgid)
+            if bind == string.tonumber(lockItem) then
+                return true
+            end
+        end
+    end
+end
+
 function this.checkBaiZhuang(actor, itemInfo, conditionIds)
+    -- if this.commonCheck(actor, itemInfo, conditionIds) then
+    --     return true
+    -- end
     return this.checkEquip(actor, itemInfo, conditionIds)
 end
 
@@ -109,10 +147,10 @@ function this.checkEquip(actor, itemInfo, conditionIds)
     if types[filterType.career] then
         local screenCfgs = types[filterType.career]
         local job = ConfigDataManager.getTableValue("cfg_item", "job", "id", itemCfgId)
-        if string.isNullOrEmpty(job) then
-            -- lg("该道具没有职业", itemInfo.cfgid, job)
-            return false
-        end
+        -- if string.isNullOrEmpty(job) then
+        --     lg("该道具没有职业", itemInfo.cfgid, job)
+        --     return false
+        -- end
         -- 遍历所有screenCfg，必须全部满足
         local allConditions = {}
         for i, screenCfg in ipairs(screenCfgs) do
@@ -157,12 +195,24 @@ function this.checkEquip(actor, itemInfo, conditionIds)
             -- lg("强化等级筛选不满足", itemInfo.cfgid, strengthlevel, screenCfg.strengthlevel)
             return false
         end
+    else
+        local strengthlevel = this.getEquipStrengthLevel(itemInfo)
+        if strengthlevel > 0 then
+            -- lg("强化等级筛选不满足", itemInfo.cfgid, strengthlevel, screenCfg.strengthlevel)
+            return false
+        end
     end
 
     if types[filterType.appendLevel] then
         local screenCfg = types[filterType.appendLevel]
         local appendlevel = this.getEquipAppendLevel(itemInfo)
         if appendlevel > (string.tonumber(screenCfg.appendlevel) or 0) then
+            -- lg("追加等级筛选不满足", itemInfo.cfgid, appendlevel, screenCfg.appendlevel)
+            return false
+        end
+    else
+        local appendlevel = this.getEquipAppendLevel(itemInfo)
+        if appendlevel > 0 then
             -- lg("追加等级筛选不满足", itemInfo.cfgid, appendlevel, screenCfg.appendlevel)
             return false
         end
@@ -209,11 +259,22 @@ function this.checkBaoShi(actor, itemInfo, conditionIds)
 end
 
 function this.checkZuoYue(actor, itemInfo, conditionIds)
+    -- if this.commonCheck(actor, itemInfo, conditionIds) then
+    --     return true
+    -- end
     return this.checkEquip(actor, itemInfo, conditionIds)
 end
 
 function this.checkJiNeng(actor, itemInfo, conditionIds)
     return true
+end
+
+--套装
+function this.checkSuitEquip(actor, itemInfo, conditionIds)
+    -- if this.commonCheck(actor, itemInfo, conditionIds) then
+    --     return true
+    -- end
+    return this.checkEquip(actor, itemInfo, conditionIds)
 end
 
 function this.checkInTaskLoop(actor, taskInfo, itemInfo, currentCfgId)

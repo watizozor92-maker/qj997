@@ -205,7 +205,7 @@ local cfg_skill =
 	{id=1300004, name="守护之光", skillBar=1, index=11, powerSource=0, targetType=8, releaseType=2, areaType=7, targetAreaType=7, assistType=local_assistType.assistType_6, priorityLevel=999},
 	{id=1200011, name="守护之魂", skillBar=1, index=11, powerSource=0, targetType=8, releaseType=2, areaType=7, targetAreaType=7, assistType=local_assistType.assistType_6, priorityLevel=99},
 	{id=1100007, name="生命之光", skillBar=1, index=7, powerSource=0, targetType=8, releaseType=2, areaType=7, targetAreaType=7, assistType=local_assistType.assistType_6, priorityLevel=99},
-	{id=1004019, name="天雷闪", isshow=2, skillBar=1, index=19, areaType=7, targetAreaType=5, assistType=local_assistType.assistType_5, priorityLevel=5, comboType=local_comboType.comboType_2},
+	{id=1004019, name="天雷闪", skillBar=1, index=19, areaType=7, targetAreaType=5, assistType=local_assistType.assistType_5, priorityLevel=5, comboType=local_comboType.comboType_2},
 	{id=1004020, name="玄月斩", skillBar=1, index=20, areaType=5, targetAreaType=5, assistType=local_assistType.assistType_5, priorityLevel=28, comboType=local_comboType.comboType_2},
 	{id=1004021, name="火剑袭", skillBar=1, index=17, areaType=7, targetAreaType=5, assistType=local_assistType.assistType_5, priorityLevel=40, comboType=local_comboType.comboType_2},
 	{id=1004022, name="闪电轰顶", skillBar=1, index=22, powerSource=2, areaType=7, targetAreaType=7, assistType=local_assistType.assistType_5, priorityLevel=35, comboType=local_comboType.comboType_2},

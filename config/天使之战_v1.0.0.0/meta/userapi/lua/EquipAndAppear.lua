@@ -2650,7 +2650,16 @@ function EquipAndAppear.updateAdjustEquipAttr(actor)
 end
 
 
-
+function EquipAndAppear.onTakeOff(actor, pos, wearBar)
+    info("onTakeOff", actor, pos, wearBar)
+    --1001
+    local mapid = getbaseinfo(actor, "mapid")
+    if mapid == 1011 and pos == 14 then
+        tipinfo(actor, "你脱下了翅膀，自动离开当前地图.")
+        local line = getbaseinfo(actor, "line")
+        maptransfer(actor, 134, 128, 1001, line)
+    end
+end
 
 
 

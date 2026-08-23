@@ -61,7 +61,7 @@ function AttackMonsterState.handle(actor, sx, sy, immutableCache)
         local skillOk = skill(actor, commAttackSkill[1], commAttackSkill[2], targetId) --释放技能攻击
         -- 释放技能失败，可能是距离太远，尝试走向怪物
         if not skillOk then
-            this.afterRealseSkillFail(actor, sx, sy, closestMonster, immutableCache)
+            -- this.afterRealseSkillFail(actor, sx, sy, closestMonster, immutableCache)
             this.setLastAttackMonsterId(actor, nil)
         else
             this.setLastAttackMonsterId(actor, targetId)
@@ -132,7 +132,7 @@ function AttackMonsterState.handle(actor, sx, sy, immutableCache)
                     -- 没有怪物, 等待刷新
                     return
                 end
-                this.afterRealseSkillFail(actor, sx, sy, closestMonster, immutableCache)
+                -- this.afterRealseSkillFail(actor, sx, sy, closestMonster, immutableCache)
             else
                 this.setLastAttackMonsterId(actor, attackTargetId)
             end

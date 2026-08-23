@@ -810,31 +810,35 @@ end
 function this.Settlement(mapId)
     local log = LogRecord.new()
     local winUninId
+    local unionInfo = nil
     if this.IsFinalPhase(mapId) then
         -- 守方战盟为胜利方
         local defendUnionId = this.GetDefendUnionId(mapId)
+        
         if defendUnionId == nil or defendUnionId == 0 then
             -- 无守方
             -- 积分第一的为占领战盟，无盟主奖励
             local unionRankList = this.GetUnionRankList(mapId)
-            local unionInfo = unionRankList[1]
+            unionInfo = unionRankList[1]
             winUninId = unionInfo.unionId
             log.winType = "积分"
         else
-            local unionInfo = getunioninfo(defendUnionId)
-            local leaderId = unionInfo.leaderid
-            local leaderActor = getactor(leaderId, mapId)
-            local leaderRewardStr = ConfigDataManager.getTableValue("cfg_repGlobal", "value", "id", RepGlobalConfig.ROLAND_SEIGE.LEADER_REWARD)
-            local leaderRewardStrSplit = string.toIntIntMap(leaderRewardStr, "#", "|")
-            sendconfigmailbyrid(leaderActor, leaderActor:toString(), MailConfig.ROLAND_SEIGE_LEADER_REWARD, leaderRewardStrSplit)
+            unionInfo = getunioninfo(defendUnionId)            
             winUninId = defendUnionId
             log.winType = "占领"
-            log.leader = leaderId
+            log.leader = unionInfo.leaderid
         end
+        
     else
         winUninId = this.GetLastOccupyUnionId()
+        unionInfo = getunioninfo(winUninId)
     end
 
+    local leaderId = unionInfo.leaderid
+    local leaderActor = getactor(leaderId, mapId)
+    local leaderRewardStr = ConfigDataManager.getTableValue("cfg_repGlobal", "value", "id", RepGlobalConfig.ROLAND_SEIGE.LEADER_REWARD)
+    local leaderRewardStrSplit = string.toIntIntMap(leaderRewardStr, "#", "|")
+    sendconfigmailbyrid(leaderActor, leaderActor:toString(), MailConfig.ROLAND_SEIGE_LEADER_REWARD, leaderRewardStrSplit)
 
     -- 设置占领战盟
     winUninId = winUninId or 0

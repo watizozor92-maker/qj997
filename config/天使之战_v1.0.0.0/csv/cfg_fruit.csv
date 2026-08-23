@@ -1,6 +1,10 @@
-﻿int#c#s,string#c#s,string#c,stringList#c,int#c#s,int#c#s,int#c#s
-id,name,icon,location,attribute,group,index
-30030304,力  量,lianji,-104#0,10001,1,1
-30030303,敏  捷,agility,127#16,10002,1,2
-30030302,体  力,strength,-146#163,10004,1,3
-30030301,智  力,intelligence,-104#-120,10003,1,4
+﻿int#c#s,string#c#s,string#c,stringList#c,int#c#s,int#c#s,int#c#s,stringList#c
+id,name,icon,location,attribute,group,index,itemids
+30030304,力  量,lianji,-104#0,10001,1,1,30030304#1233030499
+30030303,敏  捷,agility,127#16,10002,1,2,30030303#1233030399
+30030302,体  力,strength,-146#163,10004,1,3,30030302#1233030299
+30030301,智  力,intelligence,-104#-120,10003,1,4,30030301#1233030199
+1233030499,力  量,lianji,-104#0,10001,1,1,
+1233030399,敏  捷,agility,127#16,10002,1,2,
+1233030299,体  力,strength,-146#163,10004,1,3,
+1233030199,智  力,intelligence,-104#-120,10003,1,4,

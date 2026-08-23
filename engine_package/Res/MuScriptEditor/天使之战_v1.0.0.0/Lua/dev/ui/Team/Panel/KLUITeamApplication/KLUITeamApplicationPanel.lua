@@ -74,7 +74,8 @@ function this:RefuseOtherInvite(_, eventData)
 end
 
 function this:AgreeOtherInvite(_, eventData)
-    SL:RequestAgreeTeamInvite(eventData.leaderId)
+    -- SL:RequestAgreeTeamInvite(eventData.leaderId)
+    SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_TEAM_AGREE_INVITE, {leaderId = eventData.leaderId})
 end
 
 function this:RefuseOtherApply(_, eventData)

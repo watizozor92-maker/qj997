@@ -335,7 +335,13 @@ function this.MonsterDieTrigger(monsterActor, dieParam)
     MonsterScript.updateMonsterReliveTime(monsterActor, monsterCfgId)
 
     local killerActor = getactor(killerId, mapId)
-    local ownerActor = getactor(ownerId, mapId)
+    local ownerActor = null
+    if ownerId then
+        ownerActor = getactor(ownerId, mapId)
+        if ownerActor == nil then
+            ownerActor = killerActor
+        end
+    end    
 
     local type = getbaseinfo(monsterActor, "mapobjecttype")
     if type == MapObjectType.PET then
@@ -921,11 +927,11 @@ function this.RandomDropItem(dieParam, actor, monsterActor, dropCfg, dropCount, 
 
     if moboxPro < yi and randomNum > moboxPro then
         DropLog.addLog(string.format("掉落配置[%d] - 随机数[%.2f] > 概率[%.2f], 未掉落", dropCfg.id, randomNum, moboxPro))
-       DropLog.addLog("★★★★★★★★★★★★★★★★★★★★")
+        DropLog.addLog("★★★★★★★★★★★★★★★★★★★★")
         return
     end
     DropLog.addLog(string.format("掉落配置[%d] - 随机数[%.2f] <= 概率[%.2f], 通过掉落检测", dropCfg.id, randomNum, moboxPro))
-    -- info("moboxPro:", tostring(moboxPro))
+    info("moboxPro:", tostring(moboxPro), "randomNum:", tostring(randomNum))
     local extractTimes = dropCfg.extract_times
     local extract_pro = 0
     if moboxPro > yi then
@@ -958,7 +964,7 @@ function this.RandomDropItem(dieParam, actor, monsterActor, dropCfg, dropCount, 
         local mainOwner, owners = this.SettingOwners(monsterActor, dieParam, bossDropCfgId, firstAttack)
         -- 掉落物品来源信息
         local fromData = ItemFrom.genericDropInfo(mapId, dieParam.monstercfg, dieParam.killer)
-        local extDataMap = {}
+        local extDataMap = {}        
         for itemId, count in pairs(dropItem) do
             local mboxCfg = boxByItem[itemId]
             local extData = {}
@@ -974,7 +980,11 @@ function this.RandomDropItem(dieParam, actor, monsterActor, dropCfg, dropCount, 
             end
             extDataMap[itemId] = extData
         end
+        if dropItem[1031] then
+            info(actor, "掉落道具：", dropItem)
+        end
         local ret = monsterdiedroptomap(monsterActor, mapId, bossDropCfgId, dropItem, mainOwner, owners, extDataMap)
+        
         if ret == false or ret == nil then
             DropLog.addLog(string.format("掉落配置[%d] - 发送掉落道具失败", dropCfg.id))
             DropLog.addLog("★★★★★★★★★★★★★★★★★★★★")

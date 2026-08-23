@@ -2,7 +2,7 @@
 local this = {}
 local __offlineOnHookStateByUid = "G$OFFLINE_ONHOOK_STATE_BY_UID"
 onHook = {}
-local OPEN_OFFLINE_ON_HOOK = true
+
 function onHook.getOffLineOnHookInfo(actor)
     this.getOffLineOnHookInfo(actor)
 end
@@ -453,12 +453,6 @@ function onHook.recordStartTime()
 end
 
 function onHook.canHook(actor)
-    --禁用挂机
-    if not OPEN_OFFLINE_ON_HOOK then
-        onhookstop(actor, 0, 0, 0, 0, 1, 1)
-        return
-    end
-
     -- 安全区站着
     if insafezone(actor) then
         onhookstop(actor, 0, 0, 0, 0, 1, 0)
@@ -487,8 +481,8 @@ function onHook.canHook(actor)
     end
 
     gameDebug.print("玩家" .. actor:toString(), "开启离线挂机")
-    
-    if not this.openAccountLimit() then        
+
+    if not this.openAccountLimit() then
         return
     end
 

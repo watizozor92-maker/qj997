@@ -441,9 +441,9 @@ end
 
 function this.log(actor, ...)
     if type(actor) == "userdata" then
-        info(actor, "[[--排行榜--]]", "actor_id: ", actor:toString(), ...)
+        -- info(actor, "[[--排行榜--]]", "actor_id: ", actor:toString(), ...)
     else
-        info("[[--排行榜--]]", ...)
+        -- info("[[--排行榜--]]", ...)
     end
 end
 

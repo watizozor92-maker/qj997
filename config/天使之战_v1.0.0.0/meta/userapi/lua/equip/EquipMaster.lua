@@ -57,7 +57,7 @@ function EquipMaster.transferTrigger(actor, equip1, equip2, ts, ta)
     end
 end
 
---- 触发强化触发大师
+--- 触发强化大师
 function EquipMaster.strengthMaster(actor)
     EquipMaster.print("strengthMaster actor:" .. actor:toString() .. "触发强化大师开始")
     local equips = getputonequipinfo(actor)
@@ -98,6 +98,7 @@ function EquipMaster.strengthMaster(actor)
         return
     end
     EquipMaster.print("strengthMaster actor:" .. actor:toString() .. ", 强化table数据\n", strengthData)
+    local basecareer = getbaseinfo(actor, "getbasecareer")
     local config
     for group, cfgs in pairs(strengthCache) do
         -- group 遍历
@@ -125,7 +126,11 @@ function EquipMaster.strengthMaster(actor)
             elseif count == EquipMasterType.POS_LEVEL then
                 -- 1：计算每个部位等级
                 for _, pos in pairs(posTab) do
-                    local strengthLv = strengthData[tonumber(pos)]
+                    local posNum = tonumber(pos)
+                    local strengthLv = strengthData[posNum]
+                    if basecareer == 4 and posNum == 4 then
+                        strengthLv = lv
+                    end
                     if strengthLv == nil or strengthLv < lv then
                         isSuccess = true
                         break
@@ -150,10 +155,8 @@ function EquipMaster.strengthMaster(actor)
         --EquipMaster.print("strengthMaster actor:" .. actor:toString() .. "没有符合的强化大师配置：")
         return
     end
-
-    local career = getbaseinfo(actor, "getbasecareer")
     local attStr = config.att
-    local attrAddRate = string.toIntIntMap4Career(career, attStr, "#", "|")
+    local attrAddRate = string.toIntIntMap4Career(basecareer, attStr, "#", "|")
     addrolekmlattributes(actor, EquipMasterVariable.STRENGTH_MASTER_ATTR , attrAddRate)
     --ZzpTest.print("测试查看属性","玩家", actor:toString(), getbaseinfo(actor, "rolename"), "config.id", config.id,"大师属性attrAddRate", attrAddRate)
     --EquipMaster.print("strengthMaster actor:" .. actor:toString() .. "符合的强化大师配置：\n", config)

@@ -196,6 +196,7 @@ function this.ExcuseFightDamage(actor, paramMap)
             --玩家打怪 PVE原版公式 (finalDC - 怪物防御*0.7) * 技能倍率 *智力倍率 *双倍倍率
             local realArmor = armor * 0.7
             originDamage = (finalDC - realArmor) * skillPowerRate * intRate
+            originDamage = originDamage
             this.addFightLog(fightContext, string.format("玩家打怪伤害计算：(%.2f-(%.2f*0.7))*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
             -- info("打怪伤害："..originDamage)
         elseif castType == MapObjectType.MONSTER and targetType == MapObjectType.PLAYER then

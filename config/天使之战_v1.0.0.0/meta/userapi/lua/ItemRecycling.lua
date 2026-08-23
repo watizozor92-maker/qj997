@@ -173,6 +173,9 @@ function ItemRecycling.recovery(actor, msgData)
         for _, itemInfo in pairs(allItemInfo) do
             if itemInfo.bagindex == tonumber(bagIndex) then
                 local itemCfgId = itemInfo.cfgid
+                if itemCfgId == 20120131 then
+                    info("物品ID:", itemCfgId)
+                end
                 local recoveryGroup = ConfigDataManager.getTableValue("cfg_item", "recoveryGroup", "id", itemCfgId)
                 local recoveryUp = ConfigDataManager.getTableValue("cfg_item", "recoveryUp", "id", itemCfgId)
                 if string.isNullOrEmpty(recoveryGroup) then

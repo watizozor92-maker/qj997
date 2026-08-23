@@ -126,7 +126,7 @@ function Shortcut.afterPuton(actor, cfgId)
     this.sendShortcuts(actor)
 end
 
-function Shortcut.afterTakeOff(actor, cfgId)
+function Shortcut.afterTakeOff(actor, cfgId)    
     if not this.isguardequip(cfgId) then
         return
     end

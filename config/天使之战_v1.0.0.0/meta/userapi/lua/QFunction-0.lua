@@ -775,6 +775,7 @@ function takeoffequip(actor, pos, itemId, itemCfgId, wearBar)
     gameDebug.debug(Master.refreshMasterTalentAttr, actor)
     -- 这行必须是最后一个，新增往上放
     gameDebug.debug(EquipAndAppear.specialAttrUpdate, actor)
+    EquipAndAppear.onTakeOff(actor, pos, wearBar)
 end
 
 function weaponchange(actor, oldIndex, newIndex, itemId)

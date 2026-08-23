@@ -236,21 +236,27 @@ function Buffer.safetyAreaBuff(actor)
     end
 end
 
---移动BUFF 20260621 luo
-function Buffer.moveBuff(buffConfig, actor, casterActor)
-    -- 参数
-    -- local buffValues = string.split(buffConfig.buffvalue, "|")
+function Buffer.checkUserMove(actor)
     local mapid = getbaseinfo(actor, "mapid")
     local mapExclude = {1010,1011,1012,1025,1035}
     if mapid == nil or table.getKey(mapExclude, mapid) then
         tipinfo(actor, "当前地图不能使用移动技能")
-        return
+        return false
     end
+    return true
+end
+--移动BUFF 20260621 luo
+function Buffer.moveBuff(buffConfig, actor, casterActor)
+    -- 参数
+    -- local buffValues = string.split(buffConfig.buffvalue, "|")    
     -- 效果
     local buffParams = string.split(buffConfig.buffparam, "|")
     if tonumber(buffConfig.bufftype) == BuffType.MOVE then
         local buffParam = tonumber(buffParams[1])
         if buffParam == 41 then
+            if not Buffer.checkUserMove(actor) then
+                return
+            end
             local id = getbaseinfo(actor, "id")
             local casterId = getbaseinfo(casterActor or actor, "id")
             -- local rolename = getbaseinfo(actor, "rolename")
@@ -264,6 +270,9 @@ function Buffer.moveBuff(buffConfig, actor, casterActor)
                 maptransfer(actor, x, y, mapId, line)
             end
         elseif  buffParam == 42 then
+            if not Buffer.checkUserMove(actor) then
+                return
+            end
             local teamId = getbaseinfo(actor, "teamid")
             if not teamId or teamId == 0 then
                 -- 非队伍成员

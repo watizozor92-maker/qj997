@@ -415,6 +415,20 @@ function Team.CanJoin(teamId, joinActor, maxCareer)
             return false
         end
     end
+    for _, memrid in pairs(teamInfo.offlineteammemberinfo) do
+        local targetRid = tonumber(memrid)
+        local targetActor = getactor(joinActor, targetRid)
+        if not targetActor then
+            info(joinActor, "队伍中有不在线的玩家")
+            return false
+        end
+        local career = getbaseinfo(targetActor, "getbasecareer")
+        careerMap[career] = (careerMap[career] or 0) + 1
+        if careerMap[career] > maxCareer then
+            info(joinActor, "队伍中不能有2个以上相同的职业")            
+            return false
+        end
+    end
     return true
 end
 function Team.JoinTeam(actor, msgData)
@@ -429,7 +443,7 @@ function Team.JoinTeam(actor, msgData)
 end
 
 function Team.AgreeJoinTeam(actor, msgData)
-    info(msgData)
+    -- info(msgData)
     local leaderId = msgData.leaderId
     if not leaderId then
         info(actor, "请求参数 leaderId 为空")
@@ -449,6 +463,31 @@ function Team.AgreeJoinTeam(actor, msgData)
         return
     end
     replyapply(actor, 1, leaderId)
+end
+
+function Team.AgreeInviteTeam(actor, msgData)
+    -- info(msgData)
+    local leaderId = msgData.leaderId
+    if not leaderId then
+        info(actor, "请求参数 leaderId 为空")
+        return
+    end
+    local leaderActor = getactor(leaderId)
+    if not leaderActor then
+        info(actor, "未找到领队信息")
+        return
+    end
+    --别人的队伍
+    local teamId = getbaseinfo(leaderActor, "teamid")
+    if not Team.CanJoin(teamId, actor) then
+        -- sendmsg(actor, 5, "队伍中不能有2个以上相同的职业")
+        tipinfo(actor, "队伍中不能有2个以上相同的职业")
+        local rolename = getbaseinfo(actor, "rolename")
+        tipinfo(leaderActor, rolename.." 加入队伍失败")
+        replyinvitation(actor, leaderId, 0)
+        return
+    end
+    replyinvitation(actor, leaderId, 1)
 end
 
 MessageRouter:register(LuaMessageIdToSever.REQ_TEAM_EQUIP_INFO, Team.sendEquipInfo)
