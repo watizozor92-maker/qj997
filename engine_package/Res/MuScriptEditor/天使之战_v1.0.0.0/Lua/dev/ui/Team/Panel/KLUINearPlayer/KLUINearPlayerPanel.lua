@@ -73,7 +73,8 @@ function this:InvitePlayer(_, eventData)
     local leaderId = SL:TeamInfo_GetLeaderId()
     if teamId > 0 then
         if leaderId == SL:GetMetaValue(EMetaVarGetKey.UID) then
-            SL:ReqSendTeamInvitation(eventData.id,self.type)
+            SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_TEAM_INVITE, {teamId = teamId, leaderId = leaderId , playerId = eventData.id})
+            -- SL:ReqSendTeamInvitation(eventData.id,self.type)
         else
             SL:TipMessage(SL:GetConfig('cfg_string',297).text,1,NoticeType.NoticeMid )--您不是队长，不能邀请队员
         end

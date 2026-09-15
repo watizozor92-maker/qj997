@@ -10,7 +10,8 @@ local this = {}
 
 this.PRIVILEGE_DATA_KEY = "T$_PLAYER_MONTH_PRIVILEGE_DATA_KEY"
 this.PRIVILEGE_OVER_TIME_DATA_KEY = "T$_PLAYER_MONTH_PRIVILEGE_OVER_TIME_DATA_KEY"
-
+this.PRIVILEGE_DATA_RESTRICTWALK_KEY = "T$RestrictedWalkingTimer"
+this.PRIVILEGE_DATA_RESTRICTWALKTIME_KEY = "T$RestrictedWalkingTime"
 PrivilegeCardType = {
     MONTH_CARD = 1,
     PRIVILEGE_CARD = 2
@@ -41,7 +42,65 @@ function PrivilegeMonth.sendPrivilegeData(actor)
     sendluamsg(actor, LuaMessageIdToClient.RES_GET_MONTH_PRIVILEGE_DATA, data)
 end
 
+function PrivilegeMonth.OnWalk(actor)
+    local openPri = this.hasAnyPrivilegeValid(actor)
+    if not openPri then
+        --开启特权卡
+        local lastBackTime = getplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALKTIME_KEY)
+        info(actor, "lastBackTime", lastBackTime, os.time())
+        if not lastBackTime or os.time() - lastBackTime > 10 then
+            this.restrictWalkNextTime(actor)
+        end
+    end
+end
+
+function restrictwalkcallback(actor)
+    info(actor, "[restrictWalkBallback]")
+    local openPri = this.hasAnyPrivilegeValid(actor)
+    if openPri then
+        this.clearRestrictWalkTime(actor)
+        return
+    end
+    local toMapId = 1001
+    local x = getbaseinfo(actor, "x")
+    local y = getbaseinfo(actor, "y")
+    local mapId = getbaseinfo(actor , "mapid")
+    local line = getbaseinfo(actor, "line")
+    local rebirthPoint = ConfigDataManager.getTableValue("cfg_map_info", "rebirthPoint", "id", toMapId)
+    local rebirthPointMap = string.toAllIntIntMap(rebirthPoint, "#", "|")
+    if mapId ~= 1001 or (math.abs(x - rebirthPointMap[1][2]) > 10 or math.abs(y - rebirthPointMap[1][3]) > 10) then
+        maptransfer(actor, rebirthPointMap[1][2] + math.random(-5, 5),
+            rebirthPointMap[1][3] + math.random(-5, 5) , 1001, line)
+    end
+    this.restrictWalkNextTime(actor)
+end
 -- -------------------------------------------------------------------------- --
+function this.restrictWalkNextTime(actor)
+    local timerid = getplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALK_KEY)
+    if timerid then
+        clearintervalcall(timerid)
+    end
+    timerid = intervalcalldelay(actor, 5000, 5000, 1, "restrictwalkcallback")
+    -- print("timerid", timerid)
+    setplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALKTIME_KEY, os.time())
+    setplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALK_KEY, timerid)
+end
+
+function this.clearRestrictWalkTime(actor)
+    local timerid = getplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALK_KEY)
+    if timerid then
+        clearintervalcall(timerid)
+    end
+    -- print("timerid", timerid)
+    setplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALKTIME_KEY, nil)
+    setplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALK_KEY, nil)
+end
+
+function this.hasAnyPrivilegeValid(actor)
+    return this.hasPrivilegeType(actor, 73)
+       or this.hasPrivilegeType(actor, 72)
+       or this.hasPrivilegeType(actor, 74)
+end
 
 ---@return PrivilegeMonthData
 function this.getPrivilegeData(actor)

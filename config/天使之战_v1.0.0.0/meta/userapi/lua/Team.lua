@@ -490,4 +490,58 @@ function Team.AgreeInviteTeam(actor, msgData)
     replyinvitation(actor, leaderId, 1)
 end
 
+function Team.InviteTeam(actor, msgData)
+    local leaderId = msgData.leaderId
+    if not leaderId then
+        info(actor, "请求参数 leaderId 为空")
+        return
+    end
+    
+    local playerId = msgData.playerId
+    if not playerId then
+        info(actor, "请求参数 playerId 为空")
+        return
+    end
+    local playerActor = getactor(playerId)
+    if not playerActor then
+        info(actor, "未找到玩家信息")
+        return
+    end
+    local teamId = getbaseinfo(actor, "teamid")
+    if not Team.CanJoin(teamId, playerActor) then
+        -- sendmsg(actor, 5, "队伍中不能有2个以上相同的职业")
+        tipinfo(actor, "队伍中不能有2个以上相同的职业")        
+        return
+    end
+
+    local autoinvite = getplaydef(playerActor, "T$autoacceptinvite")
+    if autoinvite == 1 then
+        local rid = getbaseinfo(playerActor, "rid")
+        sendteaminvitation(actor, rid)
+        -- Team.AgreeInviteTeam(playerActor, { leaderId = leaderId })
+        return
+    else
+        local rid = getbaseinfo(playerActor, "rid")
+        sendteaminvitation(actor, rid)
+    end
+    
+end
+
+function Team.OnSettingChange(actor, vtype, oldValue, value)
+    info("OnSettingChange", actor, vtype, oldValue, value)    
+    if vtype == 2 then
+        -- 队伍设置改变
+        local valNum = 0
+        if type(value) == "string" then
+           valNum = (value == "true") and 1 or 0
+        elseif type(value) == "number" then
+            valNum = value
+        elseif type(value) == "boolean" then
+            valNum = value and 1 or 0
+        end
+        setplaydef(actor, "T$autoacceptinvite", valNum)
+    end
+end
+
+
 MessageRouter:register(LuaMessageIdToSever.REQ_TEAM_EQUIP_INFO, Team.sendEquipInfo)

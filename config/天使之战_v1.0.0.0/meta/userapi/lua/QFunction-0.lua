@@ -243,6 +243,8 @@ function handlerequest(actor, uid, msgID, msgData)
         Team.AgreeJoinTeam(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_TEAM_AGREE_INVITE then
         Team.AgreeInviteTeam(actor, msgData)
+    elseif msgID == LuaMessageIdToSever.REQ_TEAM_INVITE then
+        Team.InviteTeam(actor, msgData)
     elseif msgID == LuaMessageIdToSever.REQ_UNION_TASK_DATA then
         UnionMemberTask.sendUnionTaskData(actor)
     elseif msgID == LuaMessageIdToSever.REQ_SUBMIT_UNION_TASK then
@@ -483,6 +485,7 @@ function login(play)
     gameDebug.debug(MonsterScript.loginAddBuff, play)
     gameDebug.debug(onHook.setOfflineState, play, 4)
     gameDebug.debug(TradeService.loginCheck,play)
+    gameDebug.debug(Team.OnSettingChange, play, 2, 0 , 0)
     --gameDebug.debug( OperationalActivities.openActive, play)
 end
 
@@ -516,6 +519,7 @@ function run(actor)
 end
 
 function walk(actor)
+    PrivilegeMonth.OnWalk(actor)
 end
 
 function jump(actor)
@@ -1073,6 +1077,7 @@ function entermap(actor, lastMapCfgId, mapCfgId)
     gameDebug.debug(TaskHandler.sendTaskState, actor)
     gameDebug.debug(RoleAttr.enterMap, actor, mapCfgId)
     gameDebug.debug(BingFengBao.enterMap, actor, mapCfgId)    
+    gameDebug.debug(PrivilegeMonth.OnWalk, actor)
 end
 
 function leavemap(actor, reason)
@@ -1663,7 +1668,8 @@ end
 -- 玩家设置改变
 function settingchange(actor, type, oldValue, value)
     gameDebug.debug(KunDun.FightModelChange, actor, type, value)
-    RolandSeige.RolandSettingChange(actor, tonumber(type), tonumber(value))
+    RolandSeige.RolandSettingChange(actor, tonumber(type), tonumber(value))   
+    Team.OnSettingChange(actor, type, oldValue, value)
 end
 
 

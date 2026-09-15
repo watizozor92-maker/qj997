@@ -340,6 +340,38 @@ function string.toDouble(str)
     return num or 0
 end
 
+--- @param str string 配置字符串
+--- @param sep1 string 内层切割
+--- @ param sep2 string 外层切割
+--- @return table @ 将字符串转化为map，例如："道具id#数量|道具id#数量" 转化为 {1=2,3=4}
+function string.toAllIntIntMap(str, sep1, sep2)
+    local map = {}
+    string.putAllIntIntMap(map, str, sep1, sep2)
+    return map
+end
+
+--- 把字符串追加到指定的map里面
+--- @param str string 配置字符串
+--- @param sep1 string 内层切割
+--- @ param sep2 string 外层切割
+--- @return table @ 将字符串转化为map，例如："道具id#数量|道具id#数量" 转化为 {1=2,3=4}
+function string.putAllIntIntMap(map, str, sep1, sep2)
+    sep1 = sep1 or "#"
+    sep2 = sep2 or "|"
+    if not string.isNullOrEmpty(str) then
+        local data = string.split(str, sep2)
+        for _, v in ipairs(data) do
+            local data2 = string.split(v, sep1)
+            local mapTmp = {}
+            for _, v2 in ipairs(data2) do
+                table.insert(mapTmp, tonumber(v2))
+            end
+            table.insert(map, mapTmp)
+        end
+    end
+    return map
+end
+
 
 --- @param str string 配置字符串
 --- @param sep1 string 内层切割
