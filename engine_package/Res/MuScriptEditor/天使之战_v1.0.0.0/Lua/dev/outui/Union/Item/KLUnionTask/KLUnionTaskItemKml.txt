@@ -16,7 +16,7 @@
     </scrollview>
     <text id="TextProgress" a="21" text="活跃度0/20" fontsize="16" height="20" width="120" ta="21" horwrap="1" x="-24" y="-16" color="#999999FF" outlinesize="1" outlinecolor="0" outline="0" fontstyle="0" underline="0">
     </text>
-    <button id="taskButton" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" width="82" height="28" onclick="" text="领取" raycast="1" x="-19" y="19" fontsize="16" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+    <button id="taskButton" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" onclick="" text="领取" raycast="1" x="-19" y="19" fontsize="16" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
     </button>
     <img id="Img_Received_1" a="20" atlas="Atlas/KLKingOfRoad.spriteatlas" src="ty_finished" width="91" height="54" raycast="1" x="-15" y="-15" active="0">
     </img>

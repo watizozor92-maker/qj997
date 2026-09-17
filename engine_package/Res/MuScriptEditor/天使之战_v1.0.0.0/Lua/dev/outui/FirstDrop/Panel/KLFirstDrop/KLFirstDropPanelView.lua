@@ -1,37 +1,40 @@
 ---@class KLFirstDropPanelView:UIKmlLuaViewBase
----@field img1 UIKmlLuaControl
----@field img3 UIKmlLuaControl
----@field img7 UIKmlLuaControl
----@field text1 UIKmlLuaControl
----@field txt_desc UIKmlLuaControl
----@field img10 UIKmlLuaControl
----@field content_scroll2 UIKmlLuaControl
----@field content_layout_scroll2 UIKmlLuaControl
----@field contentlist2 UIKmlLuaControl
----@field img2 UIKmlLuaControl
----@field img6 UIKmlLuaControl
----@field togglegroup4 UIKmlLuaControl
----@field layout3 UIKmlLuaControl
----@field toggle1 UIKmlLuaControl
----@field text6 UIKmlLuaControl
----@field toggle2 UIKmlLuaControl
----@field text7 UIKmlLuaControl
----@field toggle3 UIKmlLuaControl
----@field text8 UIKmlLuaControl
----@field img4 UIKmlLuaControl
----@field text5 UIKmlLuaControl
----@field text2 UIKmlLuaControl
----@field text3 UIKmlLuaControl
----@field text4 UIKmlLuaControl
----@field img5 UIKmlLuaControl
----@field loopscrollview2 UIKmlLuaControl
----@field datalist UIKmlLuaControl
----@field close_btn UIKmlLuaControl
+---@field img1 UIKmlLuaControlHandler
+---@field img3 UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
+---@field text1 UIKmlLuaControlHandler
+---@field txt_desc UIKmlLuaControlHandler
+---@field img10 UIKmlLuaControlHandler
+---@field content_scroll2 UIKmlLuaControlHandler
+---@field content_layout_scroll2 UIKmlLuaControlHandler
+---@field contentlist2 UIKmlLuaControlHandler
+---@field img2 UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field togglegroup4 UIKmlLuaControlHandler
+---@field layout3 UIKmlLuaControlHandler
+---@field toggle1 UIKmlLuaControlHandler
+---@field text6 UIKmlLuaControlHandler
+---@field toggle2 UIKmlLuaControlHandler
+---@field text7 UIKmlLuaControlHandler
+---@field toggle3 UIKmlLuaControlHandler
+---@field text8 UIKmlLuaControlHandler
+---@field img4 UIKmlLuaControlHandler
+---@field text5 UIKmlLuaControlHandler
+---@field text2 UIKmlLuaControlHandler
+---@field text3 UIKmlLuaControlHandler
+---@field text4 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field loopscrollview2 UIKmlLuaControlHandler
+---@field datalist UIKmlLuaControlHandler
+---@field close_btn UIKmlLuaControlHandler
 local KLFirstDropPanelView = {}
 setmetatable(KLFirstDropPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/FirstDrop/Panel/KLFirstDrop/KLFirstDropPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLFirstDropPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLFirstDropPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/FirstDrop/Panel/KLFirstDrop/KLFirstDropPanel']
+
 return KLFirstDropPanelView

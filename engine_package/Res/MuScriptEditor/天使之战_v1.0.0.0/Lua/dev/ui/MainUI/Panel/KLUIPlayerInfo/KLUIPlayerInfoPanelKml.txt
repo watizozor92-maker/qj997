@@ -1,33 +1,23 @@
 <uipanel id="KLUIPlayerInfoPanel" name="玩家数据界面" movecanvas="0" adapter="1" zindex="208" x="0" y="0" onload="KmlMainUI/@初始化玩家数据" onunload="" z="0" rotate="0,0,0" raycast="0" color="#00000000" width="1334" height="88" a="00" ap="0#0#1#0#0.5#0">
   <panel id="move_root" x="0" y="0" a="02" width="1334" height="88">
-    <img id="leftBg" atlas="Atlas/NewMainPanel.spriteatlas" src="bg_xitongdi" x="0" y="0" z="0" ap="0#0.5#1#0.5#0.5#0.5" height="86" rotate="0,0,0" raycast="1" width="1200" a="02" color="#FFFFFFFF" scale9l="0" scale9b="0" scale9r="0" scale9t="0" offsetmin="0#-43" offsetmax="0#43" h5x="0" active="1" ppum="1">
-    </img>
-    <gridview id="fast_grid" cellwidth="60" cellheight="64" cella="10" x="2" deltax="0.5" y="0" width="305" height="64" spacex="1" spacey="1" active="0">
-      <datalist id="fast_data_list">
-      </datalist>
-    </gridview>
-    <img id="Att" a="10" width="130" height="60" raycast="1" x="126" y="2" src="bg_att" atlas="Atlas/UIMainPanel_Out.spriteatlas" color="#FFFFFF00" active="0">
-      <text id="Text_Att1" a="00" text="攻击：123456" fontsize="20" height="20" width="121" ta="01" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" x="4" y="-1">
-      </text>
-      <text id="Text_Att2" a="00" text="防御：123456" fontsize="16" height="20" width="95" ta="01" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" y="-12" active="0">
-      </text>
-    </img>
-    <panel id="buffMenuBtn" active="0" x="-373" width="66" height="68" y="0">
-      <img id="buffMenufoldBtn" atlas="Atlas/UIMainPanel_Out.spriteatlas" active="0" src="btn_buff2" width="66" height="68" onclick="KmlMainUI/@展开buff菜单栏" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="0">
-      </img>
-      <img id="buffMenuexpandBtn" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" active="0" src="arrow2" width="29" height="29" onclick="KmlMainUI/@折叠buff菜单栏" x="556" y="30" z="0" a="00" rotate="0,0,0" raycast="0">
-      </img>
-    </panel>
-    <panel id="left" x="280" active="1" width="84" height="76" y="0" a="02">
-      <panel id="hpContainer" x="0" y="6" width="75" height="73" a="10">
-        <loadingbar id="sliderHp" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" vertical="1" x="0" y="0" fontsize="10" src="img_hujiazhidi" loadingbar="img_hp_1" width="75" height="73" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="31" databind="startper=@hpPercentage" ta="21" z="0" a="00" rotate="0,0,0" raycast="0" text="700">
+    <panel id="left" x="-318" active="1" width="84" height="76" y="12" a="02">
+      <panel id="hpContainer" x="5" y="-4" width="75" height="73" a="10">
+        <loadingbar id="sliderHp" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" vertical="1" x="2" y="10" fontsize="10" src="img_hp_2" loadingbar="img_hp_1" width="114" height="105" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="50" databind="startper=@hpPercentage" ta="21" z="0" a="00" rotate="0,0,0" raycast="0" text="700">
         </loadingbar>
         <text id="hpTxt" fontsize="25" color="#FFFFFFFF" x="0" width="76" height="28" ta="11" outlinesize="1" outlinecolor="#000000FF" y="-20" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1" fontstyle="0" text="999999" underline="0">
         </text>
       </panel>
-      <img id="experienceMenufoldBtn" color="#12121200" width="174" height="24" x="-319" y="71" z="0" a="00" rotate="0,0,0" raycast="1" active="0">
+      <img id="experienceMenufoldBtn" color="#12121200" width="174" height="24" x="148" y="58" z="0" a="00" rotate="0,0,0" raycast="1" active="0">
       </img>
-      <panel id="experienceItem" x="-873" y="0" z="0" width="180" height="30" a="10" rotate="0,0,0" color="#121212FF" active="0">
+      <img id="experienceList" active="0" x="316" y="326" z="0" width="1334" height="750" a="00" rotate="0,0,0" raycast="1" color="#FFFFFF00">
+        <scrollview id="experience_content" a="00" width="160" height="112" vertical="1" y="-223" raycast="1" x="-32">
+          <layout id="layout2" width="360" height="230" a="12" vertical="1" contentsizefitter="1" raycast="1" cella="12">
+            <datalist id="experience_list">
+            </datalist>
+          </layout>
+        </scrollview>
+      </img>
+      <panel id="experienceItem" x="-35" y="90" z="0" width="180" height="30" a="10" rotate="0,0,0" color="#121212FF" active="0">
         <img id="experienceBg" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_expAdd" x="0" y="1" z="0" a="00" rotate="0,0,0" raycast="0" width="180" height="30" color="#FFFFFFFF">
           <text id="allExperienceTxt" text="199%经验加成" fonttype="FG_ExpAdd" fontsize="16" outlinesize="1" outlinecolor="#000000" x="-84" width="112" height="20" ta="21" y="1" z="0" a="00" rotate="0,0,0" horwrap="1" outline="0" color="#FFFFFFFF" fontstyle="0" underline="0">
           </text>
@@ -37,28 +27,12 @@
         <img id="arrow1" atlas="Atlas/FG_MainPanel.spriteatlas" src="btn_jinyanjiacheng" x="57" y="1" z="0" a="00" rotate="0,0,0" raycast="0" width="20" height="13">
         </img>
       </panel>
-      <img id="experienceList" active="0" x="48" y="356" z="0" width="2000" height="2000" a="00" rotate="0,0,0" raycast="1" color="#FFFFFF00">
-        <scrollview id="experience_content" a="00" width="160" height="112" vertical="1" y="-231" raycast="1" x="-370">
-          <layout id="layout2" width="360" height="230" a="12" vertical="1" contentsizefitter="1" raycast="1" cella="12">
-            <datalist id="experience_list">
-            </datalist>
-          </layout>
-        </scrollview>
-      </img>
       <img id="experienceMenuexpandBtn" color="#12121200" width="174" height="24" x="-319" y="66" z="0" a="00" rotate="0,0,0" raycast="1" active="0">
       </img>
     </panel>
-    <img id="atkModel" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_union" width="66" height="68" x="-309" y="1" z="0" a="00" rotate="0,0,0" raycast="0" active="0" color="#FFFFFF00">
-      <img id="icon1" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" databind="src=@atkModelIcon" src="peace" width="34" height="34" x="-36" y="0" z="0" active="0" a="00" rotate="0,0,0" raycast="0">
-      </img>
-      <img id="atkModelMenuBtn" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="btn_atk_all1" width="66" height="68" x="0" y="0" z="0" a="00" raycast="1" rotate="0,0,0" enable="1">
-      </img>
-      <text id="atkModelname" text="和平" databind="text=@atkModelName" fontsize="16" outlinesize="1" outlinecolor="#000000" width="78" height="22" ta="11" color="#FFBD00" x="0" y="0" z="0" a="00" rotate="0,0,0" outline="0" horwrap="1" active="0">
-      </text>
-    </img>
-    <panel id="right" x="-275" width="84" height="76" y="0" a="02">
-      <panel id="mpContainer" x="623" y="6" width="75" height="73">
-        <loadingbar id="sliderMp" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" x="0" y="0" vertical="1" fontsize="10" src="img_hujiazhidi" loadingbar="img_mp_1" width="75" height="73" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="0" databind="startper=@mpPercentage" ta="01" z="0" a="00" rotate="0,0,0" raycast="0" text="175">
+    <panel id="right" x="312" width="84" height="76" y="10" a="02">
+      <panel id="mpContainer" x="-4" y="-5" width="75" height="73">
+        <loadingbar id="sliderMp" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" x="1" y="10" vertical="1" fontsize="10" src="img_mp_2" loadingbar="img_mp_1" width="127" height="106" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="50" databind="startper=@mpPercentage" ta="01" z="0" a="00" rotate="0,0,0" raycast="0" text="175">
         </loadingbar>
         <text id="mpTxt" fontsize="25" color="#FFFFFFFF" x="0" width="76" height="28" ta="11" outlinesize="1" outlinecolor="#000000FF" y="-20" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1" text="999999" fontstyle="0" underline="0">
         </text>
@@ -68,89 +42,127 @@
         </gridview>
       </panel>
     </panel>
-    <panel id="AtkModePanel" a="02" active="0" x="-311" width="74" height="114" raycast="1" y="86" zindex="901" z="-300">
-      <img id="Img_AtkModeBg" width="74" height="114" raycast="1" src="bg_atkMode" atlas="Atlas/UIMainPanel_Out.spriteatlas" scale9l="25" scale9b="23" scale9r="19" scale9t="26" ap="0#0#1#1#0.5#0.5">
-        <gridview id="atkModelMenu" x="0" y="0" z="0" cellwidth="64" cellheight="34" cella="11" constraint="0" constraintcount="3" active="1" width="64" height="114" a="00" rotate="0,0,0" spacex="0" spacey="1" startcorner="0" paddingtop="0" paddingbutttom="0" paddingleft="0" paddingright="0" raycast="0" contentsizefitter="1">
-        </gridview>
+    <img id="leftBg" a="00" width="1340" height="185" raycast="0" src="bg_xitongdi" atlas="Atlas/NewMainPanel.spriteatlas" y="49" x="0">
+    </img>
+    <gridview id="fast_grid" cellwidth="53" cellheight="54" cella="00" x="-106" deltax="0.5" y="-12" width="162" height="50" spacex="1" spacey="1" active="0" raycast="0" enable="0">
+      <datalist id="fast_data_list">
+      </datalist>
+    </gridview>
+    <img id="Att" a="10" width="130" height="60" raycast="1" x="202" y="130" src="bg_att" atlas="Atlas/UIMainPanel_Out.spriteatlas" color="#FFFFFF00" active="0">
+      <text id="Text_Att1" a="00" text="攻击：123456" fontsize="20" height="20" width="121" ta="01" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" x="4" y="-1">
+      </text>
+      <text id="Text_Att2" a="00" text="防御：123456" fontsize="16" height="20" width="95" ta="01" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" y="-12" active="0">
+      </text>
+    </img>
+    <panel id="buffMenuBtn" active="0" x="-315" width="66" height="68" y="113">
+      <img id="buffMenufoldBtn" atlas="Atlas/UIMainPanel_Out.spriteatlas" active="0" src="btn_buff2" width="66" height="68" onclick="KmlMainUI/@展开buff菜单栏" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="0">
+      </img>
+      <img id="buffMenuexpandBtn" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" active="0" src="arrow2" width="29" height="29" onclick="KmlMainUI/@折叠buff菜单栏" x="556" y="30" z="0" a="00" rotate="0,0,0" raycast="0">
       </img>
     </panel>
-    <gridview id="gridview15" width="516" cellwidth="75" cellheight="73" raycast="1" height="100" x="-147" y="-6" a="02" startcorner="3" cella="00" spacex="3" active="1" contentsizefitter="0" constraint="0">
-      <panel id="tog_setting_panel" width="75" height="73" active="1">
-        <button id="tog_setting" width="75" height="73" src="btn_caidan" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
+    <gridview id="gridview15" width="221" cellwidth="53" cellheight="54" raycast="1" height="53" x="78" y="4" a="02" startcorner="3" cella="00" spacex="2" active="1" contentsizefitter="0" constraint="0">
+      <panel id="tog_shop_panel" width="53" height="54" active="1">
+        <button id="tog_shop" width="53" height="54" src="btn_shangcheng" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" x="0" y="0">
         </button>
       </panel>
-      <panel id="tog_union_panel" width="75" height="73">
-        <button id="tog_union" width="75" height="73" src="btn_zhanmengdibu" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <panel id="tog_setting_panel" width="53" height="54" active="1">
+        <button id="tog_setting" width="53" height="54" src="btn_caidan" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" x="0" y="0">
         </button>
       </panel>
-      <panel id="tog_mail_panel" width="75" height="75" active="0" enable="0">
-        <button id="tog_mail" width="58" height="58" src="btn_youjian" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <panel id="tog_union_panel" width="53" height="54">
+        <button id="tog_union" width="53" height="54" src="btn_zhanmengdibu" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
         </button>
       </panel>
-      <panel id="tog_skill_panel" width="75" height="75">
+      <panel id="tog_skill_panel" width="53" height="54" active="0" enable="0">
         <button id="tog_skill" width="75" height="73" src="btn_jineng" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
         </button>
       </panel>
-      <panel id="tog_masterTalent_panel" width="75" height="73">
+      <panel id="tog_mail_panel" width="53" height="54" active="0" enable="0">
+        <button id="tog_mail" width="58" height="58" src="btn_youjian" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
+        </button>
+      </panel>
+      <panel id="tog_masterTalent_panel" width="53" height="54" active="0">
         <button id="tog_masterTalent" width="75" height="73" src="btn_dashijineng" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
         </button>
       </panel>
-      <panel id="tog_friend_panel" width="75" height="75" active="0" enable="0">
+      <panel id="tog_friend_panel" width="53" height="54" active="0" enable="0">
         <button id="tog_friend" width="58" height="58" src="btn_haoyou" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
         </button>
       </panel>
-      <panel id="tog_bag_panel" width="75" height="75">
-        <button id="tog_bag" width="75" height="73" src="btn_beibao" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
+      <panel id="tog_bag_panel" width="53" height="54">
+        <button id="tog_bag" width="53" height="54" src="btn_beibao" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="">
           <img id="icon_bagFull" a="21" width="23" height="23" raycast="1" x="1" y="0" active="0" src="icon_bagFull" atlas="Atlas/FG_MainPanel.spriteatlas">
           </img>
         </button>
       </panel>
-      <panel id="tog_role_panel" width="75" height="75" offsetmin="25#-88">
+      <panel id="tog_role_panel" width="53" height="54" offsetmin="25#-88" active="0" enable="0">
         <button id="tog_role" width="75" height="73" src="btn_juese" default="0" togglegroup_id="togglegroup1" onclick="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" enable="1" mimg="" pimg="" dimg="">
           <img id="icon_AttrPoint" a="21" width="23" height="23" raycast="1" x="1" y="0" active="0" src="jiadian" atlas="Atlas/FG_AttrPanel.spriteatlas">
           </img>
         </button>
       </panel>
     </gridview>
-    <panel id="sdContainer" x="126" y="8" z="0" width="54" height="70" a="02" rotate="0,0,0" active="1">
-      <img id="img2" a="00" width="75" height="73" raycast="0" src="img_hujiazhidi" atlas="Atlas/NewMainPanel.spriteatlas">
-      </img>
-      <loadingbar id="sliderSd" hidetext="1" onclick="KmlMainUI/@点击护盾_技能值 2" atlas="Atlas/UIMainPanel_Out.spriteatlas" vertical="1" x="1" y="-1" fontsize="10" src="sdBg" loadingbar="sdFill" width="27" height="46" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="0" ta="21" z="0" a="00" rotate="0,0,0" raycast="1" text="700">
+    <panel id="sdContainer" active="1" x="-382" y="8" z="0" width="54" height="70" a="02" rotate="0,0,0" raycast="1">
+      <loadingbar id="sliderSd" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" onclick="KmlMainUI/@点击护盾_技能值 1" vertical="1" x="0" y="5" fontsize="10" src="img_hujiazhi_zhuangshi" loadingbar="img_sd_1" width="24" height="65" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="0" ta="21" z="0" a="00" rotate="0,0,0" raycast="1" text="700" active="1">
       </loadingbar>
       <text id="sdTxt" text="" fontsize="24" color="#FFFFFFFF" x="0" width="100" height="28" ta="11" outlinesize="1" outlinecolor="#000000FF" y="-18" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1" fontstyle="0" underline="0">
       </text>
     </panel>
-    <panel id="shieldContainer" active="1" x="200" y="8" z="0" width="54" height="70" a="02" rotate="0,0,0">
-      <img id="img4" a="00" width="75" height="73" raycast="1" src="img_hujiazhidi" atlas="Atlas/NewMainPanel.spriteatlas">
-      </img>
-      <loadingbar id="sliderShield" hidetext="1" atlas="Atlas/UIMainPanel_Out.spriteatlas" onclick="KmlMainUI/@点击护盾_技能值 1" vertical="1" x="1" y="-2" fontsize="10" src="sdBg" loadingbar="shieldFill" width="28" height="47" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="0" ta="21" z="0" a="00" rotate="0,0,0" raycast="1" text="700" active="1">
+    <panel id="shieldContainer" active="1" x="372" y="8" z="0" width="54" height="70" a="02" rotate="0,0,0">
+      <loadingbar id="sliderShield" hidetext="1" atlas="Atlas/NewMainPanel.spriteatlas" onclick="KmlMainUI/@点击护盾_技能值 1" vertical="1" x="1" y="5" fontsize="10" src="img_hujiazhi_zhuangshi" loadingbar="img_ap_1" width="24" height="65" scale9l="0" scale9r="0" scale9t="0" scale9b="0" startper="0" ta="21" z="0" a="00" rotate="0,0,0" raycast="1" text="700" active="1">
       </loadingbar>
       <text id="shieldTxt" text="" fontsize="24" color="#FFFFFFFF" x="0" width="100" height="28" ta="11" outlinesize="1" outlinecolor="#000000FF" y="-18" z="0" a="00" rotate="0,0,0" outline="1" horwrap="1" fontstyle="0" underline="0">
       </text>
     </panel>
+    <img id="atkModel" atlas="" src="" width="98" height="32" x="431" y="-27" z="0" a="00" rotate="0,0,0" raycast="1" active="1" color="#FFFFFF00" enable="1">
+      <img id="icon1" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" databind="src=@atkModelIcon" src="peace" width="34" height="34" x="-36" y="0" z="0" active="0" a="00" rotate="0,0,0" raycast="0">
+      </img>
+      <img id="atkModelMenuBtn" atlas="Atlas/NewMainPanel.spriteatlas" src="btn_atk_all" width="100" height="30" x="8" y="7" z="0" a="00" raycast="1" rotate="0,0,0" enable="1">
+      </img>
+      <text id="atkModelname" text="和平" databind="text=@atkModelName" fontsize="16" outlinesize="1" outlinecolor="#000000" width="78" height="22" ta="11" color="#FFBD00" x="0" y="0" z="0" a="00" rotate="0,0,0" outline="0" horwrap="1" active="0" enable="0">
+      </text>
+    </img>
     <loadingbar id="sliderPower" hidetext="1" atlas="Atlas/UIPlayerInfoPanel.spriteatlas" x="-70" y="30" fontsize="10" src="powerIcon1" loadingbar="powerIcon2" width="34" height="18" scale9l="8" scale9r="8" scale9t="8" scale9b="8" startper="100" databind="startper=@mpPercentage" ta="01" z="0" a="20" rotate="0,0,0" raycast="0" text="618" active="0">
     </loadingbar>
-    <text id="experiencePercentage" active="0" text="66.66%" fontsize="16" width="90" height="20" ta="01" color="#ADAEADFF" outlinesize="1" outlinecolor="#000000" x="28" y="-48" z="0" a="11" rotate="0,0,0" horwrap="1" outline="0" fontstyle="0" underline="0">
+    <text id="txt_server" a="10" text="999" fontsize="18" height="30" width="98" ta="01" outline="0" horwrap="1" x="163" y="-15" outlinesize="1" outlinecolor="#000000FF" color="#ADAEADFF" fontstyle="0" underline="0" active="0">
     </text>
-    <text id="level" text="等级 19999" contentsizefitter="0" fontsize="16" width="100" height="20" ta="01" color="#00ff00FF" outlinesize="1" outlinecolor="#000000" x="28" y="-18" z="0" a="11" rotate="0,0,0" horwrap="1" outline="0" fontstyle="0" underline="0" active="0">
+    <panel id="AtkModePanel" a="02" active="0" x="450" width="120" height="120" raycast="1" y="42" zindex="901" z="-300">
+      <img id="Img_AtkModeBg" width="120" height="120" raycast="1" src="bg_atkMode" atlas="Atlas/UIMainPanel_Out.spriteatlas" scale9l="25" scale9b="23" scale9r="19" scale9t="26" ap="0#0#1#1#0.5#0.5" x="0" y="0">
+        <gridview id="atkModelMenu" x="0" y="0" z="0" cellwidth="100" cellheight="30" cella="11" constraint="0" constraintcount="3" active="1" width="104" height="106" a="00" rotate="0,0,0" spacex="0" spacey="6" startcorner="0" paddingtop="0" paddingbutttom="0" paddingleft="0" paddingright="0" raycast="0" contentsizefitter="1">
+        </gridview>
+      </img>
+    </panel>
+    <loadingbar id="sliderExperience" a="02" width="315" height="7" x="-4" y="66" src="bg_exp" atlas="Atlas/UIMainPanel_Out.spriteatlas" loadingbar="img_exp_fill" hidetext="1">
+      <panel id="sliderExperience_ballEndPos" width="0" height="0" a="10" x="0" y="0">
+      </panel>
+      <img id="sliderExpBar" bind="progress_attach" height="4" x="0" y="0" width="315">
+      </img>
+    </loadingbar>
+    <panel id="AtkModeClosePanel" a="00" width="1334" height="750" x="0" y="330" zindex="900">
+      <button id="Btn_AtkModeCloseMask" a="00" width="1334" height="642" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="55">
+      </button>
+    </panel>
+    <panel id="TeamWindowClosePanel" a="00" width="1334" height="750" x="0" y="334" zindex="900" active="0">
+      <button id="Btn_TeamWindowCloseMask" a="00" width="50" height="50" onclick="" text="" raycast="1" color="#FFFFFFFF" x="136" y="200" src="bg_map_close" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="">
+      </button>
+      <panel id="teamObjRoot" a="00" width="277" height="187" x="250" y="268">
+      </panel>
+    </panel>
+    <text id="experiencePercentage" active="0" text="66.66%" fontsize="16" width="90" height="20" ta="01" color="#ADAEADFF" outlinesize="1" outlinecolor="#000000" x="503" y="-7" z="0" a="11" rotate="0,0,0" horwrap="1" outline="0" fontstyle="0" underline="0">
     </text>
-    <text id="txt_server" a="10" text="999" fontsize="18" height="22" width="140" ta="01" outline="0" horwrap="1" x="147" y="-12" outlinesize="1" outlinecolor="#000000FF" color="#ADAEADFF" fontstyle="0" underline="0" active="0">
+    <text id="level" text="等级 19999" contentsizefitter="0" fontsize="16" width="100" height="20" ta="01" color="#00ff00FF" outlinesize="1" outlinecolor="#000000" x="605" y="-4" z="0" a="11" rotate="0,0,0" horwrap="1" outline="0" fontstyle="0" underline="0" active="0">
     </text>
-    <countdown id="time" time="1" fonttype="" fontsize="18" width="70" updateinterval="30" formattype="5" height="30" ta="11" x="-3" y="30" z="0" a="20" rotate="0,0,0" active="0">
+    <countdown id="time" time="1" fonttype="" fontsize="18" width="70" updateinterval="30" formattype="5" height="30" ta="11" x="-44" y="34" z="0" a="20" rotate="0,0,0" active="0">
     </countdown>
     <button id="MonthCardBtn" a="00" atlas="Atlas/UIMonthCardPanel.spriteatlas" src="btn_monthCard2" width="62" height="35" onclick="" text="" raycast="1" x="-97" y="110" mimg="" pimg="" dimg="" active="0">
     </button>
     <button id="lianJiToggle" width="50" a="10" height="50" raycast="1" x="383" y="120" src="UI_zy_lianji" atlas="Atlas/UIMainPanel_Out.spriteatlas" active="0">
     </button>
-    <loadingbar id="sliderExperience" a="02" width="1327" height="10" x="1" y="0" src="bg_exp" atlas="Atlas/UIMainPanel_Out.spriteatlas" loadingbar="img_exp_fill" hidetext="1">
-      <panel id="sliderExperience_ballEndPos" width="0" height="0" a="10" x="0" y="0">
-      </panel>
-      <img id="sliderExpBar" bind="progress_attach" height="6">
-      </img>
-    </loadingbar>
-    <panel id="AtkModeClosePanel" a="00" width="1334" height="750" x="589" y="-295" zindex="900">
-      <button id="Btn_AtkModeCloseMask" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#FFFFFF00" x="-2220" y="-91">
-      </button>
-    </panel>
+    <button id="btn_team" a="00" width="95" height="35" onclick="" text="" raycast="1" x="440" y="17" src="btn_zudui3" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" h5x="453">
+    </button>
+    <text id="txt_coord" a="00" text="默认内容" fontsize="16" height="25" width="72" ta="11" outline="1" horwrap="1" x="-455" y="-16">
+    </text>
+    <text id="txt_mapname" a="00" text="默认内容" fontsize="16" height="25" width="104" ta="01" outline="1" horwrap="1" x="-456" y="15" offsetmax="-413#28" offsetmin="-495#2" h5x="-434">
+    </text>
   </panel>
 </uipanel>

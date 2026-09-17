@@ -61,4 +61,7 @@ local kmlPath = 'dev/outui/FaceTrade/Panel/KLFaceTrade/KLFaceTradePanelKml'
 function KLFaceTradePanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLFaceTradePanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/FaceTrade/Panel/KLFaceTrade/KLFaceTradePanel']
+
 return KLFaceTradePanelView

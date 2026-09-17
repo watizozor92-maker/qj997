@@ -31,13 +31,15 @@ function this:Init()
 
     else
         --GUI:UIPanel_Open("dev/outui/Archangel/Panel/KLArchangelGroup/KLArchangelGroupPanel")
-        local equipPanel = GUI:GetUI("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel")
+        --角色装备信息dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel
+        --原dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel
+        local equipPanel = GUI:GetUI("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel")
         if equipPanel then
             ---@type KLEquipUIPanel
             self.equipPanel = equipPanel
             self.equipPanel:SetSelfWearBarType(EEquipWearBarType.Archange)
         else
-            self.equipPanel = GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", nil, nil,
+            self.equipPanel = GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", nil, nil,
                 { x = -465, hideTips = true, callBack = self.ClosePanel, }, false, function(equipPanelView)
                  self.equipPanel = equipPanelView
                  self.equipPanel:SetSelfWearBarType(EEquipWearBarType.Archange)
@@ -944,11 +946,11 @@ end
 --- 打开穿戴栏
 function this:OpenEquip()
     if not self.equipPanel then
-        local equipPanel = GUI:GetUI("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel")
+        local equipPanel = GUI:GetUI("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel")
         if equipPanel then
             self.equipPanel = equipPanel
         else
-            self.equipPanel = GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", nil, nil,
+            self.equipPanel = GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", nil, nil,
                 { x = -465, hideTips = true, callBack = self.ClosePanel, })
         end
 
@@ -965,11 +967,11 @@ end
 --- 刷新穿戴栏（重开一次）
 function this:RefreshEquipWear()
     if self.equipPanel then
-        local equipPanel = GUI:GetUI("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel")
+        local equipPanel = GUI:GetUI("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel")
         if equipPanel then
             self.equipPanel = equipPanel
         else
-            self.equipPanel = GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", nil, nil,
+            self.equipPanel = GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", nil, nil,
                 { x = -465, hideTips = true, callBack = self.ClosePanel, })
         end
         self.equipPanel:SetSelfWearBarType(EEquipWearBarType.Archange)
@@ -998,6 +1000,7 @@ function this:Close()
     if self.isOther then
         InfoManager.archangeEquipInfo:ResetOtherInfo()
     end
+    --SL.ShowMainPanel()
 end
 
 function this:InitDataList()

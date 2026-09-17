@@ -97,7 +97,7 @@ local cfg_npcShop =
 	{id=157, itemId=3000104, number=1, itemName="战斗箭筒", group=0},
 	{id=158, itemId=60030067, number=1, itemName="多重箭之石", group=0},
 	{id=159, itemId=60030072, number=1, itemName="冲击波卷轴", group=0},
-	{id=160, itemId=60030072, number=1, itemName="冲击波卷轴", group=0},
+	{id=160, itemId=60030068, number=1, itemName="天雷闪之石", group=0},
 }
 
 local defaults = {itemId=30010015, number=20, shopId=5, itemName="精华魔力药水", conditions="checkLevel>=0&&checkLevel<999", bugCondition={{{101,1}}}, group=1}

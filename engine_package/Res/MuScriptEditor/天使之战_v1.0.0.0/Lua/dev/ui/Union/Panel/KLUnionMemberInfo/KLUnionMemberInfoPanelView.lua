@@ -10,6 +10,7 @@
 ---@field MemberLevelText UIKmlLuaControlHandler
 ---@field panel_manager UIKmlLuaControlHandler
 ---@field img2 UIKmlLuaControlHandler
+---@field Bg2 UIKmlLuaControlHandler
 ---@field MemberSetType UIKmlLuaControlHandler
 ---@field tog_SetType1 UIKmlLuaControlHandler
 ---@field text UIKmlLuaControlHandler
@@ -39,4 +40,7 @@ function KLUnionMemberInfoPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUnionMemberInfoPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Union/Panel/KLUnionMemberInfo/KLUnionMemberInfoPanel']
+
 return KLUnionMemberInfoPanelView

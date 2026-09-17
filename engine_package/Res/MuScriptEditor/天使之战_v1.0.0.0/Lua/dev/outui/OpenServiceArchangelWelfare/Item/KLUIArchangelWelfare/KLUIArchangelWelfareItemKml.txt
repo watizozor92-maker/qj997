@@ -13,10 +13,10 @@
         <gridview id="taskItemContent" bind="taskItemContent" active="1">
         </gridview>
       </img>
-      <loopscrollview id="loopscrollview" a="00" width="143" height="80" vertical="0" y="0" raycast="1" cellwidth="70" cellheight="70" autoadjust="1" scrollbar="0">
+      <loopscrollview id="loopscrollview" a="00" width="143" height="80" vertical="0" y="0" raycast="1" cellwidth="70" cellheight="70" autoadjust="1" scrollbar="0" siblingindex="1">
         <datalist id="loopscrolldata">
-          <panel id="panel2" y="-70">
-            <item id="ItemIcon" src="20020001" width="70" height="70" raycast="1">
+          <panel id="panel2" y="-70" siblingindex="0">
+            <item id="ItemIcon" src="20020001" width="70" height="70" raycast="1" siblingindex="0">
             </item>
           </panel>
         </datalist>

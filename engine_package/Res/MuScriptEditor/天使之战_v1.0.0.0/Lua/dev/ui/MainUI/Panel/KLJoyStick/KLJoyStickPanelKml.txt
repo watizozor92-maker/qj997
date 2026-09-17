@@ -3,7 +3,7 @@
     <img id="JoyStickBg" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg2" color="#ffffff00" raycast="1" x="6" y="13" width="305" height="305">
       <img id="JoyStickBgSmall" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg2" raycast="0" x="0" y="0">
       </img>
-      <img id="JoyStick" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg1" raycast="0" x="0" y="0">
+      <img id="JoyStick" a="00" atlas="Atlas/KLJoyStickPanel.spriteatlas" src="JoyStickBg122" raycast="0" x="0" y="0">
       </img>
     </img>
   </panel>

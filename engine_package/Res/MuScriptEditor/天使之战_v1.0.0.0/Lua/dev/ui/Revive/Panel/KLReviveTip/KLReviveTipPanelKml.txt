@@ -1,10 +1,10 @@
 <uipanel id="KLReviveTipPanel" name="复活界面" width="1334" height="750" x="0" y="0">
-  <img id="KLReviveTip_Panel" src="Texture/sanjitanchuang_bg.png" y="0">
-    <img id="title" atlas="Atlas/KLReviveTipPanel.spriteatlas" src="title" y="105">
+  <img id="KLReviveTip_Panel" src="Texture/new.png" y="27" atlas="" width="467" height="451" x="22">
+    <img id="title" atlas="Atlas/KLReviveTipPanel.spriteatlas" src="title" y="154" x="6" width="132" height="58">
     </img>
     <text id="informationText" x="0" y="20" outlinecolor="#000000" outlinesize="1" height="80" width="350" horwrap="1" contentsizefitter="1" textcolor="#dce1e5" fontsize="22" outline="1">
     </text>
-    <button id="LeftBtn" text="免费复活(60)" src="button_interface_window7" atlas="Atlas/Common.spriteatlas" outlinecolor="#000000" outlinesize="1" textcolor="#dce1e5" x="-2" y="-64" raycast="1" fontsize="18">
+    <button id="LeftBtn" text="免费复活(60)" src="btn_cebian2" atlas="Atlas/FG_Common.spriteatlas" outlinecolor="#000000" outlinesize="1" textcolor="#dce1e5" x="-2" y="-64" raycast="1" fontsize="18" mimg="" pimg="" dimg="">
     </button>
     <button id="RightBtn" text="原地复活" src="button_interface_window7" atlas="Atlas/Common.spriteatlas" outlinecolor="#000000" outlinesize="1" textcolor="#dce1e5" x="100" y="-64" fontsize="18" raycast="1" active="0" enable="0">
     </button>

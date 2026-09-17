@@ -12,9 +12,9 @@
       <input id="input_num" a="20" raycast="1" ta="01" scale9l="20" scale9r="22" scale9t="14" scale9b="20" textcolor="#FFFFFFFF" placecolor="#FFFFFFFF" mincount="0" width="122" height="32" text="" onchange="" src="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" x="107" fontsize="18">
       </input>
     </text>
-    <button id="sureBtn" a="22" width="113" height="41" onclick="" text="确定" raycast="1" y="27" x="-49" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" fontsize="18">
+    <button id="sureBtn" a="22" width="113" height="41" onclick="" text="OK" raycast="1" y="27" x="-49" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF" fontsize="15" fontstyle="2">
     </button>
-    <button id="cancelBtn" a="12" width="113" height="41" onclick="" text="取消" raycast="1" y="27" x="49" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+    <button id="cancelBtn" a="12" width="113" height="41" onclick="" text="Cancel" raycast="1" y="27" x="49" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="15" fontstyle="2">
     </button>
     <slider id="slider" atlas="Atlas/KLTradePanel.spriteatlas" src="img_slider_bg" fimg="img_slider" himg="btn_slider" width="223" height="35" minvalue="0" maxvalue="100" curvalue="0" wholenum="1" updateinterval="0.1" slidefillarealrtb="5,-5,0,0" slidehandlearealrtb="0,2,0,0" handlewidthtb="120,-27,-30" mimg="" pimg="" x="0" y="-166" a="01" fimg_scale9l2="15" fimg_scale9r2="9" fimg_scale9t2="24" fimg_scale9b2="5">
       <panel bind="fillArea_attach" id="fillArea_attach" a="00" x="2" width="220" height="18">

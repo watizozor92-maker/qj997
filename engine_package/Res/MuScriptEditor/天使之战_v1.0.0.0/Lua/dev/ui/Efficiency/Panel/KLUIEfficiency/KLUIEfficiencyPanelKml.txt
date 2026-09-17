@@ -2,7 +2,3 @@
   <prefab id="efficiency_Panel" path="Kml/KmlPrefab/Cookbook/KmlXWEfficiencyUI/UIEfficiencySysPanel_OLD.prefab" x="-518" a="20" y="0" z="0" width="10" height="10" rotate="0,0,0">
   </prefab>
 </uipanel>
-
-
-
-

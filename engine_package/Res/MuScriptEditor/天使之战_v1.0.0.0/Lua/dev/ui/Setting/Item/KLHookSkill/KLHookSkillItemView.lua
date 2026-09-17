@@ -2,6 +2,10 @@
 ---@field hookSkill_item UIKmlLuaControlHandler
 ---@field skill_bg UIKmlLuaControlHandler
 ---@field imgBG UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field img3 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
 ---@field skillIcon UIKmlLuaControlHandler
 ---@field skillLevel UIKmlLuaControlHandler
 ---@field skillName UIKmlLuaControlHandler

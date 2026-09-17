@@ -2,7 +2,7 @@
   <button id="background_close" atlas="Atlas/UIChatPanel.spriteatlas" src="img_bg_emoji_di" color="#00000000" width="5000" height="5000" a="10" x="-1100" onclick="" raycast="1" y="0">
   </button>
   <panel id="root_panel" width="1334" height="750" a="10" x="-1" y="0">
-    <img id="bg1" src="Texture/bg_chat.png" width="413" height="748" x="70" a="10" raycast="1" y="0" atlas="">
+    <img id="bg1" src="Texture/new1.png" width="413" height="748" x="70" a="10" raycast="1" y="0" atlas="">
       <button id="btn_close" atlas="Atlas/UIChatPanel.spriteatlas" src="img_btn_exit" x="16" a="20" raycast="1">
       </button>
     </img>
@@ -83,9 +83,9 @@
           </button>
           <img id="无战盟img" x="0" y="155" src="Texture/bg_chat2.png" atlas="" width="387" height="571" a="02">
             <img id="无战盟img2" width="180" height="65" x="44" y="118" atlas="Atlas/UIChatPanel.spriteatlas" src="img_chat_pao" scale9l="18" scale9r="15" scale9t="24" scale9b="6" a="00">
-              <text id="无战盟text1" a="10" x="19" y="12" text="你不在战盟中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              <text id="无战盟text1" a="10" x="19" y="12" text="你不在战盟中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
               </text>
-              <text id="无战盟text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              <text id="无战盟text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
               </text>
             </img>
           </img>
@@ -98,11 +98,11 @@
           <img id="biaoqing_btn" atlas="Atlas/FG_FriendPanel.spriteatlas" src="btn_emoij" width="45" height="45" x="140" y="30" onclick="" raycast="1" a="12">
           </img>
           <input id="text_input" text="" place="" fontsize="18" atlas="Atlas/FG_Common.spriteatlas" src="bg_text" width="382" height="38" x="-20" y="98" a="22" textcolor="#DEDEDE" placecolor="#FFFFFFFF" ta="01" horwrap="1" mline="0" outlinesize="1" outlinecolor="0" scale9l="8" scale9r="8" scale9t="8" scale9b="8" onchange="KmlChatUI/@ChangeByInput" alphaall="1">
-            <text id="text_input_place" a="00" text="点击输入内容" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
+            <text id="text_input_place" a="00" text="请输入内容" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#F59924FF">
             </text>
           </input>
-          <img id="fasong" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="236" y="32" onclick="KmlChatUI/@聊天发送消息" width="160" height="41" a="12">
-            <text id="sendMessageBtnTxt" text="发送" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" y="-1">
+          <img id="fasong" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" x="236" y="32" onclick="KmlChatUI/@聊天发送消息" width="160" height="41" a="12">
+            <text id="sendMessageBtnTxt" text="Send" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" y="-1" enable="1">
             </text>
           </img>
         </panel>
@@ -113,9 +113,9 @@
           </button>
           <img id="无队伍img" x="0" y="155" src="Texture/bg_chat2.png" atlas="" width="387" height="571" a="02">
             <img id="无无队伍img2" width="180" height="65" x="44" y="118" atlas="Atlas/UIChatPanel.spriteatlas" src="img_chat_pao" scale9l="18" scale9r="15" scale9t="24" scale9b="6">
-              <text id="无队伍text1" a="10" x="19" y="12" text="你不在队伍中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              <text id="无队伍text1" a="10" x="19" y="12" text="你不在队伍中" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
               </text>
-              <text id="无队伍text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0">
+              <text id="无队伍text2" a="10" x="19" y="-12" text="无法在该频道发言" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
               </text>
             </img>
           </img>
@@ -167,7 +167,7 @@
             <text id="背包" text="背 包" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-3" outline="1" horwrap="1">
             </text>
           </img>
-          <img id="btn_equip" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" a="11" x="120" y="38" raycast="1">
+          <img id="btn_equip" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" raycast="1">
             <img id="btn_equip_select" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
             </img>
             <text id="穿戴" text="穿 戴" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-3" outline="1" horwrap="1">
@@ -176,7 +176,7 @@
           <img id="btn_datianshi" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window42" active="0" raycast="1">
             <img id="btn_datianshi_select" width="110" height="35" atlas="Atlas/UIChatPanel.spriteatlas" src="button_interface_window40" active="0">
             </img>
-            <text id="大天使" text="大天使" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-2">
+            <text id="大天使" text="大天使" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="0" y="-2" outline="" horwrap="">
             </text>
           </img>
         </layout>

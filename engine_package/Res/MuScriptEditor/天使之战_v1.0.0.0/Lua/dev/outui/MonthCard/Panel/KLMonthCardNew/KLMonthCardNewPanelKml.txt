@@ -11,8 +11,8 @@
         <layout id="content_layout_scroll2" vertical="1" x="0" y="0" width="350" a="10" cella="10" space="10" contentsizefitter="1" control_height="1">
           <datalist id="contentlist2">
             <layout id="preview_tittle_layout2" width="350" height="10" paddingleft="16" cella="11" control_height="1">
-              <text id="preview_tittle2" text="开启时间" fontsize="18" color="#FFFFFFFF" fonttype="" outlinecolor="#000000FF" width="350" outline="1" horwrap="1" outlinesize="1">
-                <img id="preciew_icon_img2" a="11" x="-17" y="-3" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" control_height="1" width="12" height="13">
+              <text id="preview_tittle2" text="Start Time" fontsize="18" color="#FFFFFFFF" fonttype="" outlinecolor="#000000FF" width="350" outline="1" horwrap="1" outlinesize="1">
+                <img id="preciew_icon_img2" a="11" x="-17" y="-3" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" control_height="1" width="12" height="13" active="0">
                 </img>
               </text>
             </layout>
@@ -25,9 +25,9 @@
       </img>
       <text id="txt_leftContent" a="00" text="" fontsize="18" height="174" width="220" ta="01" outline="0" horwrap="1" x="0" y="-12" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
       </text>
-      <button id="btn_leftBuy" a="00" width="113" height="41" onclick="" text="立即购买" raycast="1" x="0" y="-133" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" scale9l="22" scale9b="14" scale9r="28" scale9t="14">
+      <button id="btn_leftBuy" a="00" width="113" height="41" onclick="" text="OK" raycast="1" x="0" y="-133" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" scale9l="22" scale9b="14" scale9r="28" scale9t="14" fontstyle="2">
         <img id="img3" a="00" width="112" height="26" raycast="1" src="bg_shijiandi" atlas="Atlas/FG_MonthCardPanel.spriteatlas" y="-39">
-          <text id="LeftTimeText" a="00" text="持续：30天" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="1" outlinesize="1" outlinecolor="#000000FF">
+          <text id="LeftTimeText" a="00" text="Lasts30Days" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="1" outlinesize="1" outlinecolor="#000000FF" fontstyle="2">
           </text>
         </img>
       </button>
@@ -66,9 +66,9 @@
     </img>
     <button id="btn_close" a="21" width="46" height="46" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-22" y="-17">
     </button>
-    <text id="title" a="01" text="畅玩卡特权" fontsize="20" height="25" space="0" width="203" ta="11" outline="0" horwrap="1" x="2" y="-29" color="#ffffffff" outlinesize="1" outlinecolor="#000000FF">
+    <text id="title" a="01" text="R‑Coin Card" fontsize="20" height="25" space="0" width="203" ta="11" outline="0" horwrap="1" x="2" y="-29" color="#ffffffff" outlinesize="1" outlinecolor="#000000FF" fontstyle="2">
     </text>
-    <img id="img6" a="00" width="160" height="30" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="262" x="2" offsetmin="-78#247" offsetmax="82#277" moveto="">
+    <img id="img6" a="00" width="160" height="30" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="262" x="2" offsetmin="-78#247" offsetmax="82#277" moveto="" active="1">
     </img>
   </img>
   <panel id="effectRoot" a="00" width="796" height="750" zindex="801" z="-800" x="-78" y="-2">

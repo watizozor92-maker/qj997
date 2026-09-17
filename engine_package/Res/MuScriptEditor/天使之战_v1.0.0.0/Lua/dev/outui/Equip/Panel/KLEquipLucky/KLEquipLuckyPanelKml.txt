@@ -31,12 +31,16 @@
         <togglegroup id="ToggleGroupSource" x="4" a="11" y="-483" width="53" height="124">
           <toggle id="equipBtn" onclick="KmlXWEquipStrength/@点击穿戴栏" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_equip_dark" pimg="ty_btn_equip" default="1" width="53" height="56" a="01">
           </toggle>
-          <toggle id="bagBtn" y="-65" onclick="KmlXWEquipStrength/@点击背包" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_bag_dark" pimg="ty_btn_bag" width="53" height="56" a="01">
+          <toggle id="bagBtn" y="-65" onclick="KmlXWEquipStrength/@点击背包" togglegroup_id="ToggleGroupSource" atlas="Atlas/FG_Forge.spriteatlas" src="ty_btn_bg_1" pimg="ty_btn_bg_2" width="53" height="56" a="01">
           </toggle>
         </togglegroup>
         <item id="item_model" itemid="" uniqueid="" a="00" y="-10" z="0" width="150" height="150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="0" x="0" mscale="50,50,50" enable="0">
         </item>
       </img>
+      <text id="baseSuccessRatioText" horwrap="1" x="0" y="165" text="成功率+50%" fontsize="18" height="22" width="276" ta="11" active="0" fonttype="" color="#1ADE1FFF" outline="1" fontstyle="0" underline="0" a="02">
+      </text>
+      <text id="bagNoticeText" a="00" text="请选择背包内装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-130" active="0" outlinesize="0" outlinecolor="0" outline="0">
+      </text>
       <img id="strengthIcon" a="01" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="121" height="35" raycast="0" x="-124" y="-285" active="0" enable="0">
         <text id="equipAttribute" a="10" text="幸运属性" fontsize="18" height="22" width="178" ta="01" horwrap="1" x="32" y="1" outlinesize="1" outlinecolor="0" outline="0" color="#DBE0E6FF">
         </text>
@@ -45,8 +49,6 @@
       </img>
       <togglegroup id="TogGroup_CostSelect" a="00" width="100" height="100" onload="" raycast="1" x="0" y="-129">
       </togglegroup>
-      <img id="successIcon" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="success_img" x="-30" y="-295" a="01" active="0">
-      </img>
       <layout x="-8" y="-18" width="63" height="102" vertical="1" space="4" cella="01" id="layout_19" a="21">
         <panel width="63" height="65" id="panel_20">
           <button id="strengthMasterBtn" width="63" height="65" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="btn_strengthMaster" onclick="" text="" raycast="1" active="0">
@@ -57,6 +59,8 @@
           </button>
         </panel>
       </layout>
+      <img id="successIcon" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="success_img" x="-30" y="-295" a="01" active="0">
+      </img>
       <scrollview id="StrengthCustomScrollView" a="02" width="270" height="70" vertical="0" y="95" raycast="1" movementtype="1" x="0">
         <layout id="layout2" width="350" height="70" a="00" vertical="0" contentsizefitter="2" raycast="1" cella="00" space="12">
           <datalist id="cost_list">
@@ -68,33 +72,31 @@
               <panel id="top" width="58" height="58" ap="0#0#1#1#0.5#0.5" zindex="202" x="0" y="0" z="-300">
                 <text id="cost_name" a="00" x="0" text="" outlinesize="1" outlinecolor="0" fontsize="18" outline="0" horwrap="1" y="-15" active="0">
                 </text>
-                <toggle id="costSelectTog" width="58" height="58" a="00" default="0" togglegroup_id="TogGroup_CostSelect" onclick="" raycast="1" src="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" pimg="bg_item_select" color="#FFFFFF00" pimg_scale9l="22" pimg_scale9b="18" pimg_scale9r="18" pimg_scale9t="22">
-                </toggle>
-                <text id="cost_num" a="02" text="12/12" x="0" ta="21" outlinesize="1" outlinecolor="0" fontsize="14" outline="0" horwrap="0">
-                </text>
                 <button id="costAddBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="30" height="30" onclick="" raycast="1" active="0" a="21" x="0" mimg="" pimg="" dimg="" y="0" color="#FFFFFF00">
                   <img id="costAddIcon" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="21" height="21" raycast="0" active="1" a="21" x="0" y="0">
                   </img>
                 </button>
+                <toggle id="costSelectTog" width="58" height="58" a="00" default="0" togglegroup_id="TogGroup_CostSelect" onclick="" raycast="1" src="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" pimg="bg_item_select" color="#FFFFFF00" pimg_scale9l="22" pimg_scale9b="18" pimg_scale9r="18" pimg_scale9t="22">
+                </toggle>
                 <img id="bindItemTips" a="11" width="15" height="18" raycast="1" x="1" y="-1" src="icon_bangding" atlas="Atlas/FG_Forge.spriteatlas">
                 </img>
+                <text id="cost_num" a="02" text="12/12" x="0" ta="21" outlinesize="1" outlinecolor="0" fontsize="14" outline="0" horwrap="0">
+                </text>
               </panel>
             </panel>
           </datalist>
         </layout>
       </scrollview>
+      <button id="strengthButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="激活" raycast="1" x="0" y="40" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFFFFFFF">
+        <text id="failTips" a="00" text="" fontsize="16" height="20" width="300" ta="11" horwrap="1" y="-30" x="0" color="#FF2424FF" outlinesize="0" outlinecolor="0" outline="0">
+        </text>
+      </button>
       <img id="strengthIcon_1" a="02" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="121" height="35" raycast="1" x="-124" y="211" active="0" enable="0">
         <text id="text11" a="10" text="可选材料" fontsize="18" height="22" width="100" ta="01" horwrap="1" x="32" y="0" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#DBE0E6FF" fontstyle="0" underline="0">
         </text>
         <img id="img2" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
         </img>
       </img>
-      <text id="baseSuccessRatioText" horwrap="1" x="0" y="165" text="成功率+50%" fontsize="18" height="22" width="276" ta="11" active="0" fonttype="" color="#1ADE1FFF" outline="1" fontstyle="0" underline="0" a="02">
-      </text>
-      <button id="strengthButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="激活" raycast="1" x="0" y="40" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFFFFFFF">
-        <text id="failTips" a="00" text="" fontsize="16" height="20" width="300" ta="11" horwrap="1" y="-30" x="0" color="#FF2424FF" outlinesize="0" outlinecolor="0" outline="0">
-        </text>
-      </button>
       <scrollview id="arrContent" a="01" x="0" y="-371" width="380" height="183" vertical="1" raycast="1">
         <gridview id="gridview3" cellwidth="380" cellheight="36" raycast="1" spacex="4" constraint="1" constraintcount="1" contentsizefitter="3" spacey="2">
           <datalist id="strength_list">
@@ -123,6 +125,8 @@
       </img>
       <button id="CloseButton" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" onclick="" text="" raycast="1" x="-2" y="1" active="1" h5y="10" h5x="-360" mimg="" pimg="" dimg="">
       </button>
+      <button id="Btn_Helper" a="22" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="-23" y="22" active="0">
+      </button>
       <prefab id="strength_fail" path="Effect/UI/Eff_UI_jihuoshibai.prefab" active="0" y="150" z="-500">
       </prefab>
       <prefab id="strength_ok" path="Effect/UI/Eff_UI_jihuochenggong.prefab" active="0" y="150" z="-500">
@@ -139,16 +143,12 @@
       </panel>
       <text id="noticeText" a="00" text="当前穿戴栏无可激活装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-130" active="0" outlinesize="0" outlinecolor="0" outline="0">
       </text>
-      <text id="bagNoticeText" a="00" text="请选择背包内装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-130" active="0" outlinesize="0" outlinecolor="0" outline="0">
-      </text>
       <text id="text1" a="01" text="幸运" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-21" color="#FFFFFFFF" space="10">
       </text>
-      <button id="Btn_Helper" a="22" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="-23" y="22" active="0">
-      </button>
     </img>
   </panel>
   <panel id="equip_show_tips" height="350" width="400" active="1" x="-312" y="-70" zindex="204">
-    <img id="strength_suc_bg" src="Texture/strength_suc_bg.png" width="900" height="999">
+    <img id="strength_suc_bg" src="Texture/strength_suc_bg.png" width="900" height="999" x="0" y="0">
     </img>
     <button id="closeMask" width="3000" height="3000" onclick="" color="#00000000" raycast="1" x="0" y="0">
     </button>

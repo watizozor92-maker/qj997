@@ -1,7 +1,6 @@
 ---@class KLUIChatEmojiItemView:UIKmlLuaViewBase
----@field smallPanel UIKmlLuaControlHandler
----@field bgRoot UIKmlLuaControlHandler
----@field richSmall UIKmlLuaControlHandler
+---@field chat_view UIKmlLuaControlHandler
+---@field chat_data_list UIKmlLuaControlHandler
 local KLUIChatEmojiItemView = {}
 setmetatable(KLUIChatEmojiItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Chat/Item/KLUIChatEmojiItem/KLUIChatEmojiItemKml'

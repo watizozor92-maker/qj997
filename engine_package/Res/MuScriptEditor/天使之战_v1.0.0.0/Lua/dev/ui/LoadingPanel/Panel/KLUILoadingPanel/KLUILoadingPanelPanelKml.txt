@@ -2,7 +2,7 @@
   <prefab id="UILoadingPanel" path="UI/UILoadingPanel.prefab" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
     <panel id="UILoadingPanel_Root" bind="UILoadingPanel" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0">
     </panel>
-    <img id="img1" a="00" width="1334" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" height="750" raycast="1" siblingindex="0" atlas="" src="Texture/qjMUloading.png" active="1">
+    <img id="img1" a="00" width="1334" ap="0#0#1#1#0.5#0.5" offsetmin="0#0" offsetmax="0#0" height="750" raycast="1" siblingindex="0" atlas="" src="Texture/bg_ar11changeltalent.png" active="1">
     </img>
     <img id="img2" a="00" width="1334" height="750" raycast="1" siblingindex="1" atlas="" src="Texture/bg_loading_2.jpg" active="0">
     </img>

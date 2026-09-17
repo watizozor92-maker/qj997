@@ -286,7 +286,8 @@ function KLUIBagPanel:Refresh()
         --GUI:setVisible(self.view.btn_fashion_map, false)
         GUI:setVisible(self.view.btn_attSuits, true)
         GUI:setVisible(self.view.btn_attGems, true)
-        GUI:Text_setString(self.view.title, "装 备")
+        --GUI:Text_setString(self.view.title, "装 备")
+        GUI:Text_setString(self.view.title, "Equip")
         GUI:setPositionY(self.view.title, 350)
         self:UpdateMoney()
     end
@@ -322,6 +323,8 @@ function KLUIBagPanel:RegistEvents()
     
     GUI:AddOnClickEvent(self.view.btn_gold, self, self.ShowMoneyTips, self.money_info[1][2])
     GUI:AddOnClickEvent(self.view.btn_diamond, self, self.ShowMoneyTips, self.money_info[2][2])
+    GUI:AddOnClickEvent(self.view.btn_ruibi, self, self.ShowMoneyTips, self.money_info[3][2])
+
     GUI:AddOnClickEvent(self.view.btn_go_model, self, self.GoDressPage)
     --GUI:AddOnClickEvent(self.view.btn_fashion_map, self, self.GoMapPage)
     GUI:AddOnClickEvent(self.view.btn_attSuits, self, self.ShowSuitAtts)
@@ -467,7 +470,7 @@ function this:StorageTips()
     local strTbl = string.split(str, "#")
     local data = {
         text = strTbl[1],
-        rightText = not string.isNullOrEmpty(strTbl[2]) and strTbl[2] or "确定",
+        rightText = not string.isNullOrEmpty(strTbl[2]) and strTbl[2] or "Yes",
         rightUI = strTbl[3],
     }
     return data
@@ -968,13 +971,16 @@ end
 function this:UpdateMoney()
     local goldCount= SL:GetBagItemCount(self.money_info[1][2],false) + SL:GetBagItemCount(self.money_info[1][3],false)
     local diamondCount= SL:GetBagItemCount(self.money_info[2][2],false) + SL:GetBagItemCount(self.money_info[2][3],false)
-    
+    local ruibiCount = SL:GetBagItemCount(self.money_info[3][2],false) + SL:GetBagItemCount(self.money_info[3][3],false)
     local icon1 = SL:GetConfig("cfg_item", tonumber(self.money_info[1][2])).looks
     local icon2 = SL:GetConfig("cfg_item", tonumber(self.money_info[2][2])).looks
+    --local icon3 = SL:GetConfig("cfg_item", tonumber(self.money_info[3][2])).looks
     GUI:Image_loadTexture(self.view.goldIcon, icon1,"Atlas/QJ5_ItemLooksIcon.spriteatlas")
     GUI:Image_loadTexture(self.view.diamondIcon, icon2,"Atlas/QJ5_ItemLooksIcon.spriteatlas")
+    --GUI:Image_loadTexture(self.view.ruibiIcon, icon3,"Atlas/UIBagPanel.spriteatlas")
     GUI:Text_setString(self.view.txt_gold, tostring(goldCount))
     GUI:Text_setString(self.view.txt_diamond, tostring(diamondCount))
+    GUI:Text_setString(self.view.txt_ruibi, tostring(ruibiCount))
 end
 
 ---@param moneyId number @货币id
@@ -1015,6 +1021,7 @@ function this:GetBagItemList(cfg)
             cfg = self.fashionDatas[1]
         end
         local temp = {}
+        
         for _, v in pairs(cfg.fashionId) do
             temp[v] = 1
         end
@@ -1037,7 +1044,8 @@ function this:UpdateSuitColor()
         return
     end
     local checkList = {}
-    GUI:Text_setString(self.view.btn_attSuits, "[套装属性]")
+    --GUI:Text_setString(self.view.btn_attSuits, "[套装属性]")
+    GUI:Text_setString(self.view.btn_attSuits, "[Set Bns]")
     for _, v in pairs(self.equips) do
         local suitId = EquipFunc.GetSuitIdByEquipCfgId(v.cfgId)
         if suitId and not checkList[suitId] then
@@ -1046,7 +1054,8 @@ function this:UpdateSuitColor()
             for _, effectList in pairs(sutEffects) do
                 for _, eff in pairs(effectList) do
                     if eff.isActive then
-                        GUI:Text_setString(self.view.btn_attSuits, "<color=#FFCC19>[套装属性]</color>")
+                        --GUI:Text_setString(self.view.btn_attSuits, "<color=#FFCC19>[套装属性]</color>")
+                        GUI:Text_setString(self.view.btn_attSuits, "<color=#FFCC19>[Set Bns]</color>")
                         return
                     end
                 end
@@ -1061,9 +1070,11 @@ function this:UpdateStrengthMasterColor()
     end
     local strengthMaster = EquipFunc.GetStrengthMasterActiveAttr(1)
     if not table.isNullOrEmpty(strengthMaster) then
-        GUI:Text_setString(self.view.btn_strengthenAtts, "<color=#FFCC19>[强化属性]</color>")
+       -- GUI:Text_setString(self.view.btn_strengthenAtts, "<color=#FFCC19>[强化属性]</color>")
+        GUI:Text_setString(self.view.btn_strengthenAtts, "<color=#FFCC19>[Enh Bns]</color>")
     else
-        GUI:Text_setString(self.view.btn_strengthenAtts, "[强化属性]")
+        --GUI:Text_setString(self.view.btn_strengthenAtts, "[强化属性]")
+        GUI:Text_setString(self.view.btn_strengthenAtts, "[Enh Bns]")
     end
 end
 

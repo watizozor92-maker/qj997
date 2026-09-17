@@ -22,7 +22,7 @@
       <scrollview id="scrollview10" a="22" width="980" height="37" vertical="0" y="0" raycast="1" siblingindex="0" x="0">
         <layout id="layout11" width="980" height="41" a="20" vertical="0" contentsizefitter="2" raycast="1" cella="20" space="5">
           <datalist id="money_list" a="11">
-            <button id="btn_money_tip" width="175" height="40" onclick="" text="" raycast="1" siblingindex="0" src="img_bag_10" atlas="Atlas/UIBagPanel_Out.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0">
+            <button id="btn_money_tip" width="175" height="40" onclick="" text="" raycast="1" siblingindex="0" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0">
               <img id="img_money_icon" a="10" width="25" height="25" raycast="1" siblingindex="1" src="jifen" atlas="Atlas/QJ5_ItemLooksIcon.spriteatlas" x="8" y="2">
               </img>
               <text id="text_money_count" a="00" text="0" fontsize="18" height="25" width="106" ta="21" siblingindex="2" outline="0" horwrap="1" x="15" y="2" color="#1ADE1FFF">
@@ -38,18 +38,18 @@
     </panel>
     <img id="img3" bind="ImgMask" active="0" x="0" y="0" width="2400" height="1080">
     </img>
-    <img id="img4" bind="Bg" raycast="1" active="1" src="Texture/FG_dankuangdi2.png" width="1039" height="578" x="0" y="0" scale9l="189" scale9b="89" scale9r="192" scale9t="162">
-      <toggle id="dianshuchongzhi_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" siblingindex="0" y="-71" a="11" x="233">
-        <text id="Label" text="积分充值" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" horwrap="1" ta="11" outline="1" height="51" width="120" x="0" siblingindex="2" h5y="0">
+    <img id="img4" bind="Bg" raycast="1" active="1" src="Texture/new.png" width="1039" height="578" x="0" y="0" scale9l="189" scale9b="89" scale9r="192" scale9t="162" atlas="">
+      <toggle id="dianshuchongzhi_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" pimg="btn_cebian6" siblingindex="0" y="-71" a="11" x="233">
+        <text id="Label" text="瑞币充值" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" horwrap="1" ta="11" outline="1" height="51" width="120" x="0" siblingindex="2" h5y="0">
         </text>
       </toggle>
-      <img id="img13" a="00" width="990" height="400" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="29" scale9b="38" scale9r="37" scale9t="28" x="3" y="-29" siblingindex="1">
+      <img id="img13" a="00" width="990" height="400" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="29" scale9b="38" scale9r="37" scale9t="28" x="3" y="-29" siblingindex="1" active="0">
         <img id="line" a="10" width="4" height="390" raycast="1" src="line" atlas="Atlas/FG_ShopMallPanel.spriteatlas" siblingindex="0" x="180" y="2">
         </img>
       </img>
       <img id="img12" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="0" scale9b="0" scale9r="0" scale9t="0" siblingindex="2">
       </img>
-      <toggle id="zhigou_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="toggle_top_1" pimg="toggle_top_1_select" siblingindex="3" y="-72" a="11" x="356">
+      <toggle id="zhigou_btn" width="114" height="36" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" pimg="btn_cebian6" siblingindex="3" y="-72" a="11" x="356">
         <text id="text5" text="直购" y="0" fontsize="20" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" horwrap="1" ta="11" outline="1" height="51" width="120" x="0" siblingindex="2" h5y="0">
         </text>
       </toggle>
@@ -67,6 +67,6 @@
     <button id="addBtn" a="00" width="34" height="34" onclick="" text="" raycast="1" x="42" y="0" src="icon_add2" atlas="Atlas/FG_ShopMallPanel.spriteatlas" mimg="" pimg="" dimg="" active="1">
     </button>
   </img>
-  <text id="text1" a="01" text="商城" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="-61" x="1">
+  <text id="text1" a="01" text="Mall" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="-61" x="1" fontstyle="0" color="#F59924FF">
   </text>
 </uipanel>

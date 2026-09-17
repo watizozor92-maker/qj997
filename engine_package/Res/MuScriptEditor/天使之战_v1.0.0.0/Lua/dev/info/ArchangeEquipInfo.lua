@@ -711,21 +711,23 @@ function this:CheckEquipRed()
         local id = v.id
         --- 判断空的孔
         local equipInfo = self:GetEquipLevelInfo(id)
-        local hole, max = self:GetHole(equipInfo.rank, item.cfgId)
-        for num = 1, hole do
-            local isHave = false
-            if self.archangeGrailInfo[id] then
-                for _, j in pairs(self.archangeGrailInfo[id]) do
-                    if j.grailPosition == num then
-                        isHave = true
-                        break
+        if equipInfo~=nil then
+            local hole, max = self:GetHole(equipInfo.rank, item.cfgId)
+            for num = 1, hole do
+                local isHave = false
+                if self.archangeGrailInfo[id] then
+                    for _, j in pairs(self.archangeGrailInfo[id]) do
+                        if j.grailPosition == num then
+                            isHave = true
+                            break
+                        end
                     end
                 end
-            end
-            if not isHave then
-                local bagTbl = self:GetBagItem(num, i)
-                if #bagTbl > 0 then
-                    table.insert(self.equipRed, id)
+                if not isHave then
+                    local bagTbl = self:GetBagItem(num, i)
+                    if #bagTbl > 0 then
+                        table.insert(self.equipRed, id)
+                    end
                 end
             end
         end

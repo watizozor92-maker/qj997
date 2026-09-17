@@ -24,9 +24,12 @@
 local KLShowStallGoodsItemView = {}
 setmetatable(KLShowStallGoodsItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Stall/Item/KLShowStallGoodsItem/KLShowStallGoodsItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLShowStallGoodsItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLShowStallGoodsItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Stall/Item/KLShowStallGoodsItem/KLShowStallGoodsItem']
+
 return KLShowStallGoodsItemView

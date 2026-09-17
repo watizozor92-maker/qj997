@@ -1,29 +1,32 @@
 ---@class KLUISkillUpTipsPanelView:UIKmlLuaViewBase
----@field MaskCloseButton UIKmlLuaControl
----@field BG UIKmlLuaControl
----@field SkillIcon UIKmlLuaControl
----@field SkillLvTitle UIKmlLuaControl
----@field SkillLv UIKmlLuaControl
----@field SkillName UIKmlLuaControl
----@field NeedPointTitle UIKmlLuaControl
----@field NeedPoint UIKmlLuaControl
----@field UpButton UIKmlLuaControl
----@field scrollview3 UIKmlLuaControl
----@field layout4 UIKmlLuaControl
----@field nowInfo UIKmlLuaControl
----@field img7 UIKmlLuaControl
----@field img9 UIKmlLuaControl
----@field NowSkillInfo UIKmlLuaControl
----@field nextInfo UIKmlLuaControl
----@field img3 UIKmlLuaControl
----@field img4 UIKmlLuaControl
----@field NextSkillInfo UIKmlLuaControl
+---@field MaskCloseButton UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field SkillIcon UIKmlLuaControlHandler
+---@field SkillLvTitle UIKmlLuaControlHandler
+---@field SkillLv UIKmlLuaControlHandler
+---@field SkillName UIKmlLuaControlHandler
+---@field NeedPointTitle UIKmlLuaControlHandler
+---@field NeedPoint UIKmlLuaControlHandler
+---@field UpButton UIKmlLuaControlHandler
+---@field scrollview3 UIKmlLuaControlHandler
+---@field layout4 UIKmlLuaControlHandler
+---@field nowInfo UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
+---@field img9 UIKmlLuaControlHandler
+---@field NowSkillInfo UIKmlLuaControlHandler
+---@field nextInfo UIKmlLuaControlHandler
+---@field img3 UIKmlLuaControlHandler
+---@field img4 UIKmlLuaControlHandler
+---@field NextSkillInfo UIKmlLuaControlHandler
 local KLUISkillUpTipsPanelView = {}
 setmetatable(KLUISkillUpTipsPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/SkillTips/Panel/KLUISkillUpTips/KLUISkillUpTipsPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLUISkillUpTipsPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUISkillUpTipsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/SkillTips/Panel/KLUISkillUpTips/KLUISkillUpTipsPanel']
+
 return KLUISkillUpTipsPanelView

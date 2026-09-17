@@ -59,7 +59,7 @@ end
 
 ---注册UI事件和服务器消息
 function this:RegistEvents()
-    GUI:AddOnClickEvent(self.view.closeBtn,self,self.Close)
+    --GUI:AddOnClickEvent(self.view.closeBtn,self,self.Close)
     SL:RegisterLUAEvent(LUA_EVENT_MAIN_PLAYER_DIE, self.LUA_EVENT_MAIN_PLAYER_DIE, self) --主角死亡
 end
 

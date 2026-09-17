@@ -1,20 +1,24 @@
 ---@class KLActivityTipPanelView:UIKmlLuaViewBase
----@field panelAll UIKmlLuaControl
----@field background UIKmlLuaControl
----@field Title UIKmlLuaControl
----@field closeBtn UIKmlLuaControl
----@field ActivitiesPanel UIKmlLuaControl
----@field ActivitiesView UIKmlLuaControl
----@field ActivitiesDataList UIKmlLuaControl
----@field ExpandArrow UIKmlLuaControl
----@field ContractArrow UIKmlLuaControl
----@field ViewAllActivities UIKmlLuaControl
+---@field move_root UIKmlLuaControlHandler
+---@field panelAll UIKmlLuaControlHandler
+---@field background UIKmlLuaControlHandler
+---@field Title UIKmlLuaControlHandler
+---@field closeBtn UIKmlLuaControlHandler
+---@field ActivitiesPanel UIKmlLuaControlHandler
+---@field ActivitiesView UIKmlLuaControlHandler
+---@field ActivitiesDataList UIKmlLuaControlHandler
+---@field ExpandArrow UIKmlLuaControlHandler
+---@field ContractArrow UIKmlLuaControlHandler
+---@field ViewAllActivities UIKmlLuaControlHandler
 local KLActivityTipPanelView = {}
 setmetatable(KLActivityTipPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Preview/Panel/KLActivityTip/KLActivityTipPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLActivityTipPanelView:Init(parent)
 
     self:InitRoot(parent,kmlPath)
 end
+---@type KLActivityTipPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Preview/Panel/KLActivityTip/KLActivityTipPanel']
+
 return KLActivityTipPanelView

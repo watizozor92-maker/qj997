@@ -1,20 +1,22 @@
 <uipanel id="KLMonsterMapPointPanel" name="地图怪物点位界面" width="0" height="0" movecanvas="0" zindex="-1" a="21" adapter="1">
-  <panel id="bg" width="1334" height="750" x="-665" y="-380">
-    <img id="bgImg" atlas="Atlas/TS_Common.spriteatlas" src="monsterListBg" width="218" height="210" x="460" y="110" active="1">
-      <button id="closeBtn_3" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="218" height="30" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="90">
-      </button>
-      <img id="img1" a="00" atlas="Atlas/TS_Common.spriteatlas" src="monsterListBg" width="218" height="277" raycast="1" x="0" y="0" active="0">
+  <panel id="move_root" x="0" y="0">
+    <panel id="bg" width="1334" height="750" x="-665" y="-380">
+      <img id="bgImg" atlas="Atlas/TS_Common.spriteatlas" src="monsterListBg" width="218" height="210" x="460" y="110" active="1">
+        <button id="closeBtn_3" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="218" height="30" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="90">
+        </button>
+        <img id="img1" a="00" atlas="Atlas/TS_Common.spriteatlas" src="monsterListBg" width="218" height="277" raycast="1" x="0" y="0" active="0">
+        </img>
+        <loopscrollview id="loopscrollview" vertical="1" width="212" height="166" z="-100" x="-2" y="-8" cellwidth="208" cellheight="39">
+          <datalist id="loopscrollviewData">
+          </datalist>
+        </loopscrollview>
+        <text id="MonsterName" text="黄金怪" width="100" height="22" x="-70" y="89" ta="11" color="#FACC91FF" horwrap="1" outlinesize="0" outlinecolor="#000000FF" fontsize="19">
+        </text>
       </img>
-      <loopscrollview id="loopscrollview" vertical="1" width="212" height="166" z="-100" x="-2" y="-8" cellwidth="208" cellheight="39">
-        <datalist id="loopscrollviewData">
-        </datalist>
-      </loopscrollview>
-      <text id="MonsterName" text="黄金怪" width="100" height="22" x="-70" y="89" ta="11" color="#FACC91FF" horwrap="1" outlinesize="0" outlinecolor="#000000FF" fontsize="19">
-      </text>
-    </img>
-    <button id="closeBtn_2" atlas="Atlas/TS_Common.spriteatlas" src="monsterArrow" width="70" height="40" x="535" y="199" raycast="1" rotate="0,0,0" mimg="" pimg="" dimg="" color="#FFFFFF00">
-    </button>
-    <button id="closeBtn" atlas="Atlas/TS_Common.spriteatlas" src="monsterArrow" width="15" height="24" x="535" y="199" raycast="1" rotate="0,0,0" mimg="" pimg="" dimg="">
-    </button>
+      <button id="closeBtn_2" atlas="Atlas/TS_Common.spriteatlas" src="monsterArrow" width="70" height="40" x="535" y="199" raycast="1" rotate="0,0,0" mimg="" pimg="" dimg="" color="#FFFFFF00">
+      </button>
+      <button id="closeBtn" atlas="Atlas/TS_Common.spriteatlas" src="monsterArrow" width="15" height="24" x="535" y="199" raycast="1" rotate="0,0,0" mimg="" pimg="" dimg="">
+      </button>
+    </panel>
   </panel>
 </uipanel>

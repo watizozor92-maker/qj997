@@ -10,7 +10,7 @@
     </panel>
     <img id="TitleImg" a="01" src="title" width="132" height="58" raycast="1" x="0" y="0" atlas="Atlas/KLUnionTaskPanel.spriteatlas" active="0">
     </img>
-    <text id="text2" a="01" text="战盟任务" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text2" a="01" text="GuildQuest" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
     </text>
     <button id="btnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="-10" y="-20" h5x="-357" h5y="9" mimg="" pimg="" dimg="">
     </button>

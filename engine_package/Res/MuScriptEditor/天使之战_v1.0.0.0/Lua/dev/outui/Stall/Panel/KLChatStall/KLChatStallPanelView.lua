@@ -47,9 +47,12 @@
 local KLChatStallPanelView = {}
 setmetatable(KLChatStallPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Stall/Panel/KLChatStall/KLChatStallPanelKml'
----@param parent UIKmlLuaControlHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLChatStallPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLChatStallPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Stall/Panel/KLChatStall/KLChatStallPanel']
+
 return KLChatStallPanelView

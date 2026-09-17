@@ -41,6 +41,8 @@
 ---@field text2 UIKmlLuaControlHandler
 ---@field NoNAtt UIKmlLuaControlHandler
 ---@field noAttackBtn UIKmlLuaControlHandler
+---@field StationaryAutoBattle UIKmlLuaControlHandler
+---@field StatAutoBtn UIKmlLuaControlHandler
 ---@field topNode UIKmlLuaControlHandler
 ---@field layout20 UIKmlLuaControlHandler
 ---@field img12 UIKmlLuaControlHandler

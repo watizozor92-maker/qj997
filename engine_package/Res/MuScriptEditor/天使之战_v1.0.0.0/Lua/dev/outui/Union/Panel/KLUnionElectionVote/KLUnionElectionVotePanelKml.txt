@@ -2,9 +2,9 @@
   <button id="btnMask" a="00" atlas="Atlas/Common.spriteatlas" src="bg1" width="1334" height="750" onclick="" text="" raycast="1" x="0" y="0" binddragid="" mimg="" pimg="" dimg="" scale9l="47" scale9b="13" scale9r="20" scale9t="8" color="#FFFFFF00">
   </button>
   <img id="Bg" a="00" atlas="" src="Texture/FG_dankuangdi.png" width="353" height="259" raycast="1" x="-8" y="-2" scale9l="0" scale9b="0" scale9r="0" scale9t="0">
-    <button id="btnConfirm" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" onclick="" text="确认" raycast="1" x="66" y="-79" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#00000080" fontsize="18" mimg="" pimg="" dimg="">
+    <button id="btnConfirm" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="103" height="36" onclick="" text="OK" raycast="1" x="66" y="-79" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#00000080" fontsize="18" mimg="" pimg="" dimg="">
     </button>
-    <button id="btnCancel" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" width="103" height="36" onclick="" text="重置" raycast="1" x="-66" y="-79" fontsize="18" ta="11" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#00000082" color="#FFFFFFFF" mimg="" pimg="" dimg="">
+    <button id="btnCancel" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="103" height="36" onclick="" text="Reset" raycast="1" x="-66" y="-79" fontsize="18" ta="11" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#00000082" color="#FFFFFFFF" mimg="" pimg="" dimg="">
     </button>
     <button id="btnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" onclick="" text="" raycast="1" x="-10" y="-17" mimg="" pimg="" dimg="" h5y="10" h5x="-355">
     </button>

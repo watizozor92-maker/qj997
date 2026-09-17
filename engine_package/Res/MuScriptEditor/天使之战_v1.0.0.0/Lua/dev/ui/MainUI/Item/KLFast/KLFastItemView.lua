@@ -17,9 +17,12 @@
 local KLFastItemView = {}
 setmetatable(KLFastItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/MainUI/Item/KLFast/KLFastItemKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLFastItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLFastItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/MainUI/Item/KLFast/KLFastItem']
+
 return KLFastItemView

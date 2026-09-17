@@ -1,6 +1,6 @@
 <uipanel id="KLTeamCopyStatusPanel" name="组队进副本界面" zindex="0" width="420" height="250" z="500" x="0" y="3" raycast="1" mask="1">
   <panel id="bg" width="356" height="265" x="0" y="56">
-    <img src="Texture/FG_tankuangdi.png" width="536" height="450" y="-15" scale9b="170" scale9l="197" scale9r="168" scale9t="110" raycast="1" id="img_522" x="2" atlas="">
+    <img src="Texture/new.png" width="536" height="450" y="-15" scale9b="170" scale9l="197" scale9r="168" scale9t="110" raycast="1" id="img_522" x="2" atlas="">
       <img id="img_title" atlas="Atlas/Common.spriteatlas" src="img_tip_title" y="106" active="0">
       </img>
       <text id="title" y="-17" ta="11" height="24" fontsize="20" active="1" horwrap="1" outlinesize="0" outlinecolor="#000000FF" outline="0" a="01" width="500" color="#FFFFFF" space="0" text="提 示" fontstyle="0" underline="0" x="0">
@@ -10,11 +10,11 @@
     </img>
     <text id="tipsContent" text="是否准备进入副本？" y="120" fontsize="20" height="40" width="500" x="0" ta="11" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" horwrap="1" active="1" a="00" rotate="0,0,0" outline="0">
     </text>
-    <button id="btn_sure" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="准备中" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    <button id="btn_sure" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="准备中" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
     </button>
-    <button id="btn_Join" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="进入" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    <button id="btn_Join" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" y="-150" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="OK" outlinesize="1" outlinecolor="#000000FF" x="80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
     </button>
-    <button id="btn_cancel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" y="-150" zindex="1003" textcolor="#FFFFFFFF" fontsize="18" text="取消" outlinesize="1" outlinecolor="#000000FF" x="-80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
+    <button id="btn_cancel" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" y="-150" zindex="1003" textcolor="#FFFFFFFF" fontsize="18" text="NO" outlinesize="1" outlinecolor="#000000FF" x="-80" raycast="1" active="1" width="130" height="38" mimg="" pimg="" dimg="" a="00">
     </button>
     <input id="input" width="300" height="100" active="0">
     </input>
@@ -25,7 +25,7 @@
     <scrollview id="scrollview_playerlist" a="00" width="450" height="210" vertical="1" y="-10" raycast="1">
       <layout id="layout3" width="450" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1">
         <datalist id="all_player_dl">
-          <panel width="450" height="40" x="0" id="panel_448">
+          <panel width="450" height="40" id="panel_448">
             <img id="bg" width="430" height="36" atlas="Atlas/FG_Forge.spriteatlas" src="bg_att" x="0" scale9l="10" scale9r="10" scale9t="10" scale9b="10">
             </img>
             <text id="name" a="10" ta="01" text="" fontsize="18" outlinesize="1" outlinecolor="0" x="25" outline="1" horwrap="1" y="0" color="#FFFFFF">

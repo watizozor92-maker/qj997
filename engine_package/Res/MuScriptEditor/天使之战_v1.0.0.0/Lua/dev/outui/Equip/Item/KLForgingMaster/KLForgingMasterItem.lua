@@ -21,6 +21,7 @@ function this:Init()
         else
             GUI:Text_setText(text_Attr, cfg.name.. "  " .. ToolFunc.NumberToStringRemoveZero(attr.value / 100) .. "%")
         end
+        
         GUI:Text_setTextColor(text_Attr, self.color)
     end)
 end

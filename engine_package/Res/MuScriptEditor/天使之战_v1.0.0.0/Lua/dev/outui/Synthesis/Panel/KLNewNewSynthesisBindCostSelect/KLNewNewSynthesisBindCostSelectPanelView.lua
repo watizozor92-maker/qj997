@@ -14,4 +14,7 @@ local kmlPath = 'dev/outui/Synthesis/Panel/KLNewNewSynthesisBindCostSelect/KLNew
 function KLNewNewSynthesisBindCostSelectPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLNewNewSynthesisBindCostSelectPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Synthesis/Panel/KLNewNewSynthesisBindCostSelect/KLNewNewSynthesisBindCostSelectPanel']
+
 return KLNewNewSynthesisBindCostSelectPanelView

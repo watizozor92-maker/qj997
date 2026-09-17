@@ -35,12 +35,12 @@
   </text>
   <text id="txt_count_down" text="" color="#FF0000" y="-115" width="180" ta="11" horwrap="1" outline="1" a="01">
   </text>
-  <button id="btn_xiajia" a="00" width="102" height="36" onclick="" text="下架" raycast="1" y="-84" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
+  <button id="btn_xiajia" a="00" width="102" height="36" onclick="" text="Delist" raycast="1" y="-84" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
   </button>
   <img id="img_coin_type" src="img_bag_04" atlas="Atlas/UIBagPanel.spriteatlas" a="12" x="47" y="57" width="25" height="25" rotate="0,0,0">
   </img>
   <text id="txt_price" text="33161" color="#FAD994FF" outlinesize="1" outlinecolor="#000000" fontsize="18" y="58" x="79" ta="11" width="47" horwrap="0" fonttype="" outline="1" a="12" height="22" contentsizefitter="2">
   </text>
-  <button id="btn_buy" a="00" width="102" height="36" onclick="" text="购买" raycast="1" y="-84" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
+  <button id="btn_buy" a="00" width="102" height="36" onclick="" text="OK" raycast="1" y="-84" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF" x="0">
   </button>
 </uipanel>

@@ -37,15 +37,15 @@ function this:Refresh()
     self:OnPlayerTurnDir(_,SL:GetMetaValue(EMetaVarGetKey.DIR))
     self:SetTransferIcon()
     self:SetNpcIcon()
-    local mapName = SL:GetMetaValue(EMetaVarGetKey.MAP_NAME)
-    local mapLine = SL:GetMetaValue(EMetaVarGetKey.MAP_LINE)
-    ---@type cfg_map_info_column
-    local mapInfo = SL:GetConfig("cfg_map_info", SL:GetMetaValue(EMetaVarGetKey.MAP_ID))
-    if mapInfo and mapInfo.nopositionmove == 0 then
-        GUI:Text_setString(self.view.txt_title,string.format("%s<color=#E6E600>[%s线]</color>",mapName,mapLine))
-    else
-        GUI:Text_setString(self.view.txt_title,string.format("%s",mapName))
-    end
+    -- local mapName = SL:GetMetaValue(EMetaVarGetKey.MAP_NAME)
+    -- local mapLine = SL:GetMetaValue(EMetaVarGetKey.MAP_LINE)
+    -- ---@type cfg_map_info_column
+    -- local mapInfo = SL:GetConfig("cfg_map_info", SL:GetMetaValue(EMetaVarGetKey.MAP_ID))
+    -- if mapInfo and mapInfo.nopositionmove == 0 then
+    --     GUI:Text_setString(self.view.txt_title,string.format("%s<color=#E6E600>[%s线]</color>",mapName,mapLine))
+    -- else
+    --     GUI:Text_setString(self.view.txt_title,string.format("%s",mapName))
+    -- end
     self.TransPoint = SL:GetAllTransferPointById()
     self:ShowMonsterPointMin()
 
@@ -184,7 +184,7 @@ function this:OnPlayerMapPosChange()
     local x = pos.x/256*self.sceneImgWidth - self.sceneImgWidth/2
     local z = pos.z/256*self.sceneImgHeight - self.sceneImgHeight/2
     GUI:setPosition(self.view.img_scene,-x,-z)
-    GUI:Text_setString(self.view.txt_coord,pos.x..","..pos.z)
+    --GUI:Text_setString(self.view.txt_coord,pos.x..","..pos.z)
     
     self:JudgeMapTransfer()
 end

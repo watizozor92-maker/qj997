@@ -1,20 +1,20 @@
-<uipanel id="KLUICreateRolePanel" name="创角界面" zindex="200" width="3000" height="3000" z="-3000">
+<uipanel id="KLUICreateRolePanel" name="创角界面" zindex="200" width="3000" height="3000" z="-3000" x="0" y="6">
   <panel id="create_panel" width="1334" height="750">
     <img id="mask" a="00" width="3000" height="3000" raycast="1" src="bg_conent" atlas="Atlas/FG_SelectRole.spriteatlas" scale9l="62" scale9b="26" scale9r="93" scale9t="40" z="500" x="0" y="0">
     </img>
     <img src="Texture/createrole_bg3.png" x="412" y="70" id="img_274" width="0" height="0">
     </img>
-    <togglegroup id="createrole_togglegroup" x="230" y="40" width="150" height="225" a="00">
-      <layout id="createrole_layout" width="150" height="225" vertical="1" space="0" cella="01">
+    <togglegroup id="createrole_togglegroup" x="-10" y="-248" width="724" height="111" a="00">
+      <layout id="createrole_layout" width="1330" height="100" vertical="0" space="0" cella="01" x="7" y="-4">
       </layout>
     </togglegroup>
-    <panel id="scrollview3" a="00" width="340" height="200" y="20" raycast="0">
+    <panel id="scrollview3" a="00" width="340" height="200" y="80" raycast="0">
       <model id="createrole_model" z="200" src="" mscale="1111,1111,1111" mrotate="0,180,0" mpos="-108,-214,62.22222" trigger="display" width="270" height="90" noclip="0">
       </model>
     </panel>
-    <panel id="BgMask" x="-53" width="413" rectmask="1" height="200" y="32">
+    <panel id="BgMask" x="-53" width="413" rectmask="1" height="200" y="92">
     </panel>
-    <panel id="midNode" a="00" width="620" height="90" x="-20" y="-214">
+    <panel id="midNode" a="00" width="620" height="90" x="-20" y="-154">
       <img src="bg_contentBorder" x="16" y="4" id="img_278" atlas="Atlas/FG_SelectRole.spriteatlas" width="624" height="96" color="#FFFFFFFF" scale9l="105" scale9b="24" scale9r="109" scale9t="31">
       </img>
       <text id="createrole_description" text="" fontsize="16" y="2" x="16" width="587" height="64" ta="01" outlinesize="1" outlinecolor="0" horwrap="1" outline="1">
@@ -25,9 +25,9 @@
         <img id="img1" a="10" raycast="0" src="input_huawen" atlas="Atlas/FG_SelectRole.spriteatlas" x="-7" y="2">
         </img>
         <layout id="layout1" control_height="0" contentsizefitter="1" vertical="0" height="46" width="123" a="00" raycast="1" x="139" y="1" cella="10" space="0" moveto="0,0,0">
-          <button id="btn_createrole_create" src="btn_queren" onclick="" text="确定" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" mimg="" pimg="" dimg="" fontsize="21" outlinesize="1" outlinecolor="#000000FF">
+          <button id="btn_createrole_create" src="btn_cebian6" onclick="" text="OK" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="21" outlinesize="1" outlinecolor="#000000FF" width="112" height="44" textcolor="#F59924FF">
           </button>
-          <button id="closeBtn" src="btn_quxiao" onclick="" text="取消" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" mimg="" pimg="" dimg="" fontsize="21" outlinesize="1" outlinecolor="#000000FF">
+          <button id="closeBtn" src="btn_cebian6" onclick="" text="Cancel" raycast="1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="21" outlinesize="1" outlinecolor="#000000FF" width="112" height="44" textcolor="#F59924FF">
           </button>
         </layout>
         <text bind="Text_attach" id="Text_attach" a="00" ta="11" text="" color="#FFFFFF" fontsize="16" y="1" x="-122" width="288" height="31" outlinesize="1" outlinecolor="0" horwrap="1" outline="1">
@@ -42,7 +42,7 @@
         </text>
       </img>
     </panel>
-    <img id="attrBg" src="bg_in" width="145" height="99" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" scale9l="24" scale9b="30" scale9r="51" scale9t="44" x="230" y="200">
+    <img id="attrBg" src="bg_in" width="145" height="99" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" scale9l="24" scale9b="30" scale9r="51" scale9t="44" x="290" y="200">
     </img>
     <gridview id="lualoopscrollview" x="230" y="230" cellheight="9" cellwidth="45" spacey="13">
       <datalist id="att_list" databind="@attDataList">
@@ -54,7 +54,7 @@
         </panel>
       </datalist>
     </gridview>
-    <panel id="panel_lockRole" a="00" width="620" height="125" raycast="1" x="-9" y="-191" active="0">
+    <panel id="panel_lockRole" a="00" width="620" height="125" raycast="1" x="-9" y="-131" active="0">
       <img id="img11" a="00" width="624" height="132" raycast="1" src="bg_contentBorder" atlas="Atlas/FG_SelectRole.spriteatlas" color="#FFFFFFFF" scale9l="111" scale9b="35" scale9r="74" scale9t="34" x="5" y="-1" deltay="0">
       </img>
       <text id="text2" a="00" text="暂未开放该角色的创建" fontsize="20" height="130" width="620" ta="11" outline="1" horwrap="1" color="#FF2424FF" x="0" y="0">

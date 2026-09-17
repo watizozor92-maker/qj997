@@ -8,7 +8,7 @@
       <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
       </img>
     </panel>
-    <text id="text1" a="01" text="战盟成员" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text1" a="01" text="GuildMembers" fontsize="20" height="24" width="200" ta="11" outline="0" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
     </text>
     <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="WarAlliance_Member" y="-2" x="8" a="01" active="0">
     </img>
@@ -78,8 +78,8 @@
         </gridview>
       </scrollview>
     </panel>
-    <button id="shen_he" a="02" y="71" onclick="KmlXWUnionMemberUI/UIUnionMemberApply" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" databind="active=@is_admin" active="" mimg="" pimg="" dimg="" width="103" height="36" x="0">
-      <text id="btn_text" text="审核信息" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1" horwrap="1" width="127" height="45" ta="11" active="1">
+    <button id="shen_he" a="02" y="71" onclick="KmlXWUnionMemberUI/UIUnionMemberApply" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" databind="active=@is_admin" active="" mimg="" pimg="" dimg="" width="103" height="36" x="0">
+      <text id="btn_text" text="Approve" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1" horwrap="1" width="127" height="45" ta="11" active="1">
       </text>
     </button>
     <panel id="shen_heTip" width="306" height="40" a="02" x="0" y="24" text="连续" fontsize="16" fontstyle="0" underline="0" color="#FFFFFFFF">

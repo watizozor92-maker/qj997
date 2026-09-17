@@ -1,20 +1,23 @@
 ---@class KLUISkillTipsPanelView:UIKmlLuaViewBase
----@field MaskCloseButton UIKmlLuaControl
----@field BG UIKmlLuaControl
----@field SkillIcon UIKmlLuaControl
----@field SkillName UIKmlLuaControl
----@field SkillLvTitle UIKmlLuaControl
----@field SkillLv UIKmlLuaControl
----@field img5 UIKmlLuaControl
----@field img9 UIKmlLuaControl
----@field SkillInfo UIKmlLuaControl
----@field CloseButton UIKmlLuaControl
+---@field MaskCloseButton UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field SkillIcon UIKmlLuaControlHandler
+---@field SkillName UIKmlLuaControlHandler
+---@field SkillLvTitle UIKmlLuaControlHandler
+---@field SkillLv UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field img9 UIKmlLuaControlHandler
+---@field SkillInfo UIKmlLuaControlHandler
+---@field CloseButton UIKmlLuaControlHandler
 local KLUISkillTipsPanelView = {}
 setmetatable(KLUISkillTipsPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/SkillTips/Panel/KLUISkillTips/KLUISkillTipsPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLUISkillTipsPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUISkillTipsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/SkillTips/Panel/KLUISkillTips/KLUISkillTipsPanel']
+
 return KLUISkillTipsPanelView

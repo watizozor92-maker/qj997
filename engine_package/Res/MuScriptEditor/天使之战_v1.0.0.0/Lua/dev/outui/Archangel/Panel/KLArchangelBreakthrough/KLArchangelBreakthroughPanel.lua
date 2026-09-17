@@ -9,12 +9,12 @@ function this:AsyncLoadUI()
 end
 ---创建时调用一次
 function this:Init()
-    local equipPanel = GUI:GetUI("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel")
+    local equipPanel = GUI:GetUI("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel")
     if equipPanel then
         self.equipPanel = equipPanel
         self.equipPanel:SetSelfWearBarType(EEquipWearBarType.Archange)
     else 
-        GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", nil, nil,
+        GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", nil, nil,
                 { x = -465, hideTips = true, callBack = self.ClosePanel, forgeGroupType = EForgeGroupType.Breakthrough },true,function(equipPanelView)
                     self.equipPanel =equipPanelView
                     self.equipPanel:SetSelfWearBarType(EEquipWearBarType.Archange)
@@ -111,7 +111,7 @@ function this:Refresh()
     end
     --self:LUA_EVENT_EQUIP_GRID_CLICK(equip)
     self.selectEquip = equip
-    self.equipPanel:SetSelectIndex(index)
+    --self.equipPanel:SetSelectIndex(index)
     self:SetEquip()
     SL:RefreshPanelALLRedPoint("KLArchangelGroupPanel")
 end
@@ -160,6 +160,9 @@ function this:SetEquip()
     GUI:Item_setItemId(self.view.item_model, itemCfg.id)
 
     local info = InfoManager.archangeEquipInfo:GetEquipLevelInfo(self.selectEquip.id)
+    if info == nil then
+        return
+    end
     local level = info.level
     local rank = info.rank
     local maxLv = InfoManager.archangeEquipInfo:GetMaxLevel(rank, self.selectEquip.cfgId)

@@ -2,13 +2,13 @@
   <panel id="panel1" width="1116" height="580">
     <img id="img2" a="00" width="1018" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
     </img>
-    <img src="Texture/FG_dankuangdi2.png" width="1039" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+    <img src="Texture/new.png" width="1039" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
       <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
       </img>
-      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35">
+      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35" active="0">
       </img>
     </img>
-    <text id="title" a="00" text="大师天赋" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1">
+    <text id="title" a="00" text="Talent" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1" fontstyle="2" color="#F59924FF">
     </text>
     <img id="closeBtn" color="#DCE1E5ff" width="34" height="34" x="485" y="250" clientclose="1" z="0" a="00" rotate="0,0,0" raycast="1" h5y="255" h5x="-500" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas">
     </img>
@@ -24,15 +24,15 @@
         </text>
       </img>
       <layout id="layout13" control_height="0" contentsizefitter="0" vertical="0" height="37" width="790" a="20" raycast="1" cella="10" space="25">
-        <img id="img6" width="237" height="37" raycast="1" src="bg_table_title" atlas="Atlas/FG_MasterTalent.spriteatlas">
+        <img id="img6" width="237" height="37" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas">
           <text id="info_count1" a="00" text="默认内容" fontsize="16" height="27" width="196" ta="11" outline="1" horwrap="1" color="#FF2424FF" outlinesize="1" outlinecolor="#000000FF" x="0" y="0">
           </text>
         </img>
-        <img id="img9" a="11" width="237" height="37" raycast="1" src="bg_table_title" atlas="Atlas/FG_MasterTalent.spriteatlas" x="160">
+        <img id="img9" width="237" height="37" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas">
           <text id="info_count2" a="00" text="默认内容" fontsize="16" height="27" width="196" ta="11" outline="1" horwrap="1" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000FF" x="0" y="0">
           </text>
         </img>
-        <img id="img11" a="11" width="237" height="37" raycast="1" src="bg_table_title" atlas="Atlas/FG_MasterTalent.spriteatlas" x="160">
+        <img id="img11" width="237" height="37" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas">
           <text id="info_count3" a="00" text="默认内容" fontsize="16" height="27" width="196" ta="11" outline="1" horwrap="1" color="#BA80FFFF" outlinesize="1" outlinecolor="#000000FF" x="0" y="0">
           </text>
         </img>

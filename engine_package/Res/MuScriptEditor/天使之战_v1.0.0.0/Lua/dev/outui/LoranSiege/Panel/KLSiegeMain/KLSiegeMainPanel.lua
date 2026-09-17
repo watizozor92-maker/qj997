@@ -78,11 +78,28 @@ function this:LUA_EVENT_REQ_SIEGE_UNION_PLAYER_END()
         end
     end
 end
-
+---获取内置的活动数据
+function this:GetInActivityInfo(activityId)
+    local allActivity = SL:GetAllActivityData()
+    for i, v in pairs(allActivity) do
+        if v.cfgId == activityId then
+            return v
+        end
+    end
+    return nil
+end
+---罗兰攻城战是否开启
+function this:GetLoranIsOpens()
+    local activityInfo = self:GetInActivityInfo(16001)    
+    if not activityInfo then
+        return false
+    end
+    return true 
+end
 ---攻城战面板信息变动
 function this:LUA_EVENT_ROLAND_SIEGE_MAIN_PANEL_CHANGE()
     local unionName = InfoManager.loranSiegeInfo:GetOccupyUnionName()
-    local isOpen = InfoManager.loranSiegeInfo:GetLoranIsOpen()
+    local isOpen = self:GetLoranIsOpens()
     local nextOpenTime = InfoManager.loranSiegeInfo:GetNextOpenTime()
     if unionName and unionName ~= "" then
         unionName = "占领战盟：<color=#00ff00>"..unionName.."</color>"
@@ -90,11 +107,12 @@ function this:LUA_EVENT_ROLAND_SIEGE_MAIN_PANEL_CHANGE()
     
     GUI:Text_setString(self.view.unionName,unionName)
     
-    GUI:setVisible(self.view.OpenText,isOpen)
-    GUI:setVisible(self.view.TimeText,not isOpen)
-    GUI:setVisible(self.view.TimeTitle,not isOpen)
+    GUI:setVisible(self.view.OpenText,false)
+    GUI:setVisible(self.view.TimeText,true)
+    GUI:setVisible(self.view.TimeTitle,true)
+
+    GUI:Text_setString(self.view.TimeText,Time.FormatTimeYMDHMS(nextOpenTime))
     if not isOpen then
-        GUI:Text_setString(self.view.TimeText,Time.FormatTimeYMDHMS(nextOpenTime))
     end
 end
 
@@ -117,7 +135,14 @@ end
 
 ---前往攻城
 function this:BtnGoClick()
-    local isOpen = InfoManager.loranSiegeInfo:GetLoranIsOpen()
+    --local isOpen = InfoManager.loranSiegeInfo:GetLoranIsOpen()
+    local activityInfo = self:GetLoranIsOpens()
+    local isOpen
+    if not activityInfo then
+        isOpen = false
+    else
+        isOpen = true 
+    end
     if SL:MeData_GetUnionId() == 0 then
         SL:TipMessage(SL:GetConfig("cfg_string",16002).text ,1, NoticeType.NoticeMid)
         return

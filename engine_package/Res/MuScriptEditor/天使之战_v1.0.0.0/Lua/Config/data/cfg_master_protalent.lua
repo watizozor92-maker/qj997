@@ -16,9 +16,9 @@
 ---多职业之间用#分割
 ---@field career IntList @所属职业 column=4 D
 ---天赋所的天赋系
----1-勇猛
----2-保护
----3-愤怒
+---1-Valor
+---2-Protection
+---3-Wrath
 ---@field series number @所属天赋系 column=5 E
 ---天赋处于当前天赋系的哪一层
 ---@field tier number @天赋所在层 column=6 F

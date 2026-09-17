@@ -5,10 +5,10 @@
         <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
         </img>
       </panel>
-      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi2.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
       </img>
     </panel>
-    <text id="text1" a="01" text="创建战盟" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" x="0" y="-34" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text1" a="01" text="CreateGuild" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" x="0" y="-34" fontstyle="0" underline="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
     </text>
     <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="waralliance_creat" y="-2" x="8" a="01" color="#FFFFFF00">
     </img>
@@ -21,7 +21,7 @@
         <img id="img3" a="00" width="121" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="0" y="-2">
           <img id="img2" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="0">
           </img>
-          <text text="战盟名称" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" a="10" id="text_60" outline="1" horwrap="1" x="32" y="2" width="80" height="22" fontstyle="0" underline="0" color="#FFFFFFFF" ta="01">
+          <text text="GuildName" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" a="10" id="text_60" outline="1" horwrap="1" x="32" y="2" width="80" height="22" fontstyle="0" underline="0" color="#FFFFFFFF" ta="01">
           </text>
         </img>
         <input id="input_union_name" ta="11" atlas="Atlas/FG_Union.spriteatlas" src="textbg_long" onchange="KmlXWUnionCreateUI/@UnionNameChange" textcolor="#e6e600ff" x="132" y="-38" width="372" height="40" fontsize="20">
@@ -33,7 +33,7 @@
         <img id="img4" a="00" width="121" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="0" y="7">
           <img id="img5" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="0">
           </img>
-          <text text="臂章样式" a="10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_63" outline="1" horwrap="1" x="32" y="2" width="80" height="22" fontstyle="0" underline="0" color="#FFFFFFFF" ta="01">
+          <text text="GuildMark" a="10" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" id="text_63" outline="1" horwrap="1" x="32" y="2" width="80" height="22" fontstyle="0" underline="0" color="#FFFFFFFF" ta="01">
           </text>
         </img>
         <img id="union_log_bg" a="00" y="-158" width="288" height="256" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="log_bg" active="0" x="132">
@@ -89,12 +89,12 @@
       </panel>
     </panel>
     <panel id="panel_btn" width="280" height="40" y="30" a="02">
-      <button id="cancle_btn" width="103" height="36" a="10" onclick="KmlXWUnionCreateUI/@closeMainPanel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" x="23" y="9">
-        <text id="btn_text" text="取消" color="#FFFFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" outline="1" horwrap="1" active="1" width="103" height="36" fontstyle="0" underline="0" x="0" y="0" ta="11">
+      <button id="cancle_btn" width="103" height="36" a="10" onclick="KmlXWUnionCreateUI/@closeMainPanel" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" x="23" y="9">
+        <text id="btn_text" text="cancle" color="#FFFFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" outline="1" horwrap="1" active="1" width="103" height="36" fontstyle="0" underline="0" x="0" y="0" ta="11">
         </text>
       </button>
-      <button id="enter_btn" width="103" height="36" a="20" onclick="KmlXWUnionCreateUI/@CreateUnion" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="-21" y="9">
-        <text id="btn_text" text="确定" color="#FFFFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" active="1" width="103" height="36" fontstyle="0" underline="0" x="0" y="0" ta="11">
+      <button id="enter_btn" width="103" height="36" a="20" onclick="KmlXWUnionCreateUI/@CreateUnion" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" x="-21" y="9" text="">
+        <text id="btn_text" text="Ok" color="#FFFFFFFF" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1" active="1" width="103" height="36" fontstyle="0" underline="0" x="0" y="0" ta="11">
         </text>
       </button>
     </panel>

@@ -1,30 +1,33 @@
 ---@class KLGuoShiPanelView:UIKmlLuaViewBase
----@field panel UIKmlLuaControl
----@field BG UIKmlLuaControl
----@field img2 UIKmlLuaControl
----@field text1 UIKmlLuaControl
----@field close UIKmlLuaControl
----@field img1 UIKmlLuaControl
----@field img6 UIKmlLuaControl
----@field item1 UIKmlLuaControl
----@field img4 UIKmlLuaControl
----@field cur_rate UIKmlLuaControl
----@field item2 UIKmlLuaControl
----@field img5 UIKmlLuaControl
----@field cur_sd UIKmlLuaControl
----@field SD_Max UIKmlLuaControl
----@field SD_Max_Value UIKmlLuaControl
----@field LianJiRate_Max UIKmlLuaControl
----@field LianJiRate_Max_Value UIKmlLuaControl
----@field img7 UIKmlLuaControl
----@field text8 UIKmlLuaControl
----@field rate_item UIKmlLuaControl
----@field sd_item UIKmlLuaControl
+---@field panel UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field img2 UIKmlLuaControlHandler
+---@field text1 UIKmlLuaControlHandler
+---@field close UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field img6 UIKmlLuaControlHandler
+---@field item1 UIKmlLuaControlHandler
+---@field img4 UIKmlLuaControlHandler
+---@field cur_rate UIKmlLuaControlHandler
+---@field item2 UIKmlLuaControlHandler
+---@field img5 UIKmlLuaControlHandler
+---@field cur_sd UIKmlLuaControlHandler
+---@field SD_Max UIKmlLuaControlHandler
+---@field SD_Max_Value UIKmlLuaControlHandler
+---@field LianJiRate_Max UIKmlLuaControlHandler
+---@field LianJiRate_Max_Value UIKmlLuaControlHandler
+---@field img7 UIKmlLuaControlHandler
+---@field text8 UIKmlLuaControlHandler
+---@field rate_item UIKmlLuaControlHandler
+---@field sd_item UIKmlLuaControlHandler
 local KLGuoShiPanelView = {}
 setmetatable(KLGuoShiPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/LianJi/Panel/GuoShi/KLGuoShiPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLGuoShiPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLGuoShiPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/LianJi/Panel/GuoShi/KLGuoShiPanel']
+
 return KLGuoShiPanelView

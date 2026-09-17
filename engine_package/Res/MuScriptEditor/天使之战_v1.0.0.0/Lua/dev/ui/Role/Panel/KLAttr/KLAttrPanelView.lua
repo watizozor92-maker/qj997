@@ -7,7 +7,6 @@
 ---@field Frame1Title UIKmlLuaControlHandler
 ---@field attr_panel_content UIKmlLuaControlHandler
 ---@field AttrInfo UIKmlLuaControlHandler
----@field attInfoScrollView UIKmlLuaControlHandler
 ---@field attrName_1 UIKmlLuaControlHandler
 ---@field attrName_2 UIKmlLuaControlHandler
 ---@field attrName_3 UIKmlLuaControlHandler
@@ -20,10 +19,9 @@
 ---@field FruitRedPoint UIKmlLuaControlHandler
 ---@field panelName UIKmlLuaControlHandler
 ---@field name UIKmlLuaControlHandler
+---@field regionAndCareer UIKmlLuaControlHandler
 ---@field attInfoContent_intelligence UIKmlLuaControlHandler
 ---@field attInfoContent_intelligence_content UIKmlLuaControlHandler
----@field plusButton_stamina UIKmlLuaControlHandler
----@field plusButton_s_Light UIKmlLuaControlHandler
 ---@field minusButton_stamina UIKmlLuaControlHandler
 ---@field attInfoContent_agility UIKmlLuaControlHandler
 ---@field attInfoContent_agility_content UIKmlLuaControlHandler
@@ -42,11 +40,11 @@
 ---@field attrContent UIKmlLuaControlHandler
 ---@field attr_data_list UIKmlLuaControlHandler
 ---@field attrScrollView UIKmlLuaControlHandler
+---@field attInfoScrollView UIKmlLuaControlHandler
 ---@field top UIKmlLuaControlHandler
 ---@field attInfoContent_dc UIKmlLuaControlHandler
 ---@field attInfoContent_dc_content UIKmlLuaControlHandler
 ---@field commandButton_text UIKmlLuaControlHandler
----@field minusButton_dc UIKmlLuaControlHandler
 ---@field bg_1 UIKmlLuaControlHandler
 ---@field bg_2 UIKmlLuaControlHandler
 ---@field CloseButton2 UIKmlLuaControlHandler
@@ -61,8 +59,9 @@
 ---@field num_intelligence UIKmlLuaControlHandler
 ---@field attInfoContent_stamina UIKmlLuaControlHandler
 ---@field attInfoContent_stamina_content UIKmlLuaControlHandler
+---@field plusButton_stamina UIKmlLuaControlHandler
+---@field plusButton_s_Light UIKmlLuaControlHandler
 ---@field attrInfo_4 UIKmlLuaControlHandler
----@field attrCloseButton UIKmlLuaControlHandler
 ---@field CloseButton UIKmlLuaControlHandler
 ---@field remainPointText UIKmlLuaControlHandler
 ---@field canUseText UIKmlLuaControlHandler
@@ -75,7 +74,8 @@
 ---@field num_dc UIKmlLuaControlHandler
 ---@field plusButton_dc UIKmlLuaControlHandler
 ---@field plusButton_d_Light UIKmlLuaControlHandler
----@field regionAndCareer UIKmlLuaControlHandler
+---@field minusButton_dc UIKmlLuaControlHandler
+---@field attrCloseButton UIKmlLuaControlHandler
 ---@field appleButton UIKmlLuaControlHandler
 ---@field BG_Templete UIKmlLuaControlHandler
 ---@field ReMask UIKmlLuaControlHandler

@@ -16,7 +16,7 @@ function this:Refresh()
     GUI:Text_setText(self.view.Text_Name, tbl.name)
     GUI:Text_setString(self.view.TxtOpenTime, tbl.timeText)
     GUI:Text_setString(self.view.TxtLimit, tbl.uiTextSynopsis)
-    GUI:Image_loadTexture(self.view.Bg, tbl.unionUiBg,"Atlas/FG_Union.spriteatlas")
+    --GUI:Image_loadTexture(self.view.Bg, tbl.unionUiBg,"Atlas/FG_Union.spriteatlas")
 end
 
 ---注册UI事件和服务器消息

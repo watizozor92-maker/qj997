@@ -8,9 +8,9 @@
       <img id="ImgTitle_right" a="00" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="95" active="1">
       </img>
     </text>
-    <button id="btnConfirm" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" width="82" height="28" onclick="" text="同意" fonttype="" raycast="1" x="-66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000" mimg="" pimg="" dimg="">
+    <button id="btnConfirm" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" onclick="" text="Ok" fonttype="" raycast="1" x="-66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000" mimg="" pimg="" dimg="">
     </button>
-    <button id="btnCancel" a="12" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" width="82" height="28" onclick="" text="取消" fonttype="" raycast="1" x="66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
+    <button id="btnCancel" a="12" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" onclick="" text="Cancel" fonttype="" raycast="1" x="66" y="24" fontsize="18" textcolor="#FFFFFFFF" ta="11" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="">
     </button>
     <img id="BgCost" a="22" atlas="Atlas/FG_Union.spriteatlas" src="bg_input1" width="80" height="30" raycast="1" x="-61" y="75" scale9l="10" scale9b="9" scale9r="9" scale9t="10">
       <text id="text14" a="00" text="消耗" fonttype="" fontsize="18" height="22" width="47" ta="01" x="-74" y="0" horwrap="1" rotate="0,0,0" outlinesize="0" outlinecolor="#000000" outline="1" color="#DCE1E5FF" fontstyle="0" underline="0">

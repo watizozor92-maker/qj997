@@ -13,11 +13,12 @@
       </text>
       <img id="select" a="00" atlas="Atlas/UIArchangel.spriteatlas" src="icon_select" width="160" height="50" scale9l="38" scale9b="33" scale9r="32" scale9t="33" active="0">
       </img>
-      <img id="gray" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="grail_groove_mask" width="150" height="40"  x="0" y="0">
-        <img id="img_lock" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="icon_lock" width="25" height="31" >
+      <img id="gray" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="grail_groove_mask" width="150" height="40" x="0" y="0">
+        <img id="img_lock" a="00" atlas="Atlas/UIArchangelGrail.spriteatlas" src="icon_lock" width="25" height="31">
         </img>
       </img>
-      <img id="img_red" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" active="0" x="72" y="15" />
+      <img id="img_red" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" active="0" x="72" y="15">
+      </img>
     </img>
   </panel>
 </uipanel>

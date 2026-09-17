@@ -1,12 +1,12 @@
-<uipanel id="KLUIOutdoorBossItem" name="野外boss挑战界面" width="1039" height="578" zindex="201" x="0" y="0">
-  <panel id="outdoor_boss_panel" width="1039" height="578">
-    <img src="bg_1" width="977" height="430" x="34" y="-115" id="img_43" a="11" atlas="Atlas/FG_ChallgeBoss.spriteatlas" stop="">
+<uipanel id="KLUIOutdoorBossItem" name="野外boss挑战界面" width="1049" height="565" zindex="201" x="0" y="0">
+  <panel id="outdoor_boss_panel" width="1049" height="565">
+    <img src="bg_1" width="940" height="470" x="-3" y="-33" id="img_43" a="00" atlas="Atlas/FG_ChallgeBoss.spriteatlas" stop="">
     </img>
-    <loopscrollview id="outdoor_boss_select" width="977" height="90" a="11" x="34" y="-478" vertical="0" cellwidth="254" cellheight="86">
+    <loopscrollview id="outdoor_boss_select" width="941" height="90" a="00" x="-2" y="-215" vertical="0" cellwidth="254" cellheight="86">
       <datalist id="outdoor_boss_level_data_list">
       </datalist>
     </loopscrollview>
-    <panel id="野外_boss_right_panel" width="719" height="440" x="158" y="-115" a="11">
+    <panel id="野外_boss_right_panel" width="719" height="440" x="-14" y="-28" a="00">
       <panel id="namePanel" width="216" height="44" x="252" y="-10" z="-300" zindex="203" a="11">
         <img atlas="Atlas/FG_ChallgeBoss.spriteatlas" src="bg_name" width="216" height="44" x="0" y="0" id="img_47" scale9l="55" scale9b="0" scale9r="53" scale9t="0" a="11">
           <text id="outdoor_boss_name" ta="11" text="" x="0" y="0" fontsize="18" color="#FFFFFF" outlinesize="0" outlinecolor="0" outline="1" horwrap="1">

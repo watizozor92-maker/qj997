@@ -107,7 +107,7 @@ local cfg_equip_att =
 	{id=67, name="攻击速度增加+7", group=12, stallShow="攻击速度增加+7", refineName="攻击速度增加+7"},
 	{id=68, name="卓越一击概率 增加 +4%", group=12, att={{303012,400,400,100}}, stallShow="卓越一击概率 增加 +4%", refineName="卓越一击概率 增加 +4%"},
 	{id=69, name="幸运一击伤害概率增加+4%", group=12, att={{305012,400,400,100}}, stallShow="幸运一击伤害概率增加+4%", refineName="幸运一击伤害概率增加+4%"},
-	{id=70, name="AG自动回复量+10", group=12, att={{207063,10,10,100}}, stallShow="AG自动回复量+10", refineName="AG自动回复量+10"},
+	{id=70, name="AG自动回复量+10", group=12, att={{1051,10,10,100}}, stallShow="AG自动回复量+10", refineName="AG自动回复量+10"},
 	{id=71, name="最大魔法值增加+200", group=12, att={{208011,200,200,100}}, stallShow="最大魔法值增加+200", refineName="最大魔法值增加+200"},
 }
 

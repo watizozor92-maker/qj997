@@ -50,10 +50,10 @@ end
 
 function this:FastDataListItemCountFunc()
     local count = #self.fastData
-    GUI:setContentSize(self.view.fast_grid, count * 65 + (count - 1), 60)
+    GUI:setContentSize(self.view.fast_grid, count * 53 + (count - 1), 54)
     ---策划限制只显示4个
-    if count > 4 then
-        count = 4
+    if count > 3 then
+        count = 3
     end
     return count
 end

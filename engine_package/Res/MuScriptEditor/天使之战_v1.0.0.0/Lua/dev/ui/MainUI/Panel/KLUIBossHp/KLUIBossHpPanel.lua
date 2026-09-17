@@ -384,6 +384,12 @@ function this:RegistEvents()
     GUI:AddOnClickEvent(self.view.snatchBtn, self, self.OnClickSnatchBtn)
 
     SL:RegisterLUAEvent(Event.CloseTeamTipsUI, self.CloseTeamTipsUI, self)
+    GUI:AddOnClickEvent(self.view.closeBtn, self, self.OnClickCloseBtn)
+end
+
+function this:OnClickCloseBtn()
+    self.parm = nil
+    SL:CloseBossHp()
 end
 
 function this:CloseTeamTipsUI()

@@ -1,47 +1,50 @@
 ---@class KLArchangelBreakthroughPanelView:UIKmlLuaViewBase
----@field panel1 UIKmlLuaControl
----@field BG UIKmlLuaControl
----@field noselect UIKmlLuaControl
----@field StrengthCustomScrollView UIKmlLuaControl
----@field gridview15 UIKmlLuaControl
----@field cost_list UIKmlLuaControl
----@field BreakthroughBtn UIKmlLuaControl
----@field failTips UIKmlLuaControl
----@field strengthIcon_1 UIKmlLuaControl
----@field text11 UIKmlLuaControl
----@field hidepanel UIKmlLuaControl
----@field top_level UIKmlLuaControl
----@field bg UIKmlLuaControl
----@field attrName UIKmlLuaControl
----@field preValue UIKmlLuaControl
----@field nextValue UIKmlLuaControl
----@field arrow1 UIKmlLuaControl
----@field strengthIcon UIKmlLuaControl
----@field equipAttribute UIKmlLuaControl
----@field BGInner_2 UIKmlLuaControl
----@field strengthLevelBg UIKmlLuaControl
----@field strengthIntro UIKmlLuaControl
----@field preLevel UIKmlLuaControl
----@field arrow UIKmlLuaControl
----@field nextLevel UIKmlLuaControl
----@field maxLevelTips UIKmlLuaControl
----@field equipName UIKmlLuaControl
----@field item_model UIKmlLuaControl
----@field line_1 UIKmlLuaControl
----@field line_2 UIKmlLuaControl
----@field Title UIKmlLuaControl
----@field noticeText UIKmlLuaControl
----@field CloseButton UIKmlLuaControl
----@field effectfail UIKmlLuaControl
----@field effectSucceed UIKmlLuaControl
----@field noselect_img UIKmlLuaControl
----@field btn_tips UIKmlLuaControl
+---@field panel1 UIKmlLuaControlHandler
+---@field BG UIKmlLuaControlHandler
+---@field noselect UIKmlLuaControlHandler
+---@field StrengthCustomScrollView UIKmlLuaControlHandler
+---@field gridview15 UIKmlLuaControlHandler
+---@field cost_list UIKmlLuaControlHandler
+---@field BreakthroughBtn UIKmlLuaControlHandler
+---@field failTips UIKmlLuaControlHandler
+---@field strengthIcon_1 UIKmlLuaControlHandler
+---@field text11 UIKmlLuaControlHandler
+---@field hidepanel UIKmlLuaControlHandler
+---@field top_level UIKmlLuaControlHandler
+---@field bg UIKmlLuaControlHandler
+---@field attrName UIKmlLuaControlHandler
+---@field preValue UIKmlLuaControlHandler
+---@field nextValue UIKmlLuaControlHandler
+---@field arrow1 UIKmlLuaControlHandler
+---@field strengthIcon UIKmlLuaControlHandler
+---@field equipAttribute UIKmlLuaControlHandler
+---@field BGInner_2 UIKmlLuaControlHandler
+---@field strengthLevelBg UIKmlLuaControlHandler
+---@field strengthIntro UIKmlLuaControlHandler
+---@field preLevel UIKmlLuaControlHandler
+---@field arrow UIKmlLuaControlHandler
+---@field nextLevel UIKmlLuaControlHandler
+---@field maxLevelTips UIKmlLuaControlHandler
+---@field equipName UIKmlLuaControlHandler
+---@field item_model UIKmlLuaControlHandler
+---@field line_1 UIKmlLuaControlHandler
+---@field line_2 UIKmlLuaControlHandler
+---@field Title UIKmlLuaControlHandler
+---@field noticeText UIKmlLuaControlHandler
+---@field CloseButton UIKmlLuaControlHandler
+---@field effectfail UIKmlLuaControlHandler
+---@field effectSucceed UIKmlLuaControlHandler
+---@field noselect_img UIKmlLuaControlHandler
+---@field btn_tips UIKmlLuaControlHandler
 local KLArchangelBreakthroughPanelView = {}
 setmetatable(KLArchangelBreakthroughPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Archangel/Panel/KLArchangelBreakthrough/KLArchangelBreakthroughPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLArchangelBreakthroughPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLArchangelBreakthroughPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Archangel/Panel/KLArchangelBreakthrough/KLArchangelBreakthroughPanel']
+
 return KLArchangelBreakthroughPanelView

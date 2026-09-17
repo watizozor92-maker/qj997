@@ -1,68 +1,68 @@
 <uipanel id="KLFriendOperatePanel" name="好友操作界面" width="1366" height="768" zindex="610" z="-500" x="0" y="0">
   <button id="BtnMask" width="1366" height="768" raycast="1" color="#FFFFFF00" x="1" y="0">
   </button>
-  <img id="BgBor" src="Texture/bg_friendOp.png" width="416" height="380" x="0" y="0" raycast="1" atlas="" color="#FFFFFFFF">
-    <img id="window_di" atlas="Atlas/FG_Team.spriteatlas" src="window_di" width="331" height="100" x="0" y="60" raycast="1">
-    </img>
-    <img id="TxtTitle" atlas="Atlas/KLChatPanel.spriteatlas" src="img_userInfo_title" x="0" y="150" active="0">
-    </img>
-    <text id="text1" a="00" text="人物信息" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="153" color="#FFFFFFFF">
-    </text>
+  <img id="BgBor" src="Texture/new.png" width="416" height="380" x="0" y="0" raycast="1" atlas="" color="#FFFFFFFF">
     <button id="BtnClose" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" x="178" y="154" raycast="1" mimg="" pimg="" dimg="" color="#FFFFFFFF">
     </button>
     <panel id="Bg" atlas="Atlas/Common.spriteatlas" src="bg_friend_min" y="-60" width="416" height="280" binddragid="">
-      <text id="TxtName" a="11" text="好友名称" fontsize="18" height="25" width="132" ta="01" horwrap="1" x="137" y="5" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
-      </text>
-      <text id="TxtUnion" a="11" text="战盟" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="270" y="4" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
-      </text>
-      <text id="TxtLevel" a="11" text="Lv.5" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="137" y="-21" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
+      <button id="BtnFlowerSend" src="Texture/Icon_flower.png" width="46" height="46" x="156" y="132" raycast="1" active="0">
+      </button>
+      <gridview id="BtnGrid" y="-204" raycast="0" cellwidth="113" cellheight="41" spacex="32" spacey="12" cella="01" width="400" height="513" x="0" active="1">
+        <button id="BtnViewPlayer" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="查看装备" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnUnionInvite" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="邀请入盟" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnDelFriend" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="删除好友" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnAddFriend" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="加为好友" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnUnionReq" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="申请入盟" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnPrivateChat" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="私聊" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnAddBlack" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="屏蔽" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnRemoveBlack" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="取消屏蔽" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnTeamInvite" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="邀请入队" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnTeamReq" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="申请入队" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnTeamKickOff" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="踢出队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnTeamLeader" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="升为队长" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="BtnLeaveTeam" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="离开队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="btn_faceTrade" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="交易" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="0" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="lockButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="查看玩家" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="joinButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="加入队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="selectPlayerButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="选中玩家" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+        <button id="reqPointButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" text="发送位置" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="113" height="41" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+        </button>
+      </gridview>
+      <text id="TxtLevel" a="11" text="Level" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="137" y="-21" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
       </text>
       <text id="TxtCareer" a="11" text="剑士" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="270" y="-21" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
+      </text>
+      <text id="TxtName" a="11" text="Name" fontsize="18" height="25" width="132" ta="01" horwrap="1" x="137" y="5" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
       </text>
       <img id="SpPlayerBG" atlas="Atlas/FG_Common.spriteatlas" src="border_head" x="70" y="7" width="58" height="58" a="11">
         <img id="SpPlayer" width="50" height="50">
         </img>
       </img>
-      <button id="BtnFlowerSend" src="Texture/Icon_flower.png" width="46" height="46" x="156" y="132" raycast="1" active="0">
-      </button>
-      <gridview id="BtnGrid" y="-204" raycast="0" cellwidth="113" cellheight="41" spacex="32" spacey="12" cella="01" width="400" height="513" x="0" active="1">
-        <button id="lockButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="查看玩家" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnViewPlayer" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="查看装备" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnUnionInvite" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="邀请入盟" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnDelFriend" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" text="删除好友" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnAddFriend" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="加为好友" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnUnionReq" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="申请入盟" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnPrivateChat" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="私聊" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnAddBlack" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" text="屏蔽" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnRemoveBlack" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" text="取消屏蔽" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnTeamInvite" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="邀请入队" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnTeamReq" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="申请入队" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnTeamKickOff" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="踢出队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnTeamLeader" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="升为队长" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="reqPointButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="发送位置" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="BtnLeaveTeam" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" text="离开队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="joinButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="加入队伍" outlinesize="1" outlinecolor="#000000FF" fontsize="18" raycast="1" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="selectPlayerButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="选中玩家" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="1" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-        <button id="btn_faceTrade" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" text="交易" raycast="1" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="0" width="103" height="36" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
-        </button>
-      </gridview>
+      <text id="TxtUnion" a="11" text="Guild" fontsize="18" height="25" width="100" ta="01" horwrap="1" x="270" y="4" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="0" color="#FFFFFFFF">
+      </text>
     </panel>
+    <text id="text1" a="00" text="Character Info" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="153" color="#F59924FF">
+    </text>
+    <img id="window_di" atlas="Atlas/FG_Team.spriteatlas" src="window_di" width="331" height="100" x="0" y="60" raycast="1">
+    </img>
+    <img id="TxtTitle" atlas="Atlas/KLChatPanel.spriteatlas" src="img_userInfo_title" x="0" y="150" active="0">
+    </img>
   </img>
 </uipanel>

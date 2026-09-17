@@ -1,6 +1,6 @@
 <uipanel id="KLNewTopMapPanelKml" a="11" width="413" height="58" adapter="1" x="0" y="0">
   <img id="move_root" a="11" width="408" height="44" raycast="1" x="0" y="0" text="地图名称六字 255,255" fontsize="16" fontstyle="0" underline="0" color="#DCE1E5FF" src="UIMask" atlas="Atlas/KLInvestmentFundPanel.spriteatlas" deltax="0" offsetmax="390#0" offsetmin="0#-44" h5x="2">
-    <img id="img1" a="00" width="321" height="50" raycast="1" src="img_ditumingchengdi" atlas="Atlas/NewMainPanel.spriteatlas" x="-38" y="1">
+    <img id="img1" a="00" width="311" height="43" raycast="1" src="img_ditumingchengdi" atlas="Atlas/FG_Common.spriteatlas" x="-35" y="-2">
     </img>
     <layout id="layout6" control_height="0" contentsizefitter="1" vertical="0" height="500" width="238" a="10" raycast="1" x="27" cella="10" space="5">
       <text id="Text_playerName" contentsizefitter="2" text="主角" fontsize="16" height="25" width="114" ta="01" outline="1" horwrap="1" color="#DBE0E6FF">
@@ -10,28 +10,28 @@
     </layout>
     <text id="Text_MapName" a="11" text="亚特兰蒂斯3-999，999-5线" fontsize="16" height="20" width="200" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#DCE1E5FF" x="27" y="-13" active="0">
     </text>
-    <button id="Btn_SwitchLine" a="11" width="44" height="31" onclick="" text="" raycast="1" src="icon_jiantou" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" x="267" y="-5" offsetmin="267#-36" offsetmax="311#-5" active="0">
+    <button id="Btn_SwitchLine" a="11" width="44" height="31" onclick="" text="" raycast="1" src="" atlas="Atlas/KLTradePanel.spriteatlas" mimg="" pimg="" dimg="" x="264" y="-5" offsetmin="267#-36" offsetmax="311#-5" active="0" enable="" h5x="267">
     </button>
     <button id="Btn_Map" a="00" width="83" height="47" onclick="" text="" raycast="1" src="btn_map" atlas="Atlas/UIMainPanel_Out.spriteatlas" mimg="" pimg="" dimg="" x="138" y="5" active="0">
     </button>
-    <button id="btn_pkMode" a="10" width="69" height="31" onclick="" text="" raycast="1" src="btn_heping" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" x="317" y="6">
+    <button id="btn_pkMode" a="10" width="69" height="31" onclick="" text="" raycast="0" src="btn_heping" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" x="318" y="2" active="0" enable="0">
     </button>
-    <img id="open_transfer2" a="10" width="44" height="31" raycast="1" src="icon_jiantou" atlas="Atlas/NewMainPanel.spriteatlas" x="268" active="0">
+    <img id="open_transfer2" a="10" width="40" height="33" raycast="1" src="btn_arrow_down2" atlas="Atlas/FG_Common.spriteatlas" x="275" active="0" y="0" offsetmin="274#-17" offsetmax="314#16" moveto="0,0,0" h5x="254" enable="1">
     </img>
-    <button id="open_transfer" a="10" width="44" height="31" onclick="" text="" raycast="1" src="icon_jiantou" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" rotate="0,0,180" x="311" y="0" offsetmin="311#-16" offsetmax="355#15" h5y="-5">
+    <button id="open_transfer" a="10" width="41" height="35" onclick="" text="" raycast="1" src="btn_arrow_down2" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" rotate="0,0,180" x="313" y="0" offsetmin="313#-18" offsetmax="354#17" h5y="0" h5x="254" active="0">
     </button>
     <panel id="maptransfer_panel" a="11" width="322" height="548" y="-100" x="0" z="-900">
       <button id="close_transfer" a="00" width="2000" height="2000" onclick="" text="" raycast="1" color="#FFFFFF00" x="500" y="0">
       </button>
       <img id="img5" a="00" width="322" height="548" raycast="1" atlas="" src="Texture/FG_bg_line.png" active="1">
-        <text id="text6" a="01" text="地图传送" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-23">
+        <text id="text6" a="01" text="Map Teleport" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="-23" fontstyle="2" color="#F59924FF">
         </text>
         <img id="img3" a="01" width="293" height="23" raycast="1" src="bg_transfertitle" atlas="Atlas/FG_MapPanel.spriteatlas" y="-60" x="0" color="#000000FF">
-          <text id="text2" a="10" text="名称" fontsize="16" height="23" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="20" y="0" color="#4AA1E3FF" fonttype="">
+          <text id="text2" a="10" text="Name" fontsize="16" height="23" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="20" y="0" color="#4AA1E3FF" fonttype="" fontstyle="2">
           </text>
-          <text id="text3" a="00" text="等级" fontsize="16" height="23" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="0" color="#4AA1E3FF" fonttype="">
+          <text id="text3" a="00" text="Level" fontsize="16" height="23" width="53" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="0" y="0" color="#4AA1E3FF" fonttype="" fontstyle="2">
           </text>
-          <text id="text4" a="20" text="金币" fontsize="16" height="23" width="66" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-26" y="0" color="#4AA1E3FF" fonttype="">
+          <text id="text4" a="20" text="Gold" fontsize="16" height="23" width="66" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="-26" y="0" color="#4AA1E3FF" fonttype="" fontstyle="2">
           </text>
         </img>
         <osascrollview id="TransferScrollView" width="295" height="449" defaultitemsize="43" vertical="1" a="01" x="0" y="-86" active="1" moveto="">
@@ -41,30 +41,30 @@
       </img>
     </panel>
   </img>
-  <img id="btnBg" a="11" width="312" height="65" raycast="1" src="bg_left_shortcut" atlas="Atlas/NewMainPanel.spriteatlas" x="4" y="-38">
-    <layout id="layout3" control_height="0" contentsizefitter="0" vertical="0" height="65" width="295" a="10" raycast="1" cella="10" y="-5" x="2" space="2">
-      <button id="btn_autoFight" src="play_2" width="58" height="58" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
+  <img id="btnBg" a="11" width="312" height="65" raycast="1" src="bg_left_shortcut" atlas="Atlas/NewMainPanel.spriteatlas" x="510" y="-581" color="#FFFFFF00">
+    <layout id="layout3" control_height="0" contentsizefitter="0" vertical="0" height="65" width="338" a="10" raycast="1" cella="10" y="-33" x="-6" space="2">
+      <button id="btn_autoFight" src="play_1" width="62" height="42" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
         <model id="Model_AutoFightEff" width="100" height="100" src="Effect/UI/eff_ui_anniubiankuang_01" mscale="0.96,1.21,1" active="0" y="1">
         </model>
       </button>
-      <button id="btn_onHook" src="hook" width="58" height="58" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
+      <button id="btn_onHook" src="hook" width="62" height="42" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
       </button>
-      <button id="btn_changeLine" src="changeLine" width="58" height="58" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
+      <button id="btn_changeLine" src="changeLine" width="62" height="42" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
       </button>
-      <button id="btn_openMap" src="map" width="58" height="58" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF">
+      <button id="btn_openMap" src="map" width="62" height="42" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF" active="1">
       </button>
-      <button id="btn_showBuff" src="BUFF" width="58" height="58" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF" binddragid="">
+      <button id="btn_showBuff" src="BUFF" width="62" height="42" onclick="" text="" raycast="1" atlas="Atlas/NewMainPanel.spriteatlas" mimg="" pimg="" dimg="" color="#FFFFFFFF" binddragid="" active="1" enable="1">
       </button>
     </layout>
   </img>
-  <panel id="AtkModePanel" a="02" active="0" x="149" width="74" height="114" raycast="1" y="-101" zindex="901" z="-300">
+  <panel id="AtkModePanel" a="02" active="0" x="148" width="74" height="114" raycast="1" y="-100" zindex="901" z="-300">
     <img id="Img_AtkModeBg" width="74" height="114" raycast="1" src="bg_atkMode" atlas="Atlas/UIMainPanel_Out.spriteatlas" scale9l="25" scale9b="23" scale9r="19" scale9t="26" ap="0#0#1#1#0.5#0.5" x="-2" y="13">
       <gridview id="atkModelMenu" x="-3" y="-1" z="0" cellwidth="69" cellheight="31" cella="11" constraint="0" constraintcount="3" active="1" width="64" height="114" a="00" rotate="0,0,0" spacex="0" spacey="1" startcorner="0" paddingtop="0" paddingbutttom="0" paddingleft="0" paddingright="0" raycast="0" contentsizefitter="1">
       </gridview>
     </img>
   </panel>
-  <panel id="AtkModeClosePanel" a="00" width="1334" height="750" x="589" y="-295" zindex="900" active="0">
-    <button id="Btn_AtkModeCloseMask" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="0">
+  <panel id="AtkModeClosePanel" a="00" width="1334" height="750" x="462" y="-345" zindex="900" active="0">
+    <button id="Btn_AtkModeCloseMask" a="00" width="3000" height="3000" onclick="" text="" raycast="1" color="#FFFFFF00" x="260" y="-355">
     </button>
   </panel>
 </uipanel>

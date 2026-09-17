@@ -1,9 +1,9 @@
 ---@class KLInViteFriendPanelView:UIKmlLuaViewBase
 ---@field prefab_819 UIKmlLuaControlHandler
----@field CodeTxt UIKmlLuaControlHandler
----@field Num UIKmlLuaControlHandler
 ---@field CopyBtn UIKmlLuaControlHandler
 ---@field GenerateBtn UIKmlLuaControlHandler
+---@field CodeTxt UIKmlLuaControlHandler
+---@field Num UIKmlLuaControlHandler
 local KLInViteFriendPanelView = {}
 setmetatable(KLInViteFriendPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Setting/Panel/KLInViteFriend/KLInViteFriendPanelKml'

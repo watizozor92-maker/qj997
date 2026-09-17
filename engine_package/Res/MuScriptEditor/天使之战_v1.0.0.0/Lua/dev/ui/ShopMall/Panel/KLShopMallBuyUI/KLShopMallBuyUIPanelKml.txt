@@ -3,12 +3,12 @@
     <button bind="ClickMask" id="ClickMask">
     </button>
     <input bind="InputFieldLevel" id="InputFieldLevel">
-      <text id="Text" bind="Text" color="#FFFFFF">
+      <text id="Text" bind="Text" color="#FFFFFF" outline="1" horwrap="1">
       </text>
     </input>
-    <text bind="TextTotalPrice" id="TextTotalPrice">
+    <text bind="TextTotalPrice" id="TextTotalPrice" outline="1" horwrap="1">
     </text>
-    <button bind="BtnBuy" id="BtnBuy" width="93" height="31" src="btn_goumai" atlas="Atlas/FG_ShopMallPanel.spriteatlas" mimg="" pimg="" dimg="">
+    <button bind="BtnBuy" id="BtnBuy" width="93" height="31" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="16" text="OK">
     </button>
     <button bind="BtnLevelMinus" id="BtnLevelMinus">
     </button>

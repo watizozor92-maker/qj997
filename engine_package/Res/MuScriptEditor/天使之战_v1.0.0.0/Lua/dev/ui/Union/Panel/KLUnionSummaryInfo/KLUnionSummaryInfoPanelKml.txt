@@ -5,14 +5,14 @@
         <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
         </img>
       </panel>
-      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi2.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
       </img>
     </panel>
     <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="waralliance_info" y="-2" x="8" a="01" active="0">
     </img>
     <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-10" y="-20" z="-10" h5x="-355" h5y="9" onclick="KmlXWUnionSummaryInfoUI/@close_info_panel" width="34" height="34">
     </img>
-    <text id="text1" a="01" text="战盟信息" fontsize="20" height="24" width="200" ta="11" color="#FFFFFFFF" outline="1" horwrap="1" y="-34" x="0" fontstyle="0" underline="0" space="0" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text1" a="01" text="Guild" fontsize="20" height="24" width="200" ta="11" color="#F59924FF" outline="1" horwrap="1" y="-34" x="0" fontstyle="0" underline="0" space="0" outlinesize="1" outlinecolor="#000000FF">
     </text>
   </img>
   <panel id="info_panel" y="-5" width="416" height="750" a="01" x="-12">
@@ -48,7 +48,7 @@
       <panel y="-15" width="300" height="22" a="01" id="panel_89" x="-1" text="战盟公告" fontsize="18" fontstyle="0" underline="0" color="#FFFFFFFF">
         <img id="content_bg_l" a="10" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_1" x="13">
         </img>
-        <text id="content_title" a="01" text="战盟公告" fonttype="" fontsize="18" outlinesize="0" outlinecolor="#000000" outline="1" horwrap="1" color="#FFFFFFFF">
+        <text id="content_title" a="01" text="Guild Notice" fonttype="" fontsize="18" outlinesize="0" outlinecolor="#000000" outline="1" horwrap="1" color="#FFFFFFFF">
         </text>
         <img id="content_bg_r" a="20" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="ty_ttx_2" x="-11">
         </img>

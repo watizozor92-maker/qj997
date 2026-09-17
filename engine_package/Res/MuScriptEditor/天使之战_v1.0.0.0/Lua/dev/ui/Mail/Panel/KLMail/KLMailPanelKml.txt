@@ -2,13 +2,13 @@
   <panel id="bg" width="1116" height="580">
     <img id="img2" a="00" width="1018" height="547" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="0" y="-9" active="1">
     </img>
-    <img src="Texture/FG_dankuangdi2.png" width="1039" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
+    <img src="Texture/new.png" width="1039" height="578" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" id="img_367" active="1" moveto="0,0,0" atlas="" scale9l="189" scale9b="89" scale9r="177" scale9t="162" color="#FFFFFFFF">
       <img id="img1" a="00" width="161" height="27" raycast="1" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="269" x="0" scale9l="80" scale9b="0" scale9r="80" scale9t="0">
       </img>
-      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35">
+      <img id="img3" a="00" width="1003" height="476" raycast="1" atlas="" src="Texture/bg_black_grid.png" scale9l="16" scale9b="27" scale9r="21" scale9t="20" x="4" y="-35" active="0">
       </img>
     </img>
-    <text id="title" a="00" text="邮件" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1">
+    <text id="title" a="00" text="Mail" fontsize="20" height="40" width="120" ta="11" outline="0" horwrap="1" x="0" y="242" outlinesize="1" outlinecolor="#000000" active="1" color="#F59924FF">
     </text>
     <img id="closeBtn" color="#DCE1E5ff" width="34" height="34" x="485" y="250" clientclose="1" z="0" a="00" rotate="0,0,0" raycast="1" h5y="255" h5x="-500" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas">
     </img>
@@ -28,9 +28,9 @@
             </button>
           </datalist>
         </osascrollview>
-        <button id="get_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1_select" outlinesize="1" outlinecolor="#000000" x="-302" y="-195" text="全部领取" fontsize="18" textcolor="#DCE1E5" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
+        <button id="get_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_cebian6" outlinesize="1" outlinecolor="#000000" x="-302" y="-195" text="Claim All" fontsize="18" textcolor="#DCE1E5" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
         </button>
-        <button id="del_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1" outlinesize="1" outlinecolor="#000000" x="-427" y="-195" text="全部删除" fontsize="18" textcolor="#DCE1E5FF" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
+        <button id="del_all_btn" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_cebian6" outlinesize="1" outlinecolor="#000000" x="-427" y="-195" text="Delete All" fontsize="18" textcolor="#DCE1E5FF" z="0" a="00" rotate="0,0,0" raycast="1" mimg="" pimg="" dimg="">
         </button>
       </panel>
       <img id="mail_content_rt" src="Texture/mail_content_bg.png" width="728" height="466" x="128" y="2">
@@ -71,9 +71,9 @@
               </datalist>
             </layout>
           </scrollview>
-          <button id="detail_btn" text="领取" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1_select" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
+          <button id="detail_btn" text="Claim" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_cebian6" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
           </button>
-          <button id="del_btn" text="删除" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_common_1" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
+          <button id="del_btn" text="Delete" showarea="1" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" width="113" height="41" src="btn_cebian6" x="2" y="-184" fontsize="18" textcolor="#DCE1E5" raycast="1" mimg="" pimg="" dimg="">
           </button>
         </panel>
       </img>

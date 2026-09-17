@@ -1,11 +1,11 @@
 <uipanel id="KLMiniMapPanel" name="小地图界面" adapter="1" width="229" height="166" zindex="0" movecanvas="0" a="21">
   <panel id="move_root" x="0" y="0">
-    <button id="btn_bg" src="img_ditudi" atlas="Atlas/NewMainPanel.spriteatlas" a="21" raycast="1" mimg="" pimg="" dimg="" width="196" height="156" x="-1" y="0">
-      <img id="img1" a="00" width="196" height="156" raycast="1" src="img_ditukuang" atlas="Atlas/NewMainPanel.spriteatlas" x="0" y="0">
+    <button id="btn_bg" src="img_ditudi" atlas="Atlas/NewMainPanel.spriteatlas" a="21" raycast="1" mimg="" pimg="" dimg="" width="196" height="156" x="-1" y="0" active="">
+      <img id="img1" a="00" width="196" height="156" raycast="1" src="img_ditukuang" atlas="Atlas/NewMainPanel.spriteatlas" x="0" y="0" active="" enable="">
       </img>
-      <text id="txt_title" text="亚特兰蒂斯[2线]" color="#FFFFFFFF" outlinecolor="#000000FF" outlinesize="1" fontsize="16" a="11" x="9" y="-5" outline="0" h5y="-8" h5x="21" width="117" horwrap="1" ta="01" height="20" fontstyle="0" underline="0" contentsizefitter="2">
+      <text id="txt_title" text="亚特兰蒂斯[2线]" color="#FFFFFFFF" outlinecolor="#000000FF" outlinesize="1" fontsize="16" a="11" x="9" y="-5" outline="0" h5y="-8" h5x="21" width="117" horwrap="1" ta="01" height="20" fontstyle="0" underline="0" contentsizefitter="2" active="0" enable="0">
       </text>
-      <text id="txt_server" text="1服" color="#FFFFFFFF" outlinecolor="#000000FF" outlinesize="1" fontsize="16" a="21" x="-5" y="-5" outline="0" h5y="-8" h5x="21" width="117" horwrap="1" ta="21" height="20" fontstyle="0" underline="0" contentsizefitter="2">
+      <text id="txt_server" text="1服" color="#FFFFFFFF" outlinecolor="#000000FF" outlinesize="1" fontsize="16" a="21" x="-5" y="-5" outline="0" h5y="-8" h5x="21" width="117" horwrap="1" ta="21" height="20" fontstyle="0" underline="0" contentsizefitter="2" active="1" enable="0" raycast="">
       </text>
     </button>
     <panel rectmask="1" width="188" height="117" a="21" y="-34" id="panel_14" x="-3">
@@ -18,7 +18,7 @@
     </panel>
     <button id="btn_switch_line" src="btn_changeLine" atlas="Atlas/UIMainPanel_Out.spriteatlas" a="21" x="-6" raycast="1" width="68" height="28" h5x="-5" h5y="-4" mimg="" pimg="" dimg="" y="-5" active="0">
     </button>
-    <text id="txt_coord" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" text="126,217" a="22" y="10" outline="0" horwrap="1" x="-4" width="59" height="20">
+    <text id="txt_coord" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" text="126,217" a="22" y="10" outline="0" horwrap="1" x="-4" width="59" height="20" active="0" enable="0">
     </text>
     <button id="btn_fightLog" a="00" width="42" height="42" raycast="1" src="btn_rizhi" atlas="Atlas/UIMainPanel_Out.spriteatlas" x="97" y="-87" rotate="0,0,90" active="0">
     </button>

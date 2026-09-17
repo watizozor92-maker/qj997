@@ -9,8 +9,6 @@
         <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_BG_NewFrame.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
         </img>
       </panel>
-      <img id="Title" a="01" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="zhuijia" width="100" height="56" raycast="1" y="-2" x="0" active="0">
-      </img>
       <img id="BGInner_2" a="01" atlas="Atlas/FG_Forge.spriteatlas" src="bg_zhuangbeidi" width="386" height="204" raycast="1" x="0" y="-79" color="#FFFFFF00">
         <panel id="namePanel" width="387" height="191" zindex="203" z="-300">
           <text id="equipName" a="01" text="" fontsize="20" height="24" width="166" ta="11" y="5" x="0" color="#1ADE1FFF" active="1" contentsizefitter="2" outlinesize="1" outlinecolor="0" outline="1" horwrap="1">
@@ -20,38 +18,78 @@
             </img>
           </text>
         </panel>
-        <img id="strengthLevelBg" a="00" atlas="Atlas/FG_Forge.spriteatlas" src="bg_level" width="295" height="48" raycast="1" y="-86" x="1" active="0">
-          <text id="strengthIntro" a="10" text="追加等级" fontsize="18" height="30" width="80" ta="01" horwrap="1" x="28" y="2" color="#E6E600FF" outlinesize="1" outlinecolor="0" outline="1">
-          </text>
-          <text id="preLevel" a="00" text="+1" fontsize="16" height="30" width="64" ta="21" horwrap="1" x="-32" y="2" fonttype="font_strength_yellow" space="-5" outline="1">
-          </text>
-          <img id="arrow" a="00" atlas="Atlas/FG_Forge.spriteatlas" src="icon_arrow_2" width="32" height="21" raycast="1" x="33" y="2">
-          </img>
-          <text id="nextLevel" a="00" text="+1" fontsize="16" height="30" width="64" ta="01" horwrap="1" x="95" y="2" fonttype="font_strength_yellow" space="-5" outline="1">
-          </text>
-        </img>
         <togglegroup id="ToggleGroupSource" x="4" a="11" y="-488" width="53" height="124">
           <toggle id="equipBtn" onclick="KmlXWEquipStrength/@点击穿戴栏" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_equip_dark" pimg="ty_btn_equip" default="1" width="53" height="56" a="01">
           </toggle>
-          <toggle id="bagBtn" y="-65" onclick="KmlXWEquipStrength/@点击背包" togglegroup_id="ToggleGroupSource" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ty_btn_bag_dark" pimg="ty_btn_bag" width="53" height="56" a="01">
+          <toggle id="bagBtn" y="-65" onclick="KmlXWEquipStrength/@点击背包" togglegroup_id="ToggleGroupSource" atlas="Atlas/FG_Forge.spriteatlas" src="ty_btn_bg_1" pimg="ty_btn_bg_2" width="53" height="56" a="01" x="0">
           </toggle>
         </togglegroup>
-        <item id="item_model" itemid="" uniqueid="" a="00" y="-10" z="0" width="150" height="150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="0" x="0" enable="0">
-        </item>
+        <img id="strengthLevelBg" a="00" atlas="Atlas/FG_Forge.spriteatlas" src="bg_level" width="295" height="48" raycast="1" y="-86" x="1" active="0">
+          <text id="strengthIntro" a="10" text="追加等级" fontsize="18" height="30" width="80" ta="01" horwrap="1" x="28" y="2" color="#E6E600FF" outlinesize="1" outlinecolor="0" outline="1">
+          </text>
+          <img id="arrow" a="00" atlas="Atlas/FG_Forge.spriteatlas" src="icon_arrow_2" width="32" height="21" raycast="1" x="33" y="2">
+          </img>
+          <text id="preLevel" a="00" text="+1" fontsize="16" height="30" width="64" ta="21" horwrap="1" x="-32" y="2" fonttype="font_strength_yellow" space="-5" outline="1">
+          </text>
+          <text id="nextLevel" a="00" text="+1" fontsize="16" height="30" width="64" ta="01" horwrap="1" x="95" y="2" fonttype="font_strength_yellow" space="-5" outline="1">
+          </text>
+        </img>
         <layout x="156" y="-500" width="64" height="225" vertical="1" space="4" cella="01" id="layout_19">
           <button id="appendMasterBtn" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="btn_appendMaster" onclick="" text="" raycast="1" active="0">
           </button>
         </layout>
+        <item id="item_model" itemid="" uniqueid="" a="00" y="-10" z="0" width="150" height="150" bgtype="0" tips="1" itemtype="9" selfrotation="" active="0" x="0" enable="0">
+        </item>
       </img>
-      <img id="successIcon" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="success_img" x="-30" y="-295" a="01" active="0">
-      </img>
-      <button id="CloseButton" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" onclick="" text="" raycast="1" x="-2" y="1" active="1" h5y="10" h5x="-360" mimg="" pimg="" dimg="">
-      </button>
       <img id="strengthIcon" a="01" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="121" height="35" raycast="1" x="-124" y="-285" active="0">
         <text id="equipAttribute" a="10" text="追加属性" fontsize="18" height="22" width="100" ta="01" horwrap="1" x="32" y="1" outlinesize="1" outlinecolor="0" outline="1" color="#DCE1E5">
         </text>
         <img id="img1" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
         </img>
+      </img>
+      <scrollview id="StrengthCustomScrollView" a="01" width="263" height="70" vertical="0" y="-616" raycast="1" movementtype="1" x="0">
+        <layout id="layout2" width="350" height="70" a="00" vertical="0" contentsizefitter="2" raycast="1" cella="00" space="12">
+          <datalist id="cost_list">
+            <panel id="cost_info" width="58" height="58">
+              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="58" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10" height="58">
+              </img>
+              <panel id="top" width="58" height="58" ap="0#0#1#1#0.5#0.5" zindex="202" x="0" y="0" z="-300">
+                <text id="cost_name" a="00" x="0" text="" outlinesize="1" outlinecolor="0" fontsize="18" outline="1" horwrap="1" y="-15" active="0">
+                </text>
+                <button id="costAddBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="30" height="30" onclick="" raycast="1" active="0" a="21" x="0" mimg="" pimg="" dimg="" y="0" color="#FFFFFF00">
+                  <img id="costAddIcon" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="21" height="21" raycast="0" active="1" a="21" x="0" y="0">
+                  </img>
+                </button>
+                <img id="bindItemTips" a="11" width="15" height="18" x="1" y="-1" raycast="1" src="icon_bangding" atlas="Atlas/FG_Forge.spriteatlas">
+                </img>
+                <text id="cost_num" a="02" text="12/12" x="0" ta="21" outlinesize="1" outlinecolor="0" fontsize="14" outline="1" horwrap="0">
+                </text>
+                <toggle id="costSelectTog" width="58" height="58" a="00" default="0" togglegroup_id="TogGroup_CostSelect" onclick="" raycast="1" src="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" pimg="bg_item_select" color="#FFFFFF00" pimg_scale9l="22" pimg_scale9b="18" pimg_scale9r="18" pimg_scale9t="22">
+                </toggle>
+              </panel>
+              <item id="cost_item" width="30" height="30" mfixsize="30,30" a="00" x="0" itemid="" bgtype="0" tips="1" bgimg="bg_item" atlas="Atlas/FG_Common.spriteatlas">
+              </item>
+            </panel>
+          </datalist>
+        </layout>
+      </scrollview>
+      <button id="Btn_Helper" a="22" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="-23" y="22" active="0">
+      </button>
+      <button id="CloseButton" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" onclick="" text="" raycast="1" x="-2" y="1" active="1" h5y="10" h5x="-360" mimg="" pimg="" dimg="">
+      </button>
+      <button id="strengthButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="追加" raycast="1" x="0" y="30" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFF3D2">
+        <text id="failTips" a="00" text="" fontsize="16" height="20" width="300" ta="11" horwrap="1" y="-30" x="0" color="#FF2424FF" outlinesize="1" outlinecolor="0" outline="1">
+        </text>
+      </button>
+      <text id="baseSuccessRatioText" horwrap="1" x="0" y="-586" text="成功率+50%" fontsize="18" height="22" width="300" ta="11" active="0" fonttype="" color="#00ff00FF" outline="1" fontstyle="0" underline="0" a="01">
+      </text>
+      <img id="Title" a="01" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="zhuijia" width="100" height="56" raycast="1" y="-2" x="0" active="0">
+      </img>
+      <button id="gotoButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="前往" raycast="1" x="0" y="30" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFF3D2" ta="11">
+      </button>
+      <text id="bagNoticeText" a="00" text="请选择背包内装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-130" active="0" outlinesize="1" outlinecolor="0" outline="1">
+      </text>
+      <img id="successIcon" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="success_img" x="-30" y="-295" a="01" active="0">
       </img>
       <scrollview id="arrContent" a="01" x="0" y="-375" width="380" height="183" vertical="1" raycast="1">
         <gridview id="gridview3" cellwidth="380" cellheight="36" raycast="1" spacex="4" constraint="1" constraintcount="1" contentsizefitter="3" spacey="2">
@@ -71,63 +109,27 @@
           </datalist>
         </gridview>
       </scrollview>
-      <img id="strengthIcon_1" a="01" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="121" height="35" raycast="0" x="-124" y="-507" active="0" enable="0">
-        <text id="text11" a="10" text="可选材料" fontsize="18" height="22" width="160" ta="01" horwrap="1" x="32" y="1" outlinesize="1" outlinecolor="0" outline="1" color="#DCE1E5">
-        </text>
-        <img id="img2" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
-        </img>
-      </img>
-      <text id="baseSuccessRatioText" horwrap="1" x="0" y="-586" text="成功率+50%" fontsize="18" height="22" width="300" ta="11" active="0" fonttype="" color="#00ff00FF" outline="1" fontstyle="0" underline="0" a="01">
-      </text>
-      <togglegroup id="TogGroup_CostSelect" a="00" width="100" height="100" onload="" raycast="1" x="0" y="-129">
-      </togglegroup>
-      <scrollview id="StrengthCustomScrollView" a="01" width="263" height="70" vertical="0" y="-616" raycast="1" movementtype="1" x="0">
-        <layout id="layout2" width="350" height="70" a="00" vertical="0" contentsizefitter="2" raycast="1" cella="00" space="12">
-          <datalist id="cost_list">
-            <panel id="cost_info" width="58" height="58">
-              <img id="bg" atlas="Atlas/TS_Common.spriteatlas" width="58" src="ty_num_bg" scale9l="10" scale9r="10" scale9t="10" scale9b="10" height="58">
-              </img>
-              <item id="cost_item" width="30" height="30" mfixsize="30,30" a="00" x="0" itemid="" bgtype="0" tips="1" bgimg="bg_item" atlas="Atlas/FG_Common.spriteatlas">
-              </item>
-              <panel id="top" width="58" height="58" ap="0#0#1#1#0.5#0.5" zindex="202" x="0" y="0" z="-300">
-                <text id="cost_name" a="00" x="0" text="" outlinesize="1" outlinecolor="0" fontsize="18" outline="1" horwrap="1" y="-15" active="0">
-                </text>
-                <text id="cost_num" a="02" text="12/12" x="0" ta="21" outlinesize="1" outlinecolor="0" fontsize="14" outline="1" horwrap="0">
-                </text>
-                <toggle id="costSelectTog" width="58" height="58" a="00" default="0" togglegroup_id="TogGroup_CostSelect" onclick="" raycast="1" src="img_item_cover" atlas="Atlas/FG_Common.spriteatlas" pimg="bg_item_select" color="#FFFFFF00" pimg_scale9l="22" pimg_scale9b="18" pimg_scale9r="18" pimg_scale9t="22">
-                </toggle>
-                <button id="costAddBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="30" height="30" onclick="" raycast="1" active="0" a="21" x="0" mimg="" pimg="" dimg="" y="0" color="#FFFFFF00">
-                  <img id="costAddIcon" atlas="Atlas/FG_Common.spriteatlas" src="btn_add2" width="21" height="21" raycast="0" active="1" a="21" x="0" y="0">
-                  </img>
-                </button>
-                <img id="bindItemTips" a="11" width="15" height="18" x="1" y="-1" raycast="1" src="icon_bangding" atlas="Atlas/FG_Forge.spriteatlas">
-                </img>
-              </panel>
-            </panel>
-          </datalist>
-        </layout>
-      </scrollview>
-      <button id="strengthButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="追加" raycast="1" x="0" y="30" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFF3D2">
-        <text id="failTips" a="00" text="" fontsize="16" height="20" width="300" ta="11" horwrap="1" y="-30" x="0" color="#FF2424FF" outlinesize="1" outlinecolor="0" outline="1">
-        </text>
-      </button>
-      <button id="gotoButton" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="前往" raycast="1" x="0" y="30" fontsize="18" active="0" outlinesize="1" outlinecolor="#000000FF" mimg="" pimg="" dimg="" width="103" height="36" textcolor="#FFF3D2" ta="11">
-      </button>
-      <panel id="textPanel" height="24" width="166" x="0" y="-117" z="-200" a="01" zindex="202" active="0" enable="0">
-        <text id="liuguangInfo" a="01" text="卓越的龙王之铠+11" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="0" x="0" color="#FFDA00" active="0" outlinesize="1" outlinecolor="0" outline="1" enable="0">
-        </text>
-      </panel>
       <img id="maxStrengthLevelBg" a="00" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="img_function_03" width="295" height="48" raycast="1" y="36" x="0" active="0">
         <text id="maxStrengthIntro" a="10" text="追加等级" fontsize="16" height="30" width="71" ta="01" horwrap="1" x="28" y="2" color="#DED17AFF" outlinesize="1" outlinecolor="0" outline="1">
         </text>
         <text id="maxLevel" a="00" text="+1" fontsize="16" height="30" width="64" ta="21" horwrap="1" x="-32" y="2" fonttype="font_strength_yellow" space="-5" outline="1">
         </text>
       </img>
+      <img id="strengthIcon_1" a="01" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="121" height="35" raycast="0" x="-124" y="-507" active="0" enable="0">
+        <text id="text11" a="10" text="可选材料" fontsize="18" height="22" width="160" ta="01" horwrap="1" x="32" y="2" outlinesize="1" outlinecolor="0" outline="1" color="#DCE1E5">
+        </text>
+        <img id="img2" a="10" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="4" y="-1">
+        </img>
+      </img>
+      <panel id="textPanel" height="24" width="166" x="0" y="-117" z="-200" a="01" zindex="202" active="0" enable="0">
+        <text id="liuguangInfo" a="01" text="卓越的龙王之铠+11" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="0" x="0" color="#FFDA00" active="0" outlinesize="1" outlinecolor="0" outline="1" enable="0">
+        </text>
+      </panel>
+      <togglegroup id="TogGroup_CostSelect" a="00" width="100" height="100" onload="" raycast="1" x="0" y="-129">
+      </togglegroup>
       <img id="maxLevelTips" a="02" atlas="Atlas/UIEquipStrengthPanel.spriteatlas" src="ico_maxlevelzhui" width="239" height="58" raycast="1" y="73" active="0">
       </img>
       <text id="noticeText" a="00" text="当前穿戴栏无可追加装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-227" active="0" outlinesize="1" outlinecolor="0" outline="1">
-      </text>
-      <text id="bagNoticeText" a="00" text="请选择背包内装备" fontsize="22" height="30" width="282" ta="11" horwrap="1" color="#FF2323FF" x="0" y="-130" active="0" outlinesize="1" outlinecolor="0" outline="1">
       </text>
       <prefab id="append_fail" path="Effect/UI/Eff_UI_shengjishibai.prefab" y="150" active="0" z="-500">
       </prefab>
@@ -137,8 +139,6 @@
       </text>
       <text id="text1" a="01" text="追加" fontsize="20" height="30" width="200" ta="11" outline="1" horwrap="1" y="-18" color="#FFFFFFFF" space="10">
       </text>
-      <button id="Btn_Helper" a="22" width="30" height="30" onclick="" text="" raycast="1" src="btn_description" atlas="Atlas/Common.spriteatlas" mimg="" pimg="" dimg="" x="-23" y="22" active="0">
-      </button>
     </img>
   </panel>
 </uipanel>

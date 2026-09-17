@@ -4,7 +4,6 @@
 ---@field BG_Templete UIKmlLuaControlHandler
 ---@field Frame UIKmlLuaControlHandler
 ---@field scrollview_func UIKmlLuaControlHandler
----@field layout6 UIKmlLuaControlHandler
 ---@field datalist_func UIKmlLuaControlHandler
 local KLSystemFunctionPanelView = {}
 setmetatable(KLSystemFunctionPanelView,UIKmlLuaViewBase)

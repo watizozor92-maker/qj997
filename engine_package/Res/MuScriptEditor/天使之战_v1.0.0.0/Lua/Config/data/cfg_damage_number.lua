@@ -59,25 +59,27 @@ local local_typeParams = {
 
 local cfg_damage_number =
 {
-	{id=101, size=80, OtherFontColors=10005, miniumFadeto=20},
-	{id=102, OtherFontColors=3012, type=5, Order=2},
-	{id=104, size=75, OtherFontColors=3013, type=5},
-	{id=104, fontColor=10001, OtherFontColors=3013, type=5},
-	{id=106, OtherFontColors=10002, type=5, typeParams=local_typeParams.typeParams_2, Order=4, miniumFadeto=30},
-	{id=108, Atlas="DamageMissAtlas", fontColor=3015, OtherFontColors=3014, typeParams=local_typeParams.typeParams_2, Order=6},
-	{id=109, OtherFontColors=3017, typeParams=local_typeParams.typeParams_2, Order=8},
-	{id=116, OtherFontColors=3019, typeParams=local_typeParams.typeParams_2, Order=6},
-	{id=117, fontColor=250, OtherFontColors=250, typeParams=local_typeParams.typeParams_2, Order=6},
-	{id=118, size=60, fontColor=263, OtherFontColors=263, damageWeight=0, enable=0, Order=2},
-	{id=119, size=60, fontColor=285, OtherFontColors=285, damageWeight=0, enable=0, Order=2},
-	{id=501, size=75, OtherFontColors=3017, typeParams=local_typeParams.typeParams_2, Order=8},
-	{id=601, size=75, OtherFontColors=3011, damageWeight=2, miniumFadeto=20},
-	{id=602, size=75, OtherFontColors=3012, damageWeight=2, type=5, typeParams={{"s","0","0","0"},{"o","-5.74","8","0"},{"n","20","0","0"}}, Order=2},
-	{id=603, size=75, OtherFontColors=3013, damageWeight=2, type=5},
-	{id=604, size=75, OtherFontColors=254, damageWeight=2, type=5, typeParams=local_typeParams.typeParams_2, Order=4, miniumFadeto=30},
+	{id=101, prefix="普通", OtherFontColors=10005, typeParams=local_typeParams.typeParams_1, miniumFadeto=20},
+	{id=102, prefix="幸运", size=70, OtherFontColors=3012, type=5, typeParams=local_typeParams.typeParams_1, Order=2},
+	{id=104, prefix="卓越", size=80, OtherFontColors=3013, type=5, typeParams=local_typeParams.typeParams_1},
+	{id=104, prefix="卓越", size=80, fontColor=10001, OtherFontColors=3013, type=5, typeParams=local_typeParams.typeParams_1},
+	{id=106, prefix="无视", size=90, OtherFontColors=10002, type=5, Order=4, miniumFadeto=30},
+	{id=108, Atlas="DamageMissAtlas", prefix="", fontColor=3015, OtherFontColors=3014, Order=6},
+	{id=109, prefix="反射", OtherFontColors=3017, Order=8},
+	{id=116, prefix="燃烧", OtherFontColors=3019, Order=6},
+	{id=117, prefix="中毒", fontColor=250, OtherFontColors=250, Order=6},
+	{id=118, prefix="", fontColor=263, OtherFontColors=263, damageWeight=0, enable=0, typeParams=local_typeParams.typeParams_1, Order=2},
+	{id=119, prefix="回蓝", fontColor=285, OtherFontColors=285, damageWeight=0, enable=0, typeParams=local_typeParams.typeParams_1, Order=2},
+	{id=501, prefix="反弹", OtherFontColors=3017, Order=8},
+	{id=601, prefix="普通-双倍", size=70, OtherFontColors=3011, damageWeight=2, typeParams=local_typeParams.typeParams_1, miniumFadeto=20},
+	{id=602, prefix="幸运-双倍", size=70, OtherFontColors=3012, damageWeight=2, type=5, typeParams={{"s","0","0","0"},{"o","-5.74","8","0"},{"n","20","0","0"}}, Order=2},
+	{id=603, prefix="卓越-双倍", size=80, OtherFontColors=3013, damageWeight=2, type=5, typeParams=local_typeParams.typeParams_1},
+	{id=604, prefix="无视-双倍", size=90, OtherFontColors=254, damageWeight=2, type=5, Order=4, miniumFadeto=30},
+	{id=605, prefix="致命-双倍", size=70, fontColor=287, OtherFontColors=287, damageWeight=2, type=5, Order=4, miniumFadeto=30},
+	{id=301, prefix="连击", size=70, fontColor=180, OtherFontColors=180, damageWeight=2, type=5, Order=4, miniumFadeto=30},
 }
 
-local defaults = {Atlas="", prefix="", size=100, fontColor=259, damageWeight=1, enable=1, type=1, typeParams={{"s","0","0","0"},{"o","0","0","0"},{"n","20","0","0"}}, Order=1, miniumFadeto=40}
+local defaults = {Atlas="", size=60, fontColor=259, damageWeight=1, enable=1, type=1, typeParams={{"s","-53","0","0"},{"o","0","0","0"},{"n","20","0","0"}}, Order=1, miniumFadeto=40}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_damage_number) do
 	setmetatable(v, mt)

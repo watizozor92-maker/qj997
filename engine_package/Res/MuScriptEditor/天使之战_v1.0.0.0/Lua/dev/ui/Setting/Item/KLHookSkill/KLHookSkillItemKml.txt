@@ -1,8 +1,16 @@
 <uipanel id="KLHookSkillItemKml" name="挂机技能模板" zindex="-1" enable="0" raycast="0">
   <prefab id="hookSkill_item" path="Kml/KmlPrefab/Cookbook/KmlSettingUI/KmlSkillItemUI.prefab" width="280" height="94">
-    <img bind="Bg" active="1" siblingindex="0" id="skill_bg" bindindex="0" src="skill_bg_no" atlas="Atlas/KLHookHepler.spriteatlas" width="86" height="84" y="0" x="-77">
+    <img id="imgBG" a="00" width="280" height="94" raycast="0" siblingindex="4" src="bg_bottom1_com" atlas="Atlas/Common.spriteatlas" x="0" y="0" active="1" scale9l="14" scale9b="14" scale9r="14" scale9t="16" color="#FFFFFF00">
+      <img id="img1" a="00" width="284" height="3" raycast="1" siblingindex="1" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" y="42" color="#808080FF">
+      </img>
+      <img id="img3" a="00" width="92" height="3" raycast="1" siblingindex="4" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" rotatevector="0,0,0" rotate="0,0,90" x="-138" color="#808080FF">
+      </img>
+      <img id="img5" a="00" width="284" height="3" raycast="1" siblingindex="0" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" y="-41" rotate="0,0,0" color="#808080FF">
+      </img>
+      <img id="img7" a="00" width="92" height="3" raycast="1" siblingindex="3" src="tip_loading_bg" atlas="Atlas/UIArchangel.spriteatlas" rotatevector="0,0,0" rotate="0,0,90" x="136" color="#808080FF">
+      </img>
     </img>
-    <img id="imgBG" a="00" width="280" height="94" raycast="0" siblingindex="4" src="frame_2" atlas="Atlas/UIGoldChallenge.spriteatlas" x="0" y="0" active="1" scale9l="48" scale9b="49" scale9r="36" scale9t="44">
+    <img bind="Bg" active="1" siblingindex="0" id="skill_bg" bindindex="0" src="skill_bg_no" atlas="Atlas/KLHookHepler.spriteatlas" width="86" height="84" y="0" x="-77">
     </img>
     <img id="skillIcon" bind="skillIcon" atlas="" src="" width="47" height="53" raycast="0" y="0">
     </img>
@@ -14,7 +22,7 @@
     </img>
     <toggle id="selectToggle" bind="selectToggle" default="" onclick="KmlSettingUI/@勾选挂机技能 " oncancel="KmlSettingUI/@取消勾选挂机技能 " src="ty_btn_kuang" atlas="Atlas/KLHookHepler.spriteatlas" pimg="ty_btn_gou 2" width="28" height="23" y="0" x="100" raycast="1" active="0">
     </toggle>
-    <toggle id="selectToggle_new" width="28" height="23" a="00" default="1" togglegroup_id="" onclick="" raycast="1" siblingindex="3" y="0" src="ty_btn_kuang" atlas="Atlas/KLHookHepler.spriteatlas" pimg="ty_btn_gou 2" x="100">
+    <toggle id="selectToggle_new" width="28" height="23" a="00" default="1" togglegroup_id="" onclick="" raycast="1" siblingindex="2" y="0" src="ty_btn_kuang" atlas="Atlas/KLHookHepler.spriteatlas" pimg="ty_btn_gou 2" x="100">
     </toggle>
   </prefab>
 </uipanel>

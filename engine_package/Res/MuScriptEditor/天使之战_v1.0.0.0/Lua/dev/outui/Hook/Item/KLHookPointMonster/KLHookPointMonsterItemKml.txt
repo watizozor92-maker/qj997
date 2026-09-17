@@ -16,7 +16,7 @@
     </text>
     <text id="txtExp" a="00" text="" fontsize="18" height="25" width="133" ta="01" x="61" y="2" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
     </text>
-    <button id="btnGo" a="20" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="102" height="36" onclick="" text="立即前往" raycast="1" x="-18" y="0" fontsize="18" ta="11" textcolor="#EFEFEF" dcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    <button id="btnGo" a="20" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="102" height="36" onclick="" text="立即前往" raycast="1" x="-18" y="0" fontsize="18" ta="11" textcolor="#EFEFEF" dcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
     </button>
     <img id="imgArrow" a="00" atlas="Atlas/FG_HookPoint.spriteatlas" src="btn_icon" width="22" height="18" active="0" raycast="1" x="240" y="1" rotate="0,0,90">
     </img>

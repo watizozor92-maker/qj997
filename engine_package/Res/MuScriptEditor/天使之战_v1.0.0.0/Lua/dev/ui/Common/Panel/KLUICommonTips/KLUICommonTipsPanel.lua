@@ -117,7 +117,8 @@ function this:Refresh()
                 --fontType = "MSYH"
             })
         end
-        GUI:Text_setString(self.view.txt_title, self.args.title or "提示")
+        GUI:Text_setString(self.view.txt_title, self.args.title or "Tip")
+        --GUI:Text_setString(self.view.txt_title, self.args.title or "提示")
         ---标题
         if self.args.title then
             --GUI:Text_setString(self.view.txt_title, self.args.title)

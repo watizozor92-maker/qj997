@@ -1,18 +1,9 @@
 ---@class KLSelectRolePanelView:UIKmlLuaViewBase
 ---@field UICreateRolePanel UIKmlLuaControlHandler
 ---@field createRolePanel UIKmlLuaControlHandler
+---@field BackButton UIKmlLuaControlHandler
 ---@field PlayerRole UIKmlLuaControlHandler
 ---@field NewCreateButton UIKmlLuaControlHandler
----@field GameObject UIKmlLuaControlHandler
----@field CreatButton UIKmlLuaControlHandler
----@field Image UIKmlLuaControlHandler
----@field Right (1) UIKmlLuaControlHandler
----@field Left (1) UIKmlLuaControlHandler
----@field StartButton UIKmlLuaControlHandler
----@field BackButton UIKmlLuaControlHandler
----@field PlayerRole_New UIKmlLuaControlHandler
----@field topImg UIKmlLuaControlHandler
----@field text8 UIKmlLuaControlHandler
 ---@field Tips UIKmlLuaControlHandler
 ---@field tipsMask UIKmlLuaControlHandler
 ---@field img3 UIKmlLuaControlHandler
@@ -21,6 +12,15 @@
 ---@field tipCloseBtn UIKmlLuaControlHandler
 ---@field tipStrTxt UIKmlLuaControlHandler
 ---@field text1 UIKmlLuaControlHandler
+---@field GameObject UIKmlLuaControlHandler
+---@field CreatButton UIKmlLuaControlHandler
+---@field Image UIKmlLuaControlHandler
+---@field Right (1) UIKmlLuaControlHandler
+---@field Left (1) UIKmlLuaControlHandler
+---@field StartButton UIKmlLuaControlHandler
+---@field PlayerRole_New UIKmlLuaControlHandler
+---@field topImg UIKmlLuaControlHandler
+---@field text8 UIKmlLuaControlHandler
 ---@field img1 UIKmlLuaControlHandler
 ---@field goBtn UIKmlLuaControlHandler
 ---@field delBtn UIKmlLuaControlHandler

@@ -1,8 +1,6 @@
-<uipanel id="KLUIChatSmallItemKml" name="窗口聊天模板" width="500" height="30" zindex="-1" raycast="1">
-  <panel id="smallPanel" width="500" height="16" x="0" y="0" a="10">
-    <img id="bgRoot" width="500" height="16" x="0" y="0" a="11" atlas="Atlas/FG_MainPanel.spriteatlas" src="heidi">
-    </img>
-    <richtext id="richSmall" text="" fontsize="16" x="0" y="0" a="10" chatiteminfo="" raycast="0" color="#d2d2d2" mline="1" maxwidth="342" parentaddwidth="2" parentaddheight="0" parent2addwidth="0" parent2addheight="0" emoji="1" outline="0" horwrap="1">
-    </richtext>
-  </panel>
+<uipanel id="KLUIChatViewKml" name="聊天列表模板" width="387" height="571" zindex="-1" a="01">
+  <loopscrollview id="chat_view" width="400" height="550" vertical="1" scrollpos="0" cellwidth="396" cellheight="80">
+    <datalist id="chat_data_list" databind="">
+    </datalist>
+  </loopscrollview>
 </uipanel>

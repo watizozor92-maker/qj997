@@ -6,7 +6,7 @@
       <text id="text1" a="00" text="果实" fontsize="20" height="25" width="350" ta="11" outline="0" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="348">
       </text>
     </img>
-    <button id="close" a="21" width="55" height="55" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" raycast="1" >
+    <button id="close" a="21" width="55" height="55" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" raycast="1">
     </button>
     <img id="img1" a="00" width="404" height="670" raycast="1" src="btn_cebian1" atlas="Atlas/FG_Common.spriteatlas" y="-34" scale9l="6" scale9b="6" scale9r="4" scale9t="5" active="0" x="0">
     </img>

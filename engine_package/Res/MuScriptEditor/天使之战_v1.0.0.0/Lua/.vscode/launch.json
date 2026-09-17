@@ -7,7 +7,7 @@
         {
             "type": "emmylua_new",
             "request": "launch",
-            "name": "Debug",
+            "name": "Debug-cli",
             "host":"localhost",
             "port":9966,
             "ext": [

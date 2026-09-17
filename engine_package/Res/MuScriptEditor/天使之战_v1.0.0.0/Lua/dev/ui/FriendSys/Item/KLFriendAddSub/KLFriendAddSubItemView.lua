@@ -1,29 +1,32 @@
 ---@class KLFriendAddSubItemView:UIKmlLuaViewBase
----@field FriendAdd_ UIKmlLuaControl
----@field panel_56 UIKmlLuaControl
----@field img1 UIKmlLuaControl
----@field head_panel UIKmlLuaControl
----@field shua_xin_img UIKmlLuaControl
----@field TxtCdCountdown UIKmlLuaControl
----@field tui_jian_text UIKmlLuaControl
----@field shua_xin_text UIKmlLuaControl
----@field tu_jian_icon UIKmlLuaControl
----@field add_friend_scrollview UIKmlLuaControl
----@field ListContent UIKmlLuaControl
----@field panel_63 UIKmlLuaControl
----@field IptSearch UIKmlLuaControl
----@field text2 UIKmlLuaControl
----@field BtnSearch UIKmlLuaControl
----@field text3 UIKmlLuaControl
----@field scrollview1 UIKmlLuaControl
----@field layout2 UIKmlLuaControl
----@field datalist3 UIKmlLuaControl
+---@field FriendAdd_ UIKmlLuaControlHandler
+---@field panel_63 UIKmlLuaControlHandler
+---@field BtnSearch UIKmlLuaControlHandler
+---@field text3 UIKmlLuaControlHandler
+---@field IptSearch UIKmlLuaControlHandler
+---@field text2 UIKmlLuaControlHandler
+---@field add_friend_scrollview UIKmlLuaControlHandler
+---@field ListContent UIKmlLuaControlHandler
+---@field panel_56 UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field head_panel UIKmlLuaControlHandler
+---@field shua_xin_img UIKmlLuaControlHandler
+---@field TxtCdCountdown UIKmlLuaControlHandler
+---@field tui_jian_text UIKmlLuaControlHandler
+---@field shua_xin_text UIKmlLuaControlHandler
+---@field tu_jian_icon UIKmlLuaControlHandler
+---@field scrollview1 UIKmlLuaControlHandler
+---@field layout2 UIKmlLuaControlHandler
+---@field datalist3 UIKmlLuaControlHandler
 local KLFriendAddSubItemView = {}
 setmetatable(KLFriendAddSubItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/FriendSys/Item/KLFriendAddSub/KLFriendAddSubItemKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLFriendAddSubItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLFriendAddSubItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/FriendSys/Item/KLFriendAddSub/KLFriendAddSubItem']
+
 return KLFriendAddSubItemView

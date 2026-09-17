@@ -1063,11 +1063,11 @@ function this:Refresh()
                 count = count + 1
                 activeTemp = v
             end
-            GUI:Image_loadTexture(v, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+            GUI:Image_loadTexture(v, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
         end
         if count == 1 then
             ---设置成 长tips
-            GUI:Image_loadTexture(activeTemp, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+            GUI:Image_loadTexture(activeTemp, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
             GUI:SetImageNativeSize(activeTemp)
         end
     elseif self.args.equip_pos == "synthesis" or self.args.equip_pos == "looptask" or self.args.equip_pos == "gemSynthesis" then
@@ -2074,10 +2074,10 @@ function this:bagBtnUpdate()
         end
     end
     self.left_is_open = false
-    GUI:Image_loadTexture(self.view.right_btn, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+    GUI:Image_loadTexture(self.view.right_btn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
     if #self.left_all < 1 then
         ---设置成 长tips
-        GUI:Image_loadTexture(self.view.right_btn, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+        GUI:Image_loadTexture(self.view.right_btn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
         GUI:SetImageNativeSize(self.view.right_btn)
         GUI:setVisible(self.view.left_btn, false)
     elseif #self.left_all == 1 then
@@ -2125,10 +2125,10 @@ function this:bagBtnUpdate()
         GUI:setVisible(self.view.right_btn, true)
         return
     end
-    GUI:Image_loadTexture(self.view.left_btn, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+    GUI:Image_loadTexture(self.view.left_btn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
     if #self.right_all < 1 then
         ---设置成 长tips
-        GUI:Image_loadTexture(self.view.left_btn, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+        GUI:Image_loadTexture(self.view.left_btn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
         GUI:SetImageNativeSize(self.view.left_btn)
         GUI:setVisible(self.view.right_btn, false)
     elseif #self.right_all == 1 then
@@ -2152,7 +2152,7 @@ function this:bagBtnUpdate()
         GUI:setVisible(self.view.right_btn, true)
         GUI:Button_setTitleText(self.view.right_btn, self.args.equip_pos == "bag" and "放入" or "拿出")
         if #self.left_all == 1 then
-            GUI:Image_loadTexture(self.view.left_btn, "btn_common_2_select", "Atlas/FG_Common.spriteatlas")
+            GUI:Image_loadTexture(self.view.left_btn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
             GUI:SetImageNativeSize(self.view.left_btn)
         end
         return

@@ -20,6 +20,7 @@ local cfg_synthesis_layer =
 	{id=10, name="天鹰合成", description="天鹰合成", type={32}},
 	{id=11, name="黑王马合成", description="黑王马合成", type={33}},
 	{id=12, name="坐骑合成", description="坐骑合成"},
+	{id=13, name="战旗合成", description="战旗合成", type={36,37,38}},
 }
 
 local defaults = {part="", type={18,34,35,19,20,21,22,23,24}}

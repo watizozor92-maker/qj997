@@ -79,7 +79,7 @@
     <item id="costItem" a="10" x="0" width="30" height="30" itemid="0" mfixsize="50,50" raycast="1">
     </item>
   </img>
-  <button id="BtnLearn" a="00" width="103" height="36" onclick="" text="学习" raycast="1" y="-363" src="btn_common_1_select" mimg="" pimg="" dimg="" atlas="Atlas/FG_Common.spriteatlas" x="-10" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+  <button id="BtnLearn" a="00" width="103" height="36" onclick="" text="学习" raycast="1" y="-363" src="btn_cebian2" mimg="" pimg="" dimg="" atlas="Atlas/FG_Common.spriteatlas" x="-10" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
   </button>
   <img id="bgCondition" atlas="Atlas/FG_SkillPanel.spriteatlas" src="bgCondition" scale9l="8" scale9r="8" scale9t="8" scale9b="8" width="365" height="33" x="-10" y="-62" color="#FFFFFF00">
     <layout id="conditionList" width="356" height="31" a="00" cella="00" vertical="0" expand_width="0" paddingleft="0" paddingright="0" space="34" y="0" control_width="1">

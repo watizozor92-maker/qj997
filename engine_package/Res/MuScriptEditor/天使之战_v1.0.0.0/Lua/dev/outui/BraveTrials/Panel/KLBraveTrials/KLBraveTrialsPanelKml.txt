@@ -45,7 +45,7 @@
         <text id="text_34" text="通关奖励：" x="60" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" fonttype="" width="100" height="24">
         </text>
       </img>
-      <text id="text_pass_times" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" y="-106" horwrap="1" width="0" fonttype="" ta="11" height="24" >
+      <text id="text_pass_times" text="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" y="-106" horwrap="1" width="0" fonttype="" ta="11" height="24">
       </text>
     </img>
     <button id="btn_start_challenge" atlas="Atlas/TS_Common.spriteatlas" x="348" y="-177" text="进入挑战" fonttype="" fontsize="20" outlinesize="1" outlinecolor="#000000FF" src="button_interface_window37" onclick="KLBraveTrialsUI/@进入勇气试炼挑战">

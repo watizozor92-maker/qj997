@@ -12,6 +12,10 @@
 ---@field sv_frame UIKmlLuaControlHandler
 ---@field MoneyRoot UIKmlLuaControlHandler
 ---@field layout3 UIKmlLuaControlHandler
+---@field gridview1 UIKmlLuaControlHandler
+---@field btn_ruibi UIKmlLuaControlHandler
+---@field ruibiIcon UIKmlLuaControlHandler
+---@field txt_ruibi UIKmlLuaControlHandler
 ---@field btn_gold UIKmlLuaControlHandler
 ---@field goldIcon UIKmlLuaControlHandler
 ---@field txt_gold UIKmlLuaControlHandler

@@ -20,7 +20,6 @@ function this:Init()
     self.IsTrans=false
     self.buffInfoList = {}
     self.pkModeTemplateList = {}
-    
     self.MapBtnPointTempList = {}
     ---@type MapMoveListItemData[]
     self.mapMoveListData = {}
@@ -65,6 +64,8 @@ function this:Init()
     end
     GUI:OSAScrollView_Initialized(self.view.TransferScrollView, self.TransferItemGetFun, self.TransferItemUpdateFun, self)
     GUI:OSAScrollView_SetItemSizeGetFun(self.view.TransferScrollView, self.TransferItemSizeGetFun, self)
+
+    --self:OnClick_ShowBuff()
 end
 
 ---注册UI事件和服务器消息
@@ -97,10 +98,10 @@ function this:RegistEvents()
     SL:RegisterLUAEvent(LUA_EVENT_ONHOOK_STATE_CHANGE,self.LUA_EVENT_ONHOOK_STATE_CHANGE,self)  --切换挂机模式
     SL:RegisterLUAEvent(LUA_EVENT_BUFFCHANHE, self.RefreshBuff, self)--主角buff改变事件
     SL:RegisterLUAEvent(LUA_EVENT_MAIN_PLAYER_DIE, self.LUA_EVENT_MAIN_PLAYER_DIE, self) --主角死亡
-    SL:RegisterLUAEvent(LUA_EVENT_CLOSEWIN, self.LUA_EVENT_CLOSEWIN, self)---界面关闭
-    SL:RegisterLUAEvent(LUA_EVENT_PKMODE_CHANGE, self.LUA_EVENT_PKMODE_CHANGE, self)--战斗模式切换
-    SL:RegisterLUAEvent(LUA_EVENT_SWITCH_PKMODE, self.LUA_EVENT_SWITCH_PKMODE, self)---战斗模式切换
-    SL:RegisterLUAEvent(LUA_EVENT_CROSS_SERVER_PK_MODE, self.LUA_EVENT_CROSS_SERVER_PK_MODE, self)---跨服战斗模式切换
+    --SL:RegisterLUAEvent(LUA_EVENT_CLOSEWIN, self.LUA_EVENT_CLOSEWIN, self)---buff界面关闭
+    --SL:RegisterLUAEvent(LUA_EVENT_PKMODE_CHANGE, self.LUA_EVENT_PKMODE_CHANGE, self)--战斗模式切换
+    --SL:RegisterLUAEvent(LUA_EVENT_SWITCH_PKMODE, self.LUA_EVENT_SWITCH_PKMODE, self)---战斗模式切换
+    --SL:RegisterLUAEvent(LUA_EVENT_CROSS_SERVER_PK_MODE, self.LUA_EVENT_CROSS_SERVER_PK_MODE, self)---跨服战斗模式切换
     SL:RegisterLUAEvent(LUA_EVENT_LEVELCHANGE, self.LUA_EVENT_LEVELCHANGE, self)--主角等级改变事件
 end
 
@@ -197,7 +198,7 @@ function this:OnClick_ShowBuff()
         panel.args = self.buffInfoList
         panel:Refresh()
     end
-    GUI:Image_loadTexture(self.view.btn_showBuff,"BUFFSelect","Atlas/NewMainPanel.spriteatlas")
+    --GUI:Image_loadTexture(self.view.btn_showBuff,"BUFFSelect","Atlas/NewMainPanel.spriteatlas")
 end
 
 function this:RefreshMapLineBtn()
@@ -221,8 +222,7 @@ function this:Refresh()
     self:RefreshMapLineBtn()
     local onHookState = SL:GetMetaValue(EMetaVarGetKey.GET_ONHOOK_STATE)
     self:SetOnHookIcon(onHookState)
-    self:InitPKMode()
-
+    --self:InitPKMode()
     --local jumpListIndex
     --if self.args then
     --    local jumpIndex = tonumber(self.args[1])
@@ -236,6 +236,7 @@ function this:Refresh()
         self:OnClick_OpenMap()
     end
     self:RefreshPlayerInfo()
+    
 end
 
 function this:RefreshPlayerInfo()

@@ -14,7 +14,7 @@ local ETopSystemType = {
     Show = enum(1),
 }
 local fixedShowBtns = {
-    ["挑战首领"] = { index = 0 },
+    --["挑战首领"] = { index = 0 },
     --["月卡"] = { index = 1 }
 }
 local foldoutStartPos = 0
@@ -47,7 +47,7 @@ function this:Init()
         GUI:setPosition(self.view.sysFoldClickBg,h5BtnData.x,h5BtnData.y)
         GUI:setContentSize(self.view.sysFoldClickBg,h5BtnData.width,h5BtnData.height)
     end]]
-    fixedShowBtns["挑战首领"].btn = self.view.bossBtn
+    --fixedShowBtns["挑战首领"].btn = self.view.bossBtn
     --fixedShowBtns["月卡"].btn = self.view.monthCardBtn
 end
 
@@ -89,8 +89,8 @@ function this:RegistEvents()
     GUI:AddOnClickEvent(self.view.sysExpandClickBg, self, self.OnClicksysExpandBtn)
     GUI:AddOnClickEvent(self.view.sysFold, self, self.OnClicksysFoldBtn)
     GUI:AddOnClickEvent(self.view.sysFoldClickBg, self, self.OnClicksysFoldBtn)
-    GUI:AddOnClickEvent(self.view.bossBtn, self, self.OnClickBossBtn)
-    GUI:AddOnClickEvent(self.view.monthCardBtn, self, self.OnClickMonthCardBtn)
+    --GUI:AddOnClickEvent(self.view.bossBtn, self, self.OnClickBossBtn)
+    --GUI:AddOnClickEvent(self.view.monthCardBtn, self, self.OnClickMonthCardBtn)
     SL:RegisterLUAEvent(LUA_EVENT_HIDE_RIGHT_BTN_VIEW, self.OnClicksysFoldBtn, self)
     SL:RegisterLUAEvent(LUA_EVENT_LEVELCHANGE, self.RefreshFixedSystemBtn, self)
     SL:RegisterLUAEvent(LUA_EVENT_OPEN_SERVER_DAY_CHANGE, self.RefreshFixedSystemBtn, self)

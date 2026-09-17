@@ -1,11 +1,11 @@
 <uipanel id="KLGemEquipItemItemKml" name="萤石装备模板" width="0" height="0" a="11" zindex="-1" z="-100">
   <prefab id="bag_item_" z="-100" cella="11" a="11" candrag="0" path="Kml/KmlPrefab/Cookbook/Common/BagItem.prefab" enddragrelatepos="kml_xw_bag#BagTileContent|kml_storage_panel#BagTileContent" onpointdown="" dragempty="" dragchangetrans="BagItem(Clone)/&KmlPanel/item_model&KmlItem/model" dragchangescale="">
     <panel id="empty" bind="empty" color="#00000001" x="0" y="0" width="45" height="45">
-      <item id="item_model_" bgtype="0" noclip="1" ta="22" a="11">
-        <text id="item_count_unit" text="150万" a="22" active="0" z="-100">
+      <item id="item_model_" bgtype="0" noclip="1" ta="22" a="11" siblingindex="6">
+        <text id="item_count_unit" text="150万" a="22" active="0" z="-100" siblingindex="3">
         </text>
       </item>
-      <text id="fluoriteLevel_" horwrap="1">
+      <text id="fluoriteLevel_" horwrap="1" siblingindex="7">
       </text>
     </panel>
     <text id="strengthLevel_" bind="strengthLevel" horwrap="1" x="5" y="0" width="43" height="24">
@@ -15,16 +15,16 @@
     <img id="selectImg" bind="selectImg" x="0" y="0" width="45" height="45">
     </img>
     <img id="bg" bind="bg" x="0" y="0" width="100" height="100">
-      <img id="gemCell1" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="-20" y="20" z="-100">
-        <img id="gemImg1" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100">
+      <img id="gemCell1" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="-20" y="20" z="-100" siblingindex="0">
+        <img id="gemImg1" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100" siblingindex="0">
         </img>
       </img>
-      <img id="gemCell2" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="0" y="20" z="-100">
-        <img id="gemImg2" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100">
+      <img id="gemCell2" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="0" y="20" z="-100" siblingindex="1">
+        <img id="gemImg2" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100" siblingindex="0">
         </img>
       </img>
-      <img id="gemCell3" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="20" y="20" z="-100">
-        <img id="gemImg3" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100">
+      <img id="gemCell3" a="02" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_NoInlay" width="16" height="16" raycast="1" x="20" y="20" z="-100" siblingindex="2">
+        <img id="gemImg3" a="00" atlas="Atlas/TS_GemInlayPanel.spriteatlas" src="gem_bing" width="12" height="12" raycast="1" x="0" y="0" z="-100" siblingindex="0">
         </img>
       </img>
     </img>
@@ -46,7 +46,7 @@
     </img>
     <button id="button2" bind="click" x="0" y="0" width="160" height="30">
     </button>
-    <text id="TimeText" a="21" text="" fontsize="16" height="23" width="46" ta="21" horwrap="1" x="0" y="0" fontstyle="0" color="#F59924FF" z="-1000">
+    <text id="TimeText" a="21" text="" fontsize="16" height="23" width="46" ta="21" horwrap="1" x="0" y="0" fontstyle="0" color="#F59924FF" z="-1000" siblingindex="1">
     </text>
   </prefab>
 </uipanel>

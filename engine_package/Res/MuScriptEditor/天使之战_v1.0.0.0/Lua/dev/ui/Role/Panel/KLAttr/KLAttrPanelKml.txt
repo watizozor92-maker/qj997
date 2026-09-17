@@ -14,8 +14,6 @@
   <prefab id="attr_panel_content" path="UI/UIAttrPanel_OLD.prefab" a="20">
     <img id="AttrInfo" bind="AttrInfo" atlas="" src="" x="-425" y="-4" width="351" height="664" color="#ffffff00">
     </img>
-    <button id="minusButton_dc" bind="minusButton_dc" active="" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_minus" x="-228" y="23" width="25" height="25">
-    </button>
     <img id="bg_1" active="0" bind="AttrInfo/BGInner" atlas="" src="Texture/FG_bg_2ColumnsTanKuang.png" width="406" height="662" x="-35" y="3" a="00">
     </img>
     <img id="bg_2" active="0" bind="AttrEffect/BGInner" atlas="" src="Texture/FG_bg_2ColumnsTanKuang.png" width="406" height="662" x="-10" y="-1" a="00">
@@ -40,10 +38,18 @@
     </button>
     <text fonttype="Font/SIMHEI.TTF" id="num_intelligence" bind="num_intelligence" text="<$num(intelligence)>" databind="@intelligence_all_str" outline="0" horwrap="1" x="176" width="151" height="24" y="-7" fontsize="18" ta="11">
     </text>
+    <panel id="attInfoContent_stamina" bind="attInfoContent_stamina">
+      <datalist id="attInfoContent_stamina_content" databind="@left_attr_data_list">
+        <panel height="25" width="349" a="11" active="" id="panel_727" siblingindex="3">
+          <text fonttype="Font/SIMHEI.TTF" id="st_info" x="10" fontsize="18" outlinesize="1" outlinecolor="#000000FF" height="30" a="11" color="#DBE0E6FF" siblingindex="0" outline="1" horwrap="1">
+          </text>
+          <text fonttype="Font/SIMHEI.TTF" id="st_add" fontsize="16" outlinesize="0" outlinecolor="#000000" a="21" color="#4CC5FE" width="100" ta="20" siblingindex="1" x="-24" height="30">
+          </text>
+        </panel>
+      </datalist>
+    </panel>
     <img id="attrInfo_4" bind="AttrInfo/attInfoScrollView/Viewport/content/attInfoContent_stamina/attrInfo" atlas="Atlas/FG_AttrPanel.spriteatlas" src="bg_dikuang" width="375" height="40">
     </img>
-    <text fonttype="Font/SIMHEI.TTF" id="regionAndCareer" bind="regionAndCareer" text="[]" outlinesize="1" outline="1" horwrap="1" outlinecolor="#000000FF">
-    </text>
     <button id="attrCloseButton" bind="attrCloseButton" scr="btn_close" h5y="7" h5x="-275" x="9" y="7" z="0">
     </button>
     <button id="CloseButton" bind="CloseButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" h5y="7" h5x="-320" x="-20" y="-15" width="34" height="34">
@@ -70,6 +76,8 @@
       <img id="plusButton_d_Light" atlas="Atlas/FG_AttrPanel.spriteatlas" src="gaoliang" x="-2" deltax="0.5" width="39" height="39" y="0" deltay="0.5" siblingindex="0">
       </img>
     </button>
+    <button id="minusButton_dc" bind="minusButton_dc" active="" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_minus" x="-228" y="23" width="25" height="25">
+    </button>
     <text fonttype="Font/SIMHEI.TTF" id="commandButton_text" bind="commandButtonText" text="推荐加点" outline="0" horwrap="1" x="0" y="0" fontsize="16" color="#FFFFFF" outlinesize="1" outlinecolor="#000000FF" active="0" enable="0">
     </text>
     <panel id="attInfoContent_dc" bind="attInfoContent_dc" width="349">
@@ -84,8 +92,6 @@
     </panel>
     <panel id="top" bind="top" x="-36" deltax="0.5" y="0">
     </panel>
-    <img id="attrScrollView" bind="attrScrollView" width="360" y="-69" height="659" x="0">
-    </img>
     <img id="attInfoScrollView" bind="attInfoScrollView" width="375" x="-219" deltax="0.5" y="145" height="664">
     </img>
     <text fonttype="Font/SIMHEI.TTF" id="attrName_1" bind="AttrInfo/attInfoScrollView/Viewport/content/attInfoContent_dc/attrInfo/attrName" fontsize="18" x="45" y="-1" width="349" outline="1" horwrap="1" active="1" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF">
@@ -112,6 +118,8 @@
     </img>
     <text fonttype="Font/SIMHEI.TTF" id="name" bind="name" text="" outline="1" horwrap="1" color="#C7DBFFFF" outlinesize="1" outlinecolor="#000000FF">
     </text>
+    <text fonttype="Font/SIMHEI.TTF" id="regionAndCareer" bind="regionAndCareer" text="[]" outlinesize="1" outline="1" horwrap="1" outlinecolor="#000000FF">
+    </text>
     <panel id="attInfoContent_intelligence" bind="attInfoContent_intelligence">
       <datalist id="attInfoContent_intelligence_content" databind="@left_attr_data_list">
         <panel height="25" width="370" a="11" active="" id="panel_719" siblingindex="3">
@@ -122,10 +130,6 @@
         </panel>
       </datalist>
     </panel>
-    <button id="plusButton_stamina" bind="plusButton_stamina" active="" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_add" x="-19" y="23" width="25" height="25">
-      <img id="plusButton_s_Light" atlas="Atlas/FG_AttrPanel.spriteatlas" src="gaoliang" x="-2" deltax="0.5" width="39" height="39" y="0" deltay="0.5" siblingindex="0">
-      </img>
-    </button>
     <button id="minusButton_stamina" bind="minusButton_stamina" active="" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_minus" x="-228" y="23" width="25" height="25">
     </button>
     <panel id="attInfoContent_agility" bind="attInfoContent_agility">
@@ -133,7 +137,7 @@
         <panel height="25" width="349" a="11" active="" id="panel_711" siblingindex="3">
           <text fonttype="Font/SIMHEI.TTF" id="ag_info" fontsize="18" outlinesize="1" outlinecolor="#000000" x="10" height="30" a="11" color="#DBE0E6FF" siblingindex="0" outline="1" horwrap="1">
           </text>
-          <text fonttype="Font/SIMHEI.TTF" id="ag_add" fontsize="16" outlinesize="0" outlinecolor="#000000" width="100" ta="20" a="21" color="#4CC5FE" siblingindex="1" x="-24" height="30">
+          <text fonttype="Font/SIMHEI.TTF" id="ag_add" fontsize="16" outlinesize="0" outlinecolor="#000000" width="100" ta="20" a="21" color="#4CC5FE" siblingindex="1" x="-24" height="30" outline="1" horwrap="1">
           </text>
         </panel>
       </datalist>
@@ -143,7 +147,7 @@
         <panel height="25" width="349" a="11" active="" id="panel_735" siblingindex="3">
           <text fonttype="Font/SIMHEI.TTF" id="le_info" x="10" fontsize="18" outlinesize="1" outlinecolor="#000000FF" height="30" a="11" color="#DBE0E6FF" siblingindex="0" outline="1" horwrap="1">
           </text>
-          <text fonttype="Font/SIMHEI.TTF" id="le_add" fontsize="16" outlinesize="0" outlinecolor="#000000" a="21" color="#4CC5FE" width="100" ta="20" horwrap="1" siblingindex="1" x="-24" height="30">
+          <text fonttype="Font/SIMHEI.TTF" id="le_add" fontsize="16" outlinesize="0" outlinecolor="#000000" a="21" color="#4CC5FE" width="100" ta="20" horwrap="1" siblingindex="1" x="-24" height="30" outline="1">
           </text>
         </panel>
       </datalist>
@@ -157,7 +161,7 @@
     <text fonttype="Font/SIMHEI.TTF" id="num_command" bind="num_command" text="<$num(command)>" databind="@command_all_str" outline="0" horwrap="1" x="176" width="151" height="24" y="-7" fontsize="18" ta="11">
     </text>
     <img bind="AttrEffect" id="AttrEffect" active="1" width="406" height="662" color="#ffffff00">
-      <text fonttype="Font/SIMHEI.TTF" id="titleName" text="效果及属性" color="#ffffff" outlinesize="0" outlinecolor="#000000" a="11" ta="11" fontsize="20" y="-25" x="136" siblingindex="4">
+      <text fonttype="Font/SIMHEI.TTF" id="titleName" text="Attribute" color="#F59924FF" outlinesize="0" outlinecolor="#000000" a="11" ta="11" fontsize="20" y="-25" x="136" siblingindex="4" outline="1" horwrap="1">
       </text>
     </img>
     <text fonttype="Font/SIMHEI.TTF" id="levelText" bind="levelText" text="等级：<$level>" fontsize="18" color="#e6e600" y="-16" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF">
@@ -178,16 +182,12 @@
         </panel>
       </datalist>
     </gridview>
-    <panel id="attInfoContent_stamina" bind="attInfoContent_stamina">
-      <datalist id="attInfoContent_stamina_content" databind="@left_attr_data_list">
-        <panel height="25" width="349" a="11" active="" id="panel_727" siblingindex="3">
-          <text fonttype="Font/SIMHEI.TTF" id="st_info" x="10" fontsize="18" outlinesize="1" outlinecolor="#000000FF" height="30" a="11" color="#DBE0E6FF" siblingindex="0" outline="1" horwrap="1">
-          </text>
-          <text fonttype="Font/SIMHEI.TTF" id="st_add" fontsize="16" outlinesize="0" outlinecolor="#000000" a="21" color="#4CC5FE" width="100" ta="20" siblingindex="1" x="-24" height="30">
-          </text>
-        </panel>
-      </datalist>
-    </panel>
+    <img id="attrScrollView" bind="attrScrollView" width="360" y="-69" height="659" x="0">
+    </img>
+    <button id="plusButton_stamina" bind="plusButton_stamina" active="" atlas="Atlas/FG_Common.spriteatlas" src="ty_btn_add" x="-19" y="23" width="25" height="25">
+      <img id="plusButton_s_Light" atlas="Atlas/FG_AttrPanel.spriteatlas" src="gaoliang" x="-2" deltax="0.5" width="39" height="39" y="0" deltay="0.5" siblingindex="0">
+      </img>
+    </button>
     <button id="appleButton" a="00" atlas="Atlas/FG_Fruit.spriteatlas" src="btn_guoshi" width="63" height="67" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" x="-482" y="-340" active="1" siblingindex="2">
     </button>
   </prefab>

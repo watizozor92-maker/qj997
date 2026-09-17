@@ -1,0 +1,55 @@
+debug: true
+gameId: 100
+serverId: 1021
+platformId: 1
+serverType: 1
+host: 127.0.0.1
+port: 0
+httpPort: 18007
+#对外开放
+frontendPort: 28001
+#对内
+backendPort: 0
+
+# lua 版本 LUAC 和 LUAJ
+luaVersion: LUACDBG
+useXpcall: true
+monitorLuaMemory: true
+
+checkConfig: true
+checkSid: false
+openRobot: true
+messageMonitor: false
+
+#csv文件
+configPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\csv/
+#地形二进制
+mapPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\map/
+#配置meta空间路径
+metaPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\meta/
+
+gate: "127.0.0.1:18002"
+scenes:
+  - "127.0.0.1:18105:2"
+  - "127.0.0.1:18305:3"
+#开服时间
+openTime: "2024-12-31 00:00:01"
+#合服时间
+combineTime: ""
+combineSids: "[]"
+combineSidCount: 0
+
+dbConfigPath: local/server_db.properties
+logDbConfigPath: local/server_log_db.properties
+sqlDir: release
+
+#engine script is work?
+e712EngineWork: false
+saveLog2Db: false #是否报错日志到数据库
+saveLog2DbThreadSize: 1 #数据库里写入线程数
+saveLog2DbBatchSize: 100 #批量提交到数据库数量
+
+
+centerServer: http://127.0.0.1:19686
+dataServer: http://127.0.0.1:19696
+matchServer: http://127.0.0.1:19676

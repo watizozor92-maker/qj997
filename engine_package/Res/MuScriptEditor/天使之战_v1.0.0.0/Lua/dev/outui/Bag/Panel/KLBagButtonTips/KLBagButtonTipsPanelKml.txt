@@ -2,9 +2,9 @@
   <img id="bg" a="00" width="298" height="146" raycast="1" atlas="" src="Texture/FG_bagTips_bg.png">
     <text id="title" a="00" text="背包已满，请及时清理！" fontsize="18" height="25" width="350" ta="11" outline="1" horwrap="1" y="46" fontstyle="0">
     </text>
-    <button id="GoRecycleBtn" a="00" width="103" height="36" onclick="" text="前往回收" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-67" fontsize="18">
+    <button id="GoRecycleBtn" a="00" width="103" height="36" onclick="" text="回收" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-67" fontsize="18">
     </button>
-    <button id="GoAutoRecycleBtn" a="00" width="103" height="36" onclick="" text="自动回收" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="67" fontsize="18">
+    <button id="GoAutoRecycleBtn" a="00" width="103" height="36" onclick="" text="自动回收" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="67" fontsize="18">
     </button>
     <button id="leftDataBtn" a="00" width="36" height="36" onclick="" text="" raycast="1" src="ty_btn_N" atlas="Atlas/FG_npcShop.spriteatlas" mimg="" pimg="" dimg="" x="-76" y="-42">
       <img id="leftDataBtnSelectImg" a="00" width="42" height="35" raycast="1" src="ty_btn_gou" atlas="Atlas/FG_Common.spriteatlas" active="0">

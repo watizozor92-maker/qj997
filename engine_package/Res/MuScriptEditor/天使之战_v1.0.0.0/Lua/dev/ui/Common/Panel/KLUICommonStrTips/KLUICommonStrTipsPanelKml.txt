@@ -2,7 +2,7 @@
   <panel id="bg" width="536" height="464" x="0" y="0" a="00">
     <button id="MaskCloseButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="5000" height="5000" onclick="" text="" raycast="1" color="#FFFFFF00" x="1" y="1">
     </button>
-    <img id="bgImg" atlas="" src="Texture/FG_chise2.png" width="660" height="578" raycast="1" x="0" y="0" z="0" a="00" rotate="0,0,0" scale9l="0" scale9b="0" scale9r="0" scale9t="0">
+    <img id="bgImg" atlas="" src="Texture/FG_bg_line.png" width="660" height="578" raycast="1" x="0" y="0" z="0" a="00" rotate="0,0,0" scale9l="0" scale9b="0" scale9r="0" scale9t="0">
     </img>
     <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" color="#FFFFFFFF" width="56" height="56" x="56" y="31" raycast="1" z="0" a="21" rotate="0,0,0" h5y="1" h5x="-569">
     </img>
@@ -12,7 +12,7 @@
         </text>
       </layout>
     </scrollview>
-    <text id="txt_title" text="规则" y="16" fontsize="20" height="24" width="161" x="4" ta="11" color="#FFFFFFFF" outlinesize="0" outlinecolor="#000000FF" horwrap="1" z="0" a="01" rotate="0,0,0" outline="0" fontstyle="0" underline="0">
+    <text id="txt_title" text="规则" y="16" fontsize="18" height="24" width="161" x="4" ta="11" color="#FFFFFFFF" outlinesize="0" outlinecolor="#000000FF" horwrap="1" z="0" a="01" rotate="0,0,0" outline="0" fontstyle="2" underline="0">
     </text>
   </panel>
 </uipanel>

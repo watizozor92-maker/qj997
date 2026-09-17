@@ -1,31 +1,35 @@
 ---@class KLGoldChallengeItemView:UIKmlLuaViewBase
----@field bgRoot UIKmlLuaControl
----@field bg UIKmlLuaControl
----@field textRoot UIKmlLuaControl
----@field img1 UIKmlLuaControl
----@field textTask UIKmlLuaControl
----@field textName UIKmlLuaControl
----@field textMap UIKmlLuaControl
----@field frame_2 UIKmlLuaControl
----@field frame_3 UIKmlLuaControl
----@field model UIKmlLuaControl
----@field model1 UIKmlLuaControl
----@field starGrid UIKmlLuaControl
----@field getTaskBtnRoot UIKmlLuaControl
----@field btnAbandon UIKmlLuaControl
----@field btnGo UIKmlLuaControl
----@field btnGetTask UIKmlLuaControl
----@field btnSubmit UIKmlLuaControl
----@field btnEffect UIKmlLuaControl
----@field itemRootView UIKmlLuaControl
----@field layout2 UIKmlLuaControl
----@field itemRoot UIKmlLuaControl
+---@field bgRoot UIKmlLuaControlHandler
+---@field bg UIKmlLuaControlHandler
+---@field textRoot UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
+---@field textTask UIKmlLuaControlHandler
+---@field textName UIKmlLuaControlHandler
+---@field textMap UIKmlLuaControlHandler
+---@field frame_2 UIKmlLuaControlHandler
+---@field frame_3 UIKmlLuaControlHandler
+---@field model UIKmlLuaControlHandler
+---@field model1 UIKmlLuaControlHandler
+---@field model2 UIKmlLuaControlHandler
+---@field starGrid UIKmlLuaControlHandler
+---@field getTaskBtnRoot UIKmlLuaControlHandler
+---@field btnAbandon UIKmlLuaControlHandler
+---@field btnGo UIKmlLuaControlHandler
+---@field btnGetTask UIKmlLuaControlHandler
+---@field btnSubmit UIKmlLuaControlHandler
+---@field btnEffect UIKmlLuaControlHandler
+---@field itemRootView UIKmlLuaControlHandler
+---@field layout2 UIKmlLuaControlHandler
+---@field itemRoot UIKmlLuaControlHandler
 local KLGoldChallengeItemView = {}
 setmetatable(KLGoldChallengeItemView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Activity/Item/KLGoldChallenge/KLGoldChallengeItemKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLGoldChallengeItemView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLGoldChallengeItem 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Activity/Item/KLGoldChallenge/KLGoldChallengeItem']
+
 return KLGoldChallengeItemView

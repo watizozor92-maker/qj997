@@ -3,29 +3,29 @@
     <panel id="MainPanle" width="130" height="160" active="1">
       <img id="Image" atlas="Atlas/Common.spriteatlas" src="bg_tips" width="130" height="160">
       </img>
+      <img id="BtnClose" atlas="Atlas/Common.spriteatlas" src="ty_btn_close_small" x="-4" y="-4" a="21" onclick="KmlBubbleTipsUI/@关闭背包装备气泡 " width="15" height="15">
+      </img>
       <prefab id="scroll_text_template" path="Kml/KmlPrefab/Cookbook/Common/KmlScrollTextTemplate.prefab" a="01" width="100" y="-15">
         <panel id="KmlScrollTextTemplate" bind="KmlScrollTextTemplate" width="100">
         </panel>
-        <text id="Text" bind="Text" width="80" text="" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000">
+        <text id="Text" bind="Text" width="80" text="" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
         </text>
       </prefab>
+      <img id="bagtag" atlas="Atlas/Common.spriteatlas" src="tips_yellow2" x="100" y="50" a="12">
+      </img>
+      <img id="BtnUse1" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="120" height="40" y="-55" raycast="1" color="#FFFFFF" onclick=" ">
+        <text id="UseText" width="80" text="" ta="11" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
+        </text>
+        <img id="Light" atlas="Atlas/Common.spriteatlas" src="ty_btn_light" width="131" height="47" loop="1" fadeintime="1" fadeouttime="1">
+        </img>
+      </img>
       <img id="AttrImage" atlas="Atlas/TS_Common.spriteatlas" src="wenlu" x="0" y="-10">
       </img>
       <text id="AttrText" width="80" height="34" x="-6" y="10" ta="11" text="" fonttype="ShortcutPoints" space="-10" fontsize="20" outlinesize="1" outlinecolor="#000000">
       </text>
       <panel id="Item" width="75" height="75" y="10" x="0">
       </panel>
-      <img id="BtnClose" atlas="Atlas/Common.spriteatlas" src="ty_btn_close_small" x="-4" y="-4" a="21" onclick="KmlBubbleTipsUI/@关闭背包装备气泡 " width="15" height="15">
-      </img>
       <img id="equiptag" atlas="Atlas/Common.spriteatlas" src="tips_green2" x="100" y="50" a="12">
-      </img>
-      <img id="bagtag" atlas="Atlas/Common.spriteatlas" src="tips_yellow2" x="100" y="50" a="12">
-      </img>
-      <img id="BtnUse1" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="120" height="40" y="-55" raycast="1" color="#FFFFFF" onclick=" ">
-        <text id="UseText" width="80" text="" ta="11" fonttype="" fontsize="18" color="" outlinesize="1" outlinecolor="#000000" outline="1" horwrap="1">
-        </text>
-        <img id="Light" atlas="Atlas/Common.spriteatlas" src="ty_btn_light" width="131" height="47" loop="1" fadeintime="1" fadeouttime="1">
-        </img>
       </img>
       <countdown id="TimeCountdown" active="" time="" endtimefunc="KmlBubbleTipsUI/@立即装备  " x="35" y="-55" width="40" height="20" z="0" a="00" rotate="0,0,0" fonttype="" fontsize="18" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" ta="11">
       </countdown>

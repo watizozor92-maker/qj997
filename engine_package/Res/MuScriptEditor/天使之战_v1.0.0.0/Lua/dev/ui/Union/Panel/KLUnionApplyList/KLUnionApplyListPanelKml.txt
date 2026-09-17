@@ -45,12 +45,12 @@
               </text>
               <text id="level" text="" x="60" outline="1" horwrap="1" fontsize="18" ta="11" color="#DCE1E5" outlinesize="1" outlinecolor="#000000FF" siblingindex="3">
               </text>
-              <button id="refuse_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" x="-155" a="20" text="" onclick="KmlXWUnionMemberUI/@拒绝玩家战盟申请 " textcolor="#9b1818" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="4">
-                <text id="text_refuse" ta="11" width="100" height="40" y="0" text="拒绝" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+              <button id="refuse_btn" atlas="Atlas/FG_Common.spriteatlas" src="" x="-155" a="20" text="" onclick="KmlXWUnionMemberUI/@拒绝玩家战盟申请 " textcolor="#9b1818" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="4">
+                <text id="text_refuse" ta="11" width="100" height="40" y="0" text="Reject" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
                 </text>
               </button>
-              <button id="agree_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" x="-35" a="20" text="" onclick="KmlXWUnionMemberUI/@同意玩家战盟申请 " textcolor="#F6E5C9" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="5">
-                <text id="text_agree" ta="11" width="100" height="40" y="0" text="同意" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+              <button id="agree_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" x="-35" a="20" text="" onclick="KmlXWUnionMemberUI/@同意玩家战盟申请 " textcolor="#F6E5C9" mimg="" pimg="" dimg="" width="103" height="36" siblingindex="5">
+                <text id="text_agree" ta="11" width="100" height="40" y="0" text="Ok" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
                 </text>
               </button>
             </panel>
@@ -60,12 +60,12 @@
     </panel>
     <button id="btn_close" bind="btn_close" onclick="KmlXWUnionMemberUI/@CloseApplyPanel" h5y="-29" h5x="-1009" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="34" height="34" x="-10" y="-20" a="21">
     </button>
-    <button id="btn_allRefuse" bind="btn_allRefuse" onclick="KmlXWUnionMemberUI/@AllRefuse" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="311" y="-234">
+    <button id="btn_allRefuse" bind="btn_allRefuse" onclick="KmlXWUnionMemberUI/@AllRefuse" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="311" y="-234">
       <text id="text_allRefuse" ta="11" width="103" height="36" y="0" text="全部拒绝" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
       </text>
     </button>
-    <button id="btn_allAgree" bind="btn_allAgree" onclick="KmlXWUnionMemberUI/@AllAgree" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="434" y="-234">
-      <text id="text_allAgree" ta="11" width="103" height="36" y="0" text="全部同意" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
+    <button id="btn_allAgree" bind="btn_allAgree" onclick="KmlXWUnionMemberUI/@AllAgree" src="" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="103" height="36" text="" x="434" y="-234">
+      <text id="text_allAgree" ta="11" width="103" height="36" y="92" text="全部同意" color="#FFFFFFFF" fontsize="18" outline="1" horwrap="1" active="1" fontstyle="0" underline="0" x="380" outlinesize="1" outlinecolor="#000000FF" siblingindex="1">
       </text>
     </button>
     <button id="mask" bind="mask" x="0" y="0" width="3000" height="3000">
@@ -74,11 +74,11 @@
     </text>
     <text id="lab_name" bind="lab_name" outline="1" horwrap="1" width="85" height="24" text="玩家名称" fontsize="20" fontstyle="0" underline="0" color="#DCE1E5" x="71" y="2" ta="11" a="10" outlinesize="1" outlinecolor="#000000FF">
     </text>
-    <img id="img4" a="00" width="161" height="27" raycast="1" siblingindex="5" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="265">
+    <img id="img4" a="00" width="161" height="27" raycast="1" siblingindex="3" atlas="" src="Texture/FG_dankuangdi_zhuangshi2.png" y="265">
     </img>
-    <text id="text1" a="01" text="申请队列" fontsize="20" height="24" width="100" ta="11" outline="0" horwrap="1" y="540" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text1" a="01" text="申请队列" fontsize="20" height="24" width="100" ta="11" outline="0" horwrap="1" y="540" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF" siblingindex="4">
     </text>
-    <text id="Text_NoApplyTips" a="00" text="暂无申请" fontsize="22" height="50" width="350" ta="11" outline="1" horwrap="1" y="0" active="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+    <text id="Text_NoApplyTips" a="00" text="暂无申请" fontsize="22" height="50" width="350" ta="11" outline="1" horwrap="1" y="0" active="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" siblingindex="5">
     </text>
   </prefab>
 </uipanel>

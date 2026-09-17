@@ -390,6 +390,7 @@ function this:CheckItem(item, count)
                 end
             end
         else
+            --强化装备
             if equip == nil then -- 熔炉没有装备，不能放入非装备
                 return false, "请先放入装备"
             end
@@ -432,7 +433,7 @@ function this:CheckItem(item, count)
                 end
             end
 
-            return self:CheckItemLimit4(cfg, item, itemCfg) or self:CheckItemLimitLuckyItem(v, item, itemCfg)
+            return self:CheckItemLimit4(cfg, item, itemCfg) or self:CheckItemLimitLuckyItem(cfg, item, itemCfg)
         end
         return true
     end
@@ -813,7 +814,7 @@ function this:CheckFormula()
                 end
             end
         end
-
+        --装备强化成功率
         successRate = self:RefreshOtherCost(cfgs[1], self:CopySmelterItems(self.smelterItems), "", 0)
 
         if equip and equipIntensifyCfg then
@@ -1325,16 +1326,19 @@ function this:RefreshOtherCost(formula, smelterItems, tips2, successRate)
                 count >= 1 and "#E6E600" or "#FF2323", cfg.name)
             if count >= 1 then
                 self.hasbaohuitem = true
+                for _, tv in pairs(tbl) do
+                    table.insert(self.baohu_items, tv.extritemsData)
+                end
             else
                 self.hasbaohuitem = false
-            end  
+            end
         end
         tips2 = tips2 .. baohu_str
-    end  
+    end
 
     self.lucky_items = {}
     if #formula.luckyItem > 0 then
-        local luckyItem_str = ""   
+        local luckyItem_str = ""
         local luckyItem = {}
         for i, v in pairs(formula.luckyItem) do
             luckyItem[i] = v
@@ -1535,6 +1539,8 @@ function this:GetSynthesisItemBindCfgId(item_cfg_Id)
         return 50030004
     elseif item_cfg_Id == 1253000399 then
         return 50030003
+    -- elseif item_cfg_Id == 50040040 then
+    --     return 1254004099
     end
     local cfg = SL:GetConfig("cfg_item", item_cfg_Id) or {}
     return cfg.bindEqualItem or 0
@@ -2035,7 +2041,8 @@ function this:OnClick_Btn_Confirm()
         local luckyItems = {}
         if self.hasluckyitem then
             luckyItems = {
-                id = self.lucky_items[1][1],
+                -- id = self.lucky_items[1][1],
+                id = 1254004099,
                 count = 1
             }        
         end
@@ -2102,11 +2109,11 @@ function this:OnClick_Btn_Confirm()
     local luckyItems = {}    
     if self.hasluckyitem then
         luckyItems = {
-            id = self.lucky_items[1][1],
+            --id = self.lucky_items[1][1],
+            id = 1254004099,
             count = 1
         }        
     end
-
     local data = {
         [1] = self.formula.id,
         [2] = putItems,
@@ -2115,32 +2122,32 @@ function this:OnClick_Btn_Confirm()
         [5] = baohuItems,
         [6] = luckyItems
     }
-    SL:Log("合成数据")
-    -- SL:LogTable(data[6],true)
     ---检查合成是否有绑定道具
-    for _, v in pairs(data) do
-        if type(v) == "table" then
-            for _, k in pairs(v) do
-                if type(v) ~= "table" then
-                    break
-                end
-                local item = self.smelterItems[k.id].item
-                --local isEquip = SL:GetConfig("cfg_item", item.cfgId).type == 2
-                if EquipFunc.GetItemIsBind(item.cfgId, item) then
-                    SL:CommonTipsMessage({
-                        stringTblID = 67001,
-                        sureBtnText = "确定",
-                        callback = function()
-                            SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_ITEM_SYNTHESIS, data)
-                        end,
-                    })
-                    return
+    for index, v in pairs(data) do
+        if index ~= 6 then
+            if type(v) == "table" then
+                for _, k in pairs(v) do
+                    if type(v) ~= "table" or type(k) ~= "table" then
+                        break
+                    end
+                    local item = self.smelterItems[k.id].item
+                    --local isEquip = SL:GetConfig("cfg_item", item.cfgId).type == 2
+                    if EquipFunc.GetItemIsBind(item.cfgId, item) then
+                        SL:CommonTipsMessage({
+                            stringTblID = 67001,
+                            sureBtnText = "确定",
+                            callback = function()
+                                SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_ITEM_SYNTHESIS, data)
+                            end,
+                        })
+                        return
+                    end
                 end
             end
         end
     end
 
-    SL:LogTable(data,true,"data")
+    --SL:LogTable(data,true,"data")
     SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_ITEM_SYNTHESIS, data)
 end
 

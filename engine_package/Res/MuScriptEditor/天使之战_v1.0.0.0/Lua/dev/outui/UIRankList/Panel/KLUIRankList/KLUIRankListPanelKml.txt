@@ -3,15 +3,15 @@
   </img>
   <img src="Texture/img_interface_main138.jpg" y="-26" width="1024" height="503" id="img1" x="0">
   </img>
-  <img atlas="" src="Texture/bg_yijitankuangdi3.png" width="1039" height="578" id="img2" x="0" y="0" active="1">
-    <text id="text1" a="01" text="排行榜" fontsize="20" height="41" width="350" ta="11" outline="0" horwrap="1" x="3" y="-30" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+  <img atlas="" src="Texture/new.png" width="1039" height="578" id="img2" x="0" y="0" active="1">
+    <text id="text1" a="01" text="Ranking" fontsize="20" height="41" width="350" ta="11" outline="0" horwrap="1" x="3" y="-30" outlinesize="1" outlinecolor="#000000FF" color="#F59924FF">
     </text>
     <button id="CloseButton" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" x="-17" y="-25" raycast="1" h5y="255" h5x="-502" color="#FFFFFFff" a="21" mimg="" pimg="" dimg="">
     </button>
   </img>
   <img atlas="Atlas/Common.spriteatlas" src="img_interface_main009" height="464" width="1004" x="1" y="-42" scale9b="20" scale9l="20" scale9r="20" scale9t="20" id="img3" active="0">
   </img>
-  <img id="bg" atlas="Atlas/UIRankListPanel.spriteatlas" src="S_BG" x="85" y="-45" width="809" height="430">
+  <img id="bg" atlas="Atlas/UIRankListPanel.spriteatlas" src="S_BG" x="85" y="-45" width="809" height="430" offsetmin="-335#-260">
   </img>
   <img atlas="Atlas/UIRankListPanel.spriteatlas" src="title" y="256" id="title" width="98" height="55" active="0" a="00">
   </img>
@@ -72,7 +72,7 @@
     </text>
     <text id="WorshipText" a="00" text="" fontsize="16" height="73" width="188" ta="00" horwrap="1" x="-224" y="123" z="-150" color="#FF2323" outlinesize="1" outlinecolor="#000000FF" fonttype="" linespace="1" outline="1">
     </text>
-    <button id="LockButton" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="查看装备" raycast="1" x="-51" y="-226" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" ta="11" z="-200" mimg="" pimg="" dimg="" scale9l="27" scale9b="17" scale9r="28" scale9t="15" textcolor="#FFFFFFFF">
+    <button id="LockButton" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" onclick="" text="查看装备" raycast="1" x="-51" y="-226" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" ta="11" z="-200" mimg="" pimg="" dimg="" scale9l="27" scale9b="17" scale9r="28" scale9t="15" textcolor="#FFFFFFFF">
     </button>
     <button id="WorshipButton" a="00" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="btn_cebian1" width="113" height="40" onclick="" text="膜拜" raycast="1" x="-138" y="-218" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" ta="11" z="-200" active="0" mimg="" pimg="" dimg="">
     </button>

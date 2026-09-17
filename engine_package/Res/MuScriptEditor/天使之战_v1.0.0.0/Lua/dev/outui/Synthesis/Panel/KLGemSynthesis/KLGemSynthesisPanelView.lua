@@ -48,8 +48,11 @@
 local KLGemSynthesisPanelView = {}
 setmetatable(KLGemSynthesisPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Synthesis/Panel/KLGemSynthesis/KLGemSynthesisPanelKml'
----@param parent UIKmlLuaControlHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLGemSynthesisPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLGemSynthesisPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Synthesis/Panel/KLGemSynthesis/KLGemSynthesisPanel']
+
 return KLGemSynthesisPanelView

@@ -213,8 +213,8 @@ function this:CreateFilterBtn(dataList, id, textKey, parent)
             text = v[textKey],
             height = 30,
             color = i == 1 and "#FFFFFF" or "#00000000",
-            src="bg_btn_orange",
-            atlas="Atlas/TS_Common.spriteatlas",
+            src="btn_cebian6",
+            atlas="Atlas/FG_Common.spriteatlas",
             outlinesize="1",
             outlinecolor="#000000",
             raycast="1"

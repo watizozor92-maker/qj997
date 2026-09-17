@@ -4,7 +4,7 @@
     </text>
     <img id="Background" bind="Background" width="146" height="44">
     </img>
-    <toggle id="ToggleLevel" bind="ToggleLevel" togglegroup_id="LeftSubToggleGroup" default="" onclick="KmlShopMallUI/@RefreshItemList " src="btn_cebian2" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian1" scale9l="24" scale9b="18" scale9r="23" scale9t="12" pimg_scale9l="20" pimg_scale9b="15" pimg_scale9r="20" pimg_scale9t="14" width="148" height="41">
+    <toggle id="ToggleLevel" bind="ToggleLevel" togglegroup_id="LeftSubToggleGroup" default="" onclick="KmlShopMallUI/@RefreshItemList " src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian6" scale9l="24" scale9b="18" scale9r="23" scale9t="12" pimg_scale9l="20" pimg_scale9b="15" pimg_scale9r="20" pimg_scale9t="14" width="148" height="41">
     </toggle>
   </prefab>
 </uipanel>

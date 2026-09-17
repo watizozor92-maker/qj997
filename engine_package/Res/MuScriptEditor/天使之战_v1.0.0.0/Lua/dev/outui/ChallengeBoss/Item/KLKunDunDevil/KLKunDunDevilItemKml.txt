@@ -1,12 +1,12 @@
-<uipanel id="KLKunDunDevilItemKml" width="1039" height="578" zindex="201" name="昆顿魔王" x="0" y="0">
-  <panel id="outdoor_boss_panel" width="1039" height="578">
-    <img src="bg_1" width="977" height="430" x="31" y="-117" id="img_43" atlas="Atlas/FG_ChallgeBoss.spriteatlas" a="11">
+<uipanel id="KLKunDunDevilItemKml" width="1049" height="565" zindex="201" name="昆顿魔王" x="0" y="0">
+  <panel id="outdoor_boss_panel" width="1049" height="565">
+    <img src="bg_1" width="940" height="470" x="-3" y="-33" id="img_43" atlas="Atlas/FG_ChallgeBoss.spriteatlas" a="00">
     </img>
-    <loopscrollview id="outdoor_boss_select" width="977" height="90" a="11" x="31" y="-480" vertical="0" cellwidth="254" cellheight="86">
+    <loopscrollview id="outdoor_boss_select" width="944" height="90" a="00" x="-1" y="-213" vertical="0" cellwidth="254" cellheight="86">
       <datalist id="outdoor_boss_level_data_list">
       </datalist>
     </loopscrollview>
-    <panel id="野外_boss_right_panel" width="719" height="430" x="160" y="-117" a="11">
+    <panel id="野外_boss_right_panel" width="719" height="430" x="-14" y="-18" a="00">
       <panel id="namePanel" width="216" height="44" x="244" y="-10" z="-300" zindex="203" a="11">
         <img atlas="Atlas/FG_ChallgeBoss.spriteatlas" src="bg_name" width="216" height="44" x="0" y="0" id="img_47" scale9l="58" scale9b="0" scale9r="54" scale9t="0">
           <text id="outdoor_boss_name" ta="11" text="" x="0" y="0" fontsize="18" color="#FFFFFF" outlinesize="0" outlinecolor="0" outline="1" horwrap="1">
@@ -62,7 +62,7 @@
         </text>
       </img>
     </panel>
-    <panel id="panel2" a="11" width="719" height="430" x="155" y="-117" rotate="0,0,0" z="-500" zindex="203">
+    <panel id="panel2" a="00" width="719" height="430" x="-21" y="-22" rotate="0,0,0" z="-500" zindex="203">
       <img id="isKill_Img" a="00" width="129" height="77" raycast="0" src="img_kill" atlas="Atlas/Common.spriteatlas" x="-157" y="85" z="0" active="0">
       </img>
     </panel>

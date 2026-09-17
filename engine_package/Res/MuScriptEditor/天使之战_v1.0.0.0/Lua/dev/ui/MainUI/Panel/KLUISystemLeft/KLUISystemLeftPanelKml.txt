@@ -69,7 +69,7 @@
             <circlebar id="Img_cdTime_1" atlas="Atlas/Common.spriteatlas" src="" loadingbar="Knob_1" frontcolor="#00000080" direction="1" toend="1" width="60" height="60" endper="0">
             </circlebar>
           </button>
-          <button id="btn_shift_2" a="20" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="0">
+          <button id="btn_shift_2" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg" width="64" height="64" onclick="" text="" raycast="1" mimg="" pimg="" dimg="" active="0">
             <img id="img_shift_icon_2" atlas="Atlas/KLShapeShiftCard.spriteatlas" src="main_shape_shift_btn_bg">
             </img>
             <circlebar id="Img_cdTime_2" atlas="Atlas/Common.spriteatlas" src="" loadingbar="Knob_1" frontcolor="#00000080" direction="1" toend="1" width="60" height="60" endper="0">

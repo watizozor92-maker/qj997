@@ -10,6 +10,13 @@
 ---@field layout2 UIKmlLuaControlHandler
 ---@field img_158 UIKmlLuaControlHandler
 ---@field btn_filter_level_txt UIKmlLuaControlHandler
+---@field panel_169 UIKmlLuaControlHandler
+---@field dropdown_list_career UIKmlLuaControlHandler
+---@field layout_171 UIKmlLuaControlHandler
+---@field btn_filter_career UIKmlLuaControlHandler
+---@field layout4 UIKmlLuaControlHandler
+---@field btn_filter_career_txt UIKmlLuaControlHandler
+---@field img_177 UIKmlLuaControlHandler
 ---@field panel_144 UIKmlLuaControlHandler
 ---@field dropdown_list_quality UIKmlLuaControlHandler
 ---@field layout_146 UIKmlLuaControlHandler
@@ -17,13 +24,6 @@
 ---@field layout3 UIKmlLuaControlHandler
 ---@field img_153 UIKmlLuaControlHandler
 ---@field btn_filter_quality_txt UIKmlLuaControlHandler
----@field panel_169 UIKmlLuaControlHandler
----@field dropdown_list_career UIKmlLuaControlHandler
----@field layout_171 UIKmlLuaControlHandler
----@field btn_filter_career UIKmlLuaControlHandler
----@field layout4 UIKmlLuaControlHandler
----@field img_177 UIKmlLuaControlHandler
----@field btn_filter_career_txt UIKmlLuaControlHandler
 ---@field panel_159 UIKmlLuaControlHandler
 ---@field dropdown_list_order UIKmlLuaControlHandler
 ---@field layout_161 UIKmlLuaControlHandler

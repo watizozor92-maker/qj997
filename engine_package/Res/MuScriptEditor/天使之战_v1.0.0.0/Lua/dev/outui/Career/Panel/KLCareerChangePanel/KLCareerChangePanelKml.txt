@@ -1,64 +1,8 @@
-<uipanel id="KLCareerChangePanel" name="转职成功界面" a="00" width="800" height="648" zindex="400" y="-60" z="-300">
-  <img width="2000" height="1200" color="#00000000" raycast="1" id="img_55" x="0" y="0">
-  </img>
-  <img width="930" height="466" src="Texture/FG_bgCareerChange.png" atlas="" y="50" id="img_56" x="0">
-    <panel width="546" height="60" x="0" y="155" id="panel_57">
-      <img width="377" height="48" src="bg_di_jinsheng" atlas="Atlas/FG_CareerChangePanel.spriteatlas" id="img_58" x="0" y="0">
-      </img>
-      <text id="TextOriginalProfession" width="284" height="60" fontsize="20" color="#FFFFFF" outlinecolor="#000000" outlinesize="1" text="原职业" x="-74" ta="21" a="11" outline="1" horwrap="1">
-      </text>
-      <img width="34" height="40" a="01" src="successful_transfer_jiantou" atlas="Atlas/UIChangeProfessionPanel.spriteatlas" y="-12" id="img_60" active="0">
-      </img>
-      <text id="TextPresentProfession" width="340" height="60" fontsize="20" color="#e6e600" outlinecolor="#000000" outlinesize="1" text="现职业" x="118" ta="01" a="21" outline="1" horwrap="1">
-      </text>
-    </panel>
-    <panel width="734" height="280" y="1" vertical="1" x="130" id="panel_62">
-      <panel id="AttUp" width="606" height="62" x="0" y="-20" a="11">
-        <img src="star_1" atlas="Atlas/FG_Common.spriteatlas" width="25" height="27" a="11" y="-2" id="img_64">
-        </img>
-        <text text="属性提升" fontsize="18" color="#FFFFFFFF" outlinecolor="#000000" outlinesize="1" x="30" a="11" y="-3" id="text_65" outline="1" horwrap="1" ta="01">
-        </text>
-        <text id="TextAttAward" width="366" height="62" fontsize="18" color="#00ff00" text="属性点+10\n属性每级5点" ta="00" a="11" x="120" y="-3" outline="1" outlinecolor="#000000" outlinesize="1" horwrap="1">
-        </text>
-      </panel>
-      <panel id="SkillUnlock" width="606" height="100" x="0" y="-68" a="11">
-        <img src="star_1" atlas="Atlas/FG_Common.spriteatlas" width="25" height="27" a="10" y="-2" id="img_68">
-        </img>
-        <text text="解锁技能" fontsize="18" color="#FFFFFFFF" outlinecolor="#000000" outlinesize="1" x="30" a="10" y="0" id="text_69" outline="1" horwrap="1" ta="01">
-        </text>
-        <osascrollview id="SkillRollRect" width="486" height="119" x="48" defaultitemsize="108" y="-13">
-          <datalist id="datalist_71">
-            <panel id="SkillInfoItem" width="108" height="109">
-              <img id="Bg" width="108" height="104" a="01" src="jineng" atlas="Atlas/FG_CareerChangePanel.spriteatlas">
-                <img id="ImageSkillIcon" width="56" height="56" src="13150100" atlas="Atlas/Skill_icon.spriteatlas">
-                </img>
-              </img>
-              <text id="TextSkillName" a="02" text="技能名称" fontsize="16" height="20" width="100" ta="11" x="0" y="0" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" outline="1" horwrap="1">
-              </text>
-            </panel>
-          </datalist>
-        </osascrollview>
-      </panel>
-      <panel id="EquipUnlock" width="606" height="100" x="0" y="-190" a="11">
-        <img src="star_1" atlas="Atlas/FG_Common.spriteatlas" width="25" height="27" a="10" y="-2" id="img_77">
-        </img>
-        <text text="解锁穿戴" fontsize="18" color="#FFFFFFFF" outlinecolor="#000000" outlinesize="1" x="30" a="10" y="0" id="text_78" outline="1" horwrap="1" ta="01">
-        </text>
-        <osascrollview id="EquipRollRect" width="486" height="100" x="60" defaultitemsize="62">
-          <datalist id="datalist_80">
-            <panel width="58" height="58" id="panel_81">
-              <item id="item" width="58" height="58" mfixsize="58,58" bgimg="bg_item_normal" atlas="Atlas/FG_Common.spriteatlas">
-              </item>
-              <button id="btn_item_tip" width="58" height="58" color="#FFFFFF00" raycast="1">
-              </button>
-            </panel>
-          </datalist>
-        </osascrollview>
-      </panel>
-    </panel>
-    <button id="BtnOk" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" fontsize="18" textcolor="#FFFFFF" text="确定" a="02" x="0" y="30" width="113" height="41" raycast="1" outlinecolor="#000000" outlinesize="1" mimg="" pimg="btn_common_1_select" dimg="">
+<uipanel id="KLCareerChangePanelPanel" name="转职界面" a="00" width="800" height="700" zindex="400">
+  <prefab path="UI/UIChangeProfessionPanel.prefab" width="800" height="700" id="prefab_95">
+    <button id="BtnOk" bind="btnOk">
     </button>
-    <img id="img1" a="00" width="373" height="114" raycast="1" src="img_zhuanzhichengg" atlas="Atlas/FG_CareerChangePanel.spriteatlas" y="246">
-    </img>
-  </img>
+    <panel bind="SkillContent" id="SkillContent">
+    </panel>
+  </prefab>
 </uipanel>

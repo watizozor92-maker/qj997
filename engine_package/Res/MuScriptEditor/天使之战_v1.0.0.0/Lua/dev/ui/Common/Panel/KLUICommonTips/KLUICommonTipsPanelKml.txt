@@ -3,16 +3,16 @@
     <img id="bgImg" src="Texture/FG_dankuangdi.png" width="345" height="272" raycast="1" atlas="" scale9l="70" scale9b="53" scale9r="68" scale9t="59" x="1" y="1">
       <img id="img_title" atlas="Atlas/Common.spriteatlas" src="img_tip_title" y="98" active="0" x="0" width="81" height="56">
       </img>
-      <text id="txt_title" y="-25" ta="11" height="24" fontsize="20" active="1" horwrap="1" outlinesize="0" outlinecolor="#000000FF" outline="0" a="01" width="125" color="#FFFFFFFF" space="0" text="解  封" fontstyle="0" underline="0" x="4">
+      <text id="txt_title" y="-25" ta="11" height="24" fontsize="18" active="1" horwrap="1" outlinesize="0" outlinecolor="#000000FF" outline="0" a="01" width="125" color="#FFFFFFFF" space="0" text="解  封" fontstyle="2" underline="0" x="4">
       </text>
     </img>
     <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="50" height="50" x="-33" y="-5" raycast="1" h5x="-180" h5y="106" a="21">
     </img>
-    <text id="tipsContent" text="" y="10" fontsize="18" height="134" width="315" x="0" ta="11" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" horwrap="1" active="0" a="00" rotate="0,0,0" outline="0">
+    <text id="tipsContent" text="" y="10" fontsize="18" height="134" width="315" x="0" ta="11" color="#FFFFFF" outlinesize="1" outlinecolor="#000000" horwrap="1" active="0" a="00" rotate="0,0,0" outline="0" fontstyle="2">
     </text>
-    <button id="btn_sure" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" y="-76" zindex="1003" textcolor="#FFFFFF" fontsize="18" text="确定" outlinesize="1" outlinecolor="#000000FF" x="68" raycast="1" active="1" width="103" height="38" mimg="" pimg="" dimg="" a="00">
+    <button id="btn_sure" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" y="-76" zindex="1003" textcolor="#FFFFFF" fontsize="15" text="OK" outlinesize="1" outlinecolor="#000000FF" x="68" raycast="1" active="1" width="103" height="38" mimg="" pimg="" dimg="" a="00" fontstyle="2">
     </button>
-    <button id="btn_cancel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" y="-76" zindex="1003" textcolor="#FFFFFFFF" fontsize="18" text="取消" outlinesize="1" outlinecolor="#000000FF" x="-65" raycast="1" active="1" width="103" height="38" mimg="" pimg="" dimg="" a="00">
+    <button id="btn_cancel" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" y="-76" zindex="1003" textcolor="#FFFFFFFF" fontsize="15" text="Cancel" outlinesize="1" outlinecolor="#000000FF" x="-65" raycast="1" active="1" width="103" height="38" mimg="" pimg="" dimg="" a="00" fontstyle="2">
     </button>
     <slider id="slider" atlas="Atlas/Common.spriteatlas" fimg="" himg="bg_slider2_v" width="300" height="100" active="1">
     </slider>

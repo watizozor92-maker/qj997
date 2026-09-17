@@ -31,7 +31,8 @@
     <layout id="rewardItem_finish_layout" width="200" height="70" y="-24" x="-2" vertical="0" cella="00">
       <datalist id="rewardItem_finish_List">
         <item id="control_finish_item" scale9l="4" scale9r="4" scale9t="4" scale9b="4" atlas="Atlas/UIActivityDetailPanel.spriteatlas" bgimg="ty_bg_chatBubbleFrame" width="70" height="70" itemid="" bgscale="70,70" mpos="0,0,-1000" mfixsize="70,70" tips="1" textpos="0,0,-1200">
-         <text id="countFinishTxt" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" width="67" height="24" x="-2" y="-25" z="0" a="00" rotate="0,0,0" ta="21" />
+          <text id="countFinishTxt" text="" fontsize="18" outlinesize="1" outlinecolor="#000000" width="67" height="24" x="-2" y="-25" z="0" a="00" rotate="0,0,0" ta="21">
+          </text>
         </item>
       </datalist>
     </layout>

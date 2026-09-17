@@ -6,18 +6,18 @@
     </img>
     <img atlas="Atlas/Common.spriteatlas" src="img_interface_main009" height="240" width="600" x="2" y="-13" scale9b="20" scale9l="20" scale9r="20" scale9t="20" id="img_99">
     </img>
-    <img atlas="Atlas/Common.spriteatlas" src="img_interface_main123" x="0" y="15" width="621" height="307" scale9b="79" scale9l="88" scale9r="88" scale9t="92" id="img_100">
+    <img atlas="" src="Texture/new.png" x="0" y="15" width="621" height="307" scale9b="79" scale9l="88" scale9r="88" scale9t="92" id="img_100">
       <img atlas="Atlas/UITeamMainInfoPanel.spriteatlas" src="img_teamHeadBg2" x="-230" y="34" width="80" height="80" id="img_101">
         <img id="sp_careerIcon" width="80" height="80">
         </img>
       </img>
-      <text id="lab_name" fontsize="20" outlinesize="1" outlinecolor="0" x="-112" y="58" width="145" height="30" ta="01">
+      <text id="lab_name" fontsize="20" outlinesize="1" outlinecolor="0" x="-112" y="58" width="145" height="30" ta="01" outline="1" horwrap="1">
       </text>
-      <text id="lab_level" fontsize="18" outlinesize="1" outlinecolor="0" x="-112" y="13" width="145" height="30" ta="01">
+      <text id="lab_level" fontsize="18" outlinesize="1" outlinecolor="0" x="-112" y="13" width="145" height="30" ta="01" outline="1" horwrap="1">
       </text>
-      <text id="lab_career" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="13" width="145" height="30" ta="01">
+      <text id="lab_career" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="13" width="145" height="30" ta="01" outline="1" horwrap="1">
       </text>
-      <text id="lab_union" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="58" width="145" height="30" ta="01">
+      <text id="lab_union" fontsize="18" outlinesize="1" outlinecolor="0" x="50" y="58" width="145" height="30" ta="01" outline="1" horwrap="1">
       </text>
       <gridview id="btGridView" y="-76" raycast="0" cellwidth="230" cellheight="50" spacex="50" spacey="10" cella="12" width="542" height="300" constraint="1" constraintcount="2" contentsizefitter="3">
         <button id="lockButton" atlas="Atlas/Common.spriteatlas" src="btn_common7" raycast="1" active="0">

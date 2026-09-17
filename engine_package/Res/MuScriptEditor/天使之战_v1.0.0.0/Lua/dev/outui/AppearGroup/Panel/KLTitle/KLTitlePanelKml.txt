@@ -10,13 +10,13 @@
         </img>
       </img>
     </panel>
-    <text id="text1" a="01" text="称号" fontsize="20" height="30" width="200" ta="11" outline="1" horwrap="1" y="-25" active="0">
+    <text id="text1" a="01" text="Title" fontsize="20" height="30" width="200" ta="11" outline="1" horwrap="1" y="-25" active="0" color="#F59924FF">
     </text>
     <img id="BtnClose" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" h5x="-355" h5y="0" raycast="1" x="-8" y="-19" width="34" height="35" active="0">
     </img>
     <img id="BgList" a="01" atlas="Atlas/AppearGroup.spriteatlas" src="bg_title_list" width="375" height="341" raycast="0" scale9l="73" scale9b="87" scale9r="92" scale9t="127" x="0" y="-65" color="#FFFFFFFF">
-      <img id="BgTitle1" a="01" atlas="Atlas/AppearGroup.spriteatlas" src="bg_title" width="357" height="53" raycast="0" x="0" y="0">
-        <text id="TxtTitle1" a="10" text="称号 (6/6)" fontsize="20" height="24" width="150" ta="01" horwrap="1" x="59" y="0" outlinesize="0" outlinecolor="#000000" outline="0" color="#FFFFFFFF" fontstyle="0" underline="0">
+      <img id="BgTitle1" a="01" atlas="Atlas/FG_Common.spriteatlas" src="bg_text" width="357" height="53" raycast="0" x="0" y="0">
+        <text id="TxtTitle1" a="10" text="Title 6/6" fontsize="20" height="24" width="150" ta="01" horwrap="1" x="59" y="0" outlinesize="0" outlinecolor="#000000" outline="0" color="#FFFFFFFF" fontstyle="0" underline="0">
         </text>
       </img>
       <loopscrollview id="loopscrollview" vertical="1" width="345" height="274" x="0" y="-15" cellwidth="345" cellheight="81">
@@ -24,10 +24,10 @@
         </datalist>
       </loopscrollview>
     </img>
-    <img id="BgTitle2" a="00" atlas="Atlas/FG_Common.spriteatlas" src="bg_title" width="123" height="37" raycast="0" x="-126" y="-60" color="#000000CC">
-      <text id="TxtTitle2" a="10" text="属性加成" fontsize="18" height="22" width="86" ta="01" horwrap="1" x="33" y="2" outlinesize="0" outlinecolor="#000000" outline="0" color="#FFFFFFFF" fontstyle="0" underline="0">
+    <img id="BgTitle2" a="00" atlas="Atlas/FG_Common.spriteatlas" src="bg_text" width="123" height="37" raycast="0" x="-126" y="-60" color="#000000CC">
+      <text id="TxtTitle2" a="10" text="Option" fontsize="18" height="22" width="86" ta="01" horwrap="1" x="33" y="2" outlinesize="0" outlinecolor="#000000" outline="0" color="#FFFFFFFF" fontstyle="0" underline="0">
       </text>
-      <img id="img2" a="00" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="-44" y="1">
+      <img id="img2" a="00" width="25" height="27" raycast="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas" x="-44" y="1" active="0">
       </img>
     </img>
     <loopscrollview id="layout10" vertical="1" height="193" width="371" a="01" raycast="0" x="1" y="-458" cella="11" cellwidth="371" cellheight="39" color="#00000099">
@@ -40,9 +40,9 @@
         </panel>
       </datalist>
     </loopscrollview>
-    <button id="BtnCancel" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1" onclick="" text="取消" raycast="1" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" y="38" x="-65" mimg="" pimg="" dimg="" width="113" height="41">
+    <button id="BtnCancel" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" onclick="" text="Cancel" raycast="1" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="15" y="38" x="-65" mimg="" pimg="" dimg="" width="113" height="41" fontstyle="2">
     </button>
-    <button id="BtnSure" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" onclick="" text="保存" raycast="1" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" x="78" y="38" mimg="" pimg="" dimg="" width="113" height="41">
+    <button id="BtnSure" a="02" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" onclick="" text="OK" raycast="1" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" fontsize="15" x="78" y="38" mimg="" pimg="" dimg="" width="113" height="41" fontstyle="2">
     </button>
   </img>
 </uipanel>

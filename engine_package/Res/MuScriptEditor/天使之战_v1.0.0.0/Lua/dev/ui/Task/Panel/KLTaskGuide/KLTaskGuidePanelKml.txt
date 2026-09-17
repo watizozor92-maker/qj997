@@ -5,7 +5,7 @@
     <gridview id="task_guide_layout" width="123" height="220" constraint="1" constraintcount="1" spacey="7" cellwidth="104" cellheight="38" a="11" x="7" y="-6" z="-100">
       <datalist id="task_guide_list" databind="@left_top_task_list">
         <button id="guide_button" atlas="Atlas/FG_Common.spriteatlas" src="btn_common" mimg="" onclick="222" pimg="" dimg="" width="104" height="38">
-          <text id="guide_text" text="" fontsize="18" ta="11" color="" outlinesize="1" outlinecolor="0" bestfit="1" maxbestfit="18" width="110" horwrap="1">
+          <text id="guide_text" text="" fontsize="18" ta="11" color="" outlinesize="1" outlinecolor="0" bestfit="1" maxbestfit="18" width="110" horwrap="1" outline="1">
           </text>
         </button>
       </datalist>

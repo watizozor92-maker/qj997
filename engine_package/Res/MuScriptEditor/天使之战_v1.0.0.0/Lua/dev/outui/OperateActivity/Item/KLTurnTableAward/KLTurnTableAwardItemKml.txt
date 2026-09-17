@@ -6,8 +6,8 @@
     </img>
     <img id="HaveGet" a="00" atlas="Atlas/QJ5_UITreasureHunt.spriteatlas" src="img_Get" width="69" height="61" raycast="1" x="0" y="-5" active="0" z="-1500">
     </img>
-   <prefab id="effect_tishi" path="Effect/UI/Eff_UI_anniutishi05.prefab" z="-500" y="-5" active="0">
-   </prefab>
+    <prefab id="effect_tishi" path="Effect/UI/Eff_UI_anniutishi05.prefab" z="-500" y="-5" active="0">
+    </prefab>
     <button id="GetButton" a="00" atlas="Atlas/Common.spriteatlas" src="btn_common8" width="112" height="38" onclick="" text="领取" raycast="1" x="-1" y="-74" active="0">
       <img id="RedDot" a="00" atlas="Atlas/Common.spriteatlas" src="bg_gemred" width="20" height="20" raycast="1" x="49" y="13" active="0">
       </img>

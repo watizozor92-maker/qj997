@@ -1,5 +1,5 @@
 <uipanel id="KLUIEquipTipsComparsionPanel" name="道具比较界面" zindex="1002" width="370" height="650" z="-3000" x="-365" onload="" y="0">
-  <button id="background_close" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" color="#00000000" raycast="1" onclick="" active="1" x="47" y="66" fontsize="16">
+  <button id="background_close" atlas="Atlas/Common.spriteatlas" src="img_email_choose" width="3000" height="3000" color="#00000000" raycast="1" onclick="" active="1" x="-2030" y="26" fontsize="16">
   </button>
   <img id="panel_bg" width="300" height="650" atlas="" src="Texture/bg_tips.png" raycast="1" scale9l="25" scale9r="25" scale9t="25" scale9b="25" active="1" x="0" y="0">
     <text id="tem_info" text="" active="1" width="325" linespace="1" fontsize="16" x="0" horwrap="1" mline="1" color="#FFFFFF" outlinecolor="#000000FF" outlinesize="1" outline="0" ta="11">
@@ -48,7 +48,7 @@
         </panel>
         <panel id="equip_need_level_titlt_node" width="250" height="20">
           <text id="equip_need_level_titlt" text="所需等级: " fontsize="16" height="18" width="250" horwrap="1" outline="0" color="#FFFFFF" outlinesize="1" outlinecolor="0" active="1" ta="11">
-            <text id="equip_need_level" text="" fontsize="16" x="85" y="0" a="10" color="" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" width="0" height="18">
+            <text id="equip_need_level" text="" fontsize="16" x="85" y="0" a="10" color="" outlinecolor="0" outlinesize="1" outline="0" horwrap="1" width="0" height="20">
             </text>
           </text>
         </panel>
@@ -155,12 +155,12 @@
       </layout>
     </panel>
     <panel id="equippaneltop_bottom" width="360" height="26" y="16" active="1" a="02">
-      <button id="put_or_out" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" onclick="KmlEquipTipsUI/@put_or_out_method" active="0" mimg="" pimg="" dimg="">
+      <button id="put_or_out" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian7" width="82" height="28" y="0" onclick="KmlEquipTipsUI/@put_or_out_method" active="0" mimg="" pimg="" dimg="">
         <text id="put_or_out_t" text="" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1">
         </text>
       </button>
       <layout id="bag_root" vertical="0" width="356" height="26" cella="01" y="0" active="1" space="24" x="0">
-        <button id="left_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        <button id="left_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_cebian6" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
           <scrollview id="left_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1">
             <layout id="属性_left_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
               <datalist id="left_data_list">
@@ -168,7 +168,7 @@
             </layout>
           </scrollview>
         </button>
-        <button id="right_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@take_off_equip" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        <button id="right_btn" atlas="Atlas/FG_Common.spriteatlas" text="" src="btn_cebian6" width="82" height="28" onclick="KmlEquipTipsUI/@take_off_equip" active="1" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
           <scrollview id="right_btn_content" width="135" height="162" y="31" a="02" vertical="1" active="1" h5y="45">
             <layout id="属性_right_layout" width="135" height="162" vertical="1" a="00" space="4" cella="02">
               <datalist id="right_data_list">
@@ -177,29 +177,29 @@
           </scrollview>
         </button>
       </layout>
-      <button id="mail_attachment" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@插入邮件附件" mimg="" pimg="" dimg="">
+      <button id="mail_attachment" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@插入邮件附件" mimg="" pimg="" dimg="">
         <text id="text_1451" text="插入附件" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" width="82" height="28" ta="11">
         </text>
       </button>
-      <button id="叠加_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@装备叠加放置" mimg="" pimg="" dimg="">
+      <button id="叠加_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@装备叠加放置" mimg="" pimg="" dimg="">
         <text id="text_1457" text="放置" fontsize="18" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="1" horwrap="1" ta="11" width="111" height="16">
         </text>
       </button>
       <layout id="equip_root" vertical="0" width="356" height="26" cella="01" y="0" active="1" space="24">
-        <button id="duanzaobtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" text="锻造" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        <button id="duanzaobtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" onclick="KmlEquipTipsUI/@打开锻造" active="1" text="锻造" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
         </button>
-        <button id="breakbtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" onclick="" raycast="1" active="1" text="突破" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
+        <button id="breakbtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" onclick="" raycast="1" active="1" text="突破" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" mimg="" pimg="" dimg="">
         </button>
-        <button id="tuoxiabtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" mimg="" onclick="KmlEquipTipsUI/@take_off_equip" active="1" text="脱下" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
+        <button id="tuoxiabtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" mimg="" onclick="KmlEquipTipsUI/@take_off_equip" active="1" text="脱下" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
         </button>
-        <button id="shengjibtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" mimg="" onclick="" raycast="1" active="1" text="升级" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
+        <button id="shengjibtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" mimg="" onclick="" raycast="1" active="1" text="升级" outlinesize="1" outlinecolor="0" textcolor="#FFFFFF" fontsize="16" pimg="" dimg="">
         </button>
       </layout>
-      <button id="镶嵌_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@镶嵌荧石" mimg="" pimg="" dimg="">
+      <button id="镶嵌_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@镶嵌荧石" mimg="" pimg="" dimg="">
         <text id="text_1453" text="镶嵌" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1" width="111" height="16" ta="11">
         </text>
       </button>
-      <button id="镶嵌卸下_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_tips" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@卸下镶嵌荧石" mimg="" pimg="" dimg="" fontsize="18">
+      <button id="镶嵌卸下_btn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="82" height="28" y="0" active="0" onclick="KmlEquipTipsUI/@卸下镶嵌荧石" mimg="" pimg="" dimg="" fontsize="18">
         <text id="text_1455" text="卸下" fontsize="16" active="1" color="#FFFFFF" outlinesize="1" outlinecolor="0" outline="0" horwrap="1" width="111" height="16" ta="11">
         </text>
       </button>

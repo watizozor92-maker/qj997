@@ -17,4 +17,7 @@ local kmlPath = 'dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanelKml'
 function KLTaskAcceptPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLTaskAcceptPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel']
+
 return KLTaskAcceptPanelView

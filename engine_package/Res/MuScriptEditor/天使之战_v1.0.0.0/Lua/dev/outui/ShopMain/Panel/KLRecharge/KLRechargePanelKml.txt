@@ -29,7 +29,7 @@
             <text id="txt_reward" a="00" text="600" fontsize="18" height="25" width="190" ta="11" horwrap="1" x="2" y="-1" color="#F5C75EFF" active="1" outline="1" outlinesize="1" outlinecolor="#000000FF">
             </text>
           </panel>
-          <button id="btn_buy" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" onclick="" text="购买" raycast="1" x="0" y="-82" mimg="" pimg="" dimg="" ta="11" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF">
+          <button id="btn_buy" a="00" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="103" height="36" onclick="" text="OK" raycast="1" x="0" y="-82" mimg="" pimg="" dimg="" ta="11" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#FFFFFFFF">
           </button>
           <text id="priceCount" a="00" text="￥1" fontsize="18" height="25" width="200" ta="11" outline="1" horwrap="1" x="0" y="-44" color="#F5C75EFF" active="0" outlinesize="1" outlinecolor="#000000FF">
           </text>

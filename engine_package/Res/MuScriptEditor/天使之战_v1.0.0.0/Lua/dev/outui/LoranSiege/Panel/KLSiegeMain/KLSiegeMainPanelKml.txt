@@ -1,7 +1,7 @@
 <uipanel id="KLSiegeMainPanel" name="攻城战活动界面" a="00" width="1039" height="560" zindex="200">
   <img src="Texture/FG_MapDI.png" width="1043" height="567" raycast="1" id="img_33" atlas="">
   </img>
-  <text id="Titletext" a="00" text="攻城战" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="258" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
+  <text id="Titletext" a="00" text="Castle Siege" fontsize="20" height="25" width="350" ta="11" outline="1" horwrap="1" y="258" color="#F59924FF" outlinesize="1" outlinecolor="#000000FF">
   </text>
   <img src="title_siege" atlas="Atlas/KLSiegePanel.spriteatlas" a="01" id="img_34" active="0">
   </img>
@@ -11,9 +11,9 @@
   </img>
   <img src="bg" atlas="Atlas/KLSiegePanel.spriteatlas" width="991" height="486" y="-18" scale9b="20" scale9t="20" scale9l="20" scale9r="20" id="img_37">
   </img>
-  <button id="btn_reward" src="icon_siege_reward" atlas="Atlas/KLSiegePanel.spriteatlas" a="12" raycast="1" x="40" y="36">
+  <button id="btn_reward" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" a="12" raycast="1" x="40" y="36" mimg="" pimg="" dimg="" text="Reward">
   </button>
-  <button id="btn_go" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="160" height="36" text="前往攻城" raycast="1" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#F2F2F2FF" x="-36" y="41" mimg="" pimg="" dimg="">
+  <button id="btn_go" a="22" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="160" height="36" text="Go To Siege" raycast="1" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#F2F2F2FF" x="-36" y="41" mimg="" pimg="" dimg="">
   </button>
   <text text="占领战盟：战盟最多七个字" outlinesize="1" outlinecolor="#000000FF" fontsize="18" a="11" x="26" y="-60" id="unionName" horwrap="1" width="250" height="23" outline="1" ta="01">
   </text>
@@ -44,11 +44,11 @@
   <img id="noPlayerBG3" a="00" width="140" height="294" raycast="1" src="silhouette3" atlas="Atlas/KLSiegePanel.spriteatlas" y="0" x="309">
   </img>
   <img src="bg_open_tip" atlas="Atlas/KLSiegePanel.spriteatlas" a="02" y="20" id="img_20">
-    <text text="攻城开启时间" y="3" ta="11" outlinesize="1" outlinecolor="#000000" id="TimeTitle" horwrap="1" fontsize="18" width="150" height="20" outline="1">
+    <text text="Siege Time" y="3" ta="11" outlinesize="1" outlinecolor="#000000" id="TimeTitle" horwrap="1" fontsize="18" width="150" height="20" outline="1">
     </text>
     <text text="2024/06/28 20:00" y="-15" ta="11" color="#FF2323" outlinesize="1" outlinecolor="#000000" id="TimeText" horwrap="1" width="300" height="20" fontsize="18" outline="1">
     </text>
-    <text text="开启中" y="-2" ta="11" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000" id="OpenText" horwrap="1" width="300" height="20" fontsize="18" outline="1">
+    <text text="In Progress" y="-2" ta="11" color="#1ADE1FFF" outlinesize="1" outlinecolor="#000000" id="OpenText" horwrap="1" width="300" height="20" fontsize="18" outline="1">
     </text>
   </img>
 </uipanel>

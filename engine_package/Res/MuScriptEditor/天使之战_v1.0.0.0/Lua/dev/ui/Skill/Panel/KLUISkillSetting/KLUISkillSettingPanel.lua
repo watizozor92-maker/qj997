@@ -439,7 +439,7 @@ function this:Close()
     self.curSettingType = nil
     SL:SetMetaValue(EMetaVarSetKey.SKILL_SETTING_SHOW_TYPE, self.curShowType)
     SL.UploadSkillSettingData()
-    SL:onLUAEvent(LUA_EVENT_REFRESH_ATTACK_SKILL)
+    SL:onLUAEvent(LUA_EVENT_REFRESH_ATTACK_SKILL)    
 end
 
 return this

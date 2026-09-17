@@ -1,22 +1,16 @@
-<uipanel id="KLSystemFunctionPanelKml" a="00" width="0" height="0" adapter="1" x="210" y="-118">
-  <panel id="closePanel" a="00" width="1334" height="750" z="-505" zindex="500">
-    <button id="btn_close" a="00" width="2000" height="1100" onclick="" text="" raycast="1" color="#FFFFFF00">
+<uipanel id="KLSystemFunctionPanelKml" a="00" width="0" height="0" adapter="1" x="0" y="0">
+  <panel id="closePanel" a="00" width="1334" height="750" z="-505" zindex="500" x="0" y="0">
+    <button id="btn_close" a="00" width="2000" height="1100" onclick="" text="" raycast="1" color="#FFFFFF00" x="0" y="0">
     </button>
   </panel>
   <panel id="BG_Templete" a="00" width="215" height="352" x="0" y="0" z="-510" zindex="505">
-    <img id="Frame" a="00" width="215" height="352" raycast="1" atlas="" src="Texture/FG_bg_tips_setting.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
-      <scrollview id="scrollview_func" a="00" width="215" height="330" vertical="1" y="-5" raycast="1" x="0" movementtype="2">
-        <layout id="layout6" width="400" height="230" a="01" vertical="1" contentsizefitter="1" raycast="1" cella="01" space="0">
-          <datalist id="datalist_func">
-            <panel id="item" width="210" height="55">
-              <button id="item_btn" a="00" width="200" height="50" onclick="" text="" raycast="1" x="0" y="1" src="" atlas="" mimg="" pimg="" dimg="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFF00">
-              </button>
-              <img id="item_line" a="02" width="174" height="4" raycast="0" src="line" atlas="Atlas/FG_Setting.spriteatlas">
-              </img>
-            </panel>
-          </datalist>
-        </layout>
-      </scrollview>
+    <img id="Frame" a="00" width="900" height="300" raycast="1" atlas="Atlas/FG_ShopMallPanel.spriteatlas" src="bg_tankuangzuo1" scale9l="102" scale9b="73" scale9r="96" scale9t="94" x="0" y="0" color="#FFFFFFFF">
+      <gridview id="scrollview_func" a="00" cellwidth="127" cellheight="45" raycast="1" cella="00" width="900" height="300" contentsizefitter="0" spacex="8" spacey="8">
+        <datalist id="datalist_func" a="11">
+          <button id="item_btn" width="127" height="45" onclick="" text="" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF">
+          </button>
+        </datalist>
+      </gridview>
     </img>
   </panel>
 </uipanel>

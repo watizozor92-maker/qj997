@@ -4,7 +4,7 @@
   <img id="BG" atlas="Atlas/UIMasterTalent.spriteatlas" src="bg_black_grid_N" width="353" height="455" scale9l="9" scale9r="9" scale9b="15" scale9t="15" x="0" y="0" z="0" a="00" rotate="0,0,0" raycast="1" color="#FFFFFFFF">
     <img id="SkillIcon" a="00" atlas="Atlas/Skill_icon.spriteatlas" src="chuantoujian" width="70" height="70" raycast="1" x="-128" y="175">
     </img>
-    <text id="SkillName" a="00" text="技能名字" fontsize="18" height="25" width="224" ta="01" horwrap="1" x="30" y="202" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#FF8A00FF">
+    <text id="SkillName" a="00" text="技能名字" fontsize="18" height="25" width="224" ta="01" horwrap="1" x="30" y="202" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="#FF8A00FF" outline="1">
     </text>
     <text id="SkillLvTitle" a="00" text="等级" fontsize="18" height="25" width="226" ta="01" horwrap="1" x="30" y="170" fonttype="" outlinesize="1" outlinecolor="#000000FF">
       <text id="SkillLv" a="00" text="10/10" fontsize="18" height="25" width="155" ta="11" horwrap="1" x="66" y="0" fonttype="" outlinesize="1" outlinecolor="#000000FF" color="">

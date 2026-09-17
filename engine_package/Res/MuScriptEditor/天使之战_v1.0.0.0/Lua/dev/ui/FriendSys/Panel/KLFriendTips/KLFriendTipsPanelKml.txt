@@ -2,7 +2,7 @@
   <prefab id="FriendAdd_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlFriendTipsUI.prefab">
     <button id="BtnClose" bind="BtnClose">
     </button>
-    <text id="TextContent" bind="TextContent">
+    <text id="TextContent" bind="TextContent" outline="1" horwrap="1">
     </text>
   </prefab>
 </uipanel>

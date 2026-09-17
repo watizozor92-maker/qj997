@@ -86,7 +86,7 @@ function KLPreviewPanel:Refresh()
     self.previewRewardInfo = SL:TaskInfo_GetPreviewRewardInfo()
     local isGamePlay = self.args and self.args.togType and self.args.togType == 2
     self.selectid = self.args and self.args.subType and self.args.subType or 1
-    GUI:Text_setText(self.view.text1, isGamePlay and "玩法" or "攻略")
+    GUI:Text_setText(self.view.text1, isGamePlay and "玩法" or "Guide")
     if isGamePlay then
         --GUI:SetTogDefaultThis(self.view.Tog_Preview)
         self:OnValueChange_Tog_Preview(nil, nil, { true })

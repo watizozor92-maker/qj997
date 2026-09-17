@@ -112,8 +112,8 @@ function this:RefreshItem(args)
         end
         GUI:SetZIndex(self.view.noItem, 0)
         GUI:setVisible(self.view.noItem, self.args.cfgId ~= 0 and fastItems[self.args.itemIndex] ~= self.args.cfgId)
-        GUI:setVisible(self.view.fastItemTip,
-            self.args.cfgId ~= 0 and fastItems[self.args.itemIndex] ~= self.args.cfgId and isShowNoItem)
+        -- GUI:setVisible(self.view.fastItemTip,
+        --     self.args.cfgId ~= 0 and fastItems[self.args.itemIndex] ~= self.args.cfgId and isShowNoItem)
         GUI:SetCirclebar_endper(self.view.control_circlebar, 0)
         if self.args.cfgId ~= 0 and fastItems[self.args.itemIndex] ~= self.args.cfgId and isShowNoItem then
             SL:onLUAEvent(LUA_EVENT_BUBBLETIPS_POSY, { posY = 40 })

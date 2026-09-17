@@ -4,7 +4,7 @@
   <img id="bg" width="3000" height="212" z="0" a="02" rotate="0,0,0" raycast="1" x="0" y="-20" color="#000000FF" src="" atlas="">
     <text id="ContentTxt" linespace="0.6" text="" fontsize="20" outlinesize="1" outlinecolor="#000000" width="720" height="141" x="-184" y="0" z="0" a="00" rotate="0,0,0" ta="11" outline="1" horwrap="1">
     </text>
-    <button id="cancelBtn" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="466" y="0" fontsize="18" text="关闭" textcolor="#FFFFFF" mimg="" pimg="" dimg="">
+    <button id="cancelBtn" outlinesize="1" outlinecolor="#000000" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="466" y="0" fontsize="18" text="关闭" textcolor="#FFFFFF" mimg="" pimg="" dimg="">
     </button>
   </img>
 </uipanel>

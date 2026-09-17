@@ -72,11 +72,11 @@
     </panel>
     <panel id="panel_btn" width="280" height="40" y="30" a="02">
       <button id="cancle_btn" width="112" height="40" a="10" onclick="KmlXWUnionCreateUI/@closeMainPanel" atlas="Atlas/Common.spriteatlas" src="button_interface_window7" active="0">
-        <text id="btn_text" text="取消" ta="11" height="20" color="#D9001CFF" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1">
+        <text id="btn_text" text="取消" ta="11" height="20" color="#D9001CFF" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" outline="1">
         </text>
       </button>
-      <button id="enter_btn" width="127" height="45" a="20" onclick="KmlXWUnionCreateUI/@CreateUnion" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian1" x="-76" y="4" mimg="" pimg="" dimg="">
-        <text id="btn_text" text="确认" ta="11" height="20" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" outline="0" color="#FFFFFFFF">
+      <button id="enter_btn" width="127" height="45" a="20" onclick="KmlXWUnionCreateUI/@CreateUnion" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" x="-76" y="4" mimg="" pimg="" dimg="">
+        <text id="btn_text" text="OK" ta="11" height="20" fontsize="18" outlinesize="1" outlinecolor="#000000FF" horwrap="1" outline="0" color="#FFFFFFFF">
         </text>
       </button>
     </panel>

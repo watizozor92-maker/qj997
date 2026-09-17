@@ -1,22 +1,20 @@
 <uipanel id="KLPrivilegeBossPosPanel" name="特权boss位置界面" x="-558" y="260" width="300" height="216" a="11" zindex="0" onload="KmlXWChallengeBossUI/@秘境副本任务初始化">
-    <img id="Boss" width="300" height="220" src="bg_mainTaskBg" atlas="Atlas/UITask.spriteatlas" >
-        <text id="ActivityName" text="特权BOSS" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="77" x="0" color="#e6e600" active="1" contentsizefitter="2">
-            <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
-            </img>
-            <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
-            </img>
-        </text>
-        <panel id="pos_root" width="300" height="150" active="1" y="-25">
-            <scrollview id="boss_pos" width="300" height="150" y="-4" vertical="1" active="1"> 
-                <layout id="boss_pos_layout" width="299" height="215" space="0" contentsizefitter="1" a="01" vertical="1">
-                    <datalist id="boss_pos_dl"  databind="@all_boss_pos_data">
-                        
-                    </datalist> 
-                </layout>
-            </scrollview>
-        </panel>
-        
-       <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="exitIcon" width="65" height="70" raycast="1" x="182" y="-74">
+  <img id="Boss" width="300" height="220" src="bg_mainTaskBg" atlas="Atlas/UITask.spriteatlas">
+    <text id="ActivityName" text="特权BOSS" fontsize="20" height="24" width="166" ta="11" horwrap="1" y="77" x="0" color="#e6e600" active="1" contentsizefitter="2" outline="1">
+      <img id="line_1" a="10" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-100">
+      </img>
+      <img id="line_2" a="20" atlas="Atlas/TS_Common.spriteatlas" src="ty_ttx_2" width="95" height="7" raycast="1" x="99" y="0">
+      </img>
+    </text>
+    <panel id="pos_root" width="300" height="150" active="1" y="-25">
+      <scrollview id="boss_pos" width="300" height="150" y="-4" vertical="1" active="1">
+        <layout id="boss_pos_layout" width="299" height="215" space="0" contentsizefitter="1" a="01" vertical="1">
+          <datalist id="boss_pos_dl" databind="@all_boss_pos_data">
+          </datalist>
+        </layout>
+      </scrollview>
+    </panel>
+    <img id="exitBtn" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="exitIcon" width="65" height="70" raycast="1" x="182" y="-74">
     </img>
-    </img>
+  </img>
 </uipanel>

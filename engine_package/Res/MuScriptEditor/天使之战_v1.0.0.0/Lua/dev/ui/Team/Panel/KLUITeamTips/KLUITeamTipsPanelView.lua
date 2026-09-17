@@ -1,41 +1,44 @@
 ---@class KLUITeamTipsPanelView:UIKmlLuaViewBase
----@field closeButton UIKmlLuaControl
----@field panel_97 UIKmlLuaControl
----@field img_98 UIKmlLuaControl
----@field img_99 UIKmlLuaControl
----@field img_100 UIKmlLuaControl
----@field img_101 UIKmlLuaControl
----@field sp_careerIcon UIKmlLuaControl
----@field lab_name UIKmlLuaControl
----@field lab_level UIKmlLuaControl
----@field lab_career UIKmlLuaControl
----@field lab_union UIKmlLuaControl
----@field btGridView UIKmlLuaControl
----@field lockButton UIKmlLuaControl
----@field text_109 UIKmlLuaControl
----@field chatButton UIKmlLuaControl
----@field text_111 UIKmlLuaControl
----@field joinButton UIKmlLuaControl
----@field text_113 UIKmlLuaControl
----@field invitationButton UIKmlLuaControl
----@field text_115 UIKmlLuaControl
----@field reqPointButton UIKmlLuaControl
----@field text_117 UIKmlLuaControl
----@field leaveButton UIKmlLuaControl
----@field text_119 UIKmlLuaControl
----@field kickButton UIKmlLuaControl
----@field text_121 UIKmlLuaControl
----@field upCaptainButton UIKmlLuaControl
----@field text_123 UIKmlLuaControl
----@field selectPlayerButton UIKmlLuaControl
----@field text_125 UIKmlLuaControl
----@field text_126 UIKmlLuaControl
+---@field closeButton UIKmlLuaControlHandler
+---@field panel_97 UIKmlLuaControlHandler
+---@field img_98 UIKmlLuaControlHandler
+---@field img_99 UIKmlLuaControlHandler
+---@field img_100 UIKmlLuaControlHandler
+---@field img_101 UIKmlLuaControlHandler
+---@field sp_careerIcon UIKmlLuaControlHandler
+---@field lab_name UIKmlLuaControlHandler
+---@field lab_level UIKmlLuaControlHandler
+---@field lab_career UIKmlLuaControlHandler
+---@field lab_union UIKmlLuaControlHandler
+---@field btGridView UIKmlLuaControlHandler
+---@field lockButton UIKmlLuaControlHandler
+---@field text_109 UIKmlLuaControlHandler
+---@field chatButton UIKmlLuaControlHandler
+---@field text_111 UIKmlLuaControlHandler
+---@field joinButton UIKmlLuaControlHandler
+---@field text_113 UIKmlLuaControlHandler
+---@field invitationButton UIKmlLuaControlHandler
+---@field text_115 UIKmlLuaControlHandler
+---@field reqPointButton UIKmlLuaControlHandler
+---@field text_117 UIKmlLuaControlHandler
+---@field leaveButton UIKmlLuaControlHandler
+---@field text_119 UIKmlLuaControlHandler
+---@field kickButton UIKmlLuaControlHandler
+---@field text_121 UIKmlLuaControlHandler
+---@field upCaptainButton UIKmlLuaControlHandler
+---@field text_123 UIKmlLuaControlHandler
+---@field selectPlayerButton UIKmlLuaControlHandler
+---@field text_125 UIKmlLuaControlHandler
+---@field text_126 UIKmlLuaControlHandler
 local KLUITeamTipsPanelView = {}
 setmetatable(KLUITeamTipsPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Team/Panel/KLUITeamTips/KLUITeamTipsPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLUITeamTipsPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUITeamTipsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Team/Panel/KLUITeamTips/KLUITeamTipsPanel']
+
 return KLUITeamTipsPanelView

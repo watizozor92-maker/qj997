@@ -1,6 +1,7 @@
 ---@class KLShortcutUseItemPanelView:UIKmlLuaViewBase
 ---@field fast_grid UIKmlLuaControlHandler
 ---@field fast_data_list UIKmlLuaControlHandler
+---@field img1 UIKmlLuaControlHandler
 local KLShortcutUseItemPanelView = {}
 setmetatable(KLShortcutUseItemPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/MainUI/Panel/KLShortcutUseItem/KLShortcutUseItemPanelKml'

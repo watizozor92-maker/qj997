@@ -51,6 +51,6 @@
   </text>
   <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@普通领取 " src="btn_guanbi" width="34" height="34" z="0" a="00" rotate="0,0,0" raycast="1" x="240" y="347">
   </img>
-  <button id="okBtn" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@领取奖励 " fontsize="18" src="btn_common_1_select" outlinesize="1" outlinecolor="#000000FF" text="领取奖励" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="-70" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
+  <button id="okBtn" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlBloodActivityUI/@领取奖励 " fontsize="18" src="btn_cebian6" outlinesize="1" outlinecolor="#000000FF" text="领取奖励" width="103" height="36" z="0" a="00" rotate="0,0,0" raycast="1" x="0" y="-70" textcolor="#FFFFFFFF" mimg="" pimg="" dimg="">
   </button>
 </uipanel>

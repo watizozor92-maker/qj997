@@ -1,6 +1,6 @@
 <uipanel id="KLSynthesisMenuPanelKml" a="02" width="536" height="540" y="106" adapter="1" mask="1" maskalpha="0" zindex="300" z="-1000">
-  <img id="bg" a="00" width="322" height="548" raycast="1" atlas="" src="Texture/FG_SynthesisBG.png" x="0" y="0" active="1">
-    <text id="Title" a="01" text="选择合成方式" fontsize="20" height="24" width="150" ta="11" outline="1" horwrap="1" y="-25" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
+  <img id="bg" a="00" width="322" height="548" raycast="1" atlas="" src="Texture/FG_dankuangdi.png" x="0" y="0" active="1">
+    <text id="Title" a="01" text="Synthesis" fontsize="20" height="24" width="150" ta="11" outline="1" horwrap="1" y="-25" color="#F59924FF" fontstyle="0" underline="0" x="0" outlinesize="1" outlinecolor="#000000FF">
     </text>
     <button id="Btn_Close" a="21" width="34" height="34" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-10" y="-15">
     </button>
@@ -10,7 +10,7 @@
           <panel id="panel7" width="452" height="41">
             <text id="Text_Desc" a="01" text="翅膀，果实，恶魔广场入场券彩云兽，+10+15装备，透明披风炎狼兽之角，血的卷纸，神鹰之羽" fontsize="18" height="64" width="323" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" x="0" y="-4" fontstyle="0" underline="0" outlinesize="1" outlinecolor="#000000FF" active="0">
             </text>
-            <button id="Btn_Enter" a="01" width="157" height="41" onclick="" text="" raycast="1" src="btn_common_1_big_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" y="0" textcolor="#FFFFFFFF" ta="11" x="0" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+            <button id="Btn_Enter" a="01" width="157" height="41" onclick="" text="" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" y="0" textcolor="#FFFFFFFF" ta="11" x="0" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
             </button>
           </panel>
         </datalist>

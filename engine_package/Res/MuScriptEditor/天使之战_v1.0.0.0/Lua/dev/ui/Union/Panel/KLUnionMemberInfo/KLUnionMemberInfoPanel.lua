@@ -110,7 +110,8 @@ function this:PlayerDetailBtn()
     GUI:UIPanel_Close("dev/ui/Union/Panel/KLUnionMemberList/KLUnionMemberListPanel")
     GUI:UIPanel_Close("dev/ui/Union/Panel/KLUnionToggleList/KLUnionToggleListPanel")
     GUI:UIPanel_Close("dev/ui/Union/Panel/KLUnionInfo/KLUnionInfoPanel")
-    GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", _, _, {
+    -- GUI:UIPanel_Open("dev/ui/Equip/Panel/KLEquipUI/KLEquipUIPanel", _, _, {   
+    GUI:UIPanel_Open("dev/outui/Equip/Panel/KLEquipUI3/KLEquipUI3Panel", _, _, {
         isOther = true,
         rid = self.memberInfo.memberId,
         x = 0

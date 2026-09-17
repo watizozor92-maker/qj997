@@ -78,9 +78,9 @@
     </button>
     <text id="txt_titleMe" a="01" text="己方" fontsize="20" height="28" width="200" ta="11" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FF8A00FF" x="0" y="-37">
     </text>
-    <button id="btn_lock" a="00" width="91" height="33" onclick="" text="锁定" raycast="1" x="-69" y="-145" src="btn_common_2" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
+    <button id="btn_lock" a="00" width="91" height="33" onclick="" text="锁定" raycast="1" x="-69" y="-145" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" outlinesize="1" outlinecolor="#000000FF" fontsize="18">
     </button>
-    <button id="btn_confirm" a="00" width="91" height="33" onclick="" text="交易" raycast="1" x="64" y="-145" src="btn_common_2_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF">
+    <button id="btn_confirm" a="00" width="91" height="33" onclick="" text="交易" raycast="1" x="64" y="-145" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" fontsize="18" ta="11" outlinesize="1" outlinecolor="#000000FF">
     </button>
     <button id="btn_meGold1" width="158" height="34" onclick="" text="" raycast="1" siblingindex="0" src="img_bag_10" atlas="Atlas/UIBagPanel_Out.spriteatlas" mimg="" pimg="" dimg="" scale9l="78" scale9b="0" scale9r="28" scale9t="0" x="88" y="-270" color="" a="11">
       <img id="icon_meGold1" a="10" width="25" height="25" raycast="1" siblingindex="1" src="img_bag_01" atlas="Atlas/UIBagPanel.spriteatlas" x="8" y="2">

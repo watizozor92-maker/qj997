@@ -1,6 +1,6 @@
 <uipanel id="KLFriendApplySubItem" width="583" height="418" y="-6" a="01" zindex="-1" x="21">
   <prefab id="FriendApply_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlFriendApplySubUI.prefab">
-    <scrollview id="add_friend_scrollview" bind="add_friend_scrollview" width="583" height="420"  x="-21" y="-43">
+    <scrollview id="add_friend_scrollview" bind="add_friend_scrollview" width="583" height="420" x="-21" y="-43">
       <panel id="ListContent" bind="ListContent" width="583">
       </panel>
     </scrollview>

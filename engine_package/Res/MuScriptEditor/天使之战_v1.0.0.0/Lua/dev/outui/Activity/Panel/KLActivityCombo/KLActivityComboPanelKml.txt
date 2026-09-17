@@ -4,19 +4,19 @@
   <img id="img1" a="00" width="643" height="521" raycast="1" atlas="" src="Texture/ty_bg_ditu.jpg" x="1" y="-5">
   </img>
   <img id="bg" a="00" atlas="" src="Texture/FG_dankuangdi2.png" width="654" height="554" raycast="1" x="0" y="0" scale9l="204" scale9b="96" scale9r="166" scale9t="181">
-    <img id="img3" a="00" width="617" height="455" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="12" scale9b="19" scale9r="26" scale9t="22" x="5" y="-32">
+    <img id="img3" a="00" width="617" height="455" raycast="1" src="bg_black_grid" atlas="Atlas/FG_Common.spriteatlas" scale9l="12" scale9b="19" scale9r="26" scale9t="22" x="5" y="-32" active="0">
     </img>
-    <text id="title" a="01" text="卡利玛神庙" fontsize="16" height="24" width="75" ta="11" outline="1" horwrap="1" color="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF" y="-37" contentsizefitter="2" x="0">
+    <text id="title" a="01" text="Kalima" fontsize="20" height="24" width="75" ta="11" outline="1" horwrap="1" color="#F59924FF" outlinesize="1" outlinecolor="#000000FF" y="-37" contentsizefitter="2" x="0">
     </text>
     <img id="closeBtn" a="21" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" width="34" height="34" raycast="1" x="-14" y="-22" h5y="303" h5x="-294">
     </img>
-    <img id="comboTitleicon" a="11" atlas="" src="Texture/img_lizhan.png" width="420" height="97" raycast="1" x="199" y="-107">
+    <img id="comboTitleicon" a="11" atlas="" src="Texture/img_lizhan.png" width="620" height="458" raycast="1" x="17" y="-76">
     </img>
     <scrollview id="levelContent" a="11" width="148" height="395" vertical="1" y="-108" raycast="1" x="32">
       <layout id="levelLayout" width="165" height="48" a="01" vertical="1" raycast="1" cella="01" expand_width="0" expand_height="0" space="6">
         <datalist id="levelList">
-          <toggle id="KLLevel" width="148" height="41" binddragid="" default="0" togglegroup_id="togglegroup" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" pimg="btn_cebian1" raycast="1">
-            <img id="noClick" active="0" width="160" height="48" atlas="Atlas/TS_Common.spriteatlas" src="lockBg" raycast="1">
+          <toggle id="KLLevel" width="148" height="41" binddragid="" default="0" togglegroup_id="togglegroup" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" pimg="btn_cebian6" raycast="1">
+            <img id="noClick" active="0" width="160" height="48" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" raycast="1">
             </img>
             <text id="levelName" a="00" text="" fontsize="16" height="35" width="160" ta="11" horwrap="1" x="1" y="2" color="#ABABABFF" outlinesize="1" outlinecolor="#000000FF" outline="1">
             </text>
@@ -25,9 +25,9 @@
       </layout>
     </scrollview>
     <img id="img45" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-230">
-      <text id="text46" a="00" text="推荐等级：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <text id="text46" a="00" text="  Level ：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1" active="1" raycast="1">
       </text>
-      <text id="level" a="00" text="" fontsize="16" height="25" width="272" ta="01" horwrap="1" x="229" y="0" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+      <text id="level" a="00" text="" fontsize="16" height="25" width="272" ta="01" horwrap="1" x="229" y="0" color="#FFFF00FF" outlinesize="1" outlinecolor="#000000FF" outline="1" active="1" raycast="1">
       </text>
     </img>
     <img id="img54" a="00" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="-121" y="147" active="0">
@@ -42,11 +42,11 @@
       <text id="openTime" a="00" text="永久开启" fontsize="16" height="40" width="352" ta="01" horwrap="1" x="269" y="-1" color="#29E629" outlinesize="1" outlinecolor="#000000FF" outline="1">
       </text>
     </img>
-    <img id="img63" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="1" x="200" y="-262">
-      <text id="text64" a="00" text="副本奖励：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1">
+    <img id="img63" a="11" atlas="Atlas/Common.spriteatlas" src="ty_bg_pic_greyDot" width="12" height="13" raycast="0" x="200" y="-262" active="0" enable="0">
+      <text id="text64" a="00" text="副本奖励：" fontsize="16" height="25" width="102" ta="01" horwrap="1" x="60" y="0" color="#D6D6D6FF" outlinesize="1" outlinecolor="#000000FF" outline="1" active="1">
       </text>
     </img>
-    <scrollview id="sv_rewardList" a="11" x="305" y="-261" width="322" height="142" vertical="1" raycast="1" movementtype="2">
+    <scrollview id="sv_rewardList" a="11" x="305" y="-261" width="322" height="142" vertical="1" raycast="0" movementtype="2" active="0" enable="0">
       <gridview id="gridview2" cellwidth="65" cellheight="65" raycast="1" cella="11" constraint="1" constraintcount="4" spacex="5" spacey="3">
         <datalist id="datalist_reward">
           <item id="pass_reward" tips="" width="60" height="60" z="-200" atlas="Atlas/Common.spriteatlas" bgtype="1" bgimg="bg_setting_xuanzekuang" itemid="" uniqueid="" selfrotation="" strengthlevel="" mfixsize="55,55" scale9l="5" scale9r="5" scale9t="5" scale9b="5">
@@ -82,9 +82,9 @@
     </img>
     <img id="desBtn" a="22" atlas="Atlas/Common.spriteatlas" src="btn_description" width="30" height="30" raycast="1" x="-25" y="28">
     </img>
-    <button id="enterBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" width="113" height="41" onclick="" text="进入副本" raycast="1" color="#FFFFFFFF" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" mimg="" pimg="" dimg="" a="11" y="-477" x="304">
+    <button id="enterBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="113" height="41" onclick="" text="Enter Dungeon" raycast="1" color="#FFFFFFFF" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" mimg="" pimg="" dimg="" a="11" y="-477" x="304">
     </button>
-    <button id="sweepBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_commonh_3_select" width="113" height="41" onclick="" text="" raycast="0" color="#FFFFFF00" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="0" mimg="" pimg="" dimg="" y="-477" x="439" a="11" enable="0">
+    <button id="sweepBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" width="113" height="41" onclick="" text="" raycast="0" color="#FFFFFF00" textcolor="#DBE0E6FF" outlinesize="1" outlinecolor="#000000FF" fontsize="18" active="0" mimg="" pimg="" dimg="" y="-477" x="439" a="11" enable="0">
     </button>
     <img id="img2" a="01" width="161" height="27" raycast="1" src="bg_decorate_3" atlas="Atlas/FG_Common.spriteatlas" y="-8">
     </img>

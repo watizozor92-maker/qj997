@@ -14,10 +14,10 @@ function this:Init()
     end, function(realIdx)
         local index = realIdx + 1
         local systemId = self.systemIds[index]
-        local item_line = GUI:GetChildControl(self.view.datalist_func, realIdx, "item_line")
+        --local item_line = GUI:GetChildControl(self.view.datalist_func, realIdx, "item_line")
         local item_btn = GUI:GetChildControl(self.view.datalist_func, realIdx, "item_btn")
         --local red = GUI:GetChildControl(self.view.datalist_func, realIdx, "red")
-        GUI:SetActive(item_line, index ~= table.count(self.systemIds))
+        --GUI:SetActive(item_line, index ~= table.count(self.systemIds))
         if table.contains(self.extraListData, systemId) then
             GUI:Button_setTitleText(item_btn, systemId)
             GUI:AddOnClickEvent(item_btn, self, self.OnClickSystemFunc, systemId)

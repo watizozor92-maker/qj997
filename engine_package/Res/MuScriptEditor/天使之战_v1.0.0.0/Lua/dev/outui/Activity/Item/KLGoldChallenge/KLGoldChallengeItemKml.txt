@@ -19,8 +19,8 @@
     <panel id="model" a="00" width="194" height="186" x="0" y="10" binddragid="" dragrotate="0">
       <model id="model1" src="" width="10" height="10" x="0" y="29" mfixsize="300,300" mscale="30,30,30" mrotate="0,-180,0" mpos="0,0,-120" zindex="231">
       </model>
-       <model id="model2" src="" width="10" height="10" x="0" y="29" mscale="30,30,30" mrotate="0,-180,0" mpos="0,0,-120" zindex="231">
-       </model>
+      <model id="model2" src="" width="10" height="10" x="0" y="29" mscale="30,30,30" mrotate="0,-180,0" mpos="0,0,-120" zindex="231">
+      </model>
     </panel>
     <layout id="starGrid" control_height="0" contentsizefitter="2" vertical="0" height="30" width="1334" a="00" raycast="1" y="143" x="0">
     </layout>

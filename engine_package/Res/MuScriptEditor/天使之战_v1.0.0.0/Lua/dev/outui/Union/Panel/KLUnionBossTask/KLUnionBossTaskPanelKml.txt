@@ -1,9 +1,9 @@
-<uipanel id="KLUnionBossTaskPanel" name="战盟boss任务界面" a="21" width="300" height="300" x="-31" y="37" mask="0" zindex="109">
-  <img id="bg" a="00" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="277" height="187" raycast="1" x="1" y="15" color="#FFFFFF99">
+<uipanel id="KLUnionBossTaskPanel" name="战盟boss任务界面" a="21" width="300" height="300" x="170" y="37" mask="0" zindex="109">
+  <img id="bg" a="00" atlas="Atlas/UIMainPanel_Out.spriteatlas" src="bg_noTeam" width="277" height="187" raycast="1" x="1" y="15" color="#FFFFFF99" rotate="0,0,0">
   </img>
-  <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-98" y="85">
+  <img id="img2" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="-98" y="85" rotate="0,0,0">
   </img>
-  <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="99" y="85" rotate="0,0,180">
+  <img id="img3" a="00" atlas="Atlas/UIActivityDetailPanel.spriteatlas" src="ty_ttx_1" width="95" height="7" raycast="1" x="99" y="85" rotate="0,0,0">
   </img>
   <text id="title" a="00" text="战盟首领" fontsize="18" height="25" width="292" ta="11" horwrap="1" x="0" y="85" color="#E6E600FF" outlinesize="1" outlinecolor="#000000FF">
   </text>

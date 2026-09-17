@@ -2,7 +2,10 @@
 ---@field view KLKillMonsterSettingPanelView
 local KLKillMonsterSettingPanel = class(UIKmlLuaPanelBase)
 local this =KLKillMonsterSettingPanel
-isNotAttackPoint = true
+isNotAttackPoint = false
+isStatAutoPoint = false
+-- SL:SetLocalString("Test","2222")
+-- SL:LogTable(SL:GetLocalString("Test"))
 ---创建时调用一次
 function this:Init() 
     self.isFirst = true
@@ -10,9 +13,33 @@ function this:Init()
     self.plan = nil
     self.hookSkillTemplateList = {}
     self.isComebackHookPoint = SL:GetMetaValue(EMetaVarGetKey.GET_IS_COMEBACK_HOOKPOINT)
-    
+    local isNotAttackPointStr = SL:GetLocalString("isNotAttackPoint")
+    if string.isNullOrEmpty(isNotAttackPointStr) then
+        SL:SetLocalString("isNotAttackPoint","false")
+    else
+        if string.match(isNotAttackPointStr,"false")~=nil then
+            isNotAttackPoint = false
+        elseif string.match(isNotAttackPointStr,"true")~=nil then
+            isNotAttackPoint = true
+        end
+    end
+    local isStatAutoPointStr = SL:GetLocalString("isStatAutoPoint")
+    if string.isNullOrEmpty(isStatAutoPointStr) then
+        SL:SetLocalString("isStatAutoPoint","false")
+    else
+        if string.match(isStatAutoPointStr,"false")~=nil then
+            isStatAutoPoint = false
+        elseif string.match(isStatAutoPointStr,"true")~=nil then
+            isStatAutoPoint = true
+        end
+    end
     GUI:Button_loadTextures(self.view.combackHookBtn,self.isComebackHookPoint and "btn_fatener_ok" or "btn_fatener_no",nil,nil,"Atlas/KLHookHepler.spriteatlas")
     GUI:Button_loadTextures(self.view.noAttackBtn,isNotAttackPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+    if self.isComebackHookPoint then 
+        isStatAutoPoint = true
+        SL:SetLocalString("isStatAutoPoint","true")    
+    end
+    GUI:Button_loadTextures(self.view.StatAutoBtn,isStatAutoPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
     
 --[[    local hpSlider = GUI:GetRectTransform(self.view.sliderHP)
     local handle_attach = hpSlider.transform:Find("handleSlideArea_attach&isAttach&KmlPanel").transform:Find("handle_attach&isAttach&KmlImage")
@@ -66,7 +93,9 @@ function this:RegistEvents()
     GUI:Input_SetOnEndEdit(self.view.input_time, self, self.InputFieldOnEndEdit)
     GUI:Input_SetOnValueChange(self.view.input_time, self, self.ComebackTimeOnInputValueChange)
     GUI:AddOnClickEvent(self.view.combackHookBtn,self,self.CombackHookOnClick)
+
     GUI:AddOnClickEvent(self.view.noAttackBtn,self,self.NoAttackOnClick)
+    GUI:AddOnClickEvent(self.view.StatAutoBtn,self,self.StationaryAutoBattleOnClick)
 
     GUI:SetSliderOnValueChange(self.view.sliderHP, self, self.sliderHPOnValueChange)
     GUI:SetSliderOnValueChange(self.view.sliderMP, self, self.sliderMPOnValueChange)
@@ -117,11 +146,35 @@ end
 function this:CombackHookOnClick()
     self.isComebackHookPoint = not self.isComebackHookPoint
     GUI:Button_loadTextures(self.view.combackHookBtn,self.isComebackHookPoint and "btn_fatener_ok" or "btn_fatener_no",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+    if self.isComebackHookPoint then 
+        isStatAutoPoint = true
+        SL:SetLocalString("isStatAutoPoint","true")    
+    end
+    GUI:Button_loadTextures(self.view.StatAutoBtn,isStatAutoPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
 end
 
 function this:NoAttackOnClick()
     isNotAttackPoint = not isNotAttackPoint
     GUI:Button_loadTextures(self.view.noAttackBtn,isNotAttackPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+    if isNotAttackPoint then
+        SL:SetLocalString("isNotAttackPoint","true")
+    else
+        SL:SetLocalString("isNotAttackPoint","false")
+    end
+end
+
+function this:StationaryAutoBattleOnClick()
+    isStatAutoPoint = not isStatAutoPoint
+    GUI:Button_loadTextures(self.view.StatAutoBtn,isStatAutoPoint and "btn_fatener_no" or "btn_fatener_ok",nil,nil,"Atlas/KLHookHepler.spriteatlas")
+    if isStatAutoPoint then
+        SL:SetLocalString("isStatAutoPoint","true")
+    else
+        self.isComebackHookPoint = false
+        self.range = 1
+        GUI:SetTogDefaultThis(self.view["toggle_pos_" .. 1])
+        SL:SetLocalString("isStatAutoPoint","false")
+    end
+    GUI:Button_loadTextures(self.view.combackHookBtn,self.isComebackHookPoint and "btn_fatener_ok" or "btn_fatener_no",nil,nil,"Atlas/KLHookHepler.spriteatlas")
 end
 
 function this:SelectKillRangeOnToggleValueChange(control,data,eventData)

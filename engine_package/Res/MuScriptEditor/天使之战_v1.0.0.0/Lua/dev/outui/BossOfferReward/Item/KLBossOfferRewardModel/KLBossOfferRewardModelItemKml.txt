@@ -12,9 +12,9 @@
   <button id="btn_go_get" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window11" width="112" height="36" onclick="" text="前往击杀" raycast="1" x="0" y="-128" fonttype="" fontsize="18" textcolor="#FFFFFFFF" outlinesize="1" outlinecolor="#000000FF">
   </button>
   <text id="node" text="" fontsize="18" x="0" y="51" color="#FFFFFF" outlinesize="1" outlinecolor="0" horwrap="1">
-  <model id="monster2" src="" mscale="22,22,22"  mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,-87,0">
+    <model id="monster2" src="" mscale="22,22,22" mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,-87,0">
     </model>
-    <model id="monster" src="" mscale="22,22,22" mfixsize="150,150" mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,3,0" >
+    <model id="monster" src="" mscale="22,22,22" mfixsize="150,150" mrotate="0,-150,0" x="0" y="0" z="-150" width="150" height="200" mpos="0,3,0">
     </model>
   </text>
 </uipanel>

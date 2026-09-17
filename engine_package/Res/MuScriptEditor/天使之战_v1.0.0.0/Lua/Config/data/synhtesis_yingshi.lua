@@ -96,7 +96,7 @@ local local_career = {
 }
 
 local local_consumeItem = {
-    consumeItem_1={{1,50030005,1},{1,50030001,1}},
+    consumeItem_1={{1,1253000599,1},{1,1253000199,1}},
     consumeItem_2={{1,2100103,5}},
     consumeItem_3={{1,2100103,6}},
     consumeItem_4={{1,2100103,7}},
@@ -149,7 +149,7 @@ local synhtesis_yingshi =
 	{id=10004, productId={{50031401,1,100}}, synthesisType=local_synthesisType.synthesisType_1, composeTime="1000", level=1, consumeItemMain={{1,50030101,1},{1,50030504,1}}, consumeItem=local_consumeItem.consumeItem_1, successRate="9500", successRateReal="9500", successRateMax="9500", npcid=100404, synthesisname="荧光宝石合成", description="你可以将荧之石和光之石合成为荧光宝石"},
 	{id=10005, productId={{50031501,1,100}}, synthesisType=local_synthesisType.synthesisType_1, composeTime="1000", level=1, consumeItemMain={{1,50030101,1},{1,50030604,1}}, consumeItem=local_consumeItem.consumeItem_1, successRate="9500", successRateReal="9500", successRateMax="9500", npcid=100404, synthesisname="荧光宝石合成", description="你可以将荧之石和光之石合成为荧光宝石"},
 	{id=10006, productId={{50031601,1,100}}, synthesisType=local_synthesisType.synthesisType_1, composeTime="1000", level=1, consumeItemMain={{1,50030101,1},{1,50030701,1}}, consumeItem=local_consumeItem.consumeItem_1, successRate="9300", successRateReal="9300", successRateMax="9300", npcid=100404, synthesisname="荧光宝石合成", description="你可以将荧之石和光之石合成为荧光宝石"},
-	{id=10007, synthesisType={2}, composeTime="1000", level=1, consumeItem={{1,50030008,1},{1,50030005,1},{1,50030001,1}}, successRate="9300", successRateReal="9300", successRateMax="9300", npcid=100404, coin={10010002,60000}, synthesisname="荧之石抽取", description="你可以从高品质的装备中抽取荧之石"},
+	{id=10007, synthesisType={2}, composeTime="1000", level=1, consumeItem={{1,50030008,1},{1,1253000599,1},{1,1253000199,1}}, successRate="9300", successRateReal="9300", successRateMax="9300", npcid=100404, coin={10010002,60000}, synthesisname="荧之石抽取", description="你可以从高品质的装备中抽取荧之石"},
 	{id=10008, productId=local_productId.productId_1, synthesisType={3}, composeTime="1000", level=1, consumeItemMain={{3}}, consumeItem=local_consumeItem.consumeItem_1, successRate="9000", successRateReal="9000", successRateMax="9000", npcid=100404, coin={10010002,120000}, synthesisname="镶嵌荧光宝石", description="你可以将荧石宝石和带孔的镶嵌装备进行组合，变成带萤石镶嵌的物品"},
 	{id=10009, productId=local_productId.productId_1, synthesisType={4}, composeTime="1000", level=1, consumeItemMain={{4}}, consumeItem=local_consumeItem.consumeItem_1, successRate="9000", successRateReal="9000", successRateMax="9000", npcid=100404, coin={10010002,240000}, synthesisname="抽取荧光宝石", description="你可以从镶嵌完成的装备中提取荧石，并保持荧石的等级"},
 	{id=10010, productId={{50031102,1,1}}, composeTime="1000", level=1, consumeItemMain={{1,50031101,1},{1,50031101,1}}, consumeItem=local_consumeItem.consumeItem_9, npcid=100404, coin={10010002,9500000}, synthesisname="荧光宝石升级", description="你可以提高镶嵌宝石的等级，例如你可以将4级荧光宝石升级为5级"},

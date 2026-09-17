@@ -1,54 +1,57 @@
 ---@class KLSalesTipsPanelView:UIKmlLuaViewBase
----@field togglegroup13 UIKmlLuaControl
----@field btn_close UIKmlLuaControl
----@field sales_panel UIKmlLuaControl
----@field img_16 UIKmlLuaControl
----@field panel_17 UIKmlLuaControl
----@field layout1 UIKmlLuaControl
----@field costNode UIKmlLuaControl
----@field text_18 UIKmlLuaControl
----@field txt_number UIKmlLuaControl
----@field number_minus UIKmlLuaControl
----@field number_add UIKmlLuaControl
----@field priceNode_1 UIKmlLuaControl
----@field toggle_1 UIKmlLuaControl
----@field txt_price_unit_1 UIKmlLuaControl
----@field img_coin_unit_1 UIKmlLuaControl
----@field priceNode_2 UIKmlLuaControl
----@field toggle_2 UIKmlLuaControl
----@field txt_price_unit_2 UIKmlLuaControl
----@field img_coin_unit_2 UIKmlLuaControl
----@field priceNode_3 UIKmlLuaControl
----@field toggle_3 UIKmlLuaControl
----@field txt_price_unit_3 UIKmlLuaControl
----@field img_coin_unit_3 UIKmlLuaControl
----@field priceNode_4 UIKmlLuaControl
----@field toggle_4 UIKmlLuaControl
----@field txt_price_unit_4 UIKmlLuaControl
----@field img_coin_unit_4 UIKmlLuaControl
----@field priceNode_5 UIKmlLuaControl
----@field toggle_5 UIKmlLuaControl
----@field txt_price_unit_5 UIKmlLuaControl
----@field img_coin_unit_5 UIKmlLuaControl
----@field allNode UIKmlLuaControl
----@field text_25 UIKmlLuaControl
----@field img_26 UIKmlLuaControl
----@field img_coin_total UIKmlLuaControl
----@field txt_price_total UIKmlLuaControl
----@field panel1 UIKmlLuaControl
----@field price_slider UIKmlLuaControl
----@field fillArea_attach UIKmlLuaControl
----@field fill_attach UIKmlLuaControl
----@field fillArea_attach UIKmlLuaControl
----@field handle_attach UIKmlLuaControl
----@field btnNode UIKmlLuaControl
----@field btn UIKmlLuaControl
+---@field togglegroup13 UIKmlLuaControlHandler
+---@field btn_close UIKmlLuaControlHandler
+---@field sales_panel UIKmlLuaControlHandler
+---@field img_16 UIKmlLuaControlHandler
+---@field panel_17 UIKmlLuaControlHandler
+---@field layout1 UIKmlLuaControlHandler
+---@field costNode UIKmlLuaControlHandler
+---@field text_18 UIKmlLuaControlHandler
+---@field txt_number UIKmlLuaControlHandler
+---@field number_minus UIKmlLuaControlHandler
+---@field number_add UIKmlLuaControlHandler
+---@field priceNode_1 UIKmlLuaControlHandler
+---@field toggle_1 UIKmlLuaControlHandler
+---@field txt_price_unit_1 UIKmlLuaControlHandler
+---@field img_coin_unit_1 UIKmlLuaControlHandler
+---@field priceNode_2 UIKmlLuaControlHandler
+---@field toggle_2 UIKmlLuaControlHandler
+---@field txt_price_unit_2 UIKmlLuaControlHandler
+---@field img_coin_unit_2 UIKmlLuaControlHandler
+---@field priceNode_3 UIKmlLuaControlHandler
+---@field toggle_3 UIKmlLuaControlHandler
+---@field txt_price_unit_3 UIKmlLuaControlHandler
+---@field img_coin_unit_3 UIKmlLuaControlHandler
+---@field priceNode_4 UIKmlLuaControlHandler
+---@field toggle_4 UIKmlLuaControlHandler
+---@field txt_price_unit_4 UIKmlLuaControlHandler
+---@field img_coin_unit_4 UIKmlLuaControlHandler
+---@field priceNode_5 UIKmlLuaControlHandler
+---@field toggle_5 UIKmlLuaControlHandler
+---@field txt_price_unit_5 UIKmlLuaControlHandler
+---@field img_coin_unit_5 UIKmlLuaControlHandler
+---@field allNode UIKmlLuaControlHandler
+---@field text_25 UIKmlLuaControlHandler
+---@field img_26 UIKmlLuaControlHandler
+---@field img_coin_total UIKmlLuaControlHandler
+---@field txt_price_total UIKmlLuaControlHandler
+---@field panel1 UIKmlLuaControlHandler
+---@field price_slider UIKmlLuaControlHandler
+---@field fillArea_attach UIKmlLuaControlHandler
+---@field fill_attach UIKmlLuaControlHandler
+---@field fillArea_attach UIKmlLuaControlHandler
+---@field handle_attach UIKmlLuaControlHandler
+---@field btnNode UIKmlLuaControlHandler
+---@field btn UIKmlLuaControlHandler
 local KLSalesTipsPanelView = {}
 setmetatable(KLSalesTipsPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/Trade/Panel/KLSalesTips/KLSalesTipsPanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLSalesTipsPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLSalesTipsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Trade/Panel/KLSalesTips/KLSalesTipsPanel']
+
 return KLSalesTipsPanelView

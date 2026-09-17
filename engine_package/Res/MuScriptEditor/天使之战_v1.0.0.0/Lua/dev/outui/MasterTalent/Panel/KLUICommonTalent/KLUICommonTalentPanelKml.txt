@@ -1,7 +1,7 @@
 <uipanel id="KLUICommonTalentPanelKml" name="通用天赋加点界面" a="00" width="300" height="300" zindex="202">
-  <text id="PointTitle" a="00" text="通用天赋点" fontsize="18" height="25" width="96" ta="11" horwrap="1" x="343" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+  <text id="PointTitle" a="00" text="通用天赋点" fontsize="18" height="25" width="96" ta="11" horwrap="1" x="343" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="1">
   </text>
-  <text id="PointText" a="00" text="0" fontsize="18" height="25" width="65" ta="21" horwrap="1" x="411" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF">
+  <text id="PointText" a="00" text="0" fontsize="18" height="25" width="65" ta="21" horwrap="1" x="411" y="152" fonttype="" outlinesize="1" outlinecolor="#000000FF" outline="1">
   </text>
   <button id="ResetButton" a="00" atlas="Atlas/Common.spriteatlas" src="button_interface_window65" width="38" height="38" onclick="" text="" raycast="1" x="468" y="152">
   </button>

@@ -535,7 +535,7 @@ local cfg_skill_effects =
 	{id=4100, name="毒箭", releaseEffect={4100}, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, targetEffect=local_targetEffect.targetEffect_9, targetEffectMode=local_targetEffectMode.targetEffectMode_3},
 	{id=4110, name="精灵祝福", releaseEffect={4110}, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
 	{id=4112, name="钻云枪", releaseEffect={4112}, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
-	{id=6000, name="星云火链", releaseEffect={6000}, releasePlayMode={1,1}, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
+	{id=6000, name="星云火链", releaseEffect={6000}, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
 	{id=6001, name="冲击波", releaseEffect={6003}, releaseDelayTime=local_releaseDelayTime.releaseDelayTime_6, flyAction=0, flySpeed=local_flySpeed.flySpeed_4},
 	{id=6002, name="地裂", releaseEffect={6080,6081,6082,6083,6084}, releasePlayMode={2,2,2,2,2}, releaseDelayTime=local_releaseDelayTime.releaseDelayTime_6, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, moreTarget=1, targetEffect={6083}, targetDelayTime=local_targetDelayTime.targetDelayTime_5, targetEffectMode=local_targetEffectMode.targetEffectMode_3, otherTargetEffect={6083}, otherTargetEffectMode={300}, othertargetDelayTime={2}},
 	{id=1014010, name="致命圣印", releaseEffect={6005,6006}, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
@@ -581,13 +581,13 @@ local cfg_skill_effects =
 	{id=1016012, name="恶灵召唤施放特效", releaseEffect={60000010}, releasePlayMode=local_releasePlayMode.releasePlayMode_4, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
 	{id=1016016, name="魔隐者特效", releaseEffect={60000019}, releasePlayMode=local_releasePlayMode.releasePlayMode_4, flyAction=0, flySpeed=local_flySpeed.flySpeed_1},
 	{id=1016017, name="圣盾防御", releaseEffect=local_releaseEffect.releaseEffect_13, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, costSound=50012},
-	{id=1007001, name="幻龙特效", flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, moreTarget=1, targetEffect={10070011}, targetEffectMode=local_targetEffectMode.targetEffectMode_2, otherTargetEffect={10070011}, otherTargetEffectMode=local_otherTargetEffectMode.otherTargetEffectMode_2, costSound=50023},
-	{id=1007002, name="审判特效", flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, targetEffect={10070021}, targetEffectMode=local_targetEffectMode.targetEffectMode_3, costSound=50023},
-	{id=1007003, name="雷鸟特效", flyEffect={10070031}, flyDelayDistance=5, costSound=50023},
+	{id=1007001, name="幻龙特效", flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, moreTarget=1, targetEffect={10070011}, targetEffectMode=local_targetEffectMode.targetEffectMode_2, otherTargetEffect={10070011}, otherTargetEffectMode=local_otherTargetEffectMode.otherTargetEffectMode_2, costSound=50025},
+	{id=1007002, name="审判特效", flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, targetEffect={10070021}, targetEffectMode=local_targetEffectMode.targetEffectMode_3, costSound=50017},
+	{id=1007003, name="雷鸟特效", flyEffect={10070031}, flyDelayDistance=5, costSound=50020},
 	{id=10070031, name="自带动画雷鸟特效", releaseEffect={10070032}, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, costSound=50023},
 	{id=1200018, name="小挪移", releaseEffect=local_releaseEffect.releaseEffect_14, releasePlayMode=local_releasePlayMode.releasePlayMode_3, releaseDelayTime=local_releaseDelayTime.releaseDelayTime_7, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, targetAction=1, targetEffect={60000024,27}, targetDelayTime={0,900}, targetEffectMode=local_targetEffectMode.targetEffectMode_4, costSound=50018},
 	{id=1005007, name="星云召唤", releaseEffect=local_releaseEffect.releaseEffect_14, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, costSound=50012},
-	{id=1007004, name="惩戒屏障", releaseEffect={10070041}, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, costSound=50012},
+	{id=1007004, name="惩戒屏障", releaseEffect={10070041}, releasePlayMode=local_releasePlayMode.releasePlayMode_2, flyAction=0, flySpeed=local_flySpeed.flySpeed_1, costSound=50037},
 }
 
 local defaults = {releaseEffect={}, releasePlayMode={}, releaseDelayTime={}, flyAction=1, moreFly=0, flySpeed={1000}, flyEffect={}, effectRandom={}, flyDelayTime={}, flyDelayDistance=0, targetAction=0, moreTarget=0, targetEffect={}, targetDelayTime={}, targetEffectMode={}, otherTargetEffect={}, otherTargetEffectMode={}, othertargetDelayTime={}, costSound=0, hitSound=0, flySound=0}

@@ -272,7 +272,7 @@ end
 ---获取技能释放范围
 function this:GetSkillRange(skillId)
     local skillInfoTbl = SL:GetConfig("cfg_skill_info",skillId,"skillID")
-    local targetRange = skillInfoTbl.targetRange[1] 
+    local targetRange = skillInfoTbl.targetRange[1] or 3
     local moveRange = (skillInfoTbl.changePoint and skillInfoTbl.changePoint[2]) and skillInfoTbl.changePoint[2] or 0
     local range = math.max((skillInfoTbl.releaseRange[1] - moveRange),targetRange)
     return range
@@ -471,6 +471,7 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
                 end
             -- Buff增益技能
             elseif _releaseSkill.skillTbl.assistType[1] == SkillAssistTypeEx.Common and _releaseSkill.skillTbl.assistType[2] == SubSkillAssistTypeEx.Buff then
+                -- 修复：仅满足条件才处理，不满足直接跳过
                 if SL:IsCanUseBuffSkill(skillId) then
                     local useTarget = rid
                     local isCanUse,_ = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, useTarget)
@@ -483,9 +484,6 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
                         SL:SetSelectTargetId(0)
                         AutoFightUseSkill.TargetId = 0
                     end
-                else
-                    isCanRelease = false
-                    maxpriorityLevelId = -1
                 end
             else
                 if _releaseSkill.skillTbl.assistType[1] ~= SkillAssistTypeEx.Group  then

@@ -20,4 +20,7 @@ local kmlPath = 'dev/outui/MasterTalent/Panel/KLMasterTalentTips/KLMasterTalentT
 function KLMasterTalentTipsPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLMasterTalentTipsPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/MasterTalent/Panel/KLMasterTalentTips/KLMasterTalentTipsPanel']
+
 return KLMasterTalentTipsPanelView

@@ -17,9 +17,12 @@
 local KLRecoverBagPanelView = {}
 setmetatable(KLRecoverBagPanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/ui/Bag/Panel/KLRecoverBag/KLRecoverBagPanelKml'
----@param parent UIKmlLuaControlHandlerHandlerHandlerHandlerHandlerHandlerHandler
+---@param parent UIKmlLuaControlHandler
 function KLRecoverBagPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLRecoverBagPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Bag/Panel/KLRecoverBag/KLRecoverBagPanel']
+
 return KLRecoverBagPanelView

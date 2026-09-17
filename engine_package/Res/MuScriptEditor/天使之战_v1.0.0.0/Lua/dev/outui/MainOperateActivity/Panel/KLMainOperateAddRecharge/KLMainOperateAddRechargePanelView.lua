@@ -1,15 +1,18 @@
 ---@class KLMainOperateAddRechargePanelView:UIKmlLuaViewBase
----@field img_bg UIKmlLuaControl
----@field img_title UIKmlLuaControl
----@field txt_showTime UIKmlLuaControl
----@field scrollview_bg UIKmlLuaControl
----@field layout4 UIKmlLuaControl
----@field showItemInfoList UIKmlLuaControl
+---@field img_bg UIKmlLuaControlHandler
+---@field img_title UIKmlLuaControlHandler
+---@field txt_showTime UIKmlLuaControlHandler
+---@field scrollview_bg UIKmlLuaControlHandler
+---@field layout4 UIKmlLuaControlHandler
+---@field showItemInfoList UIKmlLuaControlHandler
 local KLMainOperateAddRechargePanelView = {}
 setmetatable(KLMainOperateAddRechargePanelView,UIKmlLuaViewBase)
 local kmlPath = 'dev/outui/MainOperateActivity/Panel/KLMainOperateAddRecharge/KLMainOperateAddRechargePanelKml'
----@param parent UIKmlLuaControl
+---@param parent UIKmlLuaControlHandler
 function KLMainOperateAddRechargePanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLMainOperateAddRechargePanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/MainOperateActivity/Panel/KLMainOperateAddRecharge/KLMainOperateAddRechargePanel']
+
 return KLMainOperateAddRechargePanelView

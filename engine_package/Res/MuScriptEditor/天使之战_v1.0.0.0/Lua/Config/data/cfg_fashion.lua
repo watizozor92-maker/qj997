@@ -86,6 +86,10 @@ local local_time = {
 local local_att = {
     att_1={{201011,10}},
     att_2={},
+    att_3={{200041,18},{206011,18}},
+    att_4={{200041,28},{206011,28}},
+    att_5={{200041,58},{206011,58}},
+    att_6={{200041,98},{206011,98}},
 
 }
 
@@ -307,6 +311,14 @@ local cfg_fashion =
 	{id=20731221, note="弓箭手", job=local_job.job_4, level=450, grade=12},
 	{id=20831221, note="弓箭手", job=local_job.job_4, level=450, grade=12},
 	{id=20931221, note="弓箭手", job=local_job.job_4, level=450, grade=12},
+	{id=10101001, note="称号：叱咤风云", type=local_type.type_2, job=local_job.job_1, att=local_att.att_3, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=10101002, note="称号：杀戮之王", type=local_type.type_2, job=local_job.job_1, att=local_att.att_4, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=10101003, note="称号：君临天下", type=local_type.type_2, job=local_job.job_1, att=local_att.att_5, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=10101004, note="称号：恶魔猎人", type=local_type.type_2, job=local_job.job_1, att=local_att.att_6, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=1010100199, note="称号：叱咤风云", type=local_type.type_2, job=local_job.job_1, att=local_att.att_3, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=1010100299, note="称号：杀戮之王", type=local_type.type_2, job=local_job.job_1, att=local_att.att_4, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=1010100399, note="称号：君临天下", type=local_type.type_2, job=local_job.job_1, att=local_att.att_5, deplete=local_deplete.deplete_1, modelScale=500},
+	{id=1010100499, note="称号：恶魔猎人", type=local_type.type_2, job=local_job.job_1, att=local_att.att_6, deplete=local_deplete.deplete_1, modelScale=500},
 }
 
 local defaults = {note="战士", type={4}, job={1}, level=0, grade=0, timeType=1, time={}, vestedType=1, att={}, deplete={{10010001,300}}, modelScale=0, tipsScale=0}

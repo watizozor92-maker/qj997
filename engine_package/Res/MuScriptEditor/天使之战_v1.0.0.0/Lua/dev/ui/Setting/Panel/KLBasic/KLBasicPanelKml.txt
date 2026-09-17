@@ -20,13 +20,13 @@
     </text>
     <img id="TitleSetImage" bind="Title2/Image" width="25" height="27" x="-24" y="1" src="star_1" atlas="Atlas/FG_Common.spriteatlas">
     </img>
-    <button id="BtnReDefault" a="02" width="103" height="36" x="0" deltay="0.5" y="-154" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlSettingUI/@恢复默认" active="1" textcolor="#FFFFFFFF" fonttype="" siblingindex="6" outlinesize="1" outlinecolor="#000000FF" fontsize="18" text="恢复默认" color="">
+    <button id="BtnReDefault" a="02" width="103" height="36" x="0" deltay="0.5" y="-154" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlSettingUI/@恢复默认" active="1" textcolor="#FFFFFFFF" fonttype="" siblingindex="6" outlinesize="1" outlinecolor="#000000FF" fontsize="18" text="恢复默认" color="">
     </button>
     <button id="BtnReDefault2" bind="BtnReDefault" active="0" width="127" height="45" x="-2" y="-188" src="btn_tongyong" atlas="Atlas/FG_Common.spriteatlas" onclick="KmlSettingUI/@恢复默认" textcolor="#FFFFFFFF" fonttype="Font/SIMHEI.TTF">
     </button>
     <button id="BtnExitGame" bind="BtnExitGame" onclick="KmlSettingUI/@退出游戏" y="-186" x="71" src="btn_dingyeqian2" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="127" height="45" scale9l="29" scale9b="0" scale9r="29" scale9t="0" active="0">
     </button>
-    <button id="BtnLock" bind="BtnLock" onclick="KmlSettingUI/@锁定屏幕" src="btn_common_2_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="83" height="28" x="122" y="-175" textcolor="#FFFFFFFF" text="" outlinesize="1" outlinecolor="#000000FF" fontsize="16" ta="11">
+    <button id="BtnLock" bind="BtnLock" onclick="KmlSettingUI/@锁定屏幕" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" width="83" height="28" x="122" y="-175" textcolor="#FFFFFFFF" text="" outlinesize="1" outlinecolor="#000000FF" fontsize="16" ta="11">
       <text id="text1" a="00" text="锁定屏幕" fontsize="16" height="20" width="64" ta="11" siblingindex="1" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="-1" y="0" outlinesize="1" outlinecolor="#000000FF">
       </text>
     </button>

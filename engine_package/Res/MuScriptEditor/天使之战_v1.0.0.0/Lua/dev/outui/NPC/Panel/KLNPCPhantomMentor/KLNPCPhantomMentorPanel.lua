@@ -134,20 +134,20 @@ function this:Refresh()
     if minLevel1 <= myLevel and myLevel <= maxLevel1 then
         GUI:setColor(self.view.leftText1, "#00ff00")
         GUI:Button_setGrey(self.view.leftBtn, false)
-        GUI:Button_loadTextureNormal(self.view.leftBtn, "btn_common_1_select", "Atlas/FG_Common.spriteatlas")
+        GUI:Button_loadTextureNormal(self.view.leftBtn, "btn_cebian1", "Atlas/FG_Common.spriteatlas")
     else
         GUI:setColor(self.view.leftText1, "#FF2323")
         GUI:Button_setGrey(self.view.leftBtn, true)
-        GUI:Button_loadTextureNormal(self.view.leftBtn, "btn_common_1", "Atlas/FG_Common.spriteatlas")
+        GUI:Button_loadTextureNormal(self.view.leftBtn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
     end
     if minLevel2 <= myLevel and myLevel <= maxLevel2 then
         GUI:setColor(self.view.rightText1, "#00ff00")
         GUI:Button_setGrey(self.view.rightBtn, false)
-        GUI:Button_loadTextureNormal(self.view.rightBtn, "btn_common_1_select", "Atlas/FG_Common.spriteatlas")
+        GUI:Button_loadTextureNormal(self.view.rightBtn, "btn_cebian1", "Atlas/FG_Common.spriteatlas")
     else
         GUI:setColor(self.view.rightText1, "#FF2323")
         GUI:Button_setGrey(self.view.rightBtn, true)
-        GUI:Button_loadTextureNormal(self.view.rightBtn, "btn_common_1", "Atlas/FG_Common.spriteatlas")
+        GUI:Button_loadTextureNormal(self.view.rightBtn, "btn_cebian2", "Atlas/FG_Common.spriteatlas")
     end
     self:reTime()
 

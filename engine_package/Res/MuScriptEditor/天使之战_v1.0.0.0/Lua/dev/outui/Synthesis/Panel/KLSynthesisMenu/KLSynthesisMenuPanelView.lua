@@ -12,4 +12,7 @@ local kmlPath = 'dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanelK
 function KLSynthesisMenuPanelView:Init(parent)
     self:InitRoot(parent,kmlPath)
 end
+---@type KLSynthesisMenuPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel']
+
 return KLSynthesisMenuPanelView

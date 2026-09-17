@@ -1,6 +1,10 @@
-<uipanel id="KLAttPointSuitItem" name="角色转职加点选择模板" width="290" height="436" zindex="-1">
-    <img id="ImgSuitName" src="Texture/xdfz_zhs_mf_name.png" y="176" width="66" height="32" />
-    <img id="ImgSuitPic" src="Texture/xdfz_zhs_mf_att.png" y="35" width="278" height="210"  />
-    <text id="TextSuitAdvantage" x="20" y="-108" width="212" height="80" ta="01" fontsize="20" />
-    <button id="BtnChoice" src="Texture/button_interface_window7_LauncherUI.png" text="确定" fontsize="18" textcolor="#FFFFFF" outlinecolor="#000000" outlinesize="1" width="113" height="40" raycast="1" a="02" y="15" />
+<uipanel id="KLAttPointSuitItem" name="角色转职加点选择模板" width="290" height="436" zindex="-1" x="0" y="0">
+  <img id="ImgSuitName" src="Texture/xdfz_zhs_mf_name.png" y="176" width="66" height="32">
+  </img>
+  <img id="ImgSuitPic" src="Texture/xdfz_zhs_mf_att.png" y="35" width="278" height="210">
+  </img>
+  <text id="TextSuitAdvantage" x="20" y="-108" width="212" height="80" ta="01" fontsize="20">
+  </text>
+  <button id="BtnChoice" src="Texture/button_interface_window7_LauncherUI.png" text="确定" fontsize="18" textcolor="#FFFFFF" outlinecolor="#000000" outlinesize="1" width="113" height="40" raycast="1" a="02" y="15">
+  </button>
 </uipanel>

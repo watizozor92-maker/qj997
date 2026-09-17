@@ -41,7 +41,7 @@ local cfg_popover =
 	{id=23, description="额度档位", name="lines", icon="qp_yueka", disappeartype=1},
 	{id=24, description="修理", name="repair", icon="qp_weixiu", disappeartype=1, switch=0},
 	{id=25, description="面对面交易", name="tradeFaceToFace", icon="qp_jiaoyihang", disappeartype=0, switch=0},
-	{id=26, description="BUFF消失", name="buffdisappear", icon="qp_buff", disappeartype=0, switch=0},
+	{id=26, description="BUFF消失", name="buffdisappear", icon="qp_buff", disappeartype=0},
 	{id=27, description="好友添加", name="friendsAdd", icon="qp_haoyou", switch=0},
 }
 

@@ -29,4 +29,7 @@ function KLUIMyTeamPanelView:Init(parent)
     
     self:InitRoot(parent,kmlPath)
 end
+---@type KLUIMyTeamPanel 这里可以添加界面的数据处理
+local this = SL:Get_Package().loaded['dev/ui/Team/Panel/KLUIMyTeam/KLUIMyTeamPanel']
+
 return KLUIMyTeamPanelView

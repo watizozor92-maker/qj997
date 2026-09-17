@@ -2,55 +2,55 @@
   <prefab id="UICreateRolePanel" path="UI/Function/CreateRole/UICreateRolePanel/UICreateRolePanel.prefab" width="1334" height="750" x="0" y="0">
     <panel id="createRolePanel" bind="UICreateRolePanel" width="1334" height="750">
     </panel>
+    <button id="BackButton" bind="BackButton" active="0">
+    </button>
     <layout id="PlayerRole" bind="PlayerRole" active="1" a="00" x="-117" space="0">
       <button id="NewCreateButton" bind="NewCreateButton" active="0" width="160">
       </button>
     </layout>
+    <panel id="Tips" a="00" width="1334" height="750" siblingindex="5" z="-500" x="22" y="29">
+      <img id="tipsMask" a="00" width="3000" height="3000" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" src="bg_in" siblingindex="0" x="1" y="-240">
+      </img>
+      <img id="img3" a="00" width="345" height="272" raycast="1" siblingindex="1" atlas="" src="Texture/FG_dankuangdi.png" x="-21" y="-29">
+        <button id="tipCanelBtn" a="12" onclick="" text="Cancel" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="15" y="20" siblingindex="0" outlinesize="1" outlinecolor="#000000FF" textcolor="#F59924FF">
+        </button>
+        <button id="tipSureBtn" a="12" onclick="" text="OK" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="184" y="20" siblingindex="4" fontsize="18" outlinesize="1" outlinecolor="#000000FF" textcolor="#F59924FF">
+        </button>
+        <button id="tipCloseBtn" a="21" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-3" y="-10" siblingindex="1" fontsize="18" outlinesize="1" outlinecolor="#000000FF" width="34" height="34">
+        </button>
+        <text id="tipStrTxt" a="00" text="" fontsize="16" height="143" width="314" ta="11" outline="1" horwrap="1" x="0" y="5" siblingindex="2">
+        </text>
+        <text id="text1" a="00" text="Alert" fontsize="20" height="24" width="61" ta="11" siblingindex="3" outline="1" horwrap="1" fontstyle="0" underline="0" color="#F59924FF" x="0" y="90">
+        </text>
+      </img>
+    </panel>
     <panel id="GameObject" bind="GameObject" active="1">
       <button id="CreatButton" bind="CreatButton" active="1">
         <img id="Image" bind="Image" active="1">
         </img>
-        <img id="Right (1)" bind="Right (1)" active="1">
+        <img id="Right (1)" bind="Right (1)" active="0">
         </img>
-        <img id="Left (1)" bind="Left (1)" active="1">
+        <img id="Left (1)" bind="Left (1)" active="0">
         </img>
       </button>
       <button id="StartButton" bind="StartButton" active="0">
       </button>
     </panel>
-    <button id="BackButton" bind="BackButton" active="0">
-    </button>
     <layout id="PlayerRole_New" control_height="0" contentsizefitter="0" vertical="0" height="291" width="825" a="00" raycast="1" siblingindex="2" control_width="0" x="-119" space="-102" h5x="-145" y="82" cella="10">
     </layout>
     <img id="topImg" a="11" width="489" height="80" raycast="1" siblingindex="4" src="bg_black_grid" atlas="Atlas/FG_SelectRole.spriteatlas" scale9l="18" scale9b="34" scale9r="25" scale9t="27" x="33" y="-33">
       <text id="text8" a="10" text="系统提示:踏上勇者大陆为情怀而战 扩展技术支持:RI技术小组" fontsize="16" height="70" width="446" ta="01" siblingindex="0" outline="1" horwrap="1" x="19" linespace="1" y="3">
       </text>
     </img>
-    <panel id="Tips" a="00" width="1334" height="750" siblingindex="5" z="-500" x="22" y="29">
-      <img id="tipsMask" a="00" width="3000" height="3000" raycast="1" atlas="Atlas/FG_SelectRole.spriteatlas" src="bg_in" siblingindex="0" x="1" y="-240">
-      </img>
-      <img id="img3" a="00" width="345" height="272" raycast="1" siblingindex="1" atlas="" src="Texture/FG_dankuangdi.png" x="-21" y="-29">
-        <button id="tipCanelBtn" a="12" onclick="" text="取消" raycast="1" src="btn_quxiao" atlas="Atlas/FG_SelectRole.spriteatlas" mimg="" pimg="" dimg="" x="60" y="20" siblingindex="0" outlinesize="1" outlinecolor="#000000FF">
-        </button>
-        <button id="tipSureBtn" a="12" onclick="" text="确认" raycast="1" src="btn_queren" atlas="Atlas/FG_SelectRole.spriteatlas" mimg="" pimg="" dimg="" x="193" y="20" siblingindex="4" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
-        </button>
-        <button id="tipCloseBtn" a="21" onclick="" text="" raycast="1" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" x="-3" y="-10" siblingindex="1" fontsize="18" outlinesize="1" outlinecolor="#000000FF" width="34" height="34">
-        </button>
-        <text id="tipStrTxt" a="00" text="" fontsize="16" height="143" width="314" ta="11" outline="1" horwrap="1" x="0" y="5" siblingindex="2">
-        </text>
-        <text id="text1" a="00" text="提 示" fontsize="20" height="24" width="61" ta="11" siblingindex="3" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" x="0" y="90">
-        </text>
-      </img>
-    </panel>
-    <img id="img1" a="00" width="844" height="24" raycast="1" siblingindex="6" color="#000000FF" x="1" y="-329" src="textbg_xingxitiao" atlas="Atlas/FG_SelectRole.spriteatlas">
+    <img id="img1" a="00" width="549" height="24" raycast="1" siblingindex="6" color="#000000FF" x="1" y="-329" src="textbg_xingxitiao" atlas="Atlas/FG_SelectRole.spriteatlas">
     </img>
-    <button id="goBtn" width="113" height="41" onclick="" text="进入游戏" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" x="464" y="-329" siblingindex="7" fontsize="18">
+    <button id="goBtn" width="113" height="41" onclick="" text="Enter Game" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#F59924FF" x="345" y="-329" siblingindex="7" fontsize="18">
     </button>
-    <button id="delBtn" width="113" height="41" onclick="" text="删除" raycast="1" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" siblingindex="8" x="586" y="-329" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+    <button id="delBtn" width="113" height="41" onclick="" text="Delete" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#F59924FF" siblingindex="8" x="465" y="-329" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
     </button>
-    <button id="createBtn" width="113" height="41" onclick="" text="创建" raycast="1" src="btn_common_1_select" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" siblingindex="9" x="-585" y="-330" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
+    <button id="createBtn" width="113" height="41" onclick="" text="Create" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#F59924FF" siblingindex="9" x="-464" y="-330" fontsize="18" outlinesize="1" outlinecolor="#000000FF">
     </button>
-    <button id="backBtn" width="113" height="41" onclick="" text="退出" raycast="1" src="btn_common_1" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#FFFFFFFF" siblingindex="10" x="-464" y="-330" outlinesize="1" outlinecolor="#000000FF">
+    <button id="backBtn" width="113" height="41" onclick="" text="Exit" raycast="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="" textcolor="#F59924FF" siblingindex="10" x="-341" y="-330" outlinesize="1" outlinecolor="#000000FF" h5x="-464">
     </button>
   </prefab>
   <layout id="rightLayout" control_height="0" contentsizefitter="1" vertical="0" height="36" width="241" a="22" raycast="1" cella="21" x="-24" y="20" space="7">

@@ -12,10 +12,10 @@
     </img>
   </panel>
   <img id="Background" src="Texture/FG_bg_2ColumnsTanKuang.png" raycast="0" x="0" y="-5" z="0" a="21" rotate="0,0,0" width="406" height="662" atlas="" color="#00000000">
-    <text id="title" a="00" text="商店" fontsize="20" height="30" width="200" ta="11" outline="0" horwrap="1" x="-2" y="298" outlinesize="1" outlinecolor="#000000FF">
+    <text id="title" a="00" text="Shop" fontsize="20" height="30" width="200" ta="11" outline="0" horwrap="1" x="-2" y="298" outlinesize="1" outlinecolor="#000000FF" color="#F59924FF">
     </text>
-    <img id="scrollerBg" atlas="" src="Texture/FG_npcShop.png" x="-2" y="-20" z="0" width="382" height="556" a="00" rotate="0,0,0" raycast="0">
-      <scrollview id="ItemList" a="00" x="-1" y="3" width="370" height="539" vertical="1" raycast="0" movementtype="1">
+    <img id="scrollerBg" atlas="" src="Texture/FG_npcShop.png" x="-2" y="-20" z="0" width="382" height="556" a="00" rotate="0,0,0" raycast="0" active="1">
+      <scrollview id="ItemList" a="00" x="-1" y="3" width="370" height="539" vertical="1" raycast="0" movementtype="1" active="1">
         <gridview id="gridview2" cellwidth="60" cellheight="60" raycast="1" contentsizefitter="3" constraint="1" constraintcount="6">
           <datalist id="goods">
             <img id="goolds_back" src="item_frame32" width="100" height="150" raycast="1" atlas="Atlas/FG_BagPanel.spriteatlas" loop="0" color="#FFFFFFFF">
@@ -122,7 +122,7 @@
   <img id="img2" a="00" width="139" height="35" raycast="1" src="bg_title" atlas="Atlas/FG_Common.spriteatlas" x="-323" y="-655" active="1">
   </img>
   <img id="img1" a="00" width="25" height="27" raycast="1" x="-381" y="-657" src="star_1" atlas="Atlas/FG_Common.spriteatlas">
-    <text id="text3" a="00" text="自动买药设置" fontsize="18" height="25" width="113" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="66" y="5">
+    <text id="text3" a="00" text="自助买药" fontsize="18" height="25" width="113" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" x="66" y="5" color="#F59924FF">
     </text>
   </img>
 </uipanel>

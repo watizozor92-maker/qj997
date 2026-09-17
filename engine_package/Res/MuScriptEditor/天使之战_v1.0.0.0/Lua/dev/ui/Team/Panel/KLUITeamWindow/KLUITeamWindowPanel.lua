@@ -16,7 +16,8 @@ function this:Init()
         return self:PlayerDataListItemUpdateFunc(realIndex, kmlcontrol)
     end)
     GUI:DataListUpdateData(self.view.Members_list)
-
+    
+    --self.parent = self.args.parent
 end
 
 ---创建或者刷新界面数据时调用
@@ -150,7 +151,10 @@ end
 ---打开队伍界面
 ---@param data number @对应页签 1：我的队伍，2：附近队伍，3：附近玩家，4：申请列表
 function this:OnClickOpenTeamMainPanel(control,data)
+    --GUI:setVisible(self.parent.TeamWindowClosePanel, false)
     GUI:UIPanel_Open("dev/ui/Team/Panel/KLUITeamMain/KLUITeamMainPanel",_,_,{panelType = data})
+    self.args.parentview.Btn_KLUITeamWindowCloseMaskOnClick(self.args.parentview)
+    
 end
 
 function this:AutoToggleChaneg(_,customData,eventData)

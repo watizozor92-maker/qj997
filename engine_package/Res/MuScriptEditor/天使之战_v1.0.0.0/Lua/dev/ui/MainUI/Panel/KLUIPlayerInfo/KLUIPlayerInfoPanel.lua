@@ -20,14 +20,14 @@ function KLUIPlayerInfoPanel:Init()
     local _, rootMaxY = GUI:GetOffsetMax(self.view.root)
     local _, sliderMinY = GUI:GetOffsetMin(self.view.sliderExperience)
     local _, sliderMaxY = GUI:GetOffsetMax(self.view.sliderExperience)
-    local _, leftBgMinY = GUI:GetOffsetMin(self.view.leftBg)
-    local _, leftBgMaxY = GUI:GetOffsetMax(self.view.leftBg)
+    -- local _, leftBgMinY = GUI:GetOffsetMin(self.view.leftBg)
+    -- local _, leftBgMaxY = GUI:GetOffsetMax(self.view.leftBg)
     GUI:SetOffsetMin(self.view.root,0,rootMinY)
     GUI:SetOffsetMax(self.view.root,0,rootMaxY)
 --[[    GUI:SetOffsetMin(self.view.sliderExperience,0,sliderMinY)
     GUI:SetOffsetMax(self.view.sliderExperience,0,sliderMaxY)]]
-    GUI:SetOffsetMin(self.view.leftBg,-7.5,leftBgMinY)
-    GUI:SetOffsetMax(self.view.leftBg,7.5,leftBgMaxY)
+    -- GUI:SetOffsetMin(self.view.leftBg,-7.5,leftBgMinY)
+    -- GUI:SetOffsetMax(self.view.leftBg,7.5,leftBgMaxY)
     self.experienceTemplateList = {}
     self.buffInfoTemplateList = {}
     self.buffInfoList = {}
@@ -55,7 +55,6 @@ function KLUIPlayerInfoPanel:Init()
     GUI:setScaleX(self.view.shieldTxt, 0.65)
     GUI:setScaleY(self.view.shieldTxt, 0.65)
 
-
 end
 
 ---创建或者刷新界面数据时调用
@@ -67,7 +66,7 @@ function KLUIPlayerInfoPanel:Refresh()
     self:RefreshExperienceAdd()
     self:RefreshShield()
     self:RefreshAgsto()
-    --self:InitPKMode()
+    self:InitPKMode()
     self:RefreshComboSkillValue()
     self:RefreshTotalExpGain()
     local power = SL:GetMetaValue(EMetaVarGetKey.BATTERY)
@@ -114,6 +113,18 @@ function KLUIPlayerInfoPanel:Refresh()
     end
     self:LUA_EVENT_BAG_CHANGE_AFTER()
     self:roleBtnRed()
+    GUI:DataListUpdateData(self.view.fast_data_list)
+    local mapName = SL:GetMetaValue(EMetaVarGetKey.MAP_NAME)
+    local mapLine = SL:GetMetaValue(EMetaVarGetKey.MAP_LINE)
+    ---@type cfg_map_info_column
+    local mapInfo = SL:GetConfig("cfg_map_info", SL:GetMetaValue(EMetaVarGetKey.MAP_ID))
+    if mapInfo and mapInfo.nopositionmove == 0 then
+        GUI:Text_setString(self.view.txt_mapname,string.format("%s<color=#E6E600>[%s线]</color>",mapName,mapLine))
+    else
+        GUI:Text_setString(self.view.txt_mapname,string.format("%s",mapName))
+    end
+    self:OnPlayerMapPosChange()
+
 end
 
 ---注册UI事件和服务器消息
@@ -126,9 +137,9 @@ function KLUIPlayerInfoPanel:RegistEvents()
     SL:RegisterLUAEvent(LUA_EVENT_AGSTOCHANGE, self.RefreshAgsto, self)--主角技能值改变事件
     --SL:RegisterLUAEvent(LUA_EVENT_BUFFCHANHE, self.RefreshBuff, self)--主角buff改变事件
     --SL:RegisterLUAEvent(LUA_EVENT_FREEBUFFCHANHE, self.RefreshFreeBuff, self)--主角免费buff改变事件
-    --SL:RegisterLUAEvent(LUA_EVENT_PKMODE_CHANGE, self.LUA_EVENT_PKMODE_CHANGE, self)
-    --SL:RegisterLUAEvent(LUA_EVENT_SWITCH_PKMODE, self.LUA_EVENT_SWITCH_PKMODE, self)
-    --SL:RegisterLUAEvent(LUA_EVENT_CROSS_SERVER_PK_MODE, self.LUA_EVENT_CROSS_SERVER_PK_MODE, self)
+    SL:RegisterLUAEvent(LUA_EVENT_PKMODE_CHANGE, self.LUA_EVENT_PKMODE_CHANGE, self)--战斗模式切换
+    SL:RegisterLUAEvent(LUA_EVENT_SWITCH_PKMODE, self.LUA_EVENT_SWITCH_PKMODE, self)--战斗模式切换
+    SL:RegisterLUAEvent(LUA_EVENT_CROSS_SERVER_PK_MODE, self.LUA_EVENT_CROSS_SERVER_PK_MODE, self)---跨服战斗模式切换
     SL:RegisterLUAEvent(LUA_EVENT_COMBOSKILL_PROGRESS, self.LUA_EVENT_COMBOSKILL_PROGRESS, self)
     SL:RegisterLUAEvent(LUA_EVENT_INIT_SHORT_CUT, self.InitShortcutAfter, self)
     SL:RegisterLUAEvent(LUA_EVENT_SELECT_ROLE, self.SelectAttackRole, self)
@@ -136,7 +147,7 @@ function KLUIPlayerInfoPanel:RegistEvents()
     SL:RegisterLUAEvent(LUA_EVENT_PRIVILEGE_INFO_CHANGE, self.LUA_EVENT_PRIVILEGE_INFO_CHANGE, self)
     SL:RegisterLUAEvent(LUA_EVENT_EXPERIENCE_ADD_CHANGE, self.LUA_EVENT_EXPERIENCE_ADD_CHANGE, self)
     SL:RegisterLUAEvent(LUA_EVENT_MAIN_PLAYER_DIE, self.LUA_EVENT_MAIN_PLAYER_DIE, self)
-    --SL:RegisterLUAEvent(LUA_EVENT_GUARD_FAST_ITEM_CHANGE, self.LUA_EVENT_GUARD_FAST_ITEM_CHANGE, self)
+    SL:RegisterLUAEvent(LUA_EVENT_GUARD_FAST_ITEM_CHANGE, self.LUA_EVENT_GUARD_FAST_ITEM_CHANGE, self)
     SL:RegisterLUAEvent(LUA_EVENT_ROLE_PROPERTY_CHANGE,self.RefreshAtt,self)
     SL:RegisterLUAEvent(LUA_EVENT_CHANGESCENE, self.LUA_EVENT_CHANGESCENE, self)
     --SL:RegisterLuaNetMsg(LuaMessageIdToClient.RES_SHORTCUTS_INFO, self.RES_SHORTCUTS_INFO, self)
@@ -149,6 +160,8 @@ function KLUIPlayerInfoPanel:RegistEvents()
     GUI:AddOnClickEvent(self.view.buffMenuexpandBtn, self, self.OnClickBuffMenuexpandBtn)
     GUI:AddOnClickEvent(self.view.atkModelMenuBtn, self, self.OnClickAtkModelMenuToggle)
     GUI:AddOnClickEvent(self.view.Btn_AtkModeCloseMask, self, self.Btn_AtkModeCloseMaskOnClick)
+    GUI:AddOnClickEvent(self.view.Btn_TeamWindowCloseMask, self, self.Btn_KLUITeamWindowCloseMaskOnClick)
+
     GUI:AddOnClickEvent(self.view.experienceMenufoldBtn, self, self.OnClickexperienceMenufoldBtn)
     GUI:AddOnClickEvent(self.view.experienceMenuexpandBtn, self, self.OnClickexperienceMenuexpandBtn)
 
@@ -164,14 +177,24 @@ function KLUIPlayerInfoPanel:RegistEvents()
     GUI:AddOnClickEvent(self.view.tog_mail, self, self.OpenMail)
     GUI:AddOnClickEvent(self.view.tog_union, self, self.OpenUnion)
     GUI:AddOnClickEvent(self.view.tog_setting, self, self.OpenSetting)
+    GUI:AddOnClickEvent(self.view.tog_shop, self, self.OpenShop)
+    GUI:AddOnClickEvent(self.view.btn_team, self, self.OpenTeam)
     
     SL:RegisterLUAEvent(LUA_EVENT_MAIN_UI_BOTTOM_SYSTEM_CLOSE, self.LUA_EVENT_MAIN_UI_BOTTOM_SYSTEM_CLOSE, self)
     --GUI:AddOnClickEvent(self.view.MonthCardBtn, self, self.MonthCardBtn)
     SL:RegisterLUAEvent(LUA_EVENT_LIANJI_AUTO_DATACHANGE, self.RefreshLianJiBtn, self)
     GUI:AddOnClickEvent(self.view.lianJiToggle, self, self.AutoComboOnToggleValueChange)
     SL:RegisterLUAEvent(LUA_EVENT_CAREER_CHANGED, self.LUA_EVENT_CAREER_CHANGED, self)
-    SL:RegisterLUAEvent(LUA_EVENT_ROLE_PROPERTY_CHANGE, self.roleBtnRed, self)
+    SL:RegisterLUAEvent(LUA_EVENT_ROLE_PROPERTY_CHANGE, self.roleBtnRed, self)    
+
+    SL:RegisterLUAEvent(LUA_EVENT_PLAYER_MAPPOS_CHANGE,self.OnPlayerMapPosChange,self)
 end
+
+function KLUIPlayerInfoPanel:OnPlayerMapPosChange()   
+    local pos = SL:GetMetaValue(EMetaVarGetKey.MAP_PLAYER_POS)
+    GUI:Text_setString(self.view.txt_coord,pos.x..","..pos.z)
+end
+
 function KLUIPlayerInfoPanel:roleBtnRed()
     ---@type cfg_redDot_new_column
     local cfg = SL:GetConfig("cfg_redDot_new",116)
@@ -183,6 +206,7 @@ function KLUIPlayerInfoPanel:roleBtnRed()
         end
     end
 end
+
 function KLUIPlayerInfoPanel:AutoComboOnToggleValueChange(control,  data)
     SL:SendLuaNetMsg(LuaMessageIdToSever.LianJi_MsgID, {2})
 end
@@ -237,7 +261,7 @@ function KLUIPlayerInfoPanel:OpenMasterTalent(_, type, isClick)
     local tbl = SL:GetConfig("cfg_MainPanelUI",EMainUIBottomFuncType.Trade,"id")
     -- if isClick[1] then
         SL:onLUAEvent(LUA_EVENT_OPENMAINSYSTEMFUNCTION,tbl.systemId)
-        self.nowSys = self.view.tog_bag
+        self.nowSys = self.view.tog_masterTalent
     -- else
     --     local params = string.split(tbl.command, '#')
     --     GUI:UIPanel_Close(params[1])
@@ -321,6 +345,32 @@ function KLUIPlayerInfoPanel:OpenSetting(_, type, isClick)
         SL:onLUAEvent(LUA_EVENT_CLOSEWIN,self.last_open_tab.systemId)
     end
     self.last_open_tab = tbl
+end
+
+function KLUIPlayerInfoPanel:OpenShop(_, type, isClick)
+    ---@type cfg_MainPanelUI_column
+    local tbl = SL:GetConfig("cfg_MainPanelUI",EMainUIBottomFuncType.Shop,"id")
+    SL:onLUAEvent(LUA_EVENT_OPENMAINSYSTEMFUNCTION,tbl.systemId)
+    self.nowSys = self.view.tog_shop
+    if self.last_open_tab and self.last_open_tab.systemId ~= tbl.systemId then
+        GUI:UIPanel_Close(self.last_open_tab.command)
+        SL:onLUAEvent(LUA_EVENT_CLOSEWIN,self.last_open_tab.systemId)
+    end
+    self.last_open_tab = tbl
+end
+local clickCount = 0
+function KLUIPlayerInfoPanel:OpenTeam(_, type, isClick)
+    clickCount = clickCount + 1
+    if clickCount == 1 then
+        GUI:UIPanel_Open("dev/ui/Team/Panel/KLUITeamWindow/KLUITeamWindowPanel",self.view.teamObjRoot,nil,{parentview = self})
+        GUI:setVisible(self.view.TeamWindowClosePanel, true)
+    elseif clickCount >= 2 then
+        GUI:UIPanel_Open("dev/ui/Team/Panel/KLUITeamMain/KLUITeamMainPanel")
+        --关闭组队页面
+        GUI:setVisible(self.view.TeamWindowClosePanel, false)
+        clickCount = 0
+        GUI:UIPanel_Close("dev/ui/Team/Panel/KLUITeamWindow/KLUITeamWindowPanel")
+    end
 end
 
 function KLUIPlayerInfoPanel:LUA_EVENT_MAIN_UI_BOTTOM_SYSTEM_CLOSE()
@@ -645,8 +695,8 @@ function KLUIPlayerInfoPanel:InitPKMode()
     end
     local pkMode = SL:GetMetaValue(EMetaVarGetKey.PKMODE)
     self:LUA_EVENT_PKMODE_CHANGE(_, pkMode)
-    local count = table.count(self.pkModeTemplateList) - 1
-    GUI:setContentSize(self.view.AtkModePanel, GUI:GetControlWidth(self.view.AtkModePanel), count * 34 + (count - 1) + 10)
+    --local count = table.count(self.pkModeTemplateList) - 1
+    --GUI:setContentSize(self.view.AtkModePanel, GUI:GetControlWidth(self.view.AtkModePanel), count * 34)
 end
 
 ---刷新pk模式item显隐
@@ -669,7 +719,9 @@ end
 
 function KLUIPlayerInfoPanel:LUA_EVENT_PKMODE_CHANGE(_, pkMode)
     --GUI:Button_setTitleText(self.view.atkModelname, EPKModeToUI_Out[pkMode] or "")
-    GUI:Image_loadTexture(self.view.atkModelMenuBtn, PkModeToSrc[pkMode].."1","Atlas/UIMainPanel_Out.spriteatlas")
+
+    --GUI:Image_loadTexture(self.view.atkModelMenuBtn, PkModeToSrc[pkMode].."1","Atlas/UIMainPanel_Out.spriteatlas")
+    GUI:Image_loadTexture(self.view.atkModelMenuBtn, PkModeToSrc[pkMode],"Atlas/NewMainPanel.spriteatlas")
     self:Btn_AtkModeCloseMaskOnClick()
 end
 
@@ -764,7 +816,14 @@ function KLUIPlayerInfoPanel:OnClickAtkModelMenuToggle()
     self:RefreshPKModeItem()
 end
 
-function KLUIPlayerInfoPanel:Btn_AtkModeCloseMaskOnClick()
+function KLUIPlayerInfoPanel:Btn_KLUITeamWindowCloseMaskOnClick()
+    --关闭组队页面
+    GUI:UIPanel_Close("dev/ui/Team/Panel/KLUITeamWindow/KLUITeamWindowPanel")
+    clickCount = 0
+    GUI:setVisible(self.view.TeamWindowClosePanel, false)
+end
+
+function KLUIPlayerInfoPanel:Btn_AtkModeCloseMaskOnClick()    
     GUI:setVisible(self.view.AtkModePanel, false)
     GUI:setVisible(self.view.AtkModeClosePanel, false)
 end
@@ -868,7 +927,10 @@ function KLUIPlayerInfoPanel:FastDataListItemCountFunc()
     --local w2 = math.floor((self.view.root.kmlControl.rectTransform.rect.width - w)/2)
     --GUI:setContentSize(self.view.leftBg, w2, 41)
     --GUI:setContentSize(self.view.rightBg, w2, 41)
-    GUI:setContentSize(self.view.fast_grid, count * 60 + (count - 1), 64)
+    GUI:setContentSize(self.view.fast_grid, count * 53 + (count - 1), 54)
+    if count > 3 then
+        count = 3
+    end
     return count
 end
 
@@ -1227,11 +1289,11 @@ function KLUIPlayerInfoPanel:LUA_EVENT_GUARD_FAST_ITEM_CHANGE()
     end
     if not SL:HasConfig("cfg_item",self.fastData[2]) then
         self.fastData[2] = InfoManager.mainUIInfo.hpShowModeItemId
-    end
-    if InfoManager.mainUIInfo.guardId then
-        self.fastData[5] = InfoManager.mainUIInfo.guardId
-    end
-    --GUI:DataListUpdateData(self.view.fast_data_list)
+    end   
+      -- if InfoManager.mainUIInfo.guardId then
+    --     self.fastData[5] = InfoManager.mainUIInfo.guardId
+    -- end  
+    GUI:DataListUpdateData(self.view.fast_data_list)
 end
 
 function KLUIPlayerInfoPanel:RefreshAtt()

@@ -13,7 +13,7 @@ local togToPanel = {
     [E_FashionType.Render] = "dev/outui/AppearGroup/Panel/KLRender/KLRenderPanel",
 }
 local togTitle = {
-    [E_FashionType.Title] = "称号",
+    [E_FashionType.Title] = "Tittle",
     [E_FashionType.Appear] = "外观",
     [E_FashionType.TransferRing] = "首饰",
     [E_FashionType.Change] = "幻化",

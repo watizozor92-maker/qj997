@@ -1,34 +1,34 @@
 <uipanel id="KLFriendMainPanelKml" name="好友主界面" width="300" height="300" zindex="200">
   <prefab id="FriendMain_" path="Kml/KmlPrefab/Cookbook/KmlXWFriendUI/KmlFriendMainUI.prefab">
-    <img id="friend_common_bg" bind="friend_common_bg" active="0" width="1049" height="576" x="4" y="9">
-    </img>
-    <img id="ImgTitle" bind="ImgTitle" active="0">
-    </img>
-    <img id="friend_common_kuang" bind="friend_common_kuang" raycast="1" atlas="" src="Texture/bg_yijitankuangdi3.png" width="1043" height="576" x="0" y="0" active="1">
-    </img>
-    <img id="friend_kuang" bind="friend_kuang" active="0">
-    </img>
     <button id="BtnClose" bind="BtnClose" color="#FFFFFFFF" x="-17" y="-13" width="34" height="34" src="btn_guanbi" atlas="Atlas/FG_Common.spriteatlas" mimg="" pimg="" dimg="">
-    </button>
-    <text id="TextTitleFriend1" bind="TextTitleFriend" color="#FFFFFFFF" outline="1" horwrap="1" width="50" height="22" text="好友" fontsize="18" fontstyle="0" underline="0" x="0" y="0" ta="11" rotate="0,0,0" outlinesize="1" outlinecolor="#000000FF">
-    </text>
-    <text id="TextTitleFriendEnemy" bind="TextTitleFriendEnemy" color="#FFFFFFFF" outline="1" horwrap="1" width="50" height="22" text="宿敌" fontsize="18" fontstyle="0" underline="0" x="0" y="0" ta="11" outlinesize="1" outlinecolor="#000000FF">
-    </text>
-    <text id="TextTitleBlackList" bind="TextTitleBlackList" color="#FFFFFFFF" outline="1" horwrap="1" width="80" height="22" text="黑名单" fontsize="18" fontstyle="0" underline="0" x="0" y="0" outlinesize="1" outlinecolor="#000000FF" ta="11">
-    </text>
-    <togglegroup id="friend_head_common_layout" bind="friend_head_common_layout" height="40" y="-65" width="510" x="34">
-      <toggle id="Options_friend" bind="Options_friend" src="toggle_top_1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select" height="36" width="120" x="63" y="-23" a="10" active="1">
-      </toggle>
-      <toggle id="Options_archenemy" bind="Options_archenemy" active="1" src="toggle_top_1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select" width="120" height="36" x="183" y="-23" a="10">
-      </toggle>
-      <toggle id="Options_blacklist" bind="Options_blacklist" src="toggle_top_1" atlas="Atlas/FG_Common.spriteatlas" pimg="toggle_top_1_select" width="120" height="36" x="303" y="-23" a="10">
-      </toggle>
-    </togglegroup>
-    <button id="add_friend" bind="add_friend" src="haoyou1" atlas="Atlas/FG_FriendPanel.spriteatlas" mimg="" pimg="" dimg="" width="96" height="32" x="-38" y="-68">
     </button>
     <button id="BtnHelp" bind="BtnHelp" x="31" y="20">
     </button>
+    <text id="TextTitleBlackList" bind="TextTitleBlackList" color="#FFFFFFFF" outline="1" horwrap="1" width="80" height="22" text="Blacklist" fontsize="18" fontstyle="0" underline="0" x="0" y="0" outlinesize="1" outlinecolor="#000000FF" ta="11">
+    </text>
+    <togglegroup id="friend_head_common_layout" bind="friend_head_common_layout" height="40" y="-65" width="510" x="34">
+      <toggle id="Options_blacklist" bind="Options_blacklist" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian6" width="120" height="36" x="303" y="-23" a="10">
+      </toggle>
+      <toggle id="Options_friend" bind="Options_friend" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian6" height="36" width="120" x="63" y="-23" a="10" active="1">
+      </toggle>
+      <toggle id="Options_archenemy" bind="Options_archenemy" active="1" src="btn_cebian6" atlas="Atlas/FG_Common.spriteatlas" pimg="btn_cebian6" width="120" height="36" x="183" y="-23" a="10">
+      </toggle>
+    </togglegroup>
+    <img id="ImgTitle" bind="ImgTitle" active="0">
+    </img>
+    <img id="friend_common_kuang" bind="friend_common_kuang" raycast="1" atlas="" src="Texture/new.png" width="1043" height="576" x="0" y="0" active="1">
+    </img>
+    <img id="friend_common_bg" bind="friend_common_bg" active="0" width="1049" height="576" x="4" y="9">
+    </img>
+    <img id="friend_kuang" bind="friend_kuang" active="0">
+    </img>
+    <text id="TextTitleFriend1" bind="TextTitleFriend" color="#FFFFFFFF" outline="1" horwrap="1" width="50" height="22" text="Friends" fontsize="18" fontstyle="0" underline="0" x="0" y="0" ta="11" rotate="0,0,0" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <text id="TextTitleFriendEnemy" bind="TextTitleFriendEnemy" color="#FFFFFFFF" outline="1" horwrap="1" width="50" height="22" text="Enemies" fontsize="18" fontstyle="0" underline="0" x="0" y="0" ta="11" outlinesize="1" outlinecolor="#000000FF">
+    </text>
+    <button id="add_friend" bind="add_friend" src="haoyou1" atlas="Atlas/FG_FriendPanel.spriteatlas" mimg="" pimg="" dimg="" width="96" height="32" x="-38" y="-68" text="" textcolor="#000080FF" raycast="1">
+    </button>
   </prefab>
-  <text id="text1" a="00" text="好友" fontsize="20" height="25" width="81" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" x="2" y="242" fontstyle="0" underline="0">
+  <text id="text1" a="00" text="Friends" fontsize="20" height="25" width="81" ta="11" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" color="#F59924FF" x="2" y="242" fontstyle="0" underline="0">
   </text>
 </uipanel>

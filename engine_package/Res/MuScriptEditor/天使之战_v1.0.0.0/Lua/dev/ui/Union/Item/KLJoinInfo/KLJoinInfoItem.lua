@@ -56,15 +56,18 @@ end
 function this:RefreshStatus()
     if self.unionInfo.state == 0 then
         --GUI:setVisible(self.view.btn_grey_bg, false)
-        GUI:Text_setString(self.view.btn_text, "申请")
+        GUI:Text_setString(self.view.btn_text, "Apply")
+       -- GUI:Text_setString(self.view.btn_text, "申请")
     elseif self.unionInfo.state == 1 then
         --GUI:setVisible(self.view.btn_grey_bg, true)
-        GUI:Text_setString(self.view.btn_text, "已申请")
+        GUI:Text_setString(self.view.btn_text, "Pending")
+        --GUI:Text_setString(self.view.btn_text, "已申请")
     elseif self.unionInfo.state == 2 then
         --GUI:setVisible(self.view.btn_grey_bg, true)
-        GUI:Text_setString(self.view.btn_text, "已满员")
+        GUI:Text_setString(self.view.btn_text, "Full")
+        --GUI:Text_setString(self.view.btn_text, "已满员")
     end
-    GUI:Button_loadTextureNormal(self.view.apply_to_join, self.unionInfo.state == 0 and "btn_common_2_select" or "btn_common_2", "Atlas/FG_Common.spriteatlas")
+    GUI:Button_loadTextureNormal(self.view.apply_to_join, self.unionInfo.state == 0 and "btn_cebian2" or "btn_cebian1", "Atlas/FG_Common.spriteatlas")
 end
 
 function this:RES_UNION_DETAILS_INFO(_, message)

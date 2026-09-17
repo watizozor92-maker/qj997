@@ -319,7 +319,8 @@ function this:StrengthenBtnClick(id,event)
     self.iscanStrengLv = true
     GUI:Image_loadTexture(self.view.UpgradeBtn,"btn_upgrade" ,"Atlas/TS_Union.spriteatlas")
     GUI:Image_loadTexture(self.view.StrengthenBtn,"btn_strength_select" ,"Atlas/TS_Union.spriteatlas")
-    GUI:Text_setString(self.view.arr_title, "强化属性")
+    GUI:Text_setString(self.view.arr_title, "[Enh Bns]")
+    --GUI:Text_setString(self.view.arr_title, "强化属性")
     GUI:Button_setTitleText(self.view.OperateBtn,"强化")
 
 

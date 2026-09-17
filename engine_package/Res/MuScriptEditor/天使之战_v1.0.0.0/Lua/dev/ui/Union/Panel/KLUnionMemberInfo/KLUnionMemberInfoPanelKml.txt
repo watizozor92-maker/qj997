@@ -54,12 +54,12 @@
     </button>
     <button id="PrivateChatBtn" bind="PrivateChatBtn" onclick="KmlXWUnionMemberUI/@MemberDetailPanelClick 私聊 " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" width="113" height="41" x="-62" y="75" text="私聊" fontsize="18">
     </button>
-    <button id="CancelManageBtn" bind="CancelManageBtn" onclick="KmlXWUnionMemberUI/@CloseMemberPanel" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2" mimg="" pimg="" dimg="" outlinesize="0" outline="0" fontsize="16" ta="11" dcolor="#FFFFFF" textcolor="#FF2424FF" outlinecolor="#000000FF" width="82" height="28" x="-54" y="-64">
-      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" text="取消" outlinesize="1" outlinecolor="#000000FF" y="1">
+    <button id="CancelManageBtn" bind="CancelManageBtn" onclick="KmlXWUnionMemberUI/@CloseMemberPanel" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" mimg="" pimg="" dimg="" outlinesize="0" outline="0" fontsize="16" ta="11" dcolor="#FFFFFF" textcolor="#FF2424FF" outlinecolor="#000000FF" width="82" height="28" x="-54" y="-64">
+      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" text="Cancel" outlinesize="1" outlinecolor="#000000FF" y="1">
       </text>
     </button>
-    <button id="ConfirmManageBtn" bind="ConfirmManageBtn" onclick="KmlXWUnionMemberUI/@DoChangeMemberPosition" atlas="Atlas/FG_Common.spriteatlas" src="btn_common_2_select" mimg="" pimg="" dimg="" outlinesize="1" outline="0" fontsize="18" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" a="22" width="82" height="28" x="-54" y="21">
-      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="1">
+    <button id="ConfirmManageBtn" bind="ConfirmManageBtn" onclick="KmlXWUnionMemberUI/@DoChangeMemberPosition" atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian6" mimg="" pimg="" dimg="" outlinesize="1" outline="0" fontsize="18" ta="11" dcolor="#FFFFFF" textcolor="#FFFFFFFF" outlinecolor="#000000FF" a="22" width="82" height="28" x="-54" y="21">
+      <text id="Text" bind="Text" color="#FFFFFFFF" fontsize="16" outline="1" horwrap="1" outlinesize="1" outlinecolor="#000000FF" y="1" text="OK" dragrotatespeed="1">
       </text>
     </button>
     <img id="DIY_Image" bind="DIY_Image" active="0">

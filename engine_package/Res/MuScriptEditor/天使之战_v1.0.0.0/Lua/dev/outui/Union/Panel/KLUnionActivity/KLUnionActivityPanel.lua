@@ -4,8 +4,8 @@ local KLUnionActivityPanel = class(UIKmlLuaPanelBase)
 local this =KLUnionActivityPanel
 ---创建时调用一次
 function this:Init()
-    SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_UNION_ACTIVITY_DATA)
     self.items = {}
+    SL:SendLuaNetMsg(LuaMessageIdToSever.REQ_UNION_ACTIVITY_DATA)
 end
 
 ---创建或者刷新界面数据时调用

@@ -6,7 +6,7 @@
     </img>
     <img id="ItemCheckmark" bind="ItemCheckmark">
     </img>
-    <text id="ItemLabel" bind="ItemLabel">
+    <text id="ItemLabel" bind="ItemLabel" outline="1" horwrap="1">
     </text>
     <img id="img1" bind="Lock">
     </img>

@@ -5,24 +5,24 @@
         <img id="img1" a="00" width="680" height="680" raycast="1" atlas="" src="Texture/FG_BG_New.jpg" x="0" y="0">
         </img>
       </panel>
-      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="Atlas/FG_Common.spriteatlas" src="bg_bottom1" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
+      <img id="Frame" a="00" width="416" height="750" raycast="1" atlas="" src="Texture/FG_dankuangdi2.png" scale9l="87" scale9b="81" scale9r="91" scale9t="109">
       </img>
     </panel>
     <img id="title" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="WarAlliance_List" y="-2" x="8" a="01" active="0">
     </img>
-    <text id="text1" a="01" text="战盟列表" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" y="-34" color="#FFFFFFFF" fontstyle="0" underline="0" x="0" linespace="0" outlinesize="1" outlinecolor="#000000FF">
+    <text id="text1" a="01" text="Guild List" fontsize="20" height="24" width="200" ta="11" outline="1" horwrap="1" y="-34" color="#F59924FF" fontstyle="0" underline="0" x="0" linespace="0" outlinesize="1" outlinecolor="#000000FF">
     </text>
     <img id="closeBtn" atlas="Atlas/FG_Common.spriteatlas" src="btn_guanbi" a="21" x="-10" y="-20" z="-10" onclick="KmlXWUnionApplyToJoinUI/@CloseMainPanel" h5x="-355" h5y="9" width="34" height="34">
     </img>
     <panel id="bottom" a="00" width="416" height="750" y="-10">
       <img id="table_title_bg" atlas="Atlas/FG_Union.spriteatlas" src="Toolbar" scale9l="4" scale9r="4" scale9t="4" scale9b="4" y="-76" width="370" height="36" a="01" x="1">
-        <text id="title_name" ta="01" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="战盟名称" width="75" height="22" x="-117" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" y="4">
-        </text>
-        <text id="title_name" ta="01" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="等级" width="40" height="22" outline="1" horwrap="1" x="-19" color="#FFFFFFFF" fontstyle="0" underline="0" y="4">
-        </text>
         <text id="title_name" ta="11" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="人数" width="40" height="22" x="44" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" y="4">
         </text>
         <text id="title_name" ta="11" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="状态" width="40" height="22" x="133" outline="1" horwrap="1" fontstyle="0" underline="0" color="#FFFFFFFF" y="4">
+        </text>
+        <text id="title_name" ta="01" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="战盟名称" width="75" height="22" x="-117" outline="1" horwrap="1" color="#FFFFFFFF" fontstyle="0" underline="0" y="4">
+        </text>
+        <text id="title_name" ta="01" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000" text="等级" width="40" height="22" outline="1" horwrap="1" x="-19" color="#FFFFFFFF" fontstyle="0" underline="0" y="4">
         </text>
       </img>
       <img id="table_bg" atlas="Atlas/UIUnionInfoPanel.spriteatlas" src="black" color="#FFFFFF96" y="-110" width="370" height="520" a="01" x="1">
@@ -33,8 +33,8 @@
           </datalist>
         </gridview>
       </scrollview>
-      <button id="one_key_apply_to_join" a="02" y="48" onclick="KmlXWUnionApplyToJoinUI/@一键发起申请 " atlas="Atlas/FG_Common.spriteatlas" src="btn_common_1_select" mimg="" pimg="" dimg="" fontsize="18" text="" width="103" height="36" x="1">
-        <text id="btn_text" text="一键申请" fonttype="" fontsize="18" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1" horwrap="1" width="103" height="36" ta="11" active="1" fontstyle="0" underline="0" x="0" y="0">
+      <button id="one_key_apply_to_join" a="02" y="48" onclick="KmlXWUnionApplyToJoinUI/@一键发起申请 " atlas="Atlas/FG_Common.spriteatlas" src="btn_cebian2" mimg="" pimg="" dimg="" fontsize="18" text="" width="103" height="36" x="1">
+        <text id="btn_text" text="SendRequest" fonttype="" fontsize="14" outlinesize="1" outlinecolor="#000000FF" color="#FFFFFFFF" outline="1" horwrap="1" width="103" height="36" ta="11" active="1" fontstyle="0" underline="0" x="0" y="0">
         </text>
       </button>
     </panel>
