@@ -60,4 +60,4 @@ id,itemId,number,shopId,itemName,conditions,bugCondition,price,group
 157,3000104,1,5,战斗箭筒,checkLevel>=0&&checkLevel<999,101#1,10010002#2000#0#100,
 158,60030067,1,5,多重箭之石,checkLevel>=0&&checkLevel<999,101#1,10010002#2000#0#100,
 159,60030072,1,5,冲击波卷轴,checkLevel>=0&&checkLevel<999,101#1,10010002#2000#0#100,
-160,60030072,1,5,冲击波卷轴,checkLevel>=0&&checkLevel<999,101#1,10010002#2000#0#100,
+160,60030068,1,5,天雷闪之石,checkLevel>=0&&checkLevel<999,101#1,10010002#2000#0#100,

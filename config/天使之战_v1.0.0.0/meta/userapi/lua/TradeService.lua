@@ -895,7 +895,7 @@ end
 
 function TradeService.flushList()
     local serverType = getbaseinfo("servertype")
-        if serverType == 2 then
+    if serverType == 2 then
         -- 跨服服务器不执行
         return
     end

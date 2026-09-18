@@ -186,21 +186,39 @@ function ItemSynthesis.synthesis(actor, msgData)
         end
     end
     Bag.costMap(actor, coin, '物品合成消耗')
-    if table.notEmpty(needBagIndexCost) then
-        removeitembyidxlist(actor, needBagIndexCost, 9999, '物品合成消耗')
-    end
-
     -- 6. 处理失败降阶
     local ids = {}
-    if not result and table.notEmpty(specialCost) then
-        local failStr = cfg_synthesis.fail
-        if not string.isNullOrEmpty(failStr) and isProtect then
-            local fail = string.splitInt(failStr, "#")
-            local strengthLv = fail[1] or 0
-            local appendLv = fail[2] or 0
-            this.equipDemotion(actor, needBagIndexCost, specialCost, strengthLv, appendLv, ids)
+    if isProtect then
+        if not result and table.notEmpty(specialCost) then
+            local failStr = cfg_synthesis.fail
+            if not string.isNullOrEmpty(failStr) then
+                local fail = string.splitInt(failStr, "#")
+                local strengthLv = fail[1] or 0
+                local appendLv = fail[2] or 0
+                if table.notEmpty(needBagIndexCost) then
+                    removeitembyidxlist(actor, needBagIndexCost, 9999, '物品合成消耗')
+                end
+                this.equipDemotion(actor, needBagIndexCost, specialCost, strengthLv, appendLv, ids)
+            end
+        end
+        if result and table.notEmpty(needBagIndexCost) then
+            removeitembyidxlist(actor, needBagIndexCost, 9999, '物品合成消耗')
+        end
+    else
+        if table.notEmpty(needBagIndexCost) then
+            removeitembyidxlist(actor, needBagIndexCost, 9999, '物品合成消耗')
+        end
+        if not result and table.notEmpty(specialCost) then
+            local failStr = cfg_synthesis.fail
+            if not string.isNullOrEmpty(failStr) then
+                local fail = string.splitInt(failStr, "#")
+                local strengthLv = fail[1] or 0
+                local appendLv = fail[2] or 0
+                this.equipDemotion(actor, needBagIndexCost, specialCost, strengthLv, appendLv, ids)
+            end
         end
     end
+    
 
     -- 7. 发送结果
     if not result then
@@ -208,7 +226,6 @@ function ItemSynthesis.synthesis(actor, msgData)
         sendluamsg(actor, LuaMessageIdToClient.RES_ITEM_SYNTHESIS, { res = equipInfos, result = false })
         return
     end
-
     -- 8. 发放奖励
     local productItem, productCount = this.getProductItem(cfg_synthesis, dingxiangItem, actor) --获得生成物
     if bind == 1 then

@@ -1,44 +1,44 @@
 ﻿int#c#s,string#c#s,int#c#s,string#c#s,string#c#s,int#c#s,int#c#s,int#c#s,int#c#s,string#c#s,int#c#s,stringListList#c#s,intList#c#s,int#c#s,int#c#s,int#c#s,int#c#s
 id,name,mapId,showInMinimap,icon,x,y,appr,direction,content,limitLv,openPanel,namey,size,speak,time,talkdistance
-100101,酒吧老板娘·莉亚,1001,酒吧老板娘,img_minimap__npc,123,135,9,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
-100102,铁匠·汉斯,1001,,,116,141,2,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#2,0#0#0,100,20018,1,2
-100103,魔导师·帕希,1001,,,118,113,3,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#3,0#0#0,100,,1,2
-100104,幻影导师·凯蒂,1001,BUFF,,131,128,12,2,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100105,流浪商人·海罗德,1001,流浪商人,img_minimap__npc,183,136,7,4,,,,0#0#0,100,,1,2
-100106,少女·安娜,1001,,,127,86,15,4,,,,0#0#0,100,,1,2
-100107,仓库使者·塞弗特,1001,仓库,img_minimap__npc,147,145,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
-100108,幻影导师·凯蒂,1001,BUFF,,172,129,12,4,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100109,幻影导师·凯蒂,1001,BUFF,,132,166,12,2,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100110,幻影导师·凯蒂,1001,BUFF,,132,90,12,2,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100111,幻影导师·凯蒂,1001,BUFF,img_minimap__npc,97,129,12,4,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100112,仓库使者·塞弗特,1001,仓库,img_minimap__npc,145,109,1,2,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
-100114,警卫队长摩伦（220级二转）,1003,二转,img_minimap__npc,184,30,57,3,勇士！我能为你提供些帮助,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666605;2=666607,0#0#0,100,,1,2
-100401,精灵·安吉拉,1004,,,173,125,22,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#5,0#0#0,100,20021,1,2
-100402,幻影导师·凯蒂,1004,BUFF,,167,118,12,4,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100403,工匠·尤达,1004,,,195,124,21,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#4,0#0#0,100,,1,2
-100404,合成·玛雅哥布林,1004,合成,img_minimap__npc,180,103,31,4,,1,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=1;2=2;3=3;4=4;5=5;6=6;7=7;8=8;9=9,0#0#0,100,20020,1,2
-100405,仓库使者·塞弗特,1004,仓库,img_minimap__npc,172,96,1,2,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
-100406,恶魔广场守卫·卡隆,1004,恶魔广场,img_minimap__npc,171,105,19,2,,,dev/outui/Activity/Panel/KLActivityDetail/KLActivityDetailPanel#10001,0#0#0,100,,1,2
-100407,幻影导师·凯蒂,1004,BUFF,,165,84,12,3,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100408,幻影导师·凯蒂,1004,BUFF,,202,130,12,3,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-105201,仓库使者·塞弗特,1052,,,50,229,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
-105202,流浪商人·塞尔维亚,1052,,,44,229,44,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
-105203,召唤师·摩尔塞,1052,,,36,216,28,3,,,,0#0#0,100,,1,2
-105204,幻影导师·凯蒂,1052,BUFF,,57,232,12,3,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-105205,幻影导师·凯蒂,1052,BUFF,,97,219,12,4,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-105206,幻影导师·凯蒂,1052,BUFF,,44,167,12,2,勇士！我能为你提供些帮助,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
-100301,战盟使者·罗斯,1003,战盟,img_minimap__npc,215,45,29,4,你好，勇士！我能为你提供些帮助,,,0#0#0,100,,1,2
-100302,仓库使者·塞弗特,1003,仓库,img_minimap__npc,218,63,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
-100303,武器商人·苏菲,1003,,,186,47,45,2,,,,0#0#0,100,,1,2
-100304,魔导师·露茜,1003,,,225,41,46,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
-100305,老板娘·莉娜,1003,,,226,25,11,2,勇士！我能为你提供些帮助,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,200,,1,2
-100306,血色城堡守卫·大天使的使者,1003,血色城堡,img_minimap__npc,209,29,51,4,,,dev/outui/Activity/Panel/KLActivityDetail/KLActivityDetailPanel#11001,0#-6#0,100,,1,2
-100307,圣导士塞维娜（150级一转）,1003,一转,,184,32,43,3,勇士！我能为你提供些帮助,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666601;2=666603,0#0#0,100,,0,0
-100308,警卫队长,1003,,,198,46,57,3,勇士！我能为你提供些帮助,,,0#0#0,100,,0,0
-101201,受伤的大天使,1012,受伤的大天使,img_minimap__npc,10,9,50,2,勇士！我能为你提供些帮助,,dev/outui/Activity/Panel/KLBloodTip/KLBloodTipPanel#101201,0#0#0,100,,1,2
-100901,艾德·萤之石管理员,1052,萤石管理,img_minimap__npc,46,243,24,4,,1,dev/outui/Synthesis/Panel/KLGemSynthesis/KLGemSynthesisPanel,0#0#0,100,,1,2
-100902,弟子黛彬（380级三转）,1003,三转,,184,28,20,3,勇士！我能为你提供些帮助,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666609,0#0#0,100,,1,2
-100903,摩斯,1052,合成,,22,225,28,2,勇士！我能为你提供些帮助,,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=8,0#0#0,100,,1,2
-100904,暗黑血狼人扩雷,1035,,,62,239,49,4,勇士！我能为你提供些帮助,,dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel#70001,0#0#0,100,,1,2
-100905,守卫,1042,,,119,168,14,3,勇士！我能为你提供些帮助,,dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel#70002,0#0#0,100,,1,2
-100120,驯兽师,1001,合成,,122,114,28,2,勇士！我能为你提供些帮助,,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=10;2=11;3=12,0#0#0,100,,1,2
+100101,Bar Landlady・Leah,1001,Leah,img_minimap__npc,123,135,9,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
+100102,Blacksmith・Hans,1001,Hans,,116,141,2,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#2,0#0#0,100,20018,1,2
+100103,Magician・Pasi,1001,Pasi,,118,113,3,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#3,0#0#0,100,,1,2
+100104,Phantom Mentor・Katie,1001,Katie,,131,128,12,2,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100105,Wandering Merchant・Herod,1001,Herod,img_minimap__npc,183,136,7,4,,,,0#0#0,100,,1,2
+100106,Young Girl・Anna,1001,Anna,,127,86,15,4,,,,0#0#0,100,,1,2
+100107,Storage Keeper・Seifert,1001,Seifert,img_minimap__npc,147,145,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
+100108,Phantom Mentor・Katie,1001,Katie,,172,129,12,4,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100109,Phantom Mentor・Katie,1001,Katie,,132,166,12,2,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100110,Phantom Mentor・Katie,1001,Katie,,132,90,12,2,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100111,Phantom Mentor・Katie,1001,Katie,img_minimap__npc,97,129,12,4,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100112,Storage Keeper・Seifert,1001,Seifert,img_minimap__npc,145,109,1,2,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
+100114,Captain Moren (220Lv 2nd Quest),1003,Moren,img_minimap__npc,184,30,57,3,Warrior! May I offer you assistance?,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666605;2=666607,0#0#0,100,,1,2
+100401,Elf・Angela,1004,Angela,,173,125,22,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#5,0#0#0,100,20021,1,2
+100402,Phantom Mentor・Katie,1004,Katie,,167,118,12,4,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100403,Craftsman・Yuda,1004,Yuda,,195,124,21,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#4,0#0#0,100,,1,2
+100404,Chaos Goblin,1004,Chaos Goblin,img_minimap__npc,180,103,31,4,,1,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=1;2=2;3=3;4=4;5=5;6=6;7=7;8=8,0#0#0,100,20020,1,2
+100405,Storage Keeper・Seifert,1004,Seifert,img_minimap__npc,172,96,1,2,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
+100406,Devil Square Guard・Karon,1004,Karon,img_minimap__npc,171,105,19,2,,,dev/outui/Activity/Panel/KLActivityDetail/KLActivityDetailPanel#10001,0#0#0,100,,1,2
+100407,Phantom Mentor・Katie,1004,Katie,,165,84,12,3,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100408,Phantom Mentor・Katie,1004,Katie,,202,130,12,3,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+105201,Storage Keeper・Seifert,1052,Seifert,,50,229,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
+105202,Wandering Merchant・Serbia,1052,Serbia,,44,229,44,4,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
+105203,Summoner・Morsay,1052,Morsay,,36,216,28,3,,,,0#0#0,100,,1,2
+105204,Phantom Mentor・Katie,1052,Katie,,57,232,12,3,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+105205,Phantom Mentor・Katie,1052,Katie,,97,219,12,4,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+105206,Phantom Mentor・Katie,1052,Katie,,44,167,12,2,Warrior! May I offer you assistance?,,dev/outui/NPC/Panel/KLNPCPhantomMentor/KLNPCPhantomMentorPanel,0#0#0,100,,1,2
+100301,Guild Messenger・Ross,1003,Ross,img_minimap__npc,215,45,29,4,Warrior! May I offer you assistance?,,,0#0#0,100,,1,2
+100302,Storage Keeper・Seifert,1003,Seifert,img_minimap__npc,218,63,1,4,,,dev/ui/Bag/Panel/KLDepots/KLDepotsPanel#table:x=-415;y=0|dev/ui/Bag/Panel/KLUIBag/KLUIBagPanel,0#0#0,100,,1,2
+100303,Weapon Merchant・Sophie,1003,Sophie,,186,47,45,2,,,,0#0#0,100,,1,2
+100304,Magician・Lucy,1003,Lucy,,225,41,46,2,,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,100,,1,2
+100305,Landlady・Lina,1003,Lina,,226,25,11,2,Warrior! May I offer you assistance?,,dev/ui/NPC/Panel/KLNPCShop/KLNPCShopPanel#1,0#0#0,200,,1,2
+100306,Blood Castle Guard・Archangel Messenger,1003,Archangel Messenger,img_minimap__npc,209,29,51,4,,,dev/outui/Activity/Panel/KLActivityDetail/KLActivityDetailPanel#11001,0#-6#0,100,,1,2
+100307,Muse Serverina (150Lv 1st Quest),1003,Serverina,,184,32,43,3,Warrior! May I offer you assistance?,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666601;2=666603,0#0#0,100,,0,0
+100308,Captain Guard,1003,Guard,,198,46,57,3,Warrior! May I offer you assistance?,,,0#0#0,100,,0,0
+101201,Wounded Archangel,1012,Wounded Archangel,img_minimap__npc,10,9,50,2,Warrior! May I offer you assistance?,,dev/outui/Activity/Panel/KLBloodTip/KLBloodTipPanel#101201,0#0#0,100,,1,2
+100901,Ed・Fluorite Manager,1052,Ed,img_minimap__npc,46,243,24,4,,1,dev/outui/Synthesis/Panel/KLGemSynthesis/KLGemSynthesisPanel,0#0#0,100,,1,2
+100902,Disciple Davin (380Lv 3rd Quest),1003,Davin,,184,28,20,3,Warrior! May I offer you assistance?,,dev/outui/Task/Panel/KLTaskAccept/KLTaskAcceptPanel#table:1=666609,0#0#0,100,,1,2
+100903,Moss,1052,Moss,,22,225,28,2,Warrior! May I offer you assistance?,,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=8,0#0#0,100,,1,2
+100904,Dark Werewolf Kure,1035,Kure,,62,239,49,4,Warrior! May I offer you assistance?,,dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel#70001,0#0#0,100,,1,2
+100905,Guard,1042,Guard,,119,168,14,3,Warrior! May I offer you assistance?,,dev/outui/Tips/Panel/KLClickNPCTransferTips/KLClickNPCTransferTipsPanel#70002,0#0#0,100,,1,2
+100120,Tamer,1001,Tamer,,122,114,28,2,Warrior! May I offer you assistance?,,dev/outui/Synthesis/Panel/KLSynthesisMenu/KLSynthesisMenuPanel#table:1=9;2=10;3=11;4=12;5=13,0#0#0,100,,1,2

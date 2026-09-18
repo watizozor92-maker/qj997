@@ -206,7 +206,7 @@ function this.ExcuseFightDamage(actor, paramMap)
         else
             wingdamageRate = getattrinfo(actor, "wingdamageRate")
             --玩家打玩家 PVP原版 max(0,攻击-防御/2)*技能倍率*智力倍率*双倍倍率
-            originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate
+            originDamage = math.max(0, finalDC - armor / 2) * skillPowerRate * intRate / 10
             this.addFightLog(fightContext, string.format("玩家打玩家伤害计算：max(0,%.2f-%.2f/2)*%.4f*%.2f*%.2f=%.2f", finalDC, armor, skillPowerRate, intRate, shuangBeiMultiplier, originDamage))
         end
         --计算减伤伤害

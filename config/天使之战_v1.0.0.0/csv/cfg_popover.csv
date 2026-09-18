@@ -25,5 +25,5 @@ id,description,name,icon,disappeartype,switch
 23,额度档位,lines,qp_yueka,1,1
 24,修理,repair,qp_weixiu,1,0
 25,面对面交易,tradeFaceToFace,qp_jiaoyihang,0,0
-26,BUFF消失,buffdisappear,qp_buff,0,0
+26,BUFF消失,buffdisappear,qp_buff,0,1
 27,好友添加,friendsAdd,qp_haoyou,,0
