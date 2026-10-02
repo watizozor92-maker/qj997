@@ -30,6 +30,7 @@ function this:Reset()
     self.init = true
     self.jieduan = 1;
     self.next_skill_id = 0
+    self.pendingAutoRelease = nil
     Global.LianJiOpenState = false
     if self.checkSagittariusWeaponDurabilityTimer then
         SL:UnSchedule(self.checkSagittariusWeaponDurabilityTimer)
@@ -343,58 +344,242 @@ function this:SetDataInfo()
         for i, v in ipairs(allSkillCopyList) do
             table.insert(self.data,v.skillTbl.id)
             index = index + 1
-            if index >= 3 then
-                break
-            end
+            -- if index >= 3 then
+            --     break
+            -- end
         end
         Global.LianJiData = self.data
     end
 end
-local skillTriggerData = {isReplace=true,skillId = 0,isCanRelease = false}
+
+local skillTriggerData = {isReplace=true, skillId = 0,isCanRelease = false}
+
+local function getHookAutoReleaseSkillIds(hookSkills)
+    local selectedSkillIds = {}
+    local selectedSkillSet = {}
+    local commonSkillId = SL:GetMetaValue(EMetaVarGetKey.SKILL_GET_COMMON_ID)
+    local allSkills = SL:GetMetaValue(EMetaVarGetKey.GET_ME_ALL_SKILL) or {}
+    local isNotAttackPointStr = SL:GetLocalString("isNotAttackPoint")
+    local isNormatPoint = (isNotAttackPointStr ~= "true")
+    for _, skill in pairs(allSkills) do
+        if hookSkills[skill.skillId] ~= nil or (isNormatPoint and skill.skillId == commonSkillId) then
+            if not selectedSkillSet[skill.skillId] then
+                selectedSkillSet[skill.skillId] = true
+                table.insert(selectedSkillIds, skill.skillId)
+            end
+        end
+    end
+    if isNormatPoint and commonSkillId ~= nil and not selectedSkillSet[commonSkillId] then
+        for _, skill in pairs(allSkills) do
+            if skill.skillId == commonSkillId then
+                selectedSkillSet[commonSkillId] = true
+                table.insert(selectedSkillIds, skill.skillId)
+                break
+            end
+        end
+    end
+    table.sort(selectedSkillIds, function(a, b)
+        return tonumber(a) < tonumber(b)
+    end)
+    return selectedSkillIds
+end
+
 --释放技能
 function this:LUA_TRIGGER_RELEASE_HOOK_SKILL(rid,range,canAtkTargets)
     local onHookState = SL:GetMetaValue(EMetaVarGetKey.GET_ONHOOK_STATE)
     if onHookState == 1 then
-        local skill_id
-        if self.data then
-            if Global.LianJiAutoState == 1 then
-                for i = self.jieduan, 3 do
-                    if self.data and self.data[i] then
-                        local skill_id_ = tonumber(self.data[i])
-                        local can_use =  SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skill_id_,rid)
-                        if can_use then
-                            self.next_skill_id_ = skill_id_
-                            skill_id = skill_id_
-                            break
-                        end
-                    end
-                end
-                if skill_id == nil then
-                    for i = 1, 3 do
-                        if self.data and self.data[i] then
-                            local skill_id_ = tonumber(self.data[i])
-                            local can_use = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skill_id_,rid)
-                            if can_use then
-                                self.next_skill_id_ = skill_id_
-                                skill_id = skill_id_
-                                break
-                            end
-                        end
-                    end
-                end
-                self.next_skill_id = skill_id
-            end
-        end
-        if skill_id then
-            return {isReplace=true,skillId=tonumber(skill_id),isCanRelease=true};
-        else
+        -- local skill_id
+        -- if self.data then
+        --     local hookSkills = SL:GetMetaValue(EMetaVarGetKey.GET_HOOK_ATUO_RELEASE_SKILL)
+        --     local comboHookSkillIds = {}
+        --     if hookSkills then
+        --         for _, dataSkillId in ipairs(self.data) do
+        --             local skill_id_ = tonumber(dataSkillId)
+        --             if hookSkills[skill_id_] ~= nil then
+        --                 table.insert(comboHookSkillIds, skill_id_)
+        --             end
+        --         end
+        --     end
+        --     if Global.LianJiAutoState == 1 and #comboHookSkillIds >= 3 then
+        --         for i = self.jieduan, #comboHookSkillIds do
+        --             local skill_id_ = comboHookSkillIds[i]
+        --             local can_use = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skill_id_, rid)
+        --             if can_use then
+        --                 self.next_skill_id_ = skill_id_
+        --                 skill_id = skill_id_
+        --                 break
+        --             end
+        --         end
+        --         if skill_id == nil then
+        --             for i = 1, #comboHookSkillIds do
+        --                 local skill_id_ = comboHookSkillIds[i]
+        --                 local can_use = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skill_id_, rid)
+        --                 if can_use then
+        --                     self.next_skill_id_ = skill_id_
+        --                     skill_id = skill_id_
+        --                     break
+        --                 end
+        --             end
+        --         end
+        --         self.next_skill_id = skill_id
+        --     end
+        -- end
+        -- if skill_id then
+        --     local hookSkills = SL:GetMetaValue(EMetaVarGetKey.GET_HOOK_ATUO_RELEASE_SKILL)
+        --     if hookSkills then
+        --         local selectedSkillIds = getHookAutoReleaseSkillIds(hookSkills)
+        --         local autoRelease = DataManager.settingData.autoRelease
+        --         if not autoRelease then
+        --             autoRelease = { 1, 0 }
+        --             DataManager.settingData.autoRelease = autoRelease
+        --         end
+        --         for index, selectedSkillId in ipairs(selectedSkillIds) do
+        --             if tonumber(selectedSkillId) == tonumber(skill_id) then
+        --                 local deferredIndex = tonumber(autoRelease[2]) or 0
+        --                 if deferredIndex < 1 or deferredIndex > #selectedSkillIds then
+        --                     deferredIndex = 0
+        --                 end
+        --                 if index == deferredIndex then
+        --                     deferredIndex = 0
+        --                 end
+        --                 self.pendingAutoRelease = {
+        --                     skillId = skill_id,
+        --                     currentIndex = index % #selectedSkillIds + 1,
+        --                     deferredIndex = deferredIndex,
+        --                 }
+        --                 break
+        --             end
+        --         end
+        --     end
+        --     return {isReplace=true,skillId=tonumber(skill_id),isCanRelease=true};
+        -- else
             local SkillData = self:GetAutoReleaseSkill(rid,true,false)
-           return SkillData
-        end
+            return SkillData
+        -- end
     end
 end
----@param isAutoSetTarget  boolean 是否自动设置目标
+
 function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
+    local hookSkills = SL:GetMetaValue(EMetaVarGetKey.GET_HOOK_ATUO_RELEASE_SKILL)
+    -- hookSkills = nil
+    -- if true then
+    --     return {isReplace = true, skillId = -1, isCanRelease = false}
+    -- end
+    if hookSkills ~= nil then
+        local selectedSkillIds = getHookAutoReleaseSkillIds(hookSkills)
+        if #selectedSkillIds == 0 then
+            return skillTriggerData
+        end
+
+        local comboSkillSet = {}
+        if Global.LianJiAutoState == 1 and self.data then
+            local comboSkillIds = {}
+            for _, dataSkillId in ipairs(self.data) do
+                local skillId = tonumber(dataSkillId)
+                if skillId and hookSkills[skillId] ~= nil and not comboSkillSet[skillId] then
+                    comboSkillSet[skillId] = true
+                    table.insert(comboSkillIds, skillId)
+                end
+            end
+            if #comboSkillIds >= 3 then
+                local orderedSkillIds = {}
+                for _, skillId in ipairs(comboSkillIds) do
+                    table.insert(orderedSkillIds, skillId)
+                end
+                for _, skillId in ipairs(selectedSkillIds) do
+                    local numericSkillId = tonumber(skillId)
+                    if not numericSkillId or not comboSkillSet[numericSkillId] then
+                        table.insert(orderedSkillIds, skillId)
+                    end
+                end
+                selectedSkillIds = orderedSkillIds
+            else
+                comboSkillSet = {}
+            end
+        end
+
+        local autoRelease = DataManager.settingData.autoRelease
+        if not autoRelease then
+            autoRelease = { 1, 0 }
+            DataManager.settingData.autoRelease = autoRelease
+        end
+        local currentIndex = tonumber(autoRelease[1]) or 1
+        if currentIndex < 1 or currentIndex > #selectedSkillIds then
+            currentIndex = 1
+        end
+        local deferredIndex = tonumber(autoRelease[2]) or 0
+        if deferredIndex < 1 or deferredIndex > #selectedSkillIds then
+            deferredIndex = 0
+        elseif comboSkillSet[tonumber(selectedSkillIds[deferredIndex])] then
+            deferredIndex = 0
+        end
+        autoRelease[1] = currentIndex
+        autoRelease[2] = deferredIndex
+        local firstSkippedIndex
+        local function tryReleaseAt(index)
+            local monsterId = self:GetSkillMonsterId(selectedSkillIds[index], rid)
+            if monsterId == -1 then
+                if not comboSkillSet[tonumber(selectedSkillIds[index])] and firstSkippedIndex == nil then
+                    firstSkippedIndex = index
+                end
+                return nil
+            end
+            if isAutoSetTarget then
+                self:SetSelectTargetId(monsterId)
+            end
+            local nextDeferredIndex = deferredIndex
+            if index == deferredIndex then
+                nextDeferredIndex = 0
+            elseif deferredIndex == 0 and firstSkippedIndex ~= nil then
+                nextDeferredIndex = firstSkippedIndex
+            end
+            self.pendingAutoRelease = {
+                skillId = selectedSkillIds[index],
+                currentIndex = index % #selectedSkillIds + 1,
+                deferredIndex = nextDeferredIndex,
+            }
+            local skillId = tonumber(selectedSkillIds[index])
+            if comboSkillSet[skillId] then
+                self.next_skill_id_ = skillId
+                self.next_skill_id = skillId
+            else
+                self.next_skill_id_ = nil
+                self.next_skill_id = nil
+            end
+            -- SL:LogWarning("选择技能" .. selectedSkillIds[index] .. ", currentIndex=" .. self.pendingAutoRelease.currentIndex .. ", deferredIndex=" .. self.pendingAutoRelease.deferredIndex)
+            return { isReplace = true, skillId = selectedSkillIds[index], isCanRelease = true }
+        end
+
+        if deferredIndex > 0 then
+            local releaseData = tryReleaseAt(deferredIndex)
+            if releaseData then
+                -- SL:LogWarning("优先释放:"..deferredIndex)
+                return releaseData
+            end
+        end
+        for offset = 0, #selectedSkillIds - 1 do
+            local index = (currentIndex + offset - 1) % #selectedSkillIds + 1
+            if index ~= deferredIndex then
+                local releaseData = tryReleaseAt(index)
+                if releaseData then
+                    return releaseData
+                -- else
+                --     SL:LogWarning("跳过技能索引:"..index)
+                end
+            end
+        end
+        if deferredIndex == 0 and firstSkippedIndex ~= nil then
+            autoRelease[2] = firstSkippedIndex
+        end
+        -- SL:LogWarning("选择技能" .. selectedSkillIds[index] .. ", currentIndex=" .. self.pendingAutoRelease.currentIndex .. ", deferredIndex=" .. self.pendingAutoRelease.deferredIndex)
+        return skillTriggerData
+    end
+
+    return this:GetAutoReleaseSkillOrg(rid,isAutoSetTarget,NoUseHookRangeAttack)
+end
+
+---@param isAutoSetTarget  boolean 是否自动设置目标
+function this:GetAutoReleaseSkillOrg(rid,isAutoSetTarget,NoUseHookRangeAttack)    
     local isCanRelease = false
     local range = AutoFightUseSkill:GetAttackRange()
     local skillList = DataManager.settingData.skillPriorityList
@@ -598,8 +783,71 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
             return { isReplace = true, skillId = maxpriorityLevelId, isCanRelease = isCanRelease }
         end
     end
+    
     return skillTriggerData
 end
+
+function this:GetSkillMonsterId(skillId, rid)
+    local learnedSkills = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)
+    local releaseSkill = learnedSkills and learnedSkills[skillId]
+    if not releaseSkill then
+        return -1
+    end
+    local assistType = releaseSkill.skillTbl.assistType
+    local isSummon = assistType[1] == SkillAssistTypeEx.Common and assistType[2] == SubSkillAssistTypeEx.Summon
+    local isBuff = assistType[1] == SkillAssistTypeEx.Common and assistType[2] == SubSkillAssistTypeEx.Buff
+    if isSummon and not SL:IsCanUseSummonSkill(skillId) then
+        return -1
+    end
+    if isBuff and not SL:IsCanUseBuffSkill(skillId) then
+        return -1
+    end
+
+    local meId = rid or SL:MeData_GetId()
+    local range = AutoFightUseSkill:GetAttackRange()
+    local atkCount, monsterId = self:GetSkillRangeCountAndId(skillId, range)
+    monsterId = monsterId or meId
+    local useTarget = (isSummon or isBuff) and meId or monsterId
+    local isCanUse = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, useTarget)
+    if not isCanUse then
+        return -1
+    end
+
+    if skillId == 1300005 then
+        local teamList = SL:GetMetaValue(EMetaVarGetKey.TEAM_MEMBER_LIST)
+        local isInjured = false
+        if teamList ~= nil then
+            for i = 1, #teamList do
+                local member = teamList[i]
+                if member.maxHp > 0 and member.hp / member.maxHp <= 0.9 then
+                    isInjured = true
+                    break
+                end
+            end
+        else
+            local maxHp = SL:GetMetaValue("MAXHP")
+            local hp = SL:GetMetaValue("HP")
+            isInjured = maxHp > 0 and hp / maxHp <= 0.9
+        end
+        if not isInjured then
+            return -1
+        end
+        return 0
+    end
+
+    if isSummon or isBuff then
+        return 0
+    end
+    if assistType[1] == SkillAssistTypeEx.Group then
+        local skillList = DataManager.settingData.skillPriorityList
+        local commonSkillId = SL:GetMetaValue(EMetaVarGetKey.SKILL_GET_COMMON_ID)
+        if atkCount <= 1 and not self:IsOnlyGroupSkill(skillList, commonSkillId) then
+            return -1
+        end
+    end
+    return monsterId
+end
+
 ---没有单体技能则判定为只有群体技能
 function this:IsOnlyGroupSkill(skillList,commonSkillId)
     for i = 1, #skillList do
@@ -644,6 +892,18 @@ function this:SetSkillByGroup()
     return DataManager.settingData:SetSkillByGroup()
 end
 function this:LUA_EVENT_ME_RELEASE_SKILL(id, skillId)
+    local pendingAutoRelease = self.pendingAutoRelease
+    if pendingAutoRelease then
+        if tonumber(skillId) == tonumber(pendingAutoRelease.skillId) then
+            local autoRelease = DataManager.settingData.autoRelease
+            if autoRelease then
+                autoRelease[1] = pendingAutoRelease.currentIndex
+                autoRelease[2] = pendingAutoRelease.deferredIndex
+            end
+            SL:LogWarning("释放技能" .. skillId .. ", currentIndex=" .. autoRelease[1] .. ", deferredIndex=" .. autoRelease[2])
+        end
+        self.pendingAutoRelease = nil
+    end
     if self.next_skill_id == skillId then
         self.jieduan = self.jieduan + 1
         if self.jieduan > 3 then
