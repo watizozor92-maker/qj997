@@ -1,0 +1,49 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+Doc/服务器/
+Doc/客户端/
+
+_internal/
+config/default/
+config/*/map/
+engine_package/StreamingAssets/
+engine_package/CustomRes/
+engine_package/Mu/
+engine_package/LuaTips/
+engine_package/*/*/default/
+engine_package/Res/MuSceneEditor/
+
+editor/
+locales/
+logs/
+patchs/
+server/
+tools/
+version_control/
+更新程序v2/
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+*.exe
+*.dll
+~*.*
+*.txt
+*.bat
+*.bin
+*.pak
+*.log
+*.html
+*.json
+*.dat
+*.sqlite
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
