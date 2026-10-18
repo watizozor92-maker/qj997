@@ -517,13 +517,14 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
         autoRelease[2] = deferredIndex
         local firstSkippedIndex
         local function tryReleaseAt(index)
-            local monsterId = self:GetSkillMonsterId(selectedSkillIds[index], rid)
+            local monsterId, isCanRelease, error = self:GetSkillMonsterId(selectedSkillIds[index], rid, NoUseHookRangeAttack)
             if monsterId == -1 then
                 if not comboSkillSet[tonumber(selectedSkillIds[index])] and firstSkippedIndex == nil then
                     firstSkippedIndex = index
                 end
                 return nil
             end
+            AutoFightControl.releaseSkillError = error or ESkillReleaseError.None
             if isAutoSetTarget then
                 self:SetSelectTargetId(monsterId)
             end
@@ -547,7 +548,7 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
                 self.next_skill_id = nil
             end
             -- SL:LogWarning("选择技能" .. selectedSkillIds[index] .. ", currentIndex=" .. self.pendingAutoRelease.currentIndex .. ", deferredIndex=" .. self.pendingAutoRelease.deferredIndex)
-            return { isReplace = true, skillId = selectedSkillIds[index], isCanRelease = true }
+            return { isReplace = true, skillId = selectedSkillIds[index], isCanRelease = isCanRelease }
         end
 
         if deferredIndex > 0 then
@@ -787,7 +788,7 @@ function this:GetAutoReleaseSkillOrg(rid,isAutoSetTarget,NoUseHookRangeAttack)
     return skillTriggerData
 end
 
-function this:GetSkillMonsterId(skillId, rid)
+function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
     local learnedSkills = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)
     local releaseSkill = learnedSkills and learnedSkills[skillId]
     if not releaseSkill then
@@ -796,23 +797,29 @@ function this:GetSkillMonsterId(skillId, rid)
     local assistType = releaseSkill.skillTbl.assistType
     local isSummon = assistType[1] == SkillAssistTypeEx.Common and assistType[2] == SubSkillAssistTypeEx.Summon
     local isBuff = assistType[1] == SkillAssistTypeEx.Common and assistType[2] == SubSkillAssistTypeEx.Buff
+    local isComb = (releaseSkill.skillTbl.group ~= 4 and releaseSkill.skillTbl.comboType and table.count(releaseSkill.skillTbl.comboType) > 0)
     if isSummon and not SL:IsCanUseSummonSkill(skillId) then
         return -1
     end
     if isBuff and not SL:IsCanUseBuffSkill(skillId) then
         return -1
     end
-
+    
     local meId = rid or SL:MeData_GetId()
     local range = AutoFightUseSkill:GetAttackRange()
     local atkCount, monsterId = self:GetSkillRangeCountAndId(skillId, range)
     monsterId = monsterId or meId
-    local useTarget = (isSummon or isBuff) and meId or monsterId
-    local isCanUse = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, useTarget)
+    local useTarget = (isSummon or isBuff or isComb) and meId or monsterId
+    local isCanUse, error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, useTarget)
+    if not isCanUse and isComb then
+        isCanUse, error = SL:GetMetaValue(EMetaVarGetKey.SKILL_CHECK_CAN_USE, skillId, monsterId)
+    end
     if not isCanUse then
+        if error == ESkillReleaseError.SkillRangeNotEnough and isStatAutoPoint and (self:MonsterIsInHookRange(monsterId, skillId) or NoUseHookRangeAttack) then
+            return monsterId, false, error
+        end
         return -1
     end
-
     if skillId == 1300005 then
         local teamList = SL:GetMetaValue(EMetaVarGetKey.TEAM_MEMBER_LIST)
         local isInjured = false
@@ -832,11 +839,11 @@ function this:GetSkillMonsterId(skillId, rid)
         if not isInjured then
             return -1
         end
-        return 0
+        return 0, true, ESkillReleaseError.None
     end
 
     if isSummon or isBuff then
-        return 0
+        return 0, true, ESkillReleaseError.None
     end
     if assistType[1] == SkillAssistTypeEx.Group then
         local skillList = DataManager.settingData.skillPriorityList
@@ -845,7 +852,7 @@ function this:GetSkillMonsterId(skillId, rid)
             return -1
         end
     end
-    return monsterId
+    return monsterId, true, ESkillReleaseError.None
 end
 
 ---没有单体技能则判定为只有群体技能

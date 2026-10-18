@@ -24,6 +24,7 @@ ESkillTargetType =
     FriendWithoutSelf = 2,
     FriendWithSelf = 3,
     Self = 4,
+    TeamWithSelf = 8,--和后端保持统一
 }
 ---@class ESkillReleaseType @释放类型
 ESkillReleaseType =
@@ -101,6 +102,7 @@ ESpecialSkillEffectType=
     MoveInCustomPath = 9,---自定义播放路径
     ModityParticle_Start = 10,--类似袭风刺施法特效，需要根据目标的SkinMeshRender设置粒子参数
     Custom = 11,--自定义技能特效表现
+    Roam = 12,--游走，身边随机
 }
 ---@class ESpecialSkillEffectType_BindBoneParamType
 ESpecialSkillEffectType_BindBoneParamType =

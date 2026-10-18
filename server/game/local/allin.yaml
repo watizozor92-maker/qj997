@@ -21,19 +21,23 @@ checkSid: false
 openRobot: true
 messageMonitor: false
 
+#关闭创角 true 表示服务器不允许创建角色
+closeCreateRole: false
+
+
 #csv文件
-configPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\csv/
+configPath: csv/
 #地形二进制
-mapPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\map/
+mapPath: map/
 #配置meta空间路径
-metaPath: G:\712-work\712OutVersion\tszz_TrunkV2\config\天使降临H5_v1.0.0.0\meta/
+metaPath: meta/
 
 gate: "127.0.0.1:18002"
 scenes:
   - "127.0.0.1:18105:2"
   - "127.0.0.1:18305:3"
 #开服时间
-openTime: "2024-12-31 00:00:01"
+openTime: "2026-06-01 00:00:01"
 #合服时间
 combineTime: ""
 combineSids: "[]"

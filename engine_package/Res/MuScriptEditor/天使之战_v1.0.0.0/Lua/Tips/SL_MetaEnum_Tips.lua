@@ -65,7 +65,7 @@ EMetaVarSetKey = {
     ---param2 @customType 可选--XAXISMOVECURVE YAXISMOVECURVE ALPHACURVE SCALECURVE
     RESET_HURT_STYLE = "RESET_HURT_STYLE", --(已实现)--重置战斗飘字样式
     RESETALL_HURT_STYLE = "RESETALL_HURT_STYLE", --(已实现)--重置所有战斗飘字样式
-    ---@param param1 float @持续时间，秒
+    ---@param param1 number @持续时间，秒
     SET_HURT_DURATIONTIME = "SET_HURT_DURATIONTIME", --(已实现)--飘字持续时间
     --- 刷新装备流光
     ---@param go UnityEngine.GameObject | "control" 对象或测试标识
@@ -96,17 +96,17 @@ EMetaVarSetKey = {
     ---@param tbl table 技能数据表
     SKILL_SHOW_LIST = "SKILL_SHOW_LIST", ----根据展示类型设置技能id列表
     ---设置当前PK模式
-    ---@param pkMode EPKMode
-    ---@param isSave boolean 是否保存设置 (可选，默认 true)
+    ---@param pkMode EPKMode (number类型，例：0为全体，1为和平，4为组队，5为战盟)
+    ---@param isSave boolean 是否需要保存到服务器 (可选，默认 true)
     SET_PKMODE = "SET_PKMODE", -- (已实现)设置当前PK模式
     ---设置是否不能更改PK模式
     ---@param isNotChangePKMode boolean
     SET_ISNOTCHANGEPKMODE = "SET_ISNOTCHANGEPKMODE", -- (已实现)设置是否不能更改PK模式
     ---设置背景声音音量
-    ---@param value number
+    ---@param value number @(0~100之间）
     SET_BACKGROUND_SOUND = "SET_BACKGROUND_SOUND", --(已实现)设置背景声音音量
     ---设置音效音量
-    ---@param value number
+    ---@param value number @(0~100之间）
     SET_SOUND_EFFECT = "SET_SOUND_EFFECT", --(已实现)设置音效音量
     ---设置语音音量
     ---@param value number @设置的音量（0~100之间）
@@ -119,19 +119,19 @@ EMetaVarSetKey = {
     ---@param isSave boolean @是否保存设置到服务器
     SET_KILL_RANGE = "SET_KILL_RANGE", --(已实现)设置杀怪范围
     ---设置自动吃加血药百分比值
-    ---@param value number
+    ---@param value number @(0~1之间）
     SET_EAT_HP_PILL_PERCENTAGE = "SET_EAT_HP_PILL_PERCENTAGE", --(已实现)设置自动吃加血药百分比值
     ---设置自动吃加蓝药百分比值
-    ---@param value number
+    ---@param value number @(0~1之间）
     SET_EAT_MP_PILL_PERCENTAGE = "SET_EAT_MP_PILL_PERCENTAGE", --(已实现)设置自动吃加蓝药百分比值
     ---设置是否自动反击
-    ---@param value boolean
+    ---@param value boolean true开启，false关闭
     SET_IS_COUNTERATTACK = "SET_IS_COUNTERATTACK", --(已实现)设置是否自动反击
     ---设置挂机是否返回原点
-    ---@param value boolean
+    ---@param value boolean true开启，false关闭
     SET_IS_COMEBACK_HOOKPOINT = "SET_IS_COMEBACK_HOOKPOINT", --(已实现)设置挂机是否返回原点
     ---设置返回挂机点的等待时间
-    ---@param value number
+    ---@param value number 单位秒
     SET_COMEBACK_HOOKPOINT_WAIT_TIEM = "SET_COMEBACK_HOOKPOINT_WAIT_TIEM", --(已实现)设置返回挂机点的等待时间
     ---设置召唤技能
     ---@param value number 技能id
@@ -148,37 +148,37 @@ EMetaVarSetKey = {
     ---@param value number true保存至后端
     SET_ATUO_PICKUP_ITEM = "SET_ATUO_PICKUP_ITEM", --(已实现)设置自动拾取物品列表
     ---设置隐藏玩家模型类型
-    ---@param value EHideType
+    ---@param value EHideType number-0，不处理 1，不隐藏 2，隐藏全部全部 3，隐藏同战盟玩家（友好） 4,隐藏敌对玩家
     SET_HIDE_PLAYER_MODEL_TYPE = "SET_HIDE_PLAYER_MODEL_TYPE", --(已实现)设置隐藏玩家模型类型
     ---设置隐藏玩家技能特效类型
-    ---@param value EHideType
+    ---@param value EHideType number-0，不处理 1，不隐藏 2，隐藏全部全部 3，隐藏同战盟玩家（友好） 4,隐藏敌对玩家
     SET_HIDE_PLAYER_SKILL_EFFECT_TYPE = "SET_HIDE_PLAYER_SKILL_EFFECT_TYPE", --(已实现)设置隐藏玩家技能特效类型
     ---设置隐藏玩家翅膀类型
-    ---@param value EHideType
+    ---@param value EHideType number-0，不处理 1，不隐藏 2，隐藏全部全部 3，隐藏同战盟玩家（友好） 4,隐藏敌对玩家
     SET_HIDE_PLAYER_WING_TYPE = "SET_HIDE_PLAYER_WING_TYPE", --(已实现)设置隐藏玩家翅膀类型
     ---设置隐藏自己翅膀类型
-    ---@param value EHideType
+    ---@param value EHideType number-0，不处理 1，不隐藏 2，隐藏全部全部 3，隐藏同战盟玩家（友好） 4,隐藏敌对玩家
     SET_HIDE_ME_WING_TYPE = "SET_HIDE_ME_WING_TYPE", --(已实现)设置隐藏自己翅膀类型
     ---设置隐藏玩家足迹类型
-    ---@param value EHideType
+    ---@param value EHideType number-0，不处理 1，不隐藏 2，隐藏全部全部 3，隐藏同战盟玩家（友好） 4,隐藏敌对玩家
     SET_HIDE_PLAYER_FOOTPRINT_TYPE = "SET_HIDE_PLAYER_FOOTPRINT_TYPE", --设置隐藏玩家足迹类型
     ---设置是否隐藏召唤兽
-    ---@param value boolean
+    ---@param value boolean true隐藏，false不隐藏
     SET_IS_HIDE_CALL_MONSTER = "SET_IS_HIDE_CALL_MONSTER", --设置是否隐藏召唤兽
     ---设置是否隐藏怪物模型
-    ---@param value boolean
+    ---@param value boolean true隐藏，false不隐藏
     SET_IS_HID_MONSTER_MODEL = "SET_IS_HID_MONSTER_MODEL", --(已实现)设置是否隐藏怪物模型
     ---设置是否隐藏怪物技能特效
-    ---@param value boolean
+    ---@param value boolean true隐藏，false不隐藏
     SET_IS_HID_MONSTER_SKILL_EFFECT = "SET_IS_HID_MONSTER_SKILL_EFFECT", --(已实现)设置是否隐藏怪物技能特效
     ---设置是否限制玩家显示数量
-    ---@param value boolean
+    ---@param value boolean true限制，false不限制
     SET_IS_LIMIT_PLAYER_SHOW_COUNT = "SET_IS_LIMIT_PLAYER_SHOW_COUNT", --(已实现)设置是否限制玩家显示数量
     ---设置限制玩家显示数量
-    ---@param value number
+    ---@param value number @(0~100)
     SET_LIMIT_PLAYER_SHOW_COUNT = "SET_LIMIT_PLAYER_SHOW_COUNT", --(已实现)设置限制玩家显示数量
     ---设置省电模式
-    ---@param value EGameQualityType
+    ---@param value EGameQualityType number（1-省电，2-均衡，3-最强）
     SET_POWER_SAVING_MODE = "SET_POWER_SAVING_MODE", --(已实现)设置省电模式
     SET_LEFT_GENERATE_INVITE_CODE_COUNT = "SET_LEFT_GENERATE_INVITE_CODE_COUNT", --(已实现)设置剩余生成邀请码次数
     ---设置是否自动接受组队邀请
@@ -262,6 +262,9 @@ EMetaVarSetKey = {
     ---@param rid number
     ---@param mountId number
     SET_PLAYER_MOUNTID = "SET_PLAYER_MOUNTID", --设置玩家当前骑乘的坐骑id
+    ---设置快捷登录角色的数据
+    ---@param roleInfo any
+    SET_QUICK_LOGIN_ROLE_INFO = "SET_QUICK_LOGIN_ROLE_INFO", --设置快速登录的角色数据
 }
 
 
@@ -305,7 +308,7 @@ EMetaVarGetKey = {
     ---@return boolean
     IS_PC_PLAY_MODE = "IS_PC_PLAY_MODE", --(已实现)
     ---操作模式（PC=1, 手机=2）
-    ---@return number | nil
+    ---@return number | nil PC=1, 手机=2
     CURRENT_OPERMODE = "CURRENT_OPERMODE", --(已实现)
     ---游戏 ID
     ---@return number 游戏 ID
@@ -337,7 +340,7 @@ EMetaVarGetKey = {
     ---@return string @唯一设备ID
     DEVICE_UNIQUE_ID = "DEVICE_UNIQUE_ID", --(已实现)
     ---游戏帧率统计对象
-    ---@return any
+    ---@return userdata C#的FPSCounter对象
     FPS = "FPS", --(已实现)
     ---获取游戏帧率
     ---@return number 游戏帧率
@@ -403,7 +406,7 @@ EMetaVarGetKey = {
     ---@return string @ 服务器ID
     SERVER_ID = "SERVER_ID", --(已实现)
     ---服务器名字
-    ---@return string @ 服务器ID
+    ---@return string @ 服务器名字
     SERVER_NAME = "SERVER_NAME", --(已实现)
     ---主服务器ID
     ---@return string @ 服务器ID
@@ -433,24 +436,34 @@ EMetaVarGetKey = {
     --M2_FORBID_SAY = "M2_FORBID_SAY", --(已实现)
 
     ---地图ID
+    --- @return number 地图id(cfg_map_info表id)
     MAP_ID = "MAP_ID", --(已实现)
     ---地图名字
+    --- @return string 地图名字(cfg_map_info表mapname)
     MAP_NAME = "MAP_NAME", --(已实现)
     ---地图line
+    --- @return number 地图线路
     MAP_LINE = "MAP_LINE", --(已实现)
     ---地图数据ID
+    --- @return string 地图数据(cfg_map_info表data字段)
     MAP_DATA_ID = "MAP_DATA_ID", --(已实现)
     ---获取地图区域水陆空
+    --- @return number 当前地图区域类型(cfg_map_info表area字段)
     MAP_AREA = "MAP_AREA", --(已实现)
     ---获取地图pvp
+    --- @return boolean 角色模型与角色模型之间是否可穿越
     MAP_PVP = "MAP_PVP", --(已实现)
     ---获取地图pve
+    --- @return boolean 玩家模型与怪物模型之间是否可穿越
     MAP_PVE = "MAP_PVE", --(已实现)
     ---获取地图eve
+    --- @return boolean 怪物模型与怪物模型之间是否可穿越
     MAP_EVE = "MAP_EVE", --(已实现)
     ---是否是安全区域
+    --- @return boolean 玩家所在位置是否是安全区
     IN_SAFE_AREA = "IN_SAFE_AREA", --(已实现)
     ---是否禁止职业和等级
+    --- @return boolean 当前地图是否有等级限制
     MAP_FORBID_LEVEL_AND_JOB = "MAP_FORBID_LEVEL_AND_JOB", --(已实现)
     ---地图数据是否加载完成（当前实现：true 表示未完成加载/下载中）
     ---@return boolean 是否加载完成
@@ -467,6 +480,7 @@ EMetaVarGetKey = {
     ---获取地图格子是否是阻挡
     ---@param param1 number @地图坐标X
     ---@param param2 number @地图坐标Z
+    ---@return boolean 是否阻挡
     MAP_IS_OBSTACLE = "MAP_IS_OBSTACLE", --(已实现)
     ---地图计算路径坐标
     ---@return  Dot2[] @路径坐标
@@ -475,6 +489,7 @@ EMetaVarGetKey = {
     ---@return number @路径点索引
     MAP_CURRENT_PATH_INDEX = "MAP_CURRENT_PATH_INDEX", --(已实现)
     ---地图获取人物坐标
+    ---@return Dot2[] 玩家坐标
     MAP_PLAYER_POS = "MAP_PLAYER_POS", --(已实现)
     ---地图获取怪物列表位置等信息
     MAP_GET_MONSTERS = "MAP_GET_MONSTERS", --(已实现)
@@ -519,7 +534,7 @@ EMetaVarGetKey = {
     ---@return number 主相机偏航角
     MAIN_CAMERA_Y_ORBIT_ANGLE_Y = "MAIN_CAMERA_Y_ORBIT_ANGLE_Y", --主相机Y轴角度
     ---引擎是否锁定相机
-    ---@return boolean
+    ---@return boolean true-锁定视角，false-不锁定视角
     ENGINE_IS_LOCK_CAMERA = "ENGINE_IS_LOCK_CAMERA", --是否锁定相机
 
 
@@ -529,14 +544,14 @@ EMetaVarGetKey = {
     MONEY = "MONEY", --(已实现)
     MONEY_ASSOCIATED = "MONEY_ASSOCIATED", --(已实现)
     ---获取所有道具信息
-    ---@return table<number,table<number, CommonProtos.Item>> 道具列表
+    ---@return table<number,table<number, CommonProtos.Item>> @<页数,<位置,道具数据>>
     STD_ITEMS = "STD_ITEMS", --(已实现)
     ---根据道具index获取道具信息
-    ---@param param1 number 背包物品索引
+    ---@param bagIndex number 背包物品索引
     ---@return CommonProtos.Item 道具信息
     ITEM_DATA = "ITEM_DATA", --(已实现)
     ---根据道具index或者名字获取道具数量
-    ---@param param1 number 道具index
+    ---@param param1 number|string  @道具index或者道具名称
     ---@return number 道具数量
     ITEM_COUNT = "ITEM_COUNT", --(已实现)
     ---根据道具index获取道具名字
@@ -548,15 +563,15 @@ EMetaVarGetKey = {
     ---@alias Index_ItemData {index:number, item:CommonProtos.Item}
     ---@return Index_ItemData [] 背包内对应的格子索引和物品列表
     ITEM_INDEX_BY_NAME = "ITEM_INDEX_BY_NAME", --(已实现)
-    ---获取道具名字颜色  通过itemIndex
+    ---获取道具索引指定的道具名字颜色表id(和ITEM_NAME_COLORID 一样)
     ---@param param1 number 背包物品索引
     ---@return number 对应cfg_color表id
     ITEM_NAME_COLOR = "ITEM_NAME_COLOR", --(已实现)
-    ---获取道具名字颜色,”#FFFFFF”格式  通过itemIndex
+    ---获取道具索引指定的道具名字颜色字符串,”#FFFFFF”格式
     ---@param param1 number 背包物品索引
     ---@return string 对应cfg_color表color值
     ITEM_NAME_COLOR_VALUE = "ITEM_NAME_COLOR_VALUE", --(已实现)
-    ---道具名字颜色ID, 颜色表ID
+    ---获取道具索引指定的道具名字颜色表id
     ---@param param1 number 背包物品索引
     ---@return number 对应cfg_color表id
     ITEM_NAME_COLORID = "ITEM_NAME_COLORID", --(已实现)
@@ -639,54 +654,55 @@ EMetaVarGetKey = {
     ---@return string
     MAIN_ACTOR_ID = "MAIN_ACTOR_ID", --(已实现)
     --- 是否是玩家
+    ---@param actorID number @角色id
     ---@return boolean
     ACTOR_IS_PLAYER = "ACTOR_IS_PLAYER", --(已实现)
-    ---是否是网络玩家
+    ---某个角色id对应的角色是否是网络玩家
     ---@param actorID number @角色id
     ---@return boolean 是否是网络玩家
     ACTOR_IS_NETPLAYER = "ACTOR_IS_NETPLAYER", --(已实现)
-    ---是否是怪物
+    ---某个角色id对应的角色是否是怪物
     ---@param actorID number @角色id
     ---@return boolean @是否是怪物
     ACTOR_IS_MONSTER = "ACTOR_IS_MONSTER", --(已实现)
-    ---是否是NPC
+    ---某个角色id对应的角色是否是NPC
     ---@param actorID number @角色id
     ---@return boolean @是否是NPC
     ACTOR_IS_NPC = "ACTOR_IS_NPC", --(已实现)
     ACTOR_IS_HERO = "ACTOR_IS_HERO", --(已实现)
     ACTOR_IS_HUMAN = "ACTOR_IS_HUMAN", --(已实现)
-    ---获取角色名字
+    ---获取某个角色id对应的角色名字
     ---@param actorID number @角色id
     ---@return string @角色名字
     ACTOR_NAME = "ACTOR_NAME", --(已实现)
-    ---获取角色HP
+    ---获取某个角色id对应的角色HP
     ---@param actorID number @角色id
     ---@return number @角色HP
     ACTOR_HP = "ACTOR_HP", --(已实现)
-    ---获取角色最大HP
+    ---获取某个角色id对应的角色最大HP
     ---@param actorID number @角色id
     ---@return number @角色最大HP
     ACTOR_MAXHP = "ACTOR_MAXHP", --(已实现)
-    ---获取角色MP
+    ---获取某个角色id对应的角色MP
     ---@param actorID number @角色id
     ---@return number @角色MP
     ACTOR_MP = "ACTOR_MP", --(已实现)
-    ---获取角色最大MP
+    ---获取某个角色id对应的角色最大MP
     ---@param actorID number @角色id
     ---@return number @角色最大MP
     ACTOR_MAXMP = "ACTOR_MAXMP", --(已实现)
-    ---获取角色等级
+    ---获取某个角色id对应的角色等级
     ---@param actorID number @角色id
     ---@return number @角色等级
     ACTOR_LEVEL = "ACTOR_LEVEL", --(已实现)
     ACTOR_JOB_ID = "ACTOR_JOB_ID", --(已实现)
-    ---actor是否死亡
+    ---判定指定id的角色是否死亡
     ---@param param1 number @角色id
     ---@return boolean @角色是否死亡
     ACTOR_IS_DIE = "ACTOR_IS_DIE", --(已实现)
     ---获取actor归属ID
     ---@param param1 number @角色id
-    ---@return number @对数对象id
+    ---@return number @归属对象id
     ACTOR_OWNER_ID = "ACTOR_OWNER_ID", --(已实现)
     Pet_OWNER_ID = "Pet_OWNER_ID", --(已实现)
     ---获取actor归属名字
@@ -723,9 +739,11 @@ EMetaVarGetKey = {
     ACTOR_PKLV = "ACTOR_PKLV", --(已实现)
     ---actor是否在摆摊
     ---@param param1 number @actorID
+    ---@return boolean 是否有摆摊id
     ACTOR_IS_IN_STALL = "ACTOR_IS_IN_STALL", --(已实现)
     ---获取actor摆摊名
     ---@param param1 number @actorID
+    ---@return string 摆摊名称
     ACTOR_STALL_NAME = "ACTOR_STALL_NAME", --(已实现)
     ---获取actor是否是离线状态玩家
     ---@param param1 number @角色id
@@ -733,6 +751,7 @@ EMetaVarGetKey = {
     ACTOR_IS_OFFLINE = "ACTOR_IS_OFFLINE", --(已实现)
     ---actor是否是主玩家
     ---@param param1 number @actorID
+    ---@return boolean 是否是主玩家
     ACTOR_IS_MAINPLAYER = "ACTOR_IS_MAINPLAYER", --(已实现)
     ---actor是否是骑马状态
     ---@param param1 number @角色id
@@ -740,14 +759,17 @@ EMetaVarGetKey = {
     ACTOR_IS_HORSEBACK_RADING = "ACTOR_IS_HORSEBACK_RADING", --(已实现)
     ---获取actor坐骑的主驾ID
     ---@param param1 number @actorID
+    ---@return number|boolean 坐骑id|false
     ACTOR_HORSE_MASTER_ID = "ACTOR_HORSE_MASTER_ID", --(已实现)
     ---获取actor是否在附近显示
     ---@param param1 number @actorID
+    ---@return boolean 是否显示模型
     ACTOR_NEAR_SHOW = "ACTOR_NEAR_SHOW", --(已实现)
     ---获取actor是否在移动状态
     ---@param param1 number @actorID
+    ---@return boolean 是否在移动
     ACTOR_IS_MOVE = "ACTOR_IS_MOVE", --(已实现)
-    ---获取主角id
+    ---获取主角id字符串
     ---@return string @主角id
     USER_ID = "USER_ID", --(已实现)
     ACTOR_STOME_MODE = "ACTOR_STOME_MODE", --(已实现)
@@ -757,7 +779,7 @@ EMetaVarGetKey = {
     ACTOR_HIDE_HP_BAR = "ACTOR_HIDE_HP_BAR", --(已实现)
     ACTOR_NATION_ENEMY_PK = "ACTOR_NATION_ENEMY_PK", --(已实现)
     ACTOR_GM_DATA = "ACTOR_GM_DATA", --(已实现)
-    ---角色是否死亡
+    ---判断某个角色id对应的角色是否死亡
     ---@param actorID number @角色id
     ---@return boolean @角色是否死亡
     ACTOR_IS_DEATH = "ACTOR_IS_DEATH", --(已实现)
@@ -965,7 +987,7 @@ EMetaVarGetKey = {
     RANK_DATA_BY_TYPE = "RANK_DATA_BY_TYPE", --(已实现)
     MISSION_ITEM_ORDER = "MISSION_ITEM_ORDER",
     ---获取技能名字
-    ---@param param1 number @技能id
+    ---@param param1 number @技能表id
     ---@return string @技能数据
     SKILL_NAME = "SKILL_NAME", --(已实现)
     ---获取技能图标
@@ -1000,8 +1022,8 @@ EMetaVarGetKey = {
     ---@param param1 number @技能id
     ---@return table @熟练度数据
     SKILL_TRAIN_DATA = "SKILL_TRAIN_DATA", --(已实现)
-    ---获取技能配置
-    ---@param param1 number 技能 ID（未使用）
+    ---获取技能转盘所有技能id列表
+    ---@param param1 number 索引值 ID（未使用）
     ---@return table 技能配置数据 key,value
     SKILL_CONFIG = "SKILL_CONFIG", --(已实现)
     ---根据技能id获取其在轮盘中的索引
@@ -1018,7 +1040,7 @@ EMetaVarGetKey = {
     ---获取技能展示列表
     ---@return number @技能id列表 ,列表中0表示该位置没有技能
     SKILL_SHOW_LIST = "SKILL_SHOW_LIST", --(已实现) --根据展示类型获取技能id列表
-    ---获取主角显示的技能列表数据
+    ---获取主角显示的技能id列表
     ---@return number[] @技能id列表
     SKILL_ID_LIST_DATA = "SKILL_ID_LIST_DATA", --(已实现)
     ---检查技能等级条件
@@ -1132,6 +1154,7 @@ EMetaVarGetKey = {
     ---@param param1 number @商品Id
     RECHARGE_PRODUCT_BY_ID = "RECHARGE_PRODUCT_BY_ID", --(已实现)
     ---是否接入第三方SDK
+    ---@return boolean
     IS_SDK_PAY = "IS_SDK_PAY", --(已实现)
     ---根据角色id获取摊位名字
     ---@return string
@@ -1228,8 +1251,8 @@ EMetaVarGetKey = {
     CHARM = "CHARM",
     EQUIPBYPOS = "EQUIPBYPOS", --(已实现)
     -----------------------原变量获取-----------------------
-    ---根据类型id获取属性值
-    ---@param param1 number|EMUCharacterAttrType @属性id
+    ---根据属性ID获取属性值
+    ---@param param1 number @属性id
     ---@return number @属性值
     GET_ATTR_VALUE_BY_ID = "GET_ATTR_VALUE_BY_ID", --(已实现)
     ---获取装备所有物品数据
@@ -1240,7 +1263,7 @@ EMetaVarGetKey = {
     ---@return CommonProtos.Item[] @对应装备位的所有装备
     EQUIP_DATA_LIST = "EQUIP_DATA_LIST", --(已实现)
     EMBATTLE = "EMBATTLE",
-    ---获取玩家的外观数据
+    ---获取玩家的外观数据【因为获取的是内置的外观数据，废弃】
     ---@return table<EEquipSlotType,number>
     FEATURE = "FEATURE", --(已实现)
     HAIR = "HAIR",
@@ -1291,7 +1314,7 @@ EMetaVarGetKey = {
     LOOK_USER_NAME = "LOOK_USER_NAME", --(已实现)
     LOOK_USER_NAME_COLOR = "LOOK_USER_NAME_COLOR", --(已实现)
     PLAYER_INITED = "PLAYER_INITED", --(已实现)
-    --- 剩余点数
+    ---获取剩余可用属性点
     ---@return number @剩余属性点数
     REMAIN_ATTR_POINT = "REMAIN_ATTR_POINT", --(已实现)
     ---获取玩家登录区服列表
@@ -1315,7 +1338,7 @@ EMetaVarGetKey = {
     ---@return string @buff的描述
     GET_BUFF_DESCRIDE = "GET_BUFF_DESCRIDE", --(已实现)
     GEt_BUFF_BEHAVIOUR = "GEt_BUFF_BEHAVIOUR", --获取某个角色是否有某种buff行为
-    ---获取某个角色是否有某种buff行为
+    ---获得某个角色是否有某种状态buff
     ---@param actorID number @角色id,如果是nil，就用自己
     ---@param stateType EBuffParamType_State
     ---@return boolean,Buff @是否有buff,Buff数据(如果有)
@@ -1377,7 +1400,7 @@ EMetaVarGetKey = {
     ---@return number
     GET_SUMMONBEASTS_MONSTER_ID = "GET_SUMMONBEASTS_MONSTER_ID", --(已实现)
     ---获取当前召唤兽是否可召唤
-    ---@return number
+    ---@return boolean
     SUMMONBEASTS_CAN_BEASTS_CHECK = "SUMMONBEASTS_CAN_BEASTS_CHECK", --(已实现)
     ---根据技能id获取召唤兽的cfg_pet的id
     ---@return number
@@ -1386,7 +1409,7 @@ EMetaVarGetKey = {
     ---@return table @cfg_pet表数据
     GET_SUMMONBEASTS_PET_CFG_DATA = "GET_SUMMONBEASTS_PET_CFG_DATA",
     ---获取召唤兽当前存活状态
-    ---@return number
+    ---@return boolean
     GET_SUMMONBEASTS_ALIVESTATE = "GET_SUMMONBEASTS_ALIVESTATE",
 
     ---获取NPC对话内容
@@ -1404,11 +1427,13 @@ EMetaVarGetKey = {
     ---通过cfgID获取模型
     GET_NPC_MODEL = "GET_NPC_MODEL", -- (已实现)通过npccfgID获取模型
     ---是否为任务对话 NPC
-    ---@param cfgid number NPC 配置 ID
+    ---@param cfgid number npclist配置表中的 ID
     ---@return boolean
     IS_TASK_NPC = "IS_TASK_NPC", -- (已实现)是否是任务NPC
 
     --- 根据npcid获取NPC商店的ShopId
+    ---@param npcCfgId number cfg_npclist配置id
+    ---@return number 商店ShopId
     GET_NPC_SHOPID = "GET_NPC_SHOPID", -- (已实现)根据npcid获取NPC商店的ShopId
     ---获取玩家某一装备数据
     ---@param param1 number @穿戴栏id
@@ -1432,7 +1457,7 @@ EMetaVarGetKey = {
     ---获取视野内怪物List
     ---@return table<number, Role>
     GET_MONSTER_DATA_LIST = "GET_MONSTER_DATA_LIST", --获取视野内怪物列表
-    ---获取地图boss列表(地图列表的怪
+    ---获取地图boss列表(地图列表的怪)
     ---@return any
     GET_MONSTER_BOSS_INFO_LIST = "GET_MONSTER_BOSS_INFO_LIST", --获取地图boss列表(地图列表的怪
     ---获取掉落道具列表
@@ -1459,10 +1484,10 @@ EMetaVarGetKey = {
     ---@return number[]
     GET_ROLE_BY_CONDITION = "GET_ROLE_BY_CONDITION", ---(已实现)根据条件获取周围的角色
     ---获取背景音乐音量
-    ---@return number
+    ---@return number @(0~100之间)
     GET_BACKGROUND_SOUND = "GET_BACKGROUND_SOUND", --(已实现)获取背景声音音量
     ---获取音效音量
-    ---@return number
+    ---@return number @(0~100之间)
     GET_SOUND_EFFECT = "GET_SOUND_EFFECT", --(已实现)获取音效音量
     ---获取语音音量
     ---@return number @当前音量
@@ -1474,13 +1499,13 @@ EMetaVarGetKey = {
     ---@return ETickModel
     GET_CLICK_FLOOR_IS_SELECT = "GET_CLICK_FLOOR_IS_SELECT", --(已实现)获取是否勾选点地板移动
     ---获取杀怪范围
-    ---@return number
+    ---@return number @1~8之间
     GET_KILL_RANGE = "GET_KILL_RANGE", --(已实现)获取杀怪范围
-    ---获取自动吃加蓝药百分比值
-    ---@return number
+    ---获取自动吃加血药百分比值
+    ---@return number @0~1之间
     GET_EAT_HP_PILL_PERCENTAGE = "GET_EAT_HP_PILL_PERCENTAGE", --(已实现)获取自动吃加血药百分比值
     ---获取自动吃加蓝药百分比值
-    ---@return number
+    ---@return number @0~1之间
     GET_EAT_MP_PILL_PERCENTAGE = "GET_EAT_MP_PILL_PERCENTAGE", --(已实现)获取自动吃加蓝药百分比值
     ---获取是否自动反击
     ---@return boolean
@@ -1489,7 +1514,7 @@ EMetaVarGetKey = {
     ---@return boolean
     GET_IS_COMEBACK_HOOKPOINT = "GET_IS_COMEBACK_HOOKPOINT", --(已实现)获取挂机是否返回原点
     ---获取返回挂机点的等待时间
-    ---@return number
+    ---@return number 单位秒
     GET_COMEBACK_HOOKPOINT_WAIT_TIEM = "GET_COMEBACK_HOOKPOINT_WAIT_TIEM", --(已实现)获取返回挂机点的等待时间
     ---获取召唤技能
     ---@return number
@@ -1507,19 +1532,19 @@ EMetaVarGetKey = {
     ---@return table<number,Role> @<roleId,Role>
     GET_PLAYER_DATA_LIST = "GET_PLAYER_DATA_LIST",
     ---获取隐藏玩家模型类型
-    ---@return number
+    ---@return number @0-不处理，1-不隐藏，2-隐藏全部全部，3-隐藏同战盟玩家（友好），4-隐藏敌对玩家
     GET_HIDE_PLAYER_MODEL_TYPE = "GET_HIDE_PLAYER_MODEL_TYPE", --(已实现)获取隐藏玩家模型类型
     ---获取隐藏玩家技能特效类型
-    ---@return number
+    ---@return number @0-不处理，1-不隐藏，2-隐藏全部全部，3-隐藏同战盟玩家（友好），4-隐藏敌对玩家
     GET_HIDE_PLAYER_SKILL_EFFECT_TYPE = "GET_HIDE_PLAYER_SKILL_EFFECT_TYPE", --(已实现)获取隐藏玩家技能特效类型
     ---获取隐藏玩家翅膀类型
-    ---@return number
+    ---@return number @0-不处理，1-不隐藏，2-隐藏全部全部，3-隐藏同战盟玩家（友好），4-隐藏敌对玩家
     GET_HIDE_PLAYER_WING_TYPE = "GET_HIDE_PLAYER_WING_TYPE", --(已实现)获取隐藏玩家翅膀类型
     ---获取隐藏自己翅膀类型
-    ---@return number
+    ---@return number @0-不处理，1-不隐藏，2-隐藏全部全部，3-隐藏同战盟玩家（友好），4-隐藏敌对玩家
     GET_HIDE_ME_WING_TYPE = "GET_HIDE_ME_WING_TYPE", --(已实现)获取隐藏自己翅膀类型
     ---获取隐藏玩家足迹类型
-    ---@return number
+    ---@return number @0-不处理，1-不隐藏，2-隐藏全部全部，3-隐藏同战盟玩家（友好），4-隐藏敌对玩家
     GET_HIDE_PLAYER_FOOTPRINT_TYPE = "GET_HIDE_PLAYER_FOOTPRINT_TYPE", --获取隐藏玩家足迹类型
     ---获取是否隐藏召唤兽
     ---@return boolean
@@ -1537,16 +1562,16 @@ EMetaVarGetKey = {
     ---@return number
     GET_LIMIT_PLAYER_SHOW_COUNT = "GET_LIMIT_PLAYER_SHOW_COUNT", --(已实现)获取限制玩家显示数量
     ---获取省电模式
-    ---@return number
+    ---@return number @1-省电，2-均衡，3-最强
     GET_POWER_SAVING_MODE = "GET_POWER_SAVING_MODE", --(已实现)获取省电模式
     ---获取剩余生成邀请码次数
     ---@return number
     GET_LEFT_GENERATE_INVITE_CODE_COUNT = "GET_LEFT_GENERATE_INVITE_CODE_COUNT", --(已实现)获取剩余生成邀请码次数
     ---获取自动接受组队邀请设置
-    ---@return number
+    ---@return boolean
     GET_IS_AUTO_ACCEPT_TEAM_INVITATION = "GET_IS_AUTO_ACCEPT_TEAM_INVITATION", --(已实现)获取自动接受组队邀请设置
     ---获取挂机拾取品阶
-    ---@return table<cfg_pickdrop_condition表id, EPickUpGrade>
+    ---@return table<number, number> @<cfg_pickdrop_condition表id, EPickUpGrade枚举值>
     GET_PICKUP_GRADE = "GET_PICKUP_GRADE", --(已实现)获取挂机拾取品阶
 
     ---获取所有未读邮件信息
@@ -1564,21 +1589,23 @@ EMetaVarGetKey = {
     GET_STORAGE_MAX_PAGE = "GET_STORAGE_MAX_PAGE", --(获取仓库最大页数)
     --组队
     GET_TEAM_INFO = "GET_TEAM_INFO", --获取自己队伍信息
-    --药品
+    ---根据道具cfgid获取useParam字段中的Buff类型
+    ---@param itemCfgId number cfg_item 道具配置ID
+    ---@return number 道具对应cfg_buff表buffParam[1][2]
     GET_MEDICINE_TYPE = "GET_MEDICINE_TYPE", --获取药品的类型
     ---获取挂机状态
     ---@return EAutoOnHookStatus 挂机状态
     GET_ONHOOK_STATE = "GET_ONHOOK_STATE", --获取挂机状态
     --- 获取玩家当前骑乘的坐骑id
-    ---@param rid number
-    ---@return number
+    ---@param rid number 角色id
+    ---@return number 坐骑表id,0-无坐骑
     GET_PLAYER_MOUNTID = "GET_PLAYER_MOUNTID", --获取玩家当前骑乘的坐骑id
     ---获取主角装备穿戴栏
     ---@return number[] @穿戴栏 cfg_career表careerWearBar字段
     GET_OPEN_WEARBARS = "GET_OPEN_WEARBARS", --获取玩家职业的穿戴栏
     --- 根据属性类型获取玩家的强化，追加属性值
-    ---@param type
-    ---@return number
+    ---@param type EForgeGroupType 锻造属性
+    ---@return number 属性值
     GET_STRENGTH_ADD_ATTRIBUTE = "GET_STRENGTH_ADD_ATTRIBUTE", --根据属性类型获取玩家的属性值
     ---根据属性名获取对应cfg_att_conversion表信息（不推荐使用,建议直接外置读表）
     ---@param attribute string cfg_att_conversion表attr字段
@@ -1626,29 +1653,11 @@ EMetaVarGetKey = {
     ---@param roleType ERoleType
     ---@return table
     GET_ALL_ROLE_BY_ROLE_TYPE = "GET_ALL_ROLE_BY_ROLE_TYPE",--根据角色类型获取指定类型的所有角色
- 
+    ---获取快捷登录角色的数据
+    ---@return any
+    GET_QUICK_LOGIN_ROLE_INFO = "GET_QUICK_LOGIN_ROLE_INFO", --获取快速登录的角色数据
 }
 
------@class EServerTogKey
---EServerTogKey = {
---    SW_KEY_AUCTION = "SW_KEY_AUCTION", -- 服务器开关 拍卖
---    SW_KEY_ALL_FIGHTPAGES = "SW_KEY_ALL_FIGHTPAGES", -- 服务器开关 显示所有战斗页
---    SW_KEY_MISSTION = "SW_KEY_MISSTION", -- 服务器开关 任务
---    SW_KEY_SNDAITEMBOX = "SW_KEY_SNDAITEMBOX", -- 服务器开关 是否显示首饰盒
---    SW_KEY_TRADE_DEAL = "SW_KEY_TRADE_DEAL", -- 服务器开关 面对面交易 true/需要面对面
---    SW_KEY_AUTO_DRESS = "SW_KEY_AUTO_DRESS", -- 服务器开关 自动穿戴
---    SW_KEY_OPEN_F_EQUIP = "SW_KEY_OPEN_F_EQUIP", -- 服务器开关 时装是否开启首饰
---    SW_KEY_BIND_GOLD = "SW_KEY_BIND_GOLD", -- 服务器开关 开启元宝替换绑元
---    SW_KEY_NPC_BUTTON = "SW_KEY_NPC_BUTTON", -- 服务器开关 显示npc按钮
---    SW_KEY_NPC_NAME = "SW_KEY_NPC_NAME", -- 服务器开关 显示npc名字 1:不显示
---    SW_KEY_DROP_TIPS = "SW_KEY_DROP_TIPS", -- 服务器开关 显示绑定丢弃提示 0:显示
---    SW_KEY_EXP_IN_CHAT = "SW_KEY_EXP_IN_CHAT", -- 服务器开关 经验信息是否显示在聊天框 0：显示在聊天框
---    SW_KEY_SHOW_STALL_NAME = "SW_KEY_SHOW_STALL_NAME", -- 服务器开关 是否显示默认摊位名字  0：显示
---    SW_KEY_PLAYER_BLUE_BLOOD = "SW_KEY_PLAYER_BLUE_BLOOD", -- 服务器开关  是否显示蓝条HUD_SPRITE_MP   0: 显示
---    SW_KEY_ITEMTIPS_TOUBAO_SHOW = "SW_KEY_ITEMTIPS_TOUBAO_SHOW", -- 服务器开关  是否禁止双烈火    1：禁止
---    SW_KEY_ALL_TEAM_EXP = "SW_KEY_ALL_TEAM_EXP", -- 服务器开关 是否开启全队经验 true/false
---    SW_KEY_EQUIP_EXTRA_POS = "SW_KEY_EQUIP_EXTRA_POS", -- 服务器开关，是否有额外的装备位置  1= 开启 0 = 关闭
---}
 
 ------------------------------------枚举----------------------------------------------
 ---@class EItemFromUI_Enum
@@ -1755,8 +1764,8 @@ EChatChannelTypeStr = {
 ---外置替换引擎方法的枚举
 ---@class EReplaceEngineFunc
 EReplaceEngineFunc = {
-    ---替换职业表，外置职业表可能由更多索引
-    CareerTbl_GetCareer = enum(),
+    
+    CareerTbl_GetCareer = enum(),---替换职业表，外置职业表可能由更多索引
     CheckSkillRedDotExt = enum(), --检查外部额外增加的技能升级红点条件
     ClickNpcCallback = enum(), --点击npc回调，返回true或者false来决定是否要替换原有逻辑
     CalcEquipGrade = enum(), --计算装备评分
@@ -1766,6 +1775,7 @@ EReplaceEngineFunc = {
     GetDropItemNameScale = enum(), --自定义掉落HUD名称显示的缩放比例
     CompareEquipEntrys = enum(), --比较两件装备的词条
     OnResTaskReward = enum(), --自定义任务完成奖励处理，替换当前的打开奖励面板
+    GetItemUseCd = enum(), --自定义设置道具使用cd
 }
 
 --endregion

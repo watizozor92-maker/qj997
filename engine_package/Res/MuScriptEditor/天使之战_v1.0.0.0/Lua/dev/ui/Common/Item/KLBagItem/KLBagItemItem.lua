@@ -243,7 +243,8 @@ function KLBagItemItem:SetItemData(item)
         local shape = itemTbl.shape[1]
         local model_charactor = SL:GetConfig("cfg_model_charactor", shape)
         local _pos = string.format("%d,%d,%d",model_charactor.inposition[1],model_charactor.inposition[2],model_charactor.inposition[3])
-        local _mscale = string.format("%d,%d,%d",model_charactor.inscale,model_charactor.inscale,model_charactor.inscale)
+        local roundInscale = math.round(model_charactor.inscale)
+        local _mscale = string.format(  "%d,%d,%d",roundInscale,roundInscale,roundInscale)
         local _rotate = string.format("%d,%d,%d",model_charactor.inrotate[1],model_charactor.inrotate[2],model_charactor.inrotate[3])
         local data = {
             itemid = item.cfgId,

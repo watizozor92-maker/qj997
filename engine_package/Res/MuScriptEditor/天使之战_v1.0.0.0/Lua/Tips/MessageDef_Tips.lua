@@ -853,6 +853,8 @@
 ---@field ResAlsoFirstRechargeMessage RoleProtos.AlsoFirstRecharge @响应：首充记录
 ---@field ResRoleBasicAttrMessage RoleProtos.RoleBasicAttrRes @响应：发送角色基础属性信息
 ---@field ResRoleDeployAttrPointMessage RoleProtos.DeployResult @响应：角色加点成功
+---@field ReqLeaveDarkRoomMessage . @请求：离开小黑屋
+---@field ResRoleDarkRoomInfoMessage RoleProtos.RoleDarkRoomInfoRes @响应：玩家小黑屋信息
 ---schedule.xml
 ---@field ResFlushTypeMessage ScheduleProto.FlushTypeRes @刷新类型消息
 ---skill.xml
@@ -2043,6 +2045,8 @@ MessageDef =
 	ResAlsoFirstRechargeMessage = 25091,--响应：首充记录
 	ResRoleBasicAttrMessage = 25092,--响应：发送角色基础属性信息
 	ResRoleDeployAttrPointMessage = 25093,--响应：角色加点成功
+	ReqLeaveDarkRoomMessage = 25094,--请求：离开小黑屋
+	ResRoleDarkRoomInfoMessage = 25095,--响应：玩家小黑屋信息
 ---schedule.xml
 	ResFlushTypeMessage = 19001,--刷新类型消息
 ---skill.xml

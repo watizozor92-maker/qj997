@@ -1,0 +1,683 @@
+模块,事件名称,功能说明,触发时机,参数说明,返回值说明,可用性【程序标注】,
+属性,attrupdate,玩家、怪物、宠物(伙伴)、召唤兽等对象属性点变化时触发，此事件是高频调用事件,玩家、怪物、宠物(伙伴)、召唤兽等对象属性点变化时,"参数0:actor
+参数1:对象类型，数值类型",无,正常,
+属性,basicattrupdate,玩家基础属性更新时触发，基础属性即装备、称号、坐骑增益之类属性，buffer增益之类属性非基础属性,玩家基础属性点变化时,参数0:actor,无,正常,
+属性,attpointchange,使用属性点分配、属性点重置功能使玩家属性点变化时触发该事件,使用属性点分配、属性点重置功能使玩家属性点变化时,"参数0:actor
+参数1:剩余可用点数",无,正常,
+地图,npcenterview,npc进入视野时触发该事件,npc进入玩家视野时,"参数0:actor
+参数1:npc唯一ID
+参数2:npc配置ID",无,正常,
+地图,npcexitview,npc离开视野时触发该事件,npc离开玩家视野时,"参数0:actor
+参数1:npc唯一ID
+参数2:npc配置ID",无,正常,
+地图,playerenterview,玩家进入视野时触发该事件,玩家进入玩家视野时,"参数0:actor
+参数1:进入视野的玩家actor",无,正常,
+地图,playerexitview,玩家离开视野时触发该事件,玩家离开玩家视野时,"参数0:actor
+参数1:离开视野的玩家的rid",无,正常,
+地图,monsterenterview,怪物进入视野时触发该事件,怪物进入玩家视野时,"参数0:actor
+参数1:怪物actor
+参数2:怪物配置id",无,正常,
+地图,monsterexitview,怪物离开视野时触发该事件,怪物离开玩家视野时,"参数0:actor
+参数1:怪物actor",无,正常,
+地图,mapmovefail,玩家在地图之间传送失败时触发,玩家传送失败时,"参数0:actor
+参数1:传送失败的地图配置ID",无,正常,
+怪物,monsterrelive,怪物复活时触发。常规情况下，怪物死亡并不会消失并重新出生，而是复活,怪物复活时,"参数0:actor
+参数1:monstercfgid,怪物配置表id",无,正常,
+怪物,monsterenterattack,怪物进入战斗状态触发,怪物进入战斗状态时,"参数0:actor
+参数1:monstercfgid,怪物配置表id
+参数2:攻击目标的ID",无,正常,
+怪物,monsterleaveattack,怪物脱离战斗状态触发,怪物脱离战斗状态时,"参数0:actor
+参数1:monstercfgid 怪物配置表id",无,正常,
+玩家,login,"登录触发事件,角色每次登录游戏成功后会触发此事件",玩家登录时,参数0:actor,无,正常,
+玩家,creatrole,创建角色事件,玩家创建角色时,参数0:actor,无,正常,
+玩家,run,跑步触发事件，人物进行跑步动作成功后触发.,玩家跑步时,参数0:actor,无,正常,
+玩家,walk,走路触发事件，人物进行走路动作成功后触发,玩家走路时,参数0:actor,无,正常,
+玩家,jump,跳跃触发事件，人物进行跳跃动作成功后触发,玩家跳跃时,参数0:actor,无,正常,
+玩家,killplayer,杀人触发，玩家杀死其他玩家后，杀人者触发此事件.,玩家击杀别的玩家时,"参数0:actor
+参数1:死亡玩家actor",无,正常,
+玩家,killmon,杀怪触发，玩家杀死怪物后，玩家触发此事件.,玩家击杀怪物时,"参数0:actor
+参数1:集合，元素的每一项是一个参数
+{怪物唯一id,怪物配置id,怪物名称,怪物x坐标,怪物y坐标,活动ID（不是活动副本内则返回0）,怪物等级}",无,正常,
+玩家,levelup,升级触发，玩家升级成功后，玩家触发,玩家等级提升时,"参数0:actor
+参数1:新等级
+参数2:旧等级",无,正常,
+玩家,getexp,玩家获得经验之前触发,玩家获得经验时,"参数0:actor
+参数1:增加的经验
+参数2:获得经验的方式,1泡点,2击杀怪物,0系统
+参数3:经验加成",脚本计算后的经验值,正常,
+玩家,setday,人物每日首次登陆成功后触发,玩家每日首次登录时,无,无,正常,
+玩家,revival,玩家复活后触发,玩家复活时,"参数0:actor
+参数1:reviveType复活类型 revive表的type字段, 默认为0",无,正常,
+玩家,entermap,玩家进入地图时触发,玩家进入地图时,"参数0:actor
+参数1:上个地图配置ID
+参数2:进入的地图配置ID
+参数3:是否是登录时进入地图。类型：布尔值",无,正常,
+玩家,leavemap,玩家离开地图时触发,玩家离开地图时,"参数0:actor
+参数1:离开地图的原因",无,正常,
+玩家,beginteleport,玩家在本地图传送时触发,玩家在本地图传送时,"参数0:actor
+参数1:地图配置ID",无,正常,
+玩家,checkusernameok,在线改名，名字可以改名时触发,玩家改名成功时,"参数0:actor
+参数1:老名字 
+参数2:新名字",无,正常,
+玩家,checkusernameno,在线改名，名字不可以改名时触发，比如名字不合法等情况,玩家改名失败时,"参数0:actor
+参数1:老名字 
+参数2:新名字",无,正常,
+玩家,lookhuminfo,查看别人装备是触发,玩家查看别人装备时,"参数0:actor
+参数1:目标玩家id  
+参数2:目标玩家名字",无,正常,
+玩家,rolemidnightheart,每日凌晨触发的凌晨事件,间隔一天,参数0:actor,无,正常,
+玩家,rolehourheart,小时心跳事件,玩家每隔一小时,参数0:actor,无,正常,
+玩家,roleminuteheart,分钟心跳,玩家每个一分钟,参数0:actor,无,正常,
+玩家,rolesecondheart,秒级心跳事件,玩家每隔一秒钟,参数0:actor,无,正常,
+玩家,role3secondheart,3秒级心跳事件,玩家每隔三秒钟,参数0:actor,无,正常,
+玩家,role5secondheart,5秒级心跳事件,玩家每隔五秒钟,参数0:actor,无,正常,
+玩家,role10secondheart,10秒级心跳事件,玩家每隔十秒钟,参数0:actor,无,正常,
+玩家,quit,不管大退，小退还是断开连接都会触发,玩家退出游戏时,参数0:actor,无,正常,
+玩家,logout,登出游戏（但是角色仍旧可以在游戏中离线挂机）,玩家退出游戏时,参数0:actor,无,正常,
+玩家,exit,退出游戏（角色也同时退出游戏）,玩家离开游戏时,"参数0:actor
+参数1:离线挂机数据,table类型，字段如下
+duration:总时长
+fightduraction:战斗时长
+killername:击杀者
+dietime:死亡时间
+pickitems:拾取的物品(key=道具ID,value=道具数量)",无,正常,
+玩家,transfercareer,转职事件,玩家转职时,参数:[转职次数  转职后的职业名称],,正常,
+玩家,hpchange,玩家、怪物、宠物(伙伴)、召唤兽等对象血量变化时触发，高频事件，谨慎使用,目标血量变化时,"参数0:actor
+参数1:当前血量
+参数2:最大血量
+参数3:对象类型，1-玩家，2-怪物
+参数4:血量变化值",无,正常,
+玩家,mpchange,玩家、怪物、宠物(伙伴)、召唤兽等对象魔法值变化时触发，高频事件，谨慎使用,目标魔法值变化时,"参数0:actor
+参数1:当前魔法值",无,正常,
+玩家,itemchange,"玩家背包中单个物品变化时触发，如果有多个物品发生变化时，会触发多次。
+注意：请优先使用 batchitemchange ，而不要使用 itemchange，batchitemchange的速度更快",玩家背包中单个物品变化时,"参数0:actor
+参数1:变化的道具的唯一ID集合
+参数2:道具配置id 
+参数3:道具的旧数量
+参数4:道具的新数量 
+参数5:变化数量
+参数6:变化原因，某些情形下可能会是nil",无,不建议使用,
+玩家,batchitemchange,"玩家背包中的道具变化时触发，当有多个物品发生变化时，这批物品变化的信息组装成一个table，一次性发送给 batchitemchange，假如有20个物品变化信息，原本触发20次itemchange，变成了触发一次batchitemchange。
+注意：请优先使用 batchitemchange ，而不要使用 itemchange，batchitemchange的速度更快",玩家背包一个或多个物品变化时,"参数0:actor
+参数1:变化的道具信息集合，格式如下
+{1:{""newcount"":0,""change"":2,""oldcount"":2,""ids"":{1:18015943505235991,2:18015943505235985},""cfgid"":20440711,""reason"":""拾取""},
+2:{""newcount"":0,""change"":1,""oldcount"":1,""ids"":{1:18015943505235989},""cfgid"":20240711,""reason"":""拾取""},
+3:{""newcount"":0,""change"":1,""oldcount"":1,""ids"":{1:18015943505235984},""cfgid"":20930711,""reason"":""拾取""},
+4:{""newcount"":0,""change"":1,""oldcount"":1,""ids"":{1:18015943505235990},""cfgid"":20840711,""reason"":""拾取""},
+5:{""newcount"":252627,""change"":2260,""oldcount"":250367,""ids"":{},""cfgid"":10020001,""reason"":""拾取""}}",无,正常,
+玩家,sdandagchange,护盾值与技能值改变时触发，也就是 agSto 和 shield 这2个属性变化时触发,玩家护盾值和技能值变化时,"参数0:actor
+参数1:对应的属性名称
+参数2: 对应的数值
+参数3：改变原因，目前仅护盾值有改变原因",无,正常,
+玩家,playdie,玩家死亡时触发,玩家死亡时,"参数0:actor
+参数1:table类型,死亡玩家的信息(actor自己的信息),字段如下
+-id:死亡玩家ID
+-name:死亡玩家名字
+-dieCount:死亡次数
+-mapCfgId:地图配置ID
+参数2:table类型,凶手信息,字段如下
+-id:凶手ID
+-name:凶手名字
+-type:凶手的类型,怪、人、宠物
+(如果是宠物击杀有下方参数)
+-ispet:是否是宠物
+-callerid:宠物召唤者玩家id
+-callername:宠物召唤者玩家名称",无,正常,
+玩家,settingchange,修改设置触发,玩家修改设置时,"参数0:actor
+参数1:修改字段类型 userproto.rolesrttingtype  
+参数2:旧的属性值  
+参数3:修改后的属性值",,正常,
+怪物,monsterdie,怪物死亡，掉落道具之前触发，可用此事件计算怪物掉落的道具,怪物死亡前,"参数0:怪物对象
+参数1:怪物配置id
+参数2:怪物击杀者唯一ID
+参数3:怪物归属ID
+参数4:最大伤害者唯一ID
+参数5:地图唯一id
+参数6:刷怪配置ID
+参数7:table类型，怪物死亡参数，字段如下
+-mapid:地图唯一id
+-monstercfg:怪物配置id
+-mongencfg:刷怪配置ID
+-killer:怪物击杀者唯一ID
+-owner:怪物归属ID
+-maxhurt:最大伤害者唯一ID
+-maxthreat:最大仇恨者唯一ID
+-firstthreat:初始仇恨者唯一ID
+-threatlist:仇恨rid集合","掉落的道具,table类型,键值对（key:道具id,value:道具数量）",正常,
+怪物,monsterdiep,"怪物死亡，掉落道具之前触发，可用此事件计算怪物掉落的道具。
+此事件和monsterdie效果一致，但是在多线程中触发，性能更好。
+如果在代码中使用了此事件则monsterdie自动失效。
+注意：如果在monsterdiep中有依赖设置全局变量的逻辑，则会出现并发问题，需要避免。",怪物死亡前,"参数0:怪物对象
+参数1:怪物配置id
+参数2:怪物击杀者唯一ID
+参数3:怪物归属ID
+参数4:最大伤害者唯一ID
+参数5:地图唯一id
+参数6:刷怪配置ID
+参数7:table类型，怪物死亡参数，字段如下
+-mapid:地图唯一id
+-monstercfg:怪物配置id
+-mongencfg:刷怪配置ID
+-killer:怪物击杀者唯一ID
+-owner:怪物归属ID
+-maxhurt:最大伤害者唯一ID
+-maxthreat:最大仇恨者唯一ID
+-firstthreat:初始仇恨者唯一ID
+-threatlist:仇恨rid集合","掉落的道具,table类型,键值对（key:道具id,value:道具数量）",正常,
+怪物,monsterdieexp,怪物死亡，计算经验之前触发， 可用此事件计算击杀怪物的经验,怪物死亡计算经验前,"参数0:actor(怪物的归属者)
+参数1:默认掉落经验
+参数2:怪物配置id
+参数3:怪物id
+参数4:怪物出生点x坐标
+参数5:怪物出生点y坐标","如果返回单个数值，则表示击杀该怪物获得的经验
+如果返回的是一个table，格式如下
+{玩家ID=1000,玩家2ID=1000}，则表示将经验分配给指定的玩家",正常,
+怪物,monsterdiedropitem,怪物死亡，掉落道具之后触发,怪物死亡掉落道具后,"参数0:actor(怪物)
+参数1:掉落数据,示例数据如下
+{
+    ""dropitems"":{1:{
+            ""count"":2,
+            ""id"":18015993262286848,
+            ""cfgid"":40010209,
+            ""type"":4
+        },2:{
+            ""count"":1,
+            ""id"":18015993262286849,
+            ""cfgid"":40010208,
+            ""type"":4
+        },
+    },
+    ""monstercfgid"":10008,
+    ""monsterid"":7890,
+    ""monstername"":""火龙王""
+}",无,正常,
+怪物,mapmonsterdie,怪物死亡，在地图上触发该事件。此时事件和monsterdie事件重复了,地图中怪物死亡后,"参数0:系统对象
+参数1:地图唯一ID
+参数2:击杀者actor
+参数3:死亡怪物的配置id
+参数4:怪物actor",无,正常,
+物品和装备,dropitem,丢弃任意物品成功后触发,玩家丢弃物品后,"参数0:actor
+参数1:道具配置id
+参数2:道具唯一id
+参数3:玩家id",无,正常,
+物品和装备,pickupitem,玩家拾取物品后触发此事件,玩家拾取道具物品后,"参数0:actor
+参数1:道具cfgId
+参数2:道具唯一id",无,正常,
+物品和装备,destroyitem,玩家销毁背包物品后触发此事件,玩家销毁道具后,"参数0:actor
+参数1:道具cfgId
+参数2:道具唯一id
+参数3:rid",无,正常,
+物品和装备,beforetakeoncheckequip,穿戴装备前触发，可在此事件里判断装备否能穿戴,玩家穿戴装备前,"参数0:actor
+参数1:背包索引
+参数2:装备索引","true:校验未通过，不可穿戴,false:校验通过，可以继续穿戴",正常,
+物品和装备,beforetakeonequip,穿戴装备前触发,玩家穿戴装备前,"参数0:actor
+参数1:rid
+参数2:道具cfgId",无,不建议使用,
+物品和装备,filtertakeonequip,穿戴装备前拦截判定，,穿戴装备前拦截判定，,"参数0:actor
+参数1:table{""lid"":19123147952691201, ""bagindex"":10103, ""pos"":1, ""indexofequip"":65537, ""wearbarorsuitid"":1}
+bagindex=装备在背包的索引",不返回或者nil 或者true 都是表示能继续穿戴，返回false或者其它表示不再继续穿戴,正常,
+物品和装备,takeonequip,玩家穿戴装备成功后触发（此事件和takeon重复了）,玩家穿戴装备后,"参数1 装备部位
+参数2 原始装备唯一id，若原本没穿戴，则这个参数为0
+参数3 新装备唯一id
+参数4 新装备cfgId
+参数5:装备栏
+参数6:旧装备的ID列表",无,不建议使用,
+物品和装备,takeon,玩家穿戴装备成功后触发（此事件和takeonequip重复了）,玩家穿戴装备后,"参数0:actor
+参数1:装备部位
+参数2:道具cfgId
+参数3:道具名称
+参数4:道具唯一id
+参数5:装备栏
+参数6:旧装备的ID列表",无,正常,
+物品和装备,takeoffexchange,脱下装备前触发（和beforetakeoffequip重复了）,脱下装备前触发,"参数0:actor
+参数1:道具唯一ID,示例{itemid=10000001}",无,不建议使用,
+物品和装备,beforetakeoffequip,脱下装备前触发（和takeoffexchange重复了）,玩家脱下装备前,"参数0:actor
+参数1:rid
+参数2:道具cfgId",无,正常,
+物品和装备,takeoff,玩家脱下装备后触发（和takeoffequip重复了）,玩家脱下装备后,"参数0:actor
+参数1:装备部位
+参数2:道具cfgId
+参数3:道具名称
+参数4:道具唯一id",无,正常,
+物品和装备,takeoffequip,玩家脱下装备成功后触发（和takeoff重复了）,玩家脱下装备成功后,"参数0:actor
+参数1:装备部位
+参数2:装备唯一id
+参数3:装备cfgId",无,不建议使用,
+物品和装备,moneychangex,货币改变后触发,玩家货币发生变化后,"参数0:actor
+参数1:道具cfgId(货币也是道具)
+参数2:原有的数量
+参数3:现在的数量",无,正常,
+物品和装备,decomposition,装备分解后触发,玩家装备分解后,"参数0:actor
+参数1:待分解装备索引集合",无,正常,
+物品和装备,recovery,装备回收后触发,玩家装备回收后,"参数0:actor
+参数1:要回收的道具索引和数量集合，table类型
+参数2:回收获得的道具配置ID和数量集合,table类型",无,正常,
+物品和装备,showgetrewardpanel,玩家展示获得道具奖励界面时触发该事件,玩家展示获得道具奖励时,"参数0:actor
+参数1:table类型,键值对<道具ID,道具数量>",无,正常,
+物品和装备,showgetrewarditempanel,展示获得道具奖励面板事件,玩家展示获得道具奖励时,"参数0:actor
+参数1:道具集合，集合元素字段如下
+-itemid:道具配置ID
+-count:道具数量
+-bind:是否绑定
+-id:道具唯一ID",无,正常,
+物品和装备,nobagitemchange,"不入背包的道具获得时触发,cfg_item的notEnterPack字段用于配置该道具是否进入背包。某些道具，如战盟工资、荣誉点等是不用进入背包的，获得这些道具时，便会触发此事件，在这个事件里可以做一些自定义功能开发",玩家获得不进入背包的道具时,"参数0:actor
+参数1:道具集合",无,正常,
+物品和装备,useitemtrigger,使用道具时触发。此事件配合useitembyindex和useitembycfgid这2个接口，可以实现自定义道具功能,玩家使用道具时,"参数0:actor
+参数1:道具cfgId
+参数2:数量
+参数4:自定义数据",无,正常,
+物品和装备,dropitemfrontex,丢弃物品前触发,玩家丢弃物品前,"参数0:actor
+参数1:道具cfgId
+参数2:道具唯一id
+参数3:rid",无,正常,
+物品和装备,useshortcutitem,使用可以放置到快捷栏上的物品时触发,玩家使用快捷栏物品时,"参数0:actor
+参数1:道具cfgId
+参数2:数量",无,正常,
+物品和装备,enablereplaceequip,满足装备替换时触发,玩家装备替换时,"参数0:actor
+参数1:背包道具索引
+参数2:装备位置索引",无,正常,
+物品和装备,pickupitemfrontex,拾取道具前触发，此事件中可以编写判断道具是否可以拾取的逻辑,玩家拾取物品前,"参数0:actor
+参数1:道具集合,集合元素字段如下
+-id:道具唯一ID,
+-cfgid:道具配置ID
+-count:道具数量","{allow=true,cont=1}
+其中allow为true标识可以拾取，false表示拒绝拾取
+count表示拾取的数量，默认可以不设置",不建议使用,
+物品和装备,pickupitembefore,拾取道具前触发，此事件中可以编写判断道具是否可以拾取的逻辑，此事件作为 pickupitemfrontex 的替代版本，他们是互斥的，如果代码中使用了该事件，则 pickupitemfrontex 失效,玩家拾取物品前,"参数0:actor
+参数1:道具集合,集合元素字段如下
+-id:道具唯一ID,
+-cfgid:道具配置ID
+-count:道具数量","可以指定多个道具的拾取情况，key是物品唯一ID，value是该道具项是否可拾取和拾取数量
+{
+1000001={allow=true,cont=1},
+1000002={allow=true,cont=1}
+}",正常,
+物品和装备,equipeffectbyboolean,装备生效或失效后触发,玩家装备生效或者失效后,"参数0:actor
+参数1:table类型,key是装备的部位索引,value是装备的唯一id
+参数2:布尔类型,true装备生效,false装备失效",无,正常,
+物品和装备,WeaponChange,"符合一定条件时，副武器自动切换到主手上
+条件：
+1.主副手都有武器
+2.副手武器能穿在主手武器的位置上
+3.副手有武器的时候 进行了卸下了主武器位置的装备的操作",脱装时触发,"参数0:actor
+参数1:装备切换前的部位索引
+参数2:装备切换后的部位索引
+参数3:装备的唯一id",无,正常,
+物品和装备,autorecoverybefore,满足自动回收时触发,满足自动回收时触发,参数0:actor,返回背包中需要回收道具索引，如果不返回索引将执行内置自动回收,正常,
+物品和装备,recovery,回收成功时触发,回收成功时触发,"参数1：回收道具索引
+参数2：table类型 ，key 回收道具配置id value 数量",无,正常,
+物品和装备,AutoRecovery,自动回收成功后触发,自动回收成功后触发,"参数1：回收道具索引
+参数2：table类型 ，key 回收道具配置id value 数量",无,正常,
+背包和仓库,tidystoreorbagafter,整理仓库或者背包之后触发,玩家整理仓库或者背包后,"参数0:actor
+参数1:5整理仓库,6整理背包",无,正常,
+背包和仓库,bagfull,背包添加道具，如果添加道具之后背包满了触发,玩家背包满时,参数0:actor,无,正常,
+背包和仓库,addbag,物品进背包后触发,物品进入玩家背包后,"参数0:actor
+参数1:道具唯一id
+参数2:道具配置id
+参数3:道具索引
+参数4：道具来源",无,正常,
+背包和仓库,bagaddcapacityafter,背包扩容触发,玩家背包扩容时,参数0:actor,无,正常,
+背包和仓库,storeaddcapacityafter,仓库扩容之后触发,玩家仓库扩容时,参数0:actor,无,正常,
+背包和仓库,bagchange,背包道具改变,玩家背包中道具变化时,"参数0:actor
+参数1:道具索引
+参数2:类型 0-道具删除 1-道具添加",无,正常,
+背包和仓库,storechange,仓库道具改变,玩家仓库中道具变化时,参数0:actor,无,正常,
+背包和仓库,addbagbefore,道具进包前触发,物品进入玩家背包前,"参数0:actor
+参数1:道具id
+参数2:道具索引
+参数3:道具唯一id",无,正常,
+NPC,talk_npc,和NPC对话时触发,玩家和NPC对话时,"参数0:actor
+参数1:npc配置ID
+参数2:npc唯一ID",无,正常,
+NPC,clicknpc,点击NPC时触发,玩家点击NPC时,"参数0:actor
+参数1:npc配置ID
+参数2:npc唯一ID",无,正常,
+技能,levelupskillevent,学习、升级技能时触发,玩家学习技能时,"参数0:actor
+参数1:table类型,{技能配置id,技能等级}",无,正常,
+buff,buffeffect,对目标施加buffer时，buffer对目标生效前触发该事件,buffer生效前,"参数0:actor
+参数1:buff配置ID
+参数2:释放者actor
+参数3:技能总伤害
+参数4:技能目标数量
+参数5:buff层数
+参数6:buff来源, 1:道具，2:技能，99:脚本
+参数7:buff唯一id",无,正常,
+buff,buffeffectafter,对目标施加buffer时，buffer对目标生效后触发该事件,buffer生效后,"参数0:actor
+参数1:buff配置ID
+参数2:释放者actor
+参数3:技能伤害值
+参数4:技能伤害目标数量
+参数5:buffer层数
+参数6:buff来源, 1:道具，2:技能，99:脚本
+参数7:buff唯一id",无,正常,
+buff,bufflose,目标身上的buffer失效后触发,buffer失效后,"参数0:actor
+参数1:buff配置ID
+参数2:buffer释放者的ID
+参数3:buff失效原因   1正常失效, 2替换失效",无,正常,
+战斗,attack,玩家攻击目标后，攻击者触发该事件,玩家攻击目标时,"参数0:actor(攻击者)
+参数2:table类型，字段如下
+""caster""—— 攻击对象
+""target""—— 受击对象
+""mapid—— 地图id
+""skillid —— 技能id
+""skilllevel""—— 技能等级
+""castertype""—— 攻击者类型
+""targettype""—— 受击者类型
+""targethurt""——受击者扣血
+""mapcfgid""——攻击者所在地图配置id
+""targetcfgid""——受击者配置id（怪物等）",无,正常,
+战斗,attackdamage,玩家攻击目标后，攻击者触发该事件（和attack重复了）,玩家攻击目标时,"参数0:actor(攻击者)
+参数1:伤害值
+参数2:受到击者actor",无,不建议使用,
+战斗,underattack,玩家、怪物、宠物(伙伴)、召唤兽被攻击时触发该事件，该事件是一个高频事件,目标被攻击时,"参数0:actor(受击者)
+参数1:table类型，字段如下
+""caster""—— 攻击对象
+""target""—— 受击对象
+""mapid—— 地图id
+""skillid —— 技能id
+""skilllevel""—— 技能等级
+""castertype""—— 攻击者类型
+""targettype""—— 受击者类型",无,正常,
+战斗,roundplayerfightmodelchange,周围玩家战斗模式变化事件,玩家周围玩家战斗模式发生变化时,"参数0:actor,玩家对象(自己)
+参数2:玩家对象（改变者）
+参数3:战斗模式",无,正常,
+战斗,releaseskill,玩家释放技能前触发该事件，该事件触发时，伤害值还未计算出来,玩家技能释放前,"参数0:actor
+参数1:技能配置id
+参数2:技能等级
+参数3:被攻击的目标actor集合",true|false,正常,
+战斗,excusefightdamage,此事件用于计算伤害，他在 releaseskill和releaseskillafter之间触发，它的返回值是伤害计算的结果,目标被攻击执行伤害计算时,"参数0:actor
+参数1:table类型{{},{},{}....},每一个子table的字段描述如下。
+""caster""—— 攻击对象
+""target""—— 受击对象
+""mapid—— 地图id
+""skillid —— 技能id
+""skilllevel""—— 技能等级
+""castertype""—— 攻击者类型
+""targettype""—— 受击者类型
+“monsterid”—— 受击怪物id","table类型，{{},{},{}....},伤害计算结果，每一个子table的字段如下
+""casthurt"" - 攻击者伤害
+""targethurt"" - 受击者伤害
+""castershield"" - 攻击者者扣除护盾
+""targetshield"" - 受击者扣除护盾
+""hurttype"" - 伤害类型
+""repeat"" - 伤害次数
+""targethurtshow""- 飘字使用的伤害
+""comboskill"" - 是否是连击技能
+“target' - 目标对象",正常,
+战斗,releaseskillafter,玩家和宠物(伙伴)释放技能后触发触发该事件，该事件触发时，伤害已经被计算出来了,玩家和宠物(伙伴)技能释放后,"参数0：actor
+参数1：技能ID
+参数2：技能等级
+参数3：伤害目标列表
+参数4：最终技能作用目标列表（包含治疗的目标等）
+参数5：总伤害数值
+参数6：伤害目标",无,正常,
+战斗,roundfightresult,广播战斗结果时触发该事件，该事件是高频事件，不建议使用,将战斗结果同步给周围玩家时,"参数0:actor
+参数1:玩家对象
+参数2:table类型，数据同ResFightResultMessage",无,正常,
+战斗,fightstatechange,玩家脱战和入战时触发该事件,玩家战斗装备发生变化时,"参数0:actor
+参数1:战斗状态=1,非战斗状态=0",无,正常,
+聊天,triggerchat,玩家发送聊天时触发该事件,玩家发送聊天时,"参数0:actor
+参数1:聊天数据，字段如下
+-channel:频道
+-content:内容
+-time:毫秒时间戳
+-msgtype:消息类型
+-teamid:队伍ID
+-senderid:发送者ID
+-sendername:发送者名字
+-sendercareer:发送者职业
+-receiveid:接收者ID
+-receivename:接收者名字
+-receivecareer:接收者职业
+-items:如果聊天附带了道具，此字段是道具集合",无,正常,
+聊天,outversionchatevent,玩家发送外置聊天频道消息时出发该事件,玩家发送外置频道聊天时,"参数0:actor
+参数1:聊天数据table<key, value>
+-channel:频道
+-content:内容
+-nextchattime:世界聊天下次可发送信息时间
+-item:具有完整道具信息的table集合 可包含多个",无,正常,
+副本和活动,activitychange,玩家活动状态发生变化时，如活动开启、活动结束时触发，比如恶魔广场副本活动开始了所有玩家身上都会触发该事件,玩家活动状态发生变化时,"参数0:actor
+参数1:活动id
+参数2:1-开启，0-关闭",无,正常,
+副本和活动,systemactivitychange,"系统活动状态发生变化时，如活动开启、活动结束时触发，当活动状态发生变化时，该事件全局触发一次，比如血色城堡副本活动开始了，则会触发一次
+注意：systemactivitychange 这个事件实在本服触发，然后同步到跨服的。所以当1个跨服被N个本服连接时，事件就触发N次，如果在跨服里边用这个功能，状态要判断好",系统活动状态发生变化时,"参数0:系统对象
+参数1:活动id
+参数2:1-开启，0-关闭",无,正常,
+副本和活动,dupstateupdate,副本状态更新时触发该事件一次,副本状态更新时,"参数0:系统对象
+参数1:地图唯一ID
+参数2:副本类型(cfg_rep表的type)
+参数3:副本阶段(1-准备 2-战斗 3-结算)
+参数4:下一阶段开始时间戳
+参数5:副本配置id(cfg_rep表的id)",无,正常,
+副本和活动,afterenterduplicate,玩家进入副本触发该事件,玩家进入副本时,"参数0:actor
+参数1:地图唯一id
+参数2:副本类型(cfg_rep表的type)
+参数3:副本阶段(1-准备 2-战斗 3-结算)
+参数4:下一阶段开始时间戳
+参数5:副本配置id(cfg_rep表的id)",无,正常,
+副本和活动,afterquitduplicate,玩家退出副本触发该事件,玩家退出副本时,"参数0:actor
+参数1:地图唯一id
+参数2:副本类型(cfg_rep表的type)
+参数3:副本阶段(1-准备 2-战斗 3-结算)
+参数4:下一阶段开始时间戳
+参数5:副本配置id(cfg_rep表的id)",无,正常,
+副本和活动,afteractivitycountreset,副本挑战次数刷新,玩家副本挑战次数刷新时,"参数0:actor
+参数1:刷新后的次数
+参数2:添加总次数和副本次数上限的差值",无,正常,
+任务,picktask,接取主线任务触发该事件,玩家接取主线任务时,"参数0:actor
+参数1:任务ID",无,正常,
+任务,taskchange,主线任务状态发生变化时触发,玩家主线任务状态发生变化时,"参数0:系统对象
+参数1:任务ID
+参数2:任务状态(1已接受,2已完成,3已提交领奖,4已经放弃)
+参数3:任务详情,table类型,字段如下
+-taskid:任务ID
+-state:任务状态
+-taskgoal:任务目标集合,集合元素字段如下
+--goalid:任务目标id
+--count:进度
+--maxcount:最大进度",无,正常,
+任务,taskgoalchange,主线任务目标进度变化是触发,玩家主线任务进度发生变化时,"参数0:actor
+参数1:任务ID 
+参数2:任务目标ID",无,正常,
+任务,taskcomplete,玩家领取了任务奖励后触发,玩家领取了任务奖励后,"参数0:actor
+参数1:任务ID
+参数2:奖励信息,table类型,key:道具ID,value:道具数量",无,正常,
+任务,deletetask,删除任务触发,玩家删除任务时,"参数0:actor
+参数1:任务ID",无,正常,
+任务,taskprogresscomplete,主线任务进度完成但是还未领取奖励的时候触发,玩家主线任务完成时,"参数0:actor
+参数1:进度完成任务id",无,正常,
+任务,updateexternaltaskgoal,更新外置任务目标进度,玩家外置任务进度更新时,"参数0:actor
+参数1:内置任务模块(目前仅有基础任务：1)
+参数2:任务id
+参数3:任务目标类型
+参数4:任务目标id
+参数5:任务当前进度（请不要在使用该参数用作 onlyupdatetaskgoal 任务进度的传递）
+参数6:任务刷新参数（任务目标校验用）",无,正常,
+任务,triggertaskrefresh,主线任务刷新时触发,玩家主线任务刷新时,"参数0:actor
+参数1:任务目标类型(cfg_task_target表的taskGoalType字段)
+参数2:任务刷新参数,table类型",无,正常,
+商业化,createinvitecode,创建邀请码事件,玩家创建邀请码时,"参数0:actor
+参数1:邀请码",无,正常,
+商业化,recharge,玩家充钱后触发该事件,玩家充值后,"参数1：玩家对象
+参数2：充值信息，格式如下
+{
+         ""amount"":金额,
+        ""orderid"":订单id,
+        ""goodsid"":道具配置id，
+        ""platform"":平台id，
+        ""extraParams"":额外信息，
+        ""count"":充值数量，
+
+}",,正常,
+商业化,horselampevent,跑马灯事件,跑马灯触发时,"参数0:actor
+参数1:配置id(cfg_string表的ID)
+参数2:文本要替换的参数",无,正常,
+系统,startup,服务器启动触发事件.服务器每次启动成功后会执行一次此事件.,服务器启动时,"参数0:sysactor
+参数1:服务器的host
+参数2:serverType(1本服，2跨服)",无,正常,
+系统,serversecondheart,服务器秒心跳(满足条件只会执行一次，与玩家无关),服务器间隔一秒,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,server3secondheart,服务器3秒心跳(满足条件只会执行一次，与玩家无关),服务器间隔三秒,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,server5secondheart,服务器5秒心跳(满足条件只会执行一次，与玩家无关),服务器间隔五秒,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,server10secondheart,服务器10秒心跳(满足条件只会执行一次，与玩家无关),服务器间隔十秒,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,serverminuteheart,服务器分钟心跳(满足条件只会执行一次，与玩家无关),服务器间隔一分钟,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,serverhourheart,服务器小时心跳(满足条件只会执行一次，与玩家无关),服务器间隔一小时,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,serverminuteclock,"服务器整点分钟心跳，如12:00,12:01,12:02这样的按分钟触发",服务器分钟到点了触发,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,serverhourclock,"服务器整点小时心跳，如12:00,13:00,14:00这样的按小时触发",服务器小时到点了触发,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,servermiddlenight,"午夜事件,服务器凌晨零点触发该事件",服务器凌晨零点,"参数0:sysactor
+参数1:serverType(1本服，2跨服)",无,正常,
+系统,reloadscript,重载脚本（所有在线玩家触发）,服务器重载lua脚本时,参数0:actor,无,正常,
+系统,handlerequest,客户端消息事件,服务器收到客户端的lua消息时,"参数0:actor
+参数1:uid（玩家账户id）
+参数2:msgid（消息id）
+参数3:msgdata（消息数据）",无,正常,
+召唤兽,callpetbefore,弓箭手玩家召唤召唤兽前触发,弓箭手玩家召唤召唤兽前触发,"参数0:actor(召唤兽的主人)
+参数1:召唤兽配置ID","true：正常召唤
+false：阻止召唤",正常,
+召唤兽,callpetafter,弓箭手玩家召唤召唤兽后触发,弓箭手玩家召唤召唤兽后触发,"参数0:actor(召唤兽的主人)
+参数1:召唤兽配置ID
+参数2:召唤出来的召唤兽ID",无,正常,
+组队,teamrecruitchange,队伍喊话信息发生改变后触发,玩家发布招募信息时,"参数0:actor
+参数1:活动id
+参数2:限制等级上限
+参数3:限制等等西下限",无,正常,
+好友,frienddegreechange,好友好感度改变,玩家好友好感度改变时,"参数0:actor(好友actor)
+参数1:好友id
+参数2:好友类型 1：好友  2：仇敌
+参数3:好友好感度",无,正常,
+行会,guildaddmemberafter,加入战盟成功后触发,玩家加入战盟后,参数0:actor,无,正常,
+属性,calcplayfinalattr,属性计算托管事件，当属性变化是会触发该事件，然后在事件处理代码中可以根据需求自定义计算属性，返回值会和玩家最终属性进行累加.注意事项：返回值不可以为负数；这里返回的属性，只能由这边计算,目标对象计算最终属性时,参数0:actor,"改变的属性列表：
+{{id-属性id，value-属性值}}",正常,
+地图,aftertransmit,传送后触发,玩家传送后,参数0:actor,无,正常,
+地图,mapmonsterremove,怪物从地图中移除后触发,怪物重地图中移除时,"参数0:系统对象
+参数1:地图唯一id
+参数2:怪物击杀者actor
+参数3:怪物的配置id",无,正常,
+地图, createmap,创建地图触发,地图被创建时,"参数0:系统对象
+参数1:地图唯一ID",无,正常,
+地图, destroymap,销毁地图触发，也就是地图被从服务器上删除后触发,销毁被创建后,"参数0:系统对象
+参数1:地图唯一ID",无,正常,
+角色,afterdeleterole,删除角色触发,玩家删除角色后,参数10:actor,无,正常,
+挂机,getofflineexp,离线挂机战斗获得经验后触发,玩家离线挂机获得经验后,"参数1：玩家对象
+参数2：经验",无,正常,
+怪物,initmonster,怪物、宠物(伙伴)、召唤兽初始化触发，也就是怪物出生的时候触发,怪物初始化时,"参数0:actor(怪物)
+参数2:怪物配置id",无,正常,
+摆摊,stallmapinfo,摆摊获取摊位位置信息，在调用 getmapstallinfo 接口后触发,玩家摆摊获取位置信息,"参数0:actor
+参数1:table类型，字段如下
+-pointx:摊位x坐标
+-pointy:摊位y坐标
+-count:地图中已经有的摆摊数量",无,正常,
+地图,customtotransmit,传送接管事件，可在事件脚本中做一些是否传送的判断,玩家传送前,"参数1：目标地图配置ID
+参数2：目标线路
+参数3：当前X坐标
+参数4：当前Y坐标
+参数5：目标X坐标
+参数6：目标Y坐标
+参数7：是否来着cfg_mapmove表定义的传送"," 示例数据
+{
+    result= false, --true表示阻止传送，false表示可以传送
+    x= x, --传送的X坐标
+    y= y, --传送的Y坐标
+   reason=""原因""
+   line=line, --传送的线路
+}",正常,
+系统, enterscene,进入场景触发，包括初次进入游戏，进入和退出跨服服务器（不是进入地图），由于此事件触发的时候玩家还未进入地图，所以使用actor作为参数的命令还无法使用,玩家进入场景服时,"参数0:actor
+参数1:当前地图唯一ID
+参数2:目标地图唯一ID",无,正常,
+技能,removeskillevent,移除技能时触发,目标对象移除技能时,"参数0:actor
+参数1:技能ID列表",无,正常,
+副本,duplicatesecondheart,副本秒级心跳,副本每每秒,参数0:系统对象,无,正常,
+副本,duplicate3secondheart,副本3秒钟心跳,副本每三秒,参数0:系统对象,无,正常,
+副本,duplicate5secondheart,副本5秒钟心跳,副本每五秒,参数0:系统对象,无,正常,
+玩家,getexpafter,获得经验之后触发,玩家获取经验后,"参数0:actor
+参数1:获得的经验数量
+参数2:经验获得的原因",无,正常,
+变量操作,getplaydefasyncres,"调用 getplaydefasync 后触发,主要为了读取别的服务器上玩家的变量",玩家调用异步获取变量接口时,"参数0:actor
+参数1:变量名字
+参数2:变量值
+参数3:附加参数（调用getplaydefasync时传的）",无,正常,
+宠物,petskillexcuse,宠物(伙伴)、召唤兽释放技能事件，通过返回值可以控制它们释放的技能,宠物(伙伴)、召唤兽释放技能前,"参数0:actor,宝宝对象
+参数1:敌人对象
+参数2:技能ID
+参数3:技能等级","table类型，字段如下
+-id:最终的技能ID
+-target:最终的攻击目标",正常,
+地图,pickupfail,拾取失败触发,拾取失败时,"参数0:actor
+参数1:掉落道具地图对象id
+参数2:道具唯一id
+参数3:道具配置id
+参数4:道具数量
+参数5:是否需要提示",无,正常,
+属性,afterdeployattrpoint,分配属性点后触发,分配属性点后,参数0:actor,无,正常,
+系统,combineglobalvar,合服时在每个全局变量上触发。此事件用于合并不同服上相同名称的全局变量数据,合服时在每个全局变量上,"参数0:sysactor
+参数1:varName
+参数2:varData",无,正常,
+系统,combineserver,执行合服时触发，可以在这个事件里做一些合服需要进行的特殊处理,合服时,参数0:sysactor,无,正常,
+商业化,addmonthcardbefore,月卡时间道具进包前触发,月卡时间道具进包前,"参数0:actor
+参数1:月卡时间道具ID
+参数2:月卡时间道具数量",无,正常,
+商业化,preoredrsuccess,交易行预购商品成功时触发,交易行预购商品成功时,"参数0:actor
+参数1:道具归属者的ID
+参数2:道具唯一ID",无,正常,
+战斗,setcombovaluebefore,设置连击值之前触发，也就是释放连接技能的时候触发，可以通过此事件计算连击值,设置连击值之前,"参数0:actor
+参数1:技能配置ID
+参数2:技能等级",数值类型，连击值,正常,
+系统,luainit,lua虚拟机初始化时触发，也就是脚本加载完成的时候。此事件会在每个lua虚拟机上加载触发一次，服务器有N个虚拟机，就会触发N次,虚拟机初始化时,无,无,正常,
+聊天,worldchatsuccess,世界聊天发送成功后，在发送者身上触发,世界聊天发送成功后,参数0:actor,无,正常,
+道具,useitembefore,使用道具前事件，返回值可以控制是否继续使用,客户端请求(ReqUseItemMessage)使用道具前，此事件触发,"参数0：actor
+参数1：{”type“=?，”items“=?}，其中type为1表示items列表的key是背包索引，type为2时表示items列表的key是道具配置id",返回true或者null表示可以使用；返回false则不能使用,正常,
+邮件,getmailitemsbefore,领取邮件前触发，函数返回true允许领取，返回false拒绝领取,领取邮件前触发,"参数0:actor,
+参数1:邮件ID列表",true|false,正常,
+行会,guildnamechange,行会名称更改后触发,名称改变时,"参数0:actor,
+参数1:行会ID
+参数2:行会新名称",无,正常,
+行会,guildpositionchange,行会成员职位改变后触发,行会成员职位改变后,"参数0:actor
+参数1:旧得职位
+参数2:新得职位",无,正常,
+行会,guilddelmember,行会成员退出行会后触发,行会成员退出行会后,"参数0:actor
+参数1:原因（1解散,2盟主T人1,3自己退出,4角色删除,5后台删除）",无,正常,
+组队,removegroup,最后一个玩家退出队伍触发,最后一个玩家退出队伍，解散队伍,"参数0:actor
+参数1:解散队伍id",无,正常,
+系统,servermsg,玩家接收到全局消息时触发,玩家接收到全局消息时触发,"参数0:actor
+参数1:msgData ",无,正常,
+匹配,matchpvpinit,匹配成功后触发,匹配成功后触发。当匹配成功后，该事件会被率先在战斗服中被调用，用于初始化副本。可以在该事件中创建副本，并按照格式返回创建的副本的地图唯一ID,"参数0:sysactor
+参数1:匹配的地图ID
+参数2:匹配到该副本的玩家ID集合
+参数3:附加信息
+参数4:队伍信息","{mapid=43008001}
+mapid是地图的唯一ID",正常,
+匹配,matchpvpsuccess,匹配成功，且副本创建成功后触发,该事件在 matchpvpinit 完成后被调用，在本地场景中在每个玩家上触发,"参数0:actor
+参数1:地图唯一ID，也就是matchpvpinit事件中创建的那个地图ID，会被传递过来
+参数2:匹配到该副本的玩家ID集合
+参数3:matchpvp接口的attach参数传递的数据",无,正常,
+匹配,matchpvpfail,匹配失败触发,匹配失败触发,"参数0:actor,
+参数1:原因",无,正常,
+怪物,monskillexcuse,怪物技能外置事件，通过返回值可以控制怪物释放什么技能,怪物要释放技能时触发,"参数0：怪物actor
+参数1：敌人actor
+参数2：内置要释放的技能id
+参数3：内置要释放的技能等级",{id=技能id，target=敌人id，otherers=其他敌人id列表，stay=原地不动的毫秒},正常,
+战盟,guildlevelup,战盟升级触发,战盟升级触发,"参数0:sysactor(id=0)
+参数1:guildactor
+参数2:最新等级",无,正常,
+离线挂机,onhookheart,离线挂机启动后的心跳事件，间隔100毫秒执行一次，可在该事件中实现玩家离线挂机行为逻辑,玩家下线并且开启了离线挂机时触发,参数0:actor,无,正常,
+队伍,ChangeLeaderAfter,队长转移后触发,队长转移后触发,"参数0:actor 新队长
+参数1:teamid
+参数2:newLeaderId",无,正常,
+充值,rechargemoney,充值随意金额事件（id=71200001）,sdk‘服务器充值回调,"参数1：玩家对象
+参数2：充值信息，格式如下
+{
+         ""amount"":金额,
+        ""orderid"":订单id,
+        ""goodsid"":道具配置id，
+        ""platform"":平台id，
+        ""extraParams"":额外信息，
+        ""count"":充值数量，
+
+}",无,正常,

@@ -9,6 +9,36 @@ local logEnable = isDebugBuild
 local logErrorEnable = true
 local isLuaByteMode = CS.Main.IsEditorLuaByteMode()
 local tracebacks = {}
+local TRACEBACK_SPACE = '             '
+
+--- 获取 Unity Console 可点击堆栈使用的 Lua 文件路径
+---@param shortSrc string debug.getinfo 返回的 short_src
+---@param isMobile boolean 是否移动端平台
+---@return string path Lua 文件相对路径
+local function getTracebackPath(shortSrc, isMobile)
+    local path = shortSrc
+    if not isMobile then
+        path = string.replace(path, "[string \"", "")
+        path = string.replace(path, "\"]", "")
+    end
+    return string.endsWith(path, '.lua') and ('Assets/Lua/'..path) or ('Assets/Lua/'..path..'.lua')
+end
+
+--- 追加 Unity Console 可点击堆栈链接
+---@param list table 堆栈字符串片段列表
+---@param path string Lua 文件相对路径
+---@param line number 行号
+local function appendTracebackLink(list, path, line)
+    list[#list+1] = '<a href="'
+    list[#list+1] = path
+    list[#list+1] = '" line="'
+    list[#list+1] = line
+    list[#list+1] = '">'
+    list[#list+1] = path
+    list[#list+1] = ':'
+    list[#list+1] = line
+    list[#list+1] = '</a>'
+end
 function enableLog(b)
     logEnable = b
     KmlManager.LogEnable(b)
@@ -21,6 +51,10 @@ local function concat(...)
         args[i] = tostring(args[i])
     end
     return table.concat(args, "\t")
+end
+
+local function hasLuaTraceback(content)
+    return type(content) == "string" and string.find(content, "stack traceback:", 1, true) ~= nil
 end
 
 local function logPrint(content,logType)
@@ -71,7 +105,12 @@ end
 
 function logError(...)
     if logErrorEnable then
-        Debug.LogError('(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback())
+        local content = concat(...)
+        if hasLuaTraceback(content) then
+            Debug.LogError('(frameCount='..tostring(Time.frameCount)..') '.. content)
+        else
+            Debug.LogError('(frameCount='..tostring(Time.frameCount)..') '.. content .. "\n" .. redirectStaceback())
+        end
         --logPrint('(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback(),ELogType.Error)
     end
 end
@@ -100,18 +139,18 @@ function logErrorNoFrameCount(...)
 end
 
 function logOnEditor(...)
-    if Main and Main.isEditor then
+    if Main and  (Main.isEditor or Main.isXtra) then
         if logEnable then
-            Debug.LogError('(仅编辑器)(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback())
+            Debug.LogError('(仅编辑器或者启动器)(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback())
             --logPrint('(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback(),ELogType.Error)
         end
     end
 end
 
 function logErrorOnEditor(...)
-    if Main and Main.isEditor then
+    if Main and (Main.isEditor or Main.isXtra) then
         if logErrorEnable then
-            Debug.LogError('(仅编辑器)(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback())
+            Debug.LogError('(仅编辑器或者启动器)(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback())
             --logPrint('(frameCount='..tostring(Time.frameCount)..') '.. concat(...) .. "\n" .. redirectStaceback(),ELogType.Error)
         end
     end
@@ -165,14 +204,13 @@ function redirectStaceback()
         --return debug.traceback()
         table.clear(tracebacks)
         tracebacks[#tracebacks+1] = 'stack traceback:\n'
-        local space = '             '
         for level=3,math.huge do
             ---@type DebugInfo
             local fInfo = debug.getinfo(level, 'nSl')
             if not fInfo then
                 break
             end
-            tracebacks[#tracebacks+1] = space
+            tracebacks[#tracebacks+1] = TRACEBACK_SPACE
             tracebacks[#tracebacks+1] = fInfo.short_src
             tracebacks[#tracebacks+1] = '.lua:'
             tracebacks[#tracebacks+1] = fInfo.currentline
@@ -185,41 +223,38 @@ function redirectStaceback()
         return table.concat(tracebacks)
     else
         --<a href=\"Assets/Scripts/MovablePlatform.cs\" line=\"7\">Assets/Scripts/MovablePlatform.cs:7</a>
-        local link = "<a href=\"%s\" line=\"%s\">%s:%s</a>"
-        local content = 'stack traceback:\n';
-        local space = '             '
+        table.clear(tracebacks)
+        tracebacks[#tracebacks+1] = 'stack traceback:\n'
+        local isMobile = CS.TCFramework.Platform.isMobile
         for level=3,math.huge do
             ---@type DebugInfo
             local fInfo = debug.getinfo(level, 'nSl')
             if not fInfo then
                 break
             end
-            content = content..space..fInfo.short_src..':'..fInfo.currentline
+            tracebacks[#tracebacks+1] = TRACEBACK_SPACE
+            tracebacks[#tracebacks+1] = fInfo.short_src
+            tracebacks[#tracebacks+1] = ':'
+            tracebacks[#tracebacks+1] = fInfo.currentline
+            local p0 = getTracebackPath(fInfo.short_src, isMobile)
+            local p1 = fInfo.currentline
             if fInfo.name then
-                local path = fInfo.short_src
-                if not CS.TCFramework.Platform.isMobile then
-                    path = string.replace( path,"[string \"","")
-                    path = string .replace(path ,"\"]","")
-                end
                 --local clickPath ='(in '..fInfo.namewhat..' \''..fInfo.name..'\') (at Assets/Lua/'..path..'.lua:'..fInfo.currentline..')'
-                local p0 =string.endsWith(path,'.lua') and ('Assets/Lua/'..path) or ('Assets/Lua/'..path..'.lua')
-                local p1 = fInfo.currentline
-                local clickPath ='(in '..fInfo.namewhat..' \''..fInfo.name..'\') (at '..string.format(link,p0,p1,p0,p1)..')'
-                content = content..clickPath..'\n'
+                tracebacks[#tracebacks+1] = '(in '
+                tracebacks[#tracebacks+1] = fInfo.namewhat
+                tracebacks[#tracebacks+1] = ' \''
+                tracebacks[#tracebacks+1] = fInfo.name
+                tracebacks[#tracebacks+1] = '\') (at '
+                appendTracebackLink(tracebacks, p0, p1)
+                tracebacks[#tracebacks+1] = ')\n'
             else
-                local path = fInfo.short_src
-                if not CS.TCFramework.Platform.isMobile then
-                    path = string.replace( path,"[string \"","")
-                    path = string .replace(path ,"\"]","")
-                end
-                local p0 =string.endsWith(path,'.lua') and ('Assets/Lua/'..path) or ('Assets/Lua/'..path..'.lua')
-                local p1 = fInfo.currentline
-                local clickPath ='\') (at '..string.format(link,p0,p1,p0,p1)..')'
-                content = content..clickPath..'\n'
+                tracebacks[#tracebacks+1] = '\') (at '
+                appendTracebackLink(tracebacks, p0, p1)
+                tracebacks[#tracebacks+1] = ')\n'
             end
 
         end
-        return content
+        return table.concat(tracebacks)
     end
 end
 local infoPatten = '([^:]+):'

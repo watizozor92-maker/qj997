@@ -107,6 +107,7 @@ local local_money = {
 local local_lPrice = {
     lPrice_1={},
     lPrice_2={2},
+    lPrice_3={0},
 
 }
 
@@ -129,6 +130,7 @@ local local_mPrice = {
     mPrice_10={50000},
     mPrice_11={200000},
     mPrice_12={1000,500000},
+    mPrice_13={0},
 
 }
 
@@ -1183,6 +1185,8 @@ local cfg_stall =
 	{id=2120021199, name="斯提克斯之泪", subType=9, subTypeName="项链"},
 	{id=2120030199, name="赫鲁斯之痕", subType=9, subTypeName="项链"},
 	{id=2120031199, name="赫鲁斯之耀", subType=9, subTypeName="项链"},
+	{id=10240001, name="积分", minNumber=10, type=6, typeName="材料", subType=0, subTypeName="材料", lPrice=local_lPrice.lPrice_3, mPrice=local_mPrice.mPrice_13},
+	{id=10010001, name="金币", minNumber=1000000, type=6, typeName="材料", subType=0, subTypeName="材料", lPrice=local_lPrice.lPrice_3, mPrice=local_mPrice.mPrice_13},
 }
 
 local defaults = {way=4, startDay=0, number=0, minNumber=1, type=2, typeName="装备", subType=1, subTypeName="武器", job={}, money={10040001}, fixedPrice=0, startingPrice=0, auction=0, lPrice={2}, topPrice={50000}, addTime=0, ready=5, time=1440, mPrice={500,500000}, tax={{1,10},{2,0}}}

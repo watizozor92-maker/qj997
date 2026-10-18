@@ -333,7 +333,7 @@ local cfg_att_info =
 	{id=317031, name="无视防御伤害增加", attribute="ignoringIncreasedDefenseDamage", remarks=1, isshow=local_isshow.isshow_2, showname="无视防御伤害增加", attHide=local_attHide.attHide_2, sort=317031},
 	{id=317032, name="无视防御伤害加成", attribute="ignoringIncreasedDefenseDamages", isshow=local_isshow.isshow_2, showname="无视防御伤害加成", attHide=local_attHide.attHide_2, sort=317032},
 	{id=318011, name="移动速度", attribute="shiftSpeed", remarks=1, isshow=local_isshow.isshow_2, showname="移动速度", attHide=local_attHide.attHide_2, sort=318011, att7=0},
-	{id=318022, name="移速加成", attribute="moveSpeed", showname="移速加成", sort=318022, att1=10000, att2=10000, att3=10000, att4=10000, att5=10000, att6=10000, att7=10000},
+	{id=318022, name="移速加成", attribute="moveSpeed", showname="移速加成", sort=318022, att1=13000, att2=13000, att3=13000, att4=13000, att5=13000, att6=13000, att7=13000},
 	{id=319012, name="金币掉落率", attribute="goldIncrease", score=30, isshow=local_isshow.isshow_2, showname="金币掉落率", attHide=local_attHide.attHide_2, sort=319012},
 	{id=319022, name="提高宝石掉落率", attribute="stoneDropRateIncrease", isshow=local_isshow.isshow_2, showname="提高宝石掉落率", attHide=local_attHide.attHide_2, sort=319022},
 	{id=319032, name="提高卓越装备掉落率", attribute="exEquipDropRateIncrease", isshow=local_isshow.isshow_2, showname="提高卓越装备掉落率", attHide=local_attHide.attHide_2, sort=319032},

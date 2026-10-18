@@ -20,6 +20,7 @@ LUA_EVENT_AUTOPICKBEGIN = enum()    --自动捡物开始
 LUA_EVENT_AUTOPICKEND = enum()    --自动捡物结束
 LUA_EVENT_MAINBUFFUPDATE = enum()  --(已实现)  主玩家buff刷新
 LUA_EVENT_BUFFUPDATE = enum()  --(已实现)   通用buff刷新
+LUA_TRIGGER_BUFF_WHEN_DEAD = enum()  --(已实现)  死亡时清空buff
 LUA_EVENT_TALKTONPC = enum()  --(已实现)  与NPC对话
 LUA_EVENT_CHANGESCENE = enum()  --(已实现)      --切换地图(包含同地图)  --(已实现) 
 ---@param message MapProtos.ChangeMapRes 服务器返回消息
@@ -74,7 +75,7 @@ LUA_TRIGGER_SKILL_CUSTOM_PLAYER_ANI_CROSS_FADE_TIME = enum()
 ---@param targetCoord Dot2 目标坐标
 ---@param targetIds table 多目标 ID 列表
 ---@param isFightResult boolean 是否播放目标特效
----@return boolean 返回 isStopCurSkill为true时，释放技能时停止当前技能
+---@return boolean 为true时，释放技能时停止上次正在播放的技能
 LUA_TRIGGER_SKILL_RELEASE = enum() --技能释放触发,isStopCurSkill为true时，释放技能时停止当前技能
 
 LUA_EVENT_PLAYER_MAPPOS_CHANGE = enum()  --(已实现)  --主玩家位置改变
@@ -254,8 +255,7 @@ LUA_EVENT_OPEN_UI = enum() --打开UI面板
 --好友
 LUA_EVENT_FRIEND_LIST_CHANGE = enum() --好友数据变化
 ---@param dir EDirection 方向
-LUA_EVENT_PLAYER_TURN_DIR = enum() --玩家转向
-
+LUA_EVENT_PLAYER_TURN_DIR = enum() --主角朝向
 --地图
 LUA_EVENT_BIG_MAP_OPEN = enum() --大地图打开
 LUA_EVENT_BIG_MAP_CLOSE = enum()--大地图关闭
@@ -283,7 +283,7 @@ LUA_EVENT_MOUNT_ISON = enum() --场景中坐骑骑乘事件
 
 LUA_EVENT_PLAYER_ENTER_MAP = enum() -- ResPlayerEnterMapMessage
 
-MESSAGE_ACCEPT = enum() --文本接收事件
+MESSAGE_ACCEPT = enum() --文字提示消息
 
 LUA_EVENT_FIGHT_RESULT = enum() --战斗结果包
 
@@ -506,3 +506,14 @@ LUA_TRIGGER_IS_CAN_ATUO_USE_SDPILL = enum() --是否能自动使用回复护盾�
 
 LUA_EVENT_ITEM_LUA_EXT_DATA_CHANGED = enum() --道具扩展数据变化通知（包括身上穿戴和背包中的）
 LUA_TRIGGER_CHAT_MESSAGE_PERSONAL = enum() --聊天消息触发器
+LUA_EVENT_SKILL_CD_CHANGE = enum() --主角技能cd改变事件
+LUA_EVENT_HOOK_SKILL_CHANGE = enum() --挂机技能改变事件
+
+LUA_TRIGGER_DELAY_CLOSE_LOAINDGUI = enum() -- 延迟关闭loading界面触发器,登陆界面到选角界面
+LUA_TRIGGER_GUARD_PICKUP_ITEM = enum() --守护拾取道具触发器
+
+
+LUA_EVENT_DISCONNECT = enum() --Tcp断开连接
+LUA_EVENT_RECONNECT = enum() --Tcp重连
+
+LUA_TRIGGER_SET_AUTO_COUNTERATTACK_IS_RESET_SELECT = enum() --设置自动反击是否重置选中的目标

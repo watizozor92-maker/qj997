@@ -102,14 +102,17 @@ function TimerBase.Update()
             t.isTimerStop = true
             count = count - 1
             if needCall then
-                t.func(sunpack(t.args))
+                local ok, err = xpcall(t.func, debug.traceback, sunpack(t.args))
+                if not ok then logError(err) end
             end
             if t.completed then
-                t.completed()
+                local ok, err = xpcall(t.completed, debug.traceback)
+                if not ok then logError(err) end
             end
         else
             if needCall then
-                t.func(sunpack(t.args))
+                local ok, err = xpcall(t.func, debug.traceback, sunpack(t.args))
+                if not ok then logError(err) end
             end
             i = i + 1
         end

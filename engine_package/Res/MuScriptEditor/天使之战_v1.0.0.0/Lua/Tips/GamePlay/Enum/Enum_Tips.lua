@@ -13,33 +13,57 @@ require "GamePlay/Enum/ActivityEnum"
 require "GamePlay/Enum/SDKEnum"
 require "GamePlay/Enum/TreasureEnum"
 
+---EUIEventName
 ---@class EUIEventName
 EUIEventName = {
+    ---拖拽事件
     OnDrag = "onDrag",
+    ---放下事件
     OnDrop = "onDrop",
+    ---指针点击
     OnPointerClick = "onPointerClick",
+    ---双指点击
     onDoublePointerClick = "onDoublePointerClick",
+    ---指针按下
     OnPointerDown = "onPointerDown",
+    ---指针抬起
     OnPointerUp = "onPointerUp",
+    ---指针进入
     OnPointerEnter = "onPointerEnter",
+    ---指针离开
     OnPointerExit = "onPointerExit",
+    ---开始拖拽
     OnBeginDrag = "onBeginDrag",
+    ---结束拖拽
     OnEndDrag = "onEndDrag",
+    ---滚动
     OnScroll = "onScroll",
+    ---更新选中
     OnUpdateSelected = "onUpdateSelected",
+    ---选中
     OnSelect = "onSelect",
+    ---取消选中
     OnDeselect = "onDeselect",
+    ---移动
     OnMove = "onMove",
+    ---提交
     OnSubmit = "onSubmit",
+    ---取消
     OnCancel = "onCancel",
+    ---初始化潜在拖拽
     OnInitializePotentialDrag = "onInitializePotentialDrag",
 }
 
+---EVersion
 ---@class EVersion
 EVersion = {
+    ---普通
     Normal = 0,
+    ---奇迹5版
     QJ5 = 1,
+    ---天使降临版
     TSJL = 2,
+    ---幻想版
     XW = 3,
 }
 
@@ -59,25 +83,40 @@ EVersion = {
 ---@field old any
 ---@field new any
 
+---ELuaEngineType
 ---@class ELuaEngineType
 ELuaEngineType = {
+    ---基础
     Base = 0,
+    ---QJ引擎
     QJ = 1,
+    ---传奇引擎
     CQ = 2,
 }
 
+---EUnionGardBlessType
 ---@class EUnionGardBlessType
 EUnionGardBlessType = {
-    oneGrade = 1, --一转
-    twoGrade = 2, --二转
-    threeGrade = 3, --三转
-    fourGrade = 4, --四转
-    fiveGrade = 5, --五转
-    sixGrade = 6, --六转
-    sevenGrade = 7, --七转
-    eightGrade = 8, --八转
-    nineGrade = 9, --九转
-    tenGrade = 10, --十转
+    ---一转
+    oneGrade = 1,
+    ---二转
+    twoGrade = 2,
+    ---三转
+    threeGrade = 3,
+    ---四转
+    fourGrade = 4,
+    ---五转
+    fiveGrade = 5,
+    ---六转
+    sixGrade = 6,
+    ---七转
+    sevenGrade = 7,
+    ---八转
+    eightGrade = 8,
+    ---九转
+    nineGrade = 9,
+    ---十转
+    tenGrade = 10,
 
 }
 ---@class EUnionGardBlessType_String
@@ -94,63 +133,69 @@ EUnionGardBlessType_String = {
     [EUnionGardBlessType.tenGrade] = '十转',
 }
 
+---EReturnGameType
 ---@class EReturnGameType
 EReturnGameType = {
+    ---返回登录
     ToLogin = 0,
+    ---前往创角面板
     ToCreateRolePanel = 1,
 }
 
----@class EFSMState @对应cfg_behaviour表里面的state
----@field No number @ enum(-1),
----@field Stand number @ 1,
----@field Move number @ 2,
----@field Jump number @ 3,
----@field AttackTrack number @ 4, --追踪
----@field Attack number @ 5,
----@field Dead number @ 6,
----@field BeAttack number @ 7,
----@field Mining number @ 8,
+---对应 cfg_behaviour 表里面的 state
+---@class EFSMState
 EFSMState = {
+    ---无状态
     No = enum(-1),
+    ---站立
     Stand = 1,
+    ---移动
     Move = 2,
+    ---跳跃
     Jump = 3,
-    AttackTrack = 4, --追踪
+    ---追踪攻击
+    AttackTrack = 4,
+    ---攻击
     Attack = 5,
+    ---死亡
     Dead = 6,
+    ---受击
     BeAttack = 7,
+    ---采矿
     Mining = 8,
+    ---任意状态
     Any = 9,
 }
+---玩家动作枚举 - 用于角色动画和动作状态控制
 ---@class EAction
----@field AttackNoAction number @ -2,
----@field None number @ -1,
----@field Stand number @ 0,
----@field Attack number @ 1,
----@field Attack2 number @ 2,
----@field Walk number @ 3,
----@field Run number @ 4,
----@field Dead number @ 5,
----@field Mining number @ 6,
----@field Jump number @ 7,
----@field TurnAround number @ 8, --转身
----@field AttackTrack number @ 9,
----@field BeAttack number @ 10,
----@field AnyAction number @ 11,
 EAction = {
+    ---攻击无动作
     AttackNoAction = -2,
+    ---无动作
     None = -1,
+    ---站立
     Stand = 0,
+    ---普攻
     Attack = 1,
+    ---普攻2
     Attack2 = 2,
+    ---行走
     Walk = 3,
+    ---奔跑
     Run = 4,
+    ---死亡
     Dead = 5,
+    ---采矿
     Mining = 6,
+    ---跳跃
     Jump = 7,
-    TurnAround = 8, --转身
+    ---转身
+    TurnAround = 8,
+    ---追踪攻击
     AttackTrack = 9,
+    ---受击
     BeAttack = 10,
+    ---任意动作
     AnyAction = 11,
     --SitDown = enum(),
     --Stuck = enum(),
@@ -204,50 +249,54 @@ EActionToString_Mount = {
     [EAction.Walk] = "walk",
     [EAction.Run] = "run",
 }
+---EAnyActionAnimType
 ---@class EAnyActionAnimType
 EAnyActionAnimType = {
+    ---停在最后帧
     StopLastFrame = 0,
+    ---不循环
     NotLoop = 1,
+    ---循环
     Loop = 2,
 }
 
+---EDirection
 ---@class EDirection
----@field None number @ enum(-1),
----@field Up number @ 0,
----@field Right_Up number @ 1,
----@field Right number @ 2,
----@field Right_Down number @ 3,
----@field Down number @ 4,
----@field Left_Down number @ 5,
----@field Left number @ 6,
----@field Left_Up number @ 7,
----@field --特效16方向
----@field Up_2 number @ 8,
----@field Right_Up_2 number @ 9,
----@field Right_2 number @ 10,
----@field Right_Down_2 number @ 11,
----@field Down_2 number @ 12,
----@field Left_Down_2 number @ 13,
----@field Left_2 number @ 14,
----@field Left_Up_2 number @ 15,
 EDirection = {
+    ---无
     None = enum(-1),
+    ---上
     Up = 0,
+    ---右上
     Right_Up = 1,
+    ---右侧
     Right = 2,
+    ---右下
     Right_Down = 3,
+    ---下
     Down = 4,
+    ---左下
     Left_Down = 5,
+    ---左侧
     Left = 6,
+    ---左上
     Left_Up = 7,
     --特效16方向
+    ---上2
     Up_2 = 8,
+    ---右上2
     Right_Up_2 = 9,
+    ---右2
     Right_2 = 10,
+    ---右下2
     Right_Down_2 = 11,
+    ---下2
     Down_2 = 12,
+    ---左下2
     Left_Down_2 = 13,
+    ---左2
     Left_2 = 14,
+    ---左上2
     Left_Up_2 = 15,
 }
 ---@type table<EDirection,Dot2>
@@ -291,43 +340,46 @@ EDirectionTo3DModelRotationVec = {
     [EDirection.Left_Up] = Vector3(0, EDirectionTo3DModelRotation[EDirection.Left_Up], 0),
 }
 
+---EOrgan
 ---@class EOrgan
----@field Body string @ "Body",
----@field Hair string @ "Hair",
----@field Weapon string @ "Weapon",
 EOrgan = {
+    ---身体
     Body = "Body",
+    ---头发
     Hair = "Hair",
+    ---武器
     Weapon = "Weapon",
 }
 
+---ERoleType
 ---@class ERoleType
----@field None number @ enum(0),
----@field Me number @ enum(),
----@field Player number @ enum(),
----@field Monster number @ enum(),
----@field Npc number @ enum(),
----@field Pet number @ enum(),
----@field Item number @ enum(),
----@field Seller number @ enum(),
----@field GuardPet number @ enum(),
----@field Partner number @ enum(),
----@field
 ERoleType = {
+    ---无
     None = enum(0),
+    ---自己
     Me = enum(),
+    ---玩家
     Player = enum(),
+    ---怪物
     Monster = enum(),
+    ---NPC
     Npc = enum(),
+    ---宠物
     Pet = enum(),
+    ---物品
     Item = enum(),
+    ---商人
     Seller = enum(),
+    ---护卫宠物
     GuardPet = enum(),
+    ---伙伴
     Partner = enum(),
 }
 
 EUIMoveDir = {
+    ---无
     None = enum(0),
+    ---上
     Up = enum(),
     [EDirection.Right_Up] = 45,
     [EDirection.Right] = 90,
@@ -359,20 +411,23 @@ ERoleTypeToSelectColor = {
     [ERoleType.Partner] = Color.red,
 }
 
+---ECareer
 ---@class ECareer
----@field None number @ enum(0),
----@field Zhan number @ enum(), --战士
----@field Fa number @ enum(), --法师or魔法师
----@field Dao number @ enum(), --道士or弓箭手
----根职业枚举
 ECareer = {
+    ---无
     None = enum(0),
-    Zhan = enum(), --战士
-    Fa = enum(), --法师or魔法师
-    Dao = enum(), --道士or弓箭手
-    GeDou = enum(), --格斗家
-    Menghuan = enum(), --梦幻骑士
-    JiFeng = enum(), --疾风
+    ---战士
+    Zhan = enum(),
+    ---法师or魔法师
+    Fa = enum(),
+    ---道士or弓箭手
+    Dao = enum(),
+    ---格斗家
+    GeDou = enum(),
+    ---梦幻骑士
+    Menghuan = enum(),
+    ---疾风
+    JiFeng = enum(),
 }
 
 ---@class ECareerToHeadFlag
@@ -383,32 +438,34 @@ ECareerToHeadFlag = {
     [ECareer.Dao] = 'D',
 }
 
+---ESex
 ---@class ESex
----@field None number @ enum(0),
----@field Man number @ enum(),
----@field Woman number @ enum(),
 ESex = {
+    ---无
     None = enum(0),
+    ---男
     Man = enum(),
+    ---女
     Woman = enum(),
 }
 
+---EBodyPart
 ---@class EBodyPart
----@field Cloth number @ enum(1), --身体
----@field Head number @ enum(), --头（有头盔时，覆盖这里）
----@field Head2 number @ enum(), --有面巾的时候，头用默认头
----@field Hand number @ enum(), --手
----@field Pant number @ enum(), --裤子
----@field Boot number @ enum(), --鞋子
----@field shadow number @ enum(), --影子
 EBodyPart = {
-    Cloth = enum(1), --身体
-    Head = enum(), --头（有头盔时，覆盖这里）
-    Head2 = enum(), --有面巾的时候，头用默认头
-    Hand = enum(), --手
-    Pant = enum(), --裤子
-    Boot = enum(), --鞋子
-    shadow = enum(), --影子
+    ---身体
+    Cloth = enum(1),
+    ---头（有头盔时，覆盖这里）
+    Head = enum(),
+    ---有面巾的时候，头用默认头
+    Head2 = enum(),
+    ---手
+    Hand = enum(),
+    ---裤子
+    Pant = enum(),
+    ---鞋子
+    Boot = enum(),
+    ---影子
+    shadow = enum(),
 }
 EBodyPartString = {
     [EBodyPart.Cloth] = "Cloth",
@@ -419,19 +476,21 @@ EBodyPartString = {
     [EBodyPart.Boot] = "Boot",
     [EBodyPart.shadow] = "shadow",
 }
+---EBodyAttach
 ---@class EBodyAttach
----@field Weapon number @ 1,
----@field Weapon2 number @ 2,
----@field Mount number @ 3,
----@field Wing number @ 4,
----@field ActivityWeapon number @ 5,
 EBodyAttach = {
+    ---武器
     Weapon = 1,
+    ---武器2
     Weapon2 = 2,
+    ---坐骑
     Mount = 3,
+    ---翅膀
     Wing = 4,
-    ActivityWeapon = 5, --用于血色城堡活动
-    Banner = 6, --旗帜
+    ---用于血色城堡活动
+    ActivityWeapon = 5,
+    ---旗帜
+    Banner = 6,
 }
 
 EBodyAttachString = {
@@ -443,50 +502,62 @@ EBodyAttachString = {
     [EBodyAttach.Banner] = "Banner",
 }
 
+---EPKMode
 ---@class EPKMode
----@field AllAttack number @ 0, --全体模式
----@field Peace number @ 1, --和平模式
----@field Marry number @ 2, --夫妻模式 暂不用
----@field ShiTu number @ 3, --师徒模式 暂不用
----@field Team number @ 4, --组队模式
----@field Union number @ 5, --行会模式
----@field RedName number @ 6, --红名模式 暂不用
----@field Country number @ 7, --国家模式 暂不用
----@field Storm  number @ 8, --强攻模式 敌方：队友和盟友（包括自己）以外的目标 友方：队友和盟友（包括自己）
----@field Camp number @9, --阵营模式
----@field Robbery number @10, --掠夺模式
----@field Attack number @11, --攻方模式
----@field Defend number @12, --守方模式
 EPKMode = {
-    AllAttack = 0, --全体模式
-    Peace = 1, --和平模式
-    Marry = 2, --夫妻模式 暂不用
-    ShiTu = 3, --师徒模式 暂不用
-    Team = 4, --组队模式
-    Union = 5, --行会模式
-    RedName = 6, --红名模式 暂不用
-    Country = 7, --国家模式 暂不用
-    Storm = 8, --强攻模式 敌方：队友和盟友（包括自己）以外的目标 友方：队友和盟友（包括自己）
-    Camp = 9, --阵营模式
-    Robbery = 10, --掠夺模式
-    Attack = 11, --攻方模式
-    Defend = 12, --守方模式
+    ---全体模式
+    AllAttack = 0,
+    ---和平模式
+    Peace = 1,
+    ---夫妻模式 暂不用
+    Marry = 2,
+    ---师徒模式 暂不用
+    ShiTu = 3,
+    ---组队模式
+    Team = 4,
+    ---行会模式
+    Union = 5,
+    ---红名模式 暂不用
+    RedName = 6,
+    ---国家模式 暂不用
+    Country = 7,
+    ---强攻模式 敌方：队友和盟友（包括自己）以外的目标 友方：队友和盟友（包括自己）
+    Storm = 8,
+    ---阵营模式
+    Camp = 9,
+    ---掠夺模式
+    Robbery = 10,
+    ---攻方模式
+    Attack = 11,
+    ---守方模式
+    Defend = 12,
     --后面暂时不用
     --GoodAndEvil = 4, --善恶模式
     --
 }
 
---攻城战开启提示
+---攻城战开启提示
+---@class ActiveTip
 ActiveTip = {
-    SiegeTitle = enum(), --攻城title
+    ---攻城title
+    SiegeTitle = enum(),
+    ---攻城时间
     SiegeTime = enum(), --
+    ---攻城图集名
     SiegeAtlasName = enum(), --
+    ---攻城图标名
     SiegeIconName = enum(), --
+    ---攻城按钮文本
     SiegeBtnTxt = enum(), --
-    AuctionTitle = enum(), --奖励title
+    ---奖励title
+    AuctionTitle = enum(),
+    ---拍卖时间
     AuctionTime = enum(), --
+    ---拍卖图集名
     AuctionAtlasName = enum(), --
+    ---拍卖图标名
     AuctionIconName = enum(), --
+    ---拍卖按钮文本
     AuctionBtnTxt = enum(), --
 }
 
@@ -538,17 +609,18 @@ EPKTable = {
     UnionAttakPKTbl = { EPKMode.Peace, EPKMode.Camp, },
 }
 
+---EShowTipsSource
 ---@class EShowTipsSource
----@field None number @ enum(0),
----@field Bag number @ enum(1),
----@field FastSlot number @ enum(2),
----@field EquipPanel number @ enum(3),
----@field StoreHouse number @ enum(4),
 EShowTipsSource = {
+    ---无
     None = enum(0),
+    ---背包
     Bag = enum(1),
+    ---快捷栏
     FastSlot = enum(2),
+    ---装备面板
     EquipPanel = enum(3),
+    ---仓库
     StoreHouse = enum(4),
 }
 
@@ -561,45 +633,74 @@ FriendPanelType = {
     applicationlist = 5, --申请列表
 }
 
+---EMyShopTab
 ---@class EMyShopTab
 EMyShopTab = {
+    ---无
     None = enum(0),
-    Selling = enum(), -- 正在出售
-    Selled = enum(), -- 已经出售
-    Store = enum(), -- 我的仓库
-    DialyInfo = enum(), -- 信息日记
-    BasicInfo = enum(), -- 基本信息
+    ---正在出售
+    Selling = enum(),
+    ---已经出售
+    Selled = enum(),
+    ---我的仓库
+    Store = enum(),
+    ---信息日记
+    DialyInfo = enum(),
+    ---基本信息
+    BasicInfo = enum(),
 }
 
+---悬浮提示类型枚举
 ---@class PopoverType
 PopoverType = {
+    ---效率提示
     Tip_efficiency = 1,
+    ---拍卖提示
     Tip_auction = 2,
+    ---邮件提示
     Tip_mail = 3,
+    ---凭证提示
     Tip_testimonial = 4,
+    ---勇者试炼提示
     Tip_brave_trials = 5,
+    ---伙伴孵化提示
     Tip_partner_incubation = 6,
+    ---伙伴派遣提示
     Tip_partner_dispatch = 7,
+    ---时装提示
     Tip_fashion = 8,
+    ---属性提示
     Tip_attribute = 9,
+    ---协助提示
     Tip_assist = 10,
+    ---装备替换提示
     Tip_equipment_replacement = 11,
+    ---背包提示
     Tip_inventory = 12,
+    ---任务派遣提示
     Tip_task_dispatch = 13,
+    ---队伍提示
     Tip_team = 15,
 }
 
+---EShaderType_RGB
 ---@class EShaderType_RGB
 EShaderType_RGB = {
+    ---无
     None = enum(-1),
+    ---普通
     Normal = enum(0),
 
 }
 
+---EShaderType_A
 ---@class EShaderType_A
 EShaderType_A = {
+    ---无
     None = enum(-1),
+    ---普通
     Normal = enum(0),
+    ---透明
     Transparent = enum(),
 }
 
@@ -614,14 +715,22 @@ EShaderType_RGBToSpecialColor = {
     [EShaderType_RGB.Normal] = Vector4(1, 1, 1, 1),
 }
 
+---EShopItemType
 ---@class EShopItemType
 EShopItemType = {
+    ---全部
     All = enum(1),
+    ---装备
     Equip = enum(),
+    ---拖拽
     Drag = enum(),
+    ---技能
     Skill = enum(),
+    ---宝箱
     Box = enum(),
+    ---材料
     Material = enum(),
+    ---触发器
     Trigger = enum(),
 }
 
@@ -637,14 +746,20 @@ ShopItemTypeData = {
     [EShopItemType.Trigger] = { 7, "触发物品" }, --7 触发物品
 }
 
+---SearchShopSortType
 ---@class SearchShopSortType
--- 拍卖品排序类型
 SearchShopSortType = {
+    ---全部从低到高
     ALL_2_LOW = enum(1),
+    ---全部从高到低
     ALL_2_UP = enum(),
+    ---售价从低到高
     SELL_2_LOW = enum(),
+    ---售价从高到低
     SELL_2_UP = enum(),
+    ---市场从低到高
     MARK_2_LOW = enum(),
+    ---市场从高到低
     MARK_2_UP = enum(),
 }
 
@@ -659,11 +774,17 @@ SearchShopSortString = {
     [SearchShopSortType.MARK_2_UP] = "关注度从低到高",
 }
 
+---TeamOptionType
+---@class TeamOptionType
 TeamOptionType = {
-    ChangeLeader = enum(0), --转移队长
-    KickOutTeam = enum(), --踢出队伍
-    DisbandTeam = enum(), --解散队伍
-    ExitTeam = enum(), --退出队伍
+    ---转移队长
+    ChangeLeader = enum(0),
+    ---踢出队伍
+    KickOutTeam = enum(),
+    ---解散队伍
+    DisbandTeam = enum(),
+    ---退出队伍
+    ExitTeam = enum(),
 }
 
 TeamData = {
@@ -673,20 +794,34 @@ TeamData = {
     [TeamOptionType.ExitTeam] = "退出队伍",
 }
 
+---OptionType
+---@class OptionType
 OptionType = {
 
-    PublicChat = enum(0), --公聊
-    PrivateChat = enum(), --私聊
-    Shout = enum(), --喊话
-    guild = enum(), --行会
-    AutoShout = enum(), --自动喊话
-    Membership = enum(), --会员功能
-    GameIntroduce = enum(), --游戏介绍
-    ExitSect = enum(), --退出门派
-    JoinSect = enum(), --加入门派
-    CoupleTranslate = enum(), --夫妻传送
-    AllowCoupleTranslate = enum(), --允许夫妻传送
-    Team = enum(), --组队
+    ---公聊
+    PublicChat = enum(0),
+    ---私聊
+    PrivateChat = enum(),
+    ---喊话
+    Shout = enum(),
+    ---行会
+    guild = enum(),
+    ---自动喊话
+    AutoShout = enum(),
+    ---会员功能
+    Membership = enum(),
+    ---游戏介绍
+    GameIntroduce = enum(),
+    ---退出门派
+    ExitSect = enum(),
+    ---加入门派
+    JoinSect = enum(),
+    ---夫妻传送
+    CoupleTranslate = enum(),
+    ---允许夫妻传送
+    AllowCoupleTranslate = enum(),
+    ---组队
+    Team = enum(),
 }
 
 OptionCheckData = {
@@ -721,10 +856,13 @@ ChatChannel = {
     ["自己"] = 10
 }
 
+---SearchPriceSortType
 ---@class SearchPriceSortType
 SearchPriceSortType = {
-    PRICE_2_LOW = enum(1), --@物品价格从高到低
-    PRICE_2_UP = enum(), --@物品价格从低到高
+    ---@物品价格从高到低
+    PRICE_2_LOW = enum(1),
+    ---@物品价格从低到高
+    PRICE_2_UP = enum(),
 }
 
 ---@class SearchPriceSortString
@@ -733,10 +871,12 @@ SearchPriceSortString = {
     [SearchPriceSortType.PRICE_2_UP] = "价格从低到高",
 }
 
+---SearchShopType
 ---@class SearchShopType
---- 商店按照名称搜索类型
 SearchShopType = {
+    ---名称商店
     NAME_SHOP = enum(1),
+    ---名称角色
     NAME_ROLE = enum(),
 }
 
@@ -747,12 +887,16 @@ SearchShopString = {
     [SearchShopType.NAME_ROLE] = "店主名称",
 }
 
+---SearchCoinType
 ---@class SearchCoinType
---- 按照货币搜索类型
 SearchCoinType = {
+    ---不限
     UNLIMITED = enum(1),
+    ---元宝
     INGOTS = enum(),
+    ---金币
     COIN = enum(),
+    ---QJ金币
     QJCoin = enum(),
 }
 
@@ -771,42 +915,69 @@ CurrencyType = {
     [2] = "元宝",
 }
 
+---RankingAllType
 ---@class RankingAllType
---- 排行榜总类型
 RankingAllType = {
-    Person = enum(1), -- 个人榜
-    Hero = enum(), -- 英雄榜
-    Teacher = enum(), -- 名师榜
-    Equip = enum(), -- 装备榜
-    CloudWind = enum(), -- 风云榜
-    Attack = enum(), --战力榜
-    Level = enum(), --等级榜
-    Brave = enum(), --勇气试炼榜
-    Union = enum(), --战盟
-    UnionTotel = enum(), --战盟总评分榜
-    UnionMatch = enum(), --战盟联赛榜
-    UnionStrength = enum(), --战盟综合实力榜
+    ---个人榜
+    Person = enum(1),
+    ---英雄榜
+    Hero = enum(),
+    ---名师榜
+    Teacher = enum(),
+    ---装备榜
+    Equip = enum(),
+    ---风云榜
+    CloudWind = enum(),
+    ---战力榜
+    Attack = enum(),
+    ---等级榜
+    Level = enum(),
+    ---勇气试炼榜
+    Brave = enum(),
+    ---战盟
+    Union = enum(),
+    ---战盟总评分榜
+    UnionTotel = enum(),
+    ---战盟联赛榜
+    UnionMatch = enum(),
+    ---战盟综合实力榜
+    UnionStrength = enum(),
 }
+---QJRankingAllType
 ---@class QJRankingAllType
----奇迹5排行榜总类
 QJRankingAllType = {
-    Attack = enum(1), --战力榜
-    Level = enum(), --等级榜
-    Weapon = enum(), --武器榜
-    Brave = enum(), --勇气试炼榜
-    Union = enum(), --战盟
-    UnionTotel = enum(), --战盟总评分榜
-    UnionMatch = enum(), --战盟联赛榜
-    UnionStrength = enum(), --战盟综合实力榜
+    ---战力榜
+    Attack = enum(1),
+    ---等级榜
+    Level = enum(),
+    ---武器榜
+    Weapon = enum(),
+    ---勇气试炼榜
+    Brave = enum(),
+    ---战盟
+    Union = enum(),
+    ---战盟总评分榜
+    UnionTotel = enum(),
+    ---战盟联赛榜
+    UnionMatch = enum(),
+    ---战盟综合实力榜
+    UnionStrength = enum(),
 }
 ---天使降临排行榜总类
+---@class TSJLRankingAllType
 TSJLRankingAllType = {
-    Attack = enum(1), --战力榜
-    Level = enum(), --等级榜
-    Weapon = enum(), --武器榜
-    Brave = enum(), --勇气试炼榜
-    Union = enum(), --战盟
-    Abyss = enum(), --深渊
+    ---战力榜
+    Attack = enum(1),
+    ---等级榜
+    Level = enum(),
+    ---武器榜
+    Weapon = enum(),
+    ---勇气试炼榜
+    Brave = enum(),
+    ---战盟
+    Union = enum(),
+    ---深渊
+    Abyss = enum(),
 }
 TSJLRankingAllTypeString = {
     [TSJLRankingAllType.Attack] = "战力",
@@ -826,13 +997,19 @@ QJRankingAllTypeString = {
     [QJRankingAllType.UnionMatch] = "联赛",
     [QJRankingAllType.UnionStrength] = "综合实力",
 }
---排行榜战盟联赛等级
+---排行榜战盟联赛等级
+---@class QJRankingUnionMatch
 QJRankingUnionMatch = {
-    First = enum(1), --甲
-    Second = enum(), --乙
-    Three = enum(), --丙
-    Four = enum(), --丁
-    Five = enum(), --无
+    ---甲
+    First = enum(1),
+    ---乙
+    Second = enum(),
+    ---丙
+    Three = enum(),
+    ---丁
+    Four = enum(),
+    ---无
+    Five = enum(),
 }
 QJRankingUnionMatchString = {
     [QJRankingUnionMatch.First] = "甲",
@@ -855,18 +1032,31 @@ NeiGuaBaseSettingType = {
     "装备比较", "禁止交易", "走位捡物", "智能追踪", "隐藏翅膀效果", "隐藏武器效果", "隐藏其他效果", "所有玩家简装显示", "怪物简装", "武器简装", "经验过滤", "玩家", "特殊NPC", "攻击性NPC"
 }
 
+---ShieldType
+---@class ShieldType
 ShieldType = {
-    PrivateChat = enum(), --私聊
-    Propaganda = enum(), --喊话
-    TeamChat = enum(), --组队聊天
-    UnionChat = enum(), --行会聊天
-    RefusePrivateChat = enum(), --拒绝私聊
-    RefusePersonChat = enum(), --拒绝某人私聊
-    RefuseUnionChat = enum(), --拒绝行会聊天
-    ExitTheUnited = enum(), --退出行会
-    LookUpChat = enum(), --查看上一条聊天信息
-    LookDownChat = enum(), --查看下一条聊天信息
-    NormalMsg = enum(), --普通消息
+    ---私聊
+    PrivateChat = enum(),
+    ---喊话
+    Propaganda = enum(),
+    ---组队聊天
+    TeamChat = enum(),
+    ---行会聊天
+    UnionChat = enum(),
+    ---拒绝私聊
+    RefusePrivateChat = enum(),
+    ---拒绝某人私聊
+    RefusePersonChat = enum(),
+    ---拒绝行会聊天
+    RefuseUnionChat = enum(),
+    ---退出行会
+    ExitTheUnited = enum(),
+    ---查看上一条聊天信息
+    LookUpChat = enum(),
+    ---查看下一条聊天信息
+    LookDownChat = enum(),
+    ---普通消息
+    NormalMsg = enum(),
 }
 
 ShieldTypeString = {
@@ -882,64 +1072,112 @@ ShieldTypeString = {
     [ShieldType.LookDownChat] = "查看下一条聊天信息",
 }
 
+---ShopGoodsPlace
 ---@class ShopGoodsPlace
 ShopGoodsPlace = {
-    SELLING = enum(0), --@正在出售
-    SOLD = enum(), --@已经出售
-    STONE = enum(), --@我的仓库
-    BAG = enum(), --@我的背包
-    ITEMS = enum(), --@购买列表中
+    ---@正在出售
+    SELLING = enum(0),
+    ---@已经出售
+    SOLD = enum(),
+    ---@我的仓库
+    STONE = enum(),
+    ---@我的背包
+    BAG = enum(),
+    ---@购买列表中
+    ITEMS = enum(),
 }
 
+---MessageTipType
+---@class MessageTipType
 MessageTipType = {
+    ---普通
     Normal = enum(0)
 }
 
+---MessageUIControlType
+---@class MessageUIControlType
 MessageUIControlType = {
+    ---输入框
     InputField = enum(0),
+    ---按钮
     Button = enum(1),
+    ---文本
     Text = enum(2),
+    ---开关
     Toggle = enum(3),
 }
 
+---MessageUIControlPosition
+---@class MessageUIControlPosition
 MessageUIControlPosition = {
+    ---左上
     LeftTop = enum(0),
+    ---中上
     MiddleTop = enum(1),
+    ---右上
     RightTop = enum(2),
+    ---左中
     LeftMiddle = enum(3),
+    ---居中
     Middle = enum(4),
+    ---右中
     RightMiddle = enum(5),
+    ---左下
     LeftBottom = enum(6),
+    ---中下
     MidBottom = enum(7),
+    ---右下
     RightBottom = enum(8),
 }
 
+---EPkValueColor
 ---@class EPkValueColor
 EPkValueColor = {
+    ---白色
     white = enum(0),
+    ---黄色
     yellow = enum(),
+    ---红色
     red = enum(),
 }
 
+---UnionGroup
+---@class UnionGroup
 UnionGroup = {
-    Boos = enum(1), --会长
-    Normal = enum(2), -- 成员
-    Customize = enum(3) -- 自定义称号
+    ---会长
+    Boos = enum(1),
+    ---成员
+    Normal = enum(2),
+    ---自定义称号
+    Customize = enum(3)
 }
 
+---MarryState
+---@class MarryState
 MarryState = {
-    single = enum(0), --未婚
-    married = enum(), --已婚
-    divorcing = enum(), --离婚状态
-    FailDivorce = enum(), --离婚失败
+    ---未婚
+    single = enum(0),
+    ---已婚
+    married = enum(),
+    ---离婚状态
+    divorcing = enum(),
+    ---离婚失败
+    FailDivorce = enum(),
 
 }
 
+---MaskLayerType
+---@class MaskLayerType
 MaskLayerType = {
+    ---无
     None = enum(0),
+    ---面板
     Panel = enum(),
+    ---对话框
     Dialog = enum(),
+    ---消息框
     MessageBox = enum(),
+    ---提示
     Tips = enum()
 }
 
@@ -960,50 +1198,86 @@ ChineseCareerState = {
     [ECareer.None] = "无限制"
 }
 
+---SkillAssistType
+---@class SkillAssistType
 SkillAssistType = {
-    Single = enum(1), --单体
-    Group = enum(), --群体
-    Buff = enum(), --Buff
-    Summon = enum(), --召唤
+    ---单体
+    Single = enum(1),
+    ---群体
+    Group = enum(),
+    ---Buff
+    Buff = enum(),
+    ---召唤
+    Summon = enum(),
 }
+---ESceneEffectType
 ---@class ESceneEffectType
 ESceneEffectType = {
+    ---无
     None = enum(-1),
+    ---普通
     Normal = enum(),
+    ---Buff特效
     Buff = enum(),
+    ---技能
     Skill = enum(),
+    ---场景特效
     Scene = enum(),
+    ---安全区无法挂机
     SafeArea = enum(),
+    ---火球特效
     DAFireballEffect = enum(),
 }
 
+---ESceneEffect
+---@class ESceneEffect
 ESceneEffect = {
+    ---场景ID
     SceneId = enum(1),
 }
 
+---UIRootTypeName
+---@class UIRootTypeName
 UIRootTypeName = {
+    ---背包
     Bag = enum(1),
 
 }
 
+---挂机设置项枚举
 ---@class EhookSetting
 EHookSetting = {
-    LongRangeCounterattack = enum(1), --"远距离反击",
-    returnPoint = enum(), --"返回原位",
-    returnTime = enum(), --"返回时间",
-    targetRange = enum(), --"周身目标"
-    hookScope = enum(), --"杀怪范围"
-    takePillValue = enum(), --"用药血量"
-    takePillType = enum(), --"用药类型"
-    buffSkillList = enum(), --"buff技能"
-    singleSkillList = enum(), --"单体技能"
-    groupSkillList = enum(), --"群体技能"
-    summonSkillList = enum(), --"召唤技能"
+    ---远距离反击
+    LongRangeCounterattack = enum(1),
+    ---返回原位
+    returnPoint = enum(),
+    ---返回时间
+    returnTime = enum(),
+    ---周身目标
+    targetRange = enum(),
+    ---杀怪范围
+    hookScope = enum(),
+    ---用药血量
+    takePillValue = enum(),
+    ---用药类型
+    takePillType = enum(),
+    ---Buff技能列表
+    buffSkillList = enum(),
+    ---单体技能列表
+    singleSkillList = enum(),
+    ---群体技能列表
+    groupSkillList = enum(),
+    ---召唤技能列表
+    summonSkillList = enum(),
 }
 
+---Togsettype
+---@class Togsettype
 Togsettype = {
-    GuDinYaogan = enum(1), --固定遥感
-    YiDongYaogan = enum(), --移动遥感
+    ---固定遥感
+    GuDinYaogan = enum(1),
+    ---移动遥感
+    YiDongYaogan = enum(),
     --ShowPlayer = enum(), --玩家显示
 }
 TogsetTb = {
@@ -1011,10 +1285,15 @@ TogsetTb = {
     [Togsettype.YiDongYaogan] = "移动摇杆",
 }
 
+---Sharpnestype
+---@class Sharpnestype
 Sharpnestype = {
-    QinXi = enum(1), --清晰
-    GaoQin = enum(), --高清
-    ChaoQin = enum(), --超清
+    ---清晰
+    QinXi = enum(1),
+    ---高清
+    GaoQin = enum(),
+    ---超清
+    ChaoQin = enum(),
 }
 SharpnesList = {
     [Sharpnestype.QinXi] = "清晰",
@@ -1022,10 +1301,15 @@ SharpnesList = {
     [Sharpnestype.ChaoQin] = "超清",
 }
 
+---Frametype
+---@class Frametype
 Frametype = {
-    low = enum(1), --低
-    mid = enum(), --中
-    high = enum(), --高
+    ---低
+    low = enum(1),
+    ---中
+    mid = enum(),
+    ---高
+    high = enum(),
 }
 FrameList = {
     [Frametype.low] = "低",
@@ -1033,10 +1317,15 @@ FrameList = {
     [Frametype.high] = "高",
 }
 
+---Configtype
+---@class Configtype
 Configtype = {
-    ShenDian = enum(1), --省电
-    JunHeng = enum(), --均衡
-    ZuiQiang = enum(), --最强
+    ---省电
+    ShenDian = enum(1),
+    ---均衡
+    JunHeng = enum(),
+    ---最强
+    ZuiQiang = enum(),
 }
 ConfigList = {
     [Configtype.ShenDian] = "省电",
@@ -1044,11 +1333,17 @@ ConfigList = {
     [Configtype.ZuiQiang] = "最强",
 }
 
+---VolumeSlidertype
+---@class VolumeSlidertype
 VolumeSlidertype = {
-    whole = enum(1), --整体音效
-    sceneSound = enum(), --场景音效
-    battleSound = enum(), --战斗音效
-    speech = enum(), --语音
+    ---整体音效
+    whole = enum(1),
+    ---场景音效
+    sceneSound = enum(),
+    ---战斗音效
+    battleSound = enum(),
+    ---语音
+    speech = enum(),
 }
 VolumeSliderList = {
     [VolumeSlidertype.whole] = "整体音效",
@@ -1057,11 +1352,17 @@ VolumeSliderList = {
     [VolumeSlidertype.speech] = "语音",
 }
 
+---HideModeltype
+---@class HideModeltype
 HideModeltype = {
-    BuYingCang = enum(0), --不隐藏
-    QuanBuWanJia = enum(), --全部玩家
-    YouHaoWanJia = enum(), --友好玩家
-    DiDuiWanJia = enum(), --敌对玩家
+    ---不隐藏
+    BuYingCang = enum(0),
+    ---全部玩家
+    QuanBuWanJia = enum(),
+    ---友好玩家
+    YouHaoWanJia = enum(),
+    ---敌对玩家
+    DiDuiWanJia = enum(),
 }
 HideList = {
     [HideModeltype.BuYingCang] = "不隐藏",
@@ -1070,10 +1371,15 @@ HideList = {
     [HideModeltype.DiDuiWanJia] = "敌对玩家",
 }
 
+---HideMonstype
+---@class HideMonstype
 HideMonstype = {
-    ZhaoHuanShou = enum(1), --召唤兽
-    GuaiWuMoXing = enum(), --怪物模型
-    JiNenTeXiao = enum(), --技能特效
+    ---召唤兽
+    ZhaoHuanShou = enum(1),
+    ---怪物模型
+    GuaiWuMoXing = enum(),
+    ---技能特效
+    JiNenTeXiao = enum(),
 }
 HideMonsList = {
     [HideMonstype.ZhaoHuanShou] = "召唤兽",
@@ -1081,66 +1387,114 @@ HideMonsList = {
     [HideMonstype.JiNenTeXiao] = "技能特效",
 }
 
+---RedDotType
+---@class RedDotType
 RedDotType = {
-    general_reddot = enum(1), --普通红点
-    bagfull_reddot = enum(), --背包满
-    fadeout_reddot = enum(), --红点渐隐
-    fade_reddot = enum(), --红点渐隐闪烁
-    digital_reddot = enum(), --数字红点
+    ---普通红点
+    general_reddot = enum(1),
+    ---背包满
+    bagfull_reddot = enum(),
+    ---红点渐隐
+    fadeout_reddot = enum(),
+    ---红点渐隐闪烁
+    fade_reddot = enum(),
+    ---数字红点
+    digital_reddot = enum(),
 }
+---ERelationshipType
 ---@class ERelationshipType
 ERelationshipType = {
+    ---无
     None = enum(0),
+    ---敌盟
     Enemy = enum(),
+    ---好友
     Friend = enum(),
 }
 
----@class TaskType @任务类型 对应cfg_task的tasktype字段
+---任务类型 对应cfg_task的tasktype字段
+---@class TaskType
 TaskType = {
-    Recycle = enum(1), --循环任务
-    Once = enum(), --一次性任务
+    ---循环任务
+    Recycle = enum(1),
+    ---一次性任务
+    Once = enum(),
 }
 
----@class TaskShowType @任务显示类型 对应 cfg_task的uiTitleType字段
+---任务显示类型 对应 cfg_task的uiTitleType字段
+---@class TaskShowType
 TaskShowType = {
-    Main = enum(1), --主线任务
-    Secondary = enum(), --支线任务
-    Daily = enum(), --日常任务
-    Career = enum(), --转职任务
+    ---主线任务
+    Main = enum(1),
+    ---支线任务
+    Secondary = enum(),
+    ---日常任务
+    Daily = enum(),
+    ---转职任务
+    Career = enum(),
 }
 
----@class TaskGoalType @任务目标类型 对应cfg_task_target的taskGoalType字段
+---任务目标类型 对应cfg_task_target的taskGoalType字段
+---@class TaskGoalType
 TaskGoalType = {
-    Collection = enum(1), --收集物品
-    KillMonster = enum(2), --杀怪
-    MoveMap = enum(3), -- 地图移动
-    NpcTalk = enum(4), -- 对话Npc
-    ToLevel = enum(5), -- 等级
-    UseItem = enum(6), -- 使用道具
-    CustomItem = enum(7), -- 消耗道具
-    AddFriend = enum(8), -- 添加好友
-    HaveFriend = enum(9), -- 拥有好友
-    Wear = enum(10), -- 穿戴
-    TotalStrength = enum(11), -- 强化总等级
-    TotalAppend = enum(12), -- 追加总等级
-    SpecialStrength = enum(13), -- 专项强化
-    SpecialAppend = enum(14), -- 专项追加
-    OneStrength = enum(15), -- 单项强化
-    OneAppend = enum(16), -- 单项追加
-    Trans = enum(17), -- 转移
-    HaveUnion = enum(18), -- 拥有战盟
-    FinishTask = enum(19), -- 完成专项任务
-    StrengthAll = enum(23), --全身装备强化
-    CompleteCareerChange = enum(), --完成转职
-    MiniGame = 25 --点亮星云/拼图
+    ---收集物品
+    Collection = enum(1),
+    ---杀怪
+    KillMonster = enum(2),
+    ---地图移动
+    MoveMap = enum(3),
+    ---对话Npc
+    NpcTalk = enum(4),
+    ---等级
+    ToLevel = enum(5),
+    ---使用道具
+    UseItem = enum(6),
+    ---消耗道具
+    CustomItem = enum(7),
+    ---添加好友
+    AddFriend = enum(8),
+    ---拥有好友
+    HaveFriend = enum(9),
+    ---穿戴
+    Wear = enum(10),
+    ---强化总等级
+    TotalStrength = enum(11),
+    ---追加总等级
+    TotalAppend = enum(12),
+    ---专项强化
+    SpecialStrength = enum(13),
+    ---专项追加
+    SpecialAppend = enum(14),
+    ---单项强化
+    OneStrength = enum(15),
+    ---单项追加
+    OneAppend = enum(16),
+    ---转移
+    Trans = enum(17),
+    ---拥有战盟
+    HaveUnion = enum(18),
+    ---完成专项任务
+    FinishTask = enum(19),
+    ---全身装备强化
+    StrengthAll = enum(23),
+    ---完成转职
+    CompleteCareerChange = enum(),
+    ---点亮星云/拼图
+    MiniGame = 25
 }
 
----@class TaskState @任务状态 0:未接受 1:已接受 2：已完成 3:已提交 4:已放弃
+---任务状态 0:未接受 1:已接受 2：已完成 3:已提交 4:已放弃
+---@class TaskState
 TaskState = {
+    ---未接取
     UnAccept = enum(0),
+    ---已接取
     Accepted = enum(),
+    ---已完成
     Completed = enum(),
+    ---已提交
     Commited = enum(),
+    ---已放弃
     GiveUp = enum(),
 }
 
@@ -1160,13 +1514,19 @@ TradeLine_ItemOrder = {
     [11] = "十一阶",
 }
 
+---ETradeSortType
 ---@class ETradeSortType
 ETradeSortType = {
-    NoOrder = enum(0), --无序
-    TimeUp = enum(), --时间升序
-    TimeDown = enum(), --时间降序
-    PriceUp = enum(), --价格升序
-    PriceDown = enum(), --价格降序
+    ---无序
+    NoOrder = enum(0),
+    ---时间升序
+    TimeUp = enum(),
+    ---时间降序
+    TimeDown = enum(),
+    ---价格升序
+    PriceUp = enum(),
+    ---价格降序
+    PriceDown = enum(),
 }
 
 ---@class TradeLine_Sort
@@ -1186,13 +1546,20 @@ TradeLine_Career = {
     [3] = "弓箭手"
 }
 
----@class ComposeTypes @合成类型 1=门票类合成道具，类型2=技能类合成道具，类型3=食用类合成道具，类型4=宝石类合成道具，类型5=装备类合成道具，类型6=翅膀类合成道具
+---合成类型 1=门票类合成道具，类型2=技能类合成道具，类型3=食用类合成道具，类型4=宝石类合成道具，类型5=装备类合成道具，类型6=翅膀类合成道具
+---@class ComposeTypes
 ComposeTypes = {
+    ---票券
     Tickets = enum(1),
+    ---技能
     Skill = enum(2),
+    ---药水
     Medicine = enum(3),
+    ---宝石
     Gem = enum(4),
+    ---装备
     Equip = enum(5),
+    ---翅膀
     Wing = enum(6),
 }
 
@@ -1206,14 +1573,21 @@ ComposeTypeStr = {
     [ComposeTypes.Wing] = "翅膀合成"
 }
 
----@class ComposeSkillTypes @技能合成子类型 
+---技能合成子类型
+---@class ComposeSkillTypes
 ComposeSkillTypes = {
-    None = enum(0), --空
-    Stone = enum(1), --技能晶石
-    SecondLv = enum(2), --二级技能
-    ThreeLv = enum(3), --三级技能
-    FourLv = enum(4), --四级技能
-    FiveLv = enum(5), --五级技能
+    ---空
+    None = enum(0),
+    ---技能晶石
+    Stone = enum(1),
+    ---二级技能
+    SecondLv = enum(2),
+    ---三级技能
+    ThreeLv = enum(3),
+    ---四级技能
+    FourLv = enum(4),
+    ---五级技能
+    FiveLv = enum(5),
 }
 ---@class ComposeSkillTypeStr @技能合成子类型 
 ComposeSkillTypeStr = {
@@ -1223,13 +1597,19 @@ ComposeSkillTypeStr = {
     [ComposeSkillTypes.FourLv] = "四级技能合成",
     [ComposeSkillTypes.FiveLv] = "五级技能合成",
 }
----@class ComposeGemTypes @宝石合成子类型 
+---宝石合成子类型
+---@class ComposeGemTypes
 ComposeGemTypes = {
-    None = enum(0), --空
-    Fire = enum(1), --火宝石
-    Water = enum(2), --水宝石
-    Ice = enum(3), --冰宝石
-    Wind = enum(4), --风宝石
+    ---空
+    None = enum(0),
+    ---火宝石
+    Fire = enum(1),
+    ---水宝石
+    Water = enum(2),
+    ---冰宝石
+    Ice = enum(3),
+    ---风宝石
+    Wind = enum(4),
 }
 ---@class ComposeGemTypeStr @宝石合成子类型 
 ComposeGemTypeStr = {
@@ -1250,178 +1630,290 @@ ComposeSenTypeStr = {
     [ComposeTypes.Gem] = ComposeGemTypeStr,
 }
 
----@class LoopScrollDirection @无限滚动滑动方向
+---无限滚动滑动方向
+---@class LoopScrollDirection
 LoopScrollDirection = {
+    ---水平
     Horizontal = enum(0),
+    ---垂直
     Vertical = enum(),
 }
+---ELayerMaskType
 ---@class ELayerMaskType
 ELayerMaskType = {
+    ---默认
     Default = 0,
+    ---UI层
     UI = 5,
+    ---角色层
     Role = 8,
+    ---HUD层
     HUD = 11,
+    ---3D场景展示层
     UI3DSceneShow = 12,
 }
+---ProgressType
 ---@class ProgressType
 ProgressType = {
+    ---try进入地图消息
     TryEnterMapMessage = enum(0), --
-    NormalProgress = enum(1), --普通进度条
-    DownProgress = enum(), --下载进度条
-    NoProcess = enum(), --没有进度条，仅仅用来快速Loading遮住屏幕用
+    ---普通进度条
+    NormalProgress = enum(1),
+    ---下载进度条
+    DownProgress = enum(),
+    ---没有进度条，仅仅用来快速Loading遮住屏幕用
+    NoProcess = enum(),
 }
+---ERolePetType
 ---@class ERolePetType
 ERolePetType = {
-    imp = enum(1), --小恶魔
-    angle = enum(), --守护天使
-    intensifyImp = enum(), --强化恶魔
-    intensifyAngle = enum(), --强化天使
-    deer = enum(), --鲁道夫
+    ---小恶魔
+    imp = enum(1),
+    ---守护天使
+    angle = enum(),
+    ---强化恶魔
+    intensifyImp = enum(),
+    ---强化天使
+    intensifyAngle = enum(),
+    ---鲁道夫
+    deer = enum(),
 }
+---ERolePetStatus
 ---@class ERolePetStatus
 ERolePetStatus = {
-    Stand = enum(1), --待机状态
+    ---待机状态
+    Stand = enum(1),
+    ---跟随
     Follow = enum(),
 }
+---ERoleMoveType
 ---@class ERoleMoveType
 ERoleMoveType = {
+    ---站立
     Stand = enum(1),
+    ---奔跑
     Run = enum(),
+    ---行走
     Walk = enum(),
     --Check
+    ---游泳
     Swim = enum(),
+    ---快速游泳
     FastSwim = enum(),
+    ---游泳待机
     SwimIdle = enum(),
 }
 
+---EItemGridType
 ---@class EItemGridType
 EItemGridType = {
+    ---无
     None = enum(0),
+    ---背包
     Bag = enum(1),
+    ---分解
     Decompose = enum(4),
+    ---回收
     Recycle = enum(3),
+    ---转移
     Transfer = enum(3),
+    ---NPC商店
     NpcShop = enum(5),
+    ---提示
     Tips = enum(10),
-    Partner = enum(), --伙伴
-    EquipFeed = enum(12), --装备喂养
-    EquipResetAttr = enum(13), --装备属性重置
+    ---伙伴
+    Partner = enum(),
+    ---装备喂养
+    EquipFeed = enum(12),
+    ---装备属性重置
+    EquipResetAttr = enum(13),
 }
+---ESkillType
 ---@class ESkillType
 ESkillType = {
+    ---全部
     All = enum(1),
+    ---转盘
     Turn = enum(),
 }
 
+---ESkillGroup
 ---@class ESkillGroup
 ESkillGroup = {
-    normal = enum(0), --普通技能
-    gift = enum(1), --天赋技能
-    doubleHit = enum(2), --连击技能
-    call = enum(3), --召唤技能
-    ordinaryAttack = enum(4), --普通攻击技能
+    ---普通技能
+    normal = enum(0),
+    ---天赋技能
+    gift = enum(1),
+    ---连击技能
+    doubleHit = enum(2),
+    ---召唤技能
+    call = enum(3),
+    ---普通攻击技能
+    ordinaryAttack = enum(4),
 }
 
+---ESkillSettingType
 ---@class ESkillSettingType
 ESkillSettingType = {
-    Skill = 1, --技能设置
-    FastItem = 2, --快捷物品设置
+    ---技能设置
+    Skill = 1,
+    ---快捷物品设置
+    FastItem = 2,
 }
 
+---PanelStateEnum
 ---@class PanelStateEnum
 PanelStateEnum = {
-    InputLogin = enum(1), --输入账号
-    SelectServer = enum(), --选择服务器
-    ConnectServer = enum(), --连接服务器
+    ---输入账号
+    InputLogin = enum(1),
+    ---选择服务器
+    SelectServer = enum(),
+    ---连接服务器
+    ConnectServer = enum(),
 }
 
+---MonsterType
 ---@class MonsterType
 MonsterType = {
-    NormalMonster = enum(1), --普通怪物
-    GoldMonster = enum(2), --黄金怪
-    Boss = enum(3), --Boss
-    Friend = enum(4), --友好怪物
-    Aquila = enum(5), --天鹰
+    ---普通怪物
+    NormalMonster = enum(1),
+    ---黄金怪
+    GoldMonster = enum(2),
+    ---Boss
+    Boss = enum(3),
+    ---友好怪物
+    Friend = enum(4),
+    ---天鹰
+    Aquila = enum(5),
 }
 ---属性类型
 ---@class TipsAttType
-----@field None number @ enum(0), --空
-----@field BaseInfo number @ enum(1), --基础属性
-----@field SuitInfo number @ enum(2), --套装属性
-----@field SpecialInfo number @ enum(3), --卓越属性
-----@field WordInfo number @ enum(4), --词条属性
-----@field GemInfo number @ enum(5), --宝石属性
-----@field DescAdd number @ enum(6), --修正备注
 TipsAttType = {
-    None = enum(0), --空
-    BaseInfo = enum(1), --基础属性
-    IntensifyInfo = enum(2), --强化属性
-    AddInfo = enum(3), --追加属性
-    SpecialInfo = enum(4), --卓越属性
-    SuitInfo = enum(5), --套装属性
-    WordInfo = enum(6), --词条属性
-    GemInfo = enum(7), --宝石属性
-    DescAdd = enum(8), --修正备注
-    ExtraInfo = enum(9), --额外属性
-    GuardAwakeInfo = enum(10), --觉醒属性
-    GemWearNeed = enum(11), --宝石镶嵌要求
-    GemBaseInfo = enum(12), --宝石基础属性
-    GemSpecialInfo = enum(13), --宝石特殊属性
-    GemEatInfo = enum(14), --宝石吞噬经验
-    AllInfo = enum(15), --属性总览
-    GetItem = enum(16), --获得道具
-    LuckyInfo = enum(17), --幸运属性
-    SpecialEffect = enum(21), --特殊效果
+    ---空
+    None = enum(0),
+    ---基础属性
+    BaseInfo = enum(1),
+    ---强化属性
+    IntensifyInfo = enum(2),
+    ---追加属性
+    AddInfo = enum(3),
+    ---卓越属性
+    SpecialInfo = enum(4),
+    ---套装属性
+    SuitInfo = enum(5),
+    ---词条属性
+    WordInfo = enum(6),
+    ---宝石属性
+    GemInfo = enum(7),
+    ---修正备注
+    DescAdd = enum(8),
+    ---额外属性
+    ExtraInfo = enum(9),
+    ---觉醒属性
+    GuardAwakeInfo = enum(10),
+    ---宝石镶嵌要求
+    GemWearNeed = enum(11),
+    ---宝石基础属性
+    GemBaseInfo = enum(12),
+    ---宝石特殊属性
+    GemSpecialInfo = enum(13),
+    ---宝石吞噬经验
+    GemEatInfo = enum(14),
+    ---属性总览
+    AllInfo = enum(15),
+    ---获得道具
+    GetItem = enum(16),
+    ---幸运属性
+    LuckyInfo = enum(17),
+    ---特殊效果
+    SpecialEffect = enum(21),
 }
 
+---ESelectMount
+---@class ESelectMount
 ESelectMount = {
+    ---选择坐骑
     SelectMount = enum(1),
+    ---更换坐骑
     ChangeMount = enum(),
 }
 
+---EBagShowType
 ---@class EBagShowType
 EBagShowType = {
+    ---背包
     Bag = enum(1),
-    Gem = enum(2), -- 宝石
-    Recycle = enum(3), -- 回收
-    Decompose = enum(4), -- 分解
-    EquipAdd = enum(5), -- 装备叠加
-    EquipTransfer = enum(), -- 装备转移
-    EquipStrength380 = enum(), -- 380装备强化
-    EquipTransfer380 = enum(), -- 380装备转移
-    EquipRefine380 = enum(), -- 380装备洗练
-    Partner = enum(), -- 伙伴 
-    Storage = enum(), -- 仓库 
-    GemLevel = enum(), -- 宝石强化 
-    Synthesis = enum(), --合成
-    EquipTransferQJ5 = enum(), --QJ5装备转移
-    Mount = enum(), -- 坐骑分解
-    EquipFuse = enum(), --装备融合
-    Setting = enum(), --设置界面
-    EquipDeify = enum(), --装备神化
-    EquipPotential = enum(), --装备潜能
-    NPCShop = enum(), --npc商店
+    ---宝石
+    Gem = enum(2),
+    ---回收
+    Recycle = enum(3),
+    ---分解
+    Decompose = enum(4),
+    ---装备叠加
+    EquipAdd = enum(5),
+    ---装备转移
+    EquipTransfer = enum(),
+    ---380装备强化
+    EquipStrength380 = enum(),
+    ---380装备转移
+    EquipTransfer380 = enum(),
+    ---380装备洗练
+    EquipRefine380 = enum(),
+    ---伙伴
+    Partner = enum(),
+    ---仓库
+    Storage = enum(),
+    ---宝石强化
+    GemLevel = enum(),
+    ---合成
+    Synthesis = enum(),
+    ---QJ5装备转移
+    EquipTransferQJ5 = enum(),
+    ---坐骑分解
+    Mount = enum(),
+    ---装备融合
+    EquipFuse = enum(),
+    ---设置界面
+    Setting = enum(),
+    ---装备神化
+    EquipDeify = enum(),
+    ---装备潜能
+    EquipPotential = enum(),
+    ---npc商店
+    NPCShop = enum(),
 }
 
+---ETradeLineShowType
 ---@class ETradeLineShowType
 ETradeLineShowType = {
-    TradeLine = enum(1), --交易行
-    MyShelf = enum(2), --我的上架
-    MyBid = enum(), --我的竞拍
+    ---交易行
+    TradeLine = enum(1),
+    ---我的上架
+    MyShelf = enum(2),
+    ---我的竞拍
+    MyBid = enum(),
 }
 
+---EUpShelfType
 ---@class EUpShelfType
 EUpShelfType = {
-    None = enum(0), --都不能
-    Stall = enum(), --摆摊
-    Trade = enum(), --交易行
-    Union = enum(), --战盟
+    ---都不能
+    None = enum(0),
+    ---摆摊
+    Stall = enum(),
+    ---交易行
+    Trade = enum(),
+    ---战盟
+    Union = enum(),
 }
 
----@class ETradeSourceType 交易行记录来源 0:个人交易/1:战盟交易
+---交易行记录来源 0:个人交易/1:战盟交易
+---@class ETradeSourceType
 ETradeSourceType = {
-    Personal = 0, --个人
-    Union = 1, --战盟
+    ---个人
+    Personal = 0,
+    ---战盟
+    Union = 1,
 }
 
 ---@class ETradeSourceStr
@@ -1438,18 +1930,30 @@ ETradeLineRecord = {
 ---0表示公共区 1表示本战盟内
 ---@class ETradeSaleArea
 ETradeSaleArea = {
+    ---公开
     Public = 0,
+    ---联盟
     Union = 1,
 }
 
+---EGradColor
+---@class EGradColor
 EGradColor = {
+    ---白色
     white = enum(1),
+    ---绿色
     green = enum(),
+    ---蓝色
     blue = enum(),
+    ---紫色
     purple = enum(),
+    ---黄色
     yellow = enum(),
+    ---橙色
     orange = enum(),
+    ---红色
     red = enum(),
+    ---灰色
     grey = enum(),
 }
 EColor = {
@@ -1468,79 +1972,107 @@ EActivityToName = {
     [EMUActivityType.Daily] = "每日活跃",
     [EMUActivityType.Activity] = "活动",
 }
--- 左上角任务面板样式
+--- 左上角任务面板样式
 ---@class ETaskTemplateStyle
----@field UITask @-- 任务
----@field DevilSquareTask @-- 恶魔广场
----@field SiegeTask @ -- 攻城战
----@field WolfSoulTask @狼魂要塞
----@field RedFort @ --赤色要塞
----@field AnglesTower @ --天使之塔
----@field GateWorld @ --异界之门
----@field UnionAttackCity number @--战盟攻城战
----@field ExclusiveBoss @--专属boss
----@field GoldBoss @--卓越黄金boss
----@field ExcellentBoss @--卓越黄金boss
----@field loodCastle @--血色城堡
----@field MonsterAttack @--怪物袭击
----@field UnionBoss @--战盟boss
----@field Kalima @--卡利玛神庙
 ETaskTemplateStyle = {
-    None = 0, --无
-    UITask = 1, --任务
-    DevilSquareTask = 2, -- 恶魔广场
-    SiegeTask = 3, -- 攻城战
-    WolfSoulTask = 4, -- 狼魂要塞
-    RedFort = 5, --赤色要塞
-    AnglesTower = 6, --天使之塔
-    GateWorld = 7, --异界之门
-    BraveTrials = 8, --勇者试炼
-    RoadofChoice = 9, --抉择之路
-    WorldBoss = 10, --世界boss
-    UnionAttackCity = 11, --战盟攻城战
-    ExclusiveBoss = 12, --专属boss
-    GoldBoss = 13, --卓越黄金boss
-    ExcellentBoss = 14, --卓越黄金boss
-    BloodCastle = 15, --血色城堡
-    MonsterAttack = 16, --怪物袭击
-    UnionBoss = 17, --战盟boss
-    Kalima = 18, --卡利玛
-    DemonRefiningLand = 19, --魔炼之地
+    ---无
+    None = 0,
+    ---任务
+    UITask = 1,
+    ---恶魔广场
+    DevilSquareTask = 2,
+    ---攻城战
+    SiegeTask = 3,
+    ---狼魂要塞
+    WolfSoulTask = 4,
+    ---赤色要塞
+    RedFort = 5,
+    ---天使之塔
+    AnglesTower = 6,
+    ---异界之门
+    GateWorld = 7,
+    ---勇者试炼
+    BraveTrials = 8,
+    ---抉择之路
+    RoadofChoice = 9,
+    ---世界boss
+    WorldBoss = 10,
+    ---战盟攻城战
+    UnionAttackCity = 11,
+    ---专属boss
+    ExclusiveBoss = 12,
+    ---卓越黄金boss
+    GoldBoss = 13,
+    ---卓越黄金boss
+    ExcellentBoss = 14,
+    ---血色城堡
+    BloodCastle = 15,
+    ---怪物袭击
+    MonsterAttack = 16,
+    ---战盟boss
+    UnionBoss = 17,
+    ---卡利玛
+    Kalima = 18,
+    ---魔炼之地
+    DemonRefiningLand = 19,
 }
 
----@class EDropModelType @掉落模型类型
+---掉落模型类型
+---@class EDropModelType
 EDropModelType = {
+    ---物品模型
     ItemModel = enum(1),
+    ---星级模型
     StarModel = enum(),
+    ---上升光效模型
     UpLightModel = enum()
 }
 
----@class EDropItemType @掉落道具类型
+---掉落道具类型
+---@class EDropItemType
 EDropItemType = {
-    Normal = enum(1), -- 普通道具
-    Activity = enum(), -- 活动道具
-    BoxFly = enum(), -- 宝箱飞入道具
-    JumpUp = enum(), -- 道具翻滚跳起
-    JumpUp_NoRotateName = enum(), -- 道具翻滚跳起不翻滚名字
+    ---普通道具
+    Normal = enum(1),
+    ---活动道具
+    Activity = enum(),
+    ---宝箱飞入道具
+    BoxFly = enum(),
+    ---道具翻滚跳起
+    JumpUp = enum(),
+    ---道具翻滚跳起不翻滚名字
+    JumpUp_NoRotateName = enum(),
 }
 
----@class EDropItemEffectStatus @掉落道具特效阶段
+---掉落道具特效阶段
+---@class EDropItemEffectStatus
 EDropItemEffectStatus = {
-    Rotate = enum(1), -- 旋转
-    RotateEnd = enum(), -- 旋转结束
-    UP = enum(), -- 向上
-    Fly = enum(), -- 飞行
-    FlyEnd = enum(), -- 飞行结束
-    Complete = enum(), -- 宝箱飞入道具 
-    UpMoveRotate = enum(), -- 向上移动旋转
-    UpMoveRotateEnd = enum(), -- 向上移动旋转结束
+    ---旋转
+    Rotate = enum(1),
+    ---旋转结束
+    RotateEnd = enum(),
+    ---向上
+    UP = enum(),
+    ---飞行
+    Fly = enum(),
+    ---飞行结束
+    FlyEnd = enum(),
+    ---宝箱飞入道具
+    Complete = enum(),
+    ---向上移动旋转
+    UpMoveRotate = enum(),
+    ---向上移动旋转结束
+    UpMoveRotateEnd = enum(),
 }
 
----@class EFriendPageIndex 好友页签索引
+---好友页签索引
+---@class EFriendPageIndex
 EFriendPageIndex = {
-    Friend = enum(1), --好友
-    Enemy = enum(), --宿敌
-    BlackList = enum() --黑名单
+    ---好友
+    Friend = enum(1),
+    ---宿敌
+    Enemy = enum(),
+    ---黑名单
+    BlackList = enum()
 }
 
 ---@class EFriendPageName 好友页签名称
@@ -1550,12 +2082,13 @@ EFriendPageName = {
     [EFriendPageIndex.BlackList] = "黑名单"
 }
 
+---EFriendDealType
 ---@class EFriendDealType
----@field Add number @ enum(0), --添加好友
----@field Apply number @ enum(), --好友申请
 EFriendDealType = {
-    Add = enum(0), --添加好友
-    Apply = enum(), --好友申请
+    ---添加好友
+    Add = enum(0),
+    ---好友申请
+    Apply = enum(),
 }
 ---@class EFriendDealName @好友添加页面页签
 EFriendDealName = {
@@ -1563,44 +2096,47 @@ EFriendDealName = {
     [EFriendDealType.Apply] = "好友申请",
 }
 
+---EFriendRelation
 ---@class EFriendRelation
----@field Friend number @ enum(1), --好友
----@field Enemy number @ enum(), --宿敌
----@field BlackList number @ enum(), --黑名单
----@field ApplyList number @ enum(), --申请列表
 EFriendRelation = {
-    Friend = enum(1), --好友
-    Enemy = enum(), --宿敌
-    BlackList = enum(), --黑名单
-    ApplyList = enum(), --申请列表
+    ---好友
+    Friend = enum(1),
+    ---宿敌
+    Enemy = enum(),
+    ---黑名单
+    BlackList = enum(),
+    ---申请列表
+    ApplyList = enum(),
 }
 
----@class EFriendOnlineState 好友在线状态
----@field Online number @ 1, --在线
----@field Offline number @ 0, --离线
+---好友在线状态
+---@class EFriendOnlineState
 EFriendOnlineState = {
-    Online = 1, --在线
-    Offline = 0, --离线
+    ---在线
+    Online = 1,
+    ---离线
+    Offline = 0,
 }
 
----@class EFriendOperate @好友操作
----@field ViewPlayer number @查看好友
----@field AddFriend number @加为好友
----@field Chat number @好友私聊
----@field Invite number @邀请入队
----@field DeleteFriend number @删除好友
----@field Block number @屏蔽好友
----@field DeleteEnemy number @删除宿敌
----@field PrivateChat number @私聊，可能是陌生人
+---好友操作
+---@class EFriendOperate
 EFriendOperate = {
-    ViewPlayer = enum(1), --查看好友
-    AddFriend = enum(), --加为好友
-    Chat = enum(), --好友私聊
-    Invite = enum(), --邀请入队
-    DeleteFriend = enum(), --删除好友，
-    Block = enum(), --屏蔽好友
-    DeleteEnemy = enum(), --删除宿敌
-    PrivateChat = enum(), --私聊，可能是陌生人
+    ---查看好友
+    ViewPlayer = enum(1),
+    ---加为好友
+    AddFriend = enum(),
+    ---好友私聊
+    Chat = enum(),
+    ---邀请入队
+    Invite = enum(),
+    ---删除好友，
+    DeleteFriend = enum(),
+    ---屏蔽好友
+    Block = enum(),
+    ---删除宿敌
+    DeleteEnemy = enum(),
+    ---私聊，可能是陌生人
+    PrivateChat = enum(),
 }
 
 ---@class EFriendOperateName @好友操作名称
@@ -1650,13 +2186,19 @@ CareerNormalSkill = {
         [9] = 40013001, 
         [10] = 40013001, ]]
 }
+---WordError
 ---@class WordError
 WordError = {
+    ---无
     None = enum(0),
-    NilAccount = enum(), --账号为空
-    NilPassword = enum(), --密码为空
-    AccountNo = enum(), --账号不符合o
-    PasswordNo = enum(), --密码不符合
+    ---账号为空
+    NilAccount = enum(),
+    ---密码为空
+    NilPassword = enum(),
+    ---账号不符合o
+    AccountNo = enum(),
+    ---密码不符合
+    PasswordNo = enum(),
 }
 ---@class WordErrorNotice
 WordErrorNotice = {
@@ -1665,192 +2207,283 @@ WordErrorNotice = {
     [WordError.AccountNo] = '账号格式为6~20位字母数字组合',
     [WordError.PasswordNo] = '密码格式为6~20位字母数字组合',
 }
+---NoticeType
 ---@class NoticeType
 NoticeType = {
-    NoticeLeftBottom = enum(0), ---屏幕左下
-    NoticeMid = enum(), ---屏幕中间
+    ---屏幕左下
+    NoticeLeftBottom = enum(0),
+    ---屏幕中间
+    NoticeMid = enum(),
 }
 
+---DebugType
 ---@class DebugType
 DebugType = {
+    ---事件日志
     event = enum(),
+    ---消息日志
     message = enum(),
 }
 
+---TeamTabType
 ---@class TeamTabType
 TeamTabType = {
-    MyTeamList = enum(1), --我的队伍
-    NearbyTeamList = enum(), --附近队伍
-    NearbyPlayerList = enum(), --附近玩家
-    FriendList = enum(), --我的好友
-    UnionList = enum(), --我的战盟
-    ApplyList = enum(), --申请列表
+    ---我的队伍
+    MyTeamList = enum(1),
+    ---附近队伍
+    NearbyTeamList = enum(),
+    ---附近玩家
+    NearbyPlayerList = enum(),
+    ---我的好友
+    FriendList = enum(),
+    ---我的战盟
+    UnionList = enum(),
+    ---申请列表
+    ApplyList = enum(),
 }
 
----@class EConditionType 条件类型
----@field CheckLevel number @ "checkLevel", ---检测等级
----@field CheckReNewLevel number @ "checkReNewLevel", ---检测转生
----@field CheckRunDay number @ "checkRunDay", ---检测开服天数
----@field CheckVipLevel number @ "checkVipLevel", ---检测会员等级
----@field CheckAbility number @ "checkAbility", ---检测属性
----@field CheckHasUnion number @ "checkHasUnion", ---检测是否拥有行会
----@field CheckHasTeam number @ "checkHasTeam", ---检测是否加入组队
----@field CheckPKPoint number @ "checkPKPoint", ---检测PK值
----@field CheckJob number @ "checkJob", ---检测职业
----@field CheckBagItem number @ "checkBagItem", ---检测背包物品
----@field CheckWearItem number @ "checkWearItem", ---检测身上物品
----@field CheckItems number @ "checkitems", ---检测身上和包裹物品
----@field CheckVar number @ "checkVar", ---检测变量
----@field CheckHandWeapon number @ "checkHandWeapon", ---检测佩戴武器类型
----@field CheckWearEquip number @ "checkWearEquip", ---检测指定位置是否穿戴装备
----@field CheckBagSize number @ "checkBagSize", ---检测背包空格子数
----@field CanPutInBag number @ "canPutInBag", ---检测物品是否能放入背包
----@field Random number @ "Random", ---随机率(万分比,数字越大几率越高,最高10000必中)
----@field CheckUnusedAbility number @ "checkUnusedAbility", ---未分配属性点
----@field CheckUnreadMail number @ "checkUnreadMail", ---未读邮件
----@field CheckFriendRequest number @ "checkFriendRequest", ---好友申请
----@field CheckUnreadMessage number @ "checkUnreadMessage", ---未读好友信息
----@field CheckEquipStrengthen number @ "checkEquipStrengthen",
----@field CheckEquipAppends number @ "checkEquipAppends",
----@field CheckEquipTransfer number @ "checkEquipTransfer",
----@field CheckEquipGem number @ "checkEquipGem",
----@field CheckSkillLevelUp number @ "checkSkillLevelUp",
----@field CheckVipLevelUp number @ "checkVipLevelUp",
----@field CheckRetrieve number @ "checkRetrieve",
----@field CheckMapTime number @ "CheckMapTime",
----@field CheckHP number @ "CheckHP",
----@field CheckFirstChargeCanGetReward @ "CheckFirstChargeCanGetReward"
----@field CheckFirstChargeDay @ "CheckFirstChargeDay"
----@field CheckPartnerArray  @伙伴阵容
----@field CheckFirstChargeDay @ 'checkRechargeDaily'
----@field --下面是不会变化的
----@field CheckGender number @ "checkGender", ---检测性别
----@field CheckMountUpGrade number @ 'checkMountUpGrade' --检测坐骑是否可激活或升级
+---条件类型
+---@class EConditionType
 EConditionType = {
-    CheckLevel = "checkLevel", ---检测等级
-    CheckReNewLevel = "checkReNewLevel", ---检测转生
-    CheckRunDay = "checkRunDay", ---检测开服天数
-    CheckVipLevel = "checkVipLevel", ---检测会员等级
-    CheckAbility = "checkAbility", ---检测属性
-    CheckHasUnion = "checkHasUnion", ---检测是否拥有行会
-    CheckHasTeam = "checkHasTeam", ---检测是否加入组队
-    CheckPKPoint = "checkPKPoint", ---检测PK值
-    CheckJob = "checkJob", ---检测职业
-    CheckBagItem = "checkBagItem", ---检测背包物品
-    CheckWearItem = "checkWearItem", ---检测身上物品
-    CheckItems = "checkitems", ---检测身上和包裹物品
-    CheckVar = "checkVar", ---检测变量
-    CheckHandWeapon = "checkHandWeapon", ---检测佩戴武器类型
-    CheckWearEquip = "checkWearEquip", ---检测指定位置是否穿戴装备
-    CheckBagSize = "checkBagSize", ---检测背包空格子数
-    CanPutInBag = "canPutInBag", ---检测物品是否能放入背包
-    Random = "Random", ---随机率(万分比,数字越大几率越高,最高10000必中)
-    CheckUnusedAbility = "checkUnusedAbility", ---未分配属性点
-    CheckUnreadMail = "checkUnreadMail", ---未读邮件
-    CheckFriendRequest = "checkFriendRequest", ---好友申请
-    CheckUnreadMessage = "checkUnreadMessage", ---未读好友信息
+    ---检测等级
+    CheckLevel = "checkLevel",
+    ---检测转生
+    CheckReNewLevel = "checkReNewLevel",
+    ---检测开服天数
+    CheckRunDay = "checkRunDay",
+    ---检测会员等级
+    CheckVipLevel = "checkVipLevel",
+    ---检测属性
+    CheckAbility = "checkAbility",
+    ---检测是否拥有行会
+    CheckHasUnion = "checkHasUnion",
+    ---检测是否加入组队
+    CheckHasTeam = "checkHasTeam",
+    ---检测PK值
+    CheckPKPoint = "checkPKPoint",
+    ---检测职业
+    CheckJob = "checkJob",
+    ---检测背包物品
+    CheckBagItem = "checkBagItem",
+    ---检测身上物品
+    CheckWearItem = "checkWearItem",
+    ---检测身上和包裹物品
+    CheckItems = "checkitems",
+    ---检测变量
+    CheckVar = "checkVar",
+    ---检测佩戴武器类型
+    CheckHandWeapon = "checkHandWeapon",
+    ---检测指定位置是否穿戴装备
+    CheckWearEquip = "checkWearEquip",
+    ---检测背包空格子数
+    CheckBagSize = "checkBagSize",
+    ---检测物品是否能放入背包
+    CanPutInBag = "canPutInBag",
+    ---随机率(万分比,数字越大几率越高,最高10000必中)
+    Random = "Random",
+    ---未分配属性点
+    CheckUnusedAbility = "checkUnusedAbility",
+    ---未读邮件
+    CheckUnreadMail = "checkUnreadMail",
+    ---好友申请
+    CheckFriendRequest = "checkFriendRequest",
+    ---未读好友信息
+    CheckUnreadMessage = "checkUnreadMessage",
+    ---检查装备强化
     CheckEquipStrengthen = "checkEquipStrengthen",
+    ---检查装备追加
     CheckEquipAppends = "checkEquipAppends",
+    ---检查装备转移
     CheckEquipTransfer = "checkEquipTransfer",
+    ---检查装备宝石
     CheckEquipGem = "checkEquipGem",
+    ---检查技能升级
     CheckSkillLevelUp = "checkSkillLevelUp",
+    ---检查VIP升级
     CheckVipLevelUp = "checkVipLevelUp",
+    ---检查追回
     CheckRetrieve = "checkRetrieve",
+    ---检查职业等级
     CheckCareerRank = "checkCareerRank",
+    ---检查地图时间
     CheckMapTime = "checkMapTime",
+    ---检查生命值
     CheckHP = "checkHP",
-    CheckWorldLevel = "checkWorldLevel", ---检测世界等级
-    CheckExtraAttSuitLevel = "checkExtraAttSuitLevel", ---检测套装所有装备equip_extraAtt_cost强化等级
-    CheckExtraAttLevel = "checkExtraAttLevel", ---检测身上指定部位（位置代码[itme表strPart字段id]）装备，只有要可强化（强化材料满足条件）的就return true;checkExtraAttLevel[1][4]>0，检测身上主手武器部位上装备是否满足属性分组为4的强化
+    ---检测世界等级
+    CheckWorldLevel = "checkWorldLevel",
+    ---检测套装所有装备equip_extraAtt_cost强化等级
+    CheckExtraAttSuitLevel = "checkExtraAttSuitLevel",
+    ---检测身上指定部位（位置代码[itme表strPart字段id]）装备，只有要可强化（强化材料满足条件）的就return true;checkExtraAttLevel[1][4]>0，检测身上主手武器部位上装备是否满足属性分组为4的强化
+    CheckExtraAttLevel = "checkExtraAttLevel",
+    ---检查多倍挂机时间
     CheckMultipleHookTime = "checkMultipleHookTime",
-    CheckPartnerUpgrade = "checkPartnerUpgrade", --检测出战中的伙伴是否可以升级
-    CheckPartnerWashing = "checkPartnerWashing", --检测洗髓
-    CheckPartnerUpstar = "checkPartnerUpstar", --检测升星
-    CheckPartneroneself = "checkPartneroneself", --检测升星所需的本体材料是否满足
-    CheckPartnercamp = "checkPartnercamp", --检测升星所需的同阵营材料是否满足
-    CheckPartnerany = "checkPartnerany", --检测升星所需的任意材料星级是否满足
-    CheckPartnerWashingtimes = "checkPartnerWashingtimes", --检测伙伴可洗髓的次数
-    CheckPartnerUpgradetimes = "checkPartnerUpgradetimes", --检测伙伴可升级的次数
-    CheckPartnerWashinglimit = "checkPartnerWashinglimit", --检测伙伴是否达到洗髓上限
-    CheckPartnerWUpgradelimit = "checkPartnerWUpgradelimit", --检测伙伴是否达到升级上限
-    CheckPartnerEgg = "checkPartnerEgg", --检测孵化蛋是否可以开启
-    CheckPartnerReffle = "checkPartnerReffle", --检测是否有免费招募次数
-    CheckPartnerBreak = "checkPartnerBreak", --检测是否可以突破
-    CheckPartnerReffledispatch = "checkPartnerReffledispatch", --检测是否可以免费刷新派遣任务
-    CheckRecoverable = "checkRecoverable", --检测是否有可找回的活动
-    CheckLastActivity = "checkLastActivity", --检测是否前一天的活跃度是否能兑换物品
-    CheckSiegeCamp = "checkSiegeCamp", --检测自身在攻城战中是守城方还是攻城方
-    CheckFashionActivation = "checkFashionActivation", --检测时装是否满足激活
-    CheckNewTitle = "checkNewTitle", --检测是否获取新称号
-    CheckSponsorShip = "checkSponsorship", --检测是否购买了赞助礼包
-    CheckAchievementLevelExp = "checkAchievementLevelExp", --检测战阶经验是否满足升级经验
-    CheckEfficiencyTask = "checkEfficiencyTask", --检测效率指定类型任务是否完成
-    CheckequipActivation = "checkequipActivation", --检测装备是否可以激活卓越属性
-    CheckAchievementTask = "checkAchievementTask", --检测是否完成成就任务 
-    CheckGuardstage = "checkGuardstage", --检测守护装备是否可以进阶
-    CheckGuardawaken = "checkGuardawaken", --检测守护装备是否可以觉醒
-    CheckFirstkill = "checkfirstkill", --开服竞技红点
-    CheckButtonFirstOpen = "checkButtonFirstOpen", --检测按钮是否首次开启
-    CheckAuditInf = "checkAuditInf", --检测是否收到战盟审核信息
-    CheckGardarmbands = "checkGardarmbands", --检测战盟臂章是否可以升级
-    CheckGardTaskreward = "checkGardTaskreward", --检测是否有可领取的战盟任务奖励
-    CheckGardsalary = "checkGardsalary", --检测是否有可领取的战盟工资
-    CheckStrengthenMaster = "checkStrengthenMaster", --检测是否满足激活强化大师
-    CheckAppendMaster = "checkAppendMaster", --检测是否满足激活追加大师
-    CheckStarMaster = "checkStarMaster", --检测是否满足激活星级大师
-    CheckEquipAreaStrengthen = "checkEquipAreaStrengthen", --检测指定装备部位是否可强化
-    CheckEquipAreaAppends = "checkEquipAreaAppends", --检测指定装备部位是否可追加
-    CheckGiftLevelUp = "checkGiftLevelUp", --检测天赋是否可升级
-    CheckMultipleTime = "checkMultipleTime", --检测玩家是否处于离线挂机状态的时间区间；例如：checkMultipleTime[5#10]=1，表示检测玩家是否处于离线挂机状态的第5-10秒之间
-    CheckFirstChargeCanGetReward = "checkFirstCharge", --检测首充礼包是否可领取
-    CheckFirstChargeDay = "checkFirstChargeDay", --检测首充礼包对应天数是否可领取
-    CheckRechargeDaily = 'checkRechargeDaily', --检测直购礼包是否可领取
-    CheckSponsorActive = 'checkSponsorActive', --检测赞助是否激活红点
-    CheckSponsorLevel = 'checkSponsorLevel', --检测赞助等级
-    CheckPropDropTime = 'checkPropDropTime', --检测角色指定掉落包终生总计掉落次数
-    CheckVIPGiftPackClaimable = 'checkVIPGiftPackClaimable', --检测会员礼包可领取
-    CheckBagFull = "checkBagFull", --检测下个道具无法入包，触发背包已满
+    ---检测出战中的伙伴是否可以升级
+    CheckPartnerUpgrade = "checkPartnerUpgrade",
+    ---检测洗髓
+    CheckPartnerWashing = "checkPartnerWashing",
+    ---检测升星
+    CheckPartnerUpstar = "checkPartnerUpstar",
+    ---检测升星所需的本体材料是否满足
+    CheckPartneroneself = "checkPartneroneself",
+    ---检测升星所需的同阵营材料是否满足
+    CheckPartnercamp = "checkPartnercamp",
+    ---检测升星所需的任意材料星级是否满足
+    CheckPartnerany = "checkPartnerany",
+    ---检测伙伴可洗髓的次数
+    CheckPartnerWashingtimes = "checkPartnerWashingtimes",
+    ---检测伙伴可升级的次数
+    CheckPartnerUpgradetimes = "checkPartnerUpgradetimes",
+    ---检测伙伴是否达到洗髓上限
+    CheckPartnerWashinglimit = "checkPartnerWashinglimit",
+    ---检测伙伴是否达到升级上限
+    CheckPartnerWUpgradelimit = "checkPartnerWUpgradelimit",
+    ---检测孵化蛋是否可以开启
+    CheckPartnerEgg = "checkPartnerEgg",
+    ---检测是否有免费招募次数
+    CheckPartnerReffle = "checkPartnerReffle",
+    ---检测是否可以突破
+    CheckPartnerBreak = "checkPartnerBreak",
+    ---检测是否可以免费刷新派遣任务
+    CheckPartnerReffledispatch = "checkPartnerReffledispatch",
+    ---检测是否有可找回的活动
+    CheckRecoverable = "checkRecoverable",
+    ---检测是否前一天的活跃度是否能兑换物品
+    CheckLastActivity = "checkLastActivity",
+    ---检测自身在攻城战中是守城方还是攻城方
+    CheckSiegeCamp = "checkSiegeCamp",
+    ---检测时装是否满足激活
+    CheckFashionActivation = "checkFashionActivation",
+    ---检测是否获取新称号
+    CheckNewTitle = "checkNewTitle",
+    ---检测是否购买了赞助礼包
+    CheckSponsorShip = "checkSponsorship",
+    ---检测战阶经验是否满足升级经验
+    CheckAchievementLevelExp = "checkAchievementLevelExp",
+    ---检测效率指定类型任务是否完成
+    CheckEfficiencyTask = "checkEfficiencyTask",
+    ---检测装备是否可以激活卓越属性
+    CheckequipActivation = "checkequipActivation",
+    ---检测是否完成成就任务
+    CheckAchievementTask = "checkAchievementTask",
+    ---检测守护装备是否可以进阶
+    CheckGuardstage = "checkGuardstage",
+    ---检测守护装备是否可以觉醒
+    CheckGuardawaken = "checkGuardawaken",
+    ---开服竞技红点
+    CheckFirstkill = "checkfirstkill",
+    ---检测按钮是否首次开启
+    CheckButtonFirstOpen = "checkButtonFirstOpen",
+    ---检测是否收到战盟审核信息
+    CheckAuditInf = "checkAuditInf",
+    ---检测战盟臂章是否可以升级
+    CheckGardarmbands = "checkGardarmbands",
+    ---检测是否有可领取的战盟任务奖励
+    CheckGardTaskreward = "checkGardTaskreward",
+    ---检测是否有可领取的战盟工资
+    CheckGardsalary = "checkGardsalary",
+    ---检测是否满足激活强化大师
+    CheckStrengthenMaster = "checkStrengthenMaster",
+    ---检测是否满足激活追加大师
+    CheckAppendMaster = "checkAppendMaster",
+    ---检测是否满足激活星级大师
+    CheckStarMaster = "checkStarMaster",
+    ---检测指定装备部位是否可强化
+    CheckEquipAreaStrengthen = "checkEquipAreaStrengthen",
+    ---检测指定装备部位是否可追加
+    CheckEquipAreaAppends = "checkEquipAreaAppends",
+    ---检测天赋是否可升级
+    CheckGiftLevelUp = "checkGiftLevelUp",
+    ---检测玩家是否处于离线挂机状态的时间区间；例如：checkMultipleTime[5#10]=1，表示检测玩家是否处于离线挂机状态的第5-10秒之间
+    CheckMultipleTime = "checkMultipleTime",
+    ---检测首充礼包是否可领取
+    CheckFirstChargeCanGetReward = "checkFirstCharge",
+    ---检测首充礼包对应天数是否可领取
+    CheckFirstChargeDay = "checkFirstChargeDay",
+    ---检测直购礼包是否可领取
+    CheckRechargeDaily = 'checkRechargeDaily',
+    ---检测赞助是否激活红点
+    CheckSponsorActive = 'checkSponsorActive',
+    ---检测赞助等级
+    CheckSponsorLevel = 'checkSponsorLevel',
+    ---检测角色指定掉落包终生总计掉落次数
+    CheckPropDropTime = 'checkPropDropTime',
+    ---检测会员礼包可领取
+    CheckVIPGiftPackClaimable = 'checkVIPGiftPackClaimable',
+    ---检测下个道具无法入包，触发背包已满
+    CheckBagFull = "checkBagFull",
+    ---检查装备穿戴栏
     CheckEquipWearingBar = "checkEquipWearingBar",
-    CheckItemMail = "checkItemMail", -- 检测未领取附件邮件
+    ---检测未领取附件邮件
+    CheckItemMail = "checkItemMail",
     ---下面是不会变化的
-    CheckGender = "checkGender", ---检测性别
-    CheckPartnerArray = "checkPartnerArray", ---伙伴阵容
-    CheckLogOn = "checkLogOn", --检测第一次点击红钻按钮
-    CheckActivityExchange = "checkActivityExchange", --检测兑换商城
-    CheckAssistanceNum = "checkAssistanceNum", --协助
-    CheckPreviewReward = "checkPreviewReward", --检测功能预告是否有奖励未领取
-    CheckFirstRechargep = "checkFirstRechargep", --检测是否购买某个首充礼包
-    CheckConductTask = "checkConductTask", --检测是否在某个任务中
-    CheckMountUpGrade = "checkMountUpGrade", --检测坐骑是否可激活或升级
-    CheckGoldTask = "checkGoldTask", --检测黄金挑战任务数量
+    ---检测性别
+    CheckGender = "checkGender",
+    ---伙伴阵容
+    CheckPartnerArray = "checkPartnerArray",
+    ---检测第一次点击红钻按钮
+    CheckLogOn = "checkLogOn",
+    ---检测兑换商城
+    CheckActivityExchange = "checkActivityExchange",
+    ---协助
+    CheckAssistanceNum = "checkAssistanceNum",
+    ---检测功能预告是否有奖励未领取
+    CheckPreviewReward = "checkPreviewReward",
+    ---检测是否购买某个首充礼包
+    CheckFirstRechargep = "checkFirstRechargep",
+    ---检测是否在某个任务中
+    CheckConductTask = "checkConductTask",
+    ---检测坐骑是否可激活或升级
+    CheckMountUpGrade = "checkMountUpGrade",
+    ---检测黄金挑战任务数量
+    CheckGoldTask = "checkGoldTask",
+    ---检查任务进度
     checkTaskProgress = "checkTaskProgress",
+    ---检查地图
     checkMap = "checkMap",
 }
 
+---ERedDotNumType
+---@class ERedDotNumType
 ERedDotNumType = {
-    UnreadMsg = enum(1), --未读消息数
-    UnreadMail = enum(), --未读邮件数
-    UndealFriendApply = enum(), --未处理好友申请数
+    ---未读消息数
+    UnreadMsg = enum(1),
+    ---未读邮件数
+    UnreadMail = enum(),
+    ---未处理好友申请数
+    UndealFriendApply = enum(),
 
 }
 
----@class EHideType @隐藏类型
+---隐藏类型
+---@class EHideType
 EHideType = {
+    ---无
     None = enum(0),
-    ENoHide = enum(1), ---不隐藏
-    EAllHide = enum(), ---隐藏全部
-    ELeaguePlayerHide = enum(), ---隐藏同战盟玩家（友好）
+    ---不隐藏
+    ENoHide = enum(1),
+    ---隐藏全部
+    EAllHide = enum(),
+    ---隐藏同战盟玩家（友好）
+    ELeaguePlayerHide = enum(),
     -- ENeutralPlayerHide = enum(), ---隐藏中立玩家
-    ERivalryPlayerHide = enum(), ---隐藏敌对玩家
+    ---隐藏敌对玩家
+    ERivalryPlayerHide = enum(),
 }
----@class EHidePart 隐藏部位
+---隐藏部位
+---@class EHidePart
 EHidePart = {
+    ---无
     ENo = enum(0),
-    ESkillEffect = enum(), ---技能特效
-    EWing = enum(), ---翅膀
-    EFootPrint = enum(), ---足迹
-    EShadow = enum(), ---阴影
-    EModel = enum(), ---模型
+    ---技能特效
+    ESkillEffect = enum(),
+    ---翅膀
+    EWing = enum(),
+    ---足迹
+    EFootPrint = enum(),
+    ---阴影
+    EShadow = enum(),
+    ---模型
+    EModel = enum(),
 }
 
 ---@class EFrameValue ---帧率值
@@ -1860,35 +2493,58 @@ EFrameValue = {
     [3] = { 45, 60, 30 }, --高帧率,模拟器帧率
 }
 
----@class EFrame ---帧率
+------帧率
+---@class EFrame
 EFrame = {
+    ---低
     low = enum(1),
+    ---中
     mid = enum(),
+    ---高
     hight = enum(),
 }
 
---玩家操作
+---玩家操作类型枚举
 ---@class ERoleInteractType
 ERoleInteractType = {
-    CheckPlayer = enum(1), --查看玩家
-    AddFriend = enum(), --添加好友
-    InviteInUnion = enum(), --邀请入盟
-    PrivateTalk = enum(), --私聊
-    SendPos = enum(), --发送位置
-    InviteTeam = enum(), --邀请入队
-    CreateAndInviteTeam = enum(), --创建队伍并邀请入队
-    KickTeam = enum(), --踢出队伍
-    UpgradeCaptain = enum(), --升为队长
-    LeaveTeam = enum(), --离开队伍
-    TeamOwn = enum(), --
-    ApplyTeam = enum(), --申请加入队伍
-    ApplyUnion = enum(), --申请入盟
-    RemoveFriend = enum(), --删除好友
-    MaskFriend = enum(), --屏蔽好友
-    SelectRole = enum(), --选中玩家
-    ReportRole = enum(), --举报玩家
-    Shield = enum(), --屏蔽
-    AddRecipient = enum() --添加收信人
+    ---查看玩家
+    CheckPlayer = enum(1),
+    ---添加好友
+    AddFriend = enum(),
+    ---邀请入盟
+    InviteInUnion = enum(),
+    ---私聊
+    PrivateTalk = enum(),
+    ---发送位置
+    SendPos = enum(),
+    ---邀请入队
+    InviteTeam = enum(),
+    ---创建队伍并邀请入队
+    CreateAndInviteTeam = enum(),
+    ---踢出队伍
+    KickTeam = enum(),
+    ---升为队长
+    UpgradeCaptain = enum(),
+    ---离开队伍
+    LeaveTeam = enum(),
+    ---自己队伍
+    TeamOwn = enum(),
+    ---申请加入队伍
+    ApplyTeam = enum(),
+    ---申请入盟
+    ApplyUnion = enum(),
+    ---删除好友
+    RemoveFriend = enum(),
+    ---屏蔽好友
+    MaskFriend = enum(),
+    ---选中玩家
+    SelectRole = enum(),
+    ---举报玩家
+    ReportRole = enum(),
+    ---屏蔽
+    Shield = enum(),
+    ---添加收信人
+    AddRecipient = enum()
 }
 
 --玩家操作
@@ -1929,20 +2585,30 @@ ERoleInteractPanelType = {
     PlayerIcon_Member = { ERoleInteractType.CheckPlayer, ERoleInteractType.PrivateTalk, ERoleInteractType.ApplyTeam },
 }
 
+---EBubbleType
 ---@class EBubbleType
 EBubbleType = {
-    TeamApply = enum(1), -- 队长收到组队申请
-    TeamInvite = enum(), -- 队员收到组队邀请
+    ---队长收到组队申请
+    TeamApply = enum(1),
+    ---队员收到组队邀请
+    TeamInvite = enum(),
 }
 
+---EUnionPosition
 ---@class EUnionPosition
 EUnionPosition = {
+    ---无
     None = 0, --
-    Leader = 1, --副盟主
-    LeaderHelper = 2, --副盟主
-    Captain = 3, --队长
-    Elite = 4, --精英
-    Member = 5, --成员
+    ---副盟主
+    Leader = 1,
+    ---副盟主
+    LeaderHelper = 2,
+    ---队长
+    Captain = 3,
+    ---精英
+    Elite = 4,
+    ---成员
+    Member = 5,
 
 }
 
@@ -1973,158 +2639,266 @@ EUnionRolationStr = {
     [3] = "敌对",
 }
 
-----@class EUnionRolation
+---@class EUnionRolation
 EUnionRolation = {
-    Declare = enum(1), --"宣战"
-    UnionSelf = enum(2), --"本盟"
-    Enemy = enum(3), --"敌对"
+    ---宣战
+    Declare = enum(1),
+    ---本盟
+    UnionSelf = enum(2),
+    ---敌盟
+    Enemy = enum(3),
 }
 
+---EMaterialChange_RenderFilter
 ---@class EMaterialChange_RenderFilter
 EMaterialChange_RenderFilter = {
+    ---蒙皮网格渲染器
     SkinnedMeshRenderer = 0,
+    ---其他
     Other = 1,
 }
 
+---EChatLinkType
 ---@class EChatLinkType
 EChatLinkType = {
-    Pos = enum(1), -- 坐标
-    Emoji = enum(), -- 表情
-    Recruit = enum(), -- 招募
-    DevilSquare = enum(), -- 恶魔广场招募
-    KmlRecruit = enum(), --KML副本组队招募
+    ---坐标
+    Pos = enum(1),
+    ---表情
+    Emoji = enum(),
+    ---招募
+    Recruit = enum(),
+    ---恶魔广场招募
+    DevilSquare = enum(),
+    ---KML副本组队招募
+    KmlRecruit = enum(),
 }
+---EUseItemType
 ---@class EUseItemType
 EUseItemType = {
+    ---选择使用
     SelectUse = enum(1),
+    ---全部使用
     UseAll = enum(2),
 }
 
----@class EInitiativeTargetType @主动目标类型
+---主动目标类型
+---@class EInitiativeTargetType
 EInitiativeTargetType = {
-    SelectTarget = enum(1), -- 主动攻击目标：玩家点击选择的目标（例如：怪物、NPC、玩家）
-    ClickGround = enum(), -- 角色移动目标：玩家点击地面的坐标
-    Task = enum(), -- 任务系统目标：所执行的任务对应的目标（例如：怪物、NPC、坐标）
-    Team = enum(), -- 组队状态目标：队伍的共同目标（例如：坐标、怪物、NPC）
-    Self = enum(), -- 没有目标（空）：角色当前没有目标（将自身当作目标）
+    ---主动攻击目标：玩家点击选择的目标（例如：怪物、NPC、玩家）
+    SelectTarget = enum(1),
+    ---角色移动目标：玩家点击地面的坐标
+    ClickGround = enum(),
+    ---任务系统目标：所执行的任务对应的目标（例如：怪物、NPC、坐标）
+    Task = enum(),
+    ---组队状态目标：队伍的共同目标（例如：坐标、怪物、NPC）
+    Team = enum(),
+    ---没有目标（空）：角色当前没有目标（将自身当作目标）
+    Self = enum(),
 }
 
+---ELockTargetType
 ---@class ELockTargetType
 ELockTargetType = {
-    Initiative = enum(1), -- 主动目标
-    Passive = enum(), -- 被动目标
-    Hate = enum(), -- 仇恨目标
+    ---主动目标
+    Initiative = enum(1),
+    ---被动目标
+    Passive = enum(),
+    ---仇恨目标
+    Hate = enum(),
 }
 
+---EOperDataType
 ---@class EOperDataType
 EOperDataType = {
-    Add = enum(1), -- 增加
-    Update = enum(), -- 更新
-    Delete = enum(), -- 删除
+    ---增加
+    Add = enum(1),
+    ---更新
+    Update = enum(),
+    ---删除
+    Delete = enum(),
 }
 
----@class  EForgeGroupType
+---EForgeGroupType
+---@class EForgeGroupType
 EForgeGroupType = {
-    Strength = enum(1), --强化
-    Add = enum(), --追加         
-    Gem = enum(), --镶宝
-    Decompose = enum(), --分解
-    Overlay380 = enum(), --380叠加
-    Trans = enum(), --转移
-    Deify = enum(), --神化
-    StarMaster = enum(), --大师
-    Jewelry = enum(), --首饰
-    Regenerate = enum(), --再生
-    Breakthrough = enum(), -- 突破（大天使装备）
+    ---强化
+    Strength = enum(1),
+    ---追加
+    Add = enum(),
+    ---镶宝
+    Gem = enum(),
+    ---分解
+    Decompose = enum(),
+    ---380叠加
+    Overlay380 = enum(),
+    ---转移
+    Trans = enum(),
+    ---神化
+    Deify = enum(),
+    ---大师
+    StarMaster = enum(),
+    ---首饰
+    Jewelry = enum(),
+    ---再生
+    Regenerate = enum(),
+    ---突破（大天使装备）
+    Breakthrough = enum(),
 
 }
+---EFrameType
 ---@class EFrameType
 EFrameType = {
-    Main = enum(1), --主框
-    Sub = enum(), --附框
+    ---主框
+    Main = enum(1),
+    ---附框
+    Sub = enum(),
 
 }
+---EGameQualityType
 ---@class EGameQualityType
 EGameQualityType = {
-    PowerSave = enum(1), --省电
-    Balance = enum(), --均衡
-    Strongest = enum(), --最强
+    ---省电
+    PowerSave = enum(1),
+    ---均衡
+    Balance = enum(),
+    ---最强
+    Strongest = enum(),
 }
 
+---ELogType
 ---@class ELogType
 ELogType = {
+    ---错误
     Error = enum(0),
+    ---日志
     Log = enum(),
+    ---警告
     Warning = enum(),
+    ---消息
     Message = enum(),
+    ---全部
     All = enum(),
+    ---服务器日志
     ServerLog = enum()
 
 }
 
----@class EAutoFightType @战斗状态
+---战斗状态
+---@class EAutoFightType
 EAutoFightType = {
-    Manual = enum(1), -- 手动
-    Auto = enum(), -- 自动
-    Pause = enum(), -- 暂定
+    ---手动
+    Manual = enum(1),
+    ---自动
+    Auto = enum(),
+    ---暂定
+    Pause = enum(),
 }
 
----@class EAutoFightProcessType @自动战斗中 状态
+---自动战斗中 状态
+---@class EAutoFightProcessType
 EAutoFightProcessType = {
-    Normal = enum(1), --正在Fight
-    Click = enum(), -- 点击移动状态
-    ClickMoving = enum(), --点击移动进行中
-    Drag = enum(), -- 拖拽状态
+    ---正在Fight
+    Normal = enum(1),
+    ---点击移动状态
+    Click = enum(),
+    ---点击移动进行中
+    ClickMoving = enum(),
+    ---拖拽状态
+    Drag = enum(),
 }
 
+---EItemBuyPanelType
+---@class EItemBuyPanelType
 EItemBuyPanelType = {
+    ---上架自己
     UpSelf = enum(),
+    ---购买
     Buy = enum(),
 
 }
+---ERightBottomControllerXtraType
 ---@class ERightBottomControllerXtraType
 ERightBottomControllerXtraType = {
-    InputField = enum(1), -- 输入框
-    DropDown = enum(), -- 下拉框
-    SelectPath = enum(), -- 选路径
+    ---输入框
+    InputField = enum(1),
+    ---下拉框
+    DropDown = enum(),
+    ---选路径
+    SelectPath = enum(),
 }
----@class ERightBottomControllerXtraDataType @UI编辑器右下脚窗口的数据类型
+---UI编辑器右下脚窗口的数据类型
+---@class ERightBottomControllerXtraDataType
 ERightBottomControllerXtraDataType = {
-    Active = enum(1), --dropdown 
-    SizeDelta_X = enum(), --input
-    SizeDelta_Y = enum(), --input
-    Scale_X = enum(), --input
-    Scale_Y = enum(), --input
-    Scale_Z = enum(), --input
+    ---dropdown
+    Active = enum(1),
+    ---input
+    SizeDelta_X = enum(),
+    ---input
+    SizeDelta_Y = enum(),
+    ---input
+    Scale_X = enum(),
+    ---input
+    Scale_Y = enum(),
+    ---input
+    Scale_Z = enum(),
+    ---有文本
     HaveText = enum(),
-    SpritePath = enum(), --selectpath
+    ---selectpath
+    SpritePath = enum(),
+    ---文本_字号
     Text_TextSize = enum(),
+    ---文本_颜色
     Text_TextColor = enum(),
-    Text_TextStr = enum(), --input
+    ---input
+    Text_TextStr = enum(),
+    ---按钮1_点击
     Button_1_Click = enum(),
+    ---有按钮
     HaveButton = enum(),
+    ---有图片
     HaveImage = enum(),
-    Pos_X = enum(), --input
-    Pos_Y = enum(), --input
-    Pos_Z = enum(), --input
-    Pivot_X = enum(), --input
-    Pivot_Y = enum(), --input
+    ---input
+    Pos_X = enum(),
+    ---input
+    Pos_Y = enum(),
+    ---input
+    Pos_Z = enum(),
+    ---input
+    Pivot_X = enum(),
+    ---input
+    Pivot_Y = enum(),
+    ---路径1
     Path_1 = enum(),
-    Index = enum(), --(new)
-    Message = enum(), --(new)
-    Name = enum(), --input(new)
-    ParentName = enum(), --(new)
-    Path = enum(), --(new)
-    Style = enum(), --input(new)
-    X = enum(), --input(new)
-    Y = enum(), --input(new)
-    Id = enum(), --input(new)
-    Width = enum(), --input(List)
-    Height = enum(), --input(List)
-    Direction = enum(), --input(List)
-    Bounce = enum(), --input(List)
-    Margin = enum(), --input(List)
-    Text = enum(), --input(text)
+    ---(new)
+    Index = enum(),
+    ---(new)
+    Message = enum(),
+    ---input(new)
+    Name = enum(),
+    ---(new)
+    ParentName = enum(),
+    ---(new)
+    Path = enum(),
+    ---input(new)
+    Style = enum(),
+    ---input(new)
+    X = enum(),
+    ---input(new)
+    Y = enum(),
+    ---input(new)
+    Id = enum(),
+    ---input(List)
+    Width = enum(),
+    ---input(List)
+    Height = enum(),
+    ---input(List)
+    Direction = enum(),
+    ---input(List)
+    Bounce = enum(),
+    ---input(List)
+    Margin = enum(),
+    ---input(text)
+    Text = enum(),
 
 }
 ---@class ENpcShopLimitBuyType  npc商店限购类型
@@ -2136,24 +2910,41 @@ ENpcShopLimitBuyType = {
     [4] = "永久限购",
 }
 
+---EEditorUIType
 ---@class EEditorUIType
 EEditorUIType = {
-    EditorText = enum(), --文本控件
-    EditorImage = enum(), --图片控件
-    EditorButton = enum(), --按钮控件
-    EditorLayout = enum(), --容器控件
-    EditorList = enum(), --列表容器控件
-    EditorEffect = enum(), --特效控件
-    EditorFrames = enum(), --序列帧控件
-    EditorInput = enum(), --输入框控件
-    EditorCheckbox = enum(), --复选框控件
-    EditorItemShow = enum(), --装备展示控件
-    EditorItemBox = enum(), --自定义装备框
-    EditorLoadingBar = enum(), --横向进度条
-    EditorCircleBar = enum(), --圆形进度条
-    EditorItemGroup = enum(), --模型组控件
-    EditorPercentImg = enum(), --填充图片显示
-    EditorTimeCount = enum(), --倒计时文本显示
+    ---文本控件
+    EditorText = enum(),
+    ---图片控件
+    EditorImage = enum(),
+    ---按钮控件
+    EditorButton = enum(),
+    ---容器控件
+    EditorLayout = enum(),
+    ---列表容器控件
+    EditorList = enum(),
+    ---特效控件
+    EditorEffect = enum(),
+    ---序列帧控件
+    EditorFrames = enum(),
+    ---输入框控件
+    EditorInput = enum(),
+    ---复选框控件
+    EditorCheckbox = enum(),
+    ---装备展示控件
+    EditorItemShow = enum(),
+    ---自定义装备框
+    EditorItemBox = enum(),
+    ---横向进度条
+    EditorLoadingBar = enum(),
+    ---圆形进度条
+    EditorCircleBar = enum(),
+    ---模型组控件
+    EditorItemGroup = enum(),
+    ---填充图片显示
+    EditorPercentImg = enum(),
+    ---倒计时文本显示
+    EditorTimeCount = enum(),
 }
 
 ---@class EEditorUITypeStr
@@ -2176,62 +2967,102 @@ EEditorUITypeStr = {
     [EEditorUIType.EditorTimeCount] = "CountDown",
 }
 
+---EAudioPlayByCfgType
 ---@class EAudioPlayByCfgType
 EAudioPlayByCfgType = {
+    ---行为
     Behaviour = enum(0),
+    ---物品
     Item = enum(),
+    ---NPC列表
     NpcList = enum(),
+    ---怪物
     Monster = enum(),
+    ---地图信息
     MapInfo = enum(),
+    ---坐骑模型
     MountModel = enum(),
+    ---技能信息
     SkillInfo = enum()
 
 }
+---ESoundFieldType
 ---@class ESoundFieldType
 ESoundFieldType = {
-    MapBGM = "mapBgm", --cfg_map_info地图背景音乐音效
-    Sound = "Sound", --cfg_behaviour释放音效
-    BornSound = "bornSound", --cfg_monster 进入视野音效
-    AttackSound = "attackSound", --cfg_monster攻击音效
-    HitSound = "hitSound", --cfg_monster受击音效
-    DieSound = "dieSound", --cfg_monster死亡音效
-    WalkSound = "walkSound", --移动音效
-    RunSound = "walkSound", --跑步音效
-    TrackSound = "trackSound", --移动追踪音效
-    FastTrackSound = "fastTrack", --cfg_mount_model快速追踪音效
-    CostSound = "costSound", --cfg_skill_info释放音效
-    FlySound = "flySound", --cfg_skill_info技能飞行音效
-    SpeakSound = "speak", --cfg_npc_list 对话音效
+    ---cfg_map_info地图背景音乐音效
+    MapBGM = "mapBgm",
+    ---cfg_behaviour释放音效
+    Sound = "Sound",
+    ---cfg_monster 进入视野音效
+    BornSound = "bornSound",
+    ---cfg_monster攻击音效
+    AttackSound = "attackSound",
+    ---cfg_monster受击音效
+    HitSound = "hitSound",
+    ---cfg_monster死亡音效
+    DieSound = "dieSound",
+    ---移动音效
+    WalkSound = "walkSound",
+    ---跑步音效
+    RunSound = "walkSound",
+    ---移动追踪音效
+    TrackSound = "trackSound",
+    ---cfg_mount_model快速追踪音效
+    FastTrackSound = "fastTrack",
+    ---cfg_skill_info释放音效
+    CostSound = "costSound",
+    ---cfg_skill_info技能飞行音效
+    FlySound = "flySound",
+    ---cfg_npc_list 对话音效
+    SpeakSound = "speak",
+    ---丢弃音效
     DropSound = "dropSound",
+    ---销毁音效
     DestorySound = "destorySound",
+    ---使用音效
     UseSound = "useSound",
+    ---持握音效
     HoldSound = "holdSound",
+    ---放下音效
     DownSound = "downSound",
 }
 
+---EReqRoleInfoType
 ---@class EReqRoleInfoType
-
 EReqRoleInfoType = {
+    ---基础信息
     BaseInfo = enum(1),
+    ---属性信息
     AttributeInfo = enum(),
+    ---技能信息
     SkillInfo = enum(),
+    ---装备信息
     EquipInfo = enum()
 }
 
 ---@class
 EGuardFunction = {
-    None = enum(0), --无功能
-    Enable = enum(), --启用功能
+    ---无功能
+    None = enum(0),
+    ---启用功能
+    Enable = enum(),
 }
 
--- 
+---
+---@class ETextColor
 ETextColor = {
+    ---绿色
     Green = 0x2FFD47FF,
+    ---红色
     Red = 0xEF2321FF,
 }
+---EAutoOperationMount
+---@class EAutoOperationMount
 EAutoOperationMount = {
-    AutoOperation = enum(0), --自动
-    HandOperation = enum(), --手动
+    ---自动
+    AutoOperation = enum(0),
+    ---手动
+    HandOperation = enum(),
 }
 
 ---@class EDiffuseFlowing
@@ -2242,52 +3073,85 @@ EDiffuseFlowing = {
     'FGQJ/Role/DiffuseFlowing11712',
 }
 
+---EStallCard
+---@class EStallCard
 EStallCard = {
+    ---摆摊卡
     StallCard = 70070001,
 }
+---EHeadIconTag
 ---@class EHeadIconTag
 EHeadIconTag = {
+    ---攻城攻击标签
     siege_atk = "siege_atk",
+    ---攻城攻击大标签
     siege_atkBig = "siege_atkBig",
+    ---攻城防御标签
     siege_def = "siege_def",
+    ---攻城防御大标签
     siege_defBig = "siege_defBig",
+    ---金色问号标签
     jinsewenhao = "jinsewenhao",
+    ---多倍挂机标签
     multipleOnHook = "duobeiguaji",
+    ---归属标签
     Belong_to = "guishu",
+    ---称号1
     title_1 = "title_1",
+    ---称号2
     title_2 = "title_2",
+    ---称号3
     title_3 = "title_3",
+    ---称号4
     title_4 = "title_4",
+    ---称号5
     title_5 = "title_5",
+    ---称号6
     title_6 = "title_6",
 }
 
---@class EDropEffectType
+---@class EDropEffectType
 EDropEffectType = {
-    OrginPosJumpDrop = enum(1), --原地起跳掉落
-    ParabolaDrop = enum(2), --抛物线掉落
+    ---原地起跳掉落
+    OrginPosJumpDrop = enum(1),
+    ---抛物线掉落
+    ParabolaDrop = enum(2),
 }
 
+---ECanRotation
 ---@class ECanRotation
 ECanRotation = {
-    Rotation = enum(1), --旋转
-    NoRotation = enum(2), --不旋转
+    ---旋转
+    Rotation = enum(1),
+    ---不旋转
+    NoRotation = enum(2),
 }
 
+---EDropRotationType
 ---@class EDropRotationType
 EDropRotationType = {
-    XClockwise = enum(1), --x顺时针
-    XAntiClockwise = enum(2), --x轴逆时针
-    YClockwise = enum(3), --y顺时针
-    YAntiClockwise = enum(4), --y轴逆时针
-    ZClockwise = enum(5), --z顺时针
-    ZAntiClockwise = enum(6), --z轴逆时针
+    ---x顺时针
+    XClockwise = enum(1),
+    ---x轴逆时针
+    XAntiClockwise = enum(2),
+    ---y顺时针
+    YClockwise = enum(3),
+    ---y轴逆时针
+    YAntiClockwise = enum(4),
+    ---z顺时针
+    ZClockwise = enum(5),
+    ---z轴逆时针
+    ZAntiClockwise = enum(6),
 }
 
+---EGmTaskState
 ---@class EGmTaskState
 EGmTaskState = {
+    ---已完成
     Already = enum(1),
+    ---进行中
     Doing = enum(2),
+    ---已完成
     Finish = enum(3)
 }
 
@@ -2299,88 +3163,138 @@ WolfSoulGradeRank = {
     [DupWolfSoulProtos_WolfSoulGrade.C] = "c",
     [5] = "d",
 }
----@class EBloodNpc @血色npc
+---血色npc
+---@class EBloodNpc
 EBloodNpc = {
+    ---血条NPC
     BloodNpc = 21,
 }
+---ENpcListOpenPanelType
+---@class ENpcListOpenPanelType
 ENpcListOpenPanelType = {
+    ---NPC商店
     NpcShop = "UINpcShopPanel"
 }
 
+---ESceneId
 ---@class ESceneId
----@field DevilSquare number @ 1012,
----@field Siege number @ 1031,
----@field WolfSoul number @ 1038,
----@field RedFort number @ 1040,
----@field IceWindDale number
----@field UnionAtkCity number
 ESceneId = {
+    ---恶魔广场
     DevilSquare = 1012,
+    ---攻城战
     Siege = 1031,
+    ---狼魂
     WolfSoul = 1038,
+    ---红名堡
     RedFort = 1040,
+    ---冰风谷
     IceWindDale = 1042,
+    ---联盟攻城
     UnionAtkCity = 1031,
 }
----@class EGmType @脚本命令
+---脚本命令
+---@class EGmType
 EGmType = {
-    PICKUPITEMS = "PICKUPITEMS", --设置自动拾取模式
-    SETSPRITEMODE = "SETSPRITEMODE", --设置小精灵模式
-    NEWPICKTASK = "NEWPICKTASK", --设置小精灵模式
-    NEWCHANGETASK = "NEWCHANGETASK", --设置小精灵模式
-    NEWCOMPLETETASK = "NEWCOMPLETETASK", --设置小精灵模式
-    NEWDELETETASK = "NEWDELETETASK", --设置小精灵模式
-    TASKTOPSHOW = "TASKTOPSHOW", --设置小精灵模式
+    ---设置自动拾取模式
+    PICKUPITEMS = "PICKUPITEMS",
+    ---设置小精灵模式
+    SETSPRITEMODE = "SETSPRITEMODE",
+    ---设置小精灵模式
+    NEWPICKTASK = "NEWPICKTASK",
+    ---设置小精灵模式
+    NEWCHANGETASK = "NEWCHANGETASK",
+    ---设置小精灵模式
+    NEWCOMPLETETASK = "NEWCOMPLETETASK",
+    ---设置小精灵模式
+    NEWDELETETASK = "NEWDELETETASK",
+    ---设置小精灵模式
+    TASKTOPSHOW = "TASKTOPSHOW",
+    ---播放魔法球特效
     PLAY_MAGIC_BALL_EFFECT = "PLAYMAGICBALLEFFECT",
-    PLAYSOUND = "PLAYSOUND", --播放声音 PICKUPITEMS
-    ADDMIRRORMAP = "ADDMIRRORMAP", --动态地图
+    ---播放声音 PICKUPITEMS
+    PLAYSOUND = "PLAYSOUND",
+    ---动态地图
+    ADDMIRRORMAP = "ADDMIRRORMAP",
     --DelMirrorMap = "DelMirrorMap",--删除动态地图 自己延迟处理了
 }
----@class ESpiritPickUpType @脚本命令
+---脚本命令
+---@class ESpiritPickUpType
 ESpiritPickUpType = {
-    Role = enum(0), --以角色为中心拾取
-    Spirit = enum(1), --以小精灵为中心拾取
+    ---以角色为中心拾取
+    Role = enum(0),
+    ---以小精灵为中心拾取
+    Spirit = enum(1),
 }
 
----@class EAutoFightErrorTip @挂机提示
+---挂机提示
+---@class EAutoFightErrorTip
 EAutoFightErrorTip = {
+    ---可以挂机
     OK = "可以攻击",
+    ---安全区无法挂机
     SafeArea = "安全区无法挂机",
+    ---狼魂平台无法挂机
     InBindWolfSoulPlatform = "绑定神狼护台无法挂机",
+    ---当前地图不可挂机
     MapNotOnHook = "该地图内不可挂机",
+    ---副本不可挂机
     CopyMapNotHook = "该副本内不可挂机",
 }
 
----@class EBagTileScrollViewSource @脚本命令
+---脚本命令
+---@class EBagTileScrollViewSource
 EBagTileScrollViewSource = {
+    ---无
     None = enum(0),
-    Bag = enum(1), --背包
-    Storage = enum(2), --仓库
+    ---背包
+    Bag = enum(1),
+    ---仓库
+    Storage = enum(2),
 }
+---EGetMouseButtonKey
 ---@class EGetMouseButtonKey
 EGetMouseButtonKey = {
+    ---无
     None = -1,
+    ---鼠标左键按下
     GetMouseButtonDown_0 = 0,
+    ---鼠标左键按住
     GetMouseButton_0 = 1,
+    ---鼠标左键抬起
     GetMouseButtonUp_0 = 2,
+    ---鼠标右键按下
     GetMouseButtonDown_1 = 3,
+    ---鼠标右键按住
     GetMouseButton_1 = 4,
+    ---鼠标右键抬起
     GetMouseButtonUp_1 = 5,
 }
+---EGetKeyCodeWSAD
 ---@class EGetKeyCodeWSAD
 EGetKeyCodeWSAD = {
+    ---无
     None = -1,
+    ---W键
     EKeyCodeW = 1 << 0,
+    ---S键
     EKeyCodeS = 1 << 1,
+    ---A键
     EKeyCodeA = 1 << 2,
+    ---D键
     EKeyCodeD = 1 << 3,
 }
+---ERenderQueueType
 ---@class ERenderQueueType
 ERenderQueueType = {
+    ---背景
     Background = 1000,
+    ---几何体
     Geometry = 2000,
+    ---透明测试
     AlphaTest = 2450,
+    ---透明
     Transprent = 3000,
+    ---叠加
     Overlay = 4000,
 }
 
@@ -2411,30 +3325,49 @@ EFashionEquipToEquipMap = {
     [EEquipSlotType.Banner] = EEquipSlotType.Banner,
 }
 
+---EEquip380AttGroupType
+---@class EEquip380AttGroupType
 EEquip380AttGroupType = {
+    ---380装备属性
     Equip380 = enum(1),
+    ---重生装备属性
     EquipReborn = enum(2),
+    ---强化装备属性
     EquipStrength = enum(3),
+    ---追加装备属性
     EquipAppend = enum(4),
 }
 
+---EEquip380RefineWayType
+---@class EEquip380RefineWayType
 EEquip380RefineWayType = {
+    ---第一阶
     First = enum(1),
+    ---第二阶
     Second = enum(2),
+    ---第三阶
     Third = enum(3),
 }
 
----@class EVipEnum Vip种类
+---Vip种类
+---@class EVipEnum
 EVipEnum = {
+    ---免费VIP
     FreeVip = enum(1),
+    ---超级VIP
     SuperVip = enum(),
 }
 
----@class ETradePageIndex @交易行页面索引
+---交易行页面索引
+---@class ETradePageIndex
 ETradePageIndex = {
+    ---交易行
     TradeLine = enum(1),
+    ---联盟交易
     UnionTrade = enum(),
+    ---记录
     Record = enum(),
+    ---我的寄售
     MineSale = enum(),
 }
 
@@ -2452,30 +3385,48 @@ ETradeTabType = {
     [ETradePageIndex.UnionTrade] = 1,
 }
 
+---EShowBossHp
 ---@class EShowBossHp
 EShowBossHp = {
+    ---隐藏
     Hide = enum(0),
+    ---显示
     Show = enum(1),
 }
+---EReliveType
 ---@class EReliveType
 EReliveType = {
-    NoRelive = enum(1), --不可复活
-    CountDownRelive = enum(2), --倒计时复活
-    MultipleRelive = enum(3), --免费复活+付费复活
+    ---不可复活
+    NoRelive = enum(1),
+    ---倒计时复活
+    CountDownRelive = enum(2),
+    ---免费复活+付费复活
+    MultipleRelive = enum(3),
 }
 
+---EMoveReason
 ---@class EMoveReason
 EMoveReason = {
-    Normal = enum(1), -- 正常移动("0")
-    NoExist = enum(), -- 客户端点不存在("1")
-    ClientTimeBigger = enum(), --客户端时间大于服务器端时间("2")
-    TimeDifferTooMuch = enum(), -- 前后端时间相差太大("3")
-    NOTargetPoint = enum(), -- 目标点不存在("4")
-    CannotStand = enum(), -- CAN_NOT_STAND("5")
-    CannotMove = enum(), -- CAN_NOT_MOVE("6")
-    CannotWalk = enum(), -- CAN_NOT_WALK("7")
-    DistanceTooBig = enum(), -- 步行步子太大("8")
-    CDing = enum() -- CD_中("9")
+    ---正常移动("0")
+    Normal = enum(1),
+    ---客户端点不存在("1")
+    NoExist = enum(),
+    ---客户端时间大于服务器端时间("2")
+    ClientTimeBigger = enum(),
+    ---前后端时间相差太大("3")
+    TimeDifferTooMuch = enum(),
+    ---目标点不存在("4")
+    NOTargetPoint = enum(),
+    ---CAN_NOT_STAND("5")
+    CannotStand = enum(),
+    ---CAN_NOT_MOVE("6")
+    CannotMove = enum(),
+    ---CAN_NOT_WALK("7")
+    CannotWalk = enum(),
+    ---步行步子太大("8")
+    DistanceTooBig = enum(),
+    ---CD_中("9")
+    CDing = enum()
 }
 
 ---@class EMoveReasonString
@@ -2492,19 +3443,29 @@ EMoveReasonString = {
     [EMoveReason.CDing] = '9'
 }
 
----@class HangUpPointType @怪物点类型
+---怪物点类型
+---@class HangUpPointType
 HangUpPointType = {
-    All = enum(0), --所有怪
+    ---所有怪
+    All = enum(0),
+    ---推荐挂机点
     Recommend = enum()
 }
 
----@class EfficiencyLv @效率评级
+---效率评级
+---@class EfficiencyLv
 EfficiencyLv = {
+    ---C级
     C = enum(1),
+    ---B级
     B = enum(),
+    ---A级
     A = enum(),
+    ---S级
     S = enum(),
+    ---SS级
     SS = enum(),
+    ---SSS级
     SSS = enum()
 }
 
@@ -2528,190 +3489,304 @@ EffectGradeRank = {
     [EfficiencyLv.SSS] = 'sss'
 }
 
+---EScrollRectMovementType
+---@class EScrollRectMovementType
 EScrollRectMovementType = {
+    ---无限制
     Unrestricted = 0,
+    ---弹性
     Elastic = 1,
+    ---限制
     Clamped = 2,
 }
+---EMapType
 ---@class EMapType
 EMapType = {
-    ResidentMap = enum(1), --常驻地图
-    CopyMap = enum(2), --副本地图
-    RewardMap = enum(3), --奖励地图
-    MemberMap = enum(4), --会员地图
+    ---常驻地图
+    ResidentMap = enum(1),
+    ---副本地图
+    CopyMap = enum(2),
+    ---奖励地图
+    RewardMap = enum(3),
+    ---会员地图
+    MemberMap = enum(4),
 }
----@class QuickShopType @快速购买类型
+---快速购买类型
+---@class QuickShopType
 QuickShopType = {
-    Price = enum(1), --直接购买
-    Icon = enum(2), --其他路径购买
-    Activity = enum(3), --活动获取
+    ---直接购买
+    Price = enum(1),
+    ---其他路径购买
+    Icon = enum(2),
+    ---活动获取
+    Activity = enum(3),
 }
+---EOnHookStatus
 ---@class EOnHookStatus
 EOnHookStatus = {
-    Close = enum(0), --关闭多倍挂机
-    Open = enum(1), --开启多倍挂机
+    ---关闭多倍挂机
+    Close = enum(0),
+    ---开启多倍挂机
+    Open = enum(1),
 }
 
+---EPreviewReceiveRewardState
 ---@class EPreviewReceiveRewardState
 EPreviewReceiveRewardState = {
+    ---无
     None = 0,
+    ---未领取
     NotReceive = 1,
+    ---可领取
     CanReceive = 2,
+    ---已领取
     Received = 3,
 
 }
+---EGuardPetFollowType
+---@class EGuardPetFollowType
 EGuardPetFollowType = {
-    Fly = enum(1), --飞行
-    Floor = enum(2), --地面
-    Around = enum(3), --围绕
+    ---飞行
+    Fly = enum(1),
+    ---地面
+    Floor = enum(2),
+    ---围绕
+    Around = enum(3),
 }
+---ENPCType
 ---@class ENPCType
 ENPCType = {
-    Normal = 1, --普通NPC
-    GateWorld = 2, --异界之门NPC
-    UnionAtkCity_AtK = 3, --战盟攻城战攻方
-    UnionAtkCity_Def = 4, --战盟攻城战守方
+    ---普通NPC
+    Normal = 1,
+    ---异界之门NPC
+    GateWorld = 2,
+    ---战盟攻城战攻方
+    UnionAtkCity_AtK = 3,
+    ---战盟攻城战守方
+    UnionAtkCity_Def = 4,
 }
+---EGoldChallengeStatus
 ---@class EGoldChallengeStatus
 EGoldChallengeStatus = {
-    ReceiveTask = enum(0), --领取任务
-    ReceivedTask = enum(1), --已领取任务
-    ReceiveTaskRank = enum(2), --领取任务奖励
+    ---领取任务
+    ReceiveTask = enum(0),
+    ---已领取任务
+    ReceivedTask = enum(1),
+    ---领取任务奖励
+    ReceiveTaskRank = enum(2),
 }
 
+---EHatchEggState
 ---@class EHatchEggState
 EHatchEggState = {
-    CanHatch = enum(0), --可放入
-    Hatching = enum(), --正在孵化
-    HatchOk = enum(), --孵化完成
-    LevelNoReach = enum(), -- 等级未到
-    VipLevelNoReach = enum(), --Vip等级未到
+    ---可放入
+    CanHatch = enum(0),
+    ---正在孵化
+    Hatching = enum(),
+    ---孵化完成
+    HatchOk = enum(),
+    ---等级未到
+    LevelNoReach = enum(),
+    ---Vip等级未到
+    VipLevelNoReach = enum(),
 }
 
----@class E2LevelMenuType @2级菜单类型
+---2级菜单类型
+---@class E2LevelMenuType
 E2LevelMenuType = {
-    TradeLine = enum(0), --交易行
-    TradeLineRecord = enum(), --交易行交易记录类型
+    ---交易行
+    TradeLine = enum(0),
+    ---交易行交易记录类型
+    TradeLineRecord = enum(),
 }
 
----@class EquipTipsType @装备tips显示类型
+---装备tips显示类型
+---@class EquipTipsType
 EquipTipsType = {
+    ---普通提示
     NormalTips = enum(1),
+    ---QJ5提示
     QJ5Tips = enum(2),
 }
 
+---EBossActivityType
 ---@class EBossActivityType
 EBossActivityType = {
+    ---无
     None = enum(0),
-    ExcellentLeader = enum(1), --卓越首领
-    GoldBoss = enum(2), --黄金Boss
-    ExclusiveBoss = enum(3), --专属Boss
-    GoldChange = enum(4), --黄金挑战
-    WorldBoss = enum(5), --世界Boss
+    ---卓越首领
+    ExcellentLeader = enum(1),
+    ---黄金Boss
+    GoldBoss = enum(2),
+    ---专属Boss
+    ExclusiveBoss = enum(3),
+    ---黄金挑战
+    GoldChange = enum(4),
+    ---世界Boss
+    WorldBoss = enum(5),
 }
 ---@class EGoldBossType
 EGoldBossStatusType = {
-    To_be_killed = enum(0), --待击杀
-    In_progress = enum(1), --进行中
-    Dead = enum(2)--已死亡
+    ---待击杀
+    To_be_killed = enum(0),
+    ---进行中
+    In_progress = enum(1),
+    ---已死亡
+    Dead = enum(2)
 }
 
+---EPartnerConsumptionType
 ---@class EPartnerConsumptionType
 EPartnerConsumptionType = {
-    Oneself = 1, --本体
-    Camp = 2, --本阵营
-    Any = 3--任意
+    ---本体
+    Oneself = 1,
+    ---本阵营
+    Camp = 2,
+    ---任意
+    Any = 3
 }
+---ERecoveryType
 ---@class ERecoveryType
 ERecoveryType = {
-    Normal = enum(1), --一般找回
-    Perfect = enum(2), --完美找回
+    ---一般找回
+    Normal = enum(1),
+    ---完美找回
+    Perfect = enum(2),
 }
 
+---EAttInfoType
 ---@class EAttInfoType
 EAttInfoType = {
-    number = enum(1), --数值
-    percentage = enum(2), --百分比
+    ---数值
+    number = enum(1),
+    ---百分比
+    percentage = enum(2),
 }
 
+---EDailyActivityShowType
 ---@class EDailyActivityShowType
 EDailyActivityShowType = {
-    Hide = enum(2), --不展示活动
+    ---不展示活动
+    Hide = enum(2),
 }
 
+---EAutoUseSkillGroup
 ---@class EAutoUseSkillGroup
 EAutoUseSkillGroup = {
-    Single = enum(1), -- 单体
-    Group = enum(), -- 群体
-    Common = enum(), -- 普通
+    ---单体
+    Single = enum(1),
+    ---群体
+    Group = enum(),
+    ---普通
+    Common = enum(),
 }
 
+---ETalentAddType
 ---@class ETalentAddType
 ETalentAddType = {
-    changeSkill = enum(1), ---强化替换技能
-    newSkill = enum(2), ---学习技能
-    addAtt = enum(3), ---增强属性
+    ---强化替换技能
+    changeSkill = enum(1),
+    ---学习技能
+    newSkill = enum(2),
+    ---增强属性
+    addAtt = enum(3),
 }
 
+---EOpenUnionType
 ---@class EOpenUnionType
 EOpenUnionType = {
-    CreateUnion = enum(1), --创建战盟
-    JoinUnion = enum(), --加入战盟
-    UnionInfo = enum(), --信息日记
-    Armband = enum(), --臂章
-    Task = enum(), --任务
-    Activity = enum(), --活动
-    Gem = enum(), --镶宝
-    List = enum(), --列表
-    Salary = enum(), --工资
-    Gift = enum(), --战盟赐福
+    ---创建战盟
+    CreateUnion = enum(1),
+    ---加入战盟
+    JoinUnion = enum(),
+    ---信息日记
+    UnionInfo = enum(),
+    ---臂章
+    Armband = enum(),
+    ---任务
+    Task = enum(),
+    ---活动
+    Activity = enum(),
+    ---镶宝
+    Gem = enum(),
+    ---列表
+    List = enum(),
+    ---工资
+    Salary = enum(),
+    ---战盟赐福
+    Gift = enum(),
 }
 
+---ETitleType
 ---@class ETitleType
 ETitleType = {
-    Perpetual = enum(0), ---永久
-    TimeLimit = enum(1), ---限时
-    ActivityLimit = enum(2), ---活动专属
+    ---永久
+    Perpetual = enum(0),
+    ---限时
+    TimeLimit = enum(1),
+    ---活动专属
+    ActivityLimit = enum(2),
 }
 
----@class ERedDotType ---1普通红点
------2背包满
------3红点渐隐
------4控件渐隐闪烁
------5数字红点
+------1普通红点
+---@class ERedDotType
 ERedDotType = {
-    Normal = 1, --普通红点
-    FullBag = 2, --背包满
-    RedFade = 3, --红点红点渐隐
-    Flicker = 4, --红点闪烁
-    RedNum = 5, --数字红点
+    ---普通红点
+    Normal = 1,
+    ---背包满
+    FullBag = 2,
+    ---红点红点渐隐
+    RedFade = 3,
+    ---红点闪烁
+    Flicker = 4,
+    ---数字红点
+    RedNum = 5,
 }
 
+---EItemOperType
 ---@class EItemOperType
 EItemOperType = {
-    AutoUseItem = enum(0), -- 自动使用道具
-    AutoRecycleItem = enum(), -- 自动回收
-    AutoPickItem = enum(), -- 自动拾取 
+    ---自动使用道具
+    AutoUseItem = enum(0),
+    ---自动回收
+    AutoRecycleItem = enum(),
+    ---自动拾取
+    AutoPickItem = enum(),
 }
+---MoveDirection
 ---@class MoveDirection
 MoveDirection = {
+    ---无
     None = enum(0),
+    ---右侧
     Right = enum(),
+    ---左侧
     Left = enum()
 }
+---ESkillStateType
 ---@class ESkillStateType
 ESkillStateType = {
-    NotLearned = enum(0), --未学习
-    Forbidden = enum(), --禁用
-    Lapse = enum(), --失效
-    Learned = enum(), --已学习
-    Equipped = enum(), --已装备
-    Recommend = enum(), --推荐
+    ---未学习
+    NotLearned = enum(0),
+    ---禁用
+    Forbidden = enum(),
+    ---失效
+    Lapse = enum(),
+    ---已学习
+    Learned = enum(),
+    ---已装备
+    Equipped = enum(),
+    ---推荐
+    Recommend = enum(),
 }
+---EShowDesType
 ---@class EShowDesType
 EShowDesType = {
+    ---显示顶部描述
     ShowTopDes = enum(0),
+    ---显示底部描述
     ShowDownDes = enum(),
+    ---显示全部描述
     ShowAllDes = enum(),
 }
 ---@class ESkillSettingDescribe
@@ -2719,15 +3794,21 @@ ESkillSettingDescribe = {
     [1] = "推荐手动",
     [2] = "推荐自动",
 }
+---EDropGroup
 ---@class EDropGroup
 EDropGroup = {
-    ItemId = enum(0), ---0道具格式
-    DropGroup = enum(1), ---1道具组格式
+    ---0道具格式
+    ItemId = enum(0),
+    ---1道具组格式
+    DropGroup = enum(1),
 }
+---ESpecialEquipEffect
 ---@class ESpecialEquipEffect
 ESpecialEquipEffect = {
-    AutoPickItem = enum(1), --自动拾取
-    Skill = enum(2), --技能
+    ---自动拾取
+    AutoPickItem = enum(1),
+    ---技能
+    Skill = enum(2),
 }
 ---@class EExclusiveBossGrade
 EExclusiveBossGrade = {
@@ -2739,11 +3820,15 @@ EExclusiveBossGrade = {
     [6] = "C",
 }
 
+---EEquipMasterActiveType
 ---@class EEquipMasterActiveType
 EEquipMasterActiveType = {
-    Active = enum(0), -- 激活
-    DontActive = enum(1), -- 没激活
-    InActive = enum(2), -- 失活
+    ---激活
+    Active = enum(0),
+    ---没激活
+    DontActive = enum(1),
+    ---失活
+    InActive = enum(2),
 }
 --奇迹站令领取奖励失败原因
 EWarOrderAwardErrType = {
@@ -2769,72 +3854,122 @@ EWarOrderLevelUpErrType = {
     [3] = "物品不足",
 }
 
+---EStreamerShaderType
 ---@class EStreamerShaderType
 EStreamerShaderType = {
+    ---无
     None = 0,
+    ---浮点型
     Float = 1,
-    Texture = 2, --mat SetTextureOffset,SetTextureScale
+    ---mat SetTextureOffset,SetTextureScale
+    Texture = 2,
+    ---颜色
     Color = 3,
+    ---四维向量
     Vector4 = 4,
+    ---范围
     Range = 5,
 }
 
+---ECloseTipsType
 ---@class ECloseTipsType
 ECloseTipsType = {
-    SynEquipForge = 1, ---合成的材料已经被锻造提示
-    SynAddSupOnly = 2, ---辅助材料多次合成仅有一次生效提示
-    SynRateNotFill = 3, ---合成概率未满且还可以放入辅助材料提示
+    ---合成的材料已经被锻造提示
+    SynEquipForge = 1,
+    ---辅助材料多次合成仅有一次生效提示
+    SynAddSupOnly = 2,
+    ---合成概率未满且还可以放入辅助材料提示
+    SynRateNotFill = 3,
 }
 
+---EPreLoadOthers
 ---@class EPreLoadOthers
 EPreLoadOthers = {
+    ---自己头像
     MeHead = "MeHead",
+    ---玩家头像
     PlayerHead = "PlayerHead",
+    ---怪物头像
     MonsterHead = "MonsterHead",
+    ---NPC头像
     NpcHead = "NpcHead",
+    ---宠物头像
     PetHead = "PetHead",
+    ---通用红点项
     UINormalRedDotItem = "UINormalRedDotItem",
+    ---背包满红点项
     UIBagFullRedDotItem = "UIBagFullRedDotItem",
+    ---渐隐红点项
     UIFadeRedDotItem = "UIFadeRedDotItem",
+    ---数字红点项
     UINumRedDotItem = "UINumRedDotItem",
+    ---伤害标签
     HurtLabel = "HurtLabel",
+    ---物品标签
     LabItem = "LabItem",
+    ---伙伴头像
     PartnerHead = "PartnerHead",
+    ---离线标签
     LabOffline = "LabOffline",
+    ---精灵项
     SpriteItem = "SpriteItem",
 
+    ---血量部件
     HP_Part = "SpriteMesh-hp",
+    ---联盟名部件
     Union_Name_Part = "union_name",
+    ---名字部件
     Name_Part = "lab_name",
+    ---VIP名部件
     Vip_Name_Part = "lab_vipName",
+    ---PK等级部件
     Pk_Level_Part = "lab_pkIconLevel",
+    ---等级图标部件
     Level_Icon_Part = "left_icon_tag",
+    ---挂机保护部件
     Hook_Part = "hookprotect",
+    ---称号标签部件
     Lab_Title_Part = "lab_title",
+    ---称号部件
     Title_Part = "Title",
+    ---图标部件
     Icon_Part = "icon_tag",
+    ---对话部件
     Talk_Part = "lab_talk",
+    ---对话名部件
     Talk_Name_Part = "lab_talkname",
+    ---摆摊名部件
     StallName_Part = "lab_stallName",
 }
+---ELeftUpTab
 ---@class ELeftUpTab
 ELeftUpTab = {
-    TaskTab = 1, --任务，恶魔广场,攻城战 等等
-    TeamTab = 2, --组队
+    ---任务，恶魔广场,攻城战 等等
+    TaskTab = 1,
+    ---组队
+    TeamTab = 2,
 }
 
+---ESkillCdType
 ---@class ESkillCdType
 ESkillCdType = {
-    CommonCd = enum(1), --公共cd
-    BaseCd = enum(2), --基础cd
-    GroupCd = enum(3), --组cd
+    ---公共cd
+    CommonCd = enum(1),
+    ---基础cd
+    BaseCd = enum(2),
+    ---组cd
+    GroupCd = enum(3),
 }
 
----@class EAccDaysState @累计充值天数奖励
+---累计充值天数奖励
+---@class EAccDaysState
 EAccDaysState = {
-    CanGet = enum(1), --可以领取
-    NotReach = enum(2), --天数未达到
-    Geted = enum(3), --已领取 
+    ---可以领取
+    CanGet = enum(1),
+    ---天数未达到
+    NotReach = enum(2),
+    ---已领取
+    Geted = enum(3),
 }
 ---@class EGrade
 EGrade = {
@@ -2847,16 +3982,25 @@ EGrade = {
 }
 ---@class EVipBuy
 EVipBuyType = {
-    BloodOrDemon = enum(1), ---血色/恶魔购买次数
+    ---血色/恶魔购买次数
+    BloodOrDemon = enum(1),
 }
+---EBloodTaskType
 ---@class EBloodTaskType
 EBloodTaskType = {
+    ---无
     None = enum(0),
+    ---桥上战斗1
     Fighting_monsters_on_bridge1 = enum(1),
+    ---桥上战斗2
     Fighting_monsters_on_bridge2 = enum(2),
+    ---桥上战斗3
     Fighting_monsters_on_bridge3 = enum(3),
+    ---城上战斗
     Fighting_monsters_on_city = enum(4),
+    ---拾取武器
     PickWeapon = enum(5),
+    ---给予任务
     GiveTask = enum(6),
 }
 
@@ -2868,55 +4012,101 @@ EBossBtnPath = {
     [EBossActivityType.WorldBoss] = "Toggles/BtnWorld",
 }
 
----@class EServerState @1新服，2畅通，3爆满，4维护，5隐藏)
+---1新服，2畅通，3爆满，4维护，5隐藏)
+---@class EServerState
 EServerState = {
-    New = enum(1), ---新服
-    Fluency = enum(2), ---流畅
-    Crowd = enum(3), ---爆满
-    Maintain = enum(4), ---维护
-    NotShow = enum(5), ---不显示
-    OutOfDate = enum(6), --过期，和4一样的效果
-    Close = enum(7), --关闭，和4一样的效果
-    Clear = enum(8), --测试清档，和4一样的效果
+    ---新服
+    New = enum(1),
+    ---流畅
+    Fluency = enum(2),
+    ---爆满
+    Crowd = enum(3),
+    ---维护
+    Maintain = enum(4),
+    ---不显示
+    NotShow = enum(5),
+    ---过期，和4一样的效果
+    OutOfDate = enum(6),
+    ---关闭，和4一样的效果
+    Close = enum(7),
+    ---测试清档，和4一样的效果
+    Clear = enum(8),
+    ---预注册功能，强制显示区服，不进入最近登录和推荐服
+    PreRegister = enum(9),
+}
+
+---区服特殊类型枚举
+---@class EServerSpecType
+EServerSpecType = {
+    ---无特殊类型
+    None = enum(0),
+    ---未开服但强制显示区服,暂时不用。
+    OpenServer = enum(-1),
 }
 
 --- 1：战盟boss  2：攻城战  3：战盟   4：世界上架   5：系统上架  6：战盟流拍
 ---@class ETradelineWay
 ETradelineWay = {
+    ---联盟BOSS
     UnionBoss = 1,
+    ---攻城
     AtkCity = 2,
+    ---联盟
     Union = 3,
+    ---世界
     World = 4,
+    ---系统
     System = 5,
+    ---联盟抛投
     UnionThrow = 6,
 }
 
+---ETradelineItemShelve
 ---@class ETradelineItemShelve
 ETradelineItemShelve = {
-    Tradeline = 1, --世界交易行
-    UnionTrade = 2, --战盟交易行
+    ---世界交易行
+    Tradeline = 1,
+    ---战盟交易行
+    UnionTrade = 2,
 
 }
 
+---ENpcListOpenPanelType
+---@class ENpcListOpenPanelType
 ENpcListOpenPanelType = {
+    ---NPC商店
     NpcShop = "UINpcShopPanel",
+    ---NPC回收
     NpcRecycle = "UIRecycleItemPanel",
+    ---NPC仓库
     NpcStorage = "UIStoragePanel",
+    ---NPC排行
     NpcRank = "UIRankListPanel"
 }
 
+---ECfgButton
 ---@class ECfgButton
 ECfgButton = {
-    CloseTips = 0, --取消
-    UseItem = 1, --使用
-    Recycle = 2, --回收
-    Wear = 3, --穿戴
-    Intensify = 4, --强化
-    PutAway = 5, --上架
-    Compound = 6, --合成
-    Split = 7, --拆分
-    BatchUse = 8, --批量使用20个
-    Destroy = 9, --摧毁
+    ---取消
+    CloseTips = 0,
+    ---使用
+    UseItem = 1,
+    ---回收
+    Recycle = 2,
+    ---穿戴
+    Wear = 3,
+    ---强化
+    Intensify = 4,
+    ---上架
+    PutAway = 5,
+    ---合成
+    Compound = 6,
+    ---拆分
+    Split = 7,
+    ---批量使用20个
+    BatchUse = 8,
+    ---摧毁
+    Destroy = 9,
 }
 
 ---@class ECfgButtonStr
@@ -2933,80 +4123,134 @@ ECfgButtonStr = {
     [ECfgButton.Destroy] = "摧毁",
 }
 
+---ECfgAttType
 ---@class ECfgAttType
 ECfgAttType = {
-    BaseAttInfo = 1, --一级属性
-    SenAttInfo = 2, --二级属性
-    ThrAttInfo = 3, --三级属性
-    WordAttInfo = 4, --词条属性
-    GMAttInfo = 5, --脚本属性
+    ---一级属性
+    BaseAttInfo = 1,
+    ---二级属性
+    SenAttInfo = 2,
+    ---三级属性
+    ThrAttInfo = 3,
+    ---词条属性
+    WordAttInfo = 4,
+    ---脚本属性
+    GMAttInfo = 5,
 }
 
+---EGlobalColorType
 ---@class EGlobalColorType
 EGlobalColorType = {
+    ---未激活提示颜色
     UnactivatedTipsColor = enum(1),
+    ---已激活提示颜色
     ActivatedTipsColor = enum(2),
 }
 
 EPreLoadOthers.SpriteItem = "SpriteItem"
 
---EColor = {
---    [1] = "#FFFFFF",
---    [2] = "#5DE367",
---    [3] = "#0000FF",
---    [4] = "#A020F0",
---    [5] = "#FFFF00",
---    [6] = "#FFA500",
---    [7] = "#FF5047",
---    [8] = "#9F9F9F",
---}
+---EColor = {
+---    [1] = "#FFFFFF",
+---    [2] = "#5DE367",
+---    [3] = "#0000FF",
+---    [4] = "#A020F0",
+---    [5] = "#FFFF00",
+---    [6] = "#FFA500",
+---    [7] = "#FF5047",
+---    [8] = "#9F9F9F",
+---}
+---@class EAutoFightErrorTip
 EAutoFightErrorTip = {
+    ---可以挂机
     OK = "可以攻击",
+    ---安全区无法挂机
     SafeArea = "安全区无法挂机",
+    ---狼魂平台无法挂机
     InBindWolfSoulPlatform = "绑定神狼护台无法挂机",
+    ---需要武器才能挂机
     NeedWeapon = '请穿戴一把武器'
 }
 
+---EModelPart
 ---@class EModelPart
 EModelPart = {
+    ---护臂
     Armband = enum(1),
+    ---护甲
     Armour = enum(2),
+    ---斧头
     Axe = enum(3),
+    ---书籍
     Book = enum(4),
+    ---鞋子
     Shoes = enum(5),
+    ---弓
     Bow = enum(6),
+    ---弩
     Crossbow = enum(7),
+    ---耳环
     Earrings = enum(8),
+    ---手套
     Gloves = enum(9),
+    ---时装
     Avatar = enum(10),
+    ---头盔
     Helmet = enum(11),
+    ---狼牙棒
     WolfTeethStick = enum(12),
+    ---坐骑
     Mount = enum(13),
+    ---项链
     Necklace = enum(14),
+    ---裤子
     Pants = enum(15),
+    ---戒指
     Ring = enum(16),
+    ---影子
     Shadow = enum(17),
+    ---盾牌
     Shield = enum(18),
+    ---长矛
     Spear = enum(19),
+    ---未用法杖
     UnusedScepter = enum(20),
+    ---匕首
     Knife = enum(21),
+    ---翅膀
     Wings = enum(22),
+    ---身体骨骼
     BodySkeleton = enum(23),
+    ---道具
     ItemProps = enum(24),
+    ---货币
     Currency = enum(25),
+    ---单手剑
     OneHandedSword = enum(101),
+    ---双手剑
     Zweihander = enum(102),
+    ---单手斧
     SingleHandedAxe = enum(103),
+    ---双手斧
     TwoHandedAxe = enum(104),
+    ---单手法杖
     SingleCane = enum(105),
+    ---双手法杖
     TwoHandedCane = enum(106),
+    ---权杖
     Scepter = enum(111),
+    ---弓弩袋
     BowAndArrowBag = enum(114),
+    ---弩袋
     CrossbowBag = enum(115),
+    ---称号
     Title = enum(116),
+    ---战矛
     SpearOfWar = enum(117),
+    ---鹤嘴矛
     CraneMouthSpear = enum(119),
+    ---守护装备
     GuardianEquipment = enum(201),
+    ---神器
     Artifact = enum(220),
 }
 ---@class EModelPartName
@@ -3052,37 +4296,56 @@ EModelPartName = {
     [EModelPart.Artifact] = '神器',
 }
 
+---ERoadOfKingTask
 ---@class ERoadOfKingTask
 ERoadOfKingTask = {
-    Geted = enum(0), --已领取
-    NotFinished = enum(), --未完成
-    CanGet = enum(), --未领取 
+    ---已领取
+    Geted = enum(0),
+    ---未完成
+    NotFinished = enum(),
+    ---未领取
+    CanGet = enum(),
 }
 
+---ERoadOfKingGroup
 ---@class ERoadOfKingGroup
 ERoadOfKingGroup = {
     --@-1未解锁 0未完成 1可领取 2 已完成
-    Locked = enum(-1), --未解锁
-    NotFinished = enum(0), --未完成
-    CanGet = enum(), --可领取 
-    Geted = enum(), --已完成 
+    ---未解锁
+    Locked = enum(-1),
+    ---未完成
+    NotFinished = enum(0),
+    ---可领取
+    CanGet = enum(),
+    ---已完成
+    Geted = enum(),
 }
 
+---EAutoTalk
 ---@class EAutoTalk
 EAutoTalk = {
+    ---无
     None = enum(0),
-    AutoTalk = enum(1), --自动对话
+    ---自动对话
+    AutoTalk = enum(1),
 }
 
+---EAutoFight
 ---@class EAutoFight
 EAutoFight = {
+    ---无
     None = enum(0),
-    AutoFight = enum(1), --自动战斗
+    ---自动战斗
+    AutoFight = enum(1),
 }
+---EMapListButtonType
 ---@class EMapListButtonType
 EMapListButtonType = {
+    ---怪物按钮
     MonsterButton = 1,
+    ---NPC按钮
     NpcButton = 2,
+    ---传送点按钮
     PointButton = 3,
 }
 ---@class EMapListButtonStr
@@ -3091,242 +4354,469 @@ EMapListButtonStr = {
     [EMapListButtonType.NpcButton] = "NPC",
     [EMapListButtonType.PointButton] = "传送点",
 }
+---ETakePill
 ---@class ETakePill
 ETakePill = {
+    ---血瓶
     HpPill = enum(1),
+    ---蓝瓶
     MpPill = enum(2),
+    ---盾瓶
     SDPill = enum(3),
 }
----@class EAttType 属性Id
+---属性Id
+---@class EAttType
 EAttType = {
+    ---力量
     strength = enum(1),
+    ---敏捷
     agility = enum(2),
+    ---智力
     intelligence = enum(3),
+    ---体力
     stamina = enum(4),
+    ---指挥
     command = enum(49),
+    ---最大物理攻击
     maxDC = enum(5),
+    ---最小物理攻击
     minDC = enum(6),
+    ---最大魔法攻击
     maxMC = enum(7),
+    ---最小魔法攻击
     minMC = enum(8),
+    ---护甲
     armor = enum(11),
+    ---最大生命值
     maxHP = enum(12),
+    ---最大魔法值
     maxMP = enum(13),
+    ---护盾
     shield = enum(50),
+    ---敏捷存储
     agSto = enum(52),
+    ---超越攻击
     transcendAtk = enum(23),
+    ---闪避率
     missRate = enum(24),
+    ---命中率
     hitRate = enum(25),
+    ---卓越一击概率
     excellentDamageChance = enum(26),
+    ---双倍伤害概率
     doubleDamageChance = enum(27),
+    ---暴击概率
     criticalDamageChance = enum(28),
+    ---伤害增加率
     damageIncreaseRate = enum(29),
+    ---受到伤害减免
     damageReceiveDecrement = enum(30),
+    ---攻击速度
     atkSpeed = enum(35),
+    ---伤害反射
     damageReflex = enum(37),
+    ---伤害吸收
     damageAbsorb = enum(38),
+    ---无法闪避率
     unMissRate = enum(39),
+    ---移动速度
     moveSpeed = enum(43),
+    ---生命增加
     increaseHp = enum(47),
+    ---魔法增加
     increaseMp = enum(48),
+    ---护盾增加率
     sdIncreaseRate = enum(51),
+    ---敏捷增加率
     agIncreaseRate = enum(53),
+    ---击杀恢复生命
     killRestoreHP = enum(54),
+    ---击杀恢复魔法
     killRestoreMp = enum(55),
+    ---等级物理攻击
     levelDc = enum(56),
+    ---等级魔法攻击
     levelMC = enum(57),
+    ---PVE命中加成
     pvehitRateBonus = enum(58),
+    ---闪避率加成
     missRateBonus = enum(59),
+    ---PVP攻击率
     pvpattackRate = enum(60),
+    ---时代比率
     eraRate = enum(61),
+    ---攻击率加成
     attackRateBonus = enum(62),
+    ---时代比率加成
     eraRateBonus = enum(63),
+    ---伤害加成
     damageBonus = enum(64),
+    ---伤害减免加成
     damageReductionBonus = enum(65),
+    ---伤害吸收加成
     damageAbsorbBonus = enum(66),
+    ---免费
     free = enum(10000),
+    ---护盾格挡
     shieldParry = enum(67),
+    ---护盾格挡率
     shieldParryfall = enum(68),
+    ---物理攻击加成
     attackBonusDc = enum(69),
+    ---魔法攻击加成
     attackBonusMc = enum(70),
+    ---金币增加
     goldIncrease = enum(71),
+    ---伤害反弹
     damageRebound = enum(72),
+    ---卓越一击抵抗概率
     excellentDamageResistanceChance = enum(73),
+    ---双倍伤害抵抗概率
     doubleDamageResistanceChance = enum(74),
+    ---暴击抵抗概率
     criticalDamageResistanceChance = enum(75),
+    ---无法闪避抵抗率
     unMissResistanceRate = enum(76),
+    ---暴击伤害加成
     criticalDamageAdd = enum(77),
+    ---卓越伤害加成
     excellentDamageAdd = enum(78),
+    ---技能伤害加成
     skillDamageAdd = enum(79),
+    ---护盾加成
     sdAdd = enum(80),
+    ---敏捷加成
     agAdd = enum(81),
+    ---技能伤害
     skillDamage = enum(82),
+    ---攻击增加魔法
     attackIncreaseMc = enum(83),
+    ---动画速度
     AniSpeed = enum(84),
+    ---冷却缩减
     CDReduce = enum(85),
+    ---伤害率
     damageRate = enum(86),
+    ---伤害率降低
     damageRateDecrement = enum(87),
+    ---超越攻击降低
     transcendAtkReduce = enum(88),
+    ---最终伤害率
     finalDamageRate = enum(89),
+    ---最终伤害率降低
     finalDamageRateDecrement = enum(90),
+    ---暴击伤害加成
     criticalDamageBonus = enum(91),
+    ---暴击减免加成
     criticalDamageReducationBonus = enum(92),
+    ---暴击伤害降低
     criticalDamageReduce = enum(93),
+    ---卓越伤害加成
     excellentDamageBonus = enum(94),
+    ---卓越减免加成
     excellentDamageReducationBonus = enum(95),
+    ---卓越伤害降低
     excellentDamageReduce = enum(96),
+    ---暴击概率
     criticalStrikeChance = enum(97),
+    ---暴击抵抗概率
     criticalStrikeResistanceChance = enum(98),
+    ---暴击加成
     criticalStrikeBonus = enum(99),
+    ---暴击减免加成
     criticalStrikeReducationBonus = enum(100),
+    ---暴击增加
     criticalStrikeAdd = enum(101),
+    ---暴击降低
     criticalStrikeReduce = enum(102),
+    ---致命一击概率
     deadlyStrikeChance = enum(103),
+    ---致命一击抵抗概率
     deadlyStrikeResistanceChance = enum(104),
+    ---致命一击加成
     deadlyStrikeBonus = enum(105),
+    ---致命减免加成
     deadlyStrikeReducationBonus = enum(106),
+    ---致命一击增加
     deadlyStrikeAdd = enum(107),
+    ---致命一击降低
     deadlyStrikeReduce = enum(108),
+    ---双倍伤害加成
     doubleDamageBonus = enum(109),
+    ---双倍伤害减免加成
     doubleDamageReducationBonus = enum(110),
+    ---双倍伤害增加
     doubleDamageAdd = enum(111),
+    ---双倍伤害降低
     doubleDamageReduce = enum(112),
+    ---三倍伤害概率
     tripleDamageChance = enum(113),
+    ---三倍伤害抵抗概率
     tripleDamageResistanceChance = enum(114),
+    ---三倍伤害加成
     tripleDamageBonus = enum(115),
+    ---三倍伤害减免加成
     tripleDamageReducationBonus = enum(116),
+    ---三倍伤害增加
     tripleDamageAdd = enum(117),
+    ---三倍伤害降低
     tripleDamageReduce = enum(118),
+    ---伤害反射减免
     damageReflexReducation = enum(119),
+    ---伤害反射增加
     damageReflexAdd = enum(120),
+    ---伤害反射降低
     damageReflexReduce = enum(121),
+    ---闪避率
     DodgeRate = enum(122),
+    ---PVP伤害增加
     pvpDamageAdd = enum(123),
+    ---PVP伤害减少
     pvpDamageReduce = enum(124),
+    ---PVE伤害增加
     pveDamageAdd = enum(125),
+    ---PVE伤害减少
     pveDamageReduce = enum(126),
+    ---剑类伤害加成
     swordDamageBonus = enum(127),
+    ---剑类伤害减免加成
     swordDamageReducationBonus = enum(128),
+    ---大师伤害加成
     masterDamageBonus = enum(129),
+    ---大师伤害减免加成
     masterDamageReducationBonus = enum(130),
+    ---弓手伤害加成
     ArcherDamageBonus = enum(131),
+    ---弓手伤害减免加成
     ArcherDamageReducationBonus = enum(132),
+    ---护盾忽视率
     SDIgnoreRate = enum(133),
+    ---技能伤害减免加成
     skillDamageReducationBonus = enum(134),
+    ---固定伤害增加
     fixedDamageAdd = enum(135),
+    ---固定伤害减少
     fixedDamageReduce = enum(136),
+    ---PVE固定伤害增加
     pveFixedDamageAdd = enum(137),
+    ---PVE固定伤害减少
     pveFixedDamageReduce = enum(138),
+    ---PVP固定伤害增加
     pvpFixedDamageAdd = enum(139),
+    ---PVP固定伤害减少
     pvpFixedDamageReduce = enum(140),
+    ---燃烧伤害
     burn = enum(141),
+    ---中毒伤害
     poison = enum(142),
+    ---流血伤害
     bleed = enum(143),
+    ---治疗强化
     treatmentStrengthen = enum(144),
+    ---回复强化
     replyStrengthen = enum(145),
+    ---燃烧加深
     burnDeepen = enum(146),
+    ---中毒加深
     poisonDeepen = enum(147),
+    ---流血加深
     bleedDeepen = enum(148),
+    ---治疗削弱
     treatmentWeaken = enum(149),
+    ---回复削弱
     replyWeaken = enum(150),
+    ---伙伴冷却缩减
     partnerCDReduce = enum(151),
+    ---伙伴伤害率
     partnerDamageRate = enum(152),
+    ---等级生命上限增加
     increaseLevelMaxHp = enum(153),
+    ---经验增加
     increaseExperience = enum(154),
+    ---经验减少
     decreaseExperience = enum(155),
+    ---移速
     shiftSpeed = enum(156),
+    ---攻击加成
     attackBonus = enum(157),
+    ---装备攻击加成
     equipAttackBonus = enum(158),
+    ---装备基础攻击加成
     equipBasicAttackBonus = enum(159),
+    ---装备强化攻击加成
     equipStrengthAttackBonus = enum(160),
+    ---装备追加攻击加成
     equipAppendAttackBonus = enum(161),
+    ---装备卓越攻击加成
     equipExcellenceAttackBonus = enum(162),
+    ---饰品攻击加成
     ornamentsAttackBonus = enum(163),
+    ---饰品基础攻击加成
     ornamentsBasicAttackBonus = enum(164),
+    ---饰品强化攻击加成
     ornamentsStrengthAttackBonus = enum(165),
+    ---饰品追加攻击加成
     ornamentsAppendAttackBonus = enum(166),
+    ---翅膀攻击加成
     wingAttackBonus = enum(167),
+    ---翅膀基础攻击加成
     wingBasicAttackBonus = enum(168),
+    ---翅膀强化攻击加成
     wingStrengthAttackBonus = enum(169),
+    ---翅膀追加攻击加成
     wingAppendAttackBonus = enum(170),
+    ---伙伴追加攻击加成
     partnerAppendAttackBonus = enum(171),
+    ---基础攻击加成
     basicAttackBonus = enum(172),
+    ---护甲加成
     armorBonus = enum(173),
+    ---装备护甲加成
     equipArmorBouns = enum(174),
+    ---装备基础护甲加成
     equipBasicArmorBouns = enum(175),
+    ---装备强化护甲加成
     equipStrengthArmorBouns = enum(176),
+    ---装备追加护甲加成
     equipAppendArmorBouns = enum(177),
+    ---装备卓越护甲加成
     equipExcellenceArmorBouns = enum(178),
+    ---饰品护甲加成
     ornamentsArmorBonus = enum(179),
+    ---饰品基础护甲加成
     ornamentsBasicArmorBonus = enum(180),
+    ---饰品强化护甲加成
     ornamentsStrengthArmorBonus = enum(181),
+    ---饰品追加护甲加成
     ornamentsAppendArmorBonus = enum(182),
+    ---翅膀护甲加成
     wingArmorBonus = enum(183),
+    ---翅膀基础护甲加成
     wingBasicArmorBonus = enum(184),
+    ---翅膀强化护甲加成
     wingStrengthArmorBonus = enum(185),
+    ---翅膀追加护甲加成
     wingAppendArmorBonus = enum(186),
+    ---伙伴护甲加成
     partnerArmorBonus = enum(187),
+    ---基础护甲加成
     basicArmorBonus = enum(188),
+    ---生命上限加成
     maxHPBonus = enum(189),
+    ---装备生命上限加成
     equipMaxHPBouns = enum(190),
+    ---装备基础生命上限加成
     equipBasicMaxHPBouns = enum(191),
+    ---装备强化生命上限加成
     equipStrengthMaxHPBouns = enum(192),
+    ---装备追加生命上限加成
     equipAppendMaxHPBouns = enum(193),
+    ---装备卓越生命上限加成
     equipExcellenceMaxHPBouns = enum(194),
+    ---饰品生命上限加成
     ornamentsMaxHPBonus = enum(195),
+    ---饰品基础生命上限加成
     ornamentsBasicMaxHPBonus = enum(196),
+    ---饰品强化生命上限加成
     ornamentsStrengthMaxHPBonus = enum(197),
+    ---饰品追加生命上限加成
     ornamentsAppendMaxHPBonus = enum(198),
+    ---翅膀生命上限加成
     wingMaxHPBonus = enum(199),
+    ---翅膀基础生命上限加成
     wingBasicMaxHPBonus = enum(200),
+    ---翅膀强化生命上限加成
     wingStrengthMaxHPBonus = enum(201),
+    ---翅膀追加生命上限加成
     wingAppendMaxHPBonus = enum(202),
+    ---伙伴生命上限加成
     partnerMaxHPBonus = enum(203),
+    ---基础生命上限加成
     basicMaxHPBonus = enum(204),
+    ---最大魔法攻击加成
     maxMCBonus = enum(205),
+    ---最小魔法攻击加成
     minMCBonus = enum(206),
+    ---装备攻击属性加成
     equipAttBonus = enum(207),
+    ---攻击增加等级
     attackAddLevel = enum(208),
+    ---护甲增加等级
     armorAddLevel = enum(209),
+    ---生命增加等级
     maxHPAddLevel = enum(210),
+    ---魔剑伤害加成
     spellswordDamageBonus = enum(211),
+    ---魔剑伤害减免加成
     spellswordDamageReducationBonus = enum(212),
+    ---全职业伤害加成
     allCareerDamageBonus = enum(213),
+    ---全职业伤害减免加成
     allCareerDamageReducationBonus = enum(214),
+    ---BOSS伤害加成
     bossDamageBonus = enum(215),
+    ---金怪伤害加成
     goldMonsterDamageBonus = enum(216),
+    ---小怪伤害加成
     smallMonsterDamageBonus = enum(217),
+    ---魔法上限加成
     maxMPBonus = enum(218),
+    ---宝石掉率增加
     stoneDropRateIncrease = enum(219),
+    ---卓越装备掉率增加
     exEquipDropRateIncrease = enum(220),
+    ---5秒生命加成
     HPBonus5s = enum(221),
+    ---双倍掉落
     doubleDrop = enum(222),
+    ---药水加成
     potionBonus = enum(223),
+    ---通用最大物理攻击
     generalMaxDC = enum(224),
+    ---通用最小物理攻击
     generalMinDC = enum(225),
+    ---通用护甲
     generalArmor = enum(226),
+    ---通用生命上限
     generalMaxHP = enum(227),
+    ---装备最大物理攻击
     equipMaxDC = enum(228),
+    ---装备最小物理攻击
     equipMinDC = enum(229),
+    ---装备护甲
     equipArmor = enum(230),
+    ---装备生命上限
     equipMaxHP = enum(231),
 }
+---EBossPanelType
 ---@class EBossPanelType
 EBossPanelType = {
+    ---金猪BOSS
     GoldBoss = enum(1),
+    ---野外BOSS
     FieldBoss = enum(2),
 }
+---EBossPanelTips
 ---@class EBossPanelTips
 EBossPanelTips = {
+    ---VIP提示
     VipTips = enum(0),
+    ---通用提示
     CommonTips = enum(1),
 }
+---EMountEquipPart
 ---@class EMountEquipPart
 EMountEquipPart = {
+    ---无
     None = enum(0),
-    HelmetPart = enum(1), --头甲
-    FootIronPart = enum(2), --足铁
-    SaddlePart = enum(3), --鞍饰
-    ReinPart = enum(4), --缰绳
+    ---头甲
+    HelmetPart = enum(1),
+    ---足铁
+    FootIronPart = enum(2),
+    ---鞍饰
+    SaddlePart = enum(3),
+    ---缰绳
+    ReinPart = enum(4),
 }
 ---@class EMapAreaStr
 EMapAreaStr = {
@@ -3335,10 +4825,13 @@ EMapAreaStr = {
     [EBehaviour_MapAreaType.Water] = "水中",
     [EBehaviour_MapAreaType.Sky] = "空中",
 }
+---ERuneType
 ---@class ERuneType
 ERuneType = {
-    NotIdentified = enum(0), --未鉴定
-    Identified = enum(1), --已鉴定
+    ---未鉴定
+    NotIdentified = enum(0),
+    ---已鉴定
+    Identified = enum(1),
 }
 
 ---@class RedUseType
@@ -3349,25 +4842,50 @@ RedUseType = {
     CustomUI = "3",
     CustomTemplate = "4",
 }
+---EControlType
 ---@class EControlType
 EControlType = {
-    List = -1, ---列表
-    Normal = 0, ---普通（例如按钮）
+    ---列表
+    List = -1,
+    ---普通（例如按钮）
+    Normal = 0,
 }
 
+---ESkillInfoType
 ---@class ESkillInfoType
 ESkillInfoType = {
-    Normal = 0, --角色技能
-    Mount = 1, --坐骑技能
+    ---角色技能
+    Normal = 0,
+    ---坐骑技能
+    Mount = 1,
 }
 
 ---随机传送类型
+--- 正常移动("0"),
+---    客户端点不存在("1"),
+---    客户端时间大于服务器端时间("2"),
+---    前后端时间相差太大("3"),
+---    目标点不存在("4"),
+---    CAN_NOT_STAND("5"),
+---    CAN_NOT_MOVE("6"),
+---    CAN_NOT_WALK("7"),
+---    步行步子太大("8"),
+---    CD_中("9"),
+---    随机传送石改变位置("10"),
+---
+---    状态BUFF的效果("11");
+---@class EChangePosType
 EChangePosType = {
-    ByAttack = '0', ---被攻击
-    DistTooLarge = "8", --移动距离过大
-    Error = "9", --速度异常
-    ByRandomStone = '10', ---使用随机传送石
-    AtkMove = '11', ---击退效果
+    ---被攻击
+    ByAttack = '0',
+    ---移动距离过大
+    DistTooLarge = "8",
+    ---速度异常
+    Error = "9",
+    ---使用随机传送石
+    ByRandomStone = '10',
+    ---击退效果
+    AtkMove = '11',
 }
 ---怪物品阶名
 ---@class EMonsterGradeName
@@ -3388,28 +4906,43 @@ EMonsterGradeNameColor = {
 ---血条进度类型
 ---@class EHpProgressType
 EHpProgressType = {
-    NotShow = enum(0), --不显示
-    Percentage = enum(1), --百分比
-    Number = enum(2), --数值
+    ---不显示
+    NotShow = enum(0),
+    ---百分比
+    Percentage = enum(1),
+    ---数值
+    Number = enum(2),
 }
 
 ---挂机类型
+---@class EHookType
 EHookType = {
-    NotCanHook = enum(0), --不开启自动挂机
-    CanHook = enum(1), --开启自动挂机
+    ---不开启自动挂机
+    NotCanHook = enum(0),
+    ---开启自动挂机
+    CanHook = enum(1),
 }
 
+---EActUnlockType
+---@class EActUnlockType
 EActUnlockType = {
+    ---默认解锁
     DefaultUnLock = 1,
+    ---职业解锁
     CareerUnLock = 2,
+    ---强化解锁
     StrengthUnLock = 3,
 }
 
 ---背包类型
+---@class EBagType
 EBagType = {
-    None = enum(0), ---只打开背包
-    Equip = enum(1), ---打开背包装备
-    Recover = enum(2), ---打开背包回收
+    ---只打开背包
+    None = enum(0),
+    ---打开背包装备
+    Equip = enum(1),
+    ---打开背包回收
+    Recover = enum(2),
 }
 
 ---@class AudioGroup
@@ -3419,14 +4952,22 @@ AudioGroup = {
     GMSound = 3,
     BGSound = 4,
 }
+---ESceneShowType
 ---@class ESceneShowType
 ESceneShowType = {
+    ---隐藏玩家模型
     HidePlayerModel = enum(1),
+    ---隐藏玩家技能特效
     HidePlayerSkillEffect = enum(),
+    ---隐藏玩家翅膀
     HidePlayerWing = enum(),
+    ---隐藏玩家脚印
     HidePlayerFootprint = enum(),
+    ---隐藏伙伴模型
     HidePartnerModel = enum(),
+    ---隐藏伙伴特效
     HidePartnerEffect = enum(),
+    ---隐藏自己翅膀
     HideMeWing = enum(),
 }
 
@@ -3437,79 +4978,129 @@ ESceneQJ5VoiceType = {
     Voice = enum(3),
 }
 
+---ESettingType
 ---@class ESettingType
 ESettingType = {
+    ---基础开关
     BasicTog = enum(0),
+    ---显示开关
     DiaplayTog = enum(1),
+    ---兑换码开关
     RedeemCodeTog = enum(2),
+    ---挂机开关
     OnHookTog = enum(3),
+    ---拾取开关
     PickUpTog = enum(4),
+    ---邀请开关
     InViteTog = enum(5),
 }
+---ETickModel
 ---@class ETickModel
 ETickModel = {
+    ---固定
     fixed = enum(1),
+    ---移动
     Move = enum(2),
 }
 
 ---@class BoxPrivilege
---盒子特权类型
+---盒子特权类型
+---@class EBoxPrivilege
 EBoxPrivilege = {
-    Privilege = enum(1), --盒子登陆专属特权
-    DayGift = enum(2), --每日礼包
+    ---盒子登陆专属特权
+    Privilege = enum(1),
+    ---每日礼包
+    DayGift = enum(2),
 }
 
+---EScreen
 ---@class EScreen
 EScreen = {
+    ---是
     True = enum(1),
+    ---否
     False = enum(2),
 }
 
+---ELeanTweenType
 ---@class ELeanTweenType
 ELeanTweenType = {
+    ---不使用
     notUse = enum(0), linear = enum(), easeOutQuad = enum(), easeInQuad = enum(), easeInOutQuad = enum(), easeInCubic = enum(), easeOutCubic = enum(),
+    ---缓动inoutcubic
     easeInOutCubic = enum(), easeInQuart = enum(), easeOutQuart = enum(), easeInOutQuart = enum(),
+    ---缓动inquint
     easeInQuint = enum(), easeOutQuint = enum(), easeInOutQuint = enum(), easeInSine = enum(), easeOutSine = enum(), easeInOutSine = enum(), easeInExpo = enum(),
+    ---缓动outexpo
     easeOutExpo = enum(), easeInOutExpo = enum(), easeInCirc = enum(), easeOutCirc = enum(), easeInOutCirc = enum(), easeInBounce = enum(), easeOutBounce = enum(),
+    ---缓动inoutbounce
     easeInOutBounce = enum(), easeInBack = enum(), easeOutBack = enum(), easeInOutBack = enum(), easeInElastic = enum(), easeOutElastic = enum(), easeInOutElastic = enum(),
+    ---缓动spring
     easeSpring = enum(), easeShake = enum(), punch = enum(), once = enum(), clamp = enum(), pingPong = enum(), animationCurve = enum()
 }
+---ELeanRotateType
 ---@class ELeanRotateType
 ELeanRotateType = {
+    ---不超过360度
     NeverBeyond360 = enum(0),
+    ---可超过360度
     CanBeyond360 = enum(),
 }
 
+---ELeanRotateRoundType
 ---@class ELeanRotateRoundType
 ELeanRotateRoundType = {
+    ---绕轴旋转
     RotateAround = enum(0),
+    ---本地绕轴旋转
     RotateAroundLocal = enum(),
 }
 
+---EImageType
 ---@class EImageType
 EImageType = {
+    ---简单
     Simple = 0,
+    ---切片
     Sliced = 1,
+    ---平铺
     Tiled = 2,
+    ---填充
     Filled = 3,
 }
+---EImageFillMethod
+---@class EImageFillMethod
 EImageFillMethod = {
+    ---水平
     Horizontal = 0,
+    ---垂直
     Vertical = 1,
+    ---90度扇形
     Radial90 = 2,
+    ---180度扇形
     Radial180 = 3,
+    ---360度扇形
     Radial360 = 4,
 }
 
+---EShortKey
 ---@class EShortKey
 EShortKey = {
+    ---无
     None = "EShortKey_0",
+    ---加载脚本
     LoadScript = "EShortKey_1",
+    ---热修复PC引擎
     HotfixPCEngine = "EShortKey_2",
+    ---显示地图网格
     ShowMapGrid = "EShortKey_3",
+    ---清空背包
     ClearBag = "EShortKey_4",
+    ---切换地图
     ChangeMap = "EShortKey_5",
+    ---打开NPC编辑器面板
     OpenNpcEditorPanels = "EShortKey_8",
+    ---清除引导
     ClearGuide = "EShortKey_9",
 }
 
@@ -3542,46 +5133,83 @@ KeyTb = {
     [KeyCode.Z] = 'z',
 }
 
+---EHeadPart
 ---@class EHeadPart
 EHeadPart = {
+    ---无
     None = enum(0),
+    ---血量部件
     HP_Part = enum(1),
+    ---联盟名部件
     Union_Name_Part = enum(2),
+    ---名字部件
     Name_Part = enum(3),
+    ---VIP名部件
     Vip_Name_Part = enum(4),
+    ---PK等级部件
     Pk_Level_Part = enum(5),
+    ---等级图标部件
     Level_Icon_Part = enum(6),
+    ---挂机保护部件
     Hook_Part = enum(7),
+    ---称号标签部件
     Lab_Title_Part = enum(8),
+    ---称号部件
     Title_Part = enum(9),
+    ---图标部件
     Icon_Part = enum(10),
+    ---对话部件
     Talk_Part = enum(11),
+    ---对话名部件
     Talk_Name_Part = enum(12),
+    ---摆摊名部件
     StallName_Part = enum(13),
 }
 
+---EHeadType_RenderQueue
+---@class EHeadType_RenderQueue
 EHeadType_RenderQueue = {
+    ---无
     None = enum(0),
+    ---自己
     Me = enum(),
+    ---物品
     Item = enum(),
+    ---NPC
     NPC =enum(),
+    ---玩家
     Player = enum(),
+    ---宠物
     Pet = enum(),
+    ---商人
     Seller = enum(),
+    ---怪物
     Monster = enum(),
+    ---其他
     Other =enum(),
 }
+---EHeadType_IgnoreScale
 ---@class EHeadType_IgnoreScale
 EHeadType_IgnoreScale = {
+    ---无
     None = enum(0),
+    ---自己
     Me = enum(),
+    ---玩家
     Player = enum(),
+    ---怪物
     Monster = enum(),
+    ---NPC
     Npc = enum(),
+    ---宠物
     Pet = enum(),
+    ---物品
     Item = enum(),
+    ---商人
     Seller = enum(),
+    ---护卫宠物
     GuardPet = enum(),
+    ---伙伴
     Partner = enum(),
 }
 
@@ -3636,47 +5264,82 @@ EPreLoadHeadPart = {
     [EHeadPart.StallName_Part] = EPreLoadOthers.StallName_Part,
 }
 
+---ESpriteMeshType
 ---@class ESpriteMeshType
 ESpriteMeshType = {
+    ---图集
     Atlas = enum(0),
+    ---精灵
     Sprite = enum(1),
 }
 
 --51_010 表示51模型id  01表示动作  0表示方向
 
 
+---EAction_2D
+---@class EAction_2D
 EAction_2D = {
+    ---无
     None = "",
+    ---待机
     idle = "01",
+    ---待机1
     idle1 = "30",
     ---武器：安全区都用02（包括idle的时候，看不见），非安全区idle的时候用01，walk或者run的时候用03
     walk = "02",
+    ---跑步
     run = "02",
+    ---非安全区行走
     walkNotSafeArea = "02",
+    ---攻击
     attack = "04",
+    ---攻击01
     attack01 = "04",
+    ---攻击1
     attack1 = "05",
+    ---攻击2
     attack2 = "06",
+    ---攻击3
     attack3 = "07",
+    ---攻击4
     attack4 = "08",
+    ---攻击5
     attack5 = "09",
+    ---死亡
     die = "10",
+    ---攻击6
     attack6 = "11",
+    ---攻击7
     attack7 = "12",
+    ---攻击8
     attack8 = "13",
+    ---攻击9
     attack9 = "14",
+    ---攻击10
     attack10 = "15",
+    ---攻击11
     attack11 = "16",
+    ---攻击12
     attack12 = "17",
+    ---攻击13
     attack13 = "18",
+    ---攻击14
     attack14 = "19",
+    ---攻击15
     attack15 = "20",
+    ---攻击16
     attack16 = "21",
+    ---攻击17
     attack17 = "22",
+    ---攻击18
     attack18 = "23",
+    ---攻击19
     attack19 = "24",
+    ---坐下
     sit = "",
+    ---全体坐下
     allSit = "",
+    ---受击
     beattack = "",
 }
 EAction_To_ACTION2D = {
@@ -3697,51 +5360,82 @@ EAction_To_ACTION2D = {
 }
 
 E2DDepthType = {
+    ---最深
     Deepest = Vector3(0, 5, 0),
+    ---普通
     Normal = Vector3(0, 10, 0),
+    ---最近
     Closest = Vector3(0, 15, 0),
 }
+---EReceiveFinishTask
 ---@class EReceiveFinishTask
 EReceiveFinishTask = {
-    Receive = enum(1),---1:自动完成任务并自动获取奖励
-    NoReceive = enum(2), ---2:手动领取奖励完成任务
+    ---1:自动完成任务并自动获取奖励
+    Receive = enum(1),
+    ---2:手动领取奖励完成任务
+    NoReceive = enum(2),
 }
 
+---EHeadPartOfUnionNamePos
 ---@class EHeadPartOfUnionNamePos
 EHeadPartOfUnionNamePos = {
+    ---顶部
     Top = enum(0),
+    ---底部
     Bottom = enum(),
+    ---左侧
     Left = enum(),
+    ---右侧
     Right = enum(),
 }
 
 
+---ERoleHeadSprite
 ---@class ERoleHeadSprite
 ERoleHeadSprite = {
-    HP_Green = enum(1),--绿色血条
-    HP_Red = enum(2),--红色血条
-    HP_Bg = enum(3),--血条背景
-    Progress_Bar = enum(4),--进度条
-    Progress_BarBg = enum(5),--进度条背景
+    ---绿色血条
+    HP_Green = enum(1),
+    ---红色血条
+    HP_Red = enum(2),
+    ---血条背景
+    HP_Bg = enum(3),
+    ---进度条
+    Progress_Bar = enum(4),
+    ---进度条背景
+    Progress_BarBg = enum(5),
 }
+---EPickUpGrade
 ---@class EPickUpGrade
 EPickUpGrade = {
-    All = enum(0),--无限制
-    Blue = enum(901),--蓝色
-    Green = enum(902),--绿色
-    Purple = enum(903),--紫色
-    Orange = enum(904),--橙色
-    Red = enum(905),--红色
-    Pink = enum(906),--粉色
-    Multicolor = enum(907),--彩色
+    ---无限制
+    All = enum(0),
+    ---蓝色
+    Blue = enum(901),
+    ---绿色
+    Green = enum(902),
+    ---紫色
+    Purple = enum(903),
+    ---橙色
+    Orange = enum(904),
+    ---红色
+    Red = enum(905),
+    ---粉色
+    Pink = enum(906),
+    ---彩色
+    Multicolor = enum(907),
 }
 
+---EHideDropItemType
 ---@class EHideDropItemType
 EHideDropItemType = {
-    NoHide = enum(0),--不隐藏
-    Model = enum(1),--模型
-    Effect = enum(2),--所有特效
-    NonLightBeamEffect = enum(3),--非光柱特效
+    ---不隐藏
+    NoHide = enum(0),
+    ---模型
+    Model = enum(1),
+    ---所有特效
+    Effect = enum(2),
+    ---非光柱特效
+    NonLightBeamEffect = enum(3),
 }
 
 --- 1-App启动、2-Unity激活、3-加载配置文件、4-读取单服区服列表、5-检查或者下载华佗热更新、6-资源加载、7-资源加载成功、
@@ -3767,4 +5461,63 @@ TickEventType = {
     EnterGameServer = 16,
     EnterGameServerSucceed = 17,
     ExitGame = 18,
+}
+
+---@class ETipsMsy_CustomizeType
+ETipsMsy_CustomizeType = {
+    ---无
+    None = enum(0),
+    ---自定义,爆满，不进入创角
+    CustomizeType = enum(1),
+}
+---@class EHeadPropType_CSLabel
+EHeadPropType_CSLabel = {
+    isSkipGlobalOutlineCondition=enum(0),--开启后，不受SL:SetRoleHeadGlobalOutline()影响，默认关闭
+    Anchor=enum(1),--0:居中 1:左对齐 2:右对齐
+    IsRichText=enum(2),--默认关闭，开启后支持 “<color=#ff0000>安伯</color>亨利”这样的富文本形式
+    Color = enum(3),--字体颜色
+    FontSize = enum(4),--字体大小
+    SpaceX = enum(5),--字体横向间距
+    Text = enum(6),--文本内容
+}
+---@class EHeadPropType_CSSpriteMesh --单贴图+图集的图片对象
+EHeadPropType_CSSpriteMesh=
+{
+    Mat = enum(0),--材质
+    Anchor=enum(1),--0:居中 1:左对齐 2:右对齐
+    FillCount = enum(2),--填充，默认是1，数值0-1
+    Color = enum(3),--颜色值
+}
+
+---@class EHeadPropType_CSMultiLabel 多行文本
+EHeadPropType_CSMultiLabel={
+    Template = enum(0),--模板，CSLabel对象
+    AnchorX=enum(),--0:居中 1:左对齐 2:右对齐
+    AnchorY=enum(),--0:居中 1:左对齐 2:右对齐
+    SpaceX = enum(),--字体横向间距
+    SpaceY = enum(),--字体纵向间距
+    StartCorner = enum(),--0:文本自下往上，1：文本自上往下
+    MaxWidth = enum(),--最大宽度
+    Text = enum(),--文本内容
+}
+---@class EHeadPropType_CSSellerMultiLabel --摆摊头顶文本+底图
+EHeadPropType_CSSellerMultiLabel={
+    Template = enum(0),--文本模板，CSLabel对象
+    SpriteTemplate = enum(),--底图模板，CSSpriteRender对象
+    AnchorX=enum(),--0:居中 1:左对齐 2:右对齐
+    AnchorY=enum(),--0:居中 1:左对齐 2:右对齐
+    SpaceX = enum(),--字体横向间距
+    SpaceY = enum(),--字体纵向间距
+    SpriteSpaceY = enum(),--底图每行间隔
+    StartCorner = enum(),--0:文本自下往上，1：文本自上往下
+    MaxWidth = enum(),--最大宽度
+    Text = enum(),--文本内容
+}
+
+---@class EHeadPropType_CSSpriteRender --单贴图的图片对象
+EHeadPropType_CSSpriteRender={
+    OriginLocalPosition = enum(0),--原始本地位置
+    OriginSize = enum(),--原始大小
+    Anchor=enum(1),--0:居中 1:左对齐 2:右对齐
+    FillCount = enum(2),--填充，默认是1，数值0-1
 }

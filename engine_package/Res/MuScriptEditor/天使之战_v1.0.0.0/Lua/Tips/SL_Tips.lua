@@ -1,6 +1,57 @@
 ---@class SL
 SL = {}
 local this = SL
+this.autoStopScheduleCache = {}
+this.LoginManager = {}
+this.NpcShop = {}
+this.Mail = {}
+this.RoleAtt = {}
+this.Friend = {}
+this.Bag = {}
+this.StoreHouse = {}
+this.Scene = {}
+this.SceneEffect = {}
+this.Time = {}
+this.Equip = {}
+this.MainCamera = {}
+this.Constructor_In = {}
+this.Union = {}
+this.SceneEditorManager = {}
+this.PCSkillInfoMgr = {}
+this.Skill = {}
+this.Role = {}
+this.NetManager_Req = {}
+this.SDKMgr = {}
+this.Main = {}
+this.NetManager = {}
+this.UIManager = {}
+this.UIStaticParameter = {}
+this.Http = {}
+this.GamePlay = {}
+this.LoginInfo = {}
+this.SceneManager = {}
+this.Queue = {}
+this.BtTree = {}
+this.LauncherUI = {}
+this.MapMaskMgr = {}
+this.LeanTween = {}
+this.CSPreScene = {}
+this.SL2D = {}
+this.DropItem = {}
+this.UniWebViewMgr = {}
+this.CreateRoleScene = {}
+this.Head = {}
+this.Map = {}
+this.GM = {}
+this.AutoFight = {}
+this.PCOperation = {}
+this.replaceEngineFunc = {}
+this.modifyPrefabSprite = {}
+this.message = {}
+this.SettingData = {}
+this.Transform = {}
+this.equipVarGetFunc = {}
+
 ---发送 Lua 网络消息
 ---@param msgId number 消息 ID
 ---@param data any 消息数据，会自动进行 json 编码
@@ -8,7 +59,7 @@ function SL:SendLuaNetMsg(msgId, data) end
 
 ---发送通用内置服务器消息请求
 ---@param method MessageDef 枚举
----@param data any 透传给对应 NetManager_Req[method] 的参数,参考MessageDef.lua的语法提示
+---@param data any 数据类型查看MessageDef枚举值的注释
 function SL:SendInnerNetReq(method, data) end
 
 ---注册 Lua 网络消息监听
@@ -23,6 +74,19 @@ function SL:RegisterLuaNetMsg(msgId, func, baseUI) end
 ---@param selfOwner any 所属对象
 function SL:UnRegisterLuaNetMsg(eventId, func, selfOwner) end
 
+---延迟批量处理网络消息
+---@param msgId number 消息 ID
+---@param msgData any 消息数据，会缓存到批量列表中
+---@param delayTime number|nil 延迟时间，nil 或 <= 0 时立即调用。
+---@param handleFunc function 批量处理回调，格式为 handleFunc(owner, msgList, msgId)
+---@param owner any 回调所属对象，必须传
+function SL:DelayHandleNetMsg(msgId, msgData, delayTime, handleFunc, owner) end
+
+---清理延迟批量处理网络消息缓存
+---@param msgId number|nil 消息 ID
+---@param owner any|nil 回调所属对象
+function SL:ClearDelayHandleNetMsg(msgId, owner) end
+
 ---注册 Lua 事件监听
 ---@param eventId any 事件 ID
 ---@param func function 回调函数
@@ -34,6 +98,19 @@ function SL:RegisterLUAEvent(eventId, func, baseUI) end
 ---@param func function 回调函数
 ---@param selfOwner any 所属对象
 function SL:UnRegisterLUAEvent(eventId, func, selfOwner) end
+
+---延迟批量处理 Lua 事件
+---@param eventId any 事件 ID
+---@param delayTime number|nil 延迟时间，nil 或 <= 0 时立即调用
+---@param handleFunc function 批量处理回调，格式为 handleFunc(owner, eventDataList, eventId)
+---@param owner any 回调所属对象，必须传
+---@param ... any 单次事件的可变参数，会按触发次数缓存到批量列表中
+function SL:DelayHandleLuaEvent(eventId, delayTime, handleFunc, owner, ...) end
+
+---清理延迟批量处理 Lua 事件缓存
+---@param eventId any|nil 事件 ID
+---@param owner any|nil 回调所属对象
+function SL:ClearDelayHandleLuaEvent(eventId, owner) end
 
 ---派发 Lua 事件
 ---@param eventID any 事件 ID
@@ -144,7 +221,7 @@ function SL:CfgConvertToNumberArray2D(s) end
 function SL:CfgConvertToNumberArray3D(s) end
 
 ---将配置字符串转换为数字数组 (格式: 1#2#3#4)
----@param s string
+---@param s string 参考格式:1#2#3#4
 ---@return number[]
 function SL:CfgConvertToNumberArray(s) end
 
@@ -232,7 +309,7 @@ function SL:Split(str, delimiter) end
 function SL:GetSimpleNumber(num, places) end
 
 ---将时间秒数格式化为字符串 (天时分 或 时分秒)
----@param time number 秒数
+---@param time number 毫秒
 ---@return string
 function SL:TimeFormatToStr(time) end
 
@@ -255,7 +332,7 @@ function this:HTTPRequestGet(url, httpCB) end
 ---@param head table 请求头，可选
 function this:HTTPRequestPost(url, httpCB, suffix, head) end
 
----将中文文本转换为竖排显示
+---将正常横排显示中文文本转换为竖排显示文本
 ---@param str string @源文本
 ---@return string @竖排文本
 function SL:ChineseToVertical(str) end
@@ -265,12 +342,12 @@ function SL:ChineseToVertical(str) end
 ---@return string @中文大写数字字符串
 function SL:NumberToChinese(num) end
 
----获取数字的高 16 位
+---获取数字的高16位值
 ---@param value number @输入数字
 ---@return number @数字的高16位
 function SL:GetH16Bit(value) end
 
----获取数字的低 16 位
+---获取数字的低16位值
 ---@param value number @输入数字
 ---@return number @数字的低16位
 function SL:GetL16Bit(value) end
@@ -318,29 +395,29 @@ function this:GetPointDistanceSQ(pt1, pt2) end
 ---@return number 两点距离
 function this:GetPointDistance(pt1, pt2) end
 
----计算向量长度
+---计算二维向量长度
 ---@param pt Dot2|Vector2|Vector3  @向量坐标
 ---@return number @长度
 function this:GetPointLength(pt) end
 
----获取向量长度平方
+---获取二维向量长度平方
 ---@param pt Dot2|Vector2|Vector3  @向量坐标
 ---@return number @长度平方
 function this:GetPointLengthSQ(pt) end
 
----获取两个点的中点
+---获取两个二维点的中点坐标
 ---@param pt1 Dot2|Vector2|Vector3 @点1 {x, y}
 ---@param pt2 Dot2|Vector2|Vector3 @点2 {x, y}
 ---@return Dot2  @坐标点
 function this:GetMidPoint(pt1, pt2) end
 
----两点相加
+---两二维点坐标相加
 ---@param pt1 Dot2|Vector2|Vector3 点1 {x, y}
 ---@param pt2 Dot2|Vector2|Vector3 点2 {x, y}
 ---@return Dot2  @坐标点
 function this:GetAddPoint(pt1, pt2) end
 
----两点相减
+---两二维点标相减
 ---@param pt1 Dot2|Vector2|Vector3 点1 {x, y}
 ---@param pt2 Dot2|Vector2|Vector3 点2 {x, y}
 ---@return Dot2  @坐标点
@@ -351,13 +428,13 @@ function this:GetSubPoint(pt1, pt2) end
 ---@return Dot2  @坐标点
 function this:GetNormalizePoint(pt) end
 
----计算两个向量之间的夹角 (弧度)
+---计算两个二维向量之间的夹角 (弧度)
 ---@param pt1 table|Vector2|Vector3 向量1 {x, y}
 ---@param pt2 table|Vector2|Vector3 向量2 {x, y}
 ---@return number 夹角 (弧度)
 function this:GetPointAngle(pt1, pt2) end
 
----计算两个向量之间的夹角 (角度)
+---计算两个二维向量之间的夹角 (角度)
 ---@param pt1 table|Vector2|Vector3 向量1 {x, y}
 ---@param pt2 table|Vector2|Vector3 向量2 {x, y}
 ---@return number 夹角 (度)
@@ -396,6 +473,31 @@ function this:Schedule(selfSche, callDelay, callPerTime, callCount, callback, ..
 ---@return number 定时器 ID
 function this:ScheduleOnce(time, callback, ...) end
 
+---开启自动停止定时器
+---@param owner any 生命周期所属对象，界面关闭时会自动停止
+---@param selfSchedule table|nil 上一次调用返回的定时器句柄，首次调用传 nil
+---@param callDelay number 延迟开始时间 (秒)
+---@param callPerTime number 每次间隔时间 (秒),如果需要每帧调用，填0
+---@param callCount number 执行次数 (-1 为无限次)
+---@param callback function 定时回调函数
+---@param ... any 传递给回调的参数
+---@return table|nil 定时器句柄
+function this:ScheduleAutoStop(owner, selfSchedule, callDelay, callPerTime, callCount, callback, ...) end
+
+---开启自动停止单次定时器
+---@param owner any 生命周期所属对象，界面关闭时会自动停止
+---@param selfSchedule table|nil 上一次调用返回的定时器句柄，首次调用传 nil
+---@param time number 延迟时间 (秒)
+---@param callback function 回调函数
+---@param ... any 传递给回调的参数
+---@return table|nil 定时器句柄
+function this:ScheduleOnceAutoStop(owner, selfSchedule, time, callback, ...) end
+
+---停止自动停止定时器
+---@param owner any 生命周期所属对象
+---@param selfSchedule table|nil 定时器句柄，不传则停止 owner 下所有自动停止定时器
+function this:UnScheduleAutoStop(owner, selfSchedule) end
+
 ---停止定时器
 ---@param scheduleID number 定时器 ID,SL:Schedule或者SL:ScheduleOnce的返回值
 function this:UnSchedule(scheduleID) end
@@ -403,7 +505,7 @@ function this:UnSchedule(scheduleID) end
 ---开启无限循环定时器
 ---@param time number 间隔时间 (秒)
 ---@param func function 回调函数
----@param ... any 传递给回调的参数
+---@param ... any 方法参数
 ---@return number 定时器 ID
 function this:StartLoopForever(time, func, ...) end
 
@@ -525,24 +627,24 @@ function SL:GetSuitEquipInfoList(cfgId) end
 
 ---播放受击飘字
 ---@param text string 飘字文本
----@param hurtType EHurtType 受击类型
+---@param hurtType EHurtType 受击类型 cfg_damage_number配置表id
 ---@param targetId number 目标角色唯一 ID，不填默认为主角
 ---@param buffId number 关联的 Buff ID (可选)
 function SL:PlayHurt(text, hurtType, targetId, buffId) end
 
 ---播放自定义飘字标签
----@param targetId number 目标角色唯一 ID，不填默认为主角
+---@param targetId number @角色唯一id 不填或者0，会在主角头上跳字
 ---@param text string 飘字文本
 ---@param color Color 颜色
 ---@param fontSize number 字号
 ---@param hurtAnimName string 飘字动画名称
 ---@param playTime number 飘字动画播放时间
----@param finishCallBack function 完成回调，参数为 (head, hurtLabel)
+---@param finishCallBack function 完成回调，参数为 (head:RoleHead,hurtLabel:HurtLabel)
 function this:PlayHurtLabel(targetId, text, color, fontSize, hurtAnimName, playTime, finishCallBack) end
 
 ---检查装备是否满足穿戴要求
 ---@param item CommonProtos.Item 装备数据
----@return number 1: 满足, 0: 不满足
+---@return number 1: 满足穿戴要求, 0: 不满足穿戴要求
 function this:CheckEquipWear(item) end
 
 ---获取指定穿戴栏的装备数据
@@ -589,10 +691,11 @@ function this:GetTotalCoinBaseId(cfgId) end
 ---@return CommonProtos.Item @物品数据
 function this:GetItemInfoByItemId(itemId) end
 
----获取指定配置 ID 在背包中的第一个位置索引
----@param cfgId number 物品配置 ID
----@return number 背包索引
-function this:GetSlotBaseOnCfgId(cfgId) end
+---获取cfgId在背包中的道具索引
+---@param cfgId number 道具配置表id
+---@field specify number @有多个道具索引，是否指定获取 0或者nil:随机  1:指定最小位置的，2:指定最大位置的
+---@return number 道具索引
+function this:GetSlotBaseOnCfgId(cfgId, specify) end
 
 ---获取仓库中指定配置 ID 的物品总数
 ---@param cfgId number 物品配置 ID
@@ -614,9 +717,9 @@ function this:RecycleBagNotUseCellDict(notuseCellDict) end
 ---判断道具是否可以放入背包
 ---@param cfgId number 物品配置 ID
 ---@param count number 数量
----@param useCellDict table 已使用格子映射 (可选)
----@param notuseCellDict table 未使用格子映射 (可选)
----@return boolean 是否可以放入
+---@param useCellDict table 已使用格子映射 (当前道具占用背包格子的数据，不填默认是主角自己的背包)
+---@param notuseCellDict table 未使用格子映射 (SL:GetBagNotUseCellDict()获得，注意用完之后需要用SL:RecycleBagNotUseCellDict(notuseCellDict)回收一下)
+---@return boolean 是否可以放入背包
 function this:CanPutToBag(cfgId, count, useCellDict, notuseCellDict) end
 
 ---获取第一个仓库格子的深拷贝映射表 (用于模拟计算), 已经使用的格子id
@@ -626,7 +729,7 @@ function this:GetCopyDeepUseCellDict1() end
 ---判断仓库物品是否可以放入背包
 ---@param cfgId number 物品配置 ID
 ---@param count number 数量
----@param useCellDict table 已使用格子映射 (可选)
+---@param useCellDict table 已使用格子映射 (第几页， 不填默认第一页)
 ---@return boolean 是否可以放入
 function this:CanPutToBag1(cfgId, count, useCellDict) end
 
@@ -720,6 +823,14 @@ function this:PlayActionAudio(audioActionId) end
 ---@param delay number 延迟播放时间 (秒),默认是0
 ---@return table @音效对象
 function this:PlaySkillSound(audioSkillId, delay) end
+
+---设置技能特效停止时是否同时停止绑定的技能音效
+---@param isStop boolean true表示特效停止时停止音效，false表示音效自然播放完成
+function this:SetSkillEffectStopAudioOnStop(isStop) end
+
+---获取技能特效停止时是否同时停止绑定的技能音效
+---@return boolean true表示特效停止时停止音效
+function this:GetSkillEffectStopAudioOnStop() end
 
 ---播放背景音乐 (BGM)
 ---@param mapId number ID（参数2为false时读取cfg_map_info表id，反之为cfg_audio 表id）;
@@ -850,7 +961,7 @@ function SL:SetPlayerAutoRecover(isOpen) end
 function SL:SetAutoRecoverType(id, isOpen, cfgNameStr) end
 
 ---请求自动拾取设置更改
----@param isOpen string
+---@param isOpen boolean
 function SL:SendPlayerAutoPickChange(isOpen) end
 
 ---怪物和玩家角色的技能与攻击特效显示（不建议使用）
@@ -866,6 +977,9 @@ function SL:ShowTeleportationEffect() end
 
 ---刷新主角高度
 function SL:RefreshHeight_Me() end
+
+---清除主角选中状态
+function SL:ResetSelectTarget_Me() end
 
 ---设置主角动画触发器
 ---@param triggerName string 动画状态机上面的trigger名称
@@ -920,9 +1034,9 @@ function SL:SetDirection(roleId, dir) end
 function SL:IsAnimtorPlaying(roleId, animName) end
 
 ---缩放主角模型
----@param x number X 缩放
----@param y number Y 缩放
----@param z number Z 缩放
+---@param x number X 缩放值
+---@param y number Y 缩放值
+---@param z number Z 缩放值
 function SL:SetModelScale_Me(x, y, z) end
 
 ---重置主角模型缩放
@@ -930,9 +1044,9 @@ function SL:ResetModelScale_Me() end
 
 ---缩放指定角色模型
 ---@param roleId number 角色唯一 ID
----@param x number X 缩放
----@param y number Y 缩放
----@param z number Z 缩放
+---@param x number X 缩放值
+---@param y number Y 缩放值
+---@param z number Z 缩放值
 function SL:SetModelScale(roleId, x, y, z) end
 
 ---重置指定角色模型缩放
@@ -979,7 +1093,8 @@ function this:GetPlayerAutoDecomposeType(cfgNameStr) end
 
 ---设置自动分解类型
 ---@param id number @cfg_recovery表的id，具体某一类型的勾选
----@param open boolean
+---@param open boolean 是否勾选
+---@param cfgNameStr string @配置表名称
 function this:SetPlayerAutoDecomposeType(id, open, cfgNameStr) end
 
 ---请求分解
@@ -991,8 +1106,9 @@ function SL:SendDecomposeItem(indexList) end
 function this:OpenEquipDecomposeUI(openCallBack) end
 
 ---打开锻造界面
----@param forgeGroupType EForgeGroupType
----@param equipSlot EEquipSlotType
+---@param forgeGroupType EForgeGroupType 枚举类型
+---@param equipSlot EEquipSlotType 枚举类型
+---@param openCallBack function 界面打开回调，无参数
 function this:OpenForgeGroupUI(forgeGroupType, equipSlot, openCallBack) end
 
 ---获取任务状态
@@ -1025,7 +1141,7 @@ function SL:CommonTipsMessage(message) end
 function SL:CloseCommonTipsMessage() end
 
 ---显示通用文本提示框
----@param message {str:string, title:string} 提示框数据
+---@param message {str-提示内用:string, title-标题:string} 提示框数据
 function SL:CommonStrTipsMessage(message) end
 
 ---设置 NPC 头顶图标
@@ -1034,7 +1150,7 @@ function SL:CommonStrTipsMessage(message) end
 function SL:SetNpcIcon(npcId, headIcon) end
 
 ---根据配置 ID 获取 NPC 角色对象
----@param cfgId number NPC 配置 ID
+---@param cfgId number npclist配置表中的ID
 ---@return Role NPC 角色对象
 function this:GetRoleBaseNpcId(cfgId) end
 
@@ -1098,7 +1214,7 @@ function this:SetShowSpecialShowBoxItem(cfgId) end
 function this:GetItemNameByItemData(item) end
 
 ---获取装备需求属性列表
----@param cfgId number 物品配置 ID
+---@param cfgId number cfg_equip_entryLib配置表中的ID
 ---@return table 需求属性列表
 function this:GetNeedAttrList(cfgId) end
 
@@ -1117,8 +1233,8 @@ function this:CheckEquipBaseCareer(equip) end
 ---@return number 1: 高于, 0: 等于, -1: 低于
 function this:CompareInitGrage(equip) end
 
----获取身上与之对比的装备信息
----@param cfgId number 待对比的装备配置 ID
+---获取自己身上与指定配置id对比的装备信息
+---@param cfgId number @装备配置表id
 ---@return {cfgId:number, id:number} 身上对应的装备配置 ID 和唯一 ID，没有则返回 nil
 function this:GetCompareEquip(cfgId) end
 
@@ -1228,7 +1344,7 @@ function this:SetPkIcon(role, text, color, fontName, extensionName, fontSize, x,
 
 ---设置红名颜色变化
 ---@param role Player 玩家对象
----@param color Color 颜色
+---@param color Color 文字颜色
 function this:SetRedNameColorChange(role, color) end
 
 ---刷新角色名字颜色
@@ -1248,7 +1364,7 @@ function this:GetRoleById(roleId) end
 function this:ScreenPointToLocalPointInRectangle(target, x, y) end
 
 ---打开等待/加载 UI
----@param args table 参数 {isTips:boolean, msg:string, waitTimeClose:number, timeOutCallBack:function}
+---@param args table 参数 {isTips:boolean, msg:string, waitTimeClose:number, timeOutCallBack:function} 例如:{isTips=true,msg = "断线重连中(1)",waitTimeClose=45,timeOutCallBack=nil}
 function this:OpenWaitingUI(args) end
 
 ---隐藏等待/加载 UI
@@ -1275,7 +1391,7 @@ function this:RefreshTitle(id, titleCfgId) end
 
 ---获取带颜色的富文本
 ---@param msg string 文本内容
----@param color Color 颜色
+---@param color Color 颜色 如：#FFFFFF
 ---@return string 富文本
 function this:GetColorText(msg, color) end
 
@@ -1294,7 +1410,7 @@ function this:CampString(str, campLength, postStr) end
 ---@param includeSelf boolean 是否包含自身 (可选)
 ---@param isUIShow_MePathMove boolean 是否显示移动路径 UI (可选)
 ---@param toNpc boolean 是否是移动到 NPC (可选)
----@param line boolean 是否是直线移动 (可选)
+---@param line number 寻路地图线路 (可选)
 function this:MapMove(x, y, cfgMapMoveId, onArrive, includeSelf, isUIShow_MePathMove, toNpc, line) end
 
 ---获取装备的词条属性列表
@@ -1325,14 +1441,16 @@ function this:LoadAsset(path, type, cacheTime) end
 ---异步加载资源
 ---@param path string 资源路径
 ---@param callback function 加载完成回调，参数为 (res)
----@return Coroutine 协程对象和资源请求对象
+---@return Coroutine| table 协程对象和资源请求对象|资源加载句柄request
 function this:LoadAssetAsync(path, callback) end
 
 ---下载资源包
 ---@param groupname string 资源组名称
 ---@param packageIndex number 包索引 (可选，默认 2)
----@return any 下载请求对象
-function this:DownloadPackage(groupname, packageIndex) end
+---@param onDownloading fun(currentSize:number, totalSize:number)|nil 下载中回调，参数为(已下载大小, 总大小)
+---@param onComplete fun()|nil 下载完成回调
+---@return number 总下载大小（字节）
+function this:DownloadPackage(groupname, packageIndex, onDownloading, onComplete) end
 
 ---释放资源请求对象
 ---@param request UnityEngine.ResourceRequest 资源请求对象
@@ -1367,12 +1485,12 @@ function this:ChatInfo_GetChaTargetInfo(playerId) end
 ---@return ChatProto.ResChat[] @聊天记录列表
 function this:ChatInfo_GetChatInfo(channel, num) end
 
----请求移除私聊玩家信息
+---请求移除与指定id的玩家的私聊信息
 ---@param rid number @角色ID
 function this:ChatInfo_FriendShow(rid) end
 
 ---获取未读好友消息数量
----@return number 未读消息数量
+---@return boolean 是否有未读消息
 function this:ChatInfo_FriendLookTipShow() end
 
 ---获取好友提示信息
@@ -1428,6 +1546,9 @@ function this:GmInfo_GetDiffuseFlowing() end
 ---获取已显示的快捷飘窗 Item
 ---@return BoxItemData 飘窗项数据
 function this:UiBoxTipsInfo_GetShowBoxItem() end
+
+---卸载所有uiBoxTipsInfo脚本的注册事件和注册消息
+function this:UiBoxTipsInfo_UnRegistAll() end
 
 ---获取任务奖励预览信息
 ---@return table 奖励信息
@@ -1502,7 +1623,7 @@ function this:CfgAttInfoPost_GetCfgBaseTbl() end
 function this:CfgCareerPost_GetCfgCareerId(careerInfo) end
 
 ---根据职业 ID 获取职业名称
----@param careerId number 职业 ID
+---@param careerId number cfg_career职业配置表的ID
 ---@return string 职业名称
 function this:CfgCareerPost_GetCfgCareerName(careerId) end
 
@@ -1529,6 +1650,14 @@ function this:GetCurServerName() end
 ---获取所有服务器结构信息
 ---@return ServerListStruct 服务器列表结构json文件格式
 function this:GetServerStruct() end
+
+---获取当前选择服特殊类型
+---@return EServerSpecType 特殊类型
+function this.LoginManager:GetCurServerSpecType() end
+
+---获取当前选择服原始开服时间
+---@return string 原始开服时间，格式yyyy-MM-dd HH:mm:ss
+function this.LoginManager:GetCurServerOpenServerTime() end
 
 ---获取玩家上次选择的技能 ID
 ---@return number 技能 ID
@@ -1583,8 +1712,8 @@ function this.LoginManager:GetCurServer_Sid() end
 function this.LoginManager:GetChannelId() end
 
 ---获取职业解锁数据
----@param careerId number 职业 ID
----@return table 解锁数据
+---@param careerId number cfg_character_create表ID
+---@return boolean 职业是否解锁
 function this.LoginManager:GetCareerUnlockData(careerId) end
 
 ---刷新职业解锁列表
@@ -1608,7 +1737,7 @@ function this:GetIsWebGLBrowser() end
 function this:GetGameType() end
 
 ---获取主角数据对象
----@return RoleData 主角数据对象
+---@return MeData 主角数据对象
 function this:GetMeData() end
 
 ---获取主角当前等级
@@ -1673,7 +1802,7 @@ function this:Me_StopMove(isRestSelectTarget, isStopMove, OldCoord) end
 function this:MeData_GetRoleExtInfo() end
 
 ---获取主角当前队伍 ID
----@return number 队伍 ID
+---@return number 队伍 ID 0-为没有加入组队，非0-为加入组队的队伍id
 function this:MeData_GetTeamId() end
 
 ---检查主角数据是否已初始化
@@ -1727,13 +1856,13 @@ function this:MeData_Pos() end
 function this:CreatePlayer(message, asycinitImmediately, canNoMe) end
 
 ---根据 NPC ID 检查对话按钮是否可见
----@param npcId number NPC 配置 ID
+---@param npcId number NPC cfg_npclist配置表中的ID
 ---@return boolean 是否可见
 function this:GetTalkBtnVisByNpcId(npcId) end
 
 ---触发与 NPC 的对话
----@param npcId number NPC 配置 ID
----@param forFinishTask boolean 是否为了完成任务 (可选)
+---@param npcId number cfg_npclist配置表中的ID
+---@param forFinishTask boolean 是否需要完成任务 (可选)
 ---@param isQuickInstructions boolean 是否是快捷指令触发 (可选)
 ---@param npcuuid number NPC AddMainPanelUIHideShowPos唯一 ID (可选)
 function this:TalkToNpc(npcId, forFinishTask, isQuickInstructions, npcuuid) end
@@ -1863,12 +1992,12 @@ function this:ReqUnionMemberDynamicMessage() end
 function this:ReqQuitUnionMessage() end
 
 ---请求修改战盟名称
----@param warAllianceName string 新的战盟名称
+---@param warAllianceName string 战盟名称
 function this:ReqChangeUnionNameMessage(warAllianceName) end
 
 ---请求创建战盟
 ---@param union_name string 战盟名称
----@param flagIndex number 旗帜索引
+---@param flagIndex number 战盟图标索引
 function this:ReqCreateUnionMessage(union_name, flagIndex) end
 
 ---请求修改战盟公告
@@ -1881,7 +2010,7 @@ function this:ReqKickOutUnionMemberMessage(memberId) end
 
 ---请求更换战盟职位
 ---@param memberRid number 成员角色 ID
----@param type number 职位类型 (1: 禅让, 2: 副盟主, 3: 队长, 4: 精英, 5: 成员)
+---@param type number 职位类型 (1: 禅让盟主, 2: 设为副盟主, 3: 设为战斗队长, 4: 设为精英, 5: 设为成员)
 function this:ReqChangePositionMessage(memberRid, type) end
 
 ---请求更新战盟信息（臂章和名称）
@@ -1931,9 +2060,15 @@ function this.Friend:ReqFriendLogsMessage(type, targetId) end
 ---@return number, number 行, 列
 function this.Bag:GetHorAndVetWithInt(index) end
 
+--根据行列获取背包行列索引 例如：hor=5, vet=4 返回504  hor=14, vet=3 返回1403
+---@param hor number 行
+---@param vet number 列
+---@return number 行列索引
+function this.Bag:GetIntWithHorAndVet(hor, vet) end
+
 ---对物品列表进行排序
----@param itemList CommonProtos.Item[] 物品列表
----@return CommonProtos.Item[] 排序后的物品列表
+---@param itemList CommonProtos.Item[] @物品列表
+---@return table<number,CommonProtos.Item> @<行列组合键值，道具数据>
 function this.Bag:SortItemList(itemList) end
 
 ---根据页码和行列坐标获取背包索引
@@ -1961,7 +2096,7 @@ function this.Scene:SetTransMapMoveToPointCallbackFunc(func) end
 
 ---获取距离某个点最近的非阻挡点
 ---@param findDot2 Dot2 目标点
----@param range number 搜索范围
+---@param range number 搜索范围 不能是负数
 ---@param includeSelf boolean 是否包含自身坐标
 ---@return Dot2 非阻挡点坐标
 function this.Scene:GetFindNearNpcAvilPoint(findDot2, range, includeSelf) end
@@ -1978,7 +2113,11 @@ function this.Scene:SetSceneName(name) end
 ---@param ambientColor Color 环境光颜色 (可选，默认Color(0.305, 0.305, 0.305))
 ---@param intensity number 整体光照强度 (可选，默认 1)
 ---@param terrainIntensity number 地形光照强度 (可选，默认 1)
-function this.Scene:SetAmbientColor(ambientColor, intensity, terrainIntensity) end
+---@param r number 255制环境光R值，ambientColor为空时生效 (可选)
+---@param g number 255制环境光G值，ambientColor为空时生效 (可选)
+---@param b number 255制环境光B值，ambientColor为空时生效 (可选)
+---@param a number 255制环境光A值，ambientColor为空时生效 (可选，默认255)
+function this.Scene:SetAmbientColor(ambientColor, intensity, terrainIntensity, r, g, b, a) end
 
 ---根据配置表 ID 添加模型特效
 ---@param effectType ESceneEffectType 特效类型
@@ -2023,12 +2162,12 @@ function this.SceneEffect:IsExist(effectType, id, secId) end
 ---@param secId number 次要 ID (可选)
 function this.SceneEffect:RemoveEffect(effectType, id, secId) end
 
----获取当前服务器时间戳 (秒)
+---获取当前服务器时间戳 (毫秒)
 ---@return number 服务器时间
 function this.Time:GetServerTime() end
 
 ---格式化秒数为时分秒字符串 (HH:MM:SS)
----@param time number 总秒数
+---@param time number 总毫秒
 ---@return string 格式化后的字符串
 function this.Time:FormatTimeHMS(time) end
 
@@ -2050,7 +2189,7 @@ function this.Equip:ReqStoreTakeButtonMessage(storeIndex) end
 ---@param storePage number 仓库页码
 function this.Equip:ReqBagPutStoreButtonMessage(bagIndex, storePage) end
 
----获取装备唯一 ID 在装备位中的索引
+---获取装备唯一ID在装备位中的索引
 ---@param itemId number 物品唯一 ID
 ---@return number 装备索引
 function this.Equip:GetIndexBaseOnItemId(itemId) end
@@ -2114,12 +2253,13 @@ function this.MainCamera:SetAutoRotation(isauto, euleranglesX, checkinterval) en
 ---@param nearheight number 拉近后的视角高度偏移 (可选，默认 1.8)
 function this.MainCamera:SetHitHeightAndWidth(height, widht, nearheight) end
 
----设置相机自定义参数
+---设置相机位置和旋转角度
 ---@param localPos Vector3 本地坐标
 ---@param localrotation Vector3 本地旋转
-function this.MainCamera:SetCameraCustomParam(localPos, localrotation) end
+---@param distance number 距离(不为nil,不设置localPos)
+function this.MainCamera:SetCameraCustomParam(localPos, localrotation, distance) end
 
----重置相机自定义参数
+---重置相机位置和旋转
 function this.MainCamera:ResetCameraCustomParam() end
 
 ---设置相机偏移
@@ -2142,7 +2282,7 @@ function this.Constructor_In:UIEffect() end
 function this.Union:GetApplyListInfo() end
 
 ---请求设置战盟加入限制
----@param autoAccept boolean 是否自动接受
+---@param autoAccept boolean 是否自动接受 0不开启  1开启
 ---@param needLevel number 等级需求
 ---@param fightValue number 战力需求
 function this.Union:ReqUnionSettingMessage(autoAccept, needLevel, fightValue) end
@@ -2195,7 +2335,8 @@ function this.Skill:SetUseSkillEffectPlayTime(useSkillEffectPlayTime) end
 ---@param targetId number 目标角色 ID (默认不填，目标位置。可选)
 ---@param targetCoord Dot2 目标坐标 (可选)
 ---@param isSkipCanNotOperCheck boolean 默认不填，是否跳过特殊bufff检查(不可操作buff等，可选)
-function this.Skill:MoveToAttack(skillId, targetId, targetCoord, isSkipCanNotOperCheck) end
+---@param isMoveToTargetCoord  boolean 是否移动到目标点
+function this.Skill:MoveToAttack(skillId, targetId, targetCoord, isSkipCanNotOperCheck, isMoveToTargetCoord) end
 
 ---设置释放技能时是否允许移动
 ---@param b boolean 是否允许,默认false。nil或者false，表示需要技能播放完成后才能移动。true：可以在技能播放过程中操作摇杆或者寻路移动
@@ -2276,8 +2417,8 @@ function this.SDKMgr:GetURL(type) end
 ---@param type string 类型
 function this.SDKMgr:GetWebGLSDKInfo(type) end
 
----获取游戏版本
----@return number|EVersion  @Normal = 0,QJ5 = 1,TSJL = 2,XW = 3
+-----获取游戏版本【没用，废弃】
+-----@return number|EVersion  @Normal = 0,QJ5 = 1,TSJL = 2,XW = 3
 function this.Main:GetVersion() end
 
 ---判断是否在编辑器环境下
@@ -2361,7 +2502,7 @@ function this.UIStaticParameter:GetDeleteServerUrl() end
 function this.UIStaticParameter:GetCreateServerUrl() end
 
 ---打印不带标签的日志
----@param ... any 日志内容
+---@param ... any 日志内容，不限类型
 function this:logNoFlag(...) end
 
 ---发起 WWW 请求
@@ -2584,8 +2725,7 @@ function this:RemoveCustomBindMono(gObj) end
 ---@param isShow boolean 是否显示
 function this:SetPlayerComboSkillEffectType(isShow) end
 
----@param message {oldIndex:number, newIndex:number, itemId:number} 交换信息
----oldIndex,newIndex指装备索引，itemId指装备id
+---@param message {oldIndex:number, newIndex:number, itemId:number} 交换信息 oldIndex,newIndex指装备索引，itemId指装备id
 function this:SwitchEquipSlot(message) end
 
 ---根据系统 ID 获取主界面 UI 配置信息
@@ -2619,6 +2759,25 @@ function this:SetPreLoadAssetPath(path) end
 ---@return UnityEngine.GameObject 资源对象
 function this:GetPreLoadAsset(path) end
 
+---获取角色头顶部件
+---EHeadPart.HP_Part 返回 CSSpriteMesh，可用 SL.Head.CSSpriteMesh 接口获取和设置属性
+---EHeadPart.Union_Name_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Name_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Vip_Name_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Pk_Level_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Level_Icon_Part 返回 CSSpriteMesh，可用 SL.Head.CSSpriteMesh 接口获取和设置属性
+---EHeadPart.Hook_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Lab_Title_Part 返回 CSLabel，可用 SL.Head.CSLabel 接口获取和设置属性
+---EHeadPart.Title_Part 返回 CSSpriteMesh，可用 SL.Head.CSSpriteMesh 接口获取和设置属性
+---EHeadPart.Icon_Part 返回 CSSpriteMesh，可用 SL.Head.CSSpriteMesh 接口获取和设置属性
+---EHeadPart.Talk_Part 返回 CSMultiLabel，可用 SL.Head.CSMultiLabel 接口获取和设置属性
+---EHeadPart.Talk_Name_Part 返回 CSMultiLabel，可用 SL.Head.CSMultiLabel 接口获取和设置属性
+---EHeadPart.StallName_Part 返回 CSSellerMultiLabel，可用 SL.Head.CSSellerMultiLabel 接口获取和设置属性
+---@param rid number 角色 ID
+---@param e_headPart EHeadPart 头顶部件枚举
+---@return CSLabel|CSSpriteMesh|CSMultiLabel|CSSellerMultiLabel|nil 头顶部件组件
+function this:GetHeadPart(rid, e_headPart) end
+
 ---获取角色头顶部件对象
 ---@param rid number 角色 ID
 ---@param e_headPart number 部位类型 (EHeadPartType)
@@ -2644,8 +2803,10 @@ function this:RecycleHeadPart_out(rid, e_headPart) end
 ---@param secId number 次要标识 (可选)
 ---@param sortLayer number 渲染层级 (越大越靠前)
 ---@param effectOverType EPlayEffectOverType 特效结束处理类型
+---@param isSameModePathOnlyOne boolean (可选,默认true) true：相同资源路径，如果id和secId相同的情况下，只会播放一个，防止内存泄露。false：代码需要注意释放特效，否则会内存泄露
+---@param loadEffectCallBack function 创建成功回调，参数为 (ResourceRequest)
 ---@return RoleEffect 特效对象
-function this:ReleaseRoleNodeMapEffect(isUIRole, rid, nodeName, effectId, id, secId, sortLayer, effectOverType) end
+function this:ReleaseRoleNodeMapEffect(isUIRole, rid, nodeName, effectId, id, secId, sortLayer, effectOverType, isSameModePathOnlyOne, loadEffectCallBack) end
 
 ---在角色骨骼节点上挂载模型
 ---@param isUIRole boolean 是否是 UI 角色
@@ -2655,8 +2816,9 @@ function this:ReleaseRoleNodeMapEffect(isUIRole, rid, nodeName, effectId, id, se
 ---@param id number 唯一标识 (可选) 
 ---@param secId number 次要标识 (可选)
 ---@param sortLayer number 特效层级，越大越上面，一般UI上面才需要调整。(可选)
+---@param isSameModePathOnlyOne boolean (可选,默认true) true：相同资源路径，如果id和secId相同的情况下，只会播放一个，防止内存泄露。false：代码需要注意释放特效，否则会内存泄露
 ---@return RoleEffect 特效模型对象,可作为SL:StopRoleEffect参数传入
-function this:ReleaseRoleNodeMapModel(isUIRole, rid, nodeName, modelCharactorId, id, secId, sortLayer) end
+function this:ReleaseRoleNodeMapModel(isUIRole, rid, nodeName, modelCharactorId, id, secId, sortLayer, isSameModePathOnlyOne) end
 
 ---在角色中心点发布特效
 ---@param isUIRole boolean 是否是 UI 角色
@@ -2665,8 +2827,9 @@ function this:ReleaseRoleNodeMapModel(isUIRole, rid, nodeName, modelCharactorId,
 ---@param id number 唯一标识 (可选)
 ---@param secId number 次要标识 (可选)
 ---@param sortLayer number 渲染层级 (可选)
+---@param isSameModePathOnlyOne boolean (可选,默认true) true：相同资源路径，如果id和secId相同的情况下，只会播放一个，防止内存泄露。false：代码需要注意释放特效，否则会内存泄露
 ---@return RoleEffect 特效对象
-function this:ReleaseRoleEffect(isUIRole, rid, effectId, id, secId, sortLayer) end
+function this:ReleaseRoleEffect(isUIRole, rid, effectId, id, secId, sortLayer, isSameModePathOnlyOne) end
 
 ---播放角色特效的动画或触发器
 ---@param roleEffect RoleEffect 角色特效对象
@@ -2808,7 +2971,7 @@ function this.DropItem:SetGlobalFontSize(fontSize) end
 function this.DropItem:SetHideDropItemInfo(hideDropItemType, maxShowDropItemCount) end
 
 ---设置寻路脚印的显示状态
----@param isShow boolean 是否显示
+---@param isShow boolean 是否显示 true:显示脚印, false:隐藏脚印
 function this:SetPathFindFootShowStatus(isShow) end
 
 ---获取 Lua 全局表 _G
@@ -2947,7 +3110,7 @@ function this:SetIsUseEngineAutoFight(isUseEngineAutoFight) end
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
-function this.Head:SetHeadPartScale(heardPart, scaleX, scaleY, scaleZ) end
+function this.Head:SetHeadPartScale(heardPart, scaleX, scaleY, scaleZ, childScale) end
 
 ---设置角色头顶部位的初始化缩放值
 ---@param heardPart EHeadPart
@@ -3010,10 +3173,76 @@ function this.Head:SetGlobalAddIgnoreScaleByType(eHeadType_IgnoreScale, isAdd) e
 ---@param rid number 角色 ID
 function this.Head:RemoveAllHeadPart(rid) end
 
+---设置 CSLabel 单个属性
+---@param component CSLabel CSLabel 组件
+---@param propertyType EHeadPropType_CSLabel 属性枚举
+---@param value any 属性值
+---@return boolean 是否设置成功
+function this.Head.CSLabel:SetProperty(component, propertyType, value) end
+
+---获取 CSLabel 单个属性
+---@param component CSLabel CSLabel 组件
+---@param propertyType EHeadPropType_CSLabel 属性枚举
+---@return any 属性值
+function this.Head.CSLabel:GetProperty(component, propertyType) end
+
+---设置 CSSpriteMesh 单个属性
+---@param component CSSpriteMesh CSSpriteMesh 组件
+---@param propertyType EHeadPropType_CSSpriteMesh 属性枚举
+---@param value any 属性值
+---@return boolean 是否设置成功
+function this.Head.CSSpriteMesh:SetProperty(component, propertyType, value) end
+
+---获取 CSSpriteMesh 单个属性
+---@param component CSSpriteMesh CSSpriteMesh 组件
+---@param propertyType EHeadPropType_CSSpriteMesh 属性枚举
+---@return any 属性值
+function this.Head.CSSpriteMesh:GetProperty(component, propertyType) end
+
+---设置 CSMultiLabel 单个属性
+---@param component CSMultiLabel CSMultiLabel 组件
+---@param propertyType EHeadPropType_CSMultiLabel 属性枚举
+---@param value any 属性值
+---@return boolean 是否设置成功
+function this.Head.CSMultiLabel:SetProperty(component, propertyType, value) end
+
+---获取 CSMultiLabel 单个属性
+---@param component CSMultiLabel CSMultiLabel 组件
+---@param propertyType EHeadPropType_CSMultiLabel 属性枚举
+---@return any 属性值
+function this.Head.CSMultiLabel:GetProperty(component, propertyType) end
+
+---设置 CSSellerMultiLabel 单个属性
+---@param component CSSellerMultiLabel CSSellerMultiLabel 组件
+---@param propertyType EHeadPropType_CSSellerMultiLabel 属性枚举
+---@param value any 属性值
+---@return boolean 是否设置成功
+function this.Head.CSSellerMultiLabel:SetProperty(component, propertyType, value) end
+
+---获取 CSSellerMultiLabel 单个属性
+---@param component CSSellerMultiLabel CSSellerMultiLabel 组件
+---@param propertyType EHeadPropType_CSSellerMultiLabel 属性枚举
+---@return any 属性值
+function this.Head.CSSellerMultiLabel:GetProperty(component, propertyType) end
+
+---设置 CSSpriteRender 单个属性
+---@param component CSSpriteRender CSSpriteRender 组件
+---@param propertyType EHeadPropType_CSSpriteRender 属性枚举
+---@param value any 属性值
+---@return boolean 是否设置成功
+function this.Head.CSSpriteRender:SetProperty(component, propertyType, value) end
+
+---获取 CSSpriteRender 单个属性
+---@param component CSSpriteRender CSSpriteRender 组件
+---@param propertyType EHeadPropType_CSSpriteRender 属性枚举
+---@return any 属性值
+function this.Head.CSSpriteRender:GetProperty(component, propertyType) end
+
 ---同地图寻路目标点是否可到达
 ---@param targetDot Dot2 目标点
+---@param maxSearAStarCount number 可选,默认值100,最大搜索A*次数,越大越耗时
 ---@return boolean 是否可到达
-function this.Map:CommonMapFindPathIsArrive(targetDot) end
+function this.Map:CommonMapFindPathIsArrive(targetDot, maxSearAStarCount) end
 
 ---切换 GM 日志状态
 function this.GM:ToggleGMLog() end
@@ -3148,6 +3377,13 @@ function this:IsAnyOperation() end
 ---@param time number | string 延迟时间
 function this:SetDelayTime2LoadingPanel(time) end
 
+---设置地图渲染地块大小和地图视口大小
+---@param blockWidth number @地图地块宽,nil或者值不大于0表示不改变
+---@param blockHeight number @地图地块高,nil或者值不大于0表示不改变
+---@param viewWidth number @地图视口宽,nil或者值不大于0表示不改变
+---@param viewHeight number @地图视口高,nil或者值不大于0表示不改变
+function this:SetTerrainBlockAndViewSize(blockWidth, blockHeight, viewWidth, viewHeight) end
+
 ---设置点击释放技能是否开启自动战斗（默认为 true, 不会改变战斗状态）
 ---@param isClickReleaseSkillStartAutoHook boolean 是否开启
 function this:SetIsClickReleaseSkillStartAutoHook(isClickReleaseSkillStartAutoHook) end
@@ -3175,6 +3411,161 @@ function this:ModifyPrefabSprite(go, path, atlasName, spriteName, type) end
 ---设置进入副本是否开启自动战斗
 ---@param isEnterCopyMapStartAutoHook boolean 是否开启
 function this.AutoFight:SetIsEnterCopyMapStartAutoHook(isEnterCopyMapStartAutoHook) end
+
+---获取是否开启"全部拾取"开关
+---（对应设置界面中的一键全拾选项，开启后拾取所有掉落物）
+---@return boolean 返回 true 表示已开启全部拾取
+function this:GetPickAllDropItem() end
+
+---获取当前是否处于游戏场景中
+---（用于过滤非场景环境下不应执行的逻辑，如城镇、副本外等）
+---@return boolean 返回 true 表示角色当前在场景内
+function this:GetIsScene() end
+
+---获取玩家设置的自动拾取范围（格数）
+---（为 0 或 nil 时表示不限制范围，拾取全屏可见道具）
+---@return number|nil 拾取范围格数，未设置时返回 nil 或 0
+function this:GetSettingPickRange() end
+
+---获取是否开启模糊拾取开关
+---（开启后会按 vaguePickList 中的关键词模糊匹配物品名称进行拾取）
+---@return boolean 返回 true 表示已开启模糊拾取
+function this:GetVaguePickFlag() end
+
+---发送拾取地图掉落物的网络请求
+---@param itemId number 掉落物的服务器唯一 ID
+---@param type number  拾取类型（0 走过去拾取 1 范围拾取）
+function this:ReqPickUpMapItemMessage(itemId, type) end
+
+---获取自动战斗技能优先级列表
+---（列表元素为 skillId，顺序即为行为树中技能的释放优先级）
+---@return number[] 技能 ID 数组，按优先级从高到低排列
+function this:GetAutoUseSkillList() end
+
+---获取回归挂机点的等待时间（秒）
+---@return number 等待时长，单位：秒
+function this:GetComebackHookPointTime() end
+
+---获取角色当前设置的挂机点坐标
+---@return Dot2 挂机点的地图坐标{x, y}
+function this.AutoFight:GetHookPoint() end
+
+---获取是否需要回归挂机点
+---@return boolean 返回 true 表示当前应执行回归挂机点逻辑
+function this.AutoFight:GetIsComebackHookPoint() end
+
+---保存挂机设置
+function this:SaveHookSetting() end
+
+---设置主角守护是否拾取道具
+---@param isCanPickUpItem @是否开启自动拾取功能
+function this:SetMeGuardIsCanPickUp(isCanPickUpItem) end
+
+---设置是否显示攻击范围特效
+---@param isShowAttackRangeEffect @是否显示攻击范围特效
+function this:SetIsShowAttackRangeEffect(isShowAttackRangeEffect) end
+
+--设置是否开启自动战斗拾取功能
+---@param isOpenAutoFightPickUpItem @是否开启自动拾取功能
+function this.AutoFight:SetIsOpenAutoFightPickUpItem(isOpenAutoFightPickUpItem) end
+
+---守护移动到目标位置
+---@param rid number @角色id
+---@param x number @x轴坐标
+---@param y number @y轴坐标
+---@param arriveFunc function @到达目标点回调函数
+function this:GuardMoveToPoint(rid, x, y, arriveFunc) end
+
+---根据传入特效和索引值以及参数，设置特效shader参数
+---@param go GameObject 特效对象(必须有SmdimportCollect脚本)
+---@param index number Renderer第几个材质球
+---@param property table<number,table<number,table<number,string>>> 材质球shader上设置的参数(需要组装,参照流光配置)
+function this:SetObjMatParam(go, index, property) end
+
+---获取提示广播消息提示列表
+---@return table<number,{cond:string,stack:string}>
+function this.message:GetMessData() end
+
+---清理提示广播消息提示列表（处理完后清理）
+function this.message:ClearMessData() end
+
+---获取跑马灯广播消息列表
+---@return table<number,{cond:string,stack:string}>
+function this.message:GetHorseRaceLampMessData() end
+
+---清理跑马灯广播消息列表（处理完后清理）
+function this.message:ClearHorseRaceLampMessData() end
+
+---获取攻击目标死亡是否停止攻击
+---@return boolean
+function this.AutoFight:GetIsTargetDieStopAtk() end
+
+---获取挂机设置中已学习的公共伤害技能,群体技能集合
+function this.SettingData:GetGroupSave() end
+
+---获取挂机设置中已学习的buff技能集合
+---@return table
+function this.SettingData:GetBuffSave() end
+
+---获取挂机设置中已学习的召唤技能集合
+---@return table
+function this.SettingData:GetSummonSave() end
+
+---刷新挂机设置技能
+---@return table
+function this.SettingData:RefreshSkillByGroup() end
+
+---获取自动战斗初始点（帅选目标使用）
+---@return boolean
+function this.AutoFight:GetStartingPoint() end
+
+---获取自动战斗攻击范围
+---@return number
+function this.AutoFight:GetAttackRange() end
+
+---获取自动战斗攻击目标
+---@return number
+function this.AutoFight:GetAutoFightTargetId() end
+
+---设置自动战斗攻击目标
+---@param targetId number
+function this.AutoFight:SetAutoFightTargetId(targetId) end
+
+---设置自动战斗技能释放结果类型
+---@param releaseSkillError ESkillReleaseError
+function this.AutoFight:SetAutoFightReleaseSkillError(releaseSkillError) end
+
+function this.Transform:Get(target) end
+
+function this.Transform:GetGameObject(target) end
+
+function this.Transform:GetPosition(target) end
+
+function this.Transform:SetPosition(target, x, y, z) end
+
+function this.Transform:GetLocalPosition(target) end
+
+function this.Transform:SetLocalPosition(target, x, y, z) end
+
+function this.Transform:GetLocalScale(target) end
+
+function this.Transform:SetLocalScale(target, x, y, z) end
+
+function this.Transform:GetEulerAngles(target) end
+
+function this.Transform:SetEulerAngles(target, x, y, z) end
+
+function this.Transform:GetLocalEulerAngles(target) end
+
+function this.Transform:SetLocalEulerAngles(target, x, y, z) end
+
+function this.Transform:GetParent(target) end
+
+function this.Transform:SetParent(target, parent, worldPositionStays) end
+
+function this.Transform:SetActive(target, isActive) end
+
+function this.Transform:IsActiveSelf(target) end
 
 ---元变量实现
 ---获取元变量的值
@@ -3298,7 +3689,26 @@ function this:OpenKLAttrPanel() end
 ---打开快捷装备提示 UI
 function this:OpenUseEquipBagTipsUI() end
 
----打开活动预告提示 UI
+---   自动刷新数据，无需手动维护。
+---3. 外部可通过 SL:OpenActivityTimingTask() / SL:CloseActivityTimingTask() 等接口
+---   动态添加或移除活动提示，面板内部通过 LUA_EVENT_ACTIVITYTIMETIPS_* 系列事件接收。
+---4. 面板内包含「查看全天活动」按钮，可扩展跳转到全天活动总览界面。
+---
+---## 调用注意事项
+---1. 【前置条件】仅在主界面显示时有效：内部通过 SL:GetIsShowMainUI() 判断，
+---   若当前主界面处于隐藏状态（如战斗界面、全屏面板打开时），
+---   调用本函数**不会打开面板**，静默跳过。
+---2. 【重复调用安全】面板内 id2ActInfos 对同一 activityId 做了去重，
+---   重复调用不会产生重复数据项。
+---3. 【生命周期】面板在 KLActivityTipPanel:RegistEvents() 中注册了多个事件监听，
+---   面板关闭不会被自动清理回调。面板关闭（CloseBtnClick）仅调用 UIPanel_Close，
+---   下一次重新打开时 Init() 会重新初始化所有数据表和事件注册。
+---4. 【数据依赖】面板运行依赖 cfg_activity_rule 配置表、
+---   DataManager.activityInfo.activityList / announceList 服务器数据，
+---   在未登录或数据未就绪时调用，面板打开后列表为空。
+---5. 【与其他提示面板的关系】本面板与 KLBagTipsPanel（快捷装备提示）、
+---   KLPopoverPanel（气泡提示）属同一 "Preview" 模块下的三个提示面板，
+---   可同时存在，相互独立。
 function this:OpenActivityTipsUI() end
 
 ---打开气泡提示 UI
@@ -3361,7 +3771,7 @@ function SL:RequestLaunchSkill(skillID) end
 ---@param skillItemCfgId number 技能物品配置 cfg_item ID（可选）
 ---@param caromCfgId number 连击配置 ID（无效字段）
 ---@param isComboSkill boolean 是否连击技能（可选）
----@param isFightResult boolean 是否是战斗回包调用（默认false），一般不用填写
+---@param isFightResult boolean 是否是战斗回包调用（默认true），一般不用填写
 function SL:ReleaseSkill(rid, skillId, targetId, targetCoord, targetIds, skillItemCfgId, caromCfgId, isComboSkill, isFightResult) end
 
 ---为角色添加技能
@@ -3433,18 +3843,18 @@ function SL:ReqClearAllRequestList() end
 function SL:MapLevelConditionCheck(mapMoveId) end
 
 ---检查进入地图的会员等级限制
----@param mapid number 地图 ID
+---@param mapid number cfg_map_info 表 ID
 ---@return boolean 是否满足会员条件
 function SL:MapVipCondtitionCheck(mapid) end
 
 ---传送到地图传送点
----@param mapId number 目标地图 ID
+---@param mapId number 目标地图 cfg_map_info ID
 ---@param line number 目标分线 ID (可选，默认为 1)
 ---@param mapMoveId number cfg_mapMove 表 ID (可选)
 function SL:MapTransfer(mapId, line, mapMoveId) end
 
 ---传送到指定地图坐标
----@param mapMoveId number cfg_mapMove 表 ID
+---@param mapMoveId number 根据type类型填入地图Id
 ---@param x number 目标 X 坐标
 ---@param y number 目标 Y 坐标
 ---@param range number 传送半径
@@ -3755,7 +4165,7 @@ function this:ReqOnMount(rid, mountId, isHand) end
 function this:ReqDownMount(rid, mountId, isHand) end
 
 ---通用消息提示接口 (飘窗、跑马灯等)
----@param messageData table 消息数据 {id, contentFromServer, content, params}
+---@param messageData table 消息数据 {id:number-配置表id,contentFromServer:boolean-是否来自服务器,content:string-内容, params:string[]-替换参数}
 function this:MessageTip(messageData) end
 
 ---设置死亡时是否保持界面开启
@@ -3812,6 +4222,13 @@ function this:LoadUIAssetAsync(path, baseUI, cacheTime) end
 ---设置活动阵营名称列表
 ---@param campNameList string[] 阵营名称列表
 function this:SetCampNameList(campNameList) end
+
+---获取小黑屋信息
+---@return RoleProtos.RoleDarkRoomInfoRes
+function this:GetDarkRoomInfo() end
+
+---请求：离开小黑屋
+function this:ReqLeaveDarkRoomMessage() end
 
 ---设置是否显示角色称号
 ---@param isShowRoleTitle boolean 是否显示

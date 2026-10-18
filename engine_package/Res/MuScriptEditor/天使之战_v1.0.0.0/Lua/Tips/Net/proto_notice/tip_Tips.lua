@@ -2,4 +2,5 @@
 ---@class TipProto.TipMsg
 ---@field type TipProto.TipType 
 ---@field msg string 
+---@field customType number 
 

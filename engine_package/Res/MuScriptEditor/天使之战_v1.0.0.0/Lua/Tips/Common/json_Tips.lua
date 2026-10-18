@@ -114,7 +114,17 @@ end
 -- and the position of the first character after  
 -- the scanned JSON object.  
 function json.decode(s, startPos)
-  return cjson.decode(s)
+  if not s then
+   logError("json.decode string is nil")
+    return nil
+  end
+  
+  local ok, result = pcall(cjson.decode, s)
+  if not ok then
+    logError('json.decode failed: ' .. tostring(result) .. ', raw string(first 200 chars): ' .. string.sub(tostring(s), 1, 200))
+    return nil
+  end
+  return result
   --startPos = startPos and startPos or 1  
   --startPos = decode_scanWhitespace(s,startPos)  
   --base.assert(startPos<=string.len(s), 'Unterminated JSON encoded object found at position in [' .. s .. ']')  

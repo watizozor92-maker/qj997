@@ -48,7 +48,7 @@ function this:SelectHookSkill(control,_,data)
         self.baseUI:SetTransferSkillInfo(self.args.skillId, isToggle)
     else
         if isToggle then
-            SL:SetMetaValue(EMetaVarSetKey.SET_HOOK_ATUO_RELEASE_SKILL,self.args.skillId,self.args.skillId)
+            SL:SetMetaValue(EMetaVarSetKey.SET_HOOK_ATUO_RELEASE_SKILL,self.args.skillId,self.args.skillId)            
         else
             SL:SetMetaValue(EMetaVarSetKey.SET_HOOK_ATUO_RELEASE_SKILL,self.args.skillId,nil)
         end

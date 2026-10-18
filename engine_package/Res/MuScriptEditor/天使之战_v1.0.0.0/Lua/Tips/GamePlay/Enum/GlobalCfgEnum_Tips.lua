@@ -13,6 +13,8 @@ EGlobalType = {
     BattleStateSceneAudioValume = 62,
     AudioExistMaxCount = 63,
     BeAttackMode = 70,
+    ---主角受击伤血音效最小播放间隔
+    BeAttackSoundInterval = 7123103,
     EquipShowInScene = 71,
     SkillDistCalcType = 73,
     GroundQuickMoveUnLock = 1311,

@@ -334,3 +334,11 @@
 ---@class RoleProtos.RoleBasicAttrRes
 ---@field basicAttr CommonProtos.FightAttribute[] @角色基础属性模块的所有属性
 
+---@class RoleProtos.RoleDarkRoomInfoRes
+---@field unLockTime number @小黑屋结束时间
+---@field lastCheatTime number @上次违规时间
+---@field type number @违规类型
+---@field cheatCount number @违规次数
+---@field lockCount number @进小黑屋次数
+---@field reason string @违规原因
+
