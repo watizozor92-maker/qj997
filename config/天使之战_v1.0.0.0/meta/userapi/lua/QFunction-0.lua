@@ -1672,8 +1672,6 @@ function settingchange(actor, type, oldValue, value)
     Team.OnSettingChange(actor, type, oldValue, value)
 end
 
-
-
 --- 世界聊天成功触发
 function worldchatsuccess(actor)
     sendluamsg(actor, LuaMessageIdToClient.RES_WORLD_CHAT_SUCCESS, true)

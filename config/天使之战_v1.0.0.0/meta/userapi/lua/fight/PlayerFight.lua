@@ -98,14 +98,18 @@ function this.ExcuseFightDamage(actor, paramMap)
     local skillInfoConfig = ConfigDataManager.getTableFirst("cfg_skill_info", "skillID", skillId, "skillLevel", skillLevel)
     local strength = getattrinfo(actor, "strength")
     
-    if Skill.isComboSkill(actor, fightContext.skillId) then
-        fightContext.isComboSkill = true
-        local intelligence = getattrinfo(actor, "intelligence")
-        local agility = getattrinfo(actor, "agility")
-        originDamage = (strength + intelligence + agility) / 2
-        this.addFightLog(fightContext, string.format("本次攻击为连击技能，力量：%.2f，智力：%.2f，敏捷：%.2f。基础伤害=(%.2f+%.2f+%.2f)/2=%.2f",
-                strength, intelligence, agility, strength, intelligence, agility, originDamage))
-    else
+    -- if Skill.isComboSkill(actor, fightContext.skillId) then
+    --     fightContext.isComboSkill = true
+    --     local intelligence = getattrinfo(actor, "intelligence")
+    --     local agility = getattrinfo(actor, "agility")
+    --     originDamage = (strength + intelligence + agility) / 2
+    --     this.addFightLog(fightContext, string.format("本次攻击为连击技能，力量：%.2f，智力：%.2f，敏捷：%.2f。基础伤害=(%.2f+%.2f+%.2f)/2=%.2f",
+    --             strength, intelligence, agility, strength, intelligence, agility, originDamage))
+    -- else
+        if Skill.isComboSkill(actor, fightContext.skillId) then
+            fightContext.isComboSkill = true
+            info("连击技能伤害计算：原始伤害"..originDamage)
+        end
         local originMinDC, originMaxDC = minDC, maxDC
         local skillDamageAdd = getattrinfo(actor, "skillDamageAdd")
         local skillAtk = tonumber(skillInfoConfig.skillatk)
@@ -220,7 +224,7 @@ function this.ExcuseFightDamage(actor, paramMap)
         if shuangBeiMultiplier > 1 then
             originDamage = originDamage * shuangBeiMultiplier
         end
-    end
+    -- end
 
     -- 命中率过低伤害衰弱
     if fightContext.isLowHitRate then
@@ -236,13 +240,14 @@ function this.ExcuseFightDamage(actor, paramMap)
 
     local resultList = {}
     totalTargetHurtBeforeShield = totalTargetHurtBeforeShield + originDamage
-
+    
     if fightContext.isComboSkill then
         local finalDamage, shiled = this.calShild(actor, target, originDamage, fightContext)
         if shiled > 0 then
             this.addFightLog(fightContext, string.format("连击技能伤害计算：原始伤害%.2f，护盾吸收%.2f", originDamage, shiled))
         end
         this.addFightLog(fightContext, string.format("最终伤害：%.2f，伤害类型：%.2f", finalDamage, HurtType.LIAN_JI))
+        -- info("连击技能伤害计算：原始伤害"..originDamage..", 护盾吸收"..shiled)
         table.insert(resultList, this.buildFightResult(actor, target, finalDamage, HurtType.LIAN_JI, 1, true, fightContext.fightLog))
         totalTargetHurtAfterShield = totalTargetHurtAfterShield + finalDamage
     else
@@ -255,7 +260,7 @@ function this.ExcuseFightDamage(actor, paramMap)
         table.insert(resultList, this.buildFightResult(actor, target, finalDamage, hurtType, 1, false, fightContext.fightLog))
         totalTargetHurtAfterShield = totalTargetHurtAfterShield + finalDamage
     end
-
+    
     -- 伤害反弹和伤害反射（仅目标玩家触发）
     if targetType == MapObjectType.PLAYER then
         local fanSheDamage = originDamage * math.min(getattrinfo(target, "damageReflex"), 1)

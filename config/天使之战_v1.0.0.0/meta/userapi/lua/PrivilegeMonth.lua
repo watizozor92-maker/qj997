@@ -45,6 +45,10 @@ end
 function PrivilegeMonth.OnWalk(actor)
     local openPri = this.hasAnyPrivilegeValid(actor)
     if not openPri then
+        local level = getbaseinfo(actor, "level")
+        if level < 10 then
+            return
+        end
         --开启特权卡
         local lastBackTime = getplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALKTIME_KEY)
         info(actor, "lastBackTime", lastBackTime, os.time())
@@ -61,16 +65,24 @@ function restrictwalkcallback(actor)
         this.clearRestrictWalkTime(actor)
         return
     end
+    local rid = tonumber(getbaseinfo(actor, "getbasecareer"))
+    local transfercareer = {
+        [3] = {go = 1004},
+        [6] = {go = 1052}
+    }
     local toMapId = 1001
+    if rid and transfercareer[rid] ~= nil then
+        toMapId = transfercareer[rid].go
+    end
     local x = getbaseinfo(actor, "x")
     local y = getbaseinfo(actor, "y")
     local mapId = getbaseinfo(actor , "mapid")
     local line = getbaseinfo(actor, "line")
     local rebirthPoint = ConfigDataManager.getTableValue("cfg_map_info", "rebirthPoint", "id", toMapId)
     local rebirthPointMap = string.toAllIntIntMap(rebirthPoint, "#", "|")
-    if mapId ~= 1001 or (math.abs(x - rebirthPointMap[1][2]) > 10 or math.abs(y - rebirthPointMap[1][3]) > 10) then
+    if mapId ~= toMapId or (math.abs(x - rebirthPointMap[1][2]) > 15 or math.abs(y - rebirthPointMap[1][3]) > 15) then
         maptransfer(actor, rebirthPointMap[1][2] + math.random(-5, 5),
-            rebirthPointMap[1][3] + math.random(-5, 5) , 1001, line)
+            rebirthPointMap[1][3] + math.random(-5, 5) , toMapId, line)
     end
     this.restrictWalkNextTime(actor)
 end
@@ -78,7 +90,7 @@ end
 function this.restrictWalkNextTime(actor)
     local timerid = getplaydef(actor, this.PRIVILEGE_DATA_RESTRICTWALK_KEY)
     if timerid then
-        clearintervalcall(timerid)
+        clearintervalcall(actor,timerid)
     end
     timerid = intervalcalldelay(actor, 5000, 5000, 1, "restrictwalkcallback")
     -- print("timerid", timerid)
