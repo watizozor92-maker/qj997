@@ -284,6 +284,33 @@ function this.isJiNengEquip(actor, itemId)
     return not string.isNullOrEmpty(skillName)
 end
 
+function this.getJiNengTag(actor, itemId)
+    local skillTag = API.GetItemData(actor,itemId,"skillTag") or nil
+    return skillTag
+end
+
+--物品进入背包后
+GameEvent.add(EventCfg.addbag,function(actor, itemId, itemCfgId, index)
+    local skillCfgstr = ConfigDataManager.getTableValue("cfg_equip_entryLib", "skillGemProbability", "id", itemCfgId) or ""    
+    if string.isNullOrEmpty(skillCfgstr) then
+        return
+    end
+    local skillCfgMap = string.toAllIntIntMap(skillCfgstr)
+    if not skillCfgMap then
+        return
+    end
+    if this.getJiNengTag(actor, itemId) or this.isJiNengEquip(actor, itemId) then
+        return
+    end
+    -- local info = getbagiteminfo(actor, itemId, 1)
+    -- jprint("打印物品信息-技能", itemId, info.skill)
+    for _,v in pairs(skillCfgMap) do
+        if v[3] and math.random(1,10000) < v[3] then
+            setequipskillbyid(actor, itemId, v[1], v[2])
+        end
+    end
+    API.SetItemData(actor, itemId, "skillTag", os.time())
+end,filename)
 --玩家进入视野
 -- GameEvent.add(EventCfg.onPlayerEnterView,function(actor,targetPlayer)
 
