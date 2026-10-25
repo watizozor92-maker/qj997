@@ -305,7 +305,7 @@ GameEvent.add(EventCfg.addbag,function(actor, itemId, itemCfgId, index)
     -- local info = getbagiteminfo(actor, itemId, 1)
     -- jprint("打印物品信息-技能", itemId, info.skill)
     for _,v in pairs(skillCfgMap) do
-        if v[3] and math.random(1,10000) < v[3] then
+        if v[3] and math.random(1,10000) <= v[3] then
             setequipskillbyid(actor, itemId, v[1], v[2])
         end
     end
