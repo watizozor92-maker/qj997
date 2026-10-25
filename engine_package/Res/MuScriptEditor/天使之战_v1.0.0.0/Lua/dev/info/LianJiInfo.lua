@@ -1,3 +1,4 @@
+local isautoPotion = require("dev.manager.PrivilegeCardManager").isautoPotion
 ---@class LianJiInfo
 LianJiInfo = class()
 local DataManager = SL:Get_G()['DataManager']
@@ -91,6 +92,13 @@ function this:RegistMessages()
         end
         return true
     end)
+
+    local isNotAttackPointStr = SL:GetLocalString("isNotAttackPoint")
+    local isNormatPoint = (isNotAttackPointStr ~= "true")
+    if isStatAutoPoint == nil or isStatAutoPoint ~= isNormatPoint then
+        isStatAutoPoint = isNormatPoint
+    end
+
 end
 --【自动战斗】自动战斗中点击地板移动，自动战斗不停止，以玩家点击的坐标为新的自动战斗圆心
 function this:ArriveCallBack()
