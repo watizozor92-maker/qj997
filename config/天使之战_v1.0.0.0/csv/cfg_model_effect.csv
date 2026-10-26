@@ -106,7 +106,7 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 104,闪电轰顶施法特效,Effect/Skill/Eff_f_leidianhongding,3000,skill,,,,,,,,,,,,
 105,毒炎施法特效,Effect/Skill/Eff_F_duyan,1500,skill,,,,,,,,,,,,
 106,星辰一怒特效,Effect/Skill/Eff_F_xingchengyinu,1000,skill,,,,,,,,,,,,
-107,星辰一怒施法特效,Effect/Skill/Eff_F_xingchengyinu_02,1000,skill,,,,,,,,,,,,
+107,星辰一怒施法特效,Effect/Skill/Eff_F_xingchengyinu_02,10000,skill,,,,,,,,,,,,
 108,碧影魔弓施法特效,Effect/Skill/Eff_G_CrossBow04,1000,skill,4,,,,1,0#0.45#0,,2,0#0.45#0,,,
 109,紫焰之弓施法特效,Effect/Skill/Eff_G_bow26,1000,skill,4,,,,1,0#0.45#0,,2,0#0.45#0,,,
 110,五重箭箭头特效,Effect/Skill/Eff_G_wuchongjian_02,1000,skill,,,,,,,,,,,,
@@ -129,9 +129,9 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 127,五重杀剑飞行特效,Effect/Skill/Eff_G_wuchongjianlxqtz,1000,skill,,,,,,,,,,,,
 128,五重杀剑箭头特效,Effect/Skill/Eff_G_wuchongjian_02lxqtz,1000,skill,,,,,,,,,,,,
 129,炽炎魔攻击,Effect/Skill/Monster45_atk,1000,skill,,,,,,,,,,,,
-130,袭风突刺施法特效,Effect/Skill/43,5000,skill,,,,,,,,,,,,
-131,袭风突刺受击特效(雷电),Effect/Skill/Eff_Z_xifengci_leilxqtz,1000,skill,,,,,,,,,,,,
-132,袭风突刺蓝色光球施法特效,Effect/Skill/Eff_Z_xifengcilxqtz,1000,skill,,,,,,,,,,,,
+130,袭风突刺施法特效,Effect/Skill/43,2000,skill,,,,20000,,,,,,,,
+131,袭风突刺受击特效(雷电),Effect/Skill/Eff_Z_xifengci_leilxqtz,2000,skill,,,,20000,,,,,,,,
+132,袭风突刺蓝色光球施法特效,Effect/Skill/Eff_Z_xifengcilxqtz,1000,skill,4,,,26000,0,,,,,,,
 133,雷霆裂灭闪施法特效（光柱）,Effect/Skill/EFF_Z_leitinglieshan_shuxianlxqtz,1000,skill,,,,,,,,,,,,
 134,雷霆裂灭闪施法特效,Effect/Skill/EFF_Z_leitinglieshanlxqtz,1000,skill,,,,,,,,,,,,
 135,血龙波,Effect/Skill/Eff_F_heilngbolxqtz,1000,skill,6,,,,,,,,,,cfg_heilongbo,
@@ -252,7 +252,9 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 5003,新黑色光柱,Effect/Scene/Eff_diaoluo_heise,1000,effect,,,,,,,,,,,,
 5004,新棕色光柱,Effect/Scene/Eff_diaoluo_zhongse,1000,effect,,,,,,,,,,,,
 5005,挂机保护特效,Effect/Skill/Eff_chestnut_atk02,1000,effect,,,,,,,,,,,,
-6000,星云火链1,Effect/Skill/monster237_atk1,10000,skill,6,,,10000,,,,,,,,
+6000,星云火链1,Effect/Skill/Eff_s_xingyuesuolian,500,skill,12,"90,50,2,1",,10000,1,,,,,,,
+6001,星云火链2,Effect/Skill/Eff_s_xingyuesuolian,1500,skill,12,"90,50,2,1",,10000,1,,,,,,,
+6002,星云火链3,Effect/Skill/Eff_s_xingyuesuolian,2000,skill,12,"90,50,2,1",,10000,1,,,,,,,
 6003,冲击波,Effect/Skill/chongji,500,skill,,,,10000,1,0#0#1,,,,,,
 6005,致命圣印施法,Effect/Skill/Eff_s_zhimingyinji,1000,skill,,,,10000,,,,,,,,
 6006,致命圣印状态,Effect/Skill/Eff_s_zhimingyinji_02,1000,skill,,,,10000,1,,,,,,,
@@ -263,7 +265,7 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 6012,专属宠物：天鹰2,Effect/Skill/Eff_s_tianyingzhizhua_02,3000,skill,3,1,,10000,,,,,,,,
 6013,专属宠物：天鹰3,Effect/Skill/Eff_s_tianyingzhizhua_03,3000,skill,3,1,,10000,,,,,,,,
 6014,专属宠物：天鹰4,Effect/Skill/Eff_s_tianyingzhizhua_04,3000,skill,3,1,,10000,,,,,,,,
-6015,黑暗之力,Effect/Skill/Eff_s_heianzhili,3000,skill,,,,10000,1,0#0.2#0,,2,,,,
+6015,黑暗之力,Effect/Skill/Eff_s_heianzhili,10000,skill,7,,,20000,,,,,,,,
 6016,摄魂咒1,Effect/Skill/Eff_zhaohuan_shehunzhou_01,1300,skill,,,,10000,,,,,,,,
 6017,摄魂咒2,Effect/Skill/Eff_zhaohuan_shehunzhou_02,1300,skill,,,,10000,,,,,,,,
 6018,摄魂咒3,Effect/Skill/Eff_zhaohuan_shehunzhou_03,1300,skill,,,,10000,,,,,,,,
@@ -273,11 +275,11 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 6022,链雷咒3,Effect/Skill/Eff_F_zhangxinlei_02,1300,skill,,,,10000,,,,,,,,
 6023,伤害反射,Effect/Skill/Eff_zhaohuan_shanhaifanshe_shou,1000,skill,,,,10000,,,,,,,,
 6024,伤害反射状态,Effect/Skill/Eff_zhaohuan_shanhaifanshe_buff,1000,skill,,,,10000,,,,,,,,
-6028,爆裂1,Effect/Skill/Eff_zhaohuan_liexi_01,1000,skill,,,,10000,,,,,,,,
-6029,爆裂2,Effect/Skill/Eff_zhaohuan_liexi_02,1000,skill,,,,10000,,,,,,,,
-6030,爆裂3,Effect/Skill/Eff_zhaohuan_liexi_03,1000,skill,,,,10000,,,,,,,,
-6031,刺袭1,Effect/Skill/Eff_zhaohuan_yingsha,1000,skill,,,,10000,,,,,,,,
-6032,刺袭2,Effect/Skill/Eff_zhaohuan_yingsha02,1000,skill,,,,10000,,,,,,,,
+6028,爆裂1,Effect/Skill/Eff_zhaohuan_liexi_01,2000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
+6029,爆裂2,Effect/Skill/Eff_zhaohuan_liexi_02,2000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
+6030,爆裂3,Effect/Skill/Eff_zhaohuan_liexi_03,2000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
+6031,刺袭1,Effect/Skill/Eff_zhaohuan_yingsha,2000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
+6032,刺袭2,Effect/Skill/Eff_zhaohuan_yingsha02,2000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
 6033,聚灵(污染)施法,Effect/Skill/Eff_zhaohuan_juling,1000,skill,,,,10000,,,,,,,,
 6034,聚灵(污染)怪物,Effect/Skill/Eff_zhaohuan_guaiwu,1000,skill,,,,10000,,,,,,,,
 6035,烈光闪,Effect/Skill/Eff_zgaihuan_lieguangshan,3000,skill,,,,10000,,,,,,,,
@@ -362,8 +364,8 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 60000001,链雷咒特效,Effect/Skill/Eff_F_zhangxinlei,1300,skill,5,1,,10000,,0#0#0,,,,,,
 60000002,狂爆术特效,Effect/Skill/Eff_zhaohuan_kuangbaoshu,1500,skill,,,,10000,1,0#-1#0,,,,,,
 60000003,昏睡术特效,Effect/Skill/Eff_zhaohuan_hunshuishu,1500,skill,,,,10000,1,0#-1#0,,,,,,
-60000004,烈袭召唤特效,Effect/Skill/Eff_zhaohuan_liexi_01,1500,skill,,,,10000,1,0#-1#0.25,,,,,,
-60000005,烈袭召唤兽攻击特效,Effect/Skill/Eff_zhaohuan_liexi_02,2500,skill,,,,10000,1,,,,,,,
+60000004,烈袭召唤特效,Effect/Skill/Eff_zhaohuan_liexi_01,1000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,1000
+60000005,烈袭召唤兽攻击特效,Effect/Skill/Eff_zhaohuan_liexi_02,1000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
 60000006,影煞特效,Effect/Skill/Eff_zhaohuan_yingsha,2500,skill,,,,10000,1,0#-1#0.25,,,,,,
 60000008,聚灵特效,Effect/Skill/Eff_zhaohuan_juling,1500,skill,,,,10000,1,0#-1#0.25,,,,,,
 60000009,烈光闪特效,Effect/Skill/Eff_zgaihuan_lieguangshan,2500,skill,,,,10000,1,,,,,,,
@@ -373,8 +375,8 @@ id,name,path,playTime,effect,specialType,specialParams,specialSubType,scale,begi
 60000013,伤害反射特效,Effect/Skill/,1500,skill,,,,10000,1,,,,,,,
 60000015,暗黑镇魂曲特效,Effect/Skill/Eff_zhaohuan_anheizhenhunqu_01,1500,skill,,,,10000,1,0#-1#0,,,,,,
 60000016,聚灵召唤兽特效,Effect/Skill/Eff_zhaohuan_guaiwu,2500,skill,,,,10000,1,,,,,,,
-60000017,水幻兽召唤特效,Effect/Skill/Eff_G_zhaohuan,1500,skill,,,,10000,1,0#-1#0.25,,,,,,
-60000018,水幻兽攻击特效,Effect/Skill/Eff_zhaohuan_liexi_02lan,2500,skill,,,,10000,1,,,,,,,
+60000017,水幻兽召唤特效,Effect/Skill/Eff_G_zhaohuan,1000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,1000
+60000018,水幻兽攻击特效,Effect/Skill/Eff_zhaohuan_liexi_02lan,1000,skill,6,,,10000,,0#0#0,,,,,cfg_HeiLongBo,2000
 60000019,魔隐者特效,Effect/Skill/Eff_moyinzhe_02_sheling,2500,skill,,,,10000,1,0#-1#0,,,,,,
 60000020,暗影突袭持续特效,Effect/Skill/Eff_anyingdoupeng_02,1000,skill,,,,10000,,,,,,,,
 70001,全身强化等级流光特效 头盔,Effect/Scene/taozhuang_liudong_04,2147483600,effect,,,,,,-0.698#0.462#0,0#-180#-160,,,1#1#1,,

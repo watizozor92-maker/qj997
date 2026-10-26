@@ -40,8 +40,8 @@
 ---@field item IntListList @消耗道具    column=9 I
 
 local local_gain = {
-    gain_1={{10040001,480}},
-    gain_2={{10040001,980}},
+    gain_1={{10040001,980}},
+    gain_2={{10040001,480}},
     gain_3={},
     gain_4={{30031062,1},{30032003,1}},
 
@@ -57,21 +57,21 @@ local cfg_recharge =
 {
 	{id=201, name="月卡", type=2, parameter=30030306, Countkey=1, gain={{30030306,1}}, amount=128},
 	{id=202, name="日卡", type=2, parameter=30030307, Countkey=2, gain={{30030307,1}}, amount=6},
-	{id=10000006, name="充值档位58元", type=1, gain={{10040001,58}}, amount=58},
-	{id=10000030, name="充值档位98元", type=1, gain={{10040001,98}}, amount=98},
-	{id=10000068, name="充值档位128元", type=1, gain={{10040001,128}}, amount=128},
-	{id=10000128, name="充值档位258元", type=1, gain={{10040001,258}}, amount=258},
-	{id=10000328, name="充值档位328元", type=1, gain={{10040001,328}}, amount=328},
-	{id=10000648, name="充值档位648元", type=1, gain={{10040001,648}}, amount=648},
-	{id=10000998, name="充值档位998元", type=1, gain={{10040001,998}}, amount=998},
-	{id=10002998, name="充值档位2998元", type=1, gain={{10040001,2998}}, amount=2998},
-	{id=10005000, name="充值档位5888元", type=1, gain={{10040001,5888}}, amount=5888},
+	{id=10000006, name="充值档位58元", type=1, gain={{10040001,580}}, amount=1},
+	{id=10000030, name="充值档位98元", type=1, gain=local_gain.gain_1, amount=1},
+	{id=10000068, name="充值档位128元", type=1, gain={{10040001,1280}}, amount=1},
+	{id=10000128, name="充值档位258元", type=1, gain={{10040001,2580}}, amount=1},
+	{id=10000328, name="充值档位328元", type=1, gain={{10040001,3280}}, amount=1},
+	{id=10000648, name="充值档位648元", type=1, gain={{10040001,6480}}, amount=1},
+	{id=10000998, name="充值档位998元", type=1, gain={{10040001,9980}}, amount=1},
+	{id=10002998, name="充值档位2998元", type=1, gain={{10040001,29980}}, amount=1},
+	{id=10005000, name="充值档位5888元", type=1, gain={{10040001,58880}}, amount=1},
 	{id=301, name="首充6元", type=3, parameter=301, gain={{10040001,60}}, amount=6},
-	{id=302, name="首充48元", type=3, parameter=302, gain=local_gain.gain_1, amount=48},
-	{id=303, name="首充98元", type=3, parameter=303, gain=local_gain.gain_2, amount=98},
-	{id=304, name="首充42元", type=3, parameter=304, gain=local_gain.gain_1, amount=42},
+	{id=302, name="首充48元", type=3, parameter=302, gain=local_gain.gain_2, amount=48},
+	{id=303, name="首充98元", type=3, parameter=303, gain=local_gain.gain_1, amount=98},
+	{id=304, name="首充42元", type=3, parameter=304, gain=local_gain.gain_2, amount=42},
 	{id=305, name="首充50元", type=3, parameter=305, gain={{10040001,500}}, amount=50},
-	{id=306, name="首充92元", type=3, parameter=306, gain=local_gain.gain_2, amount=92},
+	{id=306, name="首充92元", type=3, parameter=306, gain=local_gain.gain_1, amount=92},
 	{id=400, name="每日礼包0", type=4, parameter=1, Countkey=3, amount=0},
 	{id=401, name="每日礼包6", type=4, parameter=2, Countkey=4, amount=6},
 	{id=402, name="每日礼包12", type=4, parameter=3, Countkey=5, amount=12},
@@ -272,10 +272,10 @@ local cfg_recharge =
 	{id=2138, name="228元周末天使礼包", parameter=11308, Countkey=15128, amount=228},
 	{id=2139, name="328元周末终极礼包", parameter=11309, Countkey=15129, amount=328},
 	{id=2140, parameter=21301, Countkey=15130, amount=1599},
-	{id=3001, name="月卡", type=21, Countkey=21001, gain=local_gain.gain_4, amount=58},
+	{id=3001, name="月卡", type=21, Countkey=21001, gain=local_gain.gain_4, amount=1},
 	{id=3002, name="月卡", type=23, Countkey=21002, gain={{30031063,1},{30032001,1}}, amount=12},
 	{id=3003, name="月卡", type=23, Countkey=21003, gain={{30031064,1},{30032003,1}}, amount=328},
-	{id=4001, name="月卡", type=22, Countkey=21001, gain=local_gain.gain_4, amount=58},
+	{id=4001, name="月卡", type=22, Countkey=21001, gain=local_gain.gain_4, amount=1},
 }
 
 local defaults = {name="一键购买", type=20, parameter=0, Countkey=0, gain={}, amount=0, item={}}

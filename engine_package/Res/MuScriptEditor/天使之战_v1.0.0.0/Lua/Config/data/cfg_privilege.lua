@@ -35,18 +35,21 @@
 ---@field price number @价格 column=13 M
 
 local local_privilege = {
-    privilege_1={18,28},
+    privilege_1={18},
+    privilege_2={16},
 
 }
 
 local cfg_privilege =
 {
-	{id=73, name="畅玩卡", type=2, minType=12, item=30031062, buff=30000013, time=43200, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
-	{id=72, name="黄金卡(1天)", type=2, minType=12, item=30031063, buff=30000014, time=43200, privilege=local_privilege.privilege_1, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
-	{id=74, name="黄金卡(30天)", type=2, minType=12, item=30031064, buff=30000014, time=43200, privilege=local_privilege.privilege_1, field=0, limitType=0, limitCount=0, maxCount=0, price=0},
+	{id=73, name="畅玩卡", item=30031062, buff=30000013},
+	{id=72, name="黄金卡(1天)", item=30031063, buff=30000014, privilege=local_privilege.privilege_1},
+	{id=74, name="黄金卡(30天)", item=30031064, buff=30000014, privilege=local_privilege.privilege_1},
+	{id=100, name="强化天使", item=2140000899, buff=30000015, privilege=local_privilege.privilege_2},
+	{id=101, name="强化恶魔", item=2140000799, buff=30000015, privilege=local_privilege.privilege_2},
 }
 
-local defaults = {privilege={24,23,2,13,17,16,25,6,18,28}}
+local defaults = {type=2, minType=12, time=43200, privilege={24,23,2,13,25,6,18,17}, field=0, limitType=0, limitCount=0, maxCount=0, price=0}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_privilege) do
 	setmetatable(v, mt)

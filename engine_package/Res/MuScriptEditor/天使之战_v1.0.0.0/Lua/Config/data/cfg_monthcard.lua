@@ -11,12 +11,12 @@
 ---@field price number @充值表关联 column=7 G
 local cfg_monthcard =
 {
-	{id=1, name="畅玩卡", group=2, itemid={30031062,30032003}, showtext="解锁功能：世界聊天#解锁功能：随身商店#解锁功能：随身仓库#解锁功能：自动回收、拾取#解锁功能：自动维修、买药#解锁功能：交易行上架#解锁功能：面对面交易#解锁功能：材料解绑#解锁功能：宝石解绑#解锁功能：宝石爆率*200%", cost=58, price=3001},
-	{id=2, name="至尊卡1天", group=2, itemid={30031063,30032001}, cost=12, price=3002},
-	{id=3, name="至尊卡30天", group=2, itemid={30031064,30032003}, cost=328, price=3003},
+	{id=1, name="畅玩卡", group=2, itemid={30031062,30032003}, cost=58, price=3001},
+	{id=2, name="至尊卡1天", group=2, itemid={30031063,30032001}, showtext="解锁功能：交易行上架#解锁功能：材料解绑#解锁功能：宝石解绑#解锁功能：宝石爆率*200%", cost=12, price=3002},
+	{id=3, name="至尊卡30天", group=2, itemid={30031064,30032003}, showtext="解锁功能：交易行上架#解锁功能：材料解绑#解锁功能：宝石解绑#解锁功能：宝石爆率*200%", cost=328, price=3003},
 }
 
-local defaults = {showtext="解锁功能：交易行上架#解锁功能：面对面交易#解锁功能：材料解绑#解锁功能：宝石解绑#解锁功能：宝石爆率*200%"}
+local defaults = {showtext="解锁功能：世界聊天#解锁功能：随身商店#解锁功能：随身仓库#解锁功能：自动回收、拾取#解锁功能：自动维修、买药#解锁功能：交易行上架#解锁功能：材料解绑#解锁功能：宝石解绑#解锁功能：宝石爆率*200%"}
 local mt = {__index = defaults}
 for _, v in ipairs(cfg_monthcard) do
 	setmetatable(v, mt)

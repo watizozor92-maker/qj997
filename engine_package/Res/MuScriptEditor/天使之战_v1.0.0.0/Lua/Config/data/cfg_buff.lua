@@ -307,7 +307,7 @@ local cfg_buff =
 	{id=20000905, name="大型防护药水", buffParam=local_buffParam.buffParam_3, buffValue={{931,3000}}, buffTotalTime=0, excuteTimes=1, showIcon="30", buffName="防护值药水"},
 	{id=30000001, name="特权卡30天（废弃）", buffParam=local_buffParam.buffParam_4, buffValue=local_buffValue.buffValue_1, buffTotalTime=2592000000, showIcon="28", buffName="特权卡倒计时", buffText="开启一键拾取、随身商店、随\n身仓库"},
 	{id=30000002, name="高级特权卡30天（废弃）", buffParam=local_buffParam.buffParam_4, buffValue=local_buffValue.buffValue_1, buffTotalTime=2592000000, showIcon="34", buffName="特权卡倒计时", buffText="开启一键拾取、随身商店、随\n身仓库、自动回收、自动买药"},
-	{id=30000013, name="畅玩卡", buffParam=local_buffParam.buffParam_4, buffValue=local_buffValue.buffValue_1, buffTotalTime=0, showIcon="54", buffName="畅玩卡倒计时", buffText="\n激活后开启以下特权：\n<color=#00FF00>世界聊天\n随身商店\n随身仓库\n自动维修、买药\n自动回收、拾取\n交易行\n面对面交易\n材料解绑\n宝石解绑\n宝石爆率*200%</color>"},
+	{id=30000013, name="畅玩卡", buffParam=local_buffParam.buffParam_4, buffValue=local_buffValue.buffValue_1, buffTotalTime=0, showIcon="54", buffName="畅玩卡倒计时", buffText="\n激活后开启以下特权：\n<color=#00FF00>世界聊天\n随身商店\n随身仓库\n自动维修\n自动买药\n交易行</color>"},
 	{id=30000014, name="黄金特权卡", buffParam=local_buffParam.buffParam_4, buffValue=local_buffValue.buffValue_1, buffTotalTime=0, showIcon="55", buffName="黄金特权卡倒计时", buffText="\n激活后开启以下特权：\n<color=#00FF00>交易行\n面对面交易\n黄金分线\n材料解绑\n宝石解绑\n宝石爆率*200%</color>"},
 	{id=30030201, name="经验加成药水", buffParam=local_buffParam.buffParam_5, buffValue=local_buffValue.buffValue_2, buffTotalTime=86400000, showIcon="47", buffName="经验加成药水", buffText="杀怪经验提升30%"},
 	{id=30030202, name="经验加成药水", buffParam=local_buffParam.buffParam_5, buffValue=local_buffValue.buffValue_2, buffTotalTime=-1, showIcon="47", buffName="经验加成药水", buffText="杀怪经验提升30%"},

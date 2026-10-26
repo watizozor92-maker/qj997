@@ -50,6 +50,7 @@ local local_instructionLeft = {
 
 local local_instructionRight = {
     instructionRight_1={{"确定","btn_sure","FG_Common"},{"openUIPanel","dev/outui/MonthCard/Panel/KLMonthCardNew/KLMonthCardNewPanel"}},
+    instructionRight_2={},
 
 }
 
@@ -64,16 +65,16 @@ local cfg_privilege_new =
 	{id=10, beizhu="经验提升（需配置参数）"},
 	{id=13, beizhu="随身仓库", text="是否开通月卡获得随身仓库特权？", instructionLeft={{"传送","btn_chuansong","FG_Common"},{"transferNPC","100107"}}},
 	{id=14, beizhu="交易行寄售货架数量增加（需配置参数）"},
-	{id=16, beizhu="自动拾取", text="是否开通月卡获得自动拾取特权？"},
-	{id=17, beizhu="自动回收", text="是否开通月卡获得自动回收特权？"},
+	{id=16, beizhu="自动拾取", text="是否佩戴守护获得自动拾取？", instructionRight=local_instructionRight.instructionRight_2},
+	{id=17, beizhu="自动回收", text="是否佩戴守护获得自动回收？", instructionRight=local_instructionRight.instructionRight_2},
 	{id=18, beizhu="交易行上架", text="是否开通月卡获得交易行上架特权？"},
 	{id=21, beizhu="调整税率"},
-	{id=22, beizhu="地图切线", condition={101,1}, time=0, text="是否开通月卡获得地图切线特权？"},
+	{id=22, beizhu="地图切线", condition={101,1}, time=0, text="是否开通月卡获得切线特权？", instructionRight=local_instructionRight.instructionRight_2},
 	{id=23, beizhu="离线挂机", text="是否开通月卡获得离线挂机特权？"},
 	{id=24, beizhu="世界聊天", text="是否开通月卡获得世界聊天特权？"},
 	{id=25, beizhu="自动修理", text="是否开通月卡获得自动维修特权？"},
 	{id=27, beizhu="黄金分线", text="是否开通月卡获得黄金分线特权？"},
-	{id=28, beizhu="面对面交易", text="是否开通月卡获得面对面交易特权？"},
+	{id=28, beizhu="面对面交易", time=0, text="禁止面对面交易。", instructionRight=local_instructionRight.instructionRight_2},
 }
 
 local defaults = {condition={}, reopen=1, para={}, time=43200, text="是否开通月卡获得特权？", instructionLeft={}, instructionRight={{"确定","btn_sure","FG_Common"},{"openUIPanel","dev/outui/MonthCard/Panel/KLMonthCardNew/KLMonthCardNewPanel"}}}
