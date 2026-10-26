@@ -527,6 +527,7 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
         local function tryReleaseAt(index)
             local monsterId, isCanRelease, error = self:GetSkillMonsterId(selectedSkillIds[index], rid, NoUseHookRangeAttack)
             if monsterId == -1 then
+                SL:LogWarning("选择技能" .. selectedSkillIds[index] .. " skip")
                 if not comboSkillSet[tonumber(selectedSkillIds[index])] and firstSkippedIndex == nil then
                     firstSkippedIndex = index
                 end
@@ -555,7 +556,7 @@ function this:GetAutoReleaseSkill(rid,isAutoSetTarget,NoUseHookRangeAttack)
                 self.next_skill_id_ = nil
                 self.next_skill_id = nil
             end
-            -- SL:LogWarning("选择技能" .. selectedSkillIds[index] .. ", currentIndex=" .. self.pendingAutoRelease.currentIndex .. ", deferredIndex=" .. self.pendingAutoRelease.deferredIndex)
+            SL:LogWarning("选择技能" .. selectedSkillIds[index] .. ", currentIndex=" .. self.pendingAutoRelease.currentIndex .. ", deferredIndex=" .. self.pendingAutoRelease.deferredIndex)
             return { isReplace = true, skillId = selectedSkillIds[index], isCanRelease = isCanRelease }
         end
 
@@ -800,6 +801,7 @@ function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
     local learnedSkills = SL:GetMetaValue(EMetaVarGetKey.LEARNED_SKILLS)
     local releaseSkill = learnedSkills and learnedSkills[skillId]
     if not releaseSkill then
+        -- SL:LogWarning("GetSkillMonsterId -1")
         return -1
     end
     local assistType = releaseSkill.skillTbl.assistType
@@ -807,9 +809,11 @@ function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
     local isBuff = assistType[1] == SkillAssistTypeEx.Common and assistType[2] == SubSkillAssistTypeEx.Buff
     local isComb = (releaseSkill.skillTbl.group ~= 4 and releaseSkill.skillTbl.comboType and table.count(releaseSkill.skillTbl.comboType) > 0)
     if isSummon and not SL:IsCanUseSummonSkill(skillId) then
+        -- SL:LogWarning("GetSkillMonsterId -2")
         return -1
     end
     if isBuff and not SL:IsCanUseBuffSkill(skillId) then
+        -- SL:LogWarning("GetSkillMonsterId -3")
         return -1
     end
     
@@ -826,6 +830,7 @@ function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
         if error == ESkillReleaseError.SkillRangeNotEnough and isStatAutoPoint and (self:MonsterIsInHookRange(monsterId, skillId) or NoUseHookRangeAttack) then
             return monsterId, false, error
         end
+        -- SL:LogWarning("GetSkillMonsterId -4 ".. error)
         return -1
     end
     if skillId == 1300005 then
@@ -845,6 +850,7 @@ function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
             isInjured = maxHp > 0 and hp / maxHp <= 0.9
         end
         if not isInjured then
+            -- SL:LogWarning("GetSkillMonsterId1 -5")
             return -1
         end
         return 0, true, ESkillReleaseError.None
@@ -856,7 +862,8 @@ function this:GetSkillMonsterId(skillId, rid, NoUseHookRangeAttack)
     if assistType[1] == SkillAssistTypeEx.Group then
         local skillList = DataManager.settingData.skillPriorityList
         local commonSkillId = SL:GetMetaValue(EMetaVarGetKey.SKILL_GET_COMMON_ID)
-        if atkCount <= 1 and not self:IsOnlyGroupSkill(skillList, commonSkillId) then
+        if atkCount < 1 and not self:IsOnlyGroupSkill(skillList, commonSkillId) then
+            -- SL:LogWarning("GetSkillMonsterId -6 " .. atkCount)
             return -1
         end
     end
@@ -915,7 +922,7 @@ function this:LUA_EVENT_ME_RELEASE_SKILL(id, skillId)
                 autoRelease[1] = pendingAutoRelease.currentIndex
                 autoRelease[2] = pendingAutoRelease.deferredIndex
             end
-            SL:LogWarning("释放技能" .. skillId .. ", currentIndex=" .. autoRelease[1] .. ", deferredIndex=" .. autoRelease[2])
+            -- SL:LogWarning("释放技能" .. skillId .. ", currentIndex=" .. autoRelease[1] .. ", deferredIndex=" .. autoRelease[2])
         end
         self.pendingAutoRelease = nil
     end
