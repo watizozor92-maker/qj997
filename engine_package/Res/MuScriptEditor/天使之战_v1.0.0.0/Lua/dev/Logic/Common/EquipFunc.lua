@@ -1575,36 +1575,36 @@ function this.GetEquipUseAttLimit(equip, cfgId, strengthLevel)
         strengthLevel = this.GetEquipStrengthLevel(equip)
     end
     local limitAttInfo = {}
-    if strengthLevel == 0 then
+    -- if strengthLevel == 0 then
         local entryLibCfg = SL:GetConfig("cfg_equip_entryLib", cfgId)
         for i, v in pairs(entryLibCfg.useAttLimit) do
             limitAttInfo[v[1]] = v[2]
         end
-        return limitAttInfo
-    end
-    local itemCfg = SL:GetConfig("cfg_item", cfgId)
-    local addUseAttrLimit = itemCfg.Outstanding == 1 and 25 or 0 -- 卓越装备会有较高的属性限制
+        -- return limitAttInfo
+    -- end
+    -- local itemCfg = SL:GetConfig("cfg_item", cfgId)
+    -- local addUseAttrLimit = itemCfg.Outstanding == 1 and 25 or 0 -- 卓越装备会有较高的属性限制
 
-    if itemCfg.Qianghuall > 0 then
-        limitAttInfo[EMUCharacterAttrType.strength] = this.GetUseAttLimitValue(itemCfg.Qianghuall, itemCfg
-        .Calculatelevel, strengthLevel, addUseAttrLimit)
-    end
-    if itemCfg.Qianghuamj > 0 then
-        limitAttInfo[EMUCharacterAttrType.agility] = this.GetUseAttLimitValue(itemCfg.Qianghuamj, itemCfg.Calculatelevel,
-            strengthLevel, addUseAttrLimit)
-    end
-    if itemCfg.Qianghuazl > 0 then
-        limitAttInfo[EMUCharacterAttrType.intelligence] = this.GetUseAttLimitValue(itemCfg.Qianghuazl,
-            itemCfg.Calculatelevel, strengthLevel, addUseAttrLimit)
-    end
-    if itemCfg.Qianghuatl > 0 then
-        limitAttInfo[EMUCharacterAttrType.spirit] = this.GetUseAttLimitValue(itemCfg.Qianghuatl, itemCfg.Calculatelevel,
-            strengthLevel, addUseAttrLimit)
-    end
-    if itemCfg.Qianghuallts > 0 then
-        limitAttInfo[EMUCharacterAttrType.command] = this.GetUseAttLimitValue(itemCfg.Qianghuallts,
-            itemCfg.Calculatelevel, strengthLevel, addUseAttrLimit)
-    end
+    -- if itemCfg.Qianghuall > 0 then
+    --     limitAttInfo[EMUCharacterAttrType.strength] = this.GetUseAttLimitValue(itemCfg.Qianghuall, itemCfg
+    --     .Calculatelevel, strengthLevel, addUseAttrLimit)
+    -- end
+    -- if itemCfg.Qianghuamj > 0 then
+    --     limitAttInfo[EMUCharacterAttrType.agility] = this.GetUseAttLimitValue(itemCfg.Qianghuamj, itemCfg.Calculatelevel,
+    --         strengthLevel, addUseAttrLimit)
+    -- end
+    -- if itemCfg.Qianghuazl > 0 then
+    --     limitAttInfo[EMUCharacterAttrType.intelligence] = this.GetUseAttLimitValue(itemCfg.Qianghuazl,
+    --         itemCfg.Calculatelevel, strengthLevel, addUseAttrLimit)
+    -- end
+    -- if itemCfg.Qianghuatl > 0 then
+    --     limitAttInfo[EMUCharacterAttrType.spirit] = this.GetUseAttLimitValue(itemCfg.Qianghuatl, itemCfg.Calculatelevel,
+    --         strengthLevel, addUseAttrLimit)
+    -- end
+    -- if itemCfg.Qianghuallts > 0 then
+    --     limitAttInfo[EMUCharacterAttrType.command] = this.GetUseAttLimitValue(itemCfg.Qianghuallts,
+    --         itemCfg.Calculatelevel, strengthLevel, addUseAttrLimit)
+    -- end
 
     return limitAttInfo
 end
